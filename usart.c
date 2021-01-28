@@ -172,9 +172,7 @@ void storeData(unsigned char data){
 
                 dataCounter++;
                 break;
-            case NEW_PICK:
-                //TODO: [ ]
-                
+            case NEW_PICK:                
                 //save the data
                 newSequenceData.L = receivedMex[1];
                 newSequenceData.W = receivedMex[2];
@@ -208,6 +206,10 @@ t_sequence* getData(){
     return(&dataSequence[0]);
 }
 
+/*
+ * Description: Function used to return the new data received. Return just the 
+ *              pointer that store the data
+ */
 t_newSequence* getNewSequence(){
     return(&newSequenceData);
 }

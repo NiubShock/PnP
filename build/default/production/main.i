@@ -4014,6 +4014,15 @@ void main(void) {
 
             resetNewSequence();
 
+            errCode = executeData();
+            printError(errCode);
+            clearTM0();
+
+
+
+            reduceSeq();
+            shiftData();
+
         }else if(readSeq()){
 
 
@@ -4052,7 +4061,7 @@ void interruptInit(void){
     PIE1bits.TMR2IE = 1;
     PIE1bits.RC1IE = 1;
 }
-# 121 "main.c"
+# 130 "main.c"
 char executeData(){
     t_sequence *data = getData();
 
@@ -4061,19 +4070,19 @@ char executeData(){
 
 
     switch(data->feederLine){
-        case '0':
+        case 0:
 
             errCode = moveToPoint(posVector[0], posVector[1], feeder1Pos[0], feeder1Pos[1]);
 
             posVector[0] = feeder1Pos[0];
             posVector[1] = feeder1Pos[1];
             break;
-        case '1':
+        case 1:
             errCode = moveToPoint(posVector[0], posVector[1], feeder2Pos[0], feeder2Pos[1]);
             posVector[0] = feeder2Pos[0];
             posVector[1] = feeder2Pos[1];
             break;
-        case '2':
+        case 2:
             errCode = moveToPoint(posVector[0], posVector[1], feeder3Pos[0], feeder3Pos[1]);
             posVector[0] = feeder3Pos[0];
             posVector[1] = feeder3Pos[1];
@@ -4095,7 +4104,9 @@ char executeData(){
 
     if(!errCode){
 
-        errCode = touchObject();
+
+
+
 
         pickObject();
 
@@ -4116,7 +4127,8 @@ char executeData(){
         rotateObj(rotAngle);
 
 
-        errCode = touchTherm();
+
+
 
         releaseObj();
 

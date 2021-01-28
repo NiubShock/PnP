@@ -1266,56 +1266,56 @@ Version 4.0 HI-TECH Software Intermediate Code
 "175
 [; ;usart.c: 175:             case 1:
 [e :U 274 ]
-"179
-[; ;usart.c: 179:                 newSequenceData.L = receivedMex[1];
+"177
+[; ;usart.c: 177:                 newSequenceData.L = receivedMex[1];
 [e = . _newSequenceData 0 *U + &U F2390 * -> -> -> 1 `i `ui `ux -> -> # *U &U F2390 `ui `ux ]
-"180
-[; ;usart.c: 180:                 newSequenceData.W = receivedMex[2];
+"178
+[; ;usart.c: 178:                 newSequenceData.W = receivedMex[2];
 [e = . _newSequenceData 1 *U + &U F2390 * -> -> -> 2 `i `ui `ux -> -> # *U &U F2390 `ui `ux ]
-"181
-[; ;usart.c: 181:                 newSequenceData.init_posX = receivedMex[3];
+"179
+[; ;usart.c: 179:                 newSequenceData.init_posX = receivedMex[3];
 [e = . _newSequenceData 2 *U + &U F2390 * -> -> -> 3 `i `ui `ux -> -> # *U &U F2390 `ui `ux ]
-"182
-[; ;usart.c: 182:                 newSequenceData.init_posY = receivedMex[4];
+"180
+[; ;usart.c: 180:                 newSequenceData.init_posY = receivedMex[4];
 [e = . _newSequenceData 3 *U + &U F2390 * -> -> -> 4 `i `ui `ux -> -> # *U &U F2390 `ui `ux ]
-"183
-[; ;usart.c: 183:                 newSequenceData.init_rot = receivedMex[5];
+"181
+[; ;usart.c: 181:                 newSequenceData.init_rot = receivedMex[5];
 [e = . _newSequenceData 4 *U + &U F2390 * -> -> -> 5 `i `ui `ux -> -> # *U &U F2390 `ui `ux ]
-"184
-[; ;usart.c: 184:                 newSequenceData.end_posX = receivedMex[6];
+"182
+[; ;usart.c: 182:                 newSequenceData.end_posX = receivedMex[6];
 [e = . _newSequenceData 5 *U + &U F2390 * -> -> -> 6 `i `ui `ux -> -> # *U &U F2390 `ui `ux ]
-"185
-[; ;usart.c: 185:                 newSequenceData.end_posY = receivedMex[7];
+"183
+[; ;usart.c: 183:                 newSequenceData.end_posY = receivedMex[7];
 [e = . _newSequenceData 6 *U + &U F2390 * -> -> -> 7 `i `ui `ux -> -> # *U &U F2390 `ui `ux ]
-"186
-[; ;usart.c: 186:                 newSequenceData.end_rot = receivedMex[8];
+"184
+[; ;usart.c: 184:                 newSequenceData.end_rot = receivedMex[8];
 [e = . _newSequenceData 7 *U + &U F2390 * -> -> -> 8 `i `ui `ux -> -> # *U &U F2390 `ui `ux ]
-"188
-[; ;usart.c: 188:                 _newSequence = 1;
+"186
+[; ;usart.c: 186:                 _newSequence = 1;
 [e = __newSequence -> -> 1 `i `uc ]
-"189
-[; ;usart.c: 189:                 break;
+"187
+[; ;usart.c: 187:                 break;
 [e $U 271  ]
-"190
-[; ;usart.c: 190:             case 2:
+"188
+[; ;usart.c: 188:             case 2:
 [e :U 275 ]
-"192
-[; ;usart.c: 192:                 _fatalError = 1;
+"190
+[; ;usart.c: 190:                 _fatalError = 1;
 [e = __fatalError -> -> 1 `i `uc ]
-"193
-[; ;usart.c: 193:                 break;
+"191
+[; ;usart.c: 191:                 break;
 [e $U 271  ]
-"194
-[; ;usart.c: 194:             default:
+"192
+[; ;usart.c: 192:             default:
 [e :U 276 ]
-"196
-[; ;usart.c: 196:                 printError(8);
+"194
+[; ;usart.c: 194:                 printError(8);
 [e ( _printError (1 -> -> 8 `i `uc ]
-"197
-[; ;usart.c: 197:                 break;
+"195
+[; ;usart.c: 195:                 break;
 [e $U 271  ]
-"199
-[; ;usart.c: 199:         }
+"197
+[; ;usart.c: 197:         }
 }
 [e $U 271  ]
 [e :U 272 ]
@@ -1324,86 +1324,86 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 2 `i 275
  276 ]
 [e :U 271 ]
-"200
-[; ;usart.c: 200:     }
+"198
+[; ;usart.c: 198:     }
 }
 [e :U 270 ]
-"201
-[; ;usart.c: 201: }
+"199
+[; ;usart.c: 199: }
 [e :UE 263 ]
 }
-"207
-[; ;usart.c: 207: t_sequence* getData(){
+"205
+[; ;usart.c: 205: t_sequence* getData(){
 [v _getData `(*S238 ~T0 @X0 1 ef ]
 {
 [e :U _getData ]
 [f ]
-"208
-[; ;usart.c: 208:     return(&dataSequence[0]);
+"206
+[; ;usart.c: 206:     return(&dataSequence[0]);
 [e ) &U *U + &U _dataSequence * -> -> -> 0 `i `ui `ux -> -> # *U &U _dataSequence `ui `ux ]
 [e $UE 277  ]
-"209
-[; ;usart.c: 209: }
+"207
+[; ;usart.c: 207: }
 [e :UE 277 ]
 }
-"211
-[; ;usart.c: 211: t_newSequence* getNewSequence(){
+"213
+[; ;usart.c: 213: t_newSequence* getNewSequence(){
 [v _getNewSequence `(*S239 ~T0 @X0 1 ef ]
 {
 [e :U _getNewSequence ]
 [f ]
-"212
-[; ;usart.c: 212:     return(&newSequenceData);
+"214
+[; ;usart.c: 214:     return(&newSequenceData);
 [e ) &U _newSequenceData ]
 [e $UE 278  ]
-"213
-[; ;usart.c: 213: }
+"215
+[; ;usart.c: 215: }
 [e :UE 278 ]
 }
-"219
-[; ;usart.c: 219: void uartTx(unsigned char *ptr, unsigned char length)
+"221
+[; ;usart.c: 221: void uartTx(unsigned char *ptr, unsigned char length)
 [v _uartTx `(v ~T0 @X0 1 ef2`*uc`uc ]
-"220
-[; ;usart.c: 220: {
+"222
+[; ;usart.c: 222: {
 {
 [e :U _uartTx ]
-"219
-[; ;usart.c: 219: void uartTx(unsigned char *ptr, unsigned char length)
+"221
+[; ;usart.c: 221: void uartTx(unsigned char *ptr, unsigned char length)
 [v _ptr `*uc ~T0 @X0 1 r1 ]
 [v _length `uc ~T0 @X0 1 r2 ]
-"220
-[; ;usart.c: 220: {
-[f ]
 "222
-[; ;usart.c: 222:     for(char i = 1; i < length; i++){
+[; ;usart.c: 222: {
+[f ]
+"224
+[; ;usart.c: 224:     for(char i = 1; i < length; i++){
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 1 `i `uc ]
 [e $U 283  ]
 [e :U 280 ]
 {
-"224
-[; ;usart.c: 224:         TXREG = *ptr;
-[e = _TXREG *U _ptr ]
 "226
-[; ;usart.c: 226:         while(!TXSTAbits.TRMT);
+[; ;usart.c: 226:         TXREG = *ptr;
+[e = _TXREG *U _ptr ]
+"228
+[; ;usart.c: 228:         while(!TXSTAbits.TRMT);
 [e $U 284  ]
 [e :U 285 ]
 [e :U 284 ]
 [e $ ! != -> . . _TXSTAbits 0 1 `i -> 0 `i 285  ]
 [e :U 286 ]
-"228
-[; ;usart.c: 228:         ptr++;
+"230
+[; ;usart.c: 230:         ptr++;
 [e ++ _ptr * -> -> 1 `i `x -> -> # *U _ptr `i `x ]
-"229
-[; ;usart.c: 229:     }
+"231
+[; ;usart.c: 231:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
 [e :U 283 ]
 [e $ < -> _i `i -> _length `i 280  ]
 [e :U 281 ]
 }
-"230
-[; ;usart.c: 230: }
+"232
+[; ;usart.c: 232: }
 [e :UE 279 ]
 }

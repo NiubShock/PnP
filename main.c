@@ -72,6 +72,15 @@ void main(void) {
             //reset the variable for new pick and place sequence
             resetNewSequence();
             
+            errCode = executeData();        //call the function that will execute the data
+            printError(errCode);            //print the possible error
+            clearTM0();                     //eliminate the eventual error before proceed
+                                            //with the next instruction
+            
+            //reduce by one the counter -> 1 data used
+            reduceSeq();
+            shiftData();
+            
         }else if(readSeq()){
             //check if there are any data available
             
@@ -126,19 +135,19 @@ char executeData(){
     //the arm can be considered as already lifted here
     //the 1st byte received is the feeder line
     switch(data->feederLine){
-        case '0':
+        case 0:
             //move to the feeder position
             errCode = moveToPoint(posVector[0], posVector[1], feeder1Pos[0], feeder1Pos[1]);
             //change the actual position -> used as reference for future movement
             posVector[0] = feeder1Pos[0];
             posVector[1] = feeder1Pos[1];
             break;
-        case '1':
+        case 1:
             errCode = moveToPoint(posVector[0], posVector[1], feeder2Pos[0], feeder2Pos[1]);
             posVector[0] = feeder2Pos[0];
             posVector[1] = feeder2Pos[1];
             break;
-        case '2':
+        case 2:
             errCode = moveToPoint(posVector[0], posVector[1], feeder3Pos[0], feeder3Pos[1]);
             posVector[0] = feeder3Pos[0];
             posVector[1] = feeder3Pos[1];
@@ -159,8 +168,10 @@ char executeData(){
     
     //proceed only if no error is present
     if(!errCode){
+        
+        //TODO: [ ] not working with the simulator
         //get in touch with the object
-        errCode = touchObject();
+//        errCode = touchObject();
         //pick the object
         pickObject();
 
@@ -179,9 +190,10 @@ char executeData(){
             rotAngle += 360;
         }
         rotateObj(rotAngle);
-
+        
+        //TODO: [ ] not working on the simulator
         //touch the thermal paste
-        errCode = touchTherm();
+//        errCode = touchTherm();
         //release the object
         releaseObj();
         

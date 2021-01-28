@@ -4180,8 +4180,6 @@ void storeData(unsigned char data){
                 break;
             case 1:
 
-
-
                 newSequenceData.L = receivedMex[1];
                 newSequenceData.W = receivedMex[2];
                 newSequenceData.init_posX = receivedMex[3];
@@ -4213,6 +4211,10 @@ void storeData(unsigned char data){
 t_sequence* getData(){
     return(&dataSequence[0]);
 }
+
+
+
+
 
 t_newSequence* getNewSequence(){
     return(&newSequenceData);
