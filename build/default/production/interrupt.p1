@@ -547,20 +547,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "18
 [; ;interrupt.c: 18:     static unsigned int single_cycle = 0;
-[v F2198 `ui ~T0 @X0 1 s single_cycle ]
-[i F2198
+[v F2199 `ui ~T0 @X0 1 s single_cycle ]
+[i F2199
 -> -> 0 `i `ui
 ]
 "19
 [; ;interrupt.c: 19:     static unsigned char tm0Count = 0;
-[v F2199 `uc ~T0 @X0 1 s tm0Count ]
-[i F2199
+[v F2200 `uc ~T0 @X0 1 s tm0Count ]
+[i F2200
 -> -> 0 `i `uc
 ]
 "20
 [; ;interrupt.c: 20:     static unsigned char completeStep = 0;
-[v F2200 `uc ~T0 @X0 1 s completeStep ]
-[i F2200
+[v F2201 `uc ~T0 @X0 1 s completeStep ]
+[i F2201
 -> -> 0 `i `uc
 ]
 "23
@@ -572,17 +572,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _INTCONbits 1 2 -> -> 0 `i `uc ]
 "27
 [; ;interrupt.c: 27:         tm0Count++;
-[e ++ F2199 -> -> 1 `i `uc ]
+[e ++ F2200 -> -> 1 `i `uc ]
 "29
 [; ;interrupt.c: 29:         if(tm0Count >= whatsTM0Limit()){
-[e $ ! >= -> F2199 `i -> ( _whatsTM0Limit ..  `i 242  ]
+[e $ ! >= -> F2200 `i -> ( _whatsTM0Limit ..  `i 242  ]
 {
 "30
 [; ;interrupt.c: 30:             T0CONbits.TMR0ON = 0;
 [e = . . _T0CONbits 0 5 -> -> 0 `i `uc ]
 "31
 [; ;interrupt.c: 31:             tm0Count = 0;
-[e = F2199 -> -> 0 `i `uc ]
+[e = F2200 -> -> 0 `i `uc ]
 "32
 [; ;interrupt.c: 32:             writeTM0();
 [e ( _writeTM0 ..  ]
@@ -603,21 +603,21 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
 "39
 [; ;interrupt.c: 39:         single_cycle++;
-[e ++ F2198 -> -> 1 `i `ui ]
+[e ++ F2199 -> -> 1 `i `ui ]
 "42
 [; ;interrupt.c: 42:         if(single_cycle > retPeriod()){
-[e $ ! > F2198 ( _retPeriod ..  244  ]
+[e $ ! > F2199 ( _retPeriod ..  244  ]
 {
 "43
 [; ;interrupt.c: 43:             completeStep++;
-[e ++ F2200 -> -> 1 `i `uc ]
+[e ++ F2201 -> -> 1 `i `uc ]
 "46
 [; ;interrupt.c: 46:             if(completeStep != 0 && !(completeStep % 2)){
-[e $ ! && != -> F2200 `i -> 0 `i ! != % -> F2200 `i -> 2 `i -> 0 `i 245  ]
+[e $ ! && != -> F2201 `i -> 0 `i ! != % -> F2201 `i -> 2 `i -> 0 `i 245  ]
 {
 "48
 [; ;interrupt.c: 48:                 completeStep = 0;
-[e = F2200 -> -> 0 `i `uc ]
+[e = F2201 -> -> 0 `i `uc ]
 "51
 [; ;interrupt.c: 51:                 increaseStep();
 [e ( _increaseStep ..  ]

@@ -3943,6 +3943,7 @@ typedef struct{
 void usartInit(void);
 void storeData(unsigned char data);
 t_sequence* getData(void);
+t_newSequence* getNewSequence(void);
 void uartTx(unsigned char *ptr, unsigned char length);
 void printError(unsigned char errCode);
 
@@ -3953,7 +3954,7 @@ unsigned char fatalError(void);
 void reduceSeq(void);
 void shiftData(void);
 # 5 "./main.h" 2
-# 29 "./main.h"
+# 31 "./main.h"
 char executeData(void);
 # 10 "usart.c" 2
 
@@ -4211,6 +4212,10 @@ void storeData(unsigned char data){
 
 t_sequence* getData(){
     return(&dataSequence[0]);
+}
+
+t_newSequence* getNewSequence(){
+    return(&newSequenceData);
 }
 
 

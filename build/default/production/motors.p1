@@ -1752,14 +1752,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "551
 [; ;motors.c: 551:     static const float stepAngle = 0.08789;
-[v F2230 `Cf ~T0 @X0 1 s stepAngle ]
-[i F2230
+[v F2231 `Cf ~T0 @X0 1 s stepAngle ]
+[i F2231
 -> .0.08789 `f
 ]
 "552
 [; ;motors.c: 552:     static char rotSequence[] = {0b1001, 0b0011, 0b0110, 0b1100};
-[v F2231 `uc ~T0 @X0 -> 4 `i s rotSequence ]
-[i F2231
+[v F2232 `uc ~T0 @X0 -> 4 `i s rotSequence ]
+[i F2232
 :U ..
 -> -> 9 `i `uc
 -> -> 3 `i `uc
@@ -1773,7 +1773,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "554
 [; ;motors.c: 554:     int totStep = rotAngle/stepAngle;
 [v _totStep `i ~T0 @X0 1 a ]
-[e = _totStep -> / -> -> _rotAngle `i `f F2230 `i ]
+[e = _totStep -> / -> -> _rotAngle `i `f F2231 `i ]
 "557
 [; ;motors.c: 557:     for(i = 0; i < totStep; i++){
 {
@@ -1786,7 +1786,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e =& _LATD -> -> 195 `i `Vuc ]
 "561
 [; ;motors.c: 561:         LATD |= rotSequence[i%4] << 2;
-[e =| _LATD -> << -> *U + &U F2231 * -> -> % -> _i `i -> 4 `i `ui `ux -> -> # *U &U F2231 `ui `ux `i -> 2 `i `Vuc ]
+[e =| _LATD -> << -> *U + &U F2232 * -> -> % -> _i `i -> 4 `i `ui `ux -> -> # *U &U F2232 `ui `ux `i -> 2 `i `Vuc ]
 "562
 [; ;motors.c: 562:     }
 }

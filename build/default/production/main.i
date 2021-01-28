@@ -3936,6 +3936,7 @@ typedef struct{
 void usartInit(void);
 void storeData(unsigned char data);
 t_sequence* getData(void);
+t_newSequence* getNewSequence(void);
 void uartTx(unsigned char *ptr, unsigned char length);
 void printError(unsigned char errCode);
 
@@ -3946,7 +3947,7 @@ unsigned char fatalError(void);
 void reduceSeq(void);
 void shiftData(void);
 # 5 "./main.h" 2
-# 29 "./main.h"
+# 31 "./main.h"
 char executeData(void);
 # 11 "main.c" 2
 
@@ -3961,6 +3962,8 @@ static int rotAngle = 0;
 static const unsigned char feeder1Pos[2] = {5, 5};
 static const unsigned char feeder2Pos[2] = {15, 15};
 static const unsigned char feeder3Pos[2] = {25, 25};
+
+static unsigned char newFeeder[2] = {0, 0};
 
 void main(void) {
 
@@ -3989,6 +3992,27 @@ void main(void) {
             printError(7);
             while(1);
         }else if(newSequence()){
+            t_newSequence* newData = getNewSequence();
+
+            newFeeder[0] = newData ->init_posX;
+            newFeeder[1] = newData ->init_posY;
+
+
+
+            RCSTAbits.CREN = 0;
+
+
+            storeData(0);
+            storeData(0xFF);
+            storeData(newData ->end_posX);
+            storeData(newData ->end_posY);
+            storeData(newData ->end_rot - newData ->init_rot);
+
+
+            RCSTAbits.CREN = 1;
+
+
+            resetNewSequence();
 
         }else if(readSeq()){
 
@@ -4028,7 +4052,7 @@ void interruptInit(void){
     PIE1bits.TMR2IE = 1;
     PIE1bits.RC1IE = 1;
 }
-# 98 "main.c"
+# 121 "main.c"
 char executeData(){
     t_sequence *data = getData();
 
@@ -4057,7 +4081,9 @@ char executeData(){
 
 
         case 0xFF:
-
+            errCode = moveToPoint(posVector[0], posVector[1], newFeeder[0], newFeeder[1]);
+            posVector[0] = newFeeder[0];
+            posVector[1] = newFeeder[1];
             break;
         default:
 

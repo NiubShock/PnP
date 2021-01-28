@@ -19,6 +19,7 @@ typedef struct{
 void usartInit(void);
 void storeData(unsigned char data);
 t_sequence* getData(void);
+t_newSequence* getNewSequence(void);
 void uartTx(unsigned char *ptr, unsigned char length);
 void printError(unsigned char errCode);
 

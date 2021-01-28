@@ -208,6 +208,10 @@ t_sequence* getData(){
     return(&dataSequence[0]);
 }
 
+t_newSequence* getNewSequence(){
+    return(&newSequenceData);
+}
+
 /*
  * Description: Function used to send data through the serial communication.
  *              Used for error report

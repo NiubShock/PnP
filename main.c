@@ -21,6 +21,8 @@ static const unsigned char feeder1Pos[2] = {5, 5};
 static const unsigned char feeder2Pos[2] = {15, 15};
 static const unsigned char feeder3Pos[2] = {25, 25};
 
+static unsigned char newFeeder[2] = {0, 0};
+
 void main(void) {
     
     unsigned char errCode = ALL_OK;
@@ -48,6 +50,27 @@ void main(void) {
             printError(FATAL_ERROR);
             while(1);
         }else if(newSequence()){
+            t_newSequence* newData = getNewSequence();
+            
+            newFeeder[0] = newData ->init_posX;
+            newFeeder[1] = newData ->init_posY;
+            
+            
+            //disable the reception here
+            RCSTAbits.CREN = 0;
+            
+            //start the storing of the data
+            storeData(PICK_AND_PLACE);
+            storeData(NEW_FEEDER);
+            storeData(newData ->end_posX);
+            storeData(newData ->end_posY);
+            storeData(newData ->end_rot - newData ->init_rot);
+            
+            //turn on the reception again
+            RCSTAbits.CREN = 1;
+            
+            //reset the variable for new pick and place sequence
+            resetNewSequence();
             
         }else if(readSeq()){
             //check if there are any data available
@@ -122,8 +145,10 @@ char executeData(){
             break;
         
         //use this code to define a new pick and place position
-        case 0xFF:
-            
+        case NEW_FEEDER:
+            errCode = moveToPoint(posVector[0], posVector[1], newFeeder[0], newFeeder[1]);
+            posVector[0] = newFeeder[0];
+            posVector[1] = newFeeder[1];
             break;
         default:
             //in this case the feed line has not been defined

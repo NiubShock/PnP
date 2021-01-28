@@ -19,6 +19,8 @@
 #define NEW_PICK                1
 #define FATAL_CMD               2
 
+#define NEW_FEEDER              0xFF
+
 
 #define TIME_REF_LIFT           200
 #define TIME_REF_RESET          200
