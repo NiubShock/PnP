@@ -704,7 +704,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _tm0Error -> -> 1 `i `ui ]
 "25
 [; ;motors.c: 25: }
-[e :UE 239 ]
+[e :UE 240 ]
 }
 "30
 [; ;motors.c: 30: void clearTM0(){
@@ -717,7 +717,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _tm0Error -> -> 0 `i `ui ]
 "32
 [; ;motors.c: 32: }
-[e :UE 240 ]
+[e :UE 241 ]
 }
 "37
 [; ;motors.c: 37: unsigned char whatsTM0Limit(){
@@ -728,10 +728,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "38
 [; ;motors.c: 38:     return(tm0Limit);
 [e ) _tm0Limit ]
-[e $UE 241  ]
+[e $UE 242  ]
 "39
 [; ;motors.c: 39: }
-[e :UE 241 ]
+[e :UE 242 ]
 }
 "44
 [; ;motors.c: 44: void initPinMotors(void){
@@ -768,7 +768,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _TRISDbits 0 7 -> -> 1 `i `uc ]
 "61
 [; ;motors.c: 61: }
-[e :UE 242 ]
+[e :UE 243 ]
 }
 "69
 [; ;motors.c: 69: void setStep(unsigned char step, unsigned char motor){
@@ -780,11 +780,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "70
 [; ;motors.c: 70:     switch(motor){
-[e $U 245  ]
+[e $U 246  ]
 {
 "71
 [; ;motors.c: 71:         case 0:
-[e :U 246 ]
+[e :U 247 ]
 "73
 [; ;motors.c: 73:             LATAbits.LATA5 = (step & 0x01);
 [e = . . _LATAbits 0 5 -> & -> _step `i -> 1 `i `uc ]
@@ -793,10 +793,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _LATBbits 0 0 -> & -> _step `i -> 2 `i `uc ]
 "76
 [; ;motors.c: 76:             break;
-[e $U 244  ]
+[e $U 245  ]
 "77
 [; ;motors.c: 77:         case 1:
-[e :U 247 ]
+[e :U 248 ]
 "78
 [; ;motors.c: 78:             LATBbits.LATB6 = (step & 0x01);
 [e = . . _LATBbits 0 6 -> & -> _step `i -> 1 `i `uc ]
@@ -805,10 +805,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _LATBbits 0 7 -> & -> _step `i -> 2 `i `uc ]
 "80
 [; ;motors.c: 80:             break;
-[e $U 244  ]
+[e $U 245  ]
 "81
 [; ;motors.c: 81:         case 2:
-[e :U 248 ]
+[e :U 249 ]
 "82
 [; ;motors.c: 82:             LATCbits.LATC4 = (step & 0x01);
 [e = . . _LATCbits 0 4 -> & -> _step `i -> 1 `i `uc ]
@@ -817,26 +817,26 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _LATCbits 0 5 -> & -> _step `i -> 2 `i `uc ]
 "84
 [; ;motors.c: 84:             break;
-[e $U 244  ]
+[e $U 245  ]
 "85
 [; ;motors.c: 85:         default:
-[e :U 249 ]
+[e :U 250 ]
 "86
 [; ;motors.c: 86:             break;
-[e $U 244  ]
+[e $U 245  ]
 "87
 [; ;motors.c: 87:     }
 }
-[e $U 244  ]
+[e $U 245  ]
+[e :U 246 ]
+[e [\ -> _motor `i , $ -> 0 `i 247
+ , $ -> 1 `i 248
+ , $ -> 2 `i 249
+ 250 ]
 [e :U 245 ]
-[e [\ -> _motor `i , $ -> 0 `i 246
- , $ -> 1 `i 247
- , $ -> 2 `i 248
- 249 ]
-[e :U 244 ]
 "88
 [; ;motors.c: 88: }
-[e :UE 243 ]
+[e :UE 244 ]
 }
 "96
 [; ;motors.c: 96: void enableMotor(unsigned char enable, unsigned char motor){
@@ -848,54 +848,54 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "97
 [; ;motors.c: 97:     switch(motor){
-[e $U 252  ]
+[e $U 253  ]
 {
 "98
 [; ;motors.c: 98:         case 0:
-[e :U 253 ]
+[e :U 254 ]
 "99
 [; ;motors.c: 99:             LATAbits.LATA3 = enable;
 [e = . . _LATAbits 0 3 _enable ]
 "100
 [; ;motors.c: 100:             break;
-[e $U 251  ]
+[e $U 252  ]
 "101
 [; ;motors.c: 101:         case 1:
-[e :U 254 ]
+[e :U 255 ]
 "102
 [; ;motors.c: 102:             LATBbits.LATB5 = enable;
 [e = . . _LATBbits 0 5 _enable ]
 "103
 [; ;motors.c: 103:             break;
-[e $U 251  ]
+[e $U 252  ]
 "104
 [; ;motors.c: 104:         case 2:
-[e :U 255 ]
+[e :U 256 ]
 "105
 [; ;motors.c: 105:             LATCbits.LATC3 = enable;
 [e = . . _LATCbits 0 3 _enable ]
 "106
 [; ;motors.c: 106:             break;
-[e $U 251  ]
+[e $U 252  ]
 "107
 [; ;motors.c: 107:         default:
-[e :U 256 ]
+[e :U 257 ]
 "108
 [; ;motors.c: 108:             break;
-[e $U 251  ]
+[e $U 252  ]
 "109
 [; ;motors.c: 109:     }
 }
-[e $U 251  ]
+[e $U 252  ]
+[e :U 253 ]
+[e [\ -> _motor `i , $ -> 0 `i 254
+ , $ -> 1 `i 255
+ , $ -> 2 `i 256
+ 257 ]
 [e :U 252 ]
-[e [\ -> _motor `i , $ -> 0 `i 253
- , $ -> 1 `i 254
- , $ -> 2 `i 255
- 256 ]
-[e :U 251 ]
 "110
 [; ;motors.c: 110: }
-[e :UE 250 ]
+[e :UE 251 ]
 }
 "117
 [; ;motors.c: 117: void setDirection(unsigned char direction, unsigned char motor){
@@ -907,54 +907,54 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "118
 [; ;motors.c: 118:     switch(motor){
-[e $U 259  ]
+[e $U 260  ]
 {
 "119
 [; ;motors.c: 119:         case 0:
-[e :U 260 ]
+[e :U 261 ]
 "120
 [; ;motors.c: 120:             LATAbits.LATA1 = direction;
 [e = . . _LATAbits 0 1 _direction ]
 "121
 [; ;motors.c: 121:             break;
-[e $U 258  ]
+[e $U 259  ]
 "122
 [; ;motors.c: 122:         case 1:
-[e :U 261 ]
+[e :U 262 ]
 "123
 [; ;motors.c: 123:             LATBbits.LATB3 = direction;
 [e = . . _LATBbits 0 3 _direction ]
 "124
 [; ;motors.c: 124:             break;
-[e $U 258  ]
+[e $U 259  ]
 "125
 [; ;motors.c: 125:         case 2:
-[e :U 262 ]
+[e :U 263 ]
 "126
 [; ;motors.c: 126:             LATCbits.LATC1 = direction;
 [e = . . _LATCbits 0 1 _direction ]
 "127
 [; ;motors.c: 127:             break;
-[e $U 258  ]
+[e $U 259  ]
 "128
 [; ;motors.c: 128:         default:
-[e :U 263 ]
+[e :U 264 ]
 "129
 [; ;motors.c: 129:             break;
-[e $U 258  ]
+[e $U 259  ]
 "130
 [; ;motors.c: 130:     }
 }
-[e $U 258  ]
+[e $U 259  ]
+[e :U 260 ]
+[e [\ -> _motor `i , $ -> 0 `i 261
+ , $ -> 1 `i 262
+ , $ -> 2 `i 263
+ 264 ]
 [e :U 259 ]
-[e [\ -> _motor `i , $ -> 0 `i 260
- , $ -> 1 `i 261
- , $ -> 2 `i 262
- 263 ]
-[e :U 258 ]
 "131
 [; ;motors.c: 131: }
-[e :UE 257 ]
+[e :UE 258 ]
 }
 "138
 [; ;motors.c: 138: void setDecay(unsigned char decay, unsigned char motor){
@@ -966,54 +966,54 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "139
 [; ;motors.c: 139:     switch(motor){
-[e $U 266  ]
+[e $U 267  ]
 {
 "140
 [; ;motors.c: 140:         case 0:
-[e :U 267 ]
+[e :U 268 ]
 "141
 [; ;motors.c: 141:             LATBbits.LATB2 = decay;
 [e = . . _LATBbits 0 2 _decay ]
 "142
 [; ;motors.c: 142:             break;
-[e $U 265  ]
+[e $U 266  ]
 "143
 [; ;motors.c: 143:         case 1:
-[e :U 268 ]
+[e :U 269 ]
 "144
 [; ;motors.c: 144:             LATCbits.LATC0 = decay;
 [e = . . _LATCbits 0 0 _decay ]
 "145
 [; ;motors.c: 145:             break;
-[e $U 265  ]
+[e $U 266  ]
 "146
 [; ;motors.c: 146:         case 2:
-[e :U 269 ]
+[e :U 270 ]
 "147
 [; ;motors.c: 147:             LATDbits.LATD0 = decay;
 [e = . . _LATDbits 0 0 _decay ]
 "148
 [; ;motors.c: 148:             break;
-[e $U 265  ]
+[e $U 266  ]
 "149
 [; ;motors.c: 149:         default:
-[e :U 270 ]
+[e :U 271 ]
 "150
 [; ;motors.c: 150:             break;
-[e $U 265  ]
+[e $U 266  ]
 "151
 [; ;motors.c: 151:     }
 }
-[e $U 265  ]
+[e $U 266  ]
+[e :U 267 ]
+[e [\ -> _motor `i , $ -> 0 `i 268
+ , $ -> 1 `i 269
+ , $ -> 2 `i 270
+ 271 ]
 [e :U 266 ]
-[e [\ -> _motor `i , $ -> 0 `i 267
- , $ -> 1 `i 268
- , $ -> 2 `i 269
- 270 ]
-[e :U 265 ]
 "152
 [; ;motors.c: 152: }
-[e :UE 264 ]
+[e :UE 265 ]
 }
 "160
 [; ;motors.c: 160: char resetPosition(){
@@ -1083,12 +1083,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
 "191
 [; ;motors.c: 191:     while(keepMovingX || keepMovingY || keepMovingZ){
-[e $U 272  ]
-[e :U 273 ]
+[e $U 273  ]
+[e :U 274 ]
 {
 "194
 [; ;motors.c: 194:         if(tm0Error){
-[e $ ! != _tm0Error -> -> 0 `i `ui 275  ]
+[e $ ! != _tm0Error -> -> 0 `i `ui 276  ]
 {
 "196
 [; ;motors.c: 196:             LATAbits.LATA2 = 0;
@@ -1104,14 +1104,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _tm0Error -> -> 3 `i `ui ]
 "201
 [; ;motors.c: 201:             break;
-[e $U 274  ]
+[e $U 275  ]
 "202
 [; ;motors.c: 202:         }
 }
-[e :U 275 ]
+[e :U 276 ]
 "208
 [; ;motors.c: 208:         if(PORTEbits.RE0 || !keepMovingX){
-[e $ ! || != -> . . _PORTEbits 0 0 `i -> 0 `i ! != -> _keepMovingX `i -> 0 `i 276  ]
+[e $ ! || != -> . . _PORTEbits 0 0 `i -> 0 `i ! != -> _keepMovingX `i -> 0 `i 277  ]
 {
 "210
 [; ;motors.c: 210:             keepMovingX = 0;
@@ -1119,8 +1119,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "211
 [; ;motors.c: 211:         }else{
 }
-[e $U 277  ]
-[e :U 276 ]
+[e $U 278  ]
+[e :U 277 ]
 {
 "213
 [; ;motors.c: 213:             LATAbits.LATA2 = 1;
@@ -1128,10 +1128,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "214
 [; ;motors.c: 214:         }
 }
-[e :U 277 ]
+[e :U 278 ]
 "217
 [; ;motors.c: 217:         if(PORTEbits.RE1 || !keepMovingY){
-[e $ ! || != -> . . _PORTEbits 0 1 `i -> 0 `i ! != -> _keepMovingY `i -> 0 `i 278  ]
+[e $ ! || != -> . . _PORTEbits 0 1 `i -> 0 `i ! != -> _keepMovingY `i -> 0 `i 279  ]
 {
 "219
 [; ;motors.c: 219:             keepMovingY = 0;
@@ -1139,8 +1139,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "220
 [; ;motors.c: 220:         }else{
 }
-[e $U 279  ]
-[e :U 278 ]
+[e $U 280  ]
+[e :U 279 ]
 {
 "222
 [; ;motors.c: 222:             LATBbits.LATB4 = 1;
@@ -1148,10 +1148,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "223
 [; ;motors.c: 223:         }
 }
-[e :U 279 ]
+[e :U 280 ]
 "226
 [; ;motors.c: 226:         if(PORTEbits.RE2 || !keepMovingZ){
-[e $ ! || != -> . . _PORTEbits 0 2 `i -> 0 `i ! != -> _keepMovingZ `i -> 0 `i 280  ]
+[e $ ! || != -> . . _PORTEbits 0 2 `i -> 0 `i ! != -> _keepMovingZ `i -> 0 `i 281  ]
 {
 "228
 [; ;motors.c: 228:             keepMovingZ = 0;
@@ -1159,8 +1159,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "229
 [; ;motors.c: 229:         }else{
 }
-[e $U 281  ]
-[e :U 280 ]
+[e $U 282  ]
+[e :U 281 ]
 {
 "231
 [; ;motors.c: 231:             LATCbits.LATC2 = 1;
@@ -1168,14 +1168,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "232
 [; ;motors.c: 232:         }
 }
-[e :U 281 ]
+[e :U 282 ]
 "235
 [; ;motors.c: 235:         while(!stepMade());
-[e $U 282  ]
-[e :U 283 ]
-[e :U 282 ]
-[e $ ! != ( _stepMade ..  -> -> 0 `i `ui 283  ]
+[e $U 283  ]
 [e :U 284 ]
+[e :U 283 ]
+[e $ ! != ( _stepMade ..  -> -> 0 `i `ui 284  ]
+[e :U 285 ]
 "238
 [; ;motors.c: 238:         LATAbits.LATA2 = 0;
 [e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
@@ -1187,19 +1187,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _LATCbits 0 2 -> -> 0 `i `uc ]
 "243
 [; ;motors.c: 243:         while(!stepMade());
-[e $U 285  ]
-[e :U 286 ]
-[e :U 285 ]
-[e $ ! != ( _stepMade ..  -> -> 0 `i `ui 286  ]
+[e $U 286  ]
 [e :U 287 ]
+[e :U 286 ]
+[e $ ! != ( _stepMade ..  -> -> 0 `i `ui 287  ]
+[e :U 288 ]
 "244
 [; ;motors.c: 244:     }
 }
-[e :U 272 ]
+[e :U 273 ]
 "191
 [; ;motors.c: 191:     while(keepMovingX || keepMovingY || keepMovingZ){
-[e $ || || != -> _keepMovingX `i -> 0 `i != -> _keepMovingY `i -> 0 `i != -> _keepMovingZ `i -> 0 `i 273  ]
-[e :U 274 ]
+[e $ || || != -> _keepMovingX `i -> 0 `i != -> _keepMovingY `i -> 0 `i != -> _keepMovingZ `i -> 0 `i 274  ]
+[e :U 275 ]
 "247
 [; ;motors.c: 247:     T0CONbits.TMR0ON = 0;
 [e = . . _T0CONbits 0 5 -> -> 0 `i `uc ]
@@ -1218,10 +1218,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "257
 [; ;motors.c: 257:     return(tm0Error);
 [e ) -> _tm0Error `uc ]
-[e $UE 271  ]
+[e $UE 272  ]
 "258
 [; ;motors.c: 258: }
-[e :UE 271 ]
+[e :UE 272 ]
 }
 "266
 [; ;motors.c: 266: char moveToPoint(unsigned int x1, unsigned int y1, unsigned int x2, unsigned int y2){
@@ -1235,19 +1235,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "269
 [; ;motors.c: 269:     if(x2 > maxX || y2 > maxY){
-[e $ ! || > _x2 _maxX > _y2 _maxY 289  ]
+[e $ ! || > _x2 _maxX > _y2 _maxY 290  ]
 {
 "270
 [; ;motors.c: 270:         return(5);
 [e ) -> -> 5 `i `uc ]
-[e $UE 288  ]
+[e $UE 289  ]
 "271
 [; ;motors.c: 271:     }
 }
-[e :U 289 ]
+[e :U 290 ]
 "274
 [; ;motors.c: 274:     if((x2 - x1) > 0){
-[e $ ! > - _x2 _x1 -> -> 0 `i `ui 290  ]
+[e $ ! > - _x2 _x1 -> -> 0 `i `ui 291  ]
 {
 "275
 [; ;motors.c: 275:         setDirection(1, 0);
@@ -1255,8 +1255,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "276
 [; ;motors.c: 276:     }else{
 }
-[e $U 291  ]
-[e :U 290 ]
+[e $U 292  ]
+[e :U 291 ]
 {
 "277
 [; ;motors.c: 277:         setDirection(0, 0);
@@ -1264,10 +1264,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "278
 [; ;motors.c: 278:     }
 }
-[e :U 291 ]
+[e :U 292 ]
 "280
 [; ;motors.c: 280:     if((y2 - y1) > 0){
-[e $ ! > - _y2 _y1 -> -> 0 `i `ui 292  ]
+[e $ ! > - _y2 _y1 -> -> 0 `i `ui 293  ]
 {
 "281
 [; ;motors.c: 281:         setDirection(1, 1);
@@ -1275,8 +1275,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "282
 [; ;motors.c: 282:     }else{
 }
-[e $U 293  ]
-[e :U 292 ]
+[e $U 294  ]
+[e :U 293 ]
 {
 "283
 [; ;motors.c: 283:         setDirection(0, 1);
@@ -1284,7 +1284,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "284
 [; ;motors.c: 284:     }
 }
-[e :U 293 ]
+[e :U 294 ]
 "286
 [; ;motors.c: 286:     unsigned char keepMovingX = 1;
 [v _keepMovingX `uc ~T0 @X0 1 a ]
@@ -1307,12 +1307,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
 "296
 [; ;motors.c: 296:     while(keepMovingX || keepMovingY){
-[e $U 294  ]
-[e :U 295 ]
+[e $U 295  ]
+[e :U 296 ]
 {
 "299
 [; ;motors.c: 299:         if(tm0Error){
-[e $ ! != _tm0Error -> -> 0 `i `ui 297  ]
+[e $ ! != _tm0Error -> -> 0 `i `ui 298  ]
 {
 "301
 [; ;motors.c: 301:             LATAbits.LATA2 = 0;
@@ -1325,14 +1325,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _tm0Error -> -> 4 `i `ui ]
 "304
 [; ;motors.c: 304:             break;
-[e $U 296  ]
+[e $U 297  ]
 "305
 [; ;motors.c: 305:         }
 }
-[e :U 297 ]
+[e :U 298 ]
 "312
 [; ;motors.c: 312:         if(x1 + stepCounter() == x2){
-[e $ ! == + _x1 ( _stepCounter ..  _x2 298  ]
+[e $ ! == + _x1 ( _stepCounter ..  _x2 299  ]
 {
 "314
 [; ;motors.c: 314:             keepMovingX = 0;
@@ -1340,8 +1340,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "315
 [; ;motors.c: 315:         }else{
 }
-[e $U 299  ]
-[e :U 298 ]
+[e $U 300  ]
+[e :U 299 ]
 {
 "317
 [; ;motors.c: 317:             LATAbits.LATA2 = 1;
@@ -1349,10 +1349,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "318
 [; ;motors.c: 318:         }
 }
-[e :U 299 ]
+[e :U 300 ]
 "321
 [; ;motors.c: 321:         if(y1 + stepCounter() == y2){
-[e $ ! == + _y1 ( _stepCounter ..  _y2 300  ]
+[e $ ! == + _y1 ( _stepCounter ..  _y2 301  ]
 {
 "323
 [; ;motors.c: 323:             keepMovingY = 0;
@@ -1360,8 +1360,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "324
 [; ;motors.c: 324:         }else{
 }
-[e $U 301  ]
-[e :U 300 ]
+[e $U 302  ]
+[e :U 301 ]
 {
 "326
 [; ;motors.c: 326:             LATBbits.LATB4 = 1;
@@ -1369,14 +1369,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "327
 [; ;motors.c: 327:         }
 }
-[e :U 301 ]
+[e :U 302 ]
 "330
 [; ;motors.c: 330:         while(!stepMade());
-[e $U 302  ]
-[e :U 303 ]
-[e :U 302 ]
-[e $ ! != ( _stepMade ..  -> -> 0 `i `ui 303  ]
+[e $U 303  ]
 [e :U 304 ]
+[e :U 303 ]
+[e $ ! != ( _stepMade ..  -> -> 0 `i `ui 304  ]
+[e :U 305 ]
 "333
 [; ;motors.c: 333:         LATAbits.LATA2 = 0;
 [e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
@@ -1385,19 +1385,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _LATBbits 0 4 -> -> 0 `i `uc ]
 "337
 [; ;motors.c: 337:         while(!stepMade());
-[e $U 305  ]
-[e :U 306 ]
-[e :U 305 ]
-[e $ ! != ( _stepMade ..  -> -> 0 `i `ui 306  ]
+[e $U 306  ]
 [e :U 307 ]
+[e :U 306 ]
+[e $ ! != ( _stepMade ..  -> -> 0 `i `ui 307  ]
+[e :U 308 ]
 "338
 [; ;motors.c: 338:     }
 }
-[e :U 294 ]
+[e :U 295 ]
 "296
 [; ;motors.c: 296:     while(keepMovingX || keepMovingY){
-[e $ || != -> _keepMovingX `i -> 0 `i != -> _keepMovingY `i -> 0 `i 295  ]
-[e :U 296 ]
+[e $ || != -> _keepMovingX `i -> 0 `i != -> _keepMovingY `i -> 0 `i 296  ]
+[e :U 297 ]
 "341
 [; ;motors.c: 341:     T0CONbits.TMR0ON = 0;
 [e = . . _T0CONbits 0 5 -> -> 0 `i `uc ]
@@ -1416,10 +1416,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "350
 [; ;motors.c: 350:     return(tm0Error);
 [e ) -> _tm0Error `uc ]
-[e $UE 288  ]
+[e $UE 289  ]
 "351
 [; ;motors.c: 351: }
-[e :UE 288 ]
+[e :UE 289 ]
 }
 "359
 [; ;motors.c: 359: char touchObject(){
@@ -1447,12 +1447,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _startADC ..  ]
 "374
 [; ;motors.c: 374:     while(!returnTouch() || PORTDbits.RD7){
-[e $U 309  ]
-[e :U 310 ]
+[e $U 310  ]
+[e :U 311 ]
 {
 "377
 [; ;motors.c: 377:         if(tm0Error){
-[e $ ! != _tm0Error -> -> 0 `i `ui 312  ]
+[e $ ! != _tm0Error -> -> 0 `i `ui 313  ]
 {
 "379
 [; ;motors.c: 379:             LATCbits.LATC2 = 0;
@@ -1462,39 +1462,39 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _tm0Error -> -> 6 `i `ui ]
 "381
 [; ;motors.c: 381:             break;
-[e $U 311  ]
+[e $U 312  ]
 "382
 [; ;motors.c: 382:         }
 }
-[e :U 312 ]
+[e :U 313 ]
 "385
 [; ;motors.c: 385:         LATCbits.LATC2 = 1;
 [e = . . _LATCbits 0 2 -> -> 1 `i `uc ]
 "388
 [; ;motors.c: 388:         while(!stepMade());
-[e $U 313  ]
-[e :U 314 ]
-[e :U 313 ]
-[e $ ! != ( _stepMade ..  -> -> 0 `i `ui 314  ]
+[e $U 314  ]
 [e :U 315 ]
+[e :U 314 ]
+[e $ ! != ( _stepMade ..  -> -> 0 `i `ui 315  ]
+[e :U 316 ]
 "391
 [; ;motors.c: 391:         LATCbits.LATC2 = 0;
 [e = . . _LATCbits 0 2 -> -> 0 `i `uc ]
 "394
 [; ;motors.c: 394:         while(!stepMade());
-[e $U 316  ]
-[e :U 317 ]
-[e :U 316 ]
-[e $ ! != ( _stepMade ..  -> -> 0 `i `ui 317  ]
+[e $U 317  ]
 [e :U 318 ]
+[e :U 317 ]
+[e $ ! != ( _stepMade ..  -> -> 0 `i `ui 318  ]
+[e :U 319 ]
 "395
 [; ;motors.c: 395:     }
 }
-[e :U 309 ]
+[e :U 310 ]
 "374
 [; ;motors.c: 374:     while(!returnTouch() || PORTDbits.RD7){
-[e $ || ! != ( _returnTouch ..  -> -> 0 `i `ui != -> . . _PORTDbits 0 7 `i -> 0 `i 310  ]
-[e :U 311 ]
+[e $ || ! != ( _returnTouch ..  -> -> 0 `i `ui != -> . . _PORTDbits 0 7 `i -> 0 `i 311  ]
+[e :U 312 ]
 "398
 [; ;motors.c: 398:     stopADC();
 [e ( _stopADC ..  ]
@@ -1518,7 +1518,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _resetStep ..  ]
 "414
 [; ;motors.c: 414:     if(PORTDbits.RD7){
-[e $ ! != -> . . _PORTDbits 0 7 `i -> 0 `i 319  ]
+[e $ ! != -> . . _PORTDbits 0 7 `i -> 0 `i 320  ]
 {
 "415
 [; ;motors.c: 415:         tm0Error = 2;
@@ -1526,14 +1526,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "416
 [; ;motors.c: 416:     }
 }
-[e :U 319 ]
+[e :U 320 ]
 "418
 [; ;motors.c: 418:     return(tm0Error);
 [e ) -> _tm0Error `uc ]
-[e $UE 308  ]
+[e $UE 309  ]
 "419
 [; ;motors.c: 419: }
-[e :UE 308 ]
+[e :UE 309 ]
 }
 "430
 [; ;motors.c: 430: char touchTherm(){
@@ -1561,12 +1561,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _startADC ..  ]
 "445
 [; ;motors.c: 445:     while(!returnTherm() || PORTDbits.RD7){
-[e $U 321  ]
-[e :U 322 ]
+[e $U 322  ]
+[e :U 323 ]
 {
 "448
 [; ;motors.c: 448:         if(tm0Error){
-[e $ ! != _tm0Error -> -> 0 `i `ui 324  ]
+[e $ ! != _tm0Error -> -> 0 `i `ui 325  ]
 {
 "450
 [; ;motors.c: 450:             LATCbits.LATC2 = 0;
@@ -1576,39 +1576,39 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _tm0Error -> -> 6 `i `ui ]
 "452
 [; ;motors.c: 452:             break;
-[e $U 323  ]
+[e $U 324  ]
 "453
 [; ;motors.c: 453:         }
 }
-[e :U 324 ]
+[e :U 325 ]
 "456
 [; ;motors.c: 456:         LATCbits.LATC2 = 1;
 [e = . . _LATCbits 0 2 -> -> 1 `i `uc ]
 "459
 [; ;motors.c: 459:         while(!stepMade());
-[e $U 325  ]
-[e :U 326 ]
-[e :U 325 ]
-[e $ ! != ( _stepMade ..  -> -> 0 `i `ui 326  ]
+[e $U 326  ]
 [e :U 327 ]
+[e :U 326 ]
+[e $ ! != ( _stepMade ..  -> -> 0 `i `ui 327  ]
+[e :U 328 ]
 "462
 [; ;motors.c: 462:         LATCbits.LATC2 = 0;
 [e = . . _LATCbits 0 2 -> -> 0 `i `uc ]
 "465
 [; ;motors.c: 465:         while(!stepMade());
-[e $U 328  ]
-[e :U 329 ]
-[e :U 328 ]
-[e $ ! != ( _stepMade ..  -> -> 0 `i `ui 329  ]
+[e $U 329  ]
 [e :U 330 ]
+[e :U 329 ]
+[e $ ! != ( _stepMade ..  -> -> 0 `i `ui 330  ]
+[e :U 331 ]
 "466
 [; ;motors.c: 466:     }
 }
-[e :U 321 ]
+[e :U 322 ]
 "445
 [; ;motors.c: 445:     while(!returnTherm() || PORTDbits.RD7){
-[e $ || ! != ( _returnTherm ..  -> -> 0 `i `ui != -> . . _PORTDbits 0 7 `i -> 0 `i 322  ]
-[e :U 323 ]
+[e $ || ! != ( _returnTherm ..  -> -> 0 `i `ui != -> . . _PORTDbits 0 7 `i -> 0 `i 323  ]
+[e :U 324 ]
 "469
 [; ;motors.c: 469:     stopADC();
 [e ( _stopADC ..  ]
@@ -1632,7 +1632,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _resetStep ..  ]
 "485
 [; ;motors.c: 485:     if(PORTDbits.RD7){
-[e $ ! != -> . . _PORTDbits 0 7 `i -> 0 `i 331  ]
+[e $ ! != -> . . _PORTDbits 0 7 `i -> 0 `i 332  ]
 {
 "486
 [; ;motors.c: 486:         tm0Error = 2;
@@ -1640,14 +1640,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "487
 [; ;motors.c: 487:     }
 }
-[e :U 331 ]
+[e :U 332 ]
 "489
 [; ;motors.c: 489:     return(tm0Error);
 [e ) -> _tm0Error `uc ]
-[e $UE 320  ]
+[e $UE 321  ]
 "490
 [; ;motors.c: 490: }
-[e :UE 320 ]
+[e :UE 321 ]
 }
 "496
 [; ;motors.c: 496: char liftArm(){
@@ -1672,12 +1672,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
 "509
 [; ;motors.c: 509:     while(!PORTEbits.RE2){
-[e $U 333  ]
-[e :U 334 ]
+[e $U 334  ]
+[e :U 335 ]
 {
 "512
 [; ;motors.c: 512:         if(tm0Error){
-[e $ ! != _tm0Error -> -> 0 `i `ui 336  ]
+[e $ ! != _tm0Error -> -> 0 `i `ui 337  ]
 {
 "514
 [; ;motors.c: 514:             LATCbits.LATC2 = 0;
@@ -1687,39 +1687,39 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _tm0Error -> -> 6 `i `ui ]
 "516
 [; ;motors.c: 516:             break;
-[e $U 335  ]
+[e $U 336  ]
 "517
 [; ;motors.c: 517:         }
 }
-[e :U 336 ]
+[e :U 337 ]
 "521
 [; ;motors.c: 521:         LATCbits.LATC2 = 1;
 [e = . . _LATCbits 0 2 -> -> 1 `i `uc ]
 "524
 [; ;motors.c: 524:         while(!stepMade());
-[e $U 337  ]
-[e :U 338 ]
-[e :U 337 ]
-[e $ ! != ( _stepMade ..  -> -> 0 `i `ui 338  ]
+[e $U 338  ]
 [e :U 339 ]
+[e :U 338 ]
+[e $ ! != ( _stepMade ..  -> -> 0 `i `ui 339  ]
+[e :U 340 ]
 "527
 [; ;motors.c: 527:         LATCbits.LATC2 = 0;
 [e = . . _LATCbits 0 2 -> -> 0 `i `uc ]
 "530
 [; ;motors.c: 530:         while(!stepMade());
-[e $U 340  ]
-[e :U 341 ]
-[e :U 340 ]
-[e $ ! != ( _stepMade ..  -> -> 0 `i `ui 341  ]
+[e $U 341  ]
 [e :U 342 ]
+[e :U 341 ]
+[e $ ! != ( _stepMade ..  -> -> 0 `i `ui 342  ]
+[e :U 343 ]
 "531
 [; ;motors.c: 531:     }
 }
-[e :U 333 ]
+[e :U 334 ]
 "509
 [; ;motors.c: 509:     while(!PORTEbits.RE2){
-[e $ ! != -> . . _PORTEbits 0 2 `i -> 0 `i 334  ]
-[e :U 335 ]
+[e $ ! != -> . . _PORTEbits 0 2 `i -> 0 `i 335  ]
+[e :U 336 ]
 "534
 [; ;motors.c: 534:     T0CONbits.TMR0ON = 0;
 [e = . . _T0CONbits 0 5 -> -> 0 `i `uc ]
@@ -1738,10 +1738,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "543
 [; ;motors.c: 543:     return(tm0Error);
 [e ) -> _tm0Error `uc ]
-[e $UE 332  ]
+[e $UE 333  ]
 "544
 [; ;motors.c: 544: }
-[e :UE 332 ]
+[e :UE 333 ]
 }
 "550
 [; ;motors.c: 550: void rotateObj(unsigned char rotAngle){
@@ -1752,14 +1752,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "551
 [; ;motors.c: 551:     static const float stepAngle = 0.08789;
-[v F2218 `Cf ~T0 @X0 1 s stepAngle ]
-[i F2218
+[v F2230 `Cf ~T0 @X0 1 s stepAngle ]
+[i F2230
 -> .0.08789 `f
 ]
 "552
 [; ;motors.c: 552:     static char rotSequence[] = {0b1001, 0b0011, 0b0110, 0b1100};
-[v F2219 `uc ~T0 @X0 -> 4 `i s rotSequence ]
-[i F2219
+[v F2231 `uc ~T0 @X0 -> 4 `i s rotSequence ]
+[i F2231
 :U ..
 -> -> 9 `i `uc
 -> -> 3 `i `uc
@@ -1773,31 +1773,31 @@ Version 4.0 HI-TECH Software Intermediate Code
 "554
 [; ;motors.c: 554:     int totStep = rotAngle/stepAngle;
 [v _totStep `i ~T0 @X0 1 a ]
-[e = _totStep -> / -> -> _rotAngle `i `f F2218 `i ]
+[e = _totStep -> / -> -> _rotAngle `i `f F2230 `i ]
 "557
 [; ;motors.c: 557:     for(i = 0; i < totStep; i++){
 {
 [e = _i -> -> 0 `i `uc ]
-[e $U 347  ]
-[e :U 344 ]
+[e $U 348  ]
+[e :U 345 ]
 {
 "559
 [; ;motors.c: 559:         LATD &= 0xC3;
 [e =& _LATD -> -> 195 `i `Vuc ]
 "561
 [; ;motors.c: 561:         LATD |= rotSequence[i%4] << 2;
-[e =| _LATD -> << -> *U + &U F2219 * -> -> % -> _i `i -> 4 `i `ui `ux -> -> # *U &U F2219 `ui `ux `i -> 2 `i `Vuc ]
+[e =| _LATD -> << -> *U + &U F2231 * -> -> % -> _i `i -> 4 `i `ui `ux -> -> # *U &U F2231 `ui `ux `i -> 2 `i `Vuc ]
 "562
 [; ;motors.c: 562:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e :U 347 ]
-[e $ < -> _i `i _totStep 344  ]
-[e :U 345 ]
+[e :U 348 ]
+[e $ < -> _i `i _totStep 345  ]
+[e :U 346 ]
 }
 "563
 [; ;motors.c: 563: }
-[e :UE 343 ]
+[e :UE 344 ]
 }
 "568
 [; ;motors.c: 568: void pickObject(){
@@ -1810,7 +1810,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _LATDbits 0 1 -> -> 1 `i `uc ]
 "570
 [; ;motors.c: 570: }
-[e :UE 348 ]
+[e :UE 349 ]
 }
 "575
 [; ;motors.c: 575: void releaseObj(){
@@ -1823,5 +1823,5 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _LATDbits 0 1 -> -> 0 `i `uc ]
 "577
 [; ;motors.c: 577: }
-[e :UE 349 ]
+[e :UE 350 ]
 }

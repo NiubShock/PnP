@@ -22,6 +22,8 @@ t_sequence* getData(void);
 void uartTx(unsigned char *ptr, unsigned char length);
 void printError(unsigned char errCode);
 
+unsigned char newSequence(void);
+void resetNewSequence(void);
 unsigned char readSeq(void);
 unsigned char fatalError(void);
 void reduceSeq(void);

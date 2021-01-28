@@ -80,8 +80,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3221 D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h
 [; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 3221: extern volatile unsigned char RCREG1 __attribute__((address(0xFAE)));
 [v _RCREG1 `Vuc ~T0 @X0 0 e@4014 ]
-"9 ./usart.h
-[; ;./usart.h: 9: void storeData(unsigned char data);
+"20 ./usart.h
+[; ;./usart.h: 20: void storeData(unsigned char data);
 [v _storeData `(v ~T0 @X0 0 ef1`uc ]
 "54 D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h
 [; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 54: __asm("PORTA equ 0F80h");
@@ -547,98 +547,98 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "18
 [; ;interrupt.c: 18:     static unsigned int single_cycle = 0;
-[v F2186 `ui ~T0 @X0 1 s single_cycle ]
-[i F2186
+[v F2198 `ui ~T0 @X0 1 s single_cycle ]
+[i F2198
 -> -> 0 `i `ui
 ]
 "19
 [; ;interrupt.c: 19:     static unsigned char tm0Count = 0;
-[v F2187 `uc ~T0 @X0 1 s tm0Count ]
-[i F2187
+[v F2199 `uc ~T0 @X0 1 s tm0Count ]
+[i F2199
 -> -> 0 `i `uc
 ]
 "20
 [; ;interrupt.c: 20:     static unsigned char completeStep = 0;
-[v F2188 `uc ~T0 @X0 1 s completeStep ]
-[i F2188
+[v F2200 `uc ~T0 @X0 1 s completeStep ]
+[i F2200
 -> -> 0 `i `uc
 ]
 "23
 [; ;interrupt.c: 23:     if(INTCONbits.T0IF){
-[e $ ! != -> . . _INTCONbits 1 2 `i -> 0 `i 240  ]
+[e $ ! != -> . . _INTCONbits 1 2 `i -> 0 `i 241  ]
 {
 "24
 [; ;interrupt.c: 24:         INTCONbits.T0IF = 0;
 [e = . . _INTCONbits 1 2 -> -> 0 `i `uc ]
 "27
 [; ;interrupt.c: 27:         tm0Count++;
-[e ++ F2187 -> -> 1 `i `uc ]
+[e ++ F2199 -> -> 1 `i `uc ]
 "29
 [; ;interrupt.c: 29:         if(tm0Count >= whatsTM0Limit()){
-[e $ ! >= -> F2187 `i -> ( _whatsTM0Limit ..  `i 241  ]
+[e $ ! >= -> F2199 `i -> ( _whatsTM0Limit ..  `i 242  ]
 {
 "30
 [; ;interrupt.c: 30:             T0CONbits.TMR0ON = 0;
 [e = . . _T0CONbits 0 5 -> -> 0 `i `uc ]
 "31
 [; ;interrupt.c: 31:             tm0Count = 0;
-[e = F2187 -> -> 0 `i `uc ]
+[e = F2199 -> -> 0 `i `uc ]
 "32
 [; ;interrupt.c: 32:             writeTM0();
 [e ( _writeTM0 ..  ]
 "33
 [; ;interrupt.c: 33:         }
 }
-[e :U 241 ]
+[e :U 242 ]
 "34
 [; ;interrupt.c: 34:     }
 }
-[e :U 240 ]
+[e :U 241 ]
 "37
 [; ;interrupt.c: 37:     if(PIR1bits.TMR2IF){
-[e $ ! != -> . . _PIR1bits 0 1 `i -> 0 `i 242  ]
+[e $ ! != -> . . _PIR1bits 0 1 `i -> 0 `i 243  ]
 {
 "38
 [; ;interrupt.c: 38:         PIR1bits.TMR2IF = 0;
 [e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
 "39
 [; ;interrupt.c: 39:         single_cycle++;
-[e ++ F2186 -> -> 1 `i `ui ]
+[e ++ F2198 -> -> 1 `i `ui ]
 "42
 [; ;interrupt.c: 42:         if(single_cycle > retPeriod()){
-[e $ ! > F2186 ( _retPeriod ..  243  ]
+[e $ ! > F2198 ( _retPeriod ..  244  ]
 {
 "43
 [; ;interrupt.c: 43:             completeStep++;
-[e ++ F2188 -> -> 1 `i `uc ]
+[e ++ F2200 -> -> 1 `i `uc ]
 "46
 [; ;interrupt.c: 46:             if(completeStep != 0 && !(completeStep % 2)){
-[e $ ! && != -> F2188 `i -> 0 `i ! != % -> F2188 `i -> 2 `i -> 0 `i 244  ]
+[e $ ! && != -> F2200 `i -> 0 `i ! != % -> F2200 `i -> 2 `i -> 0 `i 245  ]
 {
 "48
 [; ;interrupt.c: 48:                 completeStep = 0;
-[e = F2188 -> -> 0 `i `uc ]
+[e = F2200 -> -> 0 `i `uc ]
 "51
 [; ;interrupt.c: 51:                 increaseStep();
 [e ( _increaseStep ..  ]
 "52
 [; ;interrupt.c: 52:             }
 }
-[e :U 244 ]
+[e :U 245 ]
 "56
 [; ;interrupt.c: 56:             toggleStep();
 [e ( _toggleStep ..  ]
 "57
 [; ;interrupt.c: 57:         }
 }
-[e :U 243 ]
+[e :U 244 ]
 "58
 [; ;interrupt.c: 58:     }
 }
-[e :U 242 ]
+[e :U 243 ]
 "61
 [; ;interrupt.c: 61:     if(PIR1bits.ADIF){
-[e $ ! != -> . . _PIR1bits 0 6 `i -> 0 `i 245  ]
+[e $ ! != -> . . _PIR1bits 0 6 `i -> 0 `i 246  ]
 {
 "62
 [; ;interrupt.c: 62:         PIR1bits.ADIF = 0;
@@ -651,7 +651,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e =| _ADC_res -> << -> _ADRESH `i -> 8 `i `ui ]
 "69
 [; ;interrupt.c: 69:         if(ADC_res > therm_pressure){
-[e $ ! > _ADC_res _therm_pressure 246  ]
+[e $ ! > _ADC_res _therm_pressure 247  ]
 {
 "71
 [; ;interrupt.c: 71:             setTouchRel();
@@ -662,9 +662,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "73
 [; ;interrupt.c: 73:         }else if(ADC_res > touch_pressure){
 }
-[e $U 247  ]
-[e :U 246 ]
-[e $ ! > _ADC_res _touch_pressure 248  ]
+[e $U 248  ]
+[e :U 247 ]
+[e $ ! > _ADC_res _touch_pressure 249  ]
 {
 "75
 [; ;interrupt.c: 75:             setTouchRel();
@@ -672,15 +672,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 "76
 [; ;interrupt.c: 76:         }
 }
+[e :U 249 ]
 [e :U 248 ]
-[e :U 247 ]
 "77
 [; ;interrupt.c: 77:     }
 }
-[e :U 245 ]
+[e :U 246 ]
 "80
 [; ;interrupt.c: 80:     if(PIR1bits.RC1IF){
-[e $ ! != -> . . _PIR1bits 1 2 `i -> 0 `i 249  ]
+[e $ ! != -> . . _PIR1bits 1 2 `i -> 0 `i 250  ]
 {
 "81
 [; ;interrupt.c: 81:         PIR1bits.RC1IF = 0;
@@ -695,8 +695,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "87
 [; ;interrupt.c: 87:     }
 }
-[e :U 249 ]
+[e :U 250 ]
 "88
 [; ;interrupt.c: 88: }
-[e :UE 239 ]
+[e :UE 240 ]
 }

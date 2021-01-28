@@ -18,7 +18,6 @@ static unsigned char errString_Bound[] = "Error, point outside boundaries";
 static unsigned char errString_PointZ[] = "Error, time exceeded to reach the end of the Z Axis";
 static unsigned char errString_Fatal[] = "Fatal Error, please reset the device!";
 static unsigned char errString_Command[] = "Command not recognized";
-static const unsigned char mexLength = 5;
 static unsigned char dataCounter = 0;       //cunter of complete sequence of data
 static unsigned char _fatalError = 0;
 static unsigned char _newSequence = 0;
@@ -110,7 +109,7 @@ unsigned char newSequence(){
  * Description: Used to reset the newSeq. variable. Automatically set if the
  *              command is obtained
  */
-unsigned char resetNewSequence(){
+void resetNewSequence(){
     _newSequence = 0;
 }
 
@@ -132,21 +131,38 @@ void shiftData(){
 void storeData(unsigned char data){
     
     static unsigned char counter = 0;       //counter for each single sequence
-    static unsigned char receivedMex[5];
-    const unsigned char errSequence[] = {0xFF, 0xFF, 0xFF, 0xFF};
+    static unsigned char mexLength = 5;
+    static unsigned char command;
+    static unsigned char receivedMex[9];
     
     
     //save the data inside the array
-    receivedMex[counter] = data;
+    receivedMex[counter] = data;    
     //increase the counter so the next data is gonna be next in the array
     counter++;
+    
+    //correct the length of the message
+    switch(receivedMex[0]){
+        case PICK_AND_PLACE:
+            mexLength = 5;
+            break;
+        case NEW_PICK:
+            mexLength = 9;
+            break;
+        case FATAL_CMD:
+            mexLength = 1;
+            break;
+        default:
+            break;
+
+    }
     
     //all the message has been received
     if(counter >= mexLength){
         counter = 0;                    //reset the counter
         
         //TODO: [ ] Verify this section
-        //check what is the command
+        //check what is the command and save the data
         switch(receivedMex[0]){
             case PICK_AND_PLACE:
                 dataSequence[dataCounter].feederLine = receivedMex[1];

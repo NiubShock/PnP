@@ -3929,12 +3929,25 @@ typedef struct{
     unsigned char rotation;
 }t_sequence;
 
+typedef struct{
+    unsigned char L;
+    unsigned char W;
+    unsigned char init_posX;
+    unsigned char init_posY;
+    unsigned char init_rot;
+    unsigned char end_posX;
+    unsigned char end_posY;
+    unsigned char end_rot;
+}t_newSequence;
+
 void usartInit(void);
 void storeData(unsigned char data);
 t_sequence* getData(void);
 void uartTx(unsigned char *ptr, unsigned char length);
 void printError(unsigned char errCode);
 
+unsigned char newSequence(void);
+void resetNewSequence(void);
 unsigned char readSeq(void);
 unsigned char fatalError(void);
 void reduceSeq(void);
@@ -4010,14 +4023,15 @@ static unsigned char errString_Bound[] = "Error, point outside boundaries";
 static unsigned char errString_PointZ[] = "Error, time exceeded to reach the end of the Z Axis";
 static unsigned char errString_Fatal[] = "Fatal Error, please reset the device!";
 static unsigned char errString_Command[] = "Command not recognized";
-static const unsigned char mexLength = 5;
 static unsigned char dataCounter = 0;
 static unsigned char _fatalError = 0;
+static unsigned char _newSequence = 0;
 
 
 
 
 static t_sequence dataSequence[5];
+static t_newSequence newSequenceData;
 
 
 
@@ -4092,6 +4106,18 @@ unsigned char fatalError(){
     return _fatalError;
 }
 
+unsigned char newSequence(){
+    return _newSequence;
+}
+
+
+
+
+
+void resetNewSequence(){
+    _newSequence = 0;
+}
+
 
 
 
@@ -4110,14 +4136,31 @@ void shiftData(){
 void storeData(unsigned char data){
 
     static unsigned char counter = 0;
-    static unsigned char receivedMex[5];
-    const unsigned char errSequence[] = {0xFF, 0xFF, 0xFF, 0xFF};
+    static unsigned char mexLength = 5;
+    static unsigned char command;
+    static unsigned char receivedMex[9];
 
 
 
     receivedMex[counter] = data;
 
     counter++;
+
+
+    switch(receivedMex[0]){
+        case 0:
+            mexLength = 5;
+            break;
+        case 1:
+            mexLength = 9;
+            break;
+        case 2:
+            mexLength = 1;
+            break;
+        default:
+            break;
+
+    }
 
 
     if(counter >= mexLength){
@@ -4127,16 +4170,27 @@ void storeData(unsigned char data){
 
         switch(receivedMex[0]){
             case 0:
-                dataSequence[dataCounter].feederLine = receivedMex[0];
-                dataSequence[dataCounter].posX = receivedMex[0];
-                dataSequence[dataCounter].posY = receivedMex[0];
-                dataSequence[dataCounter].rotation = receivedMex[0];
+                dataSequence[dataCounter].feederLine = receivedMex[1];
+                dataSequence[dataCounter].posX = receivedMex[2];
+                dataSequence[dataCounter].posY = receivedMex[3];
+                dataSequence[dataCounter].rotation = receivedMex[4];
 
                 dataCounter++;
                 break;
             case 1:
 
 
+
+                newSequenceData.L = receivedMex[1];
+                newSequenceData.W = receivedMex[2];
+                newSequenceData.init_posX = receivedMex[3];
+                newSequenceData.init_posY = receivedMex[4];
+                newSequenceData.init_rot = receivedMex[5];
+                newSequenceData.end_posX = receivedMex[6];
+                newSequenceData.end_posY = receivedMex[7];
+                newSequenceData.end_rot = receivedMex[8];
+
+                _newSequence = 1;
                 break;
             case 2:
 

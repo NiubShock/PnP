@@ -47,9 +47,10 @@ void main(void) {
             
             printError(FATAL_ERROR);
             while(1);
-        }
-        //check if there are any data available
-        if(readSeq()){
+        }else if(newSequence()){
+            
+        }else if(readSeq()){
+            //check if there are any data available
             
             errCode = executeData();        //call the function that will execute the data
             printError(errCode);            //print the possible error
