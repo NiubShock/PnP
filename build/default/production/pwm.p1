@@ -494,70 +494,70 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;pwm.c: 53: }
 [e :UE 240 ]
 }
-"59
-[; ;pwm.c: 59: unsigned int stepCounter(void){
+"58
+[; ;pwm.c: 58: unsigned int stepCounter(void){
 [v _stepCounter `(ui ~T0 @X0 1 ef ]
 {
 [e :U _stepCounter ]
 [f ]
-"60
-[; ;pwm.c: 60:     return pwmStep;
+"59
+[; ;pwm.c: 59:     return pwmStep;
 [e ) -> _pwmStep `ui ]
 [e $UE 241  ]
-"61
-[; ;pwm.c: 61: }
+"60
+[; ;pwm.c: 60: }
 [e :UE 241 ]
 }
-"66
-[; ;pwm.c: 66: void resetStep(void){
+"65
+[; ;pwm.c: 65: void resetStep(void){
 [v _resetStep `(v ~T0 @X0 1 ef ]
 {
 [e :U _resetStep ]
 [f ]
-"67
-[; ;pwm.c: 67:     pwmStep = 0;
+"66
+[; ;pwm.c: 66:     pwmStep = 0;
 [e = _pwmStep -> -> 0 `i `uc ]
-"68
-[; ;pwm.c: 68: }
+"67
+[; ;pwm.c: 67: }
 [e :UE 242 ]
 }
-"73
-[; ;pwm.c: 73: void increaseStep(void){
+"72
+[; ;pwm.c: 72: void increaseStep(void){
 [v _increaseStep `(v ~T0 @X0 1 ef ]
 {
 [e :U _increaseStep ]
 [f ]
-"74
-[; ;pwm.c: 74:     pwmStep++;
+"73
+[; ;pwm.c: 73:     pwmStep++;
 [e ++ _pwmStep -> -> 1 `i `Vuc ]
-"75
-[; ;pwm.c: 75: }
+"74
+[; ;pwm.c: 74: }
 [e :UE 243 ]
 }
-"81
-[; ;pwm.c: 81: void toggleStep(void){
+"80
+[; ;pwm.c: 80: void toggleStep(void){
 [v _toggleStep `(v ~T0 @X0 1 ef ]
 {
 [e :U _toggleStep ]
 [f ]
-"82
-[; ;pwm.c: 82:     stepToggle = 1;
+"81
+[; ;pwm.c: 81:     stepToggle = 1;
 [e = _stepToggle -> -> 1 `i `uc ]
-"83
-[; ;pwm.c: 83: }
+"82
+[; ;pwm.c: 82: }
 [e :UE 244 ]
 }
-"89
-[; ;pwm.c: 89: unsigned int retPeriod(void){
+"88
+[; ;pwm.c: 88: unsigned int retPeriod(void){
 [v _retPeriod `(ui ~T0 @X0 1 ef ]
 {
 [e :U _retPeriod ]
 [f ]
-"90
-[; ;pwm.c: 90:     return pwmPeriod;
+"89
+[; ;pwm.c: 89:     return pwmPeriod;
 [e ) _pwmPeriod ]
 [e $UE 245  ]
-"91
-[; ;pwm.c: 91: }
+"90
+[; ;pwm.c: 90: }
 [e :UE 245 ]
 }

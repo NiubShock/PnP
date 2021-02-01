@@ -14,7 +14,7 @@
 
 
 
-
+# 1 "./main.h" 1
 # 1 "D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 1 3
 # 18 "D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -3812,9 +3812,8 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 33 "D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 2 3
-# 9 "motors.c" 2
+# 1 "./main.h" 2
 
-# 1 "./main.h" 1
 # 1 "./adc.h" 1
 # 37 "./adc.h"
 void initADC(void);
@@ -3827,7 +3826,7 @@ void resetTherm(void);
 
 void setThermRel(void);
 void setTouchRel(void);
-# 1 "./main.h" 2
+# 2 "./main.h" 2
 
 # 1 "./motors.h" 1
 # 30 "./motors.h"
@@ -3853,7 +3852,7 @@ char liftArm(void);
 void rotateObj(unsigned char rotAngle);
 void pickObject(void);
 void releaseObj(void);
-# 2 "./main.h" 2
+# 3 "./main.h" 2
 
 # 1 "./conf_bits.h" 1
 # 40 "./conf_bits.h"
@@ -3905,7 +3904,7 @@ void releaseObj(void);
 
 
 #pragma config EBTRB = OFF
-# 3 "./main.h" 2
+# 4 "./main.h" 2
 
 # 1 "./pwm.h" 1
 # 37 "./pwm.h"
@@ -3919,7 +3918,7 @@ unsigned int stepCounter(void);
 void increaseStep(void);
 void toggleStep(void);
 unsigned int retPeriod(void);
-# 4 "./main.h" 2
+# 5 "./main.h" 2
 
 # 1 "./usart.h" 1
 typedef struct{
@@ -3953,10 +3952,10 @@ unsigned char readSeq(void);
 unsigned char fatalError(void);
 void reduceSeq(void);
 void shiftData(void);
-# 5 "./main.h" 2
-# 31 "./main.h"
+# 6 "./main.h" 2
+# 33 "./main.h"
 char executeData(void);
-# 10 "motors.c" 2
+# 8 "motors.c" 2
 
 
 static unsigned int tm0Error = 0;
@@ -4215,6 +4214,8 @@ char resetPosition(){
 
 char moveToPoint(unsigned int x1, unsigned int y1, unsigned int x2, unsigned int y2){
 
+    unsigned char MOT1Direction, MOT2Direction;
+
 
     if(x2 > maxX || y2 > maxY){
         return(5);
@@ -4223,14 +4224,18 @@ char moveToPoint(unsigned int x1, unsigned int y1, unsigned int x2, unsigned int
 
     if((x2 - x1) > 0){
         setDirection(1, 0);
+        MOT1Direction = 1;
     }else{
         setDirection(0, 0);
+        MOT1Direction = 0;
     }
 
     if((y2 - y1) > 0){
         setDirection(1, 1);
+        MOT2Direction = 1;
     }else{
         setDirection(0, 1);
+        MOT2Direction = 0;
     }
 
     unsigned char keepMovingX = 1;
@@ -4259,21 +4264,42 @@ char moveToPoint(unsigned int x1, unsigned int y1, unsigned int x2, unsigned int
 
 
 
-        if(x1 + stepCounter() == x2){
+        if(MOT1Direction == 1){
+            if(x1 + stepCounter() == x2){
 
-            keepMovingX = 0;
-        }else{
+                keepMovingX = 0;
+            }else{
 
-            LATAbits.LATA2 = 1;
+                LATAbits.LATA2 = 1;
+            }
+        }else if(MOT1Direction == 0){
+            if(x1 - stepCounter() == x2){
+
+                keepMovingX = 0;
+            }else{
+
+                LATAbits.LATA2 = 1;
+            }
         }
 
+        if(MOT2Direction == 1){
 
-        if(y1 + stepCounter() == y2){
+            if(y1 + stepCounter() == y2){
 
-            keepMovingY = 0;
-        }else{
+                keepMovingY = 0;
+            }else{
 
-            LATBbits.LATB4 = 1;
+                LATBbits.LATB4 = 1;
+            }
+        }else if(MOT2Direction == 0){
+
+            if(y1 + stepCounter() == y2){
+
+                keepMovingY = 0;
+            }else{
+
+                LATBbits.LATB4 = 1;
+            }
         }
 
 
@@ -4367,7 +4393,7 @@ char touchObject(){
 
     return(tm0Error);
 }
-# 430 "motors.c"
+# 455 "motors.c"
 char touchTherm(){
 
 
@@ -4491,7 +4517,7 @@ char liftArm(){
 void rotateObj(unsigned char rotAngle){
     static const float stepAngle = 0.08789;
     static char rotSequence[] = {0b1001, 0b0011, 0b0110, 0b1100};
-    unsigned char i;
+    unsigned int i;
     int totStep = rotAngle/stepAngle;
 
 
@@ -4500,6 +4526,10 @@ void rotateObj(unsigned char rotAngle){
         LATD &= 0xC3;
 
         LATD |= rotSequence[i%4] << 2;
+
+
+
+        while(!stepMade());
     }
 }
 
@@ -4508,6 +4538,10 @@ void rotateObj(unsigned char rotAngle){
 
 void pickObject(){
     LATDbits.LATD1 = 1;
+
+
+
+    while(!stepMade());
 }
 
 
@@ -4515,4 +4549,8 @@ void pickObject(){
 
 void releaseObj(){
     LATDbits.LATD1 = 0;
+
+
+
+    while(!stepMade());
 }

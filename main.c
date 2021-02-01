@@ -169,7 +169,6 @@ char executeData(){
     //proceed only if no error is present
     if(!errCode){
         
-        //TODO: [ ] not working with the simulator
         //get in touch with the object
         errCode = touchObject();
         //pick the object
@@ -191,7 +190,6 @@ char executeData(){
         }
         rotateObj(rotAngle);
         
-        //TODO: [ ] not working on the simulator
         //touch the thermal paste
         errCode = touchTherm();
         //release the object

@@ -531,99 +531,102 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;adc.c: 37:     ADCON0bits.ADON = 1;
 [e = . . _ADCON0bits 1 0 -> -> 1 `i `uc ]
 "38
-[; ;adc.c: 38: }
+[; ;adc.c: 38:     ADCON0bits.GODONE = 1;
+[e = . . _ADCON0bits 8 1 -> -> 1 `i `uc ]
+"39
+[; ;adc.c: 39: }
 [e :UE 239 ]
 }
-"43
-[; ;adc.c: 43: void stopADC(void){
+"44
+[; ;adc.c: 44: void stopADC(void){
 [v _stopADC `(v ~T0 @X0 1 ef ]
 {
 [e :U _stopADC ]
 [f ]
-"44
-[; ;adc.c: 44:     ADCON0bits.ADON = 0;
-[e = . . _ADCON0bits 1 0 -> -> 0 `i `uc ]
 "45
-[; ;adc.c: 45: }
+[; ;adc.c: 45:     ADCON0bits.ADON = 0;
+[e = . . _ADCON0bits 1 0 -> -> 0 `i `uc ]
+"46
+[; ;adc.c: 46: }
 [e :UE 240 ]
 }
-"50
-[; ;adc.c: 50: unsigned int returnTouch(void){
+"51
+[; ;adc.c: 51: unsigned int returnTouch(void){
 [v _returnTouch `(ui ~T0 @X0 1 ef ]
 {
 [e :U _returnTouch ]
 [f ]
-"51
-[; ;adc.c: 51:     return touch_rel;
+"52
+[; ;adc.c: 52:     return touch_rel;
 [e ) -> _touch_rel `ui ]
 [e $UE 241  ]
-"52
-[; ;adc.c: 52: }
+"53
+[; ;adc.c: 53: }
 [e :UE 241 ]
 }
-"57
-[; ;adc.c: 57: unsigned int returnTherm(void){
+"58
+[; ;adc.c: 58: unsigned int returnTherm(void){
 [v _returnTherm `(ui ~T0 @X0 1 ef ]
 {
 [e :U _returnTherm ]
 [f ]
-"58
-[; ;adc.c: 58:     return therm_rel;
+"59
+[; ;adc.c: 59:     return therm_rel;
 [e ) -> _therm_rel `ui ]
 [e $UE 242  ]
-"59
-[; ;adc.c: 59: }
+"60
+[; ;adc.c: 60: }
 [e :UE 242 ]
 }
-"64
-[; ;adc.c: 64: void resetTouch(void){
+"65
+[; ;adc.c: 65: void resetTouch(void){
 [v _resetTouch `(v ~T0 @X0 1 ef ]
 {
 [e :U _resetTouch ]
 [f ]
-"65
-[; ;adc.c: 65:     touch_rel = 0;
-[e = _touch_rel -> -> 0 `i `uc ]
 "66
-[; ;adc.c: 66: }
+[; ;adc.c: 66:     touch_rel = 0;
+[e = _touch_rel -> -> 0 `i `uc ]
+"67
+[; ;adc.c: 67: }
 [e :UE 243 ]
 }
-"71
-[; ;adc.c: 71: void resetTherm(void){
+"72
+[; ;adc.c: 72: void resetTherm(void){
 [v _resetTherm `(v ~T0 @X0 1 ef ]
 {
 [e :U _resetTherm ]
 [f ]
-"72
-[; ;adc.c: 72:     therm_rel = 0;
-[e = _therm_rel -> -> 0 `i `uc ]
 "73
-[; ;adc.c: 73: }
+[; ;adc.c: 73:     therm_rel = 0;
+[e = _therm_rel -> -> 0 `i `uc ]
+"74
+[; ;adc.c: 74: }
 [e :UE 244 ]
 }
-"78
-[; ;adc.c: 78: void setThermRel(void){
+"79
+[; ;adc.c: 79: void setThermRel(void){
 [v _setThermRel `(v ~T0 @X0 1 ef ]
 {
 [e :U _setThermRel ]
 [f ]
-"79
-[; ;adc.c: 79:     therm_rel = 1;
-[e = _therm_rel -> -> 1 `i `uc ]
 "80
-[; ;adc.c: 80: }
+[; ;adc.c: 80:     therm_rel = 1;
+[e = _therm_rel -> -> 1 `i `uc ]
+"81
+[; ;adc.c: 81: }
 [e :UE 245 ]
 }
-"85
-[; ;adc.c: 85: void setTouchRel(void){
+"86
+[; ;adc.c: 86: void setTouchRel(void){
 [v _setTouchRel `(v ~T0 @X0 1 ef ]
 {
 [e :U _setTouchRel ]
 [f ]
-"86
-[; ;adc.c: 86:     touch_rel = 1;
-[e = _touch_rel -> -> 1 `i `uc ]
 "87
-[; ;adc.c: 87: }
+[; ;adc.c: 87:     touch_rel = 1;
+[e = _touch_rel -> -> 1 `i `uc ]
+"88
+[; ;adc.c: 88: }
 [e :UE 246 ]
 }

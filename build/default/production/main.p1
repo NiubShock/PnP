@@ -206,6 +206,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "51 ./motors.h
 [; ;./motors.h: 51: char moveToPoint(unsigned int x1, unsigned int y1, unsigned int x2, unsigned int y2);
 [v _moveToPoint `(uc ~T0 @X0 0 ef4`ui`ui`ui`ui ]
+"53
+[; ;./motors.h: 53: char touchObject(void);
+[v _touchObject `(uc ~T0 @X0 0 ef ]
 "57
 [; ;./motors.h: 57: void pickObject(void);
 [v _pickObject `(v ~T0 @X0 0 ef ]
@@ -215,6 +218,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "56
 [; ;./motors.h: 56: void rotateObj(unsigned char rotAngle);
 [v _rotateObj `(v ~T0 @X0 0 ef1`uc ]
+"54
+[; ;./motors.h: 54: char touchTherm(void);
+[v _touchTherm `(uc ~T0 @X0 0 ef ]
 "58
 [; ;./motors.h: 58: void releaseObj(void);
 [v _releaseObj `(v ~T0 @X0 0 ef ]
@@ -1011,53 +1017,59 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 170:     if(!errCode){
 [e $ ! ! != -> _errCode `i -> 0 `i 263  ]
 {
-"176
-[; ;main.c: 176:         pickObject();
+"173
+[; ;main.c: 173:         errCode = touchObject();
+[e = _errCode ( _touchObject ..  ]
+"175
+[; ;main.c: 175:         pickObject();
 [e ( _pickObject ..  ]
-"179
-[; ;main.c: 179:         errCode = liftArm();
+"178
+[; ;main.c: 178:         errCode = liftArm();
 [e = _errCode ( _liftArm ..  ]
-"182
-[; ;main.c: 182:         errCode = moveToPoint(posVector[0], posVector[1], data->posX, data->posY);
+"181
+[; ;main.c: 181:         errCode = moveToPoint(posVector[0], posVector[1], data->posX, data->posY);
 [e = _errCode ( _moveToPoint (4 , , , -> *U + &U _posVector * -> -> -> 0 `i `ui `ux -> -> # *U &U _posVector `ui `ux `ui -> *U + &U _posVector * -> -> -> 1 `i `ui `ux -> -> # *U &U _posVector `ui `ux `ui -> . *U _data 1 `ui -> . *U _data 2 `ui ]
-"183
-[; ;main.c: 183:         posVector[0] = data->posX;
+"182
+[; ;main.c: 182:         posVector[0] = data->posX;
 [e = *U + &U _posVector * -> -> -> 0 `i `ui `ux -> -> # *U &U _posVector `ui `ux . *U _data 1 ]
-"184
-[; ;main.c: 184:         posVector[1] = data->posY;
+"183
+[; ;main.c: 183:         posVector[1] = data->posY;
 [e = *U + &U _posVector * -> -> -> 1 `i `ui `ux -> -> # *U &U _posVector `ui `ux . *U _data 2 ]
-"187
-[; ;main.c: 187:         rotAngle = data->rotation - rotAngle;
+"186
+[; ;main.c: 186:         rotAngle = data->rotation - rotAngle;
 [e = _rotAngle - -> . *U _data 3 `i _rotAngle ]
-"189
-[; ;main.c: 189:         if(rotAngle < 0){
+"188
+[; ;main.c: 188:         if(rotAngle < 0){
 [e $ ! < _rotAngle -> 0 `i 264  ]
 {
-"190
-[; ;main.c: 190:             rotAngle += 360;
+"189
+[; ;main.c: 189:             rotAngle += 360;
 [e =+ _rotAngle -> 360 `i ]
-"191
-[; ;main.c: 191:         }
+"190
+[; ;main.c: 190:         }
 }
 [e :U 264 ]
-"192
-[; ;main.c: 192:         rotateObj(rotAngle);
+"191
+[; ;main.c: 191:         rotateObj(rotAngle);
 [e ( _rotateObj (1 -> _rotAngle `uc ]
-"198
-[; ;main.c: 198:         releaseObj();
+"194
+[; ;main.c: 194:         errCode = touchTherm();
+[e = _errCode ( _touchTherm ..  ]
+"196
+[; ;main.c: 196:         releaseObj();
 [e ( _releaseObj ..  ]
-"201
-[; ;main.c: 201:         errCode = liftArm();
+"199
+[; ;main.c: 199:         errCode = liftArm();
 [e = _errCode ( _liftArm ..  ]
-"202
-[; ;main.c: 202:     }
+"200
+[; ;main.c: 200:     }
 }
 [e :U 263 ]
-"204
-[; ;main.c: 204:     return(errCode);
+"202
+[; ;main.c: 202:     return(errCode);
 [e ) _errCode ]
 [e $UE 255  ]
-"205
-[; ;main.c: 205: }
+"203
+[; ;main.c: 203: }
 [e :UE 255 ]
 }

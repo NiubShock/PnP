@@ -5,8 +5,6 @@
  * Created on December 11, 2020, 6:40 AM
  */
 
-
-#include <xc.h>
 #include "main.h"
 
 static unsigned int tm0Error = 0;
@@ -587,15 +585,21 @@ void rotateObj(unsigned char rotAngle){
         //Set these pins (shift of 2 bit since start at RD2 not RD0)
         LATD |= rotSequence[i%4] << 2;
         
-        //TODO: [ ] Add delay
+        //TODO: [ ]change?
+        //Delay so that the rotation can be done
+        while(!stepMade());
     }
 }
 
 /*
- * Description: Function used to enable the breezer?
+ * Description: Function used to enable the breezer
  */
 void pickObject(){
     LATDbits.LATD1 = 1;
+    
+    //TODO: [ ]change?
+    //Delay so that the breezer can grab the object
+    while(!stepMade());
 }
 
 /*
@@ -603,4 +607,8 @@ void pickObject(){
  */
 void releaseObj(){
     LATDbits.LATD1 = 0;
+    
+    //TODO: [ ]change?
+    //Delay so that the breezer can release the object
+    while(!stepMade());
 }

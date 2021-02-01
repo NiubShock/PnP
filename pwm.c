@@ -54,7 +54,6 @@ unsigned int stepMade(void){
 
 /*
  * Description: Return the total number of steps made (count both H and L)
- * TODO: [ ] Verify
  */
 unsigned int stepCounter(void){
     return pwmStep;

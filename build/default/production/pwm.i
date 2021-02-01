@@ -3862,7 +3862,6 @@ unsigned int stepMade(void){
 
 
 
-
 unsigned int stepCounter(void){
     return pwmStep;
 }

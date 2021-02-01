@@ -3808,6 +3808,7 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 10 "main.c" 2
 
 # 1 "./main.h" 1
+
 # 1 "./adc.h" 1
 # 37 "./adc.h"
 void initADC(void);
@@ -3820,7 +3821,7 @@ void resetTherm(void);
 
 void setThermRel(void);
 void setTouchRel(void);
-# 1 "./main.h" 2
+# 2 "./main.h" 2
 
 # 1 "./motors.h" 1
 # 30 "./motors.h"
@@ -3846,7 +3847,7 @@ char liftArm(void);
 void rotateObj(unsigned char rotAngle);
 void pickObject(void);
 void releaseObj(void);
-# 2 "./main.h" 2
+# 3 "./main.h" 2
 
 # 1 "./conf_bits.h" 1
 # 40 "./conf_bits.h"
@@ -3898,7 +3899,7 @@ void releaseObj(void);
 
 
 #pragma config EBTRB = OFF
-# 3 "./main.h" 2
+# 4 "./main.h" 2
 
 # 1 "./pwm.h" 1
 # 37 "./pwm.h"
@@ -3912,7 +3913,7 @@ unsigned int stepCounter(void);
 void increaseStep(void);
 void toggleStep(void);
 unsigned int retPeriod(void);
-# 4 "./main.h" 2
+# 5 "./main.h" 2
 
 # 1 "./usart.h" 1
 typedef struct{
@@ -3946,8 +3947,8 @@ unsigned char readSeq(void);
 unsigned char fatalError(void);
 void reduceSeq(void);
 void shiftData(void);
-# 5 "./main.h" 2
-# 31 "./main.h"
+# 6 "./main.h" 2
+# 33 "./main.h"
 char executeData(void);
 # 11 "main.c" 2
 
@@ -4105,8 +4106,7 @@ char executeData(){
     if(!errCode){
 
 
-
-
+        errCode = touchObject();
 
         pickObject();
 
@@ -4127,8 +4127,7 @@ char executeData(){
         rotateObj(rotAngle);
 
 
-
-
+        errCode = touchTherm();
 
         releaseObj();
 
