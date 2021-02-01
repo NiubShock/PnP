@@ -171,7 +171,7 @@ char executeData(){
         
         //TODO: [ ] not working with the simulator
         //get in touch with the object
-//        errCode = touchObject();
+        errCode = touchObject();
         //pick the object
         pickObject();
 
@@ -193,7 +193,7 @@ char executeData(){
         
         //TODO: [ ] not working on the simulator
         //touch the thermal paste
-//        errCode = touchTherm();
+        errCode = touchTherm();
         //release the object
         releaseObj();
         

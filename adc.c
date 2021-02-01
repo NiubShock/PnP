@@ -35,6 +35,7 @@ void initADC(void){
  */
 void startADC(void){
     ADCON0bits.ADON = 1;
+    ADCON0bits.GODONE = 1;
 }
 
 /*

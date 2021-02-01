@@ -265,6 +265,8 @@ char resetPosition(){
  */
 char moveToPoint(unsigned int x1, unsigned int y1, unsigned int x2, unsigned int y2){
     
+    unsigned char MOT1Direction, MOT2Direction;
+    
     //verify if the endpoint is within the limit
     if(x2 > maxX || y2 > maxY){
         return(BOUNDARY_ERROR);
@@ -273,14 +275,18 @@ char moveToPoint(unsigned int x1, unsigned int y1, unsigned int x2, unsigned int
     //set the correct direction for the X axis
     if((x2 - x1) > 0){
         setDirection(FORWARD, MOTOR1);
+        MOT1Direction = FORWARD;
     }else{
         setDirection(BACKWARD, MOTOR1);
+        MOT1Direction = BACKWARD;
     }
     //set the correct direction for the X axis
     if((y2 - y1) > 0){
         setDirection(FORWARD, MOTOR2);
+        MOT2Direction = FORWARD;
     }else{
         setDirection(BACKWARD, MOTOR2);
+        MOT2Direction = BACKWARD;
     }
     
     unsigned char keepMovingX = 1;
@@ -309,21 +315,42 @@ char moveToPoint(unsigned int x1, unsigned int y1, unsigned int x2, unsigned int
         //if not keep moving
         
         //Verify the X axis
-        if(x1 + stepCounter() == x2){
-            //change this variable to stop the movement
-            keepMovingX = 0;
-        }else{
-            //Keep moving (H part of the step)
-            LATAbits.LATA2 = 1;
+        if(MOT1Direction == FORWARD){
+            if(x1 + stepCounter() == x2){
+                //change this variable to stop the movement
+                keepMovingX = 0;
+            }else{
+                //Keep moving (H part of the step)
+                LATAbits.LATA2 = 1;
+            }
+        }else if(MOT1Direction == BACKWARD){
+            if(x1 - stepCounter() == x2){
+                //change this variable to stop the movement
+                keepMovingX = 0;
+            }else{
+                //Keep moving (H part of the step)
+                LATAbits.LATA2 = 1;
+            }
         }
         
-        //Verify the Y axis
-        if(y1 + stepCounter() == y2){
-            //change this variable to stop the movement
-            keepMovingY = 0;
-        }else{
-            //Keep moving (H part of the step)
-            LATBbits.LATB4 = 1;
+        if(MOT2Direction == FORWARD){
+            //Verify the Y axis
+            if(y1 + stepCounter() == y2){
+                //change this variable to stop the movement
+                keepMovingY = 0;
+            }else{
+                //Keep moving (H part of the step)
+                LATBbits.LATB4 = 1;
+            }
+        }else if(MOT2Direction == BACKWARD){
+            //Verify the Y axis
+            if(y1 + stepCounter() == y2){
+                //change this variable to stop the movement
+                keepMovingY = 0;
+            }else{
+                //Keep moving (H part of the step)
+                LATBbits.LATB4 = 1;
+            }
         }
         
         //wait for the step to be made
@@ -550,7 +577,7 @@ char liftArm(){
 void rotateObj(unsigned char rotAngle){
     static const float stepAngle = 0.08789;                         //dimension of a single step in the motor
     static char rotSequence[] = {0b1001, 0b0011, 0b0110, 0b1100};   //sequence to use in order to rotate as desired
-    unsigned char i;
+    unsigned int i;
     int totStep = rotAngle/stepAngle;                               //total step required
     
     //proceed using the sequence defined above
@@ -559,6 +586,8 @@ void rotateObj(unsigned char rotAngle){
         LATD &= 0xC3;
         //Set these pins (shift of 2 bit since start at RD2 not RD0)
         LATD |= rotSequence[i%4] << 2;
+        
+        //TODO: [ ] Add delay
     }
 }
 
