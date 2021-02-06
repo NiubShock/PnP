@@ -587,7 +587,10 @@ void rotateObj(unsigned char rotAngle){
         
         //TODO: [ ]change?
         //Delay so that the rotation can be done
+        T2CONbits.TMR2ON = 1;           //turn on the timer used for the interrupt
         while(!stepMade());
+        T2CONbits.TMR2ON = 1;           //turn off the timer used for the interrupt
+        TMR2 = 0;
     }
 }
 
@@ -599,7 +602,10 @@ void pickObject(){
     
     //TODO: [ ]change?
     //Delay so that the breezer can grab the object
+    T2CONbits.TMR2ON = 1;           //turn on the timer used for the interrupt
     while(!stepMade());
+    T2CONbits.TMR2ON = 1;           //turn off the timer used for the interrupt
+    TMR2 = 0;
 }
 
 /*
@@ -610,5 +616,8 @@ void releaseObj(){
     
     //TODO: [ ]change?
     //Delay so that the breezer can release the object
+    T2CONbits.TMR2ON = 1;           //turn on the timer used for the interrupt
     while(!stepMade());
+    T2CONbits.TMR2ON = 1;           //turn off the timer used for the interrupt
+    TMR2 = 0;
 }

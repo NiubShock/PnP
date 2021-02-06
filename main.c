@@ -27,7 +27,10 @@ void main(void) {
     
     //reset the initial position
     errCode = resetPosition();
-    printError(errCode);
+    if(errCode != ALL_OK){
+        printError(errCode);
+        while(1);
+    }
      
     //enable the serial communication
     RCSTA1bits.CREN = 1;    //enable rx

@@ -4529,7 +4529,10 @@ void rotateObj(unsigned char rotAngle){
 
 
 
+        T2CONbits.TMR2ON = 1;
         while(!stepMade());
+        T2CONbits.TMR2ON = 1;
+        TMR2 = 0;
     }
 }
 
@@ -4541,7 +4544,10 @@ void pickObject(){
 
 
 
+    T2CONbits.TMR2ON = 1;
     while(!stepMade());
+    T2CONbits.TMR2ON = 1;
+    TMR2 = 0;
 }
 
 
@@ -4552,5 +4558,8 @@ void releaseObj(){
 
 
 
+    T2CONbits.TMR2ON = 1;
     while(!stepMade());
+    T2CONbits.TMR2ON = 1;
+    TMR2 = 0;
 }

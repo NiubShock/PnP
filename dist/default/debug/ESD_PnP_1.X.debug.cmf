@@ -12,63 +12,63 @@
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
 $dist/default/debug\ESD_PnP_1.X.debug.o
-cinit CODE 0 203A 203A 86 1
+cinit CODE 0 205E 205E 86 1
 idloc IDLOC 5 200000 200000 8 1
-text0 CODE 0 137E 137E 17A 1
-text1 CODE 0 243E 243E 1E 1
-text2 CODE 0 245C 245C 14 1
-text3 CODE 0 2484 2484 12 1
-text4 CODE 0 14F8 14F8 162 1
-text5 CODE 0 18F2 18F2 11C 1
-text6 CODE 0 22D4 22D4 4E 1
-text7 CODE 0 221C 221C 60 1
+text0 CODE 0 137E 137E 196 1
+text1 CODE 0 2472 2472 1E 1
+text2 CODE 0 2490 2490 14 1
+text3 CODE 0 24B8 24B8 12 1
+text4 CODE 0 1514 1514 162 1
+text5 CODE 0 190E 190E 11C 1
+text6 CODE 0 22F8 22F8 4E 1
+text7 CODE 0 2240 2240 60 1
 text8 CODE 0 118A 118A 1F4 1
-text9 CODE 0 1D0E 1D0E D6 1
-text10 CODE 0 20C0 20C0 74 1
-text11 CODE 0 2134 2134 74 1
-text12 CODE 0 2500 2500 A 1
-text13 CODE 0 2550 2550 8 1
-text14 CODE 0 2558 2558 8 1
-text15 CODE 0 2560 2560 8 1
-text16 CODE 0 2370 2370 3A 1
-text17 CODE 0 23AA 23AA 26 1
-text18 CODE 0 23D0 23D0 26 1
-text19 CODE 0 2496 2496 E 1
-text20 CODE 0 2568 2568 8 1
+text9 CODE 0 1E06 1E06 D6 1
+text10 CODE 0 20E4 20E4 74 1
+text11 CODE 0 2158 2158 74 1
+text12 CODE 0 2534 2534 A 1
+text13 CODE 0 2584 2584 8 1
+text14 CODE 0 258C 258C 8 1
+text15 CODE 0 2594 2594 8 1
+text16 CODE 0 2394 2394 3A 1
+text17 CODE 0 2426 2426 26 1
+text18 CODE 0 244C 244C 26 1
+text19 CODE 0 24CA 24CA E 1
+text20 CODE 0 259C 259C 8 1
 text21 CODE 0 D04 D04 28E 1
-text22 CODE 0 1B2A 1B2A F2 1
-text23 CODE 0 24DC 24DC C 1
-text24 CODE 0 250A 250A A 1
-text25 CODE 0 1C1C 1C1C F2 1
-text26 CODE 0 2570 2570 8 1
-text27 CODE 0 2514 2514 A 1
-text28 CODE 0 24E8 24E8 C 1
-text29 CODE 0 251E 251E A 1
-text30 CODE 0 1DE4 1DE4 D4 1
+text22 CODE 0 1B46 1B46 F2 1
+text23 CODE 0 2510 2510 C 1
+text24 CODE 0 253E 253E A 1
+text25 CODE 0 1C38 1C38 F2 1
+text26 CODE 0 25A4 25A4 8 1
+text27 CODE 0 2548 2548 A 1
+text28 CODE 0 251C 251C C 1
+text29 CODE 0 2552 2552 A 1
+text30 CODE 0 1D2A 1D2A DC 1
 text31 CODE 0 F92 F92 1F8 1
-text32 CODE 0 17BC 17BC 136 1
+text32 CODE 0 17D8 17D8 136 1
 text33 CODE 0 610 610 432 1
-text34 CODE 0 23F6 23F6 24 1
-text35 CODE 0 241A 241A 24 1
+text34 CODE 0 23CE 23CE 2C 1
+text35 CODE 0 23FA 23FA 2C 1
 text36 CODE 0 A42 A42 2C2 1
-text37 CODE 0 24F4 24F4 C 1
-text38 CODE 0 1F8A 1F8A B0 1
-text39 CODE 0 2470 2470 14 1
-text40 CODE 0 21A8 21A8 74 1
-text41 CODE 0 2528 2528 A 1
-text42 CODE 0 24A4 24A4 E 1
-text43 CODE 0 24B2 24B2 E 1
-text45 CODE 0 165A 165A 162 1
-text46 CODE 0 1A0E 1A0E 11C 1
-text47 CODE 0 2322 2322 4E 1
-text48 CODE 0 24C0 24C0 E 1
-text49 CODE 0 2578 2578 8 1
-text50 CODE 0 2532 2532 A 1
-text51 CODE 0 253C 253C A 1
-text52 CODE 0 2546 2546 A 1
-text53 CODE 0 24CE 24CE E 1
-text54 CODE 0 2580 2580 8 1
-idataCOMRAM CODE 0 2588 2588 5 1
+text37 CODE 0 2528 2528 C 1
+text38 CODE 0 1FAE 1FAE B0 1
+text39 CODE 0 24A4 24A4 14 1
+text40 CODE 0 21CC 21CC 74 1
+text41 CODE 0 255C 255C A 1
+text42 CODE 0 24D8 24D8 E 1
+text43 CODE 0 24E6 24E6 E 1
+text45 CODE 0 1676 1676 162 1
+text46 CODE 0 1A2A 1A2A 11C 1
+text47 CODE 0 2346 2346 4E 1
+text48 CODE 0 24F4 24F4 E 1
+text49 CODE 0 25AC 25AC 8 1
+text50 CODE 0 2566 2566 A 1
+text51 CODE 0 2570 2570 A 1
+text52 CODE 0 257A 257A A 1
+text53 CODE 0 2502 2502 E 1
+text54 CODE 0 25B4 25B4 8 1
+idataCOMRAM CODE 0 25BC 25BC 5 1
 cstackCOMRAM COMRAM 1 1 1 44 1
 cstackBANK0 BANK0 1 F4 F4 B 1
 cstackBANK1 BANK1 1 1D1 1D1 5 1
@@ -76,17 +76,17 @@ temp COMRAM 1 6E 6E 1 1
 bssBANK0 BANK0 1 D8 D8 1C 1
 intcode CODE 0 8 8 162 1
 smallconst SMALLCONST 0 600 600 10 1
-idataBANK0 CODE 0 227C 227C 58 1
-idataBANK1 CODE 0 1EB8 1EB8 D1 1
+idataBANK0 CODE 0 22A0 22A0 58 1
+idataBANK1 CODE 0 1EDC 1EDC D1 1
 dataBANK0 BANK0 1 80 80 58 1
 dataBANK1 BANK1 1 100 100 D1 1
 dataCOMRAM COMRAM 1 69 69 5 1
 bssCOMRAM COMRAM 1 45 45 24 1
 config CONFIG 4 300000 300000 E 1
-$C:\Users\alle9\AppData\Local\Temp\sg04.o
+$C:\Users\alle9\AppData\Local\Temp\saqc.o
 idloc IDLOC 5 200000 200000 8 1
 init CODE 0 16A 16A 4 1
-text CODE 0 258E 258E 2 1
+text CODE 0 25C2 25C2 2 1
 reset_vec CODE 0 0 0 6 1
 config CONFIG 4 300000 300000 E 1
 # %UNUSED Section
@@ -106,26 +106,26 @@ BANK4 400-4FF 1
 BANK5 500-5FF 1
 CONST 6-7 1
 CONST 16E-5FF 1
-CONST 1F89-1F89 1
-CONST 258D-258D 1
-CONST 2590-7FFF 1
+CONST 1FAD-1FAD 1
+CONST 25C1-25C1 1
+CONST 25C4-7FFF 1
 STACK 1D6-5FF 1
-SMALLCONST 1F89-1F89 1
-SMALLCONST 258D-258D 1
-SMALLCONST 2590-7FFF 1
+SMALLCONST 1FAD-1FAD 1
+SMALLCONST 25C1-25C1 1
+SMALLCONST 25C4-7FFF 1
 CODE 6-7 1
 CODE 16E-5FF 1
-CODE 1F89-1F89 1
-CODE 258D-258D 1
-CODE 2590-7FFF 1
+CODE 1FAD-1FAD 1
+CODE 25C1-25C1 1
+CODE 25C4-7FFF 1
 BIGRAM 6F-7F 1
 BIGRAM FF-FF 1
 BIGRAM 1D6-5FF 1
 COMRAM 6F-7F 1
 EEDATA F00000-F000FF 1
-MEDIUMCONST 1F89-1F89 1
-MEDIUMCONST 258D-258D 1
-MEDIUMCONST 2590-7FFF 1
+MEDIUMCONST 1FAD-1FAD 1
+MEDIUMCONST 25C1-25C1 1
+MEDIUMCONST 25C4-7FFF 1
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -140,7 +140,7 @@ MEDIUMCONST 2590-7FFF 1
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/debug\ESD_PnP_1.X.debug.o
-8 intcode CODE >10414:C:\Users\alle9\AppData\Local\Temp\sg04.s
+8 intcode CODE >10481:C:\Users\alle9\AppData\Local\Temp\saqc.s
 8 intcode CODE >17:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\interrupt.c
 1C intcode CODE >23:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\interrupt.c
 2E intcode CODE >24:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\interrupt.c
@@ -172,143 +172,143 @@ F0 intcode CODE >69:D:\OneDrive\University\2nd year 1st semester\Embedded System
 148 intcode CODE >84:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\interrupt.c
 14C intcode CODE >86:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\interrupt.c
 152 intcode CODE >88:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\interrupt.c
-2580 text54 CODE >72:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\pwm.c
-2582 text54 CODE >73:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\pwm.c
-2584 text54 CODE >74:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\pwm.c
-24CE text53 CODE >88:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\pwm.c
-24D0 text53 CODE >89:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\pwm.c
-24D8 text53 CODE >90:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\pwm.c
-2546 text52 CODE >79:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
-2548 text52 CODE >80:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
-254C text52 CODE >81:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
-253C text51 CODE >86:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
-253E text51 CODE >87:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
-2542 text51 CODE >88:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
-2532 text50 CODE >80:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\pwm.c
-2534 text50 CODE >81:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\pwm.c
-2538 text50 CODE >82:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\pwm.c
-2578 text49 CODE >35:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-257A text49 CODE >36:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-257C text49 CODE >37:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-24C0 text48 CODE >21:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-24C2 text48 CODE >22:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-24CA text48 CODE >23:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-2322 text47 CODE >221:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-2324 text47 CODE >224:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-232C text47 CODE >226:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-233A text47 CODE >228:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-234E text47 CODE >230:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-2352 text47 CODE >231:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-236C text47 CODE >232:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-1A0E text46 CODE >53:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-1A12 text46 CODE >55:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-1A16 text46 CODE >57:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-1A28 text46 CODE >58:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-1A2C text46 CODE >60:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-1A3E text46 CODE >61:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-1A42 text46 CODE >63:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-1A54 text46 CODE >64:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-1A58 text46 CODE >66:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-1A6A text46 CODE >67:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-1A6E text46 CODE >69:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-1A80 text46 CODE >70:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-1A84 text46 CODE >72:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-1A96 text46 CODE >73:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-1A9A text46 CODE >75:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-1AAC text46 CODE >76:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-1AB0 text46 CODE >78:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-1AC2 text46 CODE >79:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-1AC6 text46 CODE >83:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-1B24 text46 CODE >84:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-165A text45 CODE >131:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-165E text45 CODE >140:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-166E text45 CODE >142:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-1670 text45 CODE >145:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-1674 text45 CODE >147:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-167A text45 CODE >148:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-167E text45 CODE >150:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-1684 text45 CODE >151:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-1688 text45 CODE >153:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-168E text45 CODE >154:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-1692 text45 CODE >158:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-16C8 text45 CODE >161:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-16E0 text45 CODE >162:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-16E4 text45 CODE >166:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-16E8 text45 CODE >168:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-16FE text45 CODE >169:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-1712 text45 CODE >170:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-1726 text45 CODE >171:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-173A text45 CODE >173:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-173C text45 CODE >174:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-1740 text45 CODE >175:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-1742 text45 CODE >177:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-1746 text45 CODE >178:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-174A text45 CODE >179:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-174E text45 CODE >180:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-1752 text45 CODE >181:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-1756 text45 CODE >182:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-175A text45 CODE >183:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-175E text45 CODE >184:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-1762 text45 CODE >186:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-1766 text45 CODE >187:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-176A text45 CODE >190:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-1770 text45 CODE >191:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-1774 text45 CODE >194:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-177C text45 CODE >195:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-1780 text45 CODE >197:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-17B6 text45 CODE >199:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-24B2 text43 CODE >28:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-24B4 text43 CODE >29:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-24BC text43 CODE >30:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-24A4 text42 CODE >205:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-24A6 text42 CODE >206:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-24AE text42 CODE >207:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-2528 text41 CODE >65:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\pwm.c
-252A text41 CODE >66:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\pwm.c
-252E text41 CODE >67:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\pwm.c
-21A8 text40 CODE >115:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-21AC text40 CODE >116:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-21B0 text40 CODE >118:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-21BC text40 CODE >119:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-21C0 text40 CODE >121:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-21CC text40 CODE >122:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-21D0 text40 CODE >124:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-21DC text40 CODE >125:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-21E0 text40 CODE >128:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-2216 text40 CODE >129:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-2470 text39 CODE >47:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\pwm.c
-2472 text39 CODE >48:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\pwm.c
-2476 text39 CODE >50:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\pwm.c
-247A text39 CODE >52:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\pwm.c
-2480 text39 CODE >53:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\pwm.c
-1F8A text38 CODE >521:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1F8C text38 CODE >524:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1F96 text38 CODE >526:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1F98 text38 CODE >528:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1FA0 text38 CODE >529:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1FA4 text38 CODE >530:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1FA6 text38 CODE >534:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1FAA text38 CODE >537:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1FC2 text38 CODE >539:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1FC4 text38 CODE >540:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1FCC text38 CODE >541:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1FD0 text38 CODE >542:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1FD2 text38 CODE >546:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1FD4 text38 CODE >549:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1FF0 text38 CODE >552:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1FF2 text38 CODE >555:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-200C text38 CODE >556:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-200E text38 CODE >534:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-2020 text38 CODE >559:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-2022 text38 CODE >560:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-2024 text38 CODE >562:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-202C text38 CODE >563:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-2030 text38 CODE >566:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-2034 text38 CODE >568:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-2036 text38 CODE >569:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-24F4 text37 CODE >58:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\pwm.c
-24F6 text37 CODE >59:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\pwm.c
-24FC text37 CODE >60:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\pwm.c
+25B4 text54 CODE >72:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\pwm.c
+25B6 text54 CODE >73:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\pwm.c
+25B8 text54 CODE >74:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\pwm.c
+2502 text53 CODE >88:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\pwm.c
+2504 text53 CODE >89:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\pwm.c
+250C text53 CODE >90:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\pwm.c
+257A text52 CODE >79:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
+257C text52 CODE >80:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
+2580 text52 CODE >81:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
+2570 text51 CODE >86:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
+2572 text51 CODE >87:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
+2576 text51 CODE >88:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
+2566 text50 CODE >80:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\pwm.c
+2568 text50 CODE >81:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\pwm.c
+256C text50 CODE >82:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\pwm.c
+25AC text49 CODE >35:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+25AE text49 CODE >36:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+25B0 text49 CODE >37:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+24F4 text48 CODE >21:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+24F6 text48 CODE >22:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+24FE text48 CODE >23:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+2346 text47 CODE >221:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+2348 text47 CODE >224:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+2350 text47 CODE >226:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+235E text47 CODE >228:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+2372 text47 CODE >230:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+2376 text47 CODE >231:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+2390 text47 CODE >232:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+1A2A text46 CODE >53:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+1A2E text46 CODE >55:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+1A32 text46 CODE >57:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+1A44 text46 CODE >58:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+1A48 text46 CODE >60:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+1A5A text46 CODE >61:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+1A5E text46 CODE >63:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+1A70 text46 CODE >64:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+1A74 text46 CODE >66:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+1A86 text46 CODE >67:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+1A8A text46 CODE >69:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+1A9C text46 CODE >70:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+1AA0 text46 CODE >72:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+1AB2 text46 CODE >73:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+1AB6 text46 CODE >75:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+1AC8 text46 CODE >76:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+1ACC text46 CODE >78:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+1ADE text46 CODE >79:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+1AE2 text46 CODE >83:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+1B40 text46 CODE >84:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+1676 text45 CODE >131:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+167A text45 CODE >140:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+168A text45 CODE >142:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+168C text45 CODE >145:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+1690 text45 CODE >147:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+1696 text45 CODE >148:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+169A text45 CODE >150:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+16A0 text45 CODE >151:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+16A4 text45 CODE >153:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+16AA text45 CODE >154:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+16AE text45 CODE >158:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+16E4 text45 CODE >161:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+16FC text45 CODE >162:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+1700 text45 CODE >166:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+1704 text45 CODE >168:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+171A text45 CODE >169:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+172E text45 CODE >170:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+1742 text45 CODE >171:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+1756 text45 CODE >173:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+1758 text45 CODE >174:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+175C text45 CODE >175:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+175E text45 CODE >177:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+1762 text45 CODE >178:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+1766 text45 CODE >179:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+176A text45 CODE >180:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+176E text45 CODE >181:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+1772 text45 CODE >182:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+1776 text45 CODE >183:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+177A text45 CODE >184:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+177E text45 CODE >186:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+1782 text45 CODE >187:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+1786 text45 CODE >190:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+178C text45 CODE >191:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+1790 text45 CODE >194:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+1798 text45 CODE >195:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+179C text45 CODE >197:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+17D2 text45 CODE >199:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+24E6 text43 CODE >28:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+24E8 text43 CODE >29:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+24F0 text43 CODE >30:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+24D8 text42 CODE >205:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+24DA text42 CODE >206:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+24E2 text42 CODE >207:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+255C text41 CODE >65:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\pwm.c
+255E text41 CODE >66:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\pwm.c
+2562 text41 CODE >67:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\pwm.c
+21CC text40 CODE >115:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+21D0 text40 CODE >116:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+21D4 text40 CODE >118:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+21E0 text40 CODE >119:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+21E4 text40 CODE >121:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+21F0 text40 CODE >122:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+21F4 text40 CODE >124:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+2200 text40 CODE >125:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+2204 text40 CODE >128:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+223A text40 CODE >129:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+24A4 text39 CODE >47:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\pwm.c
+24A6 text39 CODE >48:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\pwm.c
+24AA text39 CODE >50:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\pwm.c
+24AE text39 CODE >52:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\pwm.c
+24B4 text39 CODE >53:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\pwm.c
+1FAE text38 CODE >521:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1FB0 text38 CODE >524:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1FBA text38 CODE >526:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1FBC text38 CODE >528:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1FC4 text38 CODE >529:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1FC8 text38 CODE >530:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1FCA text38 CODE >534:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1FCE text38 CODE >537:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1FE6 text38 CODE >539:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1FE8 text38 CODE >540:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1FF0 text38 CODE >541:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1FF4 text38 CODE >542:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1FF6 text38 CODE >546:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1FF8 text38 CODE >549:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+2014 text38 CODE >552:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+2016 text38 CODE >555:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+2030 text38 CODE >556:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+2032 text38 CODE >534:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+2044 text38 CODE >559:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+2046 text38 CODE >560:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+2048 text38 CODE >562:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+2050 text38 CODE >563:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+2054 text38 CODE >566:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+2058 text38 CODE >568:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+205A text38 CODE >569:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+2528 text37 CODE >58:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\pwm.c
+252A text37 CODE >59:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\pwm.c
+2530 text37 CODE >60:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\pwm.c
 A42 text36 CODE >264:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
 A44 text36 CODE >269:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
 A76 text36 CODE >270:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
@@ -366,14 +366,20 @@ CF4 text36 CODE >370:D:\OneDrive\University\2nd year 1st semester\Embedded Syste
 CF8 text36 CODE >373:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
 CFC text36 CODE >375:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
 CFE text36 CODE >376:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-241A text35 CODE >597:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-241C text35 CODE >598:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-241E text35 CODE >602:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-243A text35 CODE >603:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-23F6 text34 CODE >608:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-23F8 text34 CODE >609:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-23FA text34 CODE >613:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-2416 text34 CODE >614:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+23FA text35 CODE >600:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+23FC text35 CODE >601:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+23FE text35 CODE >605:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+2400 text35 CODE >606:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+241C text35 CODE >607:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+241E text35 CODE >608:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+2422 text35 CODE >609:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+23CE text34 CODE >614:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+23D0 text34 CODE >615:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+23D2 text34 CODE >619:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+23D4 text34 CODE >620:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+23F0 text34 CODE >621:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+23F2 text34 CODE >622:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+23F6 text34 CODE >623:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
 610 text33 CODE >11:D:\Programs\MPLABx\xc8\v2.20\pic\sources\c99\common\sprcdiv.c
 612 text33 CODE >26:D:\Programs\MPLABx\xc8\v2.20\pic\sources\c99\common\sprcdiv.c
 618 text33 CODE >27:D:\Programs\MPLABx\xc8\v2.20\pic\sources\c99\common\sprcdiv.c
@@ -460,24 +466,24 @@ A28 text33 CODE >177:D:\Programs\MPLABx\xc8\v2.20\pic\sources\c99\common\sprcdiv
 A2C text33 CODE >180:D:\Programs\MPLABx\xc8\v2.20\pic\sources\c99\common\sprcdiv.c
 A30 text33 CODE >182:D:\Programs\MPLABx\xc8\v2.20\pic\sources\c99\common\sprcdiv.c
 A3C text33 CODE >185:D:\Programs\MPLABx\xc8\v2.20\pic\sources\c99\common\sprcdiv.c
-17BC text32 CODE >43:D:\Programs\MPLABx\xc8\v2.20\pic\sources\c99\common\fltol.c
-17BE text32 CODE >47:D:\Programs\MPLABx\xc8\v2.20\pic\sources\c99\common\fltol.c
-17D8 text32 CODE >48:D:\Programs\MPLABx\xc8\v2.20\pic\sources\c99\common\fltol.c
-17EE text32 CODE >49:D:\Programs\MPLABx\xc8\v2.20\pic\sources\c99\common\fltol.c
-181E text32 CODE >50:D:\Programs\MPLABx\xc8\v2.20\pic\sources\c99\common\fltol.c
-1820 text32 CODE >51:D:\Programs\MPLABx\xc8\v2.20\pic\sources\c99\common\fltol.c
-1830 text32 CODE >52:D:\Programs\MPLABx\xc8\v2.20\pic\sources\c99\common\fltol.c
-1834 text32 CODE >53:D:\Programs\MPLABx\xc8\v2.20\pic\sources\c99\common\fltol.c
-1846 text32 CODE >54:D:\Programs\MPLABx\xc8\v2.20\pic\sources\c99\common\fltol.c
-1862 text32 CODE >57:D:\Programs\MPLABx\xc8\v2.20\pic\sources\c99\common\fltol.c
-1878 text32 CODE >60:D:\Programs\MPLABx\xc8\v2.20\pic\sources\c99\common\fltol.c
-1892 text32 CODE >63:D:\Programs\MPLABx\xc8\v2.20\pic\sources\c99\common\fltol.c
-189E text32 CODE >64:D:\Programs\MPLABx\xc8\v2.20\pic\sources\c99\common\fltol.c
-18A0 text32 CODE >62:D:\Programs\MPLABx\xc8\v2.20\pic\sources\c99\common\fltol.c
-18B4 text32 CODE >67:D:\Programs\MPLABx\xc8\v2.20\pic\sources\c99\common\fltol.c
-18CA text32 CODE >68:D:\Programs\MPLABx\xc8\v2.20\pic\sources\c99\common\fltol.c
-18DA text32 CODE >69:D:\Programs\MPLABx\xc8\v2.20\pic\sources\c99\common\fltol.c
-18EC text32 CODE >70:D:\Programs\MPLABx\xc8\v2.20\pic\sources\c99\common\fltol.c
+17D8 text32 CODE >43:D:\Programs\MPLABx\xc8\v2.20\pic\sources\c99\common\fltol.c
+17DA text32 CODE >47:D:\Programs\MPLABx\xc8\v2.20\pic\sources\c99\common\fltol.c
+17F4 text32 CODE >48:D:\Programs\MPLABx\xc8\v2.20\pic\sources\c99\common\fltol.c
+180A text32 CODE >49:D:\Programs\MPLABx\xc8\v2.20\pic\sources\c99\common\fltol.c
+183A text32 CODE >50:D:\Programs\MPLABx\xc8\v2.20\pic\sources\c99\common\fltol.c
+183C text32 CODE >51:D:\Programs\MPLABx\xc8\v2.20\pic\sources\c99\common\fltol.c
+184C text32 CODE >52:D:\Programs\MPLABx\xc8\v2.20\pic\sources\c99\common\fltol.c
+1850 text32 CODE >53:D:\Programs\MPLABx\xc8\v2.20\pic\sources\c99\common\fltol.c
+1862 text32 CODE >54:D:\Programs\MPLABx\xc8\v2.20\pic\sources\c99\common\fltol.c
+187E text32 CODE >57:D:\Programs\MPLABx\xc8\v2.20\pic\sources\c99\common\fltol.c
+1894 text32 CODE >60:D:\Programs\MPLABx\xc8\v2.20\pic\sources\c99\common\fltol.c
+18AE text32 CODE >63:D:\Programs\MPLABx\xc8\v2.20\pic\sources\c99\common\fltol.c
+18BA text32 CODE >64:D:\Programs\MPLABx\xc8\v2.20\pic\sources\c99\common\fltol.c
+18BC text32 CODE >62:D:\Programs\MPLABx\xc8\v2.20\pic\sources\c99\common\fltol.c
+18D0 text32 CODE >67:D:\Programs\MPLABx\xc8\v2.20\pic\sources\c99\common\fltol.c
+18E6 text32 CODE >68:D:\Programs\MPLABx\xc8\v2.20\pic\sources\c99\common\fltol.c
+18F6 text32 CODE >69:D:\Programs\MPLABx\xc8\v2.20\pic\sources\c99\common\fltol.c
+1908 text32 CODE >70:D:\Programs\MPLABx\xc8\v2.20\pic\sources\c99\common\fltol.c
 F92 text31 CODE >10:D:\Programs\MPLABx\xc8\v2.20\pic\sources\c99\common\xxtofl.c
 F96 text31 CODE >15:D:\Programs\MPLABx\xc8\v2.20\pic\sources\c99\common\xxtofl.c
 FBC text31 CODE >16:D:\Programs\MPLABx\xc8\v2.20\pic\sources\c99\common\xxtofl.c
@@ -507,217 +513,220 @@ FF4 text31 CODE >19:D:\Programs\MPLABx\xc8\v2.20\pic\sources\c99\common\xxtofl.c
 1170 text31 CODE >42:D:\Programs\MPLABx\xc8\v2.20\pic\sources\c99\common\xxtofl.c
 1172 text31 CODE >43:D:\Programs\MPLABx\xc8\v2.20\pic\sources\c99\common\xxtofl.c
 1184 text31 CODE >44:D:\Programs\MPLABx\xc8\v2.20\pic\sources\c99\common\xxtofl.c
-1DE4 text30 CODE >575:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1DEA text30 CODE >579:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1E3C text30 CODE >582:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1E4A text30 CODE >584:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1E50 text30 CODE >586:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1E76 text30 CODE >590:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1E92 text30 CODE >591:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1EB4 text30 CODE >592:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-251E text29 CODE >65:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
-2520 text29 CODE >66:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
-2524 text29 CODE >67:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
-24E8 text28 CODE >51:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
-24EA text28 CODE >52:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
-24F0 text28 CODE >53:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
-2514 text27 CODE >36:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
-2516 text27 CODE >37:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
-2518 text27 CODE >38:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
-251A text27 CODE >39:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
-2570 text26 CODE >44:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
-2572 text26 CODE >45:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
-2574 text26 CODE >46:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
-1C1C text25 CODE >384:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1C1E text25 CODE >387:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1C28 text25 CODE >389:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1C2A text25 CODE >391:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1C32 text25 CODE >392:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1C36 text25 CODE >393:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1C38 text25 CODE >396:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1C3C text25 CODE >399:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1C40 text25 CODE >402:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1C58 text25 CODE >404:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1C5A text25 CODE >405:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1C62 text25 CODE >406:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1C66 text25 CODE >407:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1C68 text25 CODE >410:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1C6A text25 CODE >413:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1C86 text25 CODE >416:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1C88 text25 CODE >419:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1CA2 text25 CODE >399:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1CCE text25 CODE >423:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1CD4 text25 CODE >426:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1CD8 text25 CODE >429:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1CDA text25 CODE >430:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1CDC text25 CODE >432:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1CE4 text25 CODE >433:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1CE8 text25 CODE >436:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1CEC text25 CODE >439:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1CFE text25 CODE >440:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1D06 text25 CODE >441:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1D08 text25 CODE >443:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1D0A text25 CODE >444:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-250A text24 CODE >72:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
-250C text24 CODE >73:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
-2510 text24 CODE >74:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
-24DC text23 CODE >58:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
-24DE text23 CODE >59:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
-24E4 text23 CODE >60:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
-1B2A text22 CODE >455:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1B2C text22 CODE >458:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1B36 text22 CODE >460:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1B38 text22 CODE >462:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1B40 text22 CODE >463:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1B44 text22 CODE >464:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1B46 text22 CODE >467:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1B4A text22 CODE >470:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1B4E text22 CODE >473:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1B66 text22 CODE >475:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1B68 text22 CODE >476:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1B70 text22 CODE >477:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1B74 text22 CODE >478:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1B76 text22 CODE >481:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1B78 text22 CODE >484:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1B94 text22 CODE >487:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1B96 text22 CODE >490:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1BB0 text22 CODE >470:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1BDC text22 CODE >494:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1BE2 text22 CODE >497:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1BE6 text22 CODE >500:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1BE8 text22 CODE >501:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1BEA text22 CODE >503:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1BF2 text22 CODE >504:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1BF6 text22 CODE >507:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1BFA text22 CODE >510:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1C0C text22 CODE >511:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1C14 text22 CODE >512:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1C16 text22 CODE >514:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1C18 text22 CODE >515:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-D04 text21 CODE >122:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-D06 text21 CODE >123:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-D12 text21 CODE >125:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-D12 text21 CODE >129:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-D16 text21 CODE >132:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-D50 text21 CODE >134:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-D60 text21 CODE >135:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-D70 text21 CODE >136:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-D74 text21 CODE >138:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-DAE text21 CODE >139:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-DBE text21 CODE >140:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-DCE text21 CODE >141:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-DD2 text21 CODE >143:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-E0C text21 CODE >144:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-E1C text21 CODE >145:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-E2C text21 CODE >146:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-E30 text21 CODE >150:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-E52 text21 CODE >151:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-E56 text21 CODE >152:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-E5A text21 CODE >153:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-E5E text21 CODE >157:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-E66 text21 CODE >158:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-E6A text21 CODE >159:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-EB0 text21 CODE >162:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-EC6 text21 CODE >165:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-ECE text21 CODE >167:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-ED2 text21 CODE >170:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-EDA text21 CODE >173:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-F16 text21 CODE >174:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-F28 text21 CODE >175:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-F38 text21 CODE >178:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-F58 text21 CODE >180:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-F6A text21 CODE >181:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-F72 text21 CODE >183:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-F7A text21 CODE >186:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-F7E text21 CODE >188:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-F82 text21 CODE >191:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-F8A text21 CODE >194:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-F8E text21 CODE >195:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-2568 text20 CODE >100:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-256A text20 CODE >101:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-256C text20 CODE >102:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-2496 text19 CODE >213:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-2498 text19 CODE >214:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-24A0 text19 CODE >215:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-23D0 text18 CODE >18:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
-23D2 text18 CODE >19:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
-23DA text18 CODE >20:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
-23DC text18 CODE >22:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
-23E0 text18 CODE >23:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
-23E2 text18 CODE >24:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
-23E4 text18 CODE >26:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
-23E6 text18 CODE >27:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
-23EE text18 CODE >29:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
-23F0 text18 CODE >30:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
-23F2 text18 CODE >31:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
-23AA text17 CODE >42:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-23AC text17 CODE >44:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-23B4 text17 CODE >45:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-23B8 text17 CODE >47:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-23BC text17 CODE >48:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-23C0 text17 CODE >49:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-23C4 text17 CODE >52:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-23C6 text17 CODE >53:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-23C8 text17 CODE >54:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-23CA text17 CODE >57:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-23CC text17 CODE >59:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-2370 text16 CODE >99:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-2372 text16 CODE >101:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-2384 text16 CODE >102:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-2386 text16 CODE >103:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-2388 text16 CODE >104:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-239A text16 CODE >105:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-239C text16 CODE >106:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-239E text16 CODE >109:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-23A0 text16 CODE >110:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-23A2 text16 CODE >111:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-23A4 text16 CODE >112:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-23A6 text16 CODE >113:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-2560 text15 CODE >104:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-2562 text15 CODE >105:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-2564 text15 CODE >106:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-2558 text14 CODE >96:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-255A text14 CODE >97:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-255C text14 CODE >98:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-2550 text13 CODE >89:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-2552 text13 CODE >90:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-2554 text13 CODE >91:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-2500 text12 CODE >112:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-2502 text12 CODE >113:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-2506 text12 CODE >114:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-2134 text11 CODE >94:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-2138 text11 CODE >95:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-213C text11 CODE >97:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-2148 text11 CODE >98:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-214C text11 CODE >100:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-2158 text11 CODE >101:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-215C text11 CODE >103:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-2168 text11 CODE >104:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-216C text11 CODE >107:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-21A2 text11 CODE >108:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-20C0 text10 CODE >136:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-20C4 text10 CODE >137:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-20C8 text10 CODE >139:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-20D4 text10 CODE >140:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-20D8 text10 CODE >142:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-20E4 text10 CODE >143:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-20E8 text10 CODE >145:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-20F4 text10 CODE >146:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-20F8 text10 CODE >149:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-212E text10 CODE >150:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1D0E text9 CODE >67:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1D12 text9 CODE >68:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1D16 text9 CODE >71:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1D2E text9 CODE >73:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1D40 text9 CODE >74:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1D44 text9 CODE >76:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1D5E text9 CODE >77:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1D74 text9 CODE >78:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1D78 text9 CODE >80:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1D8E text9 CODE >81:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1DA4 text9 CODE >82:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1DA8 text9 CODE >85:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-1DDE text9 CODE >86:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1D2A text30 CODE >575:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1D30 text30 CODE >579:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1D82 text30 CODE >582:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1D90 text30 CODE >584:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1D96 text30 CODE >586:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1DBC text30 CODE >590:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1DBE text30 CODE >591:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1DDA text30 CODE >592:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1DDC text30 CODE >593:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1DE0 text30 CODE >594:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1E02 text30 CODE >595:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+2552 text29 CODE >65:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
+2554 text29 CODE >66:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
+2558 text29 CODE >67:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
+251C text28 CODE >51:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
+251E text28 CODE >52:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
+2524 text28 CODE >53:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
+2548 text27 CODE >36:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
+254A text27 CODE >37:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
+254C text27 CODE >38:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
+254E text27 CODE >39:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
+25A4 text26 CODE >44:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
+25A6 text26 CODE >45:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
+25A8 text26 CODE >46:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
+1C38 text25 CODE >384:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1C3A text25 CODE >387:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1C44 text25 CODE >389:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1C46 text25 CODE >391:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1C4E text25 CODE >392:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1C52 text25 CODE >393:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1C54 text25 CODE >396:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1C58 text25 CODE >399:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1C5C text25 CODE >402:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1C74 text25 CODE >404:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1C76 text25 CODE >405:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1C7E text25 CODE >406:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1C82 text25 CODE >407:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1C84 text25 CODE >410:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1C86 text25 CODE >413:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1CA2 text25 CODE >416:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1CA4 text25 CODE >419:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1CBE text25 CODE >399:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1CEA text25 CODE >423:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1CF0 text25 CODE >426:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1CF4 text25 CODE >429:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1CF6 text25 CODE >430:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1CF8 text25 CODE >432:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1D00 text25 CODE >433:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1D04 text25 CODE >436:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1D08 text25 CODE >439:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1D1A text25 CODE >440:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1D22 text25 CODE >441:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1D24 text25 CODE >443:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1D26 text25 CODE >444:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+253E text24 CODE >72:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
+2540 text24 CODE >73:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
+2544 text24 CODE >74:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
+2510 text23 CODE >58:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
+2512 text23 CODE >59:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
+2518 text23 CODE >60:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
+1B46 text22 CODE >455:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1B48 text22 CODE >458:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1B52 text22 CODE >460:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1B54 text22 CODE >462:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1B5C text22 CODE >463:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1B60 text22 CODE >464:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1B62 text22 CODE >467:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1B66 text22 CODE >470:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1B6A text22 CODE >473:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1B82 text22 CODE >475:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1B84 text22 CODE >476:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1B8C text22 CODE >477:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1B90 text22 CODE >478:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1B92 text22 CODE >481:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1B94 text22 CODE >484:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1BB0 text22 CODE >487:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1BB2 text22 CODE >490:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1BCC text22 CODE >470:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1BF8 text22 CODE >494:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1BFE text22 CODE >497:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1C02 text22 CODE >500:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1C04 text22 CODE >501:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1C06 text22 CODE >503:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1C0E text22 CODE >504:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1C12 text22 CODE >507:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1C16 text22 CODE >510:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1C28 text22 CODE >511:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1C30 text22 CODE >512:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1C32 text22 CODE >514:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1C34 text22 CODE >515:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+D04 text21 CODE >125:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+D06 text21 CODE >126:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+D12 text21 CODE >128:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+D12 text21 CODE >132:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+D16 text21 CODE >135:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+D50 text21 CODE >137:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+D60 text21 CODE >138:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+D70 text21 CODE >139:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+D74 text21 CODE >141:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+DAE text21 CODE >142:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+DBE text21 CODE >143:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+DCE text21 CODE >144:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+DD2 text21 CODE >146:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+E0C text21 CODE >147:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+E1C text21 CODE >148:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+E2C text21 CODE >149:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+E30 text21 CODE >153:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+E52 text21 CODE >154:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+E56 text21 CODE >155:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+E5A text21 CODE >156:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+E5E text21 CODE >160:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+E66 text21 CODE >161:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+E6A text21 CODE >162:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+EB0 text21 CODE >165:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+EC6 text21 CODE >168:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+ECE text21 CODE >170:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+ED2 text21 CODE >173:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+EDA text21 CODE >176:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+F16 text21 CODE >177:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+F28 text21 CODE >178:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+F38 text21 CODE >181:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+F58 text21 CODE >183:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+F6A text21 CODE >184:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+F72 text21 CODE >186:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+F7A text21 CODE >189:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+F7E text21 CODE >191:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+F82 text21 CODE >194:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+F8A text21 CODE >197:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+F8E text21 CODE >198:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+259C text20 CODE >100:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+259E text20 CODE >101:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+25A0 text20 CODE >102:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+24CA text19 CODE >213:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+24CC text19 CODE >214:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+24D4 text19 CODE >215:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+244C text18 CODE >18:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
+244E text18 CODE >19:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
+2456 text18 CODE >20:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
+2458 text18 CODE >22:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
+245C text18 CODE >23:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
+245E text18 CODE >24:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
+2460 text18 CODE >26:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
+2462 text18 CODE >27:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
+246A text18 CODE >29:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
+246C text18 CODE >30:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
+246E text18 CODE >31:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
+2426 text17 CODE >42:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+2428 text17 CODE >44:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+2430 text17 CODE >45:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+2434 text17 CODE >47:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+2438 text17 CODE >48:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+243C text17 CODE >49:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+2440 text17 CODE >52:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+2442 text17 CODE >53:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+2444 text17 CODE >54:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+2446 text17 CODE >57:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+2448 text17 CODE >59:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+2394 text16 CODE >102:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+2396 text16 CODE >104:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+23A8 text16 CODE >105:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+23AA text16 CODE >106:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+23AC text16 CODE >107:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+23BE text16 CODE >108:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+23C0 text16 CODE >109:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+23C2 text16 CODE >112:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+23C4 text16 CODE >113:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+23C6 text16 CODE >114:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+23C8 text16 CODE >115:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+23CA text16 CODE >116:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+2594 text15 CODE >104:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+2596 text15 CODE >105:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+2598 text15 CODE >106:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+258C text14 CODE >96:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+258E text14 CODE >97:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+2590 text14 CODE >98:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+2584 text13 CODE >89:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+2586 text13 CODE >90:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+2588 text13 CODE >91:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+2534 text12 CODE >112:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+2536 text12 CODE >113:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+253A text12 CODE >114:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+2158 text11 CODE >94:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+215C text11 CODE >95:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+2160 text11 CODE >97:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+216C text11 CODE >98:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+2170 text11 CODE >100:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+217C text11 CODE >101:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+2180 text11 CODE >103:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+218C text11 CODE >104:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+2190 text11 CODE >107:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+21C6 text11 CODE >108:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+20E4 text10 CODE >136:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+20E8 text10 CODE >137:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+20EC text10 CODE >139:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+20F8 text10 CODE >140:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+20FC text10 CODE >142:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+2108 text10 CODE >143:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+210C text10 CODE >145:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+2118 text10 CODE >146:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+211C text10 CODE >149:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+2152 text10 CODE >150:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1E06 text9 CODE >67:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1E0A text9 CODE >68:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1E0E text9 CODE >71:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1E26 text9 CODE >73:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1E38 text9 CODE >74:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1E3C text9 CODE >76:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1E56 text9 CODE >77:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1E6C text9 CODE >78:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1E70 text9 CODE >80:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1E86 text9 CODE >81:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1E9C text9 CODE >82:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1EA0 text9 CODE >85:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+1ED6 text9 CODE >86:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
 118A text8 CODE >158:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
 118C text8 CODE >160:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
 1196 text8 CODE >161:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
@@ -773,100 +782,100 @@ F8E text21 CODE >195:D:\OneDrive\University\2nd year 1st semester\Embedded Syste
 1374 text8 CODE >252:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
 1378 text8 CODE >255:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
 137A text8 CODE >256:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
-221C text7 CODE >120:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-221E text7 CODE >123:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-2222 text7 CODE >124:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-2262 text7 CODE >125:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-2278 text7 CODE >126:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-22D4 text6 CODE >221:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-22D6 text6 CODE >224:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-22DE text6 CODE >226:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-22EC text6 CODE >228:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-2300 text6 CODE >230:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-2304 text6 CODE >231:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-231E text6 CODE >232:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-18F2 text5 CODE >53:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-18F6 text5 CODE >55:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-18FA text5 CODE >57:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-190C text5 CODE >58:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-1910 text5 CODE >60:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-1922 text5 CODE >61:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-1926 text5 CODE >63:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-1938 text5 CODE >64:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-193C text5 CODE >66:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-194E text5 CODE >67:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-1952 text5 CODE >69:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-1964 text5 CODE >70:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-1968 text5 CODE >72:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-197A text5 CODE >73:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-197E text5 CODE >75:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-1990 text5 CODE >76:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-1994 text5 CODE >78:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-19A6 text5 CODE >79:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-19AA text5 CODE >83:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-1A08 text5 CODE >84:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-14F8 text4 CODE >131:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-14FC text4 CODE >140:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-150C text4 CODE >142:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-150E text4 CODE >145:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-1512 text4 CODE >147:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-1518 text4 CODE >148:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-151C text4 CODE >150:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-1522 text4 CODE >151:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-1526 text4 CODE >153:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-152C text4 CODE >154:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-1530 text4 CODE >158:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-1566 text4 CODE >161:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-157E text4 CODE >162:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-1582 text4 CODE >166:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-1586 text4 CODE >168:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-159C text4 CODE >169:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-15B0 text4 CODE >170:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-15C4 text4 CODE >171:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-15D8 text4 CODE >173:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-15DA text4 CODE >174:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-15DE text4 CODE >175:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-15E0 text4 CODE >177:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-15E4 text4 CODE >178:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-15E8 text4 CODE >179:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-15EC text4 CODE >180:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-15F0 text4 CODE >181:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-15F4 text4 CODE >182:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-15F8 text4 CODE >183:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-15FC text4 CODE >184:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-1600 text4 CODE >186:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-1604 text4 CODE >187:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-1608 text4 CODE >190:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-160E text4 CODE >191:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-1612 text4 CODE >194:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-161A text4 CODE >195:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-161E text4 CODE >197:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-1654 text4 CODE >199:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-2484 text3 CODE >21:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\pwm.c
-2486 text3 CODE >22:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\pwm.c
-2488 text3 CODE >23:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\pwm.c
-248A text3 CODE >24:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\pwm.c
-248C text3 CODE >25:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\pwm.c
-248E text3 CODE >26:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\pwm.c
-2492 text3 CODE >27:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\pwm.c
-245C text2 CODE >34:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\pwm.c
-245E text2 CODE >35:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\pwm.c
-2460 text2 CODE >36:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\pwm.c
-2464 text2 CODE >39:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\pwm.c
-246C text2 CODE >40:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\pwm.c
-243E text1 CODE >34:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-2440 text1 CODE >36:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-2442 text1 CODE >37:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-2444 text1 CODE >39:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-2446 text1 CODE >40:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-2448 text1 CODE >41:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-244A text1 CODE >42:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-244C text1 CODE >44:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-244E text1 CODE >45:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-2450 text1 CODE >46:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-2452 text1 CODE >47:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-2454 text1 CODE >50:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-2458 text1 CODE >51:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+2240 text7 CODE >120:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+2242 text7 CODE >123:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+2246 text7 CODE >124:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+2286 text7 CODE >125:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+229C text7 CODE >126:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+22F8 text6 CODE >221:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+22FA text6 CODE >224:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+2302 text6 CODE >226:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+2310 text6 CODE >228:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+2324 text6 CODE >230:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+2328 text6 CODE >231:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+2342 text6 CODE >232:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+190E text5 CODE >53:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+1912 text5 CODE >55:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+1916 text5 CODE >57:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+1928 text5 CODE >58:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+192C text5 CODE >60:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+193E text5 CODE >61:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+1942 text5 CODE >63:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+1954 text5 CODE >64:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+1958 text5 CODE >66:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+196A text5 CODE >67:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+196E text5 CODE >69:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+1980 text5 CODE >70:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+1984 text5 CODE >72:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+1996 text5 CODE >73:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+199A text5 CODE >75:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+19AC text5 CODE >76:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+19B0 text5 CODE >78:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+19C2 text5 CODE >79:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+19C6 text5 CODE >83:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+1A24 text5 CODE >84:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+1514 text4 CODE >131:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+1518 text4 CODE >140:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+1528 text4 CODE >142:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+152A text4 CODE >145:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+152E text4 CODE >147:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+1534 text4 CODE >148:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+1538 text4 CODE >150:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+153E text4 CODE >151:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+1542 text4 CODE >153:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+1548 text4 CODE >154:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+154C text4 CODE >158:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+1582 text4 CODE >161:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+159A text4 CODE >162:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+159E text4 CODE >166:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+15A2 text4 CODE >168:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+15B8 text4 CODE >169:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+15CC text4 CODE >170:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+15E0 text4 CODE >171:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+15F4 text4 CODE >173:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+15F6 text4 CODE >174:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+15FA text4 CODE >175:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+15FC text4 CODE >177:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+1600 text4 CODE >178:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+1604 text4 CODE >179:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+1608 text4 CODE >180:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+160C text4 CODE >181:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+1610 text4 CODE >182:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+1614 text4 CODE >183:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+1618 text4 CODE >184:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+161C text4 CODE >186:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+1620 text4 CODE >187:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+1624 text4 CODE >190:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+162A text4 CODE >191:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+162E text4 CODE >194:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+1636 text4 CODE >195:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+163A text4 CODE >197:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+1670 text4 CODE >199:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+24B8 text3 CODE >21:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\pwm.c
+24BA text3 CODE >22:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\pwm.c
+24BC text3 CODE >23:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\pwm.c
+24BE text3 CODE >24:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\pwm.c
+24C0 text3 CODE >25:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\pwm.c
+24C2 text3 CODE >26:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\pwm.c
+24C6 text3 CODE >27:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\pwm.c
+2490 text2 CODE >34:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\pwm.c
+2492 text2 CODE >35:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\pwm.c
+2494 text2 CODE >36:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\pwm.c
+2498 text2 CODE >39:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\pwm.c
+24A0 text2 CODE >40:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\pwm.c
+2472 text1 CODE >34:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+2474 text1 CODE >36:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+2476 text1 CODE >37:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+2478 text1 CODE >39:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+247A text1 CODE >40:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+247C text1 CODE >41:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+247E text1 CODE >42:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+2480 text1 CODE >44:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+2482 text1 CODE >45:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+2484 text1 CODE >46:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+2486 text1 CODE >47:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+2488 text1 CODE >50:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
+248C text1 CODE >51:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
 137E text0 CODE >17:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
 137E text0 CODE >19:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
 137E text0 CODE >21:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
@@ -877,98 +886,101 @@ F8E text21 CODE >195:D:\OneDrive\University\2nd year 1st semester\Embedded Syste
 1394 text0 CODE >26:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
 13A0 text0 CODE >29:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
 13A8 text0 CODE >30:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-13AE text0 CODE >33:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-13B0 text0 CODE >36:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-13CA text0 CODE >38:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-13D4 text0 CODE >39:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-13DE text0 CODE >40:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-13E8 text0 CODE >42:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-13EE text0 CODE >43:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-13F4 text0 CODE >44:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-140E text0 CODE >45:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-141A text0 CODE >47:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-142C text0 CODE >48:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-143C text0 CODE >52:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-143E text0 CODE >55:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-1444 text0 CODE >56:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-144A text0 CODE >57:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-145E text0 CODE >58:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-1472 text0 CODE >59:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-149C text0 CODE >62:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-149E text0 CODE >65:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-14A2 text0 CODE >67:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-14AA text0 CODE >68:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-14B0 text0 CODE >69:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-14B6 text0 CODE >73:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-14BA text0 CODE >74:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-14BE text0 CODE >76:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-14DC text0 CODE >79:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-14E4 text0 CODE >80:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-14EE text0 CODE >87:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
-203A cinit CODE >2247:C:\Users\alle9\AppData\Local\Temp\sg04.s
-203A cinit CODE >2249:C:\Users\alle9\AppData\Local\Temp\sg04.s
-203A cinit CODE >2252:C:\Users\alle9\AppData\Local\Temp\sg04.s
-203A cinit CODE >2375:C:\Users\alle9\AppData\Local\Temp\sg04.s
-203C cinit CODE >2376:C:\Users\alle9\AppData\Local\Temp\sg04.s
-203E cinit CODE >2377:C:\Users\alle9\AppData\Local\Temp\sg04.s
-2040 cinit CODE >2378:C:\Users\alle9\AppData\Local\Temp\sg04.s
-2042 cinit CODE >2379:C:\Users\alle9\AppData\Local\Temp\sg04.s
-2044 cinit CODE >2380:C:\Users\alle9\AppData\Local\Temp\sg04.s
-2046 cinit CODE >2381:C:\Users\alle9\AppData\Local\Temp\sg04.s
-204A cinit CODE >2382:C:\Users\alle9\AppData\Local\Temp\sg04.s
-204E cinit CODE >2383:C:\Users\alle9\AppData\Local\Temp\sg04.s
-204E cinit CODE >2384:C:\Users\alle9\AppData\Local\Temp\sg04.s
-2050 cinit CODE >2385:C:\Users\alle9\AppData\Local\Temp\sg04.s
-2054 cinit CODE >2386:C:\Users\alle9\AppData\Local\Temp\sg04.s
-2056 cinit CODE >2387:C:\Users\alle9\AppData\Local\Temp\sg04.s
-2058 cinit CODE >2388:C:\Users\alle9\AppData\Local\Temp\sg04.s
-205A cinit CODE >2392:C:\Users\alle9\AppData\Local\Temp\sg04.s
-205C cinit CODE >2393:C:\Users\alle9\AppData\Local\Temp\sg04.s
-205E cinit CODE >2394:C:\Users\alle9\AppData\Local\Temp\sg04.s
-2060 cinit CODE >2395:C:\Users\alle9\AppData\Local\Temp\sg04.s
-2062 cinit CODE >2396:C:\Users\alle9\AppData\Local\Temp\sg04.s
-2064 cinit CODE >2397:C:\Users\alle9\AppData\Local\Temp\sg04.s
-2066 cinit CODE >2398:C:\Users\alle9\AppData\Local\Temp\sg04.s
-206A cinit CODE >2399:C:\Users\alle9\AppData\Local\Temp\sg04.s
-206E cinit CODE >2400:C:\Users\alle9\AppData\Local\Temp\sg04.s
-206E cinit CODE >2401:C:\Users\alle9\AppData\Local\Temp\sg04.s
-2070 cinit CODE >2402:C:\Users\alle9\AppData\Local\Temp\sg04.s
-2074 cinit CODE >2403:C:\Users\alle9\AppData\Local\Temp\sg04.s
-2076 cinit CODE >2404:C:\Users\alle9\AppData\Local\Temp\sg04.s
-2078 cinit CODE >2405:C:\Users\alle9\AppData\Local\Temp\sg04.s
-207A cinit CODE >2409:C:\Users\alle9\AppData\Local\Temp\sg04.s
-207C cinit CODE >2410:C:\Users\alle9\AppData\Local\Temp\sg04.s
-207E cinit CODE >2411:C:\Users\alle9\AppData\Local\Temp\sg04.s
-2080 cinit CODE >2412:C:\Users\alle9\AppData\Local\Temp\sg04.s
-2082 cinit CODE >2413:C:\Users\alle9\AppData\Local\Temp\sg04.s
-2084 cinit CODE >2414:C:\Users\alle9\AppData\Local\Temp\sg04.s
-2086 cinit CODE >2415:C:\Users\alle9\AppData\Local\Temp\sg04.s
-208A cinit CODE >2416:C:\Users\alle9\AppData\Local\Temp\sg04.s
-208E cinit CODE >2417:C:\Users\alle9\AppData\Local\Temp\sg04.s
-208E cinit CODE >2418:C:\Users\alle9\AppData\Local\Temp\sg04.s
-2090 cinit CODE >2419:C:\Users\alle9\AppData\Local\Temp\sg04.s
-2094 cinit CODE >2420:C:\Users\alle9\AppData\Local\Temp\sg04.s
-2096 cinit CODE >2421:C:\Users\alle9\AppData\Local\Temp\sg04.s
-2098 cinit CODE >2422:C:\Users\alle9\AppData\Local\Temp\sg04.s
-209A cinit CODE >2426:C:\Users\alle9\AppData\Local\Temp\sg04.s
-209E cinit CODE >2427:C:\Users\alle9\AppData\Local\Temp\sg04.s
-20A0 cinit CODE >2428:C:\Users\alle9\AppData\Local\Temp\sg04.s
-20A0 cinit CODE >2429:C:\Users\alle9\AppData\Local\Temp\sg04.s
-20A2 cinit CODE >2430:C:\Users\alle9\AppData\Local\Temp\sg04.s
-20A4 cinit CODE >2431:C:\Users\alle9\AppData\Local\Temp\sg04.s
-20A6 cinit CODE >2434:C:\Users\alle9\AppData\Local\Temp\sg04.s
-20AA cinit CODE >2435:C:\Users\alle9\AppData\Local\Temp\sg04.s
-20AC cinit CODE >2436:C:\Users\alle9\AppData\Local\Temp\sg04.s
-20AC cinit CODE >2437:C:\Users\alle9\AppData\Local\Temp\sg04.s
-20AE cinit CODE >2438:C:\Users\alle9\AppData\Local\Temp\sg04.s
-20B0 cinit CODE >2439:C:\Users\alle9\AppData\Local\Temp\sg04.s
-20B2 cinit CODE >2445:C:\Users\alle9\AppData\Local\Temp\sg04.s
-20B2 cinit CODE >2447:C:\Users\alle9\AppData\Local\Temp\sg04.s
-20B4 cinit CODE >2448:C:\Users\alle9\AppData\Local\Temp\sg04.s
-20B6 cinit CODE >2450:C:\Users\alle9\AppData\Local\Temp\sg04.s
-20B8 cinit CODE >2451:C:\Users\alle9\AppData\Local\Temp\sg04.s
-20BA cinit CODE >2452:C:\Users\alle9\AppData\Local\Temp\sg04.s
-20BC cinit CODE >2453:C:\Users\alle9\AppData\Local\Temp\sg04.s
+13BC text0 CODE >31:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+13C2 text0 CODE >32:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+13C8 text0 CODE >33:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+13CA text0 CODE >36:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+13CC text0 CODE >39:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+13E6 text0 CODE >41:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+13F0 text0 CODE >42:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+13FA text0 CODE >43:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+1404 text0 CODE >45:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+140A text0 CODE >46:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+1410 text0 CODE >47:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+142A text0 CODE >48:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+1436 text0 CODE >50:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+1448 text0 CODE >51:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+1458 text0 CODE >55:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+145A text0 CODE >58:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+1460 text0 CODE >59:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+1466 text0 CODE >60:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+147A text0 CODE >61:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+148E text0 CODE >62:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+14B8 text0 CODE >65:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+14BA text0 CODE >68:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+14BE text0 CODE >70:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+14C6 text0 CODE >71:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+14CC text0 CODE >72:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+14D2 text0 CODE >76:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+14D6 text0 CODE >77:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+14DA text0 CODE >79:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+14F8 text0 CODE >82:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+1500 text0 CODE >83:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+150A text0 CODE >90:D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+205E cinit CODE >2247:C:\Users\alle9\AppData\Local\Temp\saqc.s
+205E cinit CODE >2249:C:\Users\alle9\AppData\Local\Temp\saqc.s
+205E cinit CODE >2252:C:\Users\alle9\AppData\Local\Temp\saqc.s
+205E cinit CODE >2375:C:\Users\alle9\AppData\Local\Temp\saqc.s
+2060 cinit CODE >2376:C:\Users\alle9\AppData\Local\Temp\saqc.s
+2062 cinit CODE >2377:C:\Users\alle9\AppData\Local\Temp\saqc.s
+2064 cinit CODE >2378:C:\Users\alle9\AppData\Local\Temp\saqc.s
+2066 cinit CODE >2379:C:\Users\alle9\AppData\Local\Temp\saqc.s
+2068 cinit CODE >2380:C:\Users\alle9\AppData\Local\Temp\saqc.s
+206A cinit CODE >2381:C:\Users\alle9\AppData\Local\Temp\saqc.s
+206E cinit CODE >2382:C:\Users\alle9\AppData\Local\Temp\saqc.s
+2072 cinit CODE >2383:C:\Users\alle9\AppData\Local\Temp\saqc.s
+2072 cinit CODE >2384:C:\Users\alle9\AppData\Local\Temp\saqc.s
+2074 cinit CODE >2385:C:\Users\alle9\AppData\Local\Temp\saqc.s
+2078 cinit CODE >2386:C:\Users\alle9\AppData\Local\Temp\saqc.s
+207A cinit CODE >2387:C:\Users\alle9\AppData\Local\Temp\saqc.s
+207C cinit CODE >2388:C:\Users\alle9\AppData\Local\Temp\saqc.s
+207E cinit CODE >2392:C:\Users\alle9\AppData\Local\Temp\saqc.s
+2080 cinit CODE >2393:C:\Users\alle9\AppData\Local\Temp\saqc.s
+2082 cinit CODE >2394:C:\Users\alle9\AppData\Local\Temp\saqc.s
+2084 cinit CODE >2395:C:\Users\alle9\AppData\Local\Temp\saqc.s
+2086 cinit CODE >2396:C:\Users\alle9\AppData\Local\Temp\saqc.s
+2088 cinit CODE >2397:C:\Users\alle9\AppData\Local\Temp\saqc.s
+208A cinit CODE >2398:C:\Users\alle9\AppData\Local\Temp\saqc.s
+208E cinit CODE >2399:C:\Users\alle9\AppData\Local\Temp\saqc.s
+2092 cinit CODE >2400:C:\Users\alle9\AppData\Local\Temp\saqc.s
+2092 cinit CODE >2401:C:\Users\alle9\AppData\Local\Temp\saqc.s
+2094 cinit CODE >2402:C:\Users\alle9\AppData\Local\Temp\saqc.s
+2098 cinit CODE >2403:C:\Users\alle9\AppData\Local\Temp\saqc.s
+209A cinit CODE >2404:C:\Users\alle9\AppData\Local\Temp\saqc.s
+209C cinit CODE >2405:C:\Users\alle9\AppData\Local\Temp\saqc.s
+209E cinit CODE >2409:C:\Users\alle9\AppData\Local\Temp\saqc.s
+20A0 cinit CODE >2410:C:\Users\alle9\AppData\Local\Temp\saqc.s
+20A2 cinit CODE >2411:C:\Users\alle9\AppData\Local\Temp\saqc.s
+20A4 cinit CODE >2412:C:\Users\alle9\AppData\Local\Temp\saqc.s
+20A6 cinit CODE >2413:C:\Users\alle9\AppData\Local\Temp\saqc.s
+20A8 cinit CODE >2414:C:\Users\alle9\AppData\Local\Temp\saqc.s
+20AA cinit CODE >2415:C:\Users\alle9\AppData\Local\Temp\saqc.s
+20AE cinit CODE >2416:C:\Users\alle9\AppData\Local\Temp\saqc.s
+20B2 cinit CODE >2417:C:\Users\alle9\AppData\Local\Temp\saqc.s
+20B2 cinit CODE >2418:C:\Users\alle9\AppData\Local\Temp\saqc.s
+20B4 cinit CODE >2419:C:\Users\alle9\AppData\Local\Temp\saqc.s
+20B8 cinit CODE >2420:C:\Users\alle9\AppData\Local\Temp\saqc.s
+20BA cinit CODE >2421:C:\Users\alle9\AppData\Local\Temp\saqc.s
+20BC cinit CODE >2422:C:\Users\alle9\AppData\Local\Temp\saqc.s
+20BE cinit CODE >2426:C:\Users\alle9\AppData\Local\Temp\saqc.s
+20C2 cinit CODE >2427:C:\Users\alle9\AppData\Local\Temp\saqc.s
+20C4 cinit CODE >2428:C:\Users\alle9\AppData\Local\Temp\saqc.s
+20C4 cinit CODE >2429:C:\Users\alle9\AppData\Local\Temp\saqc.s
+20C6 cinit CODE >2430:C:\Users\alle9\AppData\Local\Temp\saqc.s
+20C8 cinit CODE >2431:C:\Users\alle9\AppData\Local\Temp\saqc.s
+20CA cinit CODE >2434:C:\Users\alle9\AppData\Local\Temp\saqc.s
+20CE cinit CODE >2435:C:\Users\alle9\AppData\Local\Temp\saqc.s
+20D0 cinit CODE >2436:C:\Users\alle9\AppData\Local\Temp\saqc.s
+20D0 cinit CODE >2437:C:\Users\alle9\AppData\Local\Temp\saqc.s
+20D2 cinit CODE >2438:C:\Users\alle9\AppData\Local\Temp\saqc.s
+20D4 cinit CODE >2439:C:\Users\alle9\AppData\Local\Temp\saqc.s
+20D6 cinit CODE >2445:C:\Users\alle9\AppData\Local\Temp\saqc.s
+20D6 cinit CODE >2447:C:\Users\alle9\AppData\Local\Temp\saqc.s
+20D8 cinit CODE >2448:C:\Users\alle9\AppData\Local\Temp\saqc.s
+20DA cinit CODE >2450:C:\Users\alle9\AppData\Local\Temp\saqc.s
+20DC cinit CODE >2451:C:\Users\alle9\AppData\Local\Temp\saqc.s
+20DE cinit CODE >2452:C:\Users\alle9\AppData\Local\Temp\saqc.s
+20E0 cinit CODE >2453:C:\Users\alle9\AppData\Local\Temp\saqc.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -985,7 +997,7 @@ __LdataBANK0 0 0 ABS 0 dataBANK0 dist/default/debug\ESD_PnP_1.X.debug.o
 __LdataBANK1 0 0 ABS 0 dataBANK1 dist/default/debug\ESD_PnP_1.X.debug.o
 __Lmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/debug\ESD_PnP_1.X.debug.o
 __end_of_executeData F92 0 CODE 0 text21 dist/default/debug\ESD_PnP_1.X.debug.o
-__Hspace_0 2590 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
+__Hspace_0 25C4 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 __Hspace_1 1D6 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 __Hspace_2 0 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 __Hspace_4 60000E 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
@@ -993,24 +1005,24 @@ setStep@step 15 0 COMRAM 1 cstackCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
 __size_of_stepMade 0 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 __HidataBANK0 0 0 ABS 0 idataBANK0 dist/default/debug\ESD_PnP_1.X.debug.o
 __HidataBANK1 0 0 ABS 0 idataBANK1 dist/default/debug\ESD_PnP_1.X.debug.o
-__end_of_readSeq 2560 0 CODE 0 text14 dist/default/debug\ESD_PnP_1.X.debug.o
+__end_of_readSeq 2594 0 CODE 0 text14 dist/default/debug\ESD_PnP_1.X.debug.o
 isr@temp 11 0 COMRAM 1 cstackCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/debug\ESD_PnP_1.X.debug.o
 _pwmPeriod 55 0 COMRAM 1 bssCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\alle9\AppData\Local\Temp\sg04.o
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\alle9\AppData\Local\Temp\saqc.o
 executeData@errCode FC 0 BANK0 1 cstackBANK0 dist/default/debug\ESD_PnP_1.X.debug.o
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/debug\ESD_PnP_1.X.debug.o
-__cntErrataNOP_C:\Users\alle9\AppData\Local\Temp\sg04.o 1 0 ABS 0 - C:\Users\alle9\AppData\Local\Temp\sg04.o
+__cntErrataNOP_C:\Users\alle9\AppData\Local\Temp\saqc.o 1 0 ABS 0 - C:\Users\alle9\AppData\Local\Temp\saqc.o
 _touch_rel 65 0 COMRAM 1 bssCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
-__end_of_getNewSequence 24A4 0 CODE 0 text19 dist/default/debug\ESD_PnP_1.X.debug.o
+__end_of_getNewSequence 24D8 0 CODE 0 text19 dist/default/debug\ESD_PnP_1.X.debug.o
 __Lsmallconst 600 0 SMALLCONST 0 smallconst dist/default/debug\ESD_PnP_1.X.debug.o
 _LATD F8C 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 _TMR0 FD6 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 _TMR2 FCC 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
-___sp 0 0 STACK 2 stack C:\Users\alle9\AppData\Local\Temp\sg04.o
+___sp 0 0 STACK 2 stack C:\Users\alle9\AppData\Local\Temp\saqc.o
 _main 137E 0 CODE 0 text0 dist/default/debug\ESD_PnP_1.X.debug.o
 btemp 6E 0 COMRAM 1 temp dist/default/debug\ESD_PnP_1.X.debug.o
-start 16A 0 CODE 0 init C:\Users\alle9\AppData\Local\Temp\sg04.o
+start 16A 0 CODE 0 init C:\Users\alle9\AppData\Local\Temp\saqc.o
 __size_of___fldiv 0 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 __size_of___fltol 0 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 __size_of_liftArm 0 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
@@ -1018,12 +1030,12 @@ __size_of_main 0 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 __HbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
 ?_getNewSequence 12 0 COMRAM 1 cstackCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
 storeData@data 1B 0 COMRAM 1 cstackCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
-_getData 24A4 0 CODE 0 text42 dist/default/debug\ESD_PnP_1.X.debug.o
+_getData 24D8 0 CODE 0 text42 dist/default/debug\ESD_PnP_1.X.debug.o
 uartTx@ptr 12 0 COMRAM 1 cstackCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
 __LidataBANK0 0 0 ABS 0 idataBANK0 dist/default/debug\ESD_PnP_1.X.debug.o
 __LidataBANK1 0 0 ABS 0 idataBANK1 dist/default/debug\ESD_PnP_1.X.debug.o
-_startADC 2514 0 CODE 0 text27 dist/default/debug\ESD_PnP_1.X.debug.o
-_printError 18F2 0 CODE 0 text5 dist/default/debug\ESD_PnP_1.X.debug.o
+_startADC 2548 0 CODE 0 text27 dist/default/debug\ESD_PnP_1.X.debug.o
+_printError 190E 0 CODE 0 text5 dist/default/debug\ESD_PnP_1.X.debug.o
 __Hpowerup 16A 0 CODE 0 powerup dist/default/debug\ESD_PnP_1.X.debug.o
 _T0CONbits FD5 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 storeData@receivedMex 45 0 COMRAM 1 bssCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
@@ -1032,38 +1044,38 @@ ttemp6 72 0 COMRAM 1 temp dist/default/debug\ESD_PnP_1.X.debug.o
 ttemp7 76 0 COMRAM 1 temp dist/default/debug\ESD_PnP_1.X.debug.o
 __newSequence 5F 0 COMRAM 1 bssCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
 __HdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
-_releaseObj 23F6 0 CODE 0 text34 dist/default/debug\ESD_PnP_1.X.debug.o
-__end_of_startADC 251E 0 CODE 0 text27 dist/default/debug\ESD_PnP_1.X.debug.o
-__accesstop 80 0 ABS 0 - C:\Users\alle9\AppData\Local\Temp\sg04.o
-intlevel0 258E 0 CODE 0 text C:\Users\alle9\AppData\Local\Temp\sg04.o
-intlevel1 258E 0 CODE 0 text C:\Users\alle9\AppData\Local\Temp\sg04.o
-intlevel2 258E 0 CODE 0 text C:\Users\alle9\AppData\Local\Temp\sg04.o
-intlevel3 258E 0 CODE 0 text C:\Users\alle9\AppData\Local\Temp\sg04.o
+_releaseObj 23CE 0 CODE 0 text34 dist/default/debug\ESD_PnP_1.X.debug.o
+__end_of_startADC 2552 0 CODE 0 text27 dist/default/debug\ESD_PnP_1.X.debug.o
+__accesstop 80 0 ABS 0 - C:\Users\alle9\AppData\Local\Temp\saqc.o
+intlevel0 25C2 0 CODE 0 text C:\Users\alle9\AppData\Local\Temp\saqc.o
+intlevel1 25C2 0 CODE 0 text C:\Users\alle9\AppData\Local\Temp\saqc.o
+intlevel2 25C2 0 CODE 0 text C:\Users\alle9\AppData\Local\Temp\saqc.o
+intlevel3 25C2 0 CODE 0 text C:\Users\alle9\AppData\Local\Temp\saqc.o
 enableMotor@enable 15 0 COMRAM 1 cstackCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
-_stepMade 2470 0 CODE 0 text39 dist/default/debug\ESD_PnP_1.X.debug.o
+_stepMade 24A4 0 CODE 0 text39 dist/default/debug\ESD_PnP_1.X.debug.o
 __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
 __size_of_setStep 0 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 __size_of_writeTM0 0 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 __LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/debug\ESD_PnP_1.X.debug.o
 wtemp8 6F 0 COMRAM 1 temp dist/default/debug\ESD_PnP_1.X.debug.o
-_increaseStep 2580 0 CODE 0 text54 dist/default/debug\ESD_PnP_1.X.debug.o
+_increaseStep 25B4 0 CODE 0 text54 dist/default/debug\ESD_PnP_1.X.debug.o
 __Hifardata 0 0 CODE 0 ifardata dist/default/debug\ESD_PnP_1.X.debug.o
-__end_of_stepCounter 2500 0 CODE 0 text37 dist/default/debug\ESD_PnP_1.X.debug.o
+__end_of_stepCounter 2534 0 CODE 0 text37 dist/default/debug\ESD_PnP_1.X.debug.o
 __size_of_interruptInit 0 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
-__end_of_stepMade 2484 0 CODE 0 text39 dist/default/debug\ESD_PnP_1.X.debug.o
+__end_of_stepMade 24B8 0 CODE 0 text39 dist/default/debug\ESD_PnP_1.X.debug.o
 __Hclrtext 0 0 ABS 0 clrtext dist/default/debug\ESD_PnP_1.X.debug.o
 ?_returnTherm 12 0 COMRAM 1 cstackCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
 ?_returnTouch 12 0 COMRAM 1 cstackCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
-__pidataCOMRAM 2588 0 CODE 0 idataCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
+__pidataCOMRAM 25BC 0 CODE 0 idataCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
 rotateObj@i FA 0 BANK0 1 cstackBANK0 dist/default/debug\ESD_PnP_1.X.debug.o
-__end_of_setTouchRel 2546 0 CODE 0 text51 dist/default/debug\ESD_PnP_1.X.debug.o
+__end_of_setTouchRel 257A 0 CODE 0 text51 dist/default/debug\ESD_PnP_1.X.debug.o
 _ADRESH FC4 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 _ADRESL FC3 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 __size_of_resetTherm 0 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 __size_of_resetTouch 0 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
-__end_ofi2_storeData 17BC 0 CODE 0 text45 dist/default/debug\ESD_PnP_1.X.debug.o
-___inthi_sp 0 0 STACK 2 stack C:\Users\alle9\AppData\Local\Temp\sg04.o
-___intlo_sp 0 0 STACK 2 stack C:\Users\alle9\AppData\Local\Temp\sg04.o
+__end_ofi2_storeData 17D8 0 CODE 0 text45 dist/default/debug\ESD_PnP_1.X.debug.o
+___inthi_sp 0 0 STACK 2 stack C:\Users\alle9\AppData\Local\Temp\saqc.o
+___intlo_sp 0 0 STACK 2 stack C:\Users\alle9\AppData\Local\Temp\saqc.o
 i2printError@errCode 7 0 COMRAM 1 cstackCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
 __LdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
 storeData@mexLength 6D 0 COMRAM 1 dataCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
@@ -1079,9 +1091,9 @@ __size_of_returnTherm 0 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 __size_of_returnTouch 0 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 __Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/debug\ESD_PnP_1.X.debug.o
 __size_of_toggleStep 0 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
-__end_of_printError 1A0E 0 CODE 0 text5 dist/default/debug\ESD_PnP_1.X.debug.o
-__end_of_interruptInit 23AA 0 CODE 0 text16 dist/default/debug\ESD_PnP_1.X.debug.o
-_pickObject 241A 0 CODE 0 text35 dist/default/debug\ESD_PnP_1.X.debug.o
+__end_of_printError 1A2A 0 CODE 0 text5 dist/default/debug\ESD_PnP_1.X.debug.o
+__end_of_interruptInit 23CE 0 CODE 0 text16 dist/default/debug\ESD_PnP_1.X.debug.o
+_pickObject 23FA 0 CODE 0 text35 dist/default/debug\ESD_PnP_1.X.debug.o
 ___fldiv@aexp 38 0 COMRAM 1 cstackCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
 ___fldiv@bexp 37 0 COMRAM 1 cstackCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
 rotateObj@rotAngle F7 0 BANK0 1 cstackBANK0 dist/default/debug\ESD_PnP_1.X.debug.o
@@ -1091,38 +1103,38 @@ _moveToPoint A42 0 CODE 0 text36 dist/default/debug\ESD_PnP_1.X.debug.o
 __Hintcodelo 16A 0 CODE 0 intcodelo dist/default/debug\ESD_PnP_1.X.debug.o
 __size_of_increaseStep 0 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 __end_of___fldiv A42 0 CODE 0 text33 dist/default/debug\ESD_PnP_1.X.debug.o
-__end_of___fltol 18F2 0 CODE 0 text32 dist/default/debug\ESD_PnP_1.X.debug.o
-__end_of_liftArm 203A 0 CODE 0 text38 dist/default/debug\ESD_PnP_1.X.debug.o
-__end_of_releaseObj 241A 0 CODE 0 text34 dist/default/debug\ESD_PnP_1.X.debug.o
-__end_of_enableMotor 21A8 0 CODE 0 text11 dist/default/debug\ESD_PnP_1.X.debug.o
+__end_of___fltol 190E 0 CODE 0 text32 dist/default/debug\ESD_PnP_1.X.debug.o
+__end_of_liftArm 205E 0 CODE 0 text38 dist/default/debug\ESD_PnP_1.X.debug.o
+__end_of_releaseObj 23FA 0 CODE 0 text34 dist/default/debug\ESD_PnP_1.X.debug.o
+__end_of_enableMotor 21CC 0 CODE 0 text11 dist/default/debug\ESD_PnP_1.X.debug.o
 __size_of_newSequence 0 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
-__end_of_usartInit 245C 0 CODE 0 text1 dist/default/debug\ESD_PnP_1.X.debug.o
-_writeTM0 24C0 0 CODE 0 text48 dist/default/debug\ESD_PnP_1.X.debug.o
+__end_of_usartInit 2490 0 CODE 0 text1 dist/default/debug\ESD_PnP_1.X.debug.o
+_writeTM0 24F4 0 CODE 0 text48 dist/default/debug\ESD_PnP_1.X.debug.o
 _resetPosition 118A 0 CODE 0 text8 dist/default/debug\ESD_PnP_1.X.debug.o
-__cntErrataNOP_dist/default/debug\ESD_PnP_1.X.debug.o 1CD 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
+__cntErrataNOP_dist/default/debug\ESD_PnP_1.X.debug.o 1D0 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 _errString_PointZ 100 0 BANK1 1 dataBANK1 dist/default/debug\ESD_PnP_1.X.debug.o
-_initPinMotors 23AA 0 CODE 0 text17 dist/default/debug\ESD_PnP_1.X.debug.o
-__end_of_resetStep 2532 0 CODE 0 text41 dist/default/debug\ESD_PnP_1.X.debug.o
+_initPinMotors 2426 0 CODE 0 text17 dist/default/debug\ESD_PnP_1.X.debug.o
+__end_of_resetStep 2566 0 CODE 0 text41 dist/default/debug\ESD_PnP_1.X.debug.o
 __size_of_usartInit 0 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 __size_of_stopADC 0 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 __size_of_resetStep 0 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 __size_of_executeData 0 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 __LidataCOMRAM 0 0 ABS 0 idataCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
-__end_of_writeTM0 24CE 0 CODE 0 text48 dist/default/debug\ESD_PnP_1.X.debug.o
+__end_of_writeTM0 2502 0 CODE 0 text48 dist/default/debug\ESD_PnP_1.X.debug.o
 ___fldiv@a 24 0 COMRAM 1 cstackCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
 ___fldiv@b 20 0 COMRAM 1 cstackCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
 __Lintcodelo 16A 0 CODE 0 intcodelo dist/default/debug\ESD_PnP_1.X.debug.o
-__end_of_increaseStep 2588 0 CODE 0 text54 dist/default/debug\ESD_PnP_1.X.debug.o
-start_initialization 203A 0 CODE 0 cinit dist/default/debug\ESD_PnP_1.X.debug.o
-_touchObject 1C1C 0 CODE 0 text25 dist/default/debug\ESD_PnP_1.X.debug.o
-_usartInit 243E 0 CODE 0 text1 dist/default/debug\ESD_PnP_1.X.debug.o
-_resetStep 2528 0 CODE 0 text41 dist/default/debug\ESD_PnP_1.X.debug.o
+__end_of_increaseStep 25BC 0 CODE 0 text54 dist/default/debug\ESD_PnP_1.X.debug.o
+start_initialization 205E 0 CODE 0 cinit dist/default/debug\ESD_PnP_1.X.debug.o
+_touchObject 1C38 0 CODE 0 text25 dist/default/debug\ESD_PnP_1.X.debug.o
+_usartInit 2472 0 CODE 0 text1 dist/default/debug\ESD_PnP_1.X.debug.o
+_resetStep 255C 0 CODE 0 text41 dist/default/debug\ESD_PnP_1.X.debug.o
 __HnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/debug\ESD_PnP_1.X.debug.o
-__end_of_setStep 1DE4 0 CODE 0 text9 dist/default/debug\ESD_PnP_1.X.debug.o
+__end_of_setStep 1EDC 0 CODE 0 text9 dist/default/debug\ESD_PnP_1.X.debug.o
 _TRISCbits F94 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 _TRISDbits F95 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 _TRISEbits F96 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
-_resetNewSequence 2500 0 CODE 0 text12 dist/default/debug\ESD_PnP_1.X.debug.o
+_resetNewSequence 2534 0 CODE 0 text12 dist/default/debug\ESD_PnP_1.X.debug.o
 _ADC_res 53 0 COMRAM 1 bssCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
 __end_of_feeder1Pos 60F 0 SMALLCONST 0 smallconst dist/default/debug\ESD_PnP_1.X.debug.o
 __end_of_feeder2Pos 60D 0 SMALLCONST 0 smallconst dist/default/debug\ESD_PnP_1.X.debug.o
@@ -1133,15 +1145,15 @@ _RCREG1 FAE 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 __pcstackBANK0 F4 0 BANK0 1 cstackBANK0 dist/default/debug\ESD_PnP_1.X.debug.o
 __pcstackBANK1 1D1 0 BANK1 1 cstackBANK1 dist/default/debug\ESD_PnP_1.X.debug.o
 _IPR1bits F9F 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
-__end_of_retPeriod 24DC 0 CODE 0 text53 dist/default/debug\ESD_PnP_1.X.debug.o
+__end_of_retPeriod 2510 0 CODE 0 text53 dist/default/debug\ESD_PnP_1.X.debug.o
 ?_stepCounter 12 0 COMRAM 1 cstackCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
-__end_of_pickObject 243E 0 CODE 0 text35 dist/default/debug\ESD_PnP_1.X.debug.o
-_fatalError 2568 0 CODE 0 text20 dist/default/debug\ESD_PnP_1.X.debug.o
-_readSeq 2558 0 CODE 0 text14 dist/default/debug\ESD_PnP_1.X.debug.o
+__end_of_pickObject 2426 0 CODE 0 text35 dist/default/debug\ESD_PnP_1.X.debug.o
+_fatalError 259C 0 CODE 0 text20 dist/default/debug\ESD_PnP_1.X.debug.o
+_readSeq 258C 0 CODE 0 text14 dist/default/debug\ESD_PnP_1.X.debug.o
 __size_of_retPeriod 0 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
-_setDirection 21A8 0 CODE 0 text40 dist/default/debug\ESD_PnP_1.X.debug.o
+_setDirection 21CC 0 CODE 0 text40 dist/default/debug\ESD_PnP_1.X.debug.o
 ?_stepMade 12 0 COMRAM 1 cstackCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
-__end_of_initADC 23F6 0 CODE 0 text18 dist/default/debug\ESD_PnP_1.X.debug.o
+__end_of_initADC 2472 0 CODE 0 text18 dist/default/debug\ESD_PnP_1.X.debug.o
 __size_ofi2_uartTx 0 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 __Hbank0 0 0 ABS 0 bank0 dist/default/debug\ESD_PnP_1.X.debug.o
 __Hbank1 0 0 ABS 0 bank1 dist/default/debug\ESD_PnP_1.X.debug.o
@@ -1172,8 +1184,8 @@ __size_of___xxtofl 0 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 setStep@motor 12 0 COMRAM 1 cstackCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/debug\ESD_PnP_1.X.debug.o
 __Hbigram 0 0 ABS 0 bigram dist/default/debug\ESD_PnP_1.X.debug.o
-__end_of_uartTx 2322 0 CODE 0 text6 dist/default/debug\ESD_PnP_1.X.debug.o
-__smallconst 600 0 SMALLCONST 0 smallconst C:\Users\alle9\AppData\Local\Temp\sg04.o
+__end_of_uartTx 2346 0 CODE 0 text6 dist/default/debug\ESD_PnP_1.X.debug.o
+__smallconst 600 0 SMALLCONST 0 smallconst C:\Users\alle9\AppData\Local\Temp\saqc.o
 _newFeeder 57 0 COMRAM 1 bssCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
 ___xxtofl@arg 1C 0 COMRAM 1 cstackCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
 ___xxtofl@exp 1B 0 COMRAM 1 cstackCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
@@ -1181,7 +1193,7 @@ ___xxtofl@val 12 0 COMRAM 1 cstackCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
 _newSequenceData EC 0 BANK0 1 bssBANK0 dist/default/debug\ESD_PnP_1.X.debug.o
 __Hcomram 0 0 ABS 0 comram dist/default/debug\ESD_PnP_1.X.debug.o
 __Hconfig 30000E 0 CONFIG 4 config dist/default/debug\ESD_PnP_1.X.debug.o
-_retPeriod 24CE 0 CODE 0 text53 dist/default/debug\ESD_PnP_1.X.debug.o
+_retPeriod 2502 0 CODE 0 text53 dist/default/debug\ESD_PnP_1.X.debug.o
 __size_of_stepCounter 0 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 setDirection@motor 12 0 COMRAM 1 cstackCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
 __Lbank0 0 0 ABS 0 bank0 dist/default/debug\ESD_PnP_1.X.debug.o
@@ -1215,10 +1227,10 @@ __size_of_setTouchRel 0 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 _PORTDbits F83 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 _PORTEbits F84 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 _tm0Limit 68 0 COMRAM 1 bssCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
-__end_of_stopADC 2578 0 CODE 0 text26 dist/default/debug\ESD_PnP_1.X.debug.o
+__end_of_stopADC 25AC 0 CODE 0 text26 dist/default/debug\ESD_PnP_1.X.debug.o
 __size_of_resetPosition 0 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 _INTCONbits FF2 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
-_touchTherm 1B2A 0 CODE 0 text22 dist/default/debug\ESD_PnP_1.X.debug.o
+_touchTherm 1B46 0 CODE 0 text22 dist/default/debug\ESD_PnP_1.X.debug.o
 __size_ofi2_storeData 0 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 __Habs1 0 0 ABS 0 abs1 dist/default/debug\ESD_PnP_1.X.debug.o
 __Hdata 0 0 ABS 0 data dist/default/debug\ESD_PnP_1.X.debug.o
@@ -1238,48 +1250,48 @@ __Ltext 0 0 ABS 0 text dist/default/debug\ESD_PnP_1.X.debug.o
 __LcstackBANK0 0 0 ABS 0 cstackBANK0 dist/default/debug\ESD_PnP_1.X.debug.o
 __LcstackBANK1 0 0 ABS 0 cstackBANK1 dist/default/debug\ESD_PnP_1.X.debug.o
 int$flags 6E 0 COMRAM 1 temp dist/default/debug\ESD_PnP_1.X.debug.o
-__end_of_storeData 165A 0 CODE 0 text4 dist/default/debug\ESD_PnP_1.X.debug.o
+__end_of_storeData 1676 0 CODE 0 text4 dist/default/debug\ESD_PnP_1.X.debug.o
 __HcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
 __size_of_getNewSequence 0 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 __Hintret 0 0 ABS 0 intret dist/default/debug\ESD_PnP_1.X.debug.o
 __size_of_setDirection 0 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 __Hirdata 0 0 CODE 0 irdata dist/default/debug\ESD_PnP_1.X.debug.o
-__S0 2590 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
+__S0 25C4 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 __S1 1D6 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 __S2 0 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 __S4 0 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 __S5 0 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 _isr 8 0 CODE 0 intcode dist/default/debug\ESD_PnP_1.X.debug.o
 __size_of_storeData 0 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
-__end_of_shiftData 227C 0 CODE 0 text7 dist/default/debug\ESD_PnP_1.X.debug.o
+__end_of_shiftData 22A0 0 CODE 0 text7 dist/default/debug\ESD_PnP_1.X.debug.o
 _posVector 4E 0 COMRAM 1 bssCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
 __size_of_shiftData 0 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
-__end_of_resetNewSequence 250A 0 CODE 0 text12 dist/default/debug\ESD_PnP_1.X.debug.o
-__end_of_fatalError 2570 0 CODE 0 text20 dist/default/debug\ESD_PnP_1.X.debug.o
+__end_of_resetNewSequence 253E 0 CODE 0 text12 dist/default/debug\ESD_PnP_1.X.debug.o
+__end_of_fatalError 25A4 0 CODE 0 text20 dist/default/debug\ESD_PnP_1.X.debug.o
 main@newData 1D4 0 BANK1 1 cstackBANK1 dist/default/debug\ESD_PnP_1.X.debug.o
-i2_uartTx 2322 0 CODE 0 text47 dist/default/debug\ESD_PnP_1.X.debug.o
+i2_uartTx 2346 0 CODE 0 text47 dist/default/debug\ESD_PnP_1.X.debug.o
 __HidataCOMRAM 0 0 ABS 0 idataCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
 __Lbigdata 0 0 BIGRAM 1 bigdata dist/default/debug\ESD_PnP_1.X.debug.o
 __size_of_enableMotor 0 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 __size_of_getData 0 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 __Hnvrram 0 0 COMRAM 1 nvrram dist/default/debug\ESD_PnP_1.X.debug.o
 _dataSequence D8 0 BANK0 1 bssBANK0 dist/default/debug\ESD_PnP_1.X.debug.o
-_storeData 14F8 0 CODE 0 text4 dist/default/debug\ESD_PnP_1.X.debug.o
+_storeData 1514 0 CODE 0 text4 dist/default/debug\ESD_PnP_1.X.debug.o
 __size_of_resetNewSequence 0 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 ___xxtofl F92 0 CODE 0 text31 dist/default/debug\ESD_PnP_1.X.debug.o
 isr@tm0Count 63 0 COMRAM 1 bssCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
 __end_of_resetPosition 137E 0 CODE 0 text8 dist/default/debug\ESD_PnP_1.X.debug.o
 __end_of_isr 16A 0 CODE 0 intcode dist/default/debug\ESD_PnP_1.X.debug.o
-_setThermRel 2546 0 CODE 0 text52 dist/default/debug\ESD_PnP_1.X.debug.o
-__end_of_initPinMotors 23D0 0 CODE 0 text17 dist/default/debug\ESD_PnP_1.X.debug.o
-__end_of_setDirection 221C 0 CODE 0 text40 dist/default/debug\ESD_PnP_1.X.debug.o
+_setThermRel 257A 0 CODE 0 text52 dist/default/debug\ESD_PnP_1.X.debug.o
+__end_of_initPinMotors 244C 0 CODE 0 text17 dist/default/debug\ESD_PnP_1.X.debug.o
+__end_of_setDirection 2240 0 CODE 0 text40 dist/default/debug\ESD_PnP_1.X.debug.o
 __size_of_printError 0 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
-_shiftData 221C 0 CODE 0 text7 dist/default/debug\ESD_PnP_1.X.debug.o
+_shiftData 2240 0 CODE 0 text7 dist/default/debug\ESD_PnP_1.X.debug.o
 isr@single_cycle 51 0 COMRAM 1 bssCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
 __Lintentry 0 0 ABS 0 intentry dist/default/debug\ESD_PnP_1.X.debug.o
-__end_ofi2_uartTx 2370 0 CODE 0 text47 dist/default/debug\ESD_PnP_1.X.debug.o
-_returnTherm 24DC 0 CODE 0 text23 dist/default/debug\ESD_PnP_1.X.debug.o
-_returnTouch 24E8 0 CODE 0 text28 dist/default/debug\ESD_PnP_1.X.debug.o
+__end_ofi2_uartTx 2394 0 CODE 0 text47 dist/default/debug\ESD_PnP_1.X.debug.o
+_returnTherm 2510 0 CODE 0 text23 dist/default/debug\ESD_PnP_1.X.debug.o
+_returnTouch 251C 0 CODE 0 text28 dist/default/debug\ESD_PnP_1.X.debug.o
 __Hramtop 600 0 RAM 0 ramtop dist/default/debug\ESD_PnP_1.X.debug.o
 __Hrparam 0 0 COMRAM 1 rparam dist/default/debug\ESD_PnP_1.X.debug.o
 __size_of_releaseObj 0 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
@@ -1333,60 +1345,60 @@ __Htext51 0 0 ABS 0 text51 dist/default/debug\ESD_PnP_1.X.debug.o
 __Htext52 0 0 ABS 0 text52 dist/default/debug\ESD_PnP_1.X.debug.o
 __Htext53 0 0 ABS 0 text53 dist/default/debug\ESD_PnP_1.X.debug.o
 __Htext54 0 0 ABS 0 text54 dist/default/debug\ESD_PnP_1.X.debug.o
-_newSequence 2560 0 CODE 0 text15 dist/default/debug\ESD_PnP_1.X.debug.o
+_newSequence 2594 0 CODE 0 text15 dist/default/debug\ESD_PnP_1.X.debug.o
 _RCSTAbits FAB 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 _errString_Feed A4 0 BANK0 1 dataBANK0 dist/default/debug\ESD_PnP_1.X.debug.o
 _errString_ZEND 15C 0 BANK1 1 dataBANK1 dist/default/debug\ESD_PnP_1.X.debug.o
 _PIE1bits F9D 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
-__end_of_touchTherm 1C1C 0 CODE 0 text22 dist/default/debug\ESD_PnP_1.X.debug.o
-__ptext10 20C0 0 CODE 0 text10 dist/default/debug\ESD_PnP_1.X.debug.o
-__ptext11 2134 0 CODE 0 text11 dist/default/debug\ESD_PnP_1.X.debug.o
-__ptext12 2500 0 CODE 0 text12 dist/default/debug\ESD_PnP_1.X.debug.o
-__ptext13 2550 0 CODE 0 text13 dist/default/debug\ESD_PnP_1.X.debug.o
-__ptext14 2558 0 CODE 0 text14 dist/default/debug\ESD_PnP_1.X.debug.o
-__ptext15 2560 0 CODE 0 text15 dist/default/debug\ESD_PnP_1.X.debug.o
-__ptext16 2370 0 CODE 0 text16 dist/default/debug\ESD_PnP_1.X.debug.o
-__ptext17 23AA 0 CODE 0 text17 dist/default/debug\ESD_PnP_1.X.debug.o
-__ptext18 23D0 0 CODE 0 text18 dist/default/debug\ESD_PnP_1.X.debug.o
-__ptext19 2496 0 CODE 0 text19 dist/default/debug\ESD_PnP_1.X.debug.o
-__ptext20 2568 0 CODE 0 text20 dist/default/debug\ESD_PnP_1.X.debug.o
+__end_of_touchTherm 1C38 0 CODE 0 text22 dist/default/debug\ESD_PnP_1.X.debug.o
+__ptext10 20E4 0 CODE 0 text10 dist/default/debug\ESD_PnP_1.X.debug.o
+__ptext11 2158 0 CODE 0 text11 dist/default/debug\ESD_PnP_1.X.debug.o
+__ptext12 2534 0 CODE 0 text12 dist/default/debug\ESD_PnP_1.X.debug.o
+__ptext13 2584 0 CODE 0 text13 dist/default/debug\ESD_PnP_1.X.debug.o
+__ptext14 258C 0 CODE 0 text14 dist/default/debug\ESD_PnP_1.X.debug.o
+__ptext15 2594 0 CODE 0 text15 dist/default/debug\ESD_PnP_1.X.debug.o
+__ptext16 2394 0 CODE 0 text16 dist/default/debug\ESD_PnP_1.X.debug.o
+__ptext17 2426 0 CODE 0 text17 dist/default/debug\ESD_PnP_1.X.debug.o
+__ptext18 244C 0 CODE 0 text18 dist/default/debug\ESD_PnP_1.X.debug.o
+__ptext19 24CA 0 CODE 0 text19 dist/default/debug\ESD_PnP_1.X.debug.o
+__ptext20 259C 0 CODE 0 text20 dist/default/debug\ESD_PnP_1.X.debug.o
 __ptext21 D04 0 CODE 0 text21 dist/default/debug\ESD_PnP_1.X.debug.o
-__ptext22 1B2A 0 CODE 0 text22 dist/default/debug\ESD_PnP_1.X.debug.o
-__ptext23 24DC 0 CODE 0 text23 dist/default/debug\ESD_PnP_1.X.debug.o
-__ptext24 250A 0 CODE 0 text24 dist/default/debug\ESD_PnP_1.X.debug.o
-__ptext25 1C1C 0 CODE 0 text25 dist/default/debug\ESD_PnP_1.X.debug.o
-__ptext26 2570 0 CODE 0 text26 dist/default/debug\ESD_PnP_1.X.debug.o
-__ptext27 2514 0 CODE 0 text27 dist/default/debug\ESD_PnP_1.X.debug.o
-__ptext28 24E8 0 CODE 0 text28 dist/default/debug\ESD_PnP_1.X.debug.o
-__ptext29 251E 0 CODE 0 text29 dist/default/debug\ESD_PnP_1.X.debug.o
-__ptext30 1DE4 0 CODE 0 text30 dist/default/debug\ESD_PnP_1.X.debug.o
+__ptext22 1B46 0 CODE 0 text22 dist/default/debug\ESD_PnP_1.X.debug.o
+__ptext23 2510 0 CODE 0 text23 dist/default/debug\ESD_PnP_1.X.debug.o
+__ptext24 253E 0 CODE 0 text24 dist/default/debug\ESD_PnP_1.X.debug.o
+__ptext25 1C38 0 CODE 0 text25 dist/default/debug\ESD_PnP_1.X.debug.o
+__ptext26 25A4 0 CODE 0 text26 dist/default/debug\ESD_PnP_1.X.debug.o
+__ptext27 2548 0 CODE 0 text27 dist/default/debug\ESD_PnP_1.X.debug.o
+__ptext28 251C 0 CODE 0 text28 dist/default/debug\ESD_PnP_1.X.debug.o
+__ptext29 2552 0 CODE 0 text29 dist/default/debug\ESD_PnP_1.X.debug.o
+__ptext30 1D2A 0 CODE 0 text30 dist/default/debug\ESD_PnP_1.X.debug.o
 __ptext31 F92 0 CODE 0 text31 dist/default/debug\ESD_PnP_1.X.debug.o
-__ptext32 17BC 0 CODE 0 text32 dist/default/debug\ESD_PnP_1.X.debug.o
+__ptext32 17D8 0 CODE 0 text32 dist/default/debug\ESD_PnP_1.X.debug.o
 __ptext33 610 0 CODE 0 text33 dist/default/debug\ESD_PnP_1.X.debug.o
-__ptext34 23F6 0 CODE 0 text34 dist/default/debug\ESD_PnP_1.X.debug.o
-__ptext35 241A 0 CODE 0 text35 dist/default/debug\ESD_PnP_1.X.debug.o
+__ptext34 23CE 0 CODE 0 text34 dist/default/debug\ESD_PnP_1.X.debug.o
+__ptext35 23FA 0 CODE 0 text35 dist/default/debug\ESD_PnP_1.X.debug.o
 __ptext36 A42 0 CODE 0 text36 dist/default/debug\ESD_PnP_1.X.debug.o
-__ptext37 24F4 0 CODE 0 text37 dist/default/debug\ESD_PnP_1.X.debug.o
-__ptext38 1F8A 0 CODE 0 text38 dist/default/debug\ESD_PnP_1.X.debug.o
-__ptext39 2470 0 CODE 0 text39 dist/default/debug\ESD_PnP_1.X.debug.o
-__ptext40 21A8 0 CODE 0 text40 dist/default/debug\ESD_PnP_1.X.debug.o
-__ptext41 2528 0 CODE 0 text41 dist/default/debug\ESD_PnP_1.X.debug.o
-__ptext42 24A4 0 CODE 0 text42 dist/default/debug\ESD_PnP_1.X.debug.o
-__ptext43 24B2 0 CODE 0 text43 dist/default/debug\ESD_PnP_1.X.debug.o
-__ptext45 165A 0 CODE 0 text45 dist/default/debug\ESD_PnP_1.X.debug.o
-__ptext46 1A0E 0 CODE 0 text46 dist/default/debug\ESD_PnP_1.X.debug.o
-__ptext47 2322 0 CODE 0 text47 dist/default/debug\ESD_PnP_1.X.debug.o
-__ptext48 24C0 0 CODE 0 text48 dist/default/debug\ESD_PnP_1.X.debug.o
-__ptext49 2578 0 CODE 0 text49 dist/default/debug\ESD_PnP_1.X.debug.o
-__ptext50 2532 0 CODE 0 text50 dist/default/debug\ESD_PnP_1.X.debug.o
-__ptext51 253C 0 CODE 0 text51 dist/default/debug\ESD_PnP_1.X.debug.o
-__ptext52 2546 0 CODE 0 text52 dist/default/debug\ESD_PnP_1.X.debug.o
-__ptext53 24CE 0 CODE 0 text53 dist/default/debug\ESD_PnP_1.X.debug.o
-__ptext54 2580 0 CODE 0 text54 dist/default/debug\ESD_PnP_1.X.debug.o
+__ptext37 2528 0 CODE 0 text37 dist/default/debug\ESD_PnP_1.X.debug.o
+__ptext38 1FAE 0 CODE 0 text38 dist/default/debug\ESD_PnP_1.X.debug.o
+__ptext39 24A4 0 CODE 0 text39 dist/default/debug\ESD_PnP_1.X.debug.o
+__ptext40 21CC 0 CODE 0 text40 dist/default/debug\ESD_PnP_1.X.debug.o
+__ptext41 255C 0 CODE 0 text41 dist/default/debug\ESD_PnP_1.X.debug.o
+__ptext42 24D8 0 CODE 0 text42 dist/default/debug\ESD_PnP_1.X.debug.o
+__ptext43 24E6 0 CODE 0 text43 dist/default/debug\ESD_PnP_1.X.debug.o
+__ptext45 1676 0 CODE 0 text45 dist/default/debug\ESD_PnP_1.X.debug.o
+__ptext46 1A2A 0 CODE 0 text46 dist/default/debug\ESD_PnP_1.X.debug.o
+__ptext47 2346 0 CODE 0 text47 dist/default/debug\ESD_PnP_1.X.debug.o
+__ptext48 24F4 0 CODE 0 text48 dist/default/debug\ESD_PnP_1.X.debug.o
+__ptext49 25AC 0 CODE 0 text49 dist/default/debug\ESD_PnP_1.X.debug.o
+__ptext50 2566 0 CODE 0 text50 dist/default/debug\ESD_PnP_1.X.debug.o
+__ptext51 2570 0 CODE 0 text51 dist/default/debug\ESD_PnP_1.X.debug.o
+__ptext52 257A 0 CODE 0 text52 dist/default/debug\ESD_PnP_1.X.debug.o
+__ptext53 2502 0 CODE 0 text53 dist/default/debug\ESD_PnP_1.X.debug.o
+__ptext54 25B4 0 CODE 0 text54 dist/default/debug\ESD_PnP_1.X.debug.o
 _executeData D04 0 CODE 0 text21 dist/default/debug\ESD_PnP_1.X.debug.o
 ___fldiv 610 0 CODE 0 text33 dist/default/debug\ESD_PnP_1.X.debug.o
-___fltol 17BC 0 CODE 0 text32 dist/default/debug\ESD_PnP_1.X.debug.o
-_liftArm 1F8A 0 CODE 0 text38 dist/default/debug\ESD_PnP_1.X.debug.o
+___fltol 17D8 0 CODE 0 text32 dist/default/debug\ESD_PnP_1.X.debug.o
+_liftArm 1FAE 0 CODE 0 text38 dist/default/debug\ESD_PnP_1.X.debug.o
 __Lbigbss 0 0 BIGRAM 1 bigbss dist/default/debug\ESD_PnP_1.X.debug.o
 __Lbigram 0 0 ABS 0 bigram dist/default/debug\ESD_PnP_1.X.debug.o
 __size_of_setDecay 0 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
@@ -1398,7 +1410,7 @@ _LATBbits F8A 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 _LATCbits F8B 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 _LATDbits F8C 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 __end_of_moveToPoint D04 0 CODE 0 text36 dist/default/debug\ESD_PnP_1.X.debug.o
-_whatsTM0Limit 2578 0 CODE 0 text49 dist/default/debug\ESD_PnP_1.X.debug.o
+_whatsTM0Limit 25AC 0 CODE 0 text49 dist/default/debug\ESD_PnP_1.X.debug.o
 __end_of_therm_pressure 607 0 SMALLCONST 0 smallconst dist/default/debug\ESD_PnP_1.X.debug.o
 ___fldiv@grs 33 0 COMRAM 1 cstackCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
 ___fldiv@rem 2C 0 COMRAM 1 cstackCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
@@ -1410,18 +1422,18 @@ ___fldiv@new_exp 31 0 COMRAM 1 cstackCOMRAM dist/default/debug\ESD_PnP_1.X.debug
 _errString_Bound 84 0 BANK0 1 dataBANK0 dist/default/debug\ESD_PnP_1.X.debug.o
 i2storeData@data A 0 COMRAM 1 cstackCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
 _errString_Fatal 1AB 0 BANK1 1 dataBANK1 dist/default/debug\ESD_PnP_1.X.debug.o
-_uartTx 22D4 0 CODE 0 text6 dist/default/debug\ESD_PnP_1.X.debug.o
+_uartTx 22F8 0 CODE 0 text6 dist/default/debug\ESD_PnP_1.X.debug.o
 _errString_Point 134 0 BANK1 1 dataBANK1 dist/default/debug\ESD_PnP_1.X.debug.o
 _errString_Reset 184 0 BANK1 1 dataBANK1 dist/default/debug\ESD_PnP_1.X.debug.o
-stackhi 5FF 0 ABS 0 - C:\Users\alle9\AppData\Local\Temp\sg04.o
-stacklo 1D6 0 ABS 0 - C:\Users\alle9\AppData\Local\Temp\sg04.o
+stackhi 5FF 0 ABS 0 - C:\Users\alle9\AppData\Local\Temp\saqc.o
+stacklo 1D6 0 ABS 0 - C:\Users\alle9\AppData\Local\Temp\saqc.o
 __Lintcode 8 0 CODE 0 intcode dist/default/debug\ESD_PnP_1.X.debug.o
 __size_of_tim0Init 0 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 __size_of_tim2Init 0 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 __size_of_pickObject 0 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 __Lintret 0 0 ABS 0 intret dist/default/debug\ESD_PnP_1.X.debug.o
 __Lirdata 0 0 CODE 0 irdata dist/default/debug\ESD_PnP_1.X.debug.o
-_setStep 1D0E 0 CODE 0 text9 dist/default/debug\ESD_PnP_1.X.debug.o
+_setStep 1E06 0 CODE 0 text9 dist/default/debug\ESD_PnP_1.X.debug.o
 _ADCON0bits FC2 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 _ADCON1bits FC1 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 uartTx@length 14 0 COMRAM 1 cstackCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
@@ -1434,13 +1446,13 @@ __Lspace_4 0 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 __pbssCOMRAM 45 0 COMRAM 1 bssCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
 __HcstackBANK0 0 0 ABS 0 cstackBANK0 dist/default/debug\ESD_PnP_1.X.debug.o
 __HcstackBANK1 0 0 ABS 0 cstackBANK1 dist/default/debug\ESD_PnP_1.X.debug.o
-__end_of_touchObject 1D0E 0 CODE 0 text25 dist/default/debug\ESD_PnP_1.X.debug.o
+__end_of_touchObject 1D2A 0 CODE 0 text25 dist/default/debug\ESD_PnP_1.X.debug.o
 _PIR1bits F9E 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
-__end_of_getData 24B2 0 CODE 0 text42 dist/default/debug\ESD_PnP_1.X.debug.o
+__end_of_getData 24E6 0 CODE 0 text42 dist/default/debug\ESD_PnP_1.X.debug.o
 __LcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
 ___fltol@exp1 42 0 COMRAM 1 cstackCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
-i2_printError 1A0E 0 CODE 0 text46 dist/default/debug\ESD_PnP_1.X.debug.o
-end_of_initialization 20B2 0 CODE 0 cinit dist/default/debug\ESD_PnP_1.X.debug.o
+i2_printError 1A2A 0 CODE 0 text46 dist/default/debug\ESD_PnP_1.X.debug.o
+end_of_initialization 20D6 0 CODE 0 cinit dist/default/debug\ESD_PnP_1.X.debug.o
 __Lnvrram 0 0 COMRAM 1 nvrram dist/default/debug\ESD_PnP_1.X.debug.o
 __Hintentry 0 0 ABS 0 intentry dist/default/debug\ESD_PnP_1.X.debug.o
 _RCONbits FD0 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
@@ -1448,32 +1460,32 @@ setDecay@decay 15 0 COMRAM 1 cstackCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
 setDecay@motor 12 0 COMRAM 1 cstackCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
 ?___fldiv 20 0 COMRAM 1 cstackCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
 ?___fltol 39 0 COMRAM 1 cstackCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
-_resetTherm 250A 0 CODE 0 text24 dist/default/debug\ESD_PnP_1.X.debug.o
-_resetTouch 251E 0 CODE 0 text29 dist/default/debug\ESD_PnP_1.X.debug.o
-_setDecay 20C0 0 CODE 0 text10 dist/default/debug\ESD_PnP_1.X.debug.o
+_resetTherm 253E 0 CODE 0 text24 dist/default/debug\ESD_PnP_1.X.debug.o
+_resetTouch 2552 0 CODE 0 text29 dist/default/debug\ESD_PnP_1.X.debug.o
+_setDecay 20E4 0 CODE 0 text10 dist/default/debug\ESD_PnP_1.X.debug.o
 __Hreset_vec 6 0 CODE 0 reset_vec dist/default/debug\ESD_PnP_1.X.debug.o
 moveToPoint@MOT1Direction 22 0 COMRAM 1 cstackCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
 __HbssBANK0 0 0 ABS 0 bssBANK0 dist/default/debug\ESD_PnP_1.X.debug.o
-_initADC 23D0 0 CODE 0 text18 dist/default/debug\ESD_PnP_1.X.debug.o
-__end_of_rotateObj 1EB8 0 CODE 0 text30 dist/default/debug\ESD_PnP_1.X.debug.o
-_stepCounter 24F4 0 CODE 0 text37 dist/default/debug\ESD_PnP_1.X.debug.o
+_initADC 244C 0 CODE 0 text18 dist/default/debug\ESD_PnP_1.X.debug.o
+__end_of_rotateObj 1E06 0 CODE 0 text30 dist/default/debug\ESD_PnP_1.X.debug.o
+_stepCounter 2528 0 CODE 0 text37 dist/default/debug\ESD_PnP_1.X.debug.o
 __Lramtop 600 0 RAM 0 ramtop dist/default/debug\ESD_PnP_1.X.debug.o
 __Lrparam 0 0 COMRAM 1 rparam dist/default/debug\ESD_PnP_1.X.debug.o
-__pcinit 203A 0 CODE 0 cinit dist/default/debug\ESD_PnP_1.X.debug.o
+__pcinit 205E 0 CODE 0 cinit dist/default/debug\ESD_PnP_1.X.debug.o
 __size_of_rotateObj 0 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 moveToPoint@MOT2Direction 23 0 COMRAM 1 cstackCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
 __ptext0 137E 0 CODE 0 text0 dist/default/debug\ESD_PnP_1.X.debug.o
-__ptext1 243E 0 CODE 0 text1 dist/default/debug\ESD_PnP_1.X.debug.o
-__ptext2 245C 0 CODE 0 text2 dist/default/debug\ESD_PnP_1.X.debug.o
-__ptext3 2484 0 CODE 0 text3 dist/default/debug\ESD_PnP_1.X.debug.o
-__ptext4 14F8 0 CODE 0 text4 dist/default/debug\ESD_PnP_1.X.debug.o
-__ptext5 18F2 0 CODE 0 text5 dist/default/debug\ESD_PnP_1.X.debug.o
-__ptext6 22D4 0 CODE 0 text6 dist/default/debug\ESD_PnP_1.X.debug.o
-__ptext7 221C 0 CODE 0 text7 dist/default/debug\ESD_PnP_1.X.debug.o
+__ptext1 2472 0 CODE 0 text1 dist/default/debug\ESD_PnP_1.X.debug.o
+__ptext2 2490 0 CODE 0 text2 dist/default/debug\ESD_PnP_1.X.debug.o
+__ptext3 24B8 0 CODE 0 text3 dist/default/debug\ESD_PnP_1.X.debug.o
+__ptext4 1514 0 CODE 0 text4 dist/default/debug\ESD_PnP_1.X.debug.o
+__ptext5 190E 0 CODE 0 text5 dist/default/debug\ESD_PnP_1.X.debug.o
+__ptext6 22F8 0 CODE 0 text6 dist/default/debug\ESD_PnP_1.X.debug.o
+__ptext7 2240 0 CODE 0 text7 dist/default/debug\ESD_PnP_1.X.debug.o
 __ptext8 118A 0 CODE 0 text8 dist/default/debug\ESD_PnP_1.X.debug.o
-__ptext9 1D0E 0 CODE 0 text9 dist/default/debug\ESD_PnP_1.X.debug.o
+__ptext9 1E06 0 CODE 0 text9 dist/default/debug\ESD_PnP_1.X.debug.o
 __size_of_uartTx 0 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
-__end_of_setDecay 2134 0 CODE 0 text10 dist/default/debug\ESD_PnP_1.X.debug.o
+__end_of_setDecay 2158 0 CODE 0 text10 dist/default/debug\ESD_PnP_1.X.debug.o
 __Lstruct 0 0 COMRAM 1 struct dist/default/debug\ESD_PnP_1.X.debug.o
 __Ltext10 0 0 ABS 0 text10 dist/default/debug\ESD_PnP_1.X.debug.o
 __Ltext11 0 0 ABS 0 text11 dist/default/debug\ESD_PnP_1.X.debug.o
@@ -1519,71 +1531,71 @@ __Ltext51 0 0 ABS 0 text51 dist/default/debug\ESD_PnP_1.X.debug.o
 __Ltext52 0 0 ABS 0 text52 dist/default/debug\ESD_PnP_1.X.debug.o
 __Ltext53 0 0 ABS 0 text53 dist/default/debug\ESD_PnP_1.X.debug.o
 __Ltext54 0 0 ABS 0 text54 dist/default/debug\ESD_PnP_1.X.debug.o
-_toggleStep 2532 0 CODE 0 text50 dist/default/debug\ESD_PnP_1.X.debug.o
-__ramtop 600 0 RAM 0 ramtop C:\Users\alle9\AppData\Local\Temp\sg04.o
-_setTouchRel 253C 0 CODE 0 text51 dist/default/debug\ESD_PnP_1.X.debug.o
+_toggleStep 2566 0 CODE 0 text50 dist/default/debug\ESD_PnP_1.X.debug.o
+__ramtop 600 0 RAM 0 ramtop C:\Users\alle9\AppData\Local\Temp\saqc.o
+_setTouchRel 2570 0 CODE 0 text51 dist/default/debug\ESD_PnP_1.X.debug.o
 rotateObj@totStep F8 0 BANK0 1 cstackBANK0 dist/default/debug\ESD_PnP_1.X.debug.o
-i2_storeData 165A 0 CODE 0 text45 dist/default/debug\ESD_PnP_1.X.debug.o
+i2_storeData 1676 0 CODE 0 text45 dist/default/debug\ESD_PnP_1.X.debug.o
 __Lpowerup 16A 0 CODE 0 powerup dist/default/debug\ESD_PnP_1.X.debug.o
 ?___xxtofl 12 0 COMRAM 1 cstackCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
 __Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/debug\ESD_PnP_1.X.debug.o
 executeData@data FD 0 BANK0 1 cstackBANK0 dist/default/debug\ESD_PnP_1.X.debug.o
-_tim0Init 2484 0 CODE 0 text3 dist/default/debug\ESD_PnP_1.X.debug.o
-_tim2Init 245C 0 CODE 0 text2 dist/default/debug\ESD_PnP_1.X.debug.o
+_tim0Init 24B8 0 CODE 0 text3 dist/default/debug\ESD_PnP_1.X.debug.o
+_tim2Init 2490 0 CODE 0 text2 dist/default/debug\ESD_PnP_1.X.debug.o
 ___fltol@sign1 41 0 COMRAM 1 cstackCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
 __psmallconst 600 0 SMALLCONST 0 smallconst dist/default/debug\ESD_PnP_1.X.debug.o
 tim2Init@_pwmPeriod 12 0 COMRAM 1 cstackCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
 __Lreset_vec 0 0 CODE 0 reset_vec dist/default/debug\ESD_PnP_1.X.debug.o
 rotateObj@rotSequence 80 0 BANK0 1 dataBANK0 dist/default/debug\ESD_PnP_1.X.debug.o
-_rotateObj 1DE4 0 CODE 0 text30 dist/default/debug\ESD_PnP_1.X.debug.o
+_rotateObj 1D2A 0 CODE 0 text30 dist/default/debug\ESD_PnP_1.X.debug.o
 __size_ofi2_printError 0 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
-_stopADC 2570 0 CODE 0 text26 dist/default/debug\ESD_PnP_1.X.debug.o
+_stopADC 25A4 0 CODE 0 text26 dist/default/debug\ESD_PnP_1.X.debug.o
 __size_of_fatalError 0 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 ___fltol@f1 39 0 COMRAM 1 cstackCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
 i2uartTx@i 4 0 COMRAM 1 cstackCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
 _rotAngle 59 0 COMRAM 1 bssCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
 __size_of_readSeq 0 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
-__end_of_tim0Init 2496 0 CODE 0 text3 dist/default/debug\ESD_PnP_1.X.debug.o
-__end_of_tim2Init 2470 0 CODE 0 text2 dist/default/debug\ESD_PnP_1.X.debug.o
+__end_of_tim0Init 24CA 0 CODE 0 text3 dist/default/debug\ESD_PnP_1.X.debug.o
+__end_of_tim2Init 24A4 0 CODE 0 text2 dist/default/debug\ESD_PnP_1.X.debug.o
 ___param_bank 0 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 __Hbigdata 0 0 BIGRAM 1 bigdata dist/default/debug\ESD_PnP_1.X.debug.o
 __size_of_clearTM0 0 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
-__end_of__initialization 20B2 0 CODE 0 cinit dist/default/debug\ESD_PnP_1.X.debug.o
+__end_of__initialization 20D6 0 CODE 0 cinit dist/default/debug\ESD_PnP_1.X.debug.o
 __size_of_whatsTM0Limit 0 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 storeData@counter 5E 0 COMRAM 1 bssCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
 __Libigdata 0 0 CODE 0 ibigdata dist/default/debug\ESD_PnP_1.X.debug.o
-__pidataBANK0 227C 0 CODE 0 idataBANK0 dist/default/debug\ESD_PnP_1.X.debug.o
-__pidataBANK1 1EB8 0 CODE 0 idataBANK1 dist/default/debug\ESD_PnP_1.X.debug.o
-_enableMotor 2134 0 CODE 0 text11 dist/default/debug\ESD_PnP_1.X.debug.o
+__pidataBANK0 22A0 0 CODE 0 idataBANK0 dist/default/debug\ESD_PnP_1.X.debug.o
+__pidataBANK1 1EDC 0 CODE 0 idataBANK1 dist/default/debug\ESD_PnP_1.X.debug.o
+_enableMotor 2158 0 CODE 0 text11 dist/default/debug\ESD_PnP_1.X.debug.o
 __Lclrtext 0 0 ABS 0 clrtext dist/default/debug\ESD_PnP_1.X.debug.o
 setDirection@direction 15 0 COMRAM 1 cstackCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
-__end_of_resetTherm 2514 0 CODE 0 text24 dist/default/debug\ESD_PnP_1.X.debug.o
-__end_of_resetTouch 2528 0 CODE 0 text29 dist/default/debug\ESD_PnP_1.X.debug.o
+__end_of_resetTherm 2548 0 CODE 0 text24 dist/default/debug\ESD_PnP_1.X.debug.o
+__end_of_resetTouch 255C 0 CODE 0 text29 dist/default/debug\ESD_PnP_1.X.debug.o
 __pcstackCOMRAM 1 0 COMRAM 1 cstackCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
 _TXSTAbits FAC 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
-__end_ofi2_printError 1B2A 0 CODE 0 text46 dist/default/debug\ESD_PnP_1.X.debug.o
+__end_ofi2_printError 1B46 0 CODE 0 text46 dist/default/debug\ESD_PnP_1.X.debug.o
 __end_ofrotateObj@stepAngle 605 0 SMALLCONST 0 smallconst dist/default/debug\ESD_PnP_1.X.debug.o
 isr@completeStep 62 0 COMRAM 1 bssCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
 moveToPoint@x1 16 0 COMRAM 1 cstackCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
 moveToPoint@x2 1A 0 COMRAM 1 cstackCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
 moveToPoint@y1 18 0 COMRAM 1 cstackCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
 moveToPoint@y2 1C 0 COMRAM 1 cstackCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
-__end_of_reduceSeq 2558 0 CODE 0 text13 dist/default/debug\ESD_PnP_1.X.debug.o
-__end_of_main 14F8 0 CODE 0 text0 dist/default/debug\ESD_PnP_1.X.debug.o
+__end_of_reduceSeq 258C 0 CODE 0 text13 dist/default/debug\ESD_PnP_1.X.debug.o
+__end_of_main 1514 0 CODE 0 text0 dist/default/debug\ESD_PnP_1.X.debug.o
 __pintcode 8 0 CODE 0 intcode dist/default/debug\ESD_PnP_1.X.debug.o
 shiftData@i 14 0 COMRAM 1 cstackCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
 __size_of_reduceSeq 0 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 __size_of_touchTherm 0 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 _therm_rel 64 0 COMRAM 1 bssCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
 __size_of_moveToPoint 0 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
-__end_of_whatsTM0Limit 2580 0 CODE 0 text49 dist/default/debug\ESD_PnP_1.X.debug.o
+__end_of_whatsTM0Limit 25B4 0 CODE 0 text49 dist/default/debug\ESD_PnP_1.X.debug.o
 _SPBRG FAF 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 _TRISA F92 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 _TRISB F93 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 _TRISC F94 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 _TRISD F95 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 _TXREG FAD 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
-__end_of_toggleStep 253C 0 CODE 0 text50 dist/default/debug\ESD_PnP_1.X.debug.o
+__end_of_toggleStep 2570 0 CODE 0 text50 dist/default/debug\ESD_PnP_1.X.debug.o
 __HRAM 0 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 __Hbss 0 0 RAM 1 bss dist/default/debug\ESD_PnP_1.X.debug.o
 __Hram 0 0 ABS 0 ram dist/default/debug\ESD_PnP_1.X.debug.o
@@ -1592,24 +1604,24 @@ __LRAM 1 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 __Lbss 0 0 RAM 1 bss dist/default/debug\ESD_PnP_1.X.debug.o
 __Lram 0 0 ABS 0 ram dist/default/debug\ESD_PnP_1.X.debug.o
 __Lsfr 0 0 ABS 0 sfr dist/default/debug\ESD_PnP_1.X.debug.o
-_getNewSequence 2496 0 CODE 0 text19 dist/default/debug\ESD_PnP_1.X.debug.o
+_getNewSequence 24CA 0 CODE 0 text19 dist/default/debug\ESD_PnP_1.X.debug.o
 main@errCode 1D3 0 BANK1 1 cstackBANK1 dist/default/debug\ESD_PnP_1.X.debug.o
 __size_of_isr 0 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 __HdataBANK0 0 0 ABS 0 dataBANK0 dist/default/debug\ESD_PnP_1.X.debug.o
 __HdataBANK1 0 0 ABS 0 dataBANK1 dist/default/debug\ESD_PnP_1.X.debug.o
-__end_of_setThermRel 2550 0 CODE 0 text52 dist/default/debug\ESD_PnP_1.X.debug.o
+__end_of_setThermRel 2584 0 CODE 0 text52 dist/default/debug\ESD_PnP_1.X.debug.o
 _errString_Command C1 0 BANK0 1 dataBANK0 dist/default/debug\ESD_PnP_1.X.debug.o
 _pwmStep 67 0 COMRAM 1 bssCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
-__initialization 203A 0 CODE 0 cinit dist/default/debug\ESD_PnP_1.X.debug.o
-_reduceSeq 2550 0 CODE 0 text13 dist/default/debug\ESD_PnP_1.X.debug.o
-__end_of_returnTherm 24E8 0 CODE 0 text23 dist/default/debug\ESD_PnP_1.X.debug.o
-__end_of_returnTouch 24F4 0 CODE 0 text28 dist/default/debug\ESD_PnP_1.X.debug.o
+__initialization 205E 0 CODE 0 cinit dist/default/debug\ESD_PnP_1.X.debug.o
+_reduceSeq 2584 0 CODE 0 text13 dist/default/debug\ESD_PnP_1.X.debug.o
+__end_of_returnTherm 251C 0 CODE 0 text23 dist/default/debug\ESD_PnP_1.X.debug.o
+__end_of_returnTouch 2528 0 CODE 0 text28 dist/default/debug\ESD_PnP_1.X.debug.o
 ___xxtofl@sign 1A 0 COMRAM 1 cstackCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
 __pbssBANK0 D8 0 BANK0 1 bssBANK0 dist/default/debug\ESD_PnP_1.X.debug.o
 ?_retPeriod 1 0 COMRAM 1 cstackCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
-_clearTM0 24B2 0 CODE 0 text43 dist/default/debug\ESD_PnP_1.X.debug.o
+_clearTM0 24E6 0 CODE 0 text43 dist/default/debug\ESD_PnP_1.X.debug.o
 __pdataCOMRAM 69 0 COMRAM 1 dataCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
-_interruptInit 2370 0 CODE 0 text16 dist/default/debug\ESD_PnP_1.X.debug.o
+_interruptInit 2394 0 CODE 0 text16 dist/default/debug\ESD_PnP_1.X.debug.o
 _T2CONbits FCA 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 __Hfardata 0 0 FARRAM 0 fardata dist/default/debug\ESD_PnP_1.X.debug.o
 __Hsmallconst 610 0 SMALLCONST 0 smallconst dist/default/debug\ESD_PnP_1.X.debug.o
@@ -1619,8 +1631,8 @@ __size_of_startADC 0 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
 __end_of_touch_pressure 609 0 SMALLCONST 0 smallconst dist/default/debug\ESD_PnP_1.X.debug.o
 __Lifardata 0 0 CODE 0 ifardata dist/default/debug\ESD_PnP_1.X.debug.o
 __size_of_touchObject 0 0 ABS 0 - dist/default/debug\ESD_PnP_1.X.debug.o
-__end_of_newSequence 2568 0 CODE 0 text15 dist/default/debug\ESD_PnP_1.X.debug.o
-__end_of_clearTM0 24C0 0 CODE 0 text43 dist/default/debug\ESD_PnP_1.X.debug.o
+__end_of_newSequence 259C 0 CODE 0 text15 dist/default/debug\ESD_PnP_1.X.debug.o
+__end_of_clearTM0 24F4 0 CODE 0 text43 dist/default/debug\ESD_PnP_1.X.debug.o
 __Hintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/debug\ESD_PnP_1.X.debug.o
 __Hintcode 16A 0 CODE 0 intcode dist/default/debug\ESD_PnP_1.X.debug.o
 resetPosition@keepMovingX 16 0 COMRAM 1 cstackCOMRAM dist/default/debug\ESD_PnP_1.X.debug.o
@@ -1652,10 +1664,10 @@ moveToPoint@keepMovingY 21 0 COMRAM 1 cstackCOMRAM dist/default/debug\ESD_PnP_1.
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-text33 0 610 610 1979 1
-text38 0 1F8A 1F8A 603 1
+text33 0 610 610 199D 1
+text38 0 1FAE 1FAE 613 1
 cstackCOMRAM 1 1 1 6E 1
-text 0 258E 258E 2 1
+text 0 25C2 25C2 2 1
 reset_vec 0 0 0 6 1
 intcode 0 8 8 166 1
 smallconst 0 600 600 10 1

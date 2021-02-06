@@ -3978,7 +3978,10 @@ void main(void) {
 
 
     errCode = resetPosition();
-    printError(errCode);
+    if(errCode != 0){
+        printError(errCode);
+        while(1);
+    }
 
 
     RCSTA1bits.CREN = 1;
@@ -4062,7 +4065,7 @@ void interruptInit(void){
     PIE1bits.TMR2IE = 1;
     PIE1bits.RC1IE = 1;
 }
-# 122 "main.c"
+# 125 "main.c"
 char executeData(){
     t_sequence *data = getData();
 
