@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=D:\Programs\MPLABx\xc8\v2.20\pic\dat\en_msgs.txt -cn \
   -h+dist/default/production\ESD_PnP_1.X.production.sym \
   --cmf=dist/default/production\ESD_PnP_1.X.production.cmf -z -Q18F452 \
-  -oC:\Users\alle9\AppData\Local\Temp\sb9o.2 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\alle9\AppData\Local\Temp\sdic.2 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/ESD_PnP_1.X.production.map -E1 \
   -ver=XC8 Compiler --acfsm=1493 -ASTACK=01D6h-05FFh -pstack=STACK \
   -ACODE=00h-03FFFhx2 -ACONST=00h-07FFFh -ASMALLCONST=0600h-06FFhx122 \
@@ -21,7 +21,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\alle9\AppData\Local\Temp\sb9o.o \
+  C:\Users\alle9\AppData\Local\Temp\sdic.o \
   dist/default/production\ESD_PnP_1.X.production.o 
 
 Object code version is 3.11
@@ -31,7 +31,7 @@ Machine type is 18F452
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\alle9\AppData\Local\Temp\sb9o.o
+C:\Users\alle9\AppData\Local\Temp\sdic.o
                 idloc                            200000   200000        8        0       5
                 config                           300000   300000        E        0       4
                 text                               2582     2582        2     12C1       0
@@ -593,7 +593,7 @@ ___xxtofl@sign                                                  cstackCOMRAM 000
 ___xxtofl@val                                                   cstackCOMRAM 000012
 __accesstop                                                     (abs)        000080
 __activetblptr                                                  (abs)        000002
-__cntErrataNOP_C:\Users\alle9\AppData\Local\Temp\sb9o.o         (abs)        000001
+__cntErrataNOP_C:\Users\alle9\AppData\Local\Temp\sdic.o         (abs)        000001
 __cntErrataNOP_dist/default/production\ESD_PnP_1.X.production.o (abs)        0001CD
 __end_of___fldiv                                                text33       000A42
 __end_of___fltol                                                text32       0018E6

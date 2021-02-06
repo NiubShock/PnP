@@ -1,12 +1,3 @@
-/*
- * TODO List
- * [X] Add Error for each important function
- * [X] Define an Error system
- * [X] Return each Error with the USART 
- *      [X] Print error
- * [X] Stepcounter deve essere diviso per 2?
- */
-
 #include <xc.h>
 #include "main.h"
 
@@ -30,14 +21,15 @@ void main(void) {
     interruptInit();
     initPinMotors();
     initADC();
+    usartInit();
     tim0Init();
     tim2Init(10);
     
     //reset the initial position
-    resetPosition();
+    errCode = resetPosition();
+    printError(errCode);
      
     //enable the serial communication
-    usartInit();
     RCSTA1bits.CREN = 1;    //enable rx
     
     while(1){
