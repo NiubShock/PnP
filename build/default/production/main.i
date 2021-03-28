@@ -4015,6 +4015,9 @@ void main(void) {
 
 
             RCSTAbits.CREN = 1;
+
+
+            resetNewSequence();
 # 80 "main.c"
         }
         if(readSeq()){

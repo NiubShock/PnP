@@ -105,6 +105,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "20 ./usart.h
 [; ;./usart.h: 20: void storeData(unsigned char data);
 [v _storeData `(v ~T0 @X0 0 ef1`uc ]
+"27
+[; ;./usart.h: 27: void resetNewSequence(void);
+[v _resetNewSequence `(v ~T0 @X0 0 ef ]
 "28
 [; ;./usart.h: 28: unsigned char readSeq(void);
 [v _readSeq `(uc ~T0 @X0 0 ef ]
@@ -827,6 +830,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "66
 [; ;main.c: 66:             RCSTAbits.CREN = 1;
 [e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
+"69
+[; ;main.c: 69:             resetNewSequence();
+[e ( _resetNewSequence ..  ]
 "80
 [; ;main.c: 80:         }
 }

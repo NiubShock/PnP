@@ -65,8 +65,8 @@ void main(void) {
             //turn on the reception again
             RCSTAbits.CREN = 1;
             
-//            //reset the variable for new pick and place sequence
-//            resetNewSequence();
+            //reset the variable for new pick and place sequence
+            resetNewSequence();
 //            
 //            errCode = executeData();        //call the function that will execute the data
 //            printError(errCode);            //print the possible error
