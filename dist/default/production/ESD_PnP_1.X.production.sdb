@@ -51,11 +51,11 @@
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
 "17 D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\interrupt.c
 [v _isr isr `IIH(v  1 e 1 0 ]
-"26 D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+"17 D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
 [v _main main `(v  1 e 1 0 ]
-"107
+"104
 [v _interruptInit interruptInit `(v  1 e 1 0 ]
-"130
+"127
 [v _executeData executeData `(uc  1 e 1 0 ]
 "21 D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
 [v _writeTM0 writeTM0 `(v  1 e 1 0 ]
@@ -85,9 +85,9 @@
 [v _liftArm liftArm `(uc  1 e 1 0 ]
 "575
 [v _rotateObj rotateObj `(v  1 e 1 0 ]
-"597
+"600
 [v _pickObject pickObject `(v  1 e 1 0 ]
-"608
+"614
 [v _releaseObj releaseObj `(v  1 e 1 0 ]
 "21 D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\pwm.c
 [v _tim0Init tim0Init `(v  1 e 1 0 ]
@@ -118,17 +118,15 @@
 [v _fatalError fatalError `(uc  1 e 1 0 ]
 "104
 [v _newSequence newSequence `(uc  1 e 1 0 ]
-"112
-[v _resetNewSequence resetNewSequence `(v  1 e 1 0 ]
 "120
 [v _shiftData shiftData `(v  1 e 1 0 ]
 "131
 [v _storeData storeData `(v  1 e 1 0 ]
 [v i2_storeData storeData `(v  1 e 1 0 ]
 "1 D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X/usart.h
-[s S938 . 4 `uc 1 feederLine 1 0 `uc 1 posX 1 1 `uc 1 posY 1 2 `uc 1 rotation 1 3 ]
+[s S934 . 4 `uc 1 feederLine 1 0 `uc 1 posX 1 1 `uc 1 posY 1 2 `uc 1 rotation 1 3 ]
 "205 D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-[v _getData getData `(*.39S938  1 e 2 0 ]
+[v _getData getData `(*.39S934  1 e 2 0 ]
 "8 D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X/usart.h
 [s S686 . 8 `uc 1 L 1 0 `uc 1 W 1 1 `uc 1 init_posX 1 2 `uc 1 init_posY 1 3 `uc 1 init_rot 1 4 `uc 1 end_posX 1 5 `uc 1 end_posY 1 6 `uc 1 end_rot 1 7 ]
 "213 D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
@@ -277,7 +275,7 @@
 [v _TRISB TRISB `VEuc  1 e 1 @3987 ]
 "1648
 [v _TRISC TRISC `VEuc  1 e 1 @3988 ]
-[s S1380 . 1 `uc 1 TRISC0 1 0 :1:0 
+[s S1376 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 TRISC3 1 0 :1:3 
@@ -287,7 +285,7 @@
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "1684
-[s S1389 . 1 `uc 1 RC0 1 0 :1:0 
+[s S1385 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
 `uc 1 RC2 1 0 :1:2 
 `uc 1 RC3 1 0 :1:3 
@@ -296,11 +294,11 @@
 `uc 1 RC6 1 0 :1:6 
 `uc 1 RC7 1 0 :1:7 
 ]
-[s S1398 . 1 `uc 1 . 1 0 :1:0 
+[s S1394 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 CCP2 1 0 :1:1 
 ]
-[u S1401 . 1 `S1380 1 . 1 0 `S1389 1 . 1 0 `S1398 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES1401  1 e 1 @3988 ]
+[u S1397 . 1 `S1376 1 . 1 0 `S1385 1 . 1 0 `S1394 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES1397  1 e 1 @3988 ]
 "1888
 [v _TRISD TRISD `VEuc  1 e 1 @3989 ]
 [s S89 . 1 `uc 1 TRISD0 1 0 :1:0 
@@ -327,7 +325,7 @@
 "2137
 [u S72 . 1 `S59 1 . 1 0 `S68 1 . 1 0 ]
 [v _TRISEbits TRISEbits `VES72  1 e 1 @3990 ]
-[s S908 . 1 `uc 1 TMR1IE 1 0 :1:0 
+[s S904 . 1 `uc 1 TMR1IE 1 0 :1:0 
 `uc 1 TMR2IE 1 0 :1:1 
 `uc 1 CCP1IE 1 0 :1:2 
 `uc 1 SSPIE 1 0 :1:3 
@@ -337,13 +335,13 @@
 `uc 1 PSPIE 1 0 :1:7 
 ]
 "2284
-[s S917 . 1 `uc 1 . 1 0 :4:0 
+[s S913 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 TX1IE 1 0 :1:4 
 `uc 1 RC1IE 1 0 :1:5 
 ]
-[u S921 . 1 `S908 1 . 1 0 `S917 1 . 1 0 ]
-[v _PIE1bits PIE1bits `VES921  1 e 1 @3997 ]
-[s S1297 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[u S917 . 1 `S904 1 . 1 0 `S913 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES917  1 e 1 @3997 ]
+[s S1293 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSPIF 1 0 :1:3 
@@ -353,13 +351,13 @@
 `uc 1 PSPIF 1 0 :1:7 
 ]
 "2361
-[s S1306 . 1 `uc 1 . 1 0 :4:0 
+[s S1302 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 TX1IF 1 0 :1:4 
 `uc 1 RC1IF 1 0 :1:5 
 ]
-[u S1310 . 1 `S1297 1 . 1 0 `S1306 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES1310  1 e 1 @3998 ]
-[s S1195 . 1 `uc 1 TMR1IP 1 0 :1:0 
+[u S1306 . 1 `S1293 1 . 1 0 `S1302 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES1306  1 e 1 @3998 ]
+[s S1191 . 1 `uc 1 TMR1IP 1 0 :1:0 
 `uc 1 TMR2IP 1 0 :1:1 
 `uc 1 CCP1IP 1 0 :1:2 
 `uc 1 SSPIP 1 0 :1:3 
@@ -369,13 +367,13 @@
 `uc 1 PSPIP 1 0 :1:7 
 ]
 "2438
-[s S1204 . 1 `uc 1 . 1 0 :4:0 
+[s S1200 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 TX1IP 1 0 :1:4 
 `uc 1 RC1IP 1 0 :1:5 
 ]
-[u S1208 . 1 `S1195 1 . 1 0 `S1204 1 . 1 0 ]
-[v _IPR1bits IPR1bits `VES1208  1 e 1 @3999 ]
-[s S614 . 1 `uc 1 RX9D 1 0 :1:0 
+[u S1204 . 1 `S1191 1 . 1 0 `S1200 1 . 1 0 ]
+[v _IPR1bits IPR1bits `VES1204  1 e 1 @3999 ]
+[s S619 . 1 `uc 1 RX9D 1 0 :1:0 
 `uc 1 OERR 1 0 :1:1 
 `uc 1 FERR 1 0 :1:2 
 `uc 1 ADDEN 1 0 :1:3 
@@ -385,27 +383,27 @@
 `uc 1 SPEN 1 0 :1:7 
 ]
 "2755
-[s S623 . 1 `uc 1 RCD8 1 0 :1:0 
+[s S628 . 1 `uc 1 RCD8 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 RC8_9 1 0 :1:6 
 ]
-[s S627 . 1 `uc 1 . 1 0 :6:0 
+[s S632 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 NOT_RC8 1 0 :1:6 
 ]
-[s S630 . 1 `uc 1 . 1 0 :6:0 
+[s S635 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 nRC8 1 0 :1:6 
 ]
-[s S633 . 1 `uc 1 . 1 0 :6:0 
+[s S638 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 RC9 1 0 :1:6 
 ]
-[s S636 . 1 `uc 1 . 1 0 :5:0 
+[s S641 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 SRENA 1 0 :1:5 
 ]
-[u S639 . 1 `S614 1 . 1 0 `S623 1 . 1 0 `S627 1 . 1 0 `S630 1 . 1 0 `S633 1 . 1 0 `S636 1 . 1 0 ]
-[v _RCSTAbits RCSTAbits `VES639  1 e 1 @4011 ]
+[u S644 . 1 `S619 1 . 1 0 `S628 1 . 1 0 `S632 1 . 1 0 `S635 1 . 1 0 `S638 1 . 1 0 `S641 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES644  1 e 1 @4011 ]
 "2861
-[v _RCSTA1bits RCSTA1bits `VES639  1 e 1 @4011 ]
-[s S1427 . 1 `uc 1 TX9D 1 0 :1:0 
+[v _RCSTA1bits RCSTA1bits `VES644  1 e 1 @4011 ]
+[s S1423 . 1 `uc 1 TX9D 1 0 :1:0 
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -415,17 +413,17 @@
 `uc 1 CSRC 1 0 :1:7 
 ]
 "2981
-[s S1436 . 1 `uc 1 TXD8 1 0 :1:0 
+[s S1432 . 1 `uc 1 TXD8 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 TX8_9 1 0 :1:6 
 ]
-[s S1440 . 1 `uc 1 . 1 0 :6:0 
+[s S1436 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 NOT_TX8 1 0 :1:6 
 ]
-[s S1443 . 1 `uc 1 . 1 0 :6:0 
+[s S1439 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 nTX8 1 0 :1:6 
 ]
-[s S1446 . 1 `uc 1 TX9D1 1 0 :1:0 
+[s S1442 . 1 `uc 1 TX9D1 1 0 :1:0 
 `uc 1 TRMT1 1 0 :1:1 
 `uc 1 BRGH1 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -434,8 +432,8 @@
 `uc 1 TX91 1 0 :1:6 
 `uc 1 CSRC1 1 0 :1:7 
 ]
-[u S1455 . 1 `S1427 1 . 1 0 `S1436 1 . 1 0 `S1440 1 . 1 0 `S1443 1 . 1 0 `S1446 1 . 1 0 ]
-[v _TXSTAbits TXSTAbits `VES1455  1 e 1 @4012 ]
+[u S1451 . 1 `S1423 1 . 1 0 `S1432 1 . 1 0 `S1436 1 . 1 0 `S1439 1 . 1 0 `S1442 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES1451  1 e 1 @4012 ]
 "3204
 [v _TXREG TXREG `VEuc  1 e 1 @4013 ]
 "3221
@@ -458,17 +456,17 @@
 ]
 [u S37 . 1 `S24 1 . 1 0 `S29 1 . 1 0 `S34 1 . 1 0 ]
 [v _ADCON1bits ADCON1bits `VES37  1 e 1 @4033 ]
-[s S1079 . 1 `uc 1 . 1 0 :2:0 
+[s S1075 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 GO_NOT_DONE 1 0 :1:2 
 ]
 "3710
-[s S1082 . 1 `uc 1 ADON 1 0 :1:0 
+[s S1078 . 1 `uc 1 ADON 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 GO_nDONE 1 0 :1:2 
 `uc 1 CHS 1 0 :3:3 
 `uc 1 ADCS 1 0 :2:6 
 ]
-[s S1088 . 1 `uc 1 . 1 0 :2:0 
+[s S1084 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 GO 1 0 :1:2 
 `uc 1 CHS0 1 0 :1:3 
 `uc 1 CHS1 1 0 :1:4 
@@ -476,26 +474,26 @@
 `uc 1 ADCS0 1 0 :1:6 
 `uc 1 ADCS1 1 0 :1:7 
 ]
-[s S1096 . 1 `uc 1 . 1 0 :2:0 
+[s S1092 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 NOT_DONE 1 0 :1:2 
 ]
-[s S1099 . 1 `uc 1 . 1 0 :2:0 
+[s S1095 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nDONE 1 0 :1:2 
 ]
-[s S1102 . 1 `uc 1 . 1 0 :2:0 
+[s S1098 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 DONE 1 0 :1:2 
 ]
-[s S1105 . 1 `uc 1 . 1 0 :2:0 
+[s S1101 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 GO_DONE 1 0 :1:2 
 ]
-[s S1108 . 1 `uc 1 . 1 0 :7:0 
+[s S1104 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 ADCAL 1 0 :1:7 
 ]
-[s S1111 . 1 `uc 1 . 1 0 :2:0 
+[s S1107 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 GODONE 1 0 :1:2 
 ]
-[u S1114 . 1 `S1079 1 . 1 0 `S1082 1 . 1 0 `S1088 1 . 1 0 `S1096 1 . 1 0 `S1099 1 . 1 0 `S1102 1 . 1 0 `S1105 1 . 1 0 `S1108 1 . 1 0 `S1111 1 . 1 0 ]
-[v _ADCON0bits ADCON0bits `VES1114  1 e 1 @4034 ]
+[u S1110 . 1 `S1075 1 . 1 0 `S1078 1 . 1 0 `S1084 1 . 1 0 `S1092 1 . 1 0 `S1095 1 . 1 0 `S1098 1 . 1 0 `S1101 1 . 1 0 `S1104 1 . 1 0 `S1107 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES1110  1 e 1 @4034 ]
 "3807
 [v _ADRESL ADRESL `VEuc  1 e 1 @4035 ]
 "3814
@@ -517,22 +515,22 @@
 [v _T2CONbits T2CONbits `VES297  1 e 1 @4042 ]
 "4405
 [v _TMR2 TMR2 `VEuc  1 e 1 @4044 ]
-[s S832 . 1 `uc 1 NOT_BOR 1 0 :1:0 
+[s S828 . 1 `uc 1 NOT_BOR 1 0 :1:0 
 ]
 "4588
-[s S834 . 1 `uc 1 . 1 0 :1:0 
+[s S830 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 NOT_POR 1 0 :1:1 
 ]
-[s S837 . 1 `uc 1 . 1 0 :2:0 
+[s S833 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 NOT_PD 1 0 :1:2 
 ]
-[s S840 . 1 `uc 1 . 1 0 :3:0 
+[s S836 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 NOT_TO 1 0 :1:3 
 ]
-[s S843 . 1 `uc 1 . 1 0 :4:0 
+[s S839 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 NOT_RI 1 0 :1:4 
 ]
-[s S846 . 1 `uc 1 nBOR 1 0 :1:0 
+[s S842 . 1 `uc 1 nBOR 1 0 :1:0 
 `uc 1 nPOR 1 0 :1:1 
 `uc 1 nPD 1 0 :1:2 
 `uc 1 nTO 1 0 :1:3 
@@ -540,10 +538,10 @@
 `uc 1 . 1 0 :2:5 
 `uc 1 IPEN 1 0 :1:7 
 ]
-[s S854 . 1 `uc 1 . 1 0 :7:0 
+[s S850 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 NOT_IPEN 1 0 :1:7 
 ]
-[s S857 . 1 `uc 1 BOR 1 0 :1:0 
+[s S853 . 1 `uc 1 BOR 1 0 :1:0 
 `uc 1 POR 1 0 :1:1 
 `uc 1 PD 1 0 :1:2 
 `uc 1 TO 1 0 :1:3 
@@ -551,8 +549,8 @@
 `uc 1 . 1 0 :2:5 
 `uc 1 nIPEN 1 0 :1:7 
 ]
-[u S865 . 1 `S832 1 . 1 0 `S834 1 . 1 0 `S837 1 . 1 0 `S840 1 . 1 0 `S843 1 . 1 0 `S846 1 . 1 0 `S854 1 . 1 0 `S857 1 . 1 0 ]
-[v _RCONbits RCONbits `VES865  1 e 1 @4048 ]
+[u S861 . 1 `S828 1 . 1 0 `S830 1 . 1 0 `S833 1 . 1 0 `S836 1 . 1 0 `S839 1 . 1 0 `S842 1 . 1 0 `S850 1 . 1 0 `S853 1 . 1 0 ]
+[v _RCONbits RCONbits `VES861  1 e 1 @4048 ]
 [s S313 . 1 `uc 1 T0PS 1 0 :3:0 
 `uc 1 PSA 1 0 :1:3 
 `uc 1 T0SE 1 0 :1:4 
@@ -569,7 +567,7 @@
 [v _T0CONbits T0CONbits `VES324  1 e 1 @4053 ]
 "4859
 [v _TMR0 TMR0 `VEus  1 e 2 @4054 ]
-[s S783 . 1 `uc 1 RBIF 1 0 :1:0 
+[s S779 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INT0IF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -579,7 +577,7 @@
 `uc 1 GIE_GIEH 1 0 :1:7 
 ]
 "5344
-[s S792 . 1 `uc 1 . 1 0 :1:0 
+[s S788 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 INT0F 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -588,25 +586,25 @@
 `uc 1 PEIE 1 0 :1:6 
 `uc 1 GIE 1 0 :1:7 
 ]
-[s S801 . 1 `uc 1 . 1 0 :6:0 
+[s S797 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 GIEL 1 0 :1:6 
 `uc 1 GIEH 1 0 :1:7 
 ]
-[u S805 . 1 `S783 1 . 1 0 `S792 1 . 1 0 `S801 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES805  1 e 1 @4082 ]
+[u S801 . 1 `S779 1 . 1 0 `S788 1 . 1 0 `S797 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES801  1 e 1 @4082 ]
 "13 D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\interrupt.c
 [v _ADC_res ADC_res `ui  1 s 2 ADC_res ]
-"17 D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+"8 D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
 [v _posVector posVector `[3]uc  1 s 3 posVector ]
-"18
+"9
 [v _rotAngle rotAngle `i  1 s 2 rotAngle ]
-"20
+"11
 [v _feeder1Pos feeder1Pos `C[2]uc  1 s 2 feeder1Pos ]
-"21
+"12
 [v _feeder2Pos feeder2Pos `C[2]uc  1 s 2 feeder2Pos ]
-"22
+"13
 [v _feeder3Pos feeder3Pos `C[2]uc  1 s 2 feeder3Pos ]
-"24
+"15
 [v _newFeeder newFeeder `[2]uc  1 s 2 newFeeder ]
 "10 D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
 [v _tm0Error tm0Error `ui  1 s 2 tm0Error ]
@@ -619,42 +617,42 @@
 "13
 [v _pwmPeriod pwmPeriod `ui  1 s 2 pwmPeriod ]
 "13 D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-[v _errString_Feed errString_Feed `[29]uc  1 s 29 errString_Feed ]
+[v _errString_Feed errString_Feed `[30]uc  1 s 30 errString_Feed ]
 "14
-[v _errString_ZEND errString_ZEND `[40]uc  1 s 40 errString_ZEND ]
+[v _errString_ZEND errString_ZEND `[41]uc  1 s 41 errString_ZEND ]
 "15
-[v _errString_Reset errString_Reset `[39]uc  1 s 39 errString_Reset ]
+[v _errString_Reset errString_Reset `[40]uc  1 s 40 errString_Reset ]
 "16
-[v _errString_Point errString_Point `[40]uc  1 s 40 errString_Point ]
+[v _errString_Point errString_Point `[41]uc  1 s 41 errString_Point ]
 "17
-[v _errString_Bound errString_Bound `[32]uc  1 s 32 errString_Bound ]
+[v _errString_Bound errString_Bound `[33]uc  1 s 33 errString_Bound ]
 "18
-[v _errString_PointZ errString_PointZ `[52]uc  1 s 52 errString_PointZ ]
+[v _errString_PointZ errString_PointZ `[53]uc  1 s 53 errString_PointZ ]
 "19
-[v _errString_Fatal errString_Fatal `[38]uc  1 s 38 errString_Fatal ]
+[v _errString_Fatal errString_Fatal `[39]uc  1 s 39 errString_Fatal ]
 "20
-[v _errString_Command errString_Command `[23]uc  1 s 23 errString_Command ]
+[v _errString_Command errString_Command `[24]uc  1 s 24 errString_Command ]
 "21
 [v _dataCounter dataCounter `uc  1 s 1 dataCounter ]
 "22
 [v __fatalError _fatalError `uc  1 s 1 _fatalError ]
 "23
 [v __newSequence _newSequence `uc  1 s 1 _newSequence ]
-[s S938 . 4 `uc 1 feederLine 1 0 `uc 1 posX 1 1 `uc 1 posY 1 2 `uc 1 rotation 1 3 ]
+[s S934 . 4 `uc 1 feederLine 1 0 `uc 1 posX 1 1 `uc 1 posY 1 2 `uc 1 rotation 1 3 ]
 "28
-[v _dataSequence dataSequence `[5]S938  1 s 20 dataSequence ]
+[v _dataSequence dataSequence `[5]S934  1 s 20 dataSequence ]
 [s S686 . 8 `uc 1 L 1 0 `uc 1 W 1 1 `uc 1 init_posX 1 2 `uc 1 init_posY 1 3 `uc 1 init_rot 1 4 `uc 1 end_posX 1 5 `uc 1 end_posY 1 6 `uc 1 end_rot 1 7 ]
 "29
 [v _newSequenceData newSequenceData `S686  1 s 8 newSequenceData ]
-"26 D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+"17 D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
 [s S686 . 8 `uc 1 L 1 0 `uc 1 W 1 1 `uc 1 init_posX 1 2 `uc 1 init_posY 1 3 `uc 1 init_rot 1 4 `uc 1 end_posX 1 5 `uc 1 end_posY 1 6 `uc 1 end_rot 1 7 ]
-"53
-[v main@newData newData `*.39S686  1 a 2 3 ]
-"28
-[v main@errCode errCode `uc  1 a 1 2 ]
-"100
+"49
+[v main@newData newData `*.39S686  1 a 2 6 ]
+"19
+[v main@errCode errCode `uc  1 a 1 5 ]
+"97
 } 0
 "34 D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
 [v _usartInit usartInit `(v  1 e 1 0 ]
@@ -750,12 +748,7 @@
 [v enableMotor@enable enable `uc  1 a 1 20 ]
 "108
 } 0
-"112 D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-[v _resetNewSequence resetNewSequence `(v  1 e 1 0 ]
-{
-"114
-} 0
-"89
+"89 D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
 [v _reduceSeq reduceSeq `(v  1 e 1 0 ]
 {
 "91
@@ -770,10 +763,10 @@
 {
 "106
 } 0
-"107 D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+"104 D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
 [v _interruptInit interruptInit `(v  1 e 1 0 ]
 {
-"121
+"118
 } 0
 "42 D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
 [v _initPinMotors initPinMotors `(v  1 e 1 0 ]
@@ -797,15 +790,15 @@
 {
 "102
 } 0
-"130 D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
+"127 D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\main.c
 [v _executeData executeData `(uc  1 e 1 0 ]
 {
-[s S938 . 4 `uc 1 feederLine 1 0 `uc 1 posX 1 1 `uc 1 posY 1 2 `uc 1 rotation 1 3 ]
-"131
-[v executeData@data data `*.39S938  1 a 2 9 ]
-"133
-[v executeData@errCode errCode `uc  1 a 1 8 ]
-"203
+[s S934 . 4 `uc 1 feederLine 1 0 `uc 1 posX 1 1 `uc 1 posY 1 2 `uc 1 rotation 1 3 ]
+"128
+[v executeData@data data `*.39S934  1 a 2 1 ]
+"130
+[v executeData@errCode errCode `uc  1 a 1 0 ]
+"200
 } 0
 "455 D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
 [v _touchTherm touchTherm `(uc  1 e 1 0 ]
@@ -861,7 +854,7 @@
 [v rotateObj@rotSequence rotSequence `[4]uc  1 s 4 rotSequence ]
 "579
 [v rotateObj@rotAngle rotAngle `uc  1 a 1 3 ]
-"592
+"595
 } 0
 "10 D:\Programs\MPLABx\xc8\v2.20\pic\sources\c99\common\xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
@@ -908,15 +901,15 @@
 [v ___fldiv@a a `d  1 p 4 35 ]
 "185
 } 0
-"608 D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
+"614 D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
 [v _releaseObj releaseObj `(v  1 e 1 0 ]
 {
-"614
+"623
 } 0
-"597
+"600
 [v _pickObject pickObject `(v  1 e 1 0 ]
 {
-"603
+"609
 } 0
 "264
 [v _moveToPoint moveToPoint `(uc  1 e 1 0 ]
@@ -967,9 +960,9 @@
 "67
 } 0
 "1 D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X/usart.h
-[s S938 . 4 `uc 1 feederLine 1 0 `uc 1 posX 1 1 `uc 1 posY 1 2 `uc 1 rotation 1 3 ]
+[s S934 . 4 `uc 1 feederLine 1 0 `uc 1 posX 1 1 `uc 1 posY 1 2 `uc 1 rotation 1 3 ]
 "205 D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
-[v _getData getData `(*.39S938  1 e 2 0 ]
+[v _getData getData `(*.39S934  1 e 2 0 ]
 {
 "207
 } 0

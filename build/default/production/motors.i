@@ -4134,7 +4134,7 @@ char resetPosition(){
     T2CONbits.TMR2ON = 1;
 
     tm0Error = 0;
-    tm0Limit = 200;
+    tm0Limit = 100;
     T0CONbits.TMR0ON = 1;
 
     while(keepMovingX || keepMovingY || keepMovingZ){
@@ -4245,7 +4245,7 @@ char moveToPoint(unsigned int x1, unsigned int y1, unsigned int x2, unsigned int
     T2CONbits.TMR2ON = 1;
 
     tm0Error = 0;
-    tm0Limit = 200;
+    tm0Limit = 100;
     T0CONbits.TMR0ON = 1;
 
     while(keepMovingX || keepMovingY){
@@ -4340,7 +4340,7 @@ char touchObject(){
     T2CONbits.TMR2ON = 1;
 
     tm0Error = 0;
-    tm0Limit = 200;
+    tm0Limit = 100;
     T0CONbits.TMR0ON = 1;
 
 
@@ -4402,7 +4402,7 @@ char touchTherm(){
     T2CONbits.TMR2ON = 1;
 
     tm0Error = 0;
-    tm0Limit = 200;
+    tm0Limit = 100;
     T0CONbits.TMR0ON = 1;
 
 
@@ -4468,7 +4468,7 @@ char liftArm(){
     T2CONbits.TMR2ON = 1;
 
     tm0Error = 0;
-    tm0Limit = 200;
+    tm0Limit = 100;
     T0CONbits.TMR0ON = 1;
 
 
@@ -4529,7 +4529,10 @@ void rotateObj(unsigned char rotAngle){
 
 
 
+        T2CONbits.TMR2ON = 1;
         while(!stepMade());
+        T2CONbits.TMR2ON = 1;
+        TMR2 = 0;
     }
 }
 
@@ -4541,7 +4544,10 @@ void pickObject(){
 
 
 
+    T2CONbits.TMR2ON = 1;
     while(!stepMade());
+    T2CONbits.TMR2ON = 1;
+    TMR2 = 0;
 }
 
 
@@ -4552,5 +4558,8 @@ void releaseObj(){
 
 
 
+    T2CONbits.TMR2ON = 1;
     while(!stepMade());
+    T2CONbits.TMR2ON = 1;
+    TMR2 = 0;
 }

@@ -7,7 +7,6 @@
 # 1 "D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "main.c" 2
-# 10 "main.c"
 # 1 "D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 1 3
 # 18 "D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -3805,7 +3804,7 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 33 "D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 2 3
-# 10 "main.c" 2
+# 1 "main.c" 2
 
 # 1 "./main.h" 1
 
@@ -3950,7 +3949,7 @@ void shiftData(void);
 # 6 "./main.h" 2
 # 33 "./main.h"
 char executeData(void);
-# 11 "main.c" 2
+# 2 "main.c" 2
 
 
 void interruptInit(void);
@@ -3973,14 +3972,18 @@ void main(void) {
     interruptInit();
     initPinMotors();
     initADC();
+    usartInit();
     tim0Init();
     tim2Init(10);
 
 
-    resetPosition();
+    errCode = resetPosition();
+    if(errCode != 0){
+        printError(errCode);
+        while(1);
+    }
 
 
-    usartInit();
     RCSTA1bits.CREN = 1;
 
     while(1){
@@ -3992,7 +3995,8 @@ void main(void) {
 
             printError(7);
             while(1);
-        }else if(newSequence()){
+        }
+        if(newSequence()){
             t_newSequence* newData = getNewSequence();
 
             newFeeder[0] = newData ->init_posX;
@@ -4011,20 +4015,9 @@ void main(void) {
 
 
             RCSTAbits.CREN = 1;
-
-
-            resetNewSequence();
-
-            errCode = executeData();
-            printError(errCode);
-            clearTM0();
-
-
-
-            reduceSeq();
-            shiftData();
-
-        }else if(readSeq()){
+# 80 "main.c"
+        }
+        if(readSeq()){
 
 
             errCode = executeData();
@@ -4062,7 +4055,7 @@ void interruptInit(void){
     PIE1bits.TMR2IE = 1;
     PIE1bits.RC1IE = 1;
 }
-# 130 "main.c"
+# 127 "main.c"
 char executeData(){
     t_sequence *data = getData();
 

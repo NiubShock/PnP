@@ -4017,14 +4017,14 @@ void *memccpy (void *restrict, const void *restrict, int, size_t);
 # 11 "usart.c" 2
 
 
-static unsigned char errString_Feed[] = "Error, feed line not defined";
-static unsigned char errString_ZEND[] = "Error, no object relevated along Z Axis";
-static unsigned char errString_Reset[] = "Error, time exceeded to reset position";
-static unsigned char errString_Point[] = "Error, time exceeded to reach the point";
-static unsigned char errString_Bound[] = "Error, point outside boundaries";
-static unsigned char errString_PointZ[] = "Error, time exceeded to reach the end of the Z Axis";
-static unsigned char errString_Fatal[] = "Fatal Error, please reset the device!";
-static unsigned char errString_Command[] = "Command not recognized";
+static unsigned char errString_Feed[] = "Error, feed line not defined\n";
+static unsigned char errString_ZEND[] = "Error, no object relevated along Z Axis\n";
+static unsigned char errString_Reset[] = "Error, time exceeded to reset position\n";
+static unsigned char errString_Point[] = "Error, time exceeded to reach the point\n";
+static unsigned char errString_Bound[] = "Error, point outside boundaries\n";
+static unsigned char errString_PointZ[] = "Error, time exceeded to reach the end of the Z Axis\n";
+static unsigned char errString_Fatal[] = "Fatal Error, please reset the device!\n";
+static unsigned char errString_Command[] = "Command not recognized\n";
 static unsigned char dataCounter = 0;
 static unsigned char _fatalError = 0;
 static unsigned char _newSequence = 0;

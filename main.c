@@ -44,7 +44,8 @@ void main(void) {
             
             printError(FATAL_ERROR);
             while(1);
-        }else if(newSequence()){
+        }
+        if(newSequence()){
             t_newSequence* newData = getNewSequence();
             
             newFeeder[0] = newData ->init_posX;
@@ -64,19 +65,20 @@ void main(void) {
             //turn on the reception again
             RCSTAbits.CREN = 1;
             
-            //reset the variable for new pick and place sequence
-            resetNewSequence();
+//            //reset the variable for new pick and place sequence
+//            resetNewSequence();
+//            
+//            errCode = executeData();        //call the function that will execute the data
+//            printError(errCode);            //print the possible error
+//            clearTM0();                     //eliminate the eventual error before proceed
+//                                            //with the next instruction
+//            
+//            //reduce by one the counter -> 1 data used
+//            reduceSeq();
+//            shiftData();
             
-            errCode = executeData();        //call the function that will execute the data
-            printError(errCode);            //print the possible error
-            clearTM0();                     //eliminate the eventual error before proceed
-                                            //with the next instruction
-            
-            //reduce by one the counter -> 1 data used
-            reduceSeq();
-            shiftData();
-            
-        }else if(readSeq()){
+        }
+        if(readSeq()){
             //check if there are any data available
             
             errCode = executeData();        //call the function that will execute the data

@@ -1,7 +1,7 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [p mainexit ]
-"13 main.c
-[; ;main.c: 13: void interruptInit(void);
+"4 main.c
+[; ;main.c: 4: void interruptInit(void);
 [v _interruptInit `(v ~T0 @X0 0 ef ]
 "49 ./motors.h
 [; ;./motors.h: 49: void initPinMotors(void);
@@ -9,6 +9,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "37 ./adc.h
 [; ;./adc.h: 37: void initADC(void);
 [v _initADC `(v ~T0 @X0 0 ef ]
+"19 ./usart.h
+[; ;./usart.h: 19: void usartInit(void);
+[v _usartInit `(v ~T0 @X0 0 ef ]
 "37 ./pwm.h
 [; ;./pwm.h: 37: void tim0Init(void);
 [v _tim0Init `(v ~T0 @X0 0 ef ]
@@ -18,9 +21,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "50 ./motors.h
 [; ;./motors.h: 50: char resetPosition(void);
 [v _resetPosition `(uc ~T0 @X0 0 ef ]
-"19 ./usart.h
-[; ;./usart.h: 19: void usartInit(void);
-[v _usartInit `(v ~T0 @X0 0 ef ]
+"24 ./usart.h
+[; ;./usart.h: 24: void printError(unsigned char errCode);
+[v _printError `(v ~T0 @X0 0 ef1`uc ]
 "2829 D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h
 [; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 2829:     struct {
 [s S107 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -58,10 +61,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "38 ./motors.h
 [; ;./motors.h: 38: void enableMotor(unsigned char enable, unsigned char motor);
 [v _enableMotor `(v ~T0 @X0 0 ef2`uc`uc ]
-"24 ./usart.h
-[; ;./usart.h: 24: void printError(unsigned char errCode);
-[v _printError `(v ~T0 @X0 0 ef1`uc ]
-"26
+"26 ./usart.h
 [; ;./usart.h: 26: unsigned char newSequence(void);
 [v _newSequence `(uc ~T0 @X0 0 ef ]
 "8
@@ -105,11 +105,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "20 ./usart.h
 [; ;./usart.h: 20: void storeData(unsigned char data);
 [v _storeData `(v ~T0 @X0 0 ef1`uc ]
-"27
-[; ;./usart.h: 27: void resetNewSequence(void);
-[v _resetNewSequence `(v ~T0 @X0 0 ef ]
-"15 main.c
-[; ;main.c: 15: char executeData();
+"28
+[; ;./usart.h: 28: unsigned char readSeq(void);
+[v _readSeq `(uc ~T0 @X0 0 ef ]
+"6 main.c
+[; ;main.c: 6: char executeData();
 [v _executeData `(uc ~T0 @X0 0 ef ]
 "32 ./motors.h
 [; ;./motors.h: 32: void clearTM0(void);
@@ -120,9 +120,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "31
 [; ;./usart.h: 31: void shiftData(void);
 [v _shiftData `(v ~T0 @X0 0 ef ]
-"28
-[; ;./usart.h: 28: unsigned char readSeq(void);
-[v _readSeq `(uc ~T0 @X0 0 ef ]
 "5318 D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h
 [; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 5318:     struct {
 [s S227 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -661,8 +658,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [p x EBTR3 = OFF ]
 "87
 [p x EBTRB = OFF ]
-"17 main.c
-[; ;main.c: 17: static unsigned char posVector[3] = {0, 0, 0};
+"8 main.c
+[; ;main.c: 8: static unsigned char posVector[3] = {0, 0, 0};
 [v _posVector `uc ~T0 @X0 -> 3 `i s ]
 [i _posVector
 :U ..
@@ -671,14 +668,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ..
 ]
-"18
-[; ;main.c: 18: static int rotAngle = 0;
+"9
+[; ;main.c: 9: static int rotAngle = 0;
 [v _rotAngle `i ~T0 @X0 1 s ]
 [i _rotAngle
 -> 0 `i
 ]
-"20
-[; ;main.c: 20: static const unsigned char feeder1Pos[2] = {5, 5};
+"11
+[; ;main.c: 11: static const unsigned char feeder1Pos[2] = {5, 5};
 [v _feeder1Pos `Cuc ~T0 @X0 -> 2 `i s ]
 [i _feeder1Pos
 :U ..
@@ -686,8 +683,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 5 `i `uc
 ..
 ]
-"21
-[; ;main.c: 21: static const unsigned char feeder2Pos[2] = {15, 15};
+"12
+[; ;main.c: 12: static const unsigned char feeder2Pos[2] = {15, 15};
 [v _feeder2Pos `Cuc ~T0 @X0 -> 2 `i s ]
 [i _feeder2Pos
 :U ..
@@ -695,8 +692,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 15 `i `uc
 ..
 ]
-"22
-[; ;main.c: 22: static const unsigned char feeder3Pos[2] = {25, 25};
+"13
+[; ;main.c: 13: static const unsigned char feeder3Pos[2] = {25, 25};
 [v _feeder3Pos `Cuc ~T0 @X0 -> 2 `i s ]
 [i _feeder3Pos
 :U ..
@@ -704,8 +701,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 25 `i `uc
 ..
 ]
-"24
-[; ;main.c: 24: static unsigned char newFeeder[2] = {0, 0};
+"15
+[; ;main.c: 15: static unsigned char newFeeder[2] = {0, 0};
 [v _newFeeder `uc ~T0 @X0 -> 2 `i s ]
 [i _newFeeder
 :U ..
@@ -714,362 +711,361 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"26
-[; ;main.c: 26: void main(void) {
+"17
+[; ;main.c: 17: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"28
-[; ;main.c: 28:     unsigned char errCode = 0;
+"19
+[; ;main.c: 19:     unsigned char errCode = 0;
 [v _errCode `uc ~T0 @X0 1 a ]
 [e = _errCode -> -> 0 `i `uc ]
-"30
-[; ;main.c: 30:     interruptInit();
+"21
+[; ;main.c: 21:     interruptInit();
 [e ( _interruptInit ..  ]
-"31
-[; ;main.c: 31:     initPinMotors();
+"22
+[; ;main.c: 22:     initPinMotors();
 [e ( _initPinMotors ..  ]
-"32
-[; ;main.c: 32:     initADC();
+"23
+[; ;main.c: 23:     initADC();
 [e ( _initADC ..  ]
-"33
-[; ;main.c: 33:     tim0Init();
-[e ( _tim0Init ..  ]
-"34
-[; ;main.c: 34:     tim2Init(10);
-[e ( _tim2Init (1 -> -> 10 `i `ui ]
-"37
-[; ;main.c: 37:     resetPosition();
-[e ( _resetPosition ..  ]
-"40
-[; ;main.c: 40:     usartInit();
+"24
+[; ;main.c: 24:     usartInit();
 [e ( _usartInit ..  ]
-"41
-[; ;main.c: 41:     RCSTA1bits.CREN = 1;
-[e = . . _RCSTA1bits 0 4 -> -> 1 `i `uc ]
-"43
-[; ;main.c: 43:     while(1){
+"25
+[; ;main.c: 25:     tim0Init();
+[e ( _tim0Init ..  ]
+"26
+[; ;main.c: 26:     tim2Init(10);
+[e ( _tim2Init (1 -> -> 10 `i `ui ]
+"29
+[; ;main.c: 29:     errCode = resetPosition();
+[e = _errCode -> ( _resetPosition ..  `uc ]
+"30
+[; ;main.c: 30:     if(errCode != 0){
+[e $ ! != -> _errCode `i -> 0 `i 241  ]
+{
+"31
+[; ;main.c: 31:         printError(errCode);
+[e ( _printError (1 _errCode ]
+"32
+[; ;main.c: 32:         while(1);
+[e :U 243 ]
 [e :U 242 ]
-{
-"44
-[; ;main.c: 44:         if(fatalError()){
-[e $ ! != -> ( _fatalError ..  `i -> 0 `i 244  ]
-{
-"46
-[; ;main.c: 46:             enableMotor(1, 0);
-[e ( _enableMotor (2 , -> -> 1 `i `uc -> -> 0 `i `uc ]
-"47
-[; ;main.c: 47:             enableMotor(1, 1);
-[e ( _enableMotor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-"48
-[; ;main.c: 48:             enableMotor(1, 2);
-[e ( _enableMotor (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
-"50
-[; ;main.c: 50:             printError(7);
-[e ( _printError (1 -> -> 7 `i `uc ]
-"51
-[; ;main.c: 51:             while(1);
+[e $U 243  ]
+[e :U 244 ]
+"33
+[; ;main.c: 33:     }
+}
+[e :U 241 ]
+"36
+[; ;main.c: 36:     RCSTA1bits.CREN = 1;
+[e = . . _RCSTA1bits 0 4 -> -> 1 `i `uc ]
+"38
+[; ;main.c: 38:     while(1){
 [e :U 246 ]
+{
+"39
+[; ;main.c: 39:         if(fatalError()){
+[e $ ! != -> ( _fatalError ..  `i -> 0 `i 248  ]
+{
+"41
+[; ;main.c: 41:             enableMotor(1, 0);
+[e ( _enableMotor (2 , -> -> 1 `i `uc -> -> 0 `i `uc ]
+"42
+[; ;main.c: 42:             enableMotor(1, 1);
+[e ( _enableMotor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
+"43
+[; ;main.c: 43:             enableMotor(1, 2);
+[e ( _enableMotor (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
+"45
+[; ;main.c: 45:             printError(7);
+[e ( _printError (1 -> -> 7 `i `uc ]
+"46
+[; ;main.c: 46:             while(1);
+[e :U 250 ]
+[e :U 249 ]
+[e $U 250  ]
+[e :U 251 ]
+"47
+[; ;main.c: 47:         }
+}
+[e :U 248 ]
+"48
+[; ;main.c: 48:         if(newSequence()){
+[e $ ! != -> ( _newSequence ..  `i -> 0 `i 252  ]
+{
+"49
+[; ;main.c: 49:             t_newSequence* newData = getNewSequence();
+[v _newData `*S239 ~T0 @X0 1 a ]
+[e = _newData ( _getNewSequence ..  ]
+"51
+[; ;main.c: 51:             newFeeder[0] = newData ->init_posX;
+[e = *U + &U _newFeeder * -> -> -> 0 `i `ui `ux -> -> # *U &U _newFeeder `ui `ux . *U _newData 2 ]
+"52
+[; ;main.c: 52:             newFeeder[1] = newData ->init_posY;
+[e = *U + &U _newFeeder * -> -> -> 1 `i `ui `ux -> -> # *U &U _newFeeder `ui `ux . *U _newData 3 ]
+"56
+[; ;main.c: 56:             RCSTAbits.CREN = 0;
+[e = . . _RCSTAbits 0 4 -> -> 0 `i `uc ]
+"59
+[; ;main.c: 59:             storeData(0);
+[e ( _storeData (1 -> -> 0 `i `uc ]
+"60
+[; ;main.c: 60:             storeData(0xFF);
+[e ( _storeData (1 -> -> 255 `i `uc ]
+"61
+[; ;main.c: 61:             storeData(newData ->end_posX);
+[e ( _storeData (1 . *U _newData 5 ]
+"62
+[; ;main.c: 62:             storeData(newData ->end_posY);
+[e ( _storeData (1 . *U _newData 6 ]
+"63
+[; ;main.c: 63:             storeData(newData ->end_rot - newData ->init_rot);
+[e ( _storeData (1 -> - -> . *U _newData 7 `i -> . *U _newData 4 `i `uc ]
+"66
+[; ;main.c: 66:             RCSTAbits.CREN = 1;
+[e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
+"80
+[; ;main.c: 80:         }
+}
+[e :U 252 ]
+"81
+[; ;main.c: 81:         if(readSeq()){
+[e $ ! != -> ( _readSeq ..  `i -> 0 `i 253  ]
+{
+"84
+[; ;main.c: 84:             errCode = executeData();
+[e = _errCode -> ( _executeData ..  `uc ]
+"85
+[; ;main.c: 85:             printError(errCode);
+[e ( _printError (1 _errCode ]
+"86
+[; ;main.c: 86:             clearTM0();
+[e ( _clearTM0 ..  ]
+"90
+[; ;main.c: 90:             reduceSeq();
+[e ( _reduceSeq ..  ]
+"91
+[; ;main.c: 91:             shiftData();
+[e ( _shiftData ..  ]
+"92
+[; ;main.c: 92:         }
+}
+[e :U 253 ]
+"94
+[; ;main.c: 94:     }
+}
 [e :U 245 ]
 [e $U 246  ]
 [e :U 247 ]
-"52
-[; ;main.c: 52:         }else if(newSequence()){
-}
-[e $U 248  ]
-[e :U 244 ]
-[e $ ! != -> ( _newSequence ..  `i -> 0 `i 249  ]
-{
-"53
-[; ;main.c: 53:             t_newSequence* newData = getNewSequence();
-[v _newData `*S239 ~T0 @X0 1 a ]
-[e = _newData ( _getNewSequence ..  ]
-"55
-[; ;main.c: 55:             newFeeder[0] = newData ->init_posX;
-[e = *U + &U _newFeeder * -> -> -> 0 `i `ui `ux -> -> # *U &U _newFeeder `ui `ux . *U _newData 2 ]
-"56
-[; ;main.c: 56:             newFeeder[1] = newData ->init_posY;
-[e = *U + &U _newFeeder * -> -> -> 1 `i `ui `ux -> -> # *U &U _newFeeder `ui `ux . *U _newData 3 ]
-"60
-[; ;main.c: 60:             RCSTAbits.CREN = 0;
-[e = . . _RCSTAbits 0 4 -> -> 0 `i `uc ]
-"63
-[; ;main.c: 63:             storeData(0);
-[e ( _storeData (1 -> -> 0 `i `uc ]
-"64
-[; ;main.c: 64:             storeData(0xFF);
-[e ( _storeData (1 -> -> 255 `i `uc ]
-"65
-[; ;main.c: 65:             storeData(newData ->end_posX);
-[e ( _storeData (1 . *U _newData 5 ]
-"66
-[; ;main.c: 66:             storeData(newData ->end_posY);
-[e ( _storeData (1 . *U _newData 6 ]
-"67
-[; ;main.c: 67:             storeData(newData ->end_rot - newData ->init_rot);
-[e ( _storeData (1 -> - -> . *U _newData 7 `i -> . *U _newData 4 `i `uc ]
-"70
-[; ;main.c: 70:             RCSTAbits.CREN = 1;
-[e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
-"73
-[; ;main.c: 73:             resetNewSequence();
-[e ( _resetNewSequence ..  ]
-"75
-[; ;main.c: 75:             errCode = executeData();
-[e = _errCode -> ( _executeData ..  `uc ]
-"76
-[; ;main.c: 76:             printError(errCode);
-[e ( _printError (1 _errCode ]
-"77
-[; ;main.c: 77:             clearTM0();
-[e ( _clearTM0 ..  ]
-"81
-[; ;main.c: 81:             reduceSeq();
-[e ( _reduceSeq ..  ]
-"82
-[; ;main.c: 82:             shiftData();
-[e ( _shiftData ..  ]
-"84
-[; ;main.c: 84:         }else if(readSeq()){
-}
-[e $U 250  ]
-[e :U 249 ]
-[e $ ! != -> ( _readSeq ..  `i -> 0 `i 251  ]
-{
-"87
-[; ;main.c: 87:             errCode = executeData();
-[e = _errCode -> ( _executeData ..  `uc ]
-"88
-[; ;main.c: 88:             printError(errCode);
-[e ( _printError (1 _errCode ]
-"89
-[; ;main.c: 89:             clearTM0();
-[e ( _clearTM0 ..  ]
-"93
-[; ;main.c: 93:             reduceSeq();
-[e ( _reduceSeq ..  ]
-"94
-[; ;main.c: 94:             shiftData();
-[e ( _shiftData ..  ]
-"95
-[; ;main.c: 95:         }
-}
-[e :U 251 ]
-[e :U 250 ]
-[e :U 248 ]
-"97
-[; ;main.c: 97:     }
-}
-[e :U 241 ]
-[e $U 242  ]
-[e :U 243 ]
-"99
-[; ;main.c: 99:     return;
+"96
+[; ;main.c: 96:     return;
 [e $UE 240  ]
-"100
-[; ;main.c: 100: }
+"97
+[; ;main.c: 97: }
 [e :UE 240 ]
 }
-"107
-[; ;main.c: 107: void interruptInit(void){
+"104
+[; ;main.c: 104: void interruptInit(void){
 [v _interruptInit `(v ~T0 @X0 1 ef ]
 {
 [e :U _interruptInit ]
 [f ]
+"106
+[; ;main.c: 106:     if(!INTCONbits.GIE){
+[e $ ! ! != -> . . _INTCONbits 1 7 `i -> 0 `i 255  ]
+{
+"107
+[; ;main.c: 107:         INTCONbits.GIE = 1;
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+"108
+[; ;main.c: 108:     }
+}
+[e :U 255 ]
 "109
-[; ;main.c: 109:     if(!INTCONbits.GIE){
-[e $ ! ! != -> . . _INTCONbits 1 7 `i -> 0 `i 253  ]
+[; ;main.c: 109:     if(!INTCONbits.PEIE){
+[e $ ! ! != -> . . _INTCONbits 1 6 `i -> 0 `i 256  ]
 {
 "110
-[; ;main.c: 110:         INTCONbits.GIE = 1;
-[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+[; ;main.c: 110:         INTCONbits.PEIE = 1;
+[e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
 "111
 [; ;main.c: 111:     }
 }
-[e :U 253 ]
-"112
-[; ;main.c: 112:     if(!INTCONbits.PEIE){
-[e $ ! ! != -> . . _INTCONbits 1 6 `i -> 0 `i 254  ]
-{
-"113
-[; ;main.c: 113:         INTCONbits.PEIE = 1;
-[e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
+[e :U 256 ]
 "114
-[; ;main.c: 114:     }
-}
-[e :U 254 ]
-"117
-[; ;main.c: 117:     RCONbits.IPEN = 1;
+[; ;main.c: 114:     RCONbits.IPEN = 1;
 [e = . . _RCONbits 5 6 -> -> 1 `i `uc ]
-"118
-[; ;main.c: 118:     INTCONbits.T0IE = 1;
+"115
+[; ;main.c: 115:     INTCONbits.T0IE = 1;
 [e = . . _INTCONbits 1 5 -> -> 1 `i `uc ]
-"119
-[; ;main.c: 119:     PIE1bits.TMR2IE = 1;
+"116
+[; ;main.c: 116:     PIE1bits.TMR2IE = 1;
 [e = . . _PIE1bits 0 1 -> -> 1 `i `uc ]
-"120
-[; ;main.c: 120:     PIE1bits.RC1IE = 1;
+"117
+[; ;main.c: 117:     PIE1bits.RC1IE = 1;
 [e = . . _PIE1bits 1 2 -> -> 1 `i `uc ]
-"121
-[; ;main.c: 121: }
-[e :UE 252 ]
+"118
+[; ;main.c: 118: }
+[e :UE 254 ]
 }
-"130
-[; ;main.c: 130: char executeData(){
+"127
+[; ;main.c: 127: char executeData(){
 [v _executeData `(uc ~T0 @X0 1 ef ]
 {
 [e :U _executeData ]
 [f ]
-"131
-[; ;main.c: 131:     t_sequence *data = getData();
+"128
+[; ;main.c: 128:     t_sequence *data = getData();
 [v _data `*S238 ~T0 @X0 1 a ]
 [e = _data ( _getData ..  ]
-"133
-[; ;main.c: 133:     char errCode = 0;
+"130
+[; ;main.c: 130:     char errCode = 0;
 [v _errCode `uc ~T0 @X0 1 a ]
 [e = _errCode -> -> 0 `i `uc ]
-"137
-[; ;main.c: 137:     switch(data->feederLine){
-[e $U 257  ]
+"134
+[; ;main.c: 134:     switch(data->feederLine){
+[e $U 259  ]
 {
-"138
-[; ;main.c: 138:         case 0:
-[e :U 258 ]
-"140
-[; ;main.c: 140:             errCode = moveToPoint(posVector[0], posVector[1], feeder1Pos[0], feeder1Pos[1]);
-[e = _errCode ( _moveToPoint (4 , , , -> *U + &U _posVector * -> -> -> 0 `i `ui `ux -> -> # *U &U _posVector `ui `ux `ui -> *U + &U _posVector * -> -> -> 1 `i `ui `ux -> -> # *U &U _posVector `ui `ux `ui -> *U + &U _feeder1Pos * -> -> -> 0 `i `ui `ux -> -> # *U &U _feeder1Pos `ui `ux `ui -> *U + &U _feeder1Pos * -> -> -> 1 `i `ui `ux -> -> # *U &U _feeder1Pos `ui `ux `ui ]
-"142
-[; ;main.c: 142:             posVector[0] = feeder1Pos[0];
-[e = *U + &U _posVector * -> -> -> 0 `i `ui `ux -> -> # *U &U _posVector `ui `ux *U + &U _feeder1Pos * -> -> -> 0 `i `ui `ux -> -> # *U &U _feeder1Pos `ui `ux ]
-"143
-[; ;main.c: 143:             posVector[1] = feeder1Pos[1];
-[e = *U + &U _posVector * -> -> -> 1 `i `ui `ux -> -> # *U &U _posVector `ui `ux *U + &U _feeder1Pos * -> -> -> 1 `i `ui `ux -> -> # *U &U _feeder1Pos `ui `ux ]
-"144
-[; ;main.c: 144:             break;
-[e $U 256  ]
-"145
-[; ;main.c: 145:         case 1:
-[e :U 259 ]
-"146
-[; ;main.c: 146:             errCode = moveToPoint(posVector[0], posVector[1], feeder2Pos[0], feeder2Pos[1]);
-[e = _errCode ( _moveToPoint (4 , , , -> *U + &U _posVector * -> -> -> 0 `i `ui `ux -> -> # *U &U _posVector `ui `ux `ui -> *U + &U _posVector * -> -> -> 1 `i `ui `ux -> -> # *U &U _posVector `ui `ux `ui -> *U + &U _feeder2Pos * -> -> -> 0 `i `ui `ux -> -> # *U &U _feeder2Pos `ui `ux `ui -> *U + &U _feeder2Pos * -> -> -> 1 `i `ui `ux -> -> # *U &U _feeder2Pos `ui `ux `ui ]
-"147
-[; ;main.c: 147:             posVector[0] = feeder2Pos[0];
-[e = *U + &U _posVector * -> -> -> 0 `i `ui `ux -> -> # *U &U _posVector `ui `ux *U + &U _feeder2Pos * -> -> -> 0 `i `ui `ux -> -> # *U &U _feeder2Pos `ui `ux ]
-"148
-[; ;main.c: 148:             posVector[1] = feeder2Pos[1];
-[e = *U + &U _posVector * -> -> -> 1 `i `ui `ux -> -> # *U &U _posVector `ui `ux *U + &U _feeder2Pos * -> -> -> 1 `i `ui `ux -> -> # *U &U _feeder2Pos `ui `ux ]
-"149
-[; ;main.c: 149:             break;
-[e $U 256  ]
-"150
-[; ;main.c: 150:         case 2:
+"135
+[; ;main.c: 135:         case 0:
 [e :U 260 ]
-"151
-[; ;main.c: 151:             errCode = moveToPoint(posVector[0], posVector[1], feeder3Pos[0], feeder3Pos[1]);
-[e = _errCode ( _moveToPoint (4 , , , -> *U + &U _posVector * -> -> -> 0 `i `ui `ux -> -> # *U &U _posVector `ui `ux `ui -> *U + &U _posVector * -> -> -> 1 `i `ui `ux -> -> # *U &U _posVector `ui `ux `ui -> *U + &U _feeder3Pos * -> -> -> 0 `i `ui `ux -> -> # *U &U _feeder3Pos `ui `ux `ui -> *U + &U _feeder3Pos * -> -> -> 1 `i `ui `ux -> -> # *U &U _feeder3Pos `ui `ux `ui ]
-"152
-[; ;main.c: 152:             posVector[0] = feeder3Pos[0];
-[e = *U + &U _posVector * -> -> -> 0 `i `ui `ux -> -> # *U &U _posVector `ui `ux *U + &U _feeder3Pos * -> -> -> 0 `i `ui `ux -> -> # *U &U _feeder3Pos `ui `ux ]
-"153
-[; ;main.c: 153:             posVector[1] = feeder3Pos[1];
-[e = *U + &U _posVector * -> -> -> 1 `i `ui `ux -> -> # *U &U _posVector `ui `ux *U + &U _feeder3Pos * -> -> -> 1 `i `ui `ux -> -> # *U &U _feeder3Pos `ui `ux ]
-"154
-[; ;main.c: 154:             break;
-[e $U 256  ]
-"157
-[; ;main.c: 157:         case 0xFF:
+"137
+[; ;main.c: 137:             errCode = moveToPoint(posVector[0], posVector[1], feeder1Pos[0], feeder1Pos[1]);
+[e = _errCode ( _moveToPoint (4 , , , -> *U + &U _posVector * -> -> -> 0 `i `ui `ux -> -> # *U &U _posVector `ui `ux `ui -> *U + &U _posVector * -> -> -> 1 `i `ui `ux -> -> # *U &U _posVector `ui `ux `ui -> *U + &U _feeder1Pos * -> -> -> 0 `i `ui `ux -> -> # *U &U _feeder1Pos `ui `ux `ui -> *U + &U _feeder1Pos * -> -> -> 1 `i `ui `ux -> -> # *U &U _feeder1Pos `ui `ux `ui ]
+"139
+[; ;main.c: 139:             posVector[0] = feeder1Pos[0];
+[e = *U + &U _posVector * -> -> -> 0 `i `ui `ux -> -> # *U &U _posVector `ui `ux *U + &U _feeder1Pos * -> -> -> 0 `i `ui `ux -> -> # *U &U _feeder1Pos `ui `ux ]
+"140
+[; ;main.c: 140:             posVector[1] = feeder1Pos[1];
+[e = *U + &U _posVector * -> -> -> 1 `i `ui `ux -> -> # *U &U _posVector `ui `ux *U + &U _feeder1Pos * -> -> -> 1 `i `ui `ux -> -> # *U &U _feeder1Pos `ui `ux ]
+"141
+[; ;main.c: 141:             break;
+[e $U 258  ]
+"142
+[; ;main.c: 142:         case 1:
 [e :U 261 ]
-"158
-[; ;main.c: 158:             errCode = moveToPoint(posVector[0], posVector[1], newFeeder[0], newFeeder[1]);
-[e = _errCode ( _moveToPoint (4 , , , -> *U + &U _posVector * -> -> -> 0 `i `ui `ux -> -> # *U &U _posVector `ui `ux `ui -> *U + &U _posVector * -> -> -> 1 `i `ui `ux -> -> # *U &U _posVector `ui `ux `ui -> *U + &U _newFeeder * -> -> -> 0 `i `ui `ux -> -> # *U &U _newFeeder `ui `ux `ui -> *U + &U _newFeeder * -> -> -> 1 `i `ui `ux -> -> # *U &U _newFeeder `ui `ux `ui ]
-"159
-[; ;main.c: 159:             posVector[0] = newFeeder[0];
-[e = *U + &U _posVector * -> -> -> 0 `i `ui `ux -> -> # *U &U _posVector `ui `ux *U + &U _newFeeder * -> -> -> 0 `i `ui `ux -> -> # *U &U _newFeeder `ui `ux ]
-"160
-[; ;main.c: 160:             posVector[1] = newFeeder[1];
-[e = *U + &U _posVector * -> -> -> 1 `i `ui `ux -> -> # *U &U _posVector `ui `ux *U + &U _newFeeder * -> -> -> 1 `i `ui `ux -> -> # *U &U _newFeeder `ui `ux ]
-"161
-[; ;main.c: 161:             break;
-[e $U 256  ]
-"162
-[; ;main.c: 162:         default:
+"143
+[; ;main.c: 143:             errCode = moveToPoint(posVector[0], posVector[1], feeder2Pos[0], feeder2Pos[1]);
+[e = _errCode ( _moveToPoint (4 , , , -> *U + &U _posVector * -> -> -> 0 `i `ui `ux -> -> # *U &U _posVector `ui `ux `ui -> *U + &U _posVector * -> -> -> 1 `i `ui `ux -> -> # *U &U _posVector `ui `ux `ui -> *U + &U _feeder2Pos * -> -> -> 0 `i `ui `ux -> -> # *U &U _feeder2Pos `ui `ux `ui -> *U + &U _feeder2Pos * -> -> -> 1 `i `ui `ux -> -> # *U &U _feeder2Pos `ui `ux `ui ]
+"144
+[; ;main.c: 144:             posVector[0] = feeder2Pos[0];
+[e = *U + &U _posVector * -> -> -> 0 `i `ui `ux -> -> # *U &U _posVector `ui `ux *U + &U _feeder2Pos * -> -> -> 0 `i `ui `ux -> -> # *U &U _feeder2Pos `ui `ux ]
+"145
+[; ;main.c: 145:             posVector[1] = feeder2Pos[1];
+[e = *U + &U _posVector * -> -> -> 1 `i `ui `ux -> -> # *U &U _posVector `ui `ux *U + &U _feeder2Pos * -> -> -> 1 `i `ui `ux -> -> # *U &U _feeder2Pos `ui `ux ]
+"146
+[; ;main.c: 146:             break;
+[e $U 258  ]
+"147
+[; ;main.c: 147:         case 2:
 [e :U 262 ]
-"165
-[; ;main.c: 165:             errCode = 1;
-[e = _errCode -> -> 1 `i `uc ]
-"166
-[; ;main.c: 166:             break;
-[e $U 256  ]
-"167
-[; ;main.c: 167:     }
-}
-[e $U 256  ]
-[e :U 257 ]
-[e [\ -> . *U _data 0 `i , $ -> 0 `i 258
- , $ -> 1 `i 259
- , $ -> 2 `i 260
- , $ -> 255 `i 261
- 262 ]
-[e :U 256 ]
-"170
-[; ;main.c: 170:     if(!errCode){
-[e $ ! ! != -> _errCode `i -> 0 `i 263  ]
-{
-"173
-[; ;main.c: 173:         errCode = touchObject();
-[e = _errCode ( _touchObject ..  ]
-"175
-[; ;main.c: 175:         pickObject();
-[e ( _pickObject ..  ]
-"178
-[; ;main.c: 178:         errCode = liftArm();
-[e = _errCode ( _liftArm ..  ]
-"181
-[; ;main.c: 181:         errCode = moveToPoint(posVector[0], posVector[1], data->posX, data->posY);
-[e = _errCode ( _moveToPoint (4 , , , -> *U + &U _posVector * -> -> -> 0 `i `ui `ux -> -> # *U &U _posVector `ui `ux `ui -> *U + &U _posVector * -> -> -> 1 `i `ui `ux -> -> # *U &U _posVector `ui `ux `ui -> . *U _data 1 `ui -> . *U _data 2 `ui ]
-"182
-[; ;main.c: 182:         posVector[0] = data->posX;
-[e = *U + &U _posVector * -> -> -> 0 `i `ui `ux -> -> # *U &U _posVector `ui `ux . *U _data 1 ]
-"183
-[; ;main.c: 183:         posVector[1] = data->posY;
-[e = *U + &U _posVector * -> -> -> 1 `i `ui `ux -> -> # *U &U _posVector `ui `ux . *U _data 2 ]
-"186
-[; ;main.c: 186:         rotAngle = data->rotation - rotAngle;
-[e = _rotAngle - -> . *U _data 3 `i _rotAngle ]
-"188
-[; ;main.c: 188:         if(rotAngle < 0){
-[e $ ! < _rotAngle -> 0 `i 264  ]
-{
-"189
-[; ;main.c: 189:             rotAngle += 360;
-[e =+ _rotAngle -> 360 `i ]
-"190
-[; ;main.c: 190:         }
-}
-[e :U 264 ]
-"191
-[; ;main.c: 191:         rotateObj(rotAngle);
-[e ( _rotateObj (1 -> _rotAngle `uc ]
-"194
-[; ;main.c: 194:         errCode = touchTherm();
-[e = _errCode ( _touchTherm ..  ]
-"196
-[; ;main.c: 196:         releaseObj();
-[e ( _releaseObj ..  ]
-"199
-[; ;main.c: 199:         errCode = liftArm();
-[e = _errCode ( _liftArm ..  ]
-"200
-[; ;main.c: 200:     }
-}
+"148
+[; ;main.c: 148:             errCode = moveToPoint(posVector[0], posVector[1], feeder3Pos[0], feeder3Pos[1]);
+[e = _errCode ( _moveToPoint (4 , , , -> *U + &U _posVector * -> -> -> 0 `i `ui `ux -> -> # *U &U _posVector `ui `ux `ui -> *U + &U _posVector * -> -> -> 1 `i `ui `ux -> -> # *U &U _posVector `ui `ux `ui -> *U + &U _feeder3Pos * -> -> -> 0 `i `ui `ux -> -> # *U &U _feeder3Pos `ui `ux `ui -> *U + &U _feeder3Pos * -> -> -> 1 `i `ui `ux -> -> # *U &U _feeder3Pos `ui `ux `ui ]
+"149
+[; ;main.c: 149:             posVector[0] = feeder3Pos[0];
+[e = *U + &U _posVector * -> -> -> 0 `i `ui `ux -> -> # *U &U _posVector `ui `ux *U + &U _feeder3Pos * -> -> -> 0 `i `ui `ux -> -> # *U &U _feeder3Pos `ui `ux ]
+"150
+[; ;main.c: 150:             posVector[1] = feeder3Pos[1];
+[e = *U + &U _posVector * -> -> -> 1 `i `ui `ux -> -> # *U &U _posVector `ui `ux *U + &U _feeder3Pos * -> -> -> 1 `i `ui `ux -> -> # *U &U _feeder3Pos `ui `ux ]
+"151
+[; ;main.c: 151:             break;
+[e $U 258  ]
+"154
+[; ;main.c: 154:         case 0xFF:
 [e :U 263 ]
-"202
-[; ;main.c: 202:     return(errCode);
+"155
+[; ;main.c: 155:             errCode = moveToPoint(posVector[0], posVector[1], newFeeder[0], newFeeder[1]);
+[e = _errCode ( _moveToPoint (4 , , , -> *U + &U _posVector * -> -> -> 0 `i `ui `ux -> -> # *U &U _posVector `ui `ux `ui -> *U + &U _posVector * -> -> -> 1 `i `ui `ux -> -> # *U &U _posVector `ui `ux `ui -> *U + &U _newFeeder * -> -> -> 0 `i `ui `ux -> -> # *U &U _newFeeder `ui `ux `ui -> *U + &U _newFeeder * -> -> -> 1 `i `ui `ux -> -> # *U &U _newFeeder `ui `ux `ui ]
+"156
+[; ;main.c: 156:             posVector[0] = newFeeder[0];
+[e = *U + &U _posVector * -> -> -> 0 `i `ui `ux -> -> # *U &U _posVector `ui `ux *U + &U _newFeeder * -> -> -> 0 `i `ui `ux -> -> # *U &U _newFeeder `ui `ux ]
+"157
+[; ;main.c: 157:             posVector[1] = newFeeder[1];
+[e = *U + &U _posVector * -> -> -> 1 `i `ui `ux -> -> # *U &U _posVector `ui `ux *U + &U _newFeeder * -> -> -> 1 `i `ui `ux -> -> # *U &U _newFeeder `ui `ux ]
+"158
+[; ;main.c: 158:             break;
+[e $U 258  ]
+"159
+[; ;main.c: 159:         default:
+[e :U 264 ]
+"162
+[; ;main.c: 162:             errCode = 1;
+[e = _errCode -> -> 1 `i `uc ]
+"163
+[; ;main.c: 163:             break;
+[e $U 258  ]
+"164
+[; ;main.c: 164:     }
+}
+[e $U 258  ]
+[e :U 259 ]
+[e [\ -> . *U _data 0 `i , $ -> 0 `i 260
+ , $ -> 1 `i 261
+ , $ -> 2 `i 262
+ , $ -> 255 `i 263
+ 264 ]
+[e :U 258 ]
+"167
+[; ;main.c: 167:     if(!errCode){
+[e $ ! ! != -> _errCode `i -> 0 `i 265  ]
+{
+"170
+[; ;main.c: 170:         errCode = touchObject();
+[e = _errCode ( _touchObject ..  ]
+"172
+[; ;main.c: 172:         pickObject();
+[e ( _pickObject ..  ]
+"175
+[; ;main.c: 175:         errCode = liftArm();
+[e = _errCode ( _liftArm ..  ]
+"178
+[; ;main.c: 178:         errCode = moveToPoint(posVector[0], posVector[1], data->posX, data->posY);
+[e = _errCode ( _moveToPoint (4 , , , -> *U + &U _posVector * -> -> -> 0 `i `ui `ux -> -> # *U &U _posVector `ui `ux `ui -> *U + &U _posVector * -> -> -> 1 `i `ui `ux -> -> # *U &U _posVector `ui `ux `ui -> . *U _data 1 `ui -> . *U _data 2 `ui ]
+"179
+[; ;main.c: 179:         posVector[0] = data->posX;
+[e = *U + &U _posVector * -> -> -> 0 `i `ui `ux -> -> # *U &U _posVector `ui `ux . *U _data 1 ]
+"180
+[; ;main.c: 180:         posVector[1] = data->posY;
+[e = *U + &U _posVector * -> -> -> 1 `i `ui `ux -> -> # *U &U _posVector `ui `ux . *U _data 2 ]
+"183
+[; ;main.c: 183:         rotAngle = data->rotation - rotAngle;
+[e = _rotAngle - -> . *U _data 3 `i _rotAngle ]
+"185
+[; ;main.c: 185:         if(rotAngle < 0){
+[e $ ! < _rotAngle -> 0 `i 266  ]
+{
+"186
+[; ;main.c: 186:             rotAngle += 360;
+[e =+ _rotAngle -> 360 `i ]
+"187
+[; ;main.c: 187:         }
+}
+[e :U 266 ]
+"188
+[; ;main.c: 188:         rotateObj(rotAngle);
+[e ( _rotateObj (1 -> _rotAngle `uc ]
+"191
+[; ;main.c: 191:         errCode = touchTherm();
+[e = _errCode ( _touchTherm ..  ]
+"193
+[; ;main.c: 193:         releaseObj();
+[e ( _releaseObj ..  ]
+"196
+[; ;main.c: 196:         errCode = liftArm();
+[e = _errCode ( _liftArm ..  ]
+"197
+[; ;main.c: 197:     }
+}
+[e :U 265 ]
+"199
+[; ;main.c: 199:     return(errCode);
 [e ) _errCode ]
-[e $UE 255  ]
-"203
-[; ;main.c: 203: }
-[e :UE 255 ]
+[e $UE 257  ]
+"200
+[; ;main.c: 200: }
+[e :UE 257 ]
 }

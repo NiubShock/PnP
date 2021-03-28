@@ -531,8 +531,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "87
 [p x EBTRB = OFF ]
 "13 usart.c
-[; ;usart.c: 13: static unsigned char errString_Feed[] = "Error, feed line not defined";
-[v _errString_Feed `uc ~T0 @X0 -> 29 `i s ]
+[; ;usart.c: 13: static unsigned char errString_Feed[] = "Error, feed line not defined\n";
+[v _errString_Feed `uc ~T0 @X0 -> 30 `i s ]
 [i _errString_Feed
 :U ..
 -> 69 `c
@@ -563,12 +563,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> 110 `c
 -> 101 `c
 -> 100 `c
+-> 10 `c
 -> 0 `c
 ..
 ]
 "14
-[; ;usart.c: 14: static unsigned char errString_ZEND[] = "Error, no object relevated along Z Axis";
-[v _errString_ZEND `uc ~T0 @X0 -> 40 `i s ]
+[; ;usart.c: 14: static unsigned char errString_ZEND[] = "Error, no object relevated along Z Axis\n";
+[v _errString_ZEND `uc ~T0 @X0 -> 41 `i s ]
 [i _errString_ZEND
 :U ..
 -> 69 `c
@@ -610,12 +611,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> 120 `c
 -> 105 `c
 -> 115 `c
+-> 10 `c
 -> 0 `c
 ..
 ]
 "15
-[; ;usart.c: 15: static unsigned char errString_Reset[] = "Error, time exceeded to reset position";
-[v _errString_Reset `uc ~T0 @X0 -> 39 `i s ]
+[; ;usart.c: 15: static unsigned char errString_Reset[] = "Error, time exceeded to reset position\n";
+[v _errString_Reset `uc ~T0 @X0 -> 40 `i s ]
 [i _errString_Reset
 :U ..
 -> 69 `c
@@ -656,12 +658,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> 105 `c
 -> 111 `c
 -> 110 `c
+-> 10 `c
 -> 0 `c
 ..
 ]
 "16
-[; ;usart.c: 16: static unsigned char errString_Point[] = "Error, time exceeded to reach the point";
-[v _errString_Point `uc ~T0 @X0 -> 40 `i s ]
+[; ;usart.c: 16: static unsigned char errString_Point[] = "Error, time exceeded to reach the point\n";
+[v _errString_Point `uc ~T0 @X0 -> 41 `i s ]
 [i _errString_Point
 :U ..
 -> 69 `c
@@ -703,12 +706,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> 105 `c
 -> 110 `c
 -> 116 `c
+-> 10 `c
 -> 0 `c
 ..
 ]
 "17
-[; ;usart.c: 17: static unsigned char errString_Bound[] = "Error, point outside boundaries";
-[v _errString_Bound `uc ~T0 @X0 -> 32 `i s ]
+[; ;usart.c: 17: static unsigned char errString_Bound[] = "Error, point outside boundaries\n";
+[v _errString_Bound `uc ~T0 @X0 -> 33 `i s ]
 [i _errString_Bound
 :U ..
 -> 69 `c
@@ -742,12 +746,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> 105 `c
 -> 101 `c
 -> 115 `c
+-> 10 `c
 -> 0 `c
 ..
 ]
 "18
-[; ;usart.c: 18: static unsigned char errString_PointZ[] = "Error, time exceeded to reach the end of the Z Axis";
-[v _errString_PointZ `uc ~T0 @X0 -> 52 `i s ]
+[; ;usart.c: 18: static unsigned char errString_PointZ[] = "Error, time exceeded to reach the end of the Z Axis\n";
+[v _errString_PointZ `uc ~T0 @X0 -> 53 `i s ]
 [i _errString_PointZ
 :U ..
 -> 69 `c
@@ -801,12 +806,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> 120 `c
 -> 105 `c
 -> 115 `c
+-> 10 `c
 -> 0 `c
 ..
 ]
 "19
-[; ;usart.c: 19: static unsigned char errString_Fatal[] = "Fatal Error, please reset the device!";
-[v _errString_Fatal `uc ~T0 @X0 -> 38 `i s ]
+[; ;usart.c: 19: static unsigned char errString_Fatal[] = "Fatal Error, please reset the device!\n";
+[v _errString_Fatal `uc ~T0 @X0 -> 39 `i s ]
 [i _errString_Fatal
 :U ..
 -> 70 `c
@@ -846,12 +852,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> 99 `c
 -> 101 `c
 -> 33 `c
+-> 10 `c
 -> 0 `c
 ..
 ]
 "20
-[; ;usart.c: 20: static unsigned char errString_Command[] = "Command not recognized";
-[v _errString_Command `uc ~T0 @X0 -> 23 `i s ]
+[; ;usart.c: 20: static unsigned char errString_Command[] = "Command not recognized\n";
+[v _errString_Command `uc ~T0 @X0 -> 24 `i s ]
 [i _errString_Command
 :U ..
 -> 67 `c
@@ -876,6 +883,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> 122 `c
 -> 101 `c
 -> 100 `c
+-> 10 `c
 -> 0 `c
 ..
 ]
