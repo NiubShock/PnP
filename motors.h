@@ -48,7 +48,7 @@ void setDecay(unsigned char decay, unsigned char motor);
  */
 void initPinMotors(void);
 char resetPosition(void);   //use this function to reset the step motors' positions
-char moveToPoint(unsigned int x1, unsigned int y1, unsigned int x2, unsigned int y2);
+char moveToPoint(int x1, int y1, int x2, int y2);
 
 char touchObject(void);
 char touchTherm(void);

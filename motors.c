@@ -261,7 +261,7 @@ char resetPosition(){
  *              It uses TMR0 to control that the time required don't exceed
  *              the time allowed
  */
-char moveToPoint(unsigned int x1, unsigned int y1, unsigned int x2, unsigned int y2){
+char moveToPoint(int x1, int y1, int x2, int y2){
     
     unsigned char MOT1Direction, MOT2Direction;
     
@@ -314,18 +314,18 @@ char moveToPoint(unsigned int x1, unsigned int y1, unsigned int x2, unsigned int
         
         //Verify the X axis
         if(MOT1Direction == FORWARD){
-            if(x1 + stepCounter() == x2){
+            if(x1 + stepCounter() >= x2){
                 //change this variable to stop the movement
                 keepMovingX = 0;
-            }else{
+            }else if(!keepMovingX){
                 //Keep moving (H part of the step)
                 LATAbits.LATA2 = 1;
             }
         }else if(MOT1Direction == BACKWARD){
-            if(x1 - stepCounter() == x2){
+            if(x1 - stepCounter() <= x2){
                 //change this variable to stop the movement
                 keepMovingX = 0;
-            }else{
+            }else if(!keepMovingX){
                 //Keep moving (H part of the step)
                 LATAbits.LATA2 = 1;
             }
@@ -333,19 +333,19 @@ char moveToPoint(unsigned int x1, unsigned int y1, unsigned int x2, unsigned int
         
         if(MOT2Direction == FORWARD){
             //Verify the Y axis
-            if(y1 + stepCounter() == y2){
+            if(y1 + stepCounter() >= y2){
                 //change this variable to stop the movement
                 keepMovingY = 0;
-            }else{
+            }else if(!keepMovingX){
                 //Keep moving (H part of the step)
                 LATBbits.LATB4 = 1;
             }
         }else if(MOT2Direction == BACKWARD){
             //Verify the Y axis
-            if(y1 + stepCounter() == y2){
+            if(y1 - stepCounter() <= y2){
                 //change this variable to stop the movement
                 keepMovingY = 0;
-            }else{
+            }else if(!keepMovingX){
                 //Keep moving (H part of the step)
                 LATBbits.LATB4 = 1;
             }
