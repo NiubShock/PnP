@@ -3837,6 +3837,20 @@ void tim0Init(void){
 
 
 
+void tim1Init(){
+    T1CONbits.T1CKPS = 0x03;
+    T1CONbits.TMR1CS = 0;
+
+    PIE1bits.TMR1IE = 1;
+
+    T1CONbits.TMR1ON = 1;
+
+}
+
+
+
+
+
 
 void tim2Init(unsigned int _pwmPeriod){
     T2CONbits.TMR2ON = 0;

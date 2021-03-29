@@ -621,3 +621,17 @@ void releaseObj(){
     T2CONbits.TMR2ON = 1;           //turn off the timer used for the interrupt
     TMR2 = 0;
 }
+
+/*
+ * Description: Function used to stop all the current operation. Activated only
+ *              for fatal errors
+ */
+void abortAll(){
+    //fatal error. Turn off all the motors and wait for a reset
+    enableMotor(TURNOFF, MOTOR1);
+    enableMotor(TURNOFF, MOTOR2);
+    enableMotor(TURNOFF, MOTOR3);
+
+    printError(FATAL_ERROR);
+    while(1);
+}

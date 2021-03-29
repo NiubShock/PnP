@@ -56,3 +56,5 @@ char liftArm(void);
 void rotateObj(unsigned char rotAngle);
 void pickObject(void);
 void releaseObj(void);
+
+void abortAll(void);

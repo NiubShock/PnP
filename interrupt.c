@@ -33,6 +33,14 @@ void __interrupt() isr(){
         }
     }
     
+    //TIM0 interrupt routine
+    if(PIR1bits.TMR1IF){
+        PIR1bits.TMR1IF = 0;    //clear the flag
+        if(fatalError()){
+            abortAll();
+        }
+    }
+    
     //TIM2 interrupt routine
     if(PIR1bits.TMR2IF){
         PIR1bits.TMR2IF = 0;    //clear the flag

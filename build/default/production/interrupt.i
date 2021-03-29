@@ -3854,6 +3854,8 @@ char liftArm(void);
 void rotateObj(unsigned char rotAngle);
 void pickObject(void);
 void releaseObj(void);
+
+void abortAll(void);
 # 3 "./main.h" 2
 
 # 1 "./conf_bits.h" 1
@@ -3911,6 +3913,7 @@ void releaseObj(void);
 # 1 "./pwm.h" 1
 # 37 "./pwm.h"
 void tim0Init(void);
+void tim1Init(void);
 void tim2Init(unsigned int _pwmPeriod);
 unsigned int stepMade(void);
 void resetStep(void);
@@ -3981,6 +3984,14 @@ void __attribute__((picinterrupt(("")))) isr(){
             T0CONbits.TMR0ON = 0;
             tm0Count = 0;
             writeTM0();
+        }
+    }
+
+
+    if(PIR1bits.TMR1IF){
+        PIR1bits.TMR1IF = 0;
+        if(fatalError()){
+            abortAll();
         }
     }
 

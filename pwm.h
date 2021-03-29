@@ -35,6 +35,7 @@
 #include <xc.h> // include processor files - each processor file is guarded.  
 
 void tim0Init(void);
+void tim1Init(void);
 void tim2Init(unsigned int _pwmPeriod);
 unsigned int stepMade(void);
 void resetStep(void);

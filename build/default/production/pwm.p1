@@ -14,6 +14,48 @@ Version 4.0 HI-TECH Software Intermediate Code
 "4809
 [; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 4809: extern volatile T0CONbits_t T0CONbits __attribute__((address(0xFD5)));
 [v _T0CONbits `VS213 ~T0 @X0 0 e@4053 ]
+"4418
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 4418:     struct {
+[s S191 :2 `uc 1 :1 `uc 1 ]
+[n S191 . . NOT_T1SYNC ]
+"4422
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 4422:     struct {
+[s S192 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S192 . TMR1ON TMR1CS nT1SYNC T1OSCEN T1CKPS . RD16 ]
+"4431
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 4431:     struct {
+[s S193 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S193 . . T1SYNC . T1CKPS0 T1CKPS1 ]
+"4438
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 4438:     struct {
+[s S194 :2 `uc 1 :1 `uc 1 ]
+[n S194 . . T1INSYNC ]
+"4442
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 4442:     struct {
+[s S195 :3 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 ]
+[n S195 . . SOSCEN . T1RD16 ]
+"4417
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 4417: typedef union {
+[u S190 `S191 1 `S192 1 `S193 1 `S194 1 `S195 1 ]
+[n S190 . . . . . . ]
+"4449
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 4449: extern volatile T1CONbits_t T1CONbits __attribute__((address(0xFCD)));
+[v _T1CONbits `VS190 ~T0 @X0 0 e@4045 ]
+"2268
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 2268:     struct {
+[s S82 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S82 . TMR1IE TMR2IE CCP1IE SSPIE TXIE RCIE ADIE PSPIE ]
+"2278
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 2278:     struct {
+[s S83 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S83 . . TX1IE RC1IE ]
+"2267
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 2267: typedef union {
+[u S81 `S82 1 `S83 1 ]
+[n S81 . . . ]
+"2284
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 2284: extern volatile PIE1bits_t PIE1bits __attribute__((address(0xF9D)));
+[v _PIE1bits `VS81 ~T0 @X0 0 e@3997 ]
 "4230
 [; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 4230:     struct {
 [s S176 :2 `uc 1 :1 `uc 1 :4 `uc 1 ]
@@ -453,111 +495,133 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;pwm.c: 27: }
 [e :UE 238 ]
 }
+"33
+[; ;pwm.c: 33: void tim1Init(){
+[v _tim1Init `(v ~T0 @X0 1 ef ]
+{
+[e :U _tim1Init ]
+[f ]
 "34
-[; ;pwm.c: 34: void tim2Init(unsigned int _pwmPeriod){
+[; ;pwm.c: 34:     T1CONbits.T1CKPS = 0x03;
+[e = . . _T1CONbits 1 4 -> -> 3 `i `uc ]
+"35
+[; ;pwm.c: 35:     T1CONbits.TMR1CS = 0;
+[e = . . _T1CONbits 1 1 -> -> 0 `i `uc ]
+"37
+[; ;pwm.c: 37:     PIE1bits.TMR1IE = 1;
+[e = . . _PIE1bits 0 0 -> -> 1 `i `uc ]
+"39
+[; ;pwm.c: 39:     T1CONbits.TMR1ON = 1;
+[e = . . _T1CONbits 1 0 -> -> 1 `i `uc ]
+"41
+[; ;pwm.c: 41: }
+[e :UE 239 ]
+}
+"48
+[; ;pwm.c: 48: void tim2Init(unsigned int _pwmPeriod){
 [v _tim2Init `(v ~T0 @X0 1 ef1`ui ]
 {
 [e :U _tim2Init ]
 [v __pwmPeriod `ui ~T0 @X0 1 r1 ]
 [f ]
-"35
-[; ;pwm.c: 35:     T2CONbits.TMR2ON = 0;
+"49
+[; ;pwm.c: 49:     T2CONbits.TMR2ON = 0;
 [e = . . _T2CONbits 0 1 -> -> 0 `i `uc ]
-"36
-[; ;pwm.c: 36:     T2CONbits.T2CKPS = 0x03;
+"50
+[; ;pwm.c: 50:     T2CONbits.T2CKPS = 0x03;
 [e = . . _T2CONbits 0 0 -> -> 3 `i `uc ]
-"39
-[; ;pwm.c: 39:     pwmPeriod = _pwmPeriod;
+"53
+[; ;pwm.c: 53:     pwmPeriod = _pwmPeriod;
 [e = _pwmPeriod __pwmPeriod ]
-"40
-[; ;pwm.c: 40: }
-[e :UE 239 ]
+"54
+[; ;pwm.c: 54: }
+[e :UE 240 ]
 }
-"47
-[; ;pwm.c: 47: unsigned int stepMade(void){
+"61
+[; ;pwm.c: 61: unsigned int stepMade(void){
 [v _stepMade `(ui ~T0 @X0 1 ef ]
 {
 [e :U _stepMade ]
 [f ]
-"48
-[; ;pwm.c: 48:     unsigned char temp = stepToggle;
+"62
+[; ;pwm.c: 62:     unsigned char temp = stepToggle;
 [v _temp `uc ~T0 @X0 1 a ]
 [e = _temp _stepToggle ]
-"50
-[; ;pwm.c: 50:     stepToggle = 0;
+"64
+[; ;pwm.c: 64:     stepToggle = 0;
 [e = _stepToggle -> -> 0 `i `uc ]
-"52
-[; ;pwm.c: 52:     return temp;
+"66
+[; ;pwm.c: 66:     return temp;
 [e ) -> _temp `ui ]
-[e $UE 240  ]
-"53
-[; ;pwm.c: 53: }
-[e :UE 240 ]
+[e $UE 241  ]
+"67
+[; ;pwm.c: 67: }
+[e :UE 241 ]
 }
-"58
-[; ;pwm.c: 58: unsigned int stepCounter(void){
+"72
+[; ;pwm.c: 72: unsigned int stepCounter(void){
 [v _stepCounter `(ui ~T0 @X0 1 ef ]
 {
 [e :U _stepCounter ]
 [f ]
-"59
-[; ;pwm.c: 59:     return pwmStep;
+"73
+[; ;pwm.c: 73:     return pwmStep;
 [e ) -> _pwmStep `ui ]
-[e $UE 241  ]
-"60
-[; ;pwm.c: 60: }
-[e :UE 241 ]
+[e $UE 242  ]
+"74
+[; ;pwm.c: 74: }
+[e :UE 242 ]
 }
-"65
-[; ;pwm.c: 65: void resetStep(void){
+"79
+[; ;pwm.c: 79: void resetStep(void){
 [v _resetStep `(v ~T0 @X0 1 ef ]
 {
 [e :U _resetStep ]
 [f ]
-"66
-[; ;pwm.c: 66:     pwmStep = 0;
+"80
+[; ;pwm.c: 80:     pwmStep = 0;
 [e = _pwmStep -> -> 0 `i `uc ]
-"67
-[; ;pwm.c: 67: }
-[e :UE 242 ]
+"81
+[; ;pwm.c: 81: }
+[e :UE 243 ]
 }
-"72
-[; ;pwm.c: 72: void increaseStep(void){
+"86
+[; ;pwm.c: 86: void increaseStep(void){
 [v _increaseStep `(v ~T0 @X0 1 ef ]
 {
 [e :U _increaseStep ]
 [f ]
-"73
-[; ;pwm.c: 73:     pwmStep++;
+"87
+[; ;pwm.c: 87:     pwmStep++;
 [e ++ _pwmStep -> -> 1 `i `Vuc ]
-"74
-[; ;pwm.c: 74: }
-[e :UE 243 ]
+"88
+[; ;pwm.c: 88: }
+[e :UE 244 ]
 }
-"80
-[; ;pwm.c: 80: void toggleStep(void){
+"94
+[; ;pwm.c: 94: void toggleStep(void){
 [v _toggleStep `(v ~T0 @X0 1 ef ]
 {
 [e :U _toggleStep ]
 [f ]
-"81
-[; ;pwm.c: 81:     stepToggle = 1;
+"95
+[; ;pwm.c: 95:     stepToggle = 1;
 [e = _stepToggle -> -> 1 `i `uc ]
-"82
-[; ;pwm.c: 82: }
-[e :UE 244 ]
+"96
+[; ;pwm.c: 96: }
+[e :UE 245 ]
 }
-"88
-[; ;pwm.c: 88: unsigned int retPeriod(void){
+"102
+[; ;pwm.c: 102: unsigned int retPeriod(void){
 [v _retPeriod `(ui ~T0 @X0 1 ef ]
 {
 [e :U _retPeriod ]
 [f ]
-"89
-[; ;pwm.c: 89:     return pwmPeriod;
+"103
+[; ;pwm.c: 103:     return pwmPeriod;
 [e ) _pwmPeriod ]
-[e $UE 245  ]
-"90
-[; ;pwm.c: 90: }
-[e :UE 245 ]
+[e $UE 246  ]
+"104
+[; ;pwm.c: 104: }
+[e :UE 246 ]
 }

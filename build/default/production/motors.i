@@ -3852,6 +3852,8 @@ char liftArm(void);
 void rotateObj(unsigned char rotAngle);
 void pickObject(void);
 void releaseObj(void);
+
+void abortAll(void);
 # 3 "./main.h" 2
 
 # 1 "./conf_bits.h" 1
@@ -3909,6 +3911,7 @@ void releaseObj(void);
 # 1 "./pwm.h" 1
 # 37 "./pwm.h"
 void tim0Init(void);
+void tim1Init(void);
 void tim2Init(unsigned int _pwmPeriod);
 unsigned int stepMade(void);
 void resetStep(void);
@@ -4562,4 +4565,18 @@ void releaseObj(){
     while(!stepMade());
     T2CONbits.TMR2ON = 1;
     TMR2 = 0;
+}
+
+
+
+
+
+void abortAll(){
+
+    enableMotor(1, 0);
+    enableMotor(1, 1);
+    enableMotor(1, 2);
+
+    printError(7);
+    while(1);
 }

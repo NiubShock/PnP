@@ -27,6 +27,20 @@ void tim0Init(void){
 }
 
 /*
+ * Description: Initialization of the TMR1. Always on and used to verify
+ *              the presence of fatal errors
+ */
+void tim1Init(){
+    T1CONbits.T1CKPS = 0x03;    //1:8 prescaler
+    T1CONbits.TMR1CS = 0;       //internal clock
+    
+    PIE1bits.TMR1IE = 1;        //activate the interrupt
+    
+    T1CONbits.TMR1ON = 1;       //start on
+    
+}
+
+/*
  * Description: Initialization function for the timer TMR2 -> used to generate 
  *              the pwm used for the steps generation
  * Note: The TMR2 is still off after this function has been called

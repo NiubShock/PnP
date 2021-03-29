@@ -23,6 +23,7 @@ void main(void) {
     initADC();
     usartInit();
     tim0Init();
+    tim1Init();
     tim2Init(10);
     
     //reset the initial position
@@ -36,15 +37,6 @@ void main(void) {
     RCSTA1bits.CREN = 1;    //enable rx
     
     while(1){
-        if(fatalError()){
-            //fatal error. Turn off all the motors and wait for a reset
-            enableMotor(TURNOFF, MOTOR1);
-            enableMotor(TURNOFF, MOTOR2);
-            enableMotor(TURNOFF, MOTOR3);
-            
-            printError(FATAL_ERROR);
-            while(1);
-        }
         if(newSequence()){
             t_newSequence* newData = getNewSequence();
             

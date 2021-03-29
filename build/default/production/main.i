@@ -3846,6 +3846,8 @@ char liftArm(void);
 void rotateObj(unsigned char rotAngle);
 void pickObject(void);
 void releaseObj(void);
+
+void abortAll(void);
 # 3 "./main.h" 2
 
 # 1 "./conf_bits.h" 1
@@ -3903,6 +3905,7 @@ void releaseObj(void);
 # 1 "./pwm.h" 1
 # 37 "./pwm.h"
 void tim0Init(void);
+void tim1Init(void);
 void tim2Init(unsigned int _pwmPeriod);
 unsigned int stepMade(void);
 void resetStep(void);
@@ -3974,6 +3977,7 @@ void main(void) {
     initADC();
     usartInit();
     tim0Init();
+    tim1Init();
     tim2Init(10);
 
 
@@ -3987,15 +3991,6 @@ void main(void) {
     RCSTA1bits.CREN = 1;
 
     while(1){
-        if(fatalError()){
-
-            enableMotor(1, 0);
-            enableMotor(1, 1);
-            enableMotor(1, 2);
-
-            printError(7);
-            while(1);
-        }
         if(newSequence()){
             t_newSequence* newData = getNewSequence();
 
@@ -4018,7 +4013,7 @@ void main(void) {
 
 
             resetNewSequence();
-# 80 "main.c"
+# 72 "main.c"
         }
         if(readSeq()){
 
@@ -4058,7 +4053,7 @@ void interruptInit(void){
     PIE1bits.TMR2IE = 1;
     PIE1bits.RC1IE = 1;
 }
-# 127 "main.c"
+# 119 "main.c"
 char executeData(){
     t_sequence *data = getData();
 
