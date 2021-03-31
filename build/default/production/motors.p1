@@ -177,8 +177,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "642
 [; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 642: extern volatile PORTEbits_t PORTEbits __attribute__((address(0xF84)));
 [v _PORTEbits `VS26 ~T0 @X0 0 e@3972 ]
-"40 ./pwm.h
-[; ;./pwm.h: 40: unsigned int stepMade(void);
+"40 ./timer.h
+[; ;./timer.h: 40: unsigned int stepMade(void);
 [v _stepMade `(ui ~T0 @X0 0 ef ]
 "4859 D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h
 [; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 4859: extern volatile unsigned short TMR0 __attribute__((address(0xFD6)));
@@ -186,11 +186,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "4405
 [; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 4405: extern volatile unsigned char TMR2 __attribute__((address(0xFCC)));
 [v _TMR2 `Vuc ~T0 @X0 0 e@4044 ]
-"41 ./pwm.h
-[; ;./pwm.h: 41: void resetStep(void);
+"41 ./timer.h
+[; ;./timer.h: 41: void resetStep(void);
 [v _resetStep `(v ~T0 @X0 0 ef ]
 "42
-[; ;./pwm.h: 42: unsigned int stepCounter(void);
+[; ;./timer.h: 42: unsigned int stepCounter(void);
 [v _stepCounter `(ui ~T0 @X0 0 ef ]
 "38 ./adc.h
 [; ;./adc.h: 38: void startADC(void);
@@ -1079,8 +1079,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;motors.c: 185:     tm0Error = 0;
 [e = _tm0Error -> -> 0 `i `ui ]
 "186
-[; ;motors.c: 186:     tm0Limit = 100;
-[e = _tm0Limit -> -> 100 `i `uc ]
+[; ;motors.c: 186:     tm0Limit = 250;
+[e = _tm0Limit -> -> 250 `i `uc ]
 "187
 [; ;motors.c: 187:     T0CONbits.TMR0ON = 1;
 [e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
@@ -1227,14 +1227,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 272 ]
 }
 "264
-[; ;motors.c: 264: char moveToPoint(unsigned int x1, unsigned int y1, unsigned int x2, unsigned int y2){
-[v _moveToPoint `(uc ~T0 @X0 1 ef4`ui`ui`ui`ui ]
+[; ;motors.c: 264: char moveToPoint(int x1, int y1, int x2, int y2){
+[v _moveToPoint `(uc ~T0 @X0 1 ef4`i`i`i`i ]
 {
 [e :U _moveToPoint ]
-[v _x1 `ui ~T0 @X0 1 r1 ]
-[v _y1 `ui ~T0 @X0 1 r2 ]
-[v _x2 `ui ~T0 @X0 1 r3 ]
-[v _y2 `ui ~T0 @X0 1 r4 ]
+[v _x1 `i ~T0 @X0 1 r1 ]
+[v _y1 `i ~T0 @X0 1 r2 ]
+[v _x2 `i ~T0 @X0 1 r3 ]
+[v _y2 `i ~T0 @X0 1 r4 ]
 [f ]
 "266
 [; ;motors.c: 266:     unsigned char MOT1Direction, MOT2Direction;
@@ -1242,7 +1242,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _MOT2Direction `uc ~T0 @X0 1 a ]
 "269
 [; ;motors.c: 269:     if(x2 > maxX || y2 > maxY){
-[e $ ! || > _x2 _maxX > _y2 _maxY 290  ]
+[e $ ! || > -> _x2 `ui _maxX > -> _y2 `ui _maxY 290  ]
 {
 "270
 [; ;motors.c: 270:         return(5);
@@ -1254,7 +1254,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 290 ]
 "274
 [; ;motors.c: 274:     if((x2 - x1) > 0){
-[e $ ! > - _x2 _x1 -> -> 0 `i `ui 291  ]
+[e $ ! > - _x2 _x1 -> 0 `i 291  ]
 {
 "275
 [; ;motors.c: 275:         setDirection(1, 0);
@@ -1280,7 +1280,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 292 ]
 "282
 [; ;motors.c: 282:     if((y2 - y1) > 0){
-[e $ ! > - _y2 _y1 -> -> 0 `i `ui 293  ]
+[e $ ! > - _y2 _y1 -> 0 `i 293  ]
 {
 "283
 [; ;motors.c: 283:         setDirection(1, 1);
@@ -1319,8 +1319,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;motors.c: 296:     tm0Error = 0;
 [e = _tm0Error -> -> 0 `i `ui ]
 "297
-[; ;motors.c: 297:     tm0Limit = 100;
-[e = _tm0Limit -> -> 100 `i `uc ]
+[; ;motors.c: 297:     tm0Limit = 250;
+[e = _tm0Limit -> -> 250 `i `uc ]
 "298
 [; ;motors.c: 298:     T0CONbits.TMR0ON = 1;
 [e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
@@ -1354,17 +1354,18 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! == -> _MOT1Direction `i -> 1 `i 299  ]
 {
 "317
-[; ;motors.c: 317:             if(x1 + stepCounter() == x2){
-[e $ ! == + _x1 ( _stepCounter ..  _x2 300  ]
+[; ;motors.c: 317:             if(x1 + stepCounter() >= x2){
+[e $ ! >= + -> _x1 `ui ( _stepCounter ..  -> _x2 `ui 300  ]
 {
 "319
 [; ;motors.c: 319:                 keepMovingX = 0;
 [e = _keepMovingX -> -> 0 `i `uc ]
 "320
-[; ;motors.c: 320:             }else{
+[; ;motors.c: 320:             }else if(!keepMovingX){
 }
 [e $U 301  ]
 [e :U 300 ]
+[e $ ! ! != -> _keepMovingX `i -> 0 `i 302  ]
 {
 "322
 [; ;motors.c: 322:                 LATAbits.LATA2 = 1;
@@ -1372,26 +1373,28 @@ Version 4.0 HI-TECH Software Intermediate Code
 "323
 [; ;motors.c: 323:             }
 }
+[e :U 302 ]
 [e :U 301 ]
 "324
 [; ;motors.c: 324:         }else if(MOT1Direction == 0){
 }
-[e $U 302  ]
+[e $U 303  ]
 [e :U 299 ]
-[e $ ! == -> _MOT1Direction `i -> 0 `i 303  ]
+[e $ ! == -> _MOT1Direction `i -> 0 `i 304  ]
 {
 "325
-[; ;motors.c: 325:             if(x1 - stepCounter() == x2){
-[e $ ! == - _x1 ( _stepCounter ..  _x2 304  ]
+[; ;motors.c: 325:             if(x1 - stepCounter() <= x2){
+[e $ ! <= - -> _x1 `ui ( _stepCounter ..  -> _x2 `ui 305  ]
 {
 "327
 [; ;motors.c: 327:                 keepMovingX = 0;
 [e = _keepMovingX -> -> 0 `i `uc ]
 "328
-[; ;motors.c: 328:             }else{
+[; ;motors.c: 328:             }else if(!keepMovingX){
 }
-[e $U 305  ]
-[e :U 304 ]
+[e $U 306  ]
+[e :U 305 ]
+[e $ ! ! != -> _keepMovingX `i -> 0 `i 307  ]
 {
 "330
 [; ;motors.c: 330:                 LATAbits.LATA2 = 1;
@@ -1399,28 +1402,30 @@ Version 4.0 HI-TECH Software Intermediate Code
 "331
 [; ;motors.c: 331:             }
 }
-[e :U 305 ]
+[e :U 307 ]
+[e :U 306 ]
 "332
 [; ;motors.c: 332:         }
 }
+[e :U 304 ]
 [e :U 303 ]
-[e :U 302 ]
 "334
 [; ;motors.c: 334:         if(MOT2Direction == 1){
-[e $ ! == -> _MOT2Direction `i -> 1 `i 306  ]
+[e $ ! == -> _MOT2Direction `i -> 1 `i 308  ]
 {
 "336
-[; ;motors.c: 336:             if(y1 + stepCounter() == y2){
-[e $ ! == + _y1 ( _stepCounter ..  _y2 307  ]
+[; ;motors.c: 336:             if(y1 + stepCounter() >= y2){
+[e $ ! >= + -> _y1 `ui ( _stepCounter ..  -> _y2 `ui 309  ]
 {
 "338
 [; ;motors.c: 338:                 keepMovingY = 0;
 [e = _keepMovingY -> -> 0 `i `uc ]
 "339
-[; ;motors.c: 339:             }else{
+[; ;motors.c: 339:             }else if(!keepMovingX){
 }
-[e $U 308  ]
-[e :U 307 ]
+[e $U 310  ]
+[e :U 309 ]
+[e $ ! ! != -> _keepMovingX `i -> 0 `i 311  ]
 {
 "341
 [; ;motors.c: 341:                 LATBbits.LATB4 = 1;
@@ -1428,26 +1433,28 @@ Version 4.0 HI-TECH Software Intermediate Code
 "342
 [; ;motors.c: 342:             }
 }
-[e :U 308 ]
+[e :U 311 ]
+[e :U 310 ]
 "343
 [; ;motors.c: 343:         }else if(MOT2Direction == 0){
 }
-[e $U 309  ]
-[e :U 306 ]
-[e $ ! == -> _MOT2Direction `i -> 0 `i 310  ]
+[e $U 312  ]
+[e :U 308 ]
+[e $ ! == -> _MOT2Direction `i -> 0 `i 313  ]
 {
 "345
-[; ;motors.c: 345:             if(y1 + stepCounter() == y2){
-[e $ ! == + _y1 ( _stepCounter ..  _y2 311  ]
+[; ;motors.c: 345:             if(y1 - stepCounter() <= y2){
+[e $ ! <= - -> _y1 `ui ( _stepCounter ..  -> _y2 `ui 314  ]
 {
 "347
 [; ;motors.c: 347:                 keepMovingY = 0;
 [e = _keepMovingY -> -> 0 `i `uc ]
 "348
-[; ;motors.c: 348:             }else{
+[; ;motors.c: 348:             }else if(!keepMovingX){
 }
-[e $U 312  ]
-[e :U 311 ]
+[e $U 315  ]
+[e :U 314 ]
+[e $ ! ! != -> _keepMovingX `i -> 0 `i 316  ]
 {
 "350
 [; ;motors.c: 350:                 LATBbits.LATB4 = 1;
@@ -1455,19 +1462,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 "351
 [; ;motors.c: 351:             }
 }
-[e :U 312 ]
+[e :U 316 ]
+[e :U 315 ]
 "352
 [; ;motors.c: 352:         }
 }
-[e :U 310 ]
-[e :U 309 ]
+[e :U 313 ]
+[e :U 312 ]
 "355
 [; ;motors.c: 355:         while(!stepMade());
-[e $U 313  ]
-[e :U 314 ]
-[e :U 313 ]
-[e $ ! != ( _stepMade ..  -> -> 0 `i `ui 314  ]
-[e :U 315 ]
+[e $U 317  ]
+[e :U 318 ]
+[e :U 317 ]
+[e $ ! != ( _stepMade ..  -> -> 0 `i `ui 318  ]
+[e :U 319 ]
 "358
 [; ;motors.c: 358:         LATAbits.LATA2 = 0;
 [e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
@@ -1476,11 +1484,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _LATBbits 0 4 -> -> 0 `i `uc ]
 "362
 [; ;motors.c: 362:         while(!stepMade());
-[e $U 316  ]
-[e :U 317 ]
-[e :U 316 ]
-[e $ ! != ( _stepMade ..  -> -> 0 `i `ui 317  ]
-[e :U 318 ]
+[e $U 320  ]
+[e :U 321 ]
+[e :U 320 ]
+[e $ ! != ( _stepMade ..  -> -> 0 `i `ui 321  ]
+[e :U 322 ]
 "363
 [; ;motors.c: 363:     }
 }
@@ -1528,8 +1536,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;motors.c: 391:     tm0Error = 0;
 [e = _tm0Error -> -> 0 `i `ui ]
 "392
-[; ;motors.c: 392:     tm0Limit = 100;
-[e = _tm0Limit -> -> 100 `i `uc ]
+[; ;motors.c: 392:     tm0Limit = 250;
+[e = _tm0Limit -> -> 250 `i `uc ]
 "393
 [; ;motors.c: 393:     T0CONbits.TMR0ON = 1;
 [e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
@@ -1538,12 +1546,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _startADC ..  ]
 "399
 [; ;motors.c: 399:     while(!returnTouch() || PORTDbits.RD7){
-[e $U 320  ]
-[e :U 321 ]
+[e $U 324  ]
+[e :U 325 ]
 {
 "402
 [; ;motors.c: 402:         if(tm0Error){
-[e $ ! != _tm0Error -> -> 0 `i `ui 323  ]
+[e $ ! != _tm0Error -> -> 0 `i `ui 327  ]
 {
 "404
 [; ;motors.c: 404:             LATCbits.LATC2 = 0;
@@ -1553,39 +1561,39 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _tm0Error -> -> 6 `i `ui ]
 "406
 [; ;motors.c: 406:             break;
-[e $U 322  ]
+[e $U 326  ]
 "407
 [; ;motors.c: 407:         }
 }
-[e :U 323 ]
+[e :U 327 ]
 "410
 [; ;motors.c: 410:         LATCbits.LATC2 = 1;
 [e = . . _LATCbits 0 2 -> -> 1 `i `uc ]
 "413
 [; ;motors.c: 413:         while(!stepMade());
-[e $U 324  ]
-[e :U 325 ]
-[e :U 324 ]
-[e $ ! != ( _stepMade ..  -> -> 0 `i `ui 325  ]
-[e :U 326 ]
+[e $U 328  ]
+[e :U 329 ]
+[e :U 328 ]
+[e $ ! != ( _stepMade ..  -> -> 0 `i `ui 329  ]
+[e :U 330 ]
 "416
 [; ;motors.c: 416:         LATCbits.LATC2 = 0;
 [e = . . _LATCbits 0 2 -> -> 0 `i `uc ]
 "419
 [; ;motors.c: 419:         while(!stepMade());
-[e $U 327  ]
-[e :U 328 ]
-[e :U 327 ]
-[e $ ! != ( _stepMade ..  -> -> 0 `i `ui 328  ]
-[e :U 329 ]
+[e $U 331  ]
+[e :U 332 ]
+[e :U 331 ]
+[e $ ! != ( _stepMade ..  -> -> 0 `i `ui 332  ]
+[e :U 333 ]
 "420
 [; ;motors.c: 420:     }
 }
-[e :U 320 ]
+[e :U 324 ]
 "399
 [; ;motors.c: 399:     while(!returnTouch() || PORTDbits.RD7){
-[e $ || ! != ( _returnTouch ..  -> -> 0 `i `ui != -> . . _PORTDbits 0 7 `i -> 0 `i 321  ]
-[e :U 322 ]
+[e $ || ! != ( _returnTouch ..  -> -> 0 `i `ui != -> . . _PORTDbits 0 7 `i -> 0 `i 325  ]
+[e :U 326 ]
 "423
 [; ;motors.c: 423:     stopADC();
 [e ( _stopADC ..  ]
@@ -1609,7 +1617,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _resetStep ..  ]
 "439
 [; ;motors.c: 439:     if(PORTDbits.RD7){
-[e $ ! != -> . . _PORTDbits 0 7 `i -> 0 `i 330  ]
+[e $ ! != -> . . _PORTDbits 0 7 `i -> 0 `i 334  ]
 {
 "440
 [; ;motors.c: 440:         tm0Error = 2;
@@ -1617,14 +1625,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "441
 [; ;motors.c: 441:     }
 }
-[e :U 330 ]
+[e :U 334 ]
 "443
 [; ;motors.c: 443:     return(tm0Error);
 [e ) -> _tm0Error `uc ]
-[e $UE 319  ]
+[e $UE 323  ]
 "444
 [; ;motors.c: 444: }
-[e :UE 319 ]
+[e :UE 323 ]
 }
 "455
 [; ;motors.c: 455: char touchTherm(){
@@ -1642,8 +1650,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;motors.c: 462:     tm0Error = 0;
 [e = _tm0Error -> -> 0 `i `ui ]
 "463
-[; ;motors.c: 463:     tm0Limit = 100;
-[e = _tm0Limit -> -> 100 `i `uc ]
+[; ;motors.c: 463:     tm0Limit = 250;
+[e = _tm0Limit -> -> 250 `i `uc ]
 "464
 [; ;motors.c: 464:     T0CONbits.TMR0ON = 1;
 [e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
@@ -1652,12 +1660,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _startADC ..  ]
 "470
 [; ;motors.c: 470:     while(!returnTherm() || PORTDbits.RD7){
-[e $U 332  ]
-[e :U 333 ]
+[e $U 336  ]
+[e :U 337 ]
 {
 "473
 [; ;motors.c: 473:         if(tm0Error){
-[e $ ! != _tm0Error -> -> 0 `i `ui 335  ]
+[e $ ! != _tm0Error -> -> 0 `i `ui 339  ]
 {
 "475
 [; ;motors.c: 475:             LATCbits.LATC2 = 0;
@@ -1667,39 +1675,39 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _tm0Error -> -> 6 `i `ui ]
 "477
 [; ;motors.c: 477:             break;
-[e $U 334  ]
+[e $U 338  ]
 "478
 [; ;motors.c: 478:         }
 }
-[e :U 335 ]
+[e :U 339 ]
 "481
 [; ;motors.c: 481:         LATCbits.LATC2 = 1;
 [e = . . _LATCbits 0 2 -> -> 1 `i `uc ]
 "484
 [; ;motors.c: 484:         while(!stepMade());
-[e $U 336  ]
-[e :U 337 ]
-[e :U 336 ]
-[e $ ! != ( _stepMade ..  -> -> 0 `i `ui 337  ]
-[e :U 338 ]
+[e $U 340  ]
+[e :U 341 ]
+[e :U 340 ]
+[e $ ! != ( _stepMade ..  -> -> 0 `i `ui 341  ]
+[e :U 342 ]
 "487
 [; ;motors.c: 487:         LATCbits.LATC2 = 0;
 [e = . . _LATCbits 0 2 -> -> 0 `i `uc ]
 "490
 [; ;motors.c: 490:         while(!stepMade());
-[e $U 339  ]
-[e :U 340 ]
-[e :U 339 ]
-[e $ ! != ( _stepMade ..  -> -> 0 `i `ui 340  ]
-[e :U 341 ]
+[e $U 343  ]
+[e :U 344 ]
+[e :U 343 ]
+[e $ ! != ( _stepMade ..  -> -> 0 `i `ui 344  ]
+[e :U 345 ]
 "491
 [; ;motors.c: 491:     }
 }
-[e :U 332 ]
+[e :U 336 ]
 "470
 [; ;motors.c: 470:     while(!returnTherm() || PORTDbits.RD7){
-[e $ || ! != ( _returnTherm ..  -> -> 0 `i `ui != -> . . _PORTDbits 0 7 `i -> 0 `i 333  ]
-[e :U 334 ]
+[e $ || ! != ( _returnTherm ..  -> -> 0 `i `ui != -> . . _PORTDbits 0 7 `i -> 0 `i 337  ]
+[e :U 338 ]
 "494
 [; ;motors.c: 494:     stopADC();
 [e ( _stopADC ..  ]
@@ -1723,7 +1731,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _resetStep ..  ]
 "510
 [; ;motors.c: 510:     if(PORTDbits.RD7){
-[e $ ! != -> . . _PORTDbits 0 7 `i -> 0 `i 342  ]
+[e $ ! != -> . . _PORTDbits 0 7 `i -> 0 `i 346  ]
 {
 "511
 [; ;motors.c: 511:         tm0Error = 2;
@@ -1731,14 +1739,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "512
 [; ;motors.c: 512:     }
 }
-[e :U 342 ]
+[e :U 346 ]
 "514
 [; ;motors.c: 514:     return(tm0Error);
 [e ) -> _tm0Error `uc ]
-[e $UE 331  ]
+[e $UE 335  ]
 "515
 [; ;motors.c: 515: }
-[e :UE 331 ]
+[e :UE 335 ]
 }
 "521
 [; ;motors.c: 521: char liftArm(){
@@ -1756,19 +1764,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;motors.c: 528:     tm0Error = 0;
 [e = _tm0Error -> -> 0 `i `ui ]
 "529
-[; ;motors.c: 529:     tm0Limit = 100;
-[e = _tm0Limit -> -> 100 `i `uc ]
+[; ;motors.c: 529:     tm0Limit = 250;
+[e = _tm0Limit -> -> 250 `i `uc ]
 "530
 [; ;motors.c: 530:     T0CONbits.TMR0ON = 1;
 [e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
 "534
 [; ;motors.c: 534:     while(!PORTEbits.RE2){
-[e $U 344  ]
-[e :U 345 ]
+[e $U 348  ]
+[e :U 349 ]
 {
 "537
 [; ;motors.c: 537:         if(tm0Error){
-[e $ ! != _tm0Error -> -> 0 `i `ui 347  ]
+[e $ ! != _tm0Error -> -> 0 `i `ui 351  ]
 {
 "539
 [; ;motors.c: 539:             LATCbits.LATC2 = 0;
@@ -1778,39 +1786,39 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _tm0Error -> -> 6 `i `ui ]
 "541
 [; ;motors.c: 541:             break;
-[e $U 346  ]
+[e $U 350  ]
 "542
 [; ;motors.c: 542:         }
 }
-[e :U 347 ]
+[e :U 351 ]
 "546
 [; ;motors.c: 546:         LATCbits.LATC2 = 1;
 [e = . . _LATCbits 0 2 -> -> 1 `i `uc ]
 "549
 [; ;motors.c: 549:         while(!stepMade());
-[e $U 348  ]
-[e :U 349 ]
-[e :U 348 ]
-[e $ ! != ( _stepMade ..  -> -> 0 `i `ui 349  ]
-[e :U 350 ]
+[e $U 352  ]
+[e :U 353 ]
+[e :U 352 ]
+[e $ ! != ( _stepMade ..  -> -> 0 `i `ui 353  ]
+[e :U 354 ]
 "552
 [; ;motors.c: 552:         LATCbits.LATC2 = 0;
 [e = . . _LATCbits 0 2 -> -> 0 `i `uc ]
 "555
 [; ;motors.c: 555:         while(!stepMade());
-[e $U 351  ]
-[e :U 352 ]
-[e :U 351 ]
-[e $ ! != ( _stepMade ..  -> -> 0 `i `ui 352  ]
-[e :U 353 ]
+[e $U 355  ]
+[e :U 356 ]
+[e :U 355 ]
+[e $ ! != ( _stepMade ..  -> -> 0 `i `ui 356  ]
+[e :U 357 ]
 "556
 [; ;motors.c: 556:     }
 }
-[e :U 344 ]
+[e :U 348 ]
 "534
 [; ;motors.c: 534:     while(!PORTEbits.RE2){
-[e $ ! != -> . . _PORTEbits 0 2 `i -> 0 `i 345  ]
-[e :U 346 ]
+[e $ ! != -> . . _PORTEbits 0 2 `i -> 0 `i 349  ]
+[e :U 350 ]
 "559
 [; ;motors.c: 559:     T0CONbits.TMR0ON = 0;
 [e = . . _T0CONbits 0 5 -> -> 0 `i `uc ]
@@ -1829,10 +1837,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "568
 [; ;motors.c: 568:     return(tm0Error);
 [e ) -> _tm0Error `uc ]
-[e $UE 343  ]
+[e $UE 347  ]
 "569
 [; ;motors.c: 569: }
-[e :UE 343 ]
+[e :UE 347 ]
 }
 "575
 [; ;motors.c: 575: void rotateObj(unsigned char rotAngle){
@@ -1843,14 +1851,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "576
 [; ;motors.c: 576:     static const float stepAngle = 0.08789;
-[v F2235 `Cf ~T0 @X0 1 s stepAngle ]
-[i F2235
+[v F2236 `Cf ~T0 @X0 1 s stepAngle ]
+[i F2236
 -> .0.08789 `f
 ]
 "577
 [; ;motors.c: 577:     static char rotSequence[] = {0b1001, 0b0011, 0b0110, 0b1100};
-[v F2236 `uc ~T0 @X0 -> 4 `i s rotSequence ]
-[i F2236
+[v F2237 `uc ~T0 @X0 -> 4 `i s rotSequence ]
+[i F2237
 :U ..
 -> -> 9 `i `uc
 -> -> 3 `i `uc
@@ -1864,30 +1872,30 @@ Version 4.0 HI-TECH Software Intermediate Code
 "579
 [; ;motors.c: 579:     int totStep = rotAngle/stepAngle;
 [v _totStep `i ~T0 @X0 1 a ]
-[e = _totStep -> / -> -> _rotAngle `i `f F2235 `i ]
+[e = _totStep -> / -> -> _rotAngle `i `f F2236 `i ]
 "582
 [; ;motors.c: 582:     for(i = 0; i < totStep; i++){
 {
 [e = _i -> -> 0 `i `ui ]
-[e $U 358  ]
-[e :U 355 ]
+[e $U 362  ]
+[e :U 359 ]
 {
 "584
 [; ;motors.c: 584:         LATD &= 0xC3;
 [e =& _LATD -> -> 195 `i `Vuc ]
 "586
 [; ;motors.c: 586:         LATD |= rotSequence[i%4] << 2;
-[e =| _LATD -> << -> *U + &U F2236 * -> % _i -> -> 4 `i `ui `ux -> -> # *U &U F2236 `ui `ux `i -> 2 `i `Vuc ]
+[e =| _LATD -> << -> *U + &U F2237 * -> % _i -> -> 4 `i `ui `ux -> -> # *U &U F2237 `ui `ux `i -> 2 `i `Vuc ]
 "590
 [; ;motors.c: 590:         T2CONbits.TMR2ON = 1;
 [e = . . _T2CONbits 0 1 -> -> 1 `i `uc ]
 "591
 [; ;motors.c: 591:         while(!stepMade());
-[e $U 359  ]
-[e :U 360 ]
-[e :U 359 ]
-[e $ ! != ( _stepMade ..  -> -> 0 `i `ui 360  ]
-[e :U 361 ]
+[e $U 363  ]
+[e :U 364 ]
+[e :U 363 ]
+[e $ ! != ( _stepMade ..  -> -> 0 `i `ui 364  ]
+[e :U 365 ]
 "592
 [; ;motors.c: 592:         T2CONbits.TMR2ON = 1;
 [e = . . _T2CONbits 0 1 -> -> 1 `i `uc ]
@@ -1898,13 +1906,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;motors.c: 594:     }
 }
 [e ++ _i -> -> 1 `i `ui ]
-[e :U 358 ]
-[e $ < _i -> _totStep `ui 355  ]
-[e :U 356 ]
+[e :U 362 ]
+[e $ < _i -> _totStep `ui 359  ]
+[e :U 360 ]
 }
 "595
 [; ;motors.c: 595: }
-[e :UE 354 ]
+[e :UE 358 ]
 }
 "600
 [; ;motors.c: 600: void pickObject(){
@@ -1920,11 +1928,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _T2CONbits 0 1 -> -> 1 `i `uc ]
 "606
 [; ;motors.c: 606:     while(!stepMade());
-[e $U 363  ]
-[e :U 364 ]
-[e :U 363 ]
-[e $ ! != ( _stepMade ..  -> -> 0 `i `ui 364  ]
-[e :U 365 ]
+[e $U 367  ]
+[e :U 368 ]
+[e :U 367 ]
+[e $ ! != ( _stepMade ..  -> -> 0 `i `ui 368  ]
+[e :U 369 ]
 "607
 [; ;motors.c: 607:     T2CONbits.TMR2ON = 1;
 [e = . . _T2CONbits 0 1 -> -> 1 `i `uc ]
@@ -1933,7 +1941,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _TMR2 -> -> 0 `i `uc ]
 "609
 [; ;motors.c: 609: }
-[e :UE 362 ]
+[e :UE 366 ]
 }
 "614
 [; ;motors.c: 614: void releaseObj(){
@@ -1949,11 +1957,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _T2CONbits 0 1 -> -> 1 `i `uc ]
 "620
 [; ;motors.c: 620:     while(!stepMade());
-[e $U 367  ]
-[e :U 368 ]
-[e :U 367 ]
-[e $ ! != ( _stepMade ..  -> -> 0 `i `ui 368  ]
-[e :U 369 ]
+[e $U 371  ]
+[e :U 372 ]
+[e :U 371 ]
+[e $ ! != ( _stepMade ..  -> -> 0 `i `ui 372  ]
+[e :U 373 ]
 "621
 [; ;motors.c: 621:     T2CONbits.TMR2ON = 1;
 [e = . . _T2CONbits 0 1 -> -> 1 `i `uc ]
@@ -1962,7 +1970,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _TMR2 -> -> 0 `i `uc ]
 "623
 [; ;motors.c: 623: }
-[e :UE 366 ]
+[e :UE 370 ]
 }
 "629
 [; ;motors.c: 629: void abortAll(){
@@ -1984,11 +1992,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _printError (1 -> -> 7 `i `uc ]
 "636
 [; ;motors.c: 636:     while(1);
-[e :U 372 ]
-[e :U 371 ]
-[e $U 372  ]
-[e :U 373 ]
+[e :U 376 ]
+[e :U 375 ]
+[e $U 376  ]
+[e :U 377 ]
 "637
 [; ;motors.c: 637: }
-[e :UE 370 ]
+[e :UE 374 ]
 }

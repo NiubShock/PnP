@@ -1,28 +1,4 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[t ~ __interrupt . k ]
-[t T38 __interrupt ]
-"5318 D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h
-[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 5318:     struct {
-[s S227 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S227 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
-"5328
-[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 5328:     struct {
-[s S228 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S228 . . INT0F T0IF . INT0E T0IE PEIE GIE ]
-"5338
-[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 5338:     struct {
-[s S229 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S229 . . GIEL GIEH ]
-"5317
-[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 5317: typedef union {
-[u S226 `S227 1 `S228 1 `S229 1 ]
-[n S226 . . . . ]
-"5344
-[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 5344: extern volatile INTCONbits_t INTCONbits __attribute__((address(0xFF2)));
-[v _INTCONbits `VS226 ~T0 @X0 0 e@4082 ]
-"31 ./motors.h
-[; ;./motors.h: 31: unsigned char whatsTM0Limit(void);
-[v _whatsTM0Limit `(uc ~T0 @X0 0 ef ]
 "4795 D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h
 [; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 4795:     struct {
 [s S214 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -38,57 +14,48 @@ Version 4.0 HI-TECH Software Intermediate Code
 "4809
 [; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 4809: extern volatile T0CONbits_t T0CONbits __attribute__((address(0xFD5)));
 [v _T0CONbits `VS213 ~T0 @X0 0 e@4053 ]
-"30 ./motors.h
-[; ;./motors.h: 30: void writeTM0(void);
-[v _writeTM0 `(v ~T0 @X0 0 ef ]
-"2345 D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h
-[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 2345:     struct {
-[s S85 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S85 . TMR1IF TMR2IF CCP1IF SSPIF TXIF RCIF ADIF PSPIF ]
-"2355
-[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 2355:     struct {
-[s S86 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S86 . . TX1IF RC1IF ]
-"2344
-[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 2344: typedef union {
-[u S84 `S85 1 `S86 1 ]
-[n S84 . . . ]
-"2361
-[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 2361: extern volatile PIR1bits_t PIR1bits __attribute__((address(0xF9E)));
-[v _PIR1bits `VS84 ~T0 @X0 0 e@3998 ]
-"29 ./usart.h
-[; ;./usart.h: 29: unsigned char fatalError(void);
-[v _fatalError `(uc ~T0 @X0 0 ef ]
-"60 ./motors.h
-[; ;./motors.h: 60: void abortAll(void);
-[v _abortAll `(v ~T0 @X0 0 ef ]
-"47 ./pwm.h
-[; ;./pwm.h: 47: unsigned int retPeriod(void);
-[v _retPeriod `(ui ~T0 @X0 0 ef ]
-"45
-[; ;./pwm.h: 45: void increaseStep(void);
-[v _increaseStep `(v ~T0 @X0 0 ef ]
-"46
-[; ;./pwm.h: 46: void toggleStep(void);
-[v _toggleStep `(v ~T0 @X0 0 ef ]
-"3807 D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h
-[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 3807: extern volatile unsigned char ADRESL __attribute__((address(0xFC3)));
-[v _ADRESL `Vuc ~T0 @X0 0 e@4035 ]
-"3814
-[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 3814: extern volatile unsigned char ADRESH __attribute__((address(0xFC4)));
-[v _ADRESH `Vuc ~T0 @X0 0 e@4036 ]
-"46 ./adc.h
-[; ;./adc.h: 46: void setTouchRel(void);
-[v _setTouchRel `(v ~T0 @X0 0 ef ]
-"45
-[; ;./adc.h: 45: void setThermRel(void);
-[v _setThermRel `(v ~T0 @X0 0 ef ]
-"3221 D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h
-[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 3221: extern volatile unsigned char RCREG1 __attribute__((address(0xFAE)));
-[v _RCREG1 `Vuc ~T0 @X0 0 e@4014 ]
-"20 ./usart.h
-[; ;./usart.h: 20: void storeData(unsigned char data);
-[v _storeData `(v ~T0 @X0 0 ef1`uc ]
+"4418
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 4418:     struct {
+[s S191 :2 `uc 1 :1 `uc 1 ]
+[n S191 . . NOT_T1SYNC ]
+"4422
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 4422:     struct {
+[s S192 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S192 . TMR1ON TMR1CS nT1SYNC T1OSCEN T1CKPS . RD16 ]
+"4431
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 4431:     struct {
+[s S193 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S193 . . T1SYNC . T1CKPS0 T1CKPS1 ]
+"4438
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 4438:     struct {
+[s S194 :2 `uc 1 :1 `uc 1 ]
+[n S194 . . T1INSYNC ]
+"4442
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 4442:     struct {
+[s S195 :3 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 ]
+[n S195 . . SOSCEN . T1RD16 ]
+"4417
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 4417: typedef union {
+[u S190 `S191 1 `S192 1 `S193 1 `S194 1 `S195 1 ]
+[n S190 . . . . . . ]
+"4449
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 4449: extern volatile T1CONbits_t T1CONbits __attribute__((address(0xFCD)));
+[v _T1CONbits `VS190 ~T0 @X0 0 e@4045 ]
+"4230
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 4230:     struct {
+[s S176 :2 `uc 1 :1 `uc 1 :4 `uc 1 ]
+[n S176 . T2CKPS TMR2ON TOUTPS ]
+"4235
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 4235:     struct {
+[s S177 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S177 . T2CKPS0 T2CKPS1 . TOUTPS0 TOUTPS1 TOUTPS2 TOUTPS3 ]
+"4229
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 4229: typedef union {
+[u S175 `S176 1 `S177 1 ]
+[n S175 . . . ]
+"4245
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 4245: extern volatile T2CONbits_t T2CONbits __attribute__((address(0xFCA)));
+[v _T2CONbits `VS175 ~T0 @X0 0 e@4042 ]
 "54 D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h
 [; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 54: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -470,261 +437,173 @@ Version 4.0 HI-TECH Software Intermediate Code
 "5763
 [; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 5763: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"40 ./conf_bits.h
-[p x OSC = XT ]
-"41
-[p x OSCS = OFF ]
-"44
-[p x PWRT = OFF ]
-"45
-[p x BOR = OFF ]
-"46
-[p x BORV = 20 ]
-"49
-[p x WDT = OFF ]
-"50
-[p x WDTPS = 128 ]
-"53
-[p x CCP2MUX = OFF ]
-"56
-[p x STVR = OFF ]
-"57
-[p x LVP = OFF ]
-"60
-[p x CP0 = OFF ]
-"61
-[p x CP1 = OFF ]
-"62
-[p x CP2 = OFF ]
-"63
-[p x CP3 = OFF ]
-"66
-[p x CPB = OFF ]
-"67
-[p x CPD = OFF ]
-"70
-[p x WRT0 = OFF ]
-"71
-[p x WRT1 = OFF ]
-"72
-[p x WRT2 = OFF ]
-"73
-[p x WRT3 = OFF ]
-"76
-[p x WRTC = OFF ]
-"77
-[p x WRTB = OFF ]
-"78
-[p x WRTD = OFF ]
-"81
-[p x EBTR0 = OFF ]
-"82
-[p x EBTR1 = OFF ]
-"83
-[p x EBTR2 = OFF ]
-"84
-[p x EBTR3 = OFF ]
-"87
-[p x EBTRB = OFF ]
-"13 interrupt.c
-[; ;interrupt.c: 13: static unsigned int ADC_res = 0;
-[v _ADC_res `ui ~T0 @X0 1 s ]
-[i _ADC_res
+"11 timer.c
+[; ;timer.c: 11: static volatile unsigned char pwmStep = 0;
+[v _pwmStep `Vuc ~T0 @X0 1 s ]
+[i _pwmStep
+-> -> 0 `i `uc
+]
+"12
+[; ;timer.c: 12: static volatile unsigned char stepToggle = 0;
+[v _stepToggle `Vuc ~T0 @X0 1 s ]
+[i _stepToggle
+-> -> 0 `i `uc
+]
+"13
+[; ;timer.c: 13: static unsigned int pwmPeriod = 0;
+[v _pwmPeriod `ui ~T0 @X0 1 s ]
+[i _pwmPeriod
 -> -> 0 `i `ui
 ]
-"14
-[; ;interrupt.c: 14: static const unsigned int touch_pressure = 0x200;
-[v _touch_pressure `Cui ~T0 @X0 1 s ]
-[i _touch_pressure
--> -> 512 `i `ui
-]
-"15
-[; ;interrupt.c: 15: static const unsigned int therm_pressure = 0x400;
-[v _therm_pressure `Cui ~T0 @X0 1 s ]
-[i _therm_pressure
--> -> 1024 `i `ui
-]
-[v $root$_isr `(v ~T0 @X0 0 e ]
-"17
-[; ;interrupt.c: 17: void __attribute__((picinterrupt(("")))) isr(){
-[v _isr `(v ~T38 @X0 1 ef ]
+"21
+[; ;timer.c: 21: void tim0Init(void){
+[v _tim0Init `(v ~T0 @X0 1 ef ]
 {
-[e :U _isr ]
+[e :U _tim0Init ]
 [f ]
-"18
-[; ;interrupt.c: 18:     static unsigned int single_cycle = 0;
-[v F2201 `ui ~T0 @X0 1 s single_cycle ]
-[i F2201
--> -> 0 `i `ui
-]
-"19
-[; ;interrupt.c: 19:     static unsigned char tm0Count = 0;
-[v F2202 `uc ~T0 @X0 1 s tm0Count ]
-[i F2202
--> -> 0 `i `uc
-]
-"20
-[; ;interrupt.c: 20:     static unsigned char completeStep = 0;
-[v F2203 `uc ~T0 @X0 1 s completeStep ]
-[i F2203
--> -> 0 `i `uc
-]
-"23
-[; ;interrupt.c: 23:     if(INTCONbits.T0IF){
-[e $ ! != -> . . _INTCONbits 1 2 `i -> 0 `i 241  ]
-{
-"24
-[; ;interrupt.c: 24:         INTCONbits.T0IF = 0;
-[e = . . _INTCONbits 1 2 -> -> 0 `i `uc ]
-"27
-[; ;interrupt.c: 27:         tm0Count++;
-[e ++ F2202 -> -> 1 `i `uc ]
-"29
-[; ;interrupt.c: 29:         if(tm0Count >= whatsTM0Limit()){
-[e $ ! >= -> F2202 `i -> ( _whatsTM0Limit ..  `i 242  ]
-{
-"30
-[; ;interrupt.c: 30:             T0CONbits.TMR0ON = 0;
+"22
+[; ;timer.c: 22:     T0CONbits.TMR0ON = 0;
 [e = . . _T0CONbits 0 5 -> -> 0 `i `uc ]
-"31
-[; ;interrupt.c: 31:             tm0Count = 0;
-[e = F2202 -> -> 0 `i `uc ]
-"32
-[; ;interrupt.c: 32:             writeTM0();
-[e ( _writeTM0 ..  ]
+"23
+[; ;timer.c: 23:     T0CONbits.T08BIT = 0;
+[e = . . _T0CONbits 0 4 -> -> 0 `i `uc ]
+"24
+[; ;timer.c: 24:     T0CONbits.T0CS = 0;
+[e = . . _T0CONbits 0 3 -> -> 0 `i `uc ]
+"25
+[; ;timer.c: 25:     T0CONbits.PSA = 1;
+[e = . . _T0CONbits 0 1 -> -> 1 `i `uc ]
+"26
+[; ;timer.c: 26:     T0CONbits.T0PS = 0x07;
+[e = . . _T0CONbits 0 0 -> -> 7 `i `uc ]
+"27
+[; ;timer.c: 27: }
+[e :UE 238 ]
+}
 "33
-[; ;interrupt.c: 33:         }
-}
-[e :U 242 ]
+[; ;timer.c: 33: void tim1Init(){
+[v _tim1Init `(v ~T0 @X0 1 ef ]
+{
+[e :U _tim1Init ]
+[f ]
 "34
-[; ;interrupt.c: 34:     }
-}
-[e :U 241 ]
+[; ;timer.c: 34:     T1CONbits.T1CKPS = 0x03;
+[e = . . _T1CONbits 1 4 -> -> 3 `i `uc ]
+"35
+[; ;timer.c: 35:     T1CONbits.TMR1CS = 0;
+[e = . . _T1CONbits 1 1 -> -> 0 `i `uc ]
 "37
-[; ;interrupt.c: 37:     if(PIR1bits.TMR1IF){
-[e $ ! != -> . . _PIR1bits 0 0 `i -> 0 `i 243  ]
-{
-"38
-[; ;interrupt.c: 38:         PIR1bits.TMR1IF = 0;
-[e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
+[; ;timer.c: 37:     T1CONbits.TMR1ON = 1;
+[e = . . _T1CONbits 1 0 -> -> 1 `i `uc ]
 "39
-[; ;interrupt.c: 39:         if(fatalError()){
-[e $ ! != -> ( _fatalError ..  `i -> 0 `i 244  ]
-{
-"40
-[; ;interrupt.c: 40:             abortAll();
-[e ( _abortAll ..  ]
-"41
-[; ;interrupt.c: 41:         }
+[; ;timer.c: 39: }
+[e :UE 239 ]
 }
-[e :U 244 ]
-"42
-[; ;interrupt.c: 42:     }
-}
-[e :U 243 ]
-"45
-[; ;interrupt.c: 45:     if(PIR1bits.TMR2IF){
-[e $ ! != -> . . _PIR1bits 0 1 `i -> 0 `i 245  ]
-{
 "46
-[; ;interrupt.c: 46:         PIR1bits.TMR2IF = 0;
-[e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
+[; ;timer.c: 46: void tim2Init(unsigned int _pwmPeriod){
+[v _tim2Init `(v ~T0 @X0 1 ef1`ui ]
+{
+[e :U _tim2Init ]
+[v __pwmPeriod `ui ~T0 @X0 1 r1 ]
+[f ]
 "47
-[; ;interrupt.c: 47:         single_cycle++;
-[e ++ F2201 -> -> 1 `i `ui ]
-"50
-[; ;interrupt.c: 50:         if(single_cycle > retPeriod()){
-[e $ ! > F2201 ( _retPeriod ..  246  ]
-{
+[; ;timer.c: 47:     T2CONbits.TMR2ON = 0;
+[e = . . _T2CONbits 0 1 -> -> 0 `i `uc ]
+"48
+[; ;timer.c: 48:     T2CONbits.T2CKPS = 0x01;
+[e = . . _T2CONbits 0 0 -> -> 1 `i `uc ]
 "51
-[; ;interrupt.c: 51:             completeStep++;
-[e ++ F2203 -> -> 1 `i `uc ]
-"54
-[; ;interrupt.c: 54:             if(completeStep != 0 && !(completeStep % 2)){
-[e $ ! && != -> F2203 `i -> 0 `i ! != % -> F2203 `i -> 2 `i -> 0 `i 247  ]
-{
-"56
-[; ;interrupt.c: 56:                 completeStep = 0;
-[e = F2203 -> -> 0 `i `uc ]
-"59
-[; ;interrupt.c: 59:                 increaseStep();
-[e ( _increaseStep ..  ]
-"60
-[; ;interrupt.c: 60:             }
-}
-[e :U 247 ]
-"64
-[; ;interrupt.c: 64:             toggleStep();
-[e ( _toggleStep ..  ]
-"65
-[; ;interrupt.c: 65:         }
-}
-[e :U 246 ]
-"66
-[; ;interrupt.c: 66:     }
-}
-[e :U 245 ]
-"69
-[; ;interrupt.c: 69:     if(PIR1bits.ADIF){
-[e $ ! != -> . . _PIR1bits 0 6 `i -> 0 `i 248  ]
-{
-"70
-[; ;interrupt.c: 70:         PIR1bits.ADIF = 0;
-[e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
-"73
-[; ;interrupt.c: 73:         ADC_res = ADRESL;
-[e = _ADC_res -> _ADRESL `ui ]
-"74
-[; ;interrupt.c: 74:         ADC_res |= (ADRESH << 8);
-[e =| _ADC_res -> << -> _ADRESH `i -> 8 `i `ui ]
-"77
-[; ;interrupt.c: 77:         if(ADC_res > therm_pressure){
-[e $ ! > _ADC_res _therm_pressure 249  ]
-{
-"79
-[; ;interrupt.c: 79:             setTouchRel();
-[e ( _setTouchRel ..  ]
-"80
-[; ;interrupt.c: 80:             setThermRel();
-[e ( _setThermRel ..  ]
-"81
-[; ;interrupt.c: 81:         }else if(ADC_res > touch_pressure){
-}
-[e $U 250  ]
-[e :U 249 ]
-[e $ ! > _ADC_res _touch_pressure 251  ]
-{
-"83
-[; ;interrupt.c: 83:             setTouchRel();
-[e ( _setTouchRel ..  ]
-"84
-[; ;interrupt.c: 84:         }
-}
-[e :U 251 ]
-[e :U 250 ]
-"85
-[; ;interrupt.c: 85:     }
-}
-[e :U 248 ]
-"88
-[; ;interrupt.c: 88:     if(PIR1bits.RC1IF){
-[e $ ! != -> . . _PIR1bits 1 2 `i -> 0 `i 252  ]
-{
-"89
-[; ;interrupt.c: 89:         PIR1bits.RC1IF = 0;
-[e = . . _PIR1bits 1 2 -> -> 0 `i `uc ]
-"92
-[; ;interrupt.c: 92:         unsigned char temp = RCREG1;
-[v _temp `uc ~T0 @X0 1 a ]
-[e = _temp _RCREG1 ]
-"94
-[; ;interrupt.c: 94:         storeData(temp);
-[e ( _storeData (1 _temp ]
-"95
-[; ;interrupt.c: 95:     }
-}
-[e :U 252 ]
-"96
-[; ;interrupt.c: 96: }
+[; ;timer.c: 51:     pwmPeriod = _pwmPeriod;
+[e = _pwmPeriod __pwmPeriod ]
+"52
+[; ;timer.c: 52: }
 [e :UE 240 ]
+}
+"59
+[; ;timer.c: 59: unsigned int stepMade(void){
+[v _stepMade `(ui ~T0 @X0 1 ef ]
+{
+[e :U _stepMade ]
+[f ]
+"60
+[; ;timer.c: 60:     unsigned char temp = stepToggle;
+[v _temp `uc ~T0 @X0 1 a ]
+[e = _temp _stepToggle ]
+"62
+[; ;timer.c: 62:     stepToggle = 0;
+[e = _stepToggle -> -> 0 `i `uc ]
+"64
+[; ;timer.c: 64:     return temp;
+[e ) -> _temp `ui ]
+[e $UE 241  ]
+"65
+[; ;timer.c: 65: }
+[e :UE 241 ]
+}
+"70
+[; ;timer.c: 70: unsigned int stepCounter(void){
+[v _stepCounter `(ui ~T0 @X0 1 ef ]
+{
+[e :U _stepCounter ]
+[f ]
+"71
+[; ;timer.c: 71:     return pwmStep;
+[e ) -> _pwmStep `ui ]
+[e $UE 242  ]
+"72
+[; ;timer.c: 72: }
+[e :UE 242 ]
+}
+"77
+[; ;timer.c: 77: void resetStep(void){
+[v _resetStep `(v ~T0 @X0 1 ef ]
+{
+[e :U _resetStep ]
+[f ]
+"78
+[; ;timer.c: 78:     pwmStep = 0;
+[e = _pwmStep -> -> 0 `i `uc ]
+"79
+[; ;timer.c: 79: }
+[e :UE 243 ]
+}
+"84
+[; ;timer.c: 84: void increaseStep(void){
+[v _increaseStep `(v ~T0 @X0 1 ef ]
+{
+[e :U _increaseStep ]
+[f ]
+"85
+[; ;timer.c: 85:     pwmStep++;
+[e ++ _pwmStep -> -> 1 `i `Vuc ]
+"86
+[; ;timer.c: 86: }
+[e :UE 244 ]
+}
+"92
+[; ;timer.c: 92: void toggleStep(void){
+[v _toggleStep `(v ~T0 @X0 1 ef ]
+{
+[e :U _toggleStep ]
+[f ]
+"93
+[; ;timer.c: 93:     stepToggle = 1;
+[e = _stepToggle -> -> 1 `i `uc ]
+"94
+[; ;timer.c: 94: }
+[e :UE 245 ]
+}
+"100
+[; ;timer.c: 100: unsigned int retPeriod(void){
+[v _retPeriod `(ui ~T0 @X0 1 ef ]
+{
+[e :U _retPeriod ]
+[f ]
+"101
+[; ;timer.c: 101:     return pwmPeriod;
+[e ) _pwmPeriod ]
+[e $UE 246  ]
+"102
+[; ;timer.c: 102: }
+[e :UE 246 ]
 }

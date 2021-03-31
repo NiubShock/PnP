@@ -1,6 +1,4 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[t ~ __interrupt . k ]
-[t T38 __interrupt ]
 "5318 D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h
 [; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 5318:     struct {
 [s S227 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -20,6 +18,62 @@ Version 4.0 HI-TECH Software Intermediate Code
 "5344
 [; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 5344: extern volatile INTCONbits_t INTCONbits __attribute__((address(0xFF2)));
 [v _INTCONbits `VS226 ~T0 @X0 0 e@4082 ]
+"4546
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 4546:     struct {
+[s S197 :1 `uc 1 ]
+[n S197 . NOT_BOR ]
+"4549
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 4549:     struct {
+[s S198 :1 `uc 1 :1 `uc 1 ]
+[n S198 . . NOT_POR ]
+"4553
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 4553:     struct {
+[s S199 :2 `uc 1 :1 `uc 1 ]
+[n S199 . . NOT_PD ]
+"4557
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 4557:     struct {
+[s S200 :3 `uc 1 :1 `uc 1 ]
+[n S200 . . NOT_TO ]
+"4561
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 4561:     struct {
+[s S201 :4 `uc 1 :1 `uc 1 ]
+[n S201 . . NOT_RI ]
+"4565
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 4565:     struct {
+[s S202 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S202 . nBOR nPOR nPD nTO nRI . IPEN ]
+"4574
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 4574:     struct {
+[s S203 :7 `uc 1 :1 `uc 1 ]
+[n S203 . . NOT_IPEN ]
+"4578
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 4578:     struct {
+[s S204 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S204 . BOR POR PD TO RI . nIPEN ]
+"4545
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 4545: typedef union {
+[u S196 `S197 1 `S198 1 `S199 1 `S200 1 `S201 1 `S202 1 `S203 1 `S204 1 ]
+[n S196 . . . . . . . . . ]
+"4588
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 4588: extern volatile RCONbits_t RCONbits __attribute__((address(0xFD0)));
+[v _RCONbits `VS196 ~T0 @X0 0 e@4048 ]
+"2268
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 2268:     struct {
+[s S82 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S82 . TMR1IE TMR2IE CCP1IE SSPIE TXIE RCIE ADIE PSPIE ]
+"2278
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 2278:     struct {
+[s S83 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S83 . . TX1IE RC1IE ]
+"2267
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 2267: typedef union {
+[u S81 `S82 1 `S83 1 ]
+[n S81 . . . ]
+"2284
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 2284: extern volatile PIE1bits_t PIE1bits __attribute__((address(0xF9D)));
+[v _PIE1bits `VS81 ~T0 @X0 0 e@3997 ]
+[t ~ __interrupt . k ]
+[t T38 __interrupt ]
 "31 ./motors.h
 [; ;./motors.h: 31: unsigned char whatsTM0Limit(void);
 [v _whatsTM0Limit `(uc ~T0 @X0 0 ef ]
@@ -62,14 +116,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "60 ./motors.h
 [; ;./motors.h: 60: void abortAll(void);
 [v _abortAll `(v ~T0 @X0 0 ef ]
-"47 ./pwm.h
-[; ;./pwm.h: 47: unsigned int retPeriod(void);
+"47 ./timer.h
+[; ;./timer.h: 47: unsigned int retPeriod(void);
 [v _retPeriod `(ui ~T0 @X0 0 ef ]
 "45
-[; ;./pwm.h: 45: void increaseStep(void);
+[; ;./timer.h: 45: void increaseStep(void);
 [v _increaseStep `(v ~T0 @X0 0 ef ]
 "46
-[; ;./pwm.h: 46: void toggleStep(void);
+[; ;./timer.h: 46: void toggleStep(void);
 [v _toggleStep `(v ~T0 @X0 0 ef ]
 "3807 D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h
 [; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 3807: extern volatile unsigned char ADRESL __attribute__((address(0xFC3)));
@@ -544,187 +598,234 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i _therm_pressure
 -> -> 1024 `i `ui
 ]
+"21
+[; ;interrupt.c: 21: void interruptInit(void){
+[v _interruptInit `(v ~T0 @X0 1 ef ]
+{
+[e :U _interruptInit ]
+[f ]
+"23
+[; ;interrupt.c: 23:     if(!INTCONbits.GIE){
+[e $ ! ! != -> . . _INTCONbits 1 7 `i -> 0 `i 241  ]
+{
+"24
+[; ;interrupt.c: 24:         INTCONbits.GIE = 1;
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+"25
+[; ;interrupt.c: 25:     }
+}
+[e :U 241 ]
+"26
+[; ;interrupt.c: 26:     if(!INTCONbits.PEIE){
+[e $ ! ! != -> . . _INTCONbits 1 6 `i -> 0 `i 242  ]
+{
+"27
+[; ;interrupt.c: 27:         INTCONbits.PEIE = 1;
+[e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
+"28
+[; ;interrupt.c: 28:     }
+}
+[e :U 242 ]
+"31
+[; ;interrupt.c: 31:     RCONbits.IPEN = 1;
+[e = . . _RCONbits 5 6 -> -> 1 `i `uc ]
+"32
+[; ;interrupt.c: 32:     INTCONbits.T0IE = 1;
+[e = . . _INTCONbits 1 5 -> -> 1 `i `uc ]
+"33
+[; ;interrupt.c: 33:     PIE1bits.TMR1IE = 1;
+[e = . . _PIE1bits 0 0 -> -> 1 `i `uc ]
+"34
+[; ;interrupt.c: 34:     PIE1bits.TMR2IE = 1;
+[e = . . _PIE1bits 0 1 -> -> 1 `i `uc ]
+"35
+[; ;interrupt.c: 35:     PIE1bits.RC1IE = 1;
+[e = . . _PIE1bits 1 2 -> -> 1 `i `uc ]
+"36
+[; ;interrupt.c: 36: }
+[e :UE 240 ]
+}
 [v $root$_isr `(v ~T0 @X0 0 e ]
-"17
-[; ;interrupt.c: 17: void __attribute__((picinterrupt(("")))) isr(){
+"38
+[; ;interrupt.c: 38: void __attribute__((picinterrupt(("")))) isr(){
 [v _isr `(v ~T38 @X0 1 ef ]
 {
 [e :U _isr ]
 [f ]
-"18
-[; ;interrupt.c: 18:     static unsigned int single_cycle = 0;
-[v F2201 `ui ~T0 @X0 1 s single_cycle ]
-[i F2201
+"39
+[; ;interrupt.c: 39:     static unsigned int single_cycle = 0;
+[v F2203 `ui ~T0 @X0 1 s single_cycle ]
+[i F2203
 -> -> 0 `i `ui
 ]
-"19
-[; ;interrupt.c: 19:     static unsigned char tm0Count = 0;
-[v F2202 `uc ~T0 @X0 1 s tm0Count ]
-[i F2202
--> -> 0 `i `uc
-]
-"20
-[; ;interrupt.c: 20:     static unsigned char completeStep = 0;
-[v F2203 `uc ~T0 @X0 1 s completeStep ]
-[i F2203
--> -> 0 `i `uc
-]
-"23
-[; ;interrupt.c: 23:     if(INTCONbits.T0IF){
-[e $ ! != -> . . _INTCONbits 1 2 `i -> 0 `i 241  ]
-{
-"24
-[; ;interrupt.c: 24:         INTCONbits.T0IF = 0;
-[e = . . _INTCONbits 1 2 -> -> 0 `i `uc ]
-"27
-[; ;interrupt.c: 27:         tm0Count++;
-[e ++ F2202 -> -> 1 `i `uc ]
-"29
-[; ;interrupt.c: 29:         if(tm0Count >= whatsTM0Limit()){
-[e $ ! >= -> F2202 `i -> ( _whatsTM0Limit ..  `i 242  ]
-{
-"30
-[; ;interrupt.c: 30:             T0CONbits.TMR0ON = 0;
-[e = . . _T0CONbits 0 5 -> -> 0 `i `uc ]
-"31
-[; ;interrupt.c: 31:             tm0Count = 0;
-[e = F2202 -> -> 0 `i `uc ]
-"32
-[; ;interrupt.c: 32:             writeTM0();
-[e ( _writeTM0 ..  ]
-"33
-[; ;interrupt.c: 33:         }
-}
-[e :U 242 ]
-"34
-[; ;interrupt.c: 34:     }
-}
-[e :U 241 ]
-"37
-[; ;interrupt.c: 37:     if(PIR1bits.TMR1IF){
-[e $ ! != -> . . _PIR1bits 0 0 `i -> 0 `i 243  ]
-{
-"38
-[; ;interrupt.c: 38:         PIR1bits.TMR1IF = 0;
-[e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
-"39
-[; ;interrupt.c: 39:         if(fatalError()){
-[e $ ! != -> ( _fatalError ..  `i -> 0 `i 244  ]
-{
 "40
-[; ;interrupt.c: 40:             abortAll();
-[e ( _abortAll ..  ]
+[; ;interrupt.c: 40:     static unsigned char tm0Count = 0;
+[v F2204 `uc ~T0 @X0 1 s tm0Count ]
+[i F2204
+-> -> 0 `i `uc
+]
 "41
-[; ;interrupt.c: 41:         }
-}
-[e :U 244 ]
-"42
-[; ;interrupt.c: 42:     }
-}
-[e :U 243 ]
-"45
-[; ;interrupt.c: 45:     if(PIR1bits.TMR2IF){
-[e $ ! != -> . . _PIR1bits 0 1 `i -> 0 `i 245  ]
+[; ;interrupt.c: 41:     static unsigned char completeStep = 0;
+[v F2205 `uc ~T0 @X0 1 s completeStep ]
+[i F2205
+-> -> 0 `i `uc
+]
+"44
+[; ;interrupt.c: 44:     if(INTCONbits.T0IF){
+[e $ ! != -> . . _INTCONbits 1 2 `i -> 0 `i 244  ]
 {
-"46
-[; ;interrupt.c: 46:         PIR1bits.TMR2IF = 0;
-[e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
-"47
-[; ;interrupt.c: 47:         single_cycle++;
-[e ++ F2201 -> -> 1 `i `ui ]
+"45
+[; ;interrupt.c: 45:         INTCONbits.T0IF = 0;
+[e = . . _INTCONbits 1 2 -> -> 0 `i `uc ]
+"48
+[; ;interrupt.c: 48:         tm0Count++;
+[e ++ F2204 -> -> 1 `i `uc ]
 "50
-[; ;interrupt.c: 50:         if(single_cycle > retPeriod()){
-[e $ ! > F2201 ( _retPeriod ..  246  ]
+[; ;interrupt.c: 50:         if(tm0Count >= whatsTM0Limit()){
+[e $ ! >= -> F2204 `i -> ( _whatsTM0Limit ..  `i 245  ]
 {
 "51
-[; ;interrupt.c: 51:             completeStep++;
-[e ++ F2203 -> -> 1 `i `uc ]
+[; ;interrupt.c: 51:             T0CONbits.TMR0ON = 0;
+[e = . . _T0CONbits 0 5 -> -> 0 `i `uc ]
+"52
+[; ;interrupt.c: 52:             tm0Count = 0;
+[e = F2204 -> -> 0 `i `uc ]
+"53
+[; ;interrupt.c: 53:             writeTM0();
+[e ( _writeTM0 ..  ]
 "54
-[; ;interrupt.c: 54:             if(completeStep != 0 && !(completeStep % 2)){
-[e $ ! && != -> F2203 `i -> 0 `i ! != % -> F2203 `i -> 2 `i -> 0 `i 247  ]
+[; ;interrupt.c: 54:         }
+}
+[e :U 245 ]
+"55
+[; ;interrupt.c: 55:     }
+}
+[e :U 244 ]
+"58
+[; ;interrupt.c: 58:     if(PIR1bits.TMR1IF){
+[e $ ! != -> . . _PIR1bits 0 0 `i -> 0 `i 246  ]
 {
-"56
-[; ;interrupt.c: 56:                 completeStep = 0;
-[e = F2203 -> -> 0 `i `uc ]
 "59
-[; ;interrupt.c: 59:                 increaseStep();
-[e ( _increaseStep ..  ]
+[; ;interrupt.c: 59:         PIR1bits.TMR1IF = 0;
+[e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
 "60
-[; ;interrupt.c: 60:             }
+[; ;interrupt.c: 60:         if(fatalError()){
+[e $ ! != -> ( _fatalError ..  `i -> 0 `i 247  ]
+{
+"61
+[; ;interrupt.c: 61:             abortAll();
+[e ( _abortAll ..  ]
+"62
+[; ;interrupt.c: 62:         }
 }
 [e :U 247 ]
-"64
-[; ;interrupt.c: 64:             toggleStep();
-[e ( _toggleStep ..  ]
-"65
-[; ;interrupt.c: 65:         }
+"63
+[; ;interrupt.c: 63:     }
 }
 [e :U 246 ]
 "66
-[; ;interrupt.c: 66:     }
-}
-[e :U 245 ]
-"69
-[; ;interrupt.c: 69:     if(PIR1bits.ADIF){
-[e $ ! != -> . . _PIR1bits 0 6 `i -> 0 `i 248  ]
+[; ;interrupt.c: 66:     if(PIR1bits.TMR2IF){
+[e $ ! != -> . . _PIR1bits 0 1 `i -> 0 `i 248  ]
 {
-"70
-[; ;interrupt.c: 70:         PIR1bits.ADIF = 0;
-[e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
-"73
-[; ;interrupt.c: 73:         ADC_res = ADRESL;
-[e = _ADC_res -> _ADRESL `ui ]
-"74
-[; ;interrupt.c: 74:         ADC_res |= (ADRESH << 8);
-[e =| _ADC_res -> << -> _ADRESH `i -> 8 `i `ui ]
+"67
+[; ;interrupt.c: 67:         PIR1bits.TMR2IF = 0;
+[e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
+"68
+[; ;interrupt.c: 68:         single_cycle++;
+[e ++ F2203 -> -> 1 `i `ui ]
+"71
+[; ;interrupt.c: 71:         if(single_cycle > retPeriod()){
+[e $ ! > F2203 ( _retPeriod ..  249  ]
+{
+"72
+[; ;interrupt.c: 72:             completeStep++;
+[e ++ F2205 -> -> 1 `i `uc ]
+"75
+[; ;interrupt.c: 75:             if(completeStep != 0 && !(completeStep % 2)){
+[e $ ! && != -> F2205 `i -> 0 `i ! != % -> F2205 `i -> 2 `i -> 0 `i 250  ]
+{
 "77
-[; ;interrupt.c: 77:         if(ADC_res > therm_pressure){
-[e $ ! > _ADC_res _therm_pressure 249  ]
-{
-"79
-[; ;interrupt.c: 79:             setTouchRel();
-[e ( _setTouchRel ..  ]
+[; ;interrupt.c: 77:                 completeStep = 0;
+[e = F2205 -> -> 0 `i `uc ]
 "80
-[; ;interrupt.c: 80:             setThermRel();
-[e ( _setThermRel ..  ]
+[; ;interrupt.c: 80:                 increaseStep();
+[e ( _increaseStep ..  ]
 "81
-[; ;interrupt.c: 81:         }else if(ADC_res > touch_pressure){
+[; ;interrupt.c: 81:             }
 }
-[e $U 250  ]
-[e :U 249 ]
-[e $ ! > _ADC_res _touch_pressure 251  ]
-{
-"83
-[; ;interrupt.c: 83:             setTouchRel();
-[e ( _setTouchRel ..  ]
-"84
-[; ;interrupt.c: 84:         }
-}
-[e :U 251 ]
 [e :U 250 ]
 "85
-[; ;interrupt.c: 85:     }
+[; ;interrupt.c: 85:             toggleStep();
+[e ( _toggleStep ..  ]
+"86
+[; ;interrupt.c: 86:         }
+}
+[e :U 249 ]
+"87
+[; ;interrupt.c: 87:     }
 }
 [e :U 248 ]
-"88
-[; ;interrupt.c: 88:     if(PIR1bits.RC1IF){
-[e $ ! != -> . . _PIR1bits 1 2 `i -> 0 `i 252  ]
+"90
+[; ;interrupt.c: 90:     if(PIR1bits.ADIF){
+[e $ ! != -> . . _PIR1bits 0 6 `i -> 0 `i 251  ]
 {
-"89
-[; ;interrupt.c: 89:         PIR1bits.RC1IF = 0;
+"91
+[; ;interrupt.c: 91:         PIR1bits.ADIF = 0;
+[e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
+"94
+[; ;interrupt.c: 94:         ADC_res = ADRESL;
+[e = _ADC_res -> _ADRESL `ui ]
+"95
+[; ;interrupt.c: 95:         ADC_res |= (ADRESH << 8);
+[e =| _ADC_res -> << -> _ADRESH `i -> 8 `i `ui ]
+"98
+[; ;interrupt.c: 98:         if(ADC_res > therm_pressure){
+[e $ ! > _ADC_res _therm_pressure 252  ]
+{
+"100
+[; ;interrupt.c: 100:             setTouchRel();
+[e ( _setTouchRel ..  ]
+"101
+[; ;interrupt.c: 101:             setThermRel();
+[e ( _setThermRel ..  ]
+"102
+[; ;interrupt.c: 102:         }else if(ADC_res > touch_pressure){
+}
+[e $U 253  ]
+[e :U 252 ]
+[e $ ! > _ADC_res _touch_pressure 254  ]
+{
+"104
+[; ;interrupt.c: 104:             setTouchRel();
+[e ( _setTouchRel ..  ]
+"105
+[; ;interrupt.c: 105:         }
+}
+[e :U 254 ]
+[e :U 253 ]
+"106
+[; ;interrupt.c: 106:     }
+}
+[e :U 251 ]
+"109
+[; ;interrupt.c: 109:     if(PIR1bits.RC1IF){
+[e $ ! != -> . . _PIR1bits 1 2 `i -> 0 `i 255  ]
+{
+"110
+[; ;interrupt.c: 110:         PIR1bits.RC1IF = 0;
 [e = . . _PIR1bits 1 2 -> -> 0 `i `uc ]
-"92
-[; ;interrupt.c: 92:         unsigned char temp = RCREG1;
+"113
+[; ;interrupt.c: 113:         unsigned char temp = RCREG1;
 [v _temp `uc ~T0 @X0 1 a ]
 [e = _temp _RCREG1 ]
-"94
-[; ;interrupt.c: 94:         storeData(temp);
+"115
+[; ;interrupt.c: 115:         storeData(temp);
 [e ( _storeData (1 _temp ]
-"95
-[; ;interrupt.c: 95:     }
+"116
+[; ;interrupt.c: 116:     }
 }
-[e :U 252 ]
-"96
-[; ;interrupt.c: 96: }
-[e :UE 240 ]
+[e :U 255 ]
+"117
+[; ;interrupt.c: 117: }
+[e :UE 243 ]
 }

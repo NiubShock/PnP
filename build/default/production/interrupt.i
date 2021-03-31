@@ -3846,7 +3846,7 @@ void setDecay(unsigned char decay, unsigned char motor);
 # 49 "./motors.h"
 void initPinMotors(void);
 char resetPosition(void);
-char moveToPoint(unsigned int x1, unsigned int y1, unsigned int x2, unsigned int y2);
+char moveToPoint(int x1, int y1, int x2, int y2);
 
 char touchObject(void);
 char touchTherm(void);
@@ -3910,8 +3910,8 @@ void abortAll(void);
 #pragma config EBTRB = OFF
 # 4 "./main.h" 2
 
-# 1 "./pwm.h" 1
-# 37 "./pwm.h"
+# 1 "./timer.h" 1
+# 37 "./timer.h"
 void tim0Init(void);
 void tim1Init(void);
 void tim2Init(unsigned int _pwmPeriod);
@@ -3924,6 +3924,10 @@ void increaseStep(void);
 void toggleStep(void);
 unsigned int retPeriod(void);
 # 5 "./main.h" 2
+
+# 1 "./interrupt.h" 1
+void interruptInit(void);
+# 6 "./main.h" 2
 
 # 1 "./usart.h" 1
 typedef struct{
@@ -3957,8 +3961,8 @@ unsigned char readSeq(void);
 unsigned char fatalError(void);
 void reduceSeq(void);
 void shiftData(void);
-# 6 "./main.h" 2
-# 33 "./main.h"
+# 7 "./main.h" 2
+# 34 "./main.h"
 char executeData(void);
 # 10 "interrupt.c" 2
 
@@ -3967,6 +3971,27 @@ char executeData(void);
 static unsigned int ADC_res = 0;
 static const unsigned int touch_pressure = 0x200;
 static const unsigned int therm_pressure = 0x400;
+
+
+
+
+
+void interruptInit(void){
+
+    if(!INTCONbits.GIE){
+        INTCONbits.GIE = 1;
+    }
+    if(!INTCONbits.PEIE){
+        INTCONbits.PEIE = 1;
+    }
+
+
+    RCONbits.IPEN = 1;
+    INTCONbits.T0IE = 1;
+    PIE1bits.TMR1IE = 1;
+    PIE1bits.TMR2IE = 1;
+    PIE1bits.RC1IE = 1;
+}
 
 void __attribute__((picinterrupt(("")))) isr(){
     static unsigned int single_cycle = 0;

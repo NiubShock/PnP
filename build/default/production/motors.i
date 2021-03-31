@@ -3844,7 +3844,7 @@ void setDecay(unsigned char decay, unsigned char motor);
 # 49 "./motors.h"
 void initPinMotors(void);
 char resetPosition(void);
-char moveToPoint(unsigned int x1, unsigned int y1, unsigned int x2, unsigned int y2);
+char moveToPoint(int x1, int y1, int x2, int y2);
 
 char touchObject(void);
 char touchTherm(void);
@@ -3908,8 +3908,8 @@ void abortAll(void);
 #pragma config EBTRB = OFF
 # 4 "./main.h" 2
 
-# 1 "./pwm.h" 1
-# 37 "./pwm.h"
+# 1 "./timer.h" 1
+# 37 "./timer.h"
 void tim0Init(void);
 void tim1Init(void);
 void tim2Init(unsigned int _pwmPeriod);
@@ -3922,6 +3922,10 @@ void increaseStep(void);
 void toggleStep(void);
 unsigned int retPeriod(void);
 # 5 "./main.h" 2
+
+# 1 "./interrupt.h" 1
+void interruptInit(void);
+# 6 "./main.h" 2
 
 # 1 "./usart.h" 1
 typedef struct{
@@ -3955,8 +3959,8 @@ unsigned char readSeq(void);
 unsigned char fatalError(void);
 void reduceSeq(void);
 void shiftData(void);
-# 6 "./main.h" 2
-# 33 "./main.h"
+# 7 "./main.h" 2
+# 34 "./main.h"
 char executeData(void);
 # 8 "motors.c" 2
 
@@ -4137,7 +4141,7 @@ char resetPosition(){
     T2CONbits.TMR2ON = 1;
 
     tm0Error = 0;
-    tm0Limit = 100;
+    tm0Limit = 250;
     T0CONbits.TMR0ON = 1;
 
     while(keepMovingX || keepMovingY || keepMovingZ){
@@ -4215,7 +4219,7 @@ char resetPosition(){
 
 
 
-char moveToPoint(unsigned int x1, unsigned int y1, unsigned int x2, unsigned int y2){
+char moveToPoint(int x1, int y1, int x2, int y2){
 
     unsigned char MOT1Direction, MOT2Direction;
 
@@ -4248,7 +4252,7 @@ char moveToPoint(unsigned int x1, unsigned int y1, unsigned int x2, unsigned int
     T2CONbits.TMR2ON = 1;
 
     tm0Error = 0;
-    tm0Limit = 100;
+    tm0Limit = 250;
     T0CONbits.TMR0ON = 1;
 
     while(keepMovingX || keepMovingY){
@@ -4268,18 +4272,18 @@ char moveToPoint(unsigned int x1, unsigned int y1, unsigned int x2, unsigned int
 
 
         if(MOT1Direction == 1){
-            if(x1 + stepCounter() == x2){
+            if(x1 + stepCounter() >= x2){
 
                 keepMovingX = 0;
-            }else{
+            }else if(!keepMovingX){
 
                 LATAbits.LATA2 = 1;
             }
         }else if(MOT1Direction == 0){
-            if(x1 - stepCounter() == x2){
+            if(x1 - stepCounter() <= x2){
 
                 keepMovingX = 0;
-            }else{
+            }else if(!keepMovingX){
 
                 LATAbits.LATA2 = 1;
             }
@@ -4287,19 +4291,19 @@ char moveToPoint(unsigned int x1, unsigned int y1, unsigned int x2, unsigned int
 
         if(MOT2Direction == 1){
 
-            if(y1 + stepCounter() == y2){
+            if(y1 + stepCounter() >= y2){
 
                 keepMovingY = 0;
-            }else{
+            }else if(!keepMovingX){
 
                 LATBbits.LATB4 = 1;
             }
         }else if(MOT2Direction == 0){
 
-            if(y1 + stepCounter() == y2){
+            if(y1 - stepCounter() <= y2){
 
                 keepMovingY = 0;
-            }else{
+            }else if(!keepMovingX){
 
                 LATBbits.LATB4 = 1;
             }
@@ -4343,7 +4347,7 @@ char touchObject(){
     T2CONbits.TMR2ON = 1;
 
     tm0Error = 0;
-    tm0Limit = 100;
+    tm0Limit = 250;
     T0CONbits.TMR0ON = 1;
 
 
@@ -4405,7 +4409,7 @@ char touchTherm(){
     T2CONbits.TMR2ON = 1;
 
     tm0Error = 0;
-    tm0Limit = 100;
+    tm0Limit = 250;
     T0CONbits.TMR0ON = 1;
 
 
@@ -4471,7 +4475,7 @@ char liftArm(){
     T2CONbits.TMR2ON = 1;
 
     tm0Error = 0;
-    tm0Limit = 100;
+    tm0Limit = 250;
     T0CONbits.TMR0ON = 1;
 
 

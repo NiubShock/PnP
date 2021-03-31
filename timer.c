@@ -34,8 +34,6 @@ void tim1Init(){
     T1CONbits.T1CKPS = 0x03;    //1:8 prescaler
     T1CONbits.TMR1CS = 0;       //internal clock
     
-    PIE1bits.TMR1IE = 1;        //activate the interrupt
-    
     T1CONbits.TMR1ON = 1;       //start on
     
 }

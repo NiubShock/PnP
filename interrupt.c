@@ -14,6 +14,27 @@ static unsigned int ADC_res = 0;
 static const unsigned int touch_pressure = 0x200;   //pressure required for touch relevation
 static const unsigned int therm_pressure = 0x400;   //pressure required for thermal paste
 
+/*
+ * Description: This function is used to turn on all the interrupt required 
+ *              for the application
+ */
+void interruptInit(void){
+    //turn on the interrupt if not already on
+    if(!INTCONbits.GIE){
+        INTCONbits.GIE = 1;
+    }
+    if(!INTCONbits.PEIE){
+        INTCONbits.PEIE = 1;
+    }
+    
+    
+    RCONbits.IPEN = 1;              //turn on the priority for interrupt
+    INTCONbits.T0IE = 1;            //turn on the interrupt for the timer0
+    PIE1bits.TMR1IE = 1;            //turn on the interrupt for the timer1
+    PIE1bits.TMR2IE = 1;            //turn on the interrput on timer 2
+    PIE1bits.RC1IE = 1;             //turn on the interrupt for the usart RX
+}
+
 void __interrupt() isr(){
     static unsigned int single_cycle = 0;   //variable used to store the single cycle of the pwm
     static unsigned char tm0Count = 0;      //variable to count the overflow of the timer0
@@ -33,7 +54,7 @@ void __interrupt() isr(){
         }
     }
     
-    //TIM0 interrupt routine
+    //TIM1 interrupt routine
     if(PIR1bits.TMR1IF){
         PIR1bits.TMR1IF = 0;    //clear the flag
         if(fatalError()){

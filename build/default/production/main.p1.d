@@ -4,5 +4,6 @@ main.h  \
 adc.h  \
 motors.h  \
 conf_bits.h  \
-pwm.h  \
+timer.h  \
+interrupt.h  \
 usart.h 

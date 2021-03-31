@@ -29,6 +29,64 @@ static t_sequence dataSequence[5];
 static t_newSequence newSequenceData;
 
 /*
+ * Description: Function used to return the data received. Return just the 
+ *              pointer that store the data
+ */
+t_sequence* getData(){
+    return(&dataSequence[0]);
+}
+
+/*
+ * Description: Function used to return the new data received. Return just the 
+ *              pointer that store the data
+ */
+t_newSequence* getNewSequence(){
+    return(&newSequenceData);
+}
+
+/*
+ * Description: Function used to reduce by 1 the number of data stored (the counter)
+ */
+void reduceSeq(){
+    dataCounter--;
+}
+
+/*
+ * Description: Function used to understand how many data have been saved
+ */
+unsigned char readSeq(){
+    return dataCounter;
+}
+
+unsigned char fatalError(){
+    return _fatalError;
+}
+
+unsigned char newSequence(){
+    return _newSequence;
+}
+
+/*
+ * Description: Used to reset the newSeq. variable. Automatically set if the
+ *              command is obtained
+ */
+void resetNewSequence(){
+    _newSequence = 0;
+}
+
+/*
+ * Description: Function called to move all the data on the left by 1
+ *              If called the data in the position 0 have been read already
+ */
+void shiftData(){
+    char i;
+    
+    for(i = 0; i < 4; i++){
+        dataSequence[i] = dataSequence[i+1];
+    }
+}
+
+/*
  * Description: Function used to intialize the uart
  */
 void usartInit(void){
@@ -84,44 +142,19 @@ void printError(unsigned char errCode){
 }
 
 /*
- * Description: Function used to reduce by 1 the number of data stored (the counter)
+ * Description: Function used to send data through the serial communication.
+ *              Used for error report
  */
-void reduceSeq(){
-    dataCounter--;
-}
-
-/*
- * Description: Function used to understand how many data have been saved
- */
-unsigned char readSeq(){
-    return dataCounter;
-}
-
-unsigned char fatalError(){
-    return _fatalError;
-}
-
-unsigned char newSequence(){
-    return _newSequence;
-}
-
-/*
- * Description: Used to reset the newSeq. variable. Automatically set if the
- *              command is obtained
- */
-void resetNewSequence(){
-    _newSequence = 0;
-}
-
-/*
- * Description: Function called to move all the data on the left by 1
- *              If called the data in the position 0 have been read already
- */
-void shiftData(){
-    char i;
-    
-    for(i = 0; i < 4; i++){
-        dataSequence[i] = dataSequence[i+1];
+void uartTx(unsigned char *ptr, unsigned char length)
+{    
+    //proceed for all the lenght of the message
+    for(char i = 1; i < length; i++){
+        //store the data in the register
+        TXREG = *ptr;
+        //wait for the comple transmission
+        while(!TXSTAbits.TRMT);
+        //advance in the pointer
+        ptr++;
     }
 }
 
@@ -161,7 +194,6 @@ void storeData(unsigned char data){
     if(counter >= mexLength){
         counter = 0;                    //reset the counter
         
-        //TODO: [ ] Verify this section
         //check what is the command and save the data
         switch(receivedMex[0]){
             case PICK_AND_PLACE:
@@ -195,38 +227,5 @@ void storeData(unsigned char data){
                 break;
                 
         }
-    }
-}
-
-/*
- * Description: Function used to return the data received. Return just the 
- *              pointer that store the data
- */
-t_sequence* getData(){
-    return(&dataSequence[0]);
-}
-
-/*
- * Description: Function used to return the new data received. Return just the 
- *              pointer that store the data
- */
-t_newSequence* getNewSequence(){
-    return(&newSequenceData);
-}
-
-/*
- * Description: Function used to send data through the serial communication.
- *              Used for error report
- */
-void uartTx(unsigned char *ptr, unsigned char length)
-{    
-    //proceed for all the lenght of the message
-    for(char i = 1; i < length; i++){
-        //store the data in the register
-        TXREG = *ptr;
-        //wait for the comple transmission
-        while(!TXSTAbits.TRMT);
-        //advance in the pointer
-        ptr++;
     }
 }

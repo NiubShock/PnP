@@ -6,10 +6,11 @@
                    projectFiles="true">
       <itemPath>motors.h</itemPath>
       <itemPath>conf_bits.h</itemPath>
-      <itemPath>pwm.h</itemPath>
       <itemPath>adc.h</itemPath>
       <itemPath>usart.h</itemPath>
       <itemPath>main.h</itemPath>
+      <itemPath>timer.h</itemPath>
+      <itemPath>interrupt.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -20,10 +21,10 @@
                    projectFiles="true">
       <itemPath>motors.c</itemPath>
       <itemPath>main.c</itemPath>
-      <itemPath>pwm.c</itemPath>
       <itemPath>adc.c</itemPath>
       <itemPath>interrupt.c</itemPath>
       <itemPath>usart.c</itemPath>
+      <itemPath>timer.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

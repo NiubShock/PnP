@@ -3846,7 +3846,7 @@ void setDecay(unsigned char decay, unsigned char motor);
 # 49 "./motors.h"
 void initPinMotors(void);
 char resetPosition(void);
-char moveToPoint(unsigned int x1, unsigned int y1, unsigned int x2, unsigned int y2);
+char moveToPoint(int x1, int y1, int x2, int y2);
 
 char touchObject(void);
 char touchTherm(void);
@@ -3910,8 +3910,8 @@ void abortAll(void);
 #pragma config EBTRB = OFF
 # 4 "./main.h" 2
 
-# 1 "./pwm.h" 1
-# 37 "./pwm.h"
+# 1 "./timer.h" 1
+# 37 "./timer.h"
 void tim0Init(void);
 void tim1Init(void);
 void tim2Init(unsigned int _pwmPeriod);
@@ -3924,6 +3924,10 @@ void increaseStep(void);
 void toggleStep(void);
 unsigned int retPeriod(void);
 # 5 "./main.h" 2
+
+# 1 "./interrupt.h" 1
+void interruptInit(void);
+# 6 "./main.h" 2
 
 # 1 "./usart.h" 1
 typedef struct{
@@ -3957,8 +3961,8 @@ unsigned char readSeq(void);
 unsigned char fatalError(void);
 void reduceSeq(void);
 void shiftData(void);
-# 6 "./main.h" 2
-# 33 "./main.h"
+# 7 "./main.h" 2
+# 34 "./main.h"
 char executeData(void);
 # 10 "usart.c" 2
 
@@ -4041,6 +4045,64 @@ static t_newSequence newSequenceData;
 
 
 
+
+t_sequence* getData(){
+    return(&dataSequence[0]);
+}
+
+
+
+
+
+t_newSequence* getNewSequence(){
+    return(&newSequenceData);
+}
+
+
+
+
+void reduceSeq(){
+    dataCounter--;
+}
+
+
+
+
+unsigned char readSeq(){
+    return dataCounter;
+}
+
+unsigned char fatalError(){
+    return _fatalError;
+}
+
+unsigned char newSequence(){
+    return _newSequence;
+}
+
+
+
+
+
+void resetNewSequence(){
+    _newSequence = 0;
+}
+
+
+
+
+
+void shiftData(){
+    char i;
+
+    for(i = 0; i < 4; i++){
+        dataSequence[i] = dataSequence[i+1];
+    }
+}
+
+
+
+
 void usartInit(void){
 
     TRISCbits.TRISC6 = 0;
@@ -4096,42 +4158,17 @@ void printError(unsigned char errCode){
 
 
 
-void reduceSeq(){
-    dataCounter--;
-}
 
+void uartTx(unsigned char *ptr, unsigned char length)
+{
 
+    for(char i = 1; i < length; i++){
 
+        TXREG = *ptr;
 
-unsigned char readSeq(){
-    return dataCounter;
-}
+        while(!TXSTAbits.TRMT);
 
-unsigned char fatalError(){
-    return _fatalError;
-}
-
-unsigned char newSequence(){
-    return _newSequence;
-}
-
-
-
-
-
-void resetNewSequence(){
-    _newSequence = 0;
-}
-
-
-
-
-
-void shiftData(){
-    char i;
-
-    for(i = 0; i < 4; i++){
-        dataSequence[i] = dataSequence[i+1];
+        ptr++;
     }
 }
 
@@ -4172,7 +4209,6 @@ void storeData(unsigned char data){
         counter = 0;
 
 
-
         switch(receivedMex[0]){
             case 0:
                 dataSequence[dataCounter].feederLine = receivedMex[1];
@@ -4205,38 +4241,5 @@ void storeData(unsigned char data){
                 break;
 
         }
-    }
-}
-
-
-
-
-
-t_sequence* getData(){
-    return(&dataSequence[0]);
-}
-
-
-
-
-
-t_newSequence* getNewSequence(){
-    return(&newSequenceData);
-}
-
-
-
-
-
-void uartTx(unsigned char *ptr, unsigned char length)
-{
-
-    for(char i = 1; i < length; i++){
-
-        TXREG = *ptr;
-
-        while(!TXSTAbits.TRMT);
-
-        ptr++;
     }
 }

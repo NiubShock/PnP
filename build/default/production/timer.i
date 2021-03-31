@@ -1,4 +1,4 @@
-# 1 "motors.c"
+# 1 "timer.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "motors.c" 2
+# 1 "timer.c" 2
 
 
 
@@ -14,7 +14,7 @@
 
 
 
-# 1 "./main.h" 1
+
 # 1 "D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 1 3
 # 18 "D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -3812,401 +3812,50 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 33 "D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 2 3
-# 1 "./main.h" 2
+# 9 "timer.c" 2
 
-# 1 "./adc.h" 1
-# 37 "./adc.h"
-void initADC(void);
-void startADC(void);
-void stopADC(void);
-unsigned int returnTouch(void);
-unsigned int returnTherm(void);
-void resetTouch(void);
-void resetTherm(void);
 
-void setThermRel(void);
-void setTouchRel(void);
-# 2 "./main.h" 2
+static volatile unsigned char pwmStep = 0;
+static volatile unsigned char stepToggle = 0;
+static unsigned int pwmPeriod = 0;
 
-# 1 "./motors.h" 1
-# 30 "./motors.h"
-void writeTM0(void);
-unsigned char whatsTM0Limit(void);
-void clearTM0(void);
 
 
 
 
-void setStep(unsigned char step, unsigned char motor);
-void enableMotor(unsigned char enable, unsigned char motor);
-void setDirection(unsigned char direction, unsigned char motor);
-void setDecay(unsigned char decay, unsigned char motor);
-# 49 "./motors.h"
-void initPinMotors(void);
-char resetPosition(void);
-char moveToPoint(int x1, int y1, int x2, int y2);
 
-char touchObject(void);
-char touchTherm(void);
-char liftArm(void);
-void rotateObj(unsigned char rotAngle);
-void pickObject(void);
-void releaseObj(void);
 
-void abortAll(void);
-# 3 "./main.h" 2
-
-# 1 "./conf_bits.h" 1
-# 40 "./conf_bits.h"
-#pragma config OSC = XT
-#pragma config OSCS = OFF
-
-
-#pragma config PWRT = OFF
-#pragma config BOR = OFF
-#pragma config BORV = 20
-
-
-#pragma config WDT = OFF
-#pragma config WDTPS = 128
-
-
-#pragma config CCP2MUX = OFF
-
-
-#pragma config STVR = OFF
-#pragma config LVP = OFF
-
-
-#pragma config CP0 = OFF
-#pragma config CP1 = OFF
-#pragma config CP2 = OFF
-#pragma config CP3 = OFF
-
-
-#pragma config CPB = OFF
-#pragma config CPD = OFF
-
-
-#pragma config WRT0 = OFF
-#pragma config WRT1 = OFF
-#pragma config WRT2 = OFF
-#pragma config WRT3 = OFF
-
-
-#pragma config WRTC = OFF
-#pragma config WRTB = OFF
-#pragma config WRTD = OFF
-
-
-#pragma config EBTR0 = OFF
-#pragma config EBTR1 = OFF
-#pragma config EBTR2 = OFF
-#pragma config EBTR3 = OFF
-
-
-#pragma config EBTRB = OFF
-# 4 "./main.h" 2
-
-# 1 "./pwm.h" 1
-# 37 "./pwm.h"
-void tim0Init(void);
-void tim1Init(void);
-void tim2Init(unsigned int _pwmPeriod);
-unsigned int stepMade(void);
-void resetStep(void);
-unsigned int stepCounter(void);
-
-
-void increaseStep(void);
-void toggleStep(void);
-unsigned int retPeriod(void);
-# 5 "./main.h" 2
-
-# 1 "./usart.h" 1
-typedef struct{
-    unsigned char feederLine;
-    unsigned char posX;
-    unsigned char posY;
-    unsigned char rotation;
-}t_sequence;
-
-typedef struct{
-    unsigned char L;
-    unsigned char W;
-    unsigned char init_posX;
-    unsigned char init_posY;
-    unsigned char init_rot;
-    unsigned char end_posX;
-    unsigned char end_posY;
-    unsigned char end_rot;
-}t_newSequence;
-
-void usartInit(void);
-void storeData(unsigned char data);
-t_sequence* getData(void);
-t_newSequence* getNewSequence(void);
-void uartTx(unsigned char *ptr, unsigned char length);
-void printError(unsigned char errCode);
-
-unsigned char newSequence(void);
-void resetNewSequence(void);
-unsigned char readSeq(void);
-unsigned char fatalError(void);
-void reduceSeq(void);
-void shiftData(void);
-# 6 "./main.h" 2
-# 33 "./main.h"
-char executeData(void);
-# 8 "motors.c" 2
-
-
-static unsigned int tm0Error = 0;
-static unsigned char tm0Limit = 0;
-
-
-static unsigned int maxX = 1000;
-static unsigned int maxY = 1000;
-
-
-
-
-
-void writeTM0(){
-    tm0Error = 1;
-}
-
-
-
-
-void clearTM0(){
-    tm0Error = 0;
-}
-
-
-
-
-unsigned char whatsTM0Limit(){
-    return(tm0Limit);
-}
-
-
-
-
-void initPinMotors(void){
-
-    ADCON1bits.PCFG = 0x06;
-    TRISA &= 0b11010001;
-
-    TRISB &= 0b00000010;
-    TRISC &= 0b11000000;
-    TRISD &= 0b11000000;
-
-
-    TRISEbits.TRISE0 = 1;
-    TRISEbits.TRISE1 = 1;
-    TRISEbits.TRISE2 = 1;
-
-
-    TRISDbits.TRISD7 = 1;
-
-}
-
-
-
-
-
-
-
-void setStep(unsigned char step, unsigned char motor){
-    switch(motor){
-        case 0:
-
-            LATAbits.LATA5 = (step & 0x01);
-
-            LATBbits.LATB0 = (step & 0x02);
-            break;
-        case 1:
-            LATBbits.LATB6 = (step & 0x01);
-            LATBbits.LATB7 = (step & 0x02);
-            break;
-        case 2:
-            LATCbits.LATC4 = (step & 0x01);
-            LATCbits.LATC5 = (step & 0x02);
-            break;
-        default:
-            break;
-    }
-}
-
-
-
-
-
-
-
-void enableMotor(unsigned char enable, unsigned char motor){
-    switch(motor){
-        case 0:
-            LATAbits.LATA3 = enable;
-            break;
-        case 1:
-            LATBbits.LATB5 = enable;
-            break;
-        case 2:
-            LATCbits.LATC3 = enable;
-            break;
-        default:
-            break;
-    }
-}
-
-
-
-
-
-
-void setDirection(unsigned char direction, unsigned char motor){
-    switch(motor){
-        case 0:
-            LATAbits.LATA1 = direction;
-            break;
-        case 1:
-            LATBbits.LATB3 = direction;
-            break;
-        case 2:
-            LATCbits.LATC1 = direction;
-            break;
-        default:
-            break;
-    }
-}
-
-
-
-
-
-
-void setDecay(unsigned char decay, unsigned char motor){
-    switch(motor){
-        case 0:
-            LATBbits.LATB2 = decay;
-            break;
-        case 1:
-            LATCbits.LATC0 = decay;
-            break;
-        case 2:
-            LATDbits.LATD0 = decay;
-            break;
-        default:
-            break;
-    }
-}
-
-
-
-
-
-
-
-char resetPosition(){
-
-    setStep(0, 0);
-    setStep(1, 0);
-    setStep(2, 0);
-
-    setDirection(0, 0);
-    setDirection(0, 1);
-    setDirection(0, 2);
-
-    setDecay(1, 0);
-    setDecay(1, 1);
-    setDecay(1, 2);
-
-    enableMotor(0, 0);
-    enableMotor(0, 1);
-    enableMotor(0, 2);
-
-
-
-    unsigned char keepMovingX = 1;
-    unsigned char keepMovingY = 1;
-    unsigned char keepMovingZ = 1;
-
-
-    T2CONbits.TMR2ON = 1;
-
-    tm0Error = 0;
-    tm0Limit = 250;
-    T0CONbits.TMR0ON = 1;
-
-    while(keepMovingX || keepMovingY || keepMovingZ){
-
-
-        if(tm0Error){
-
-            LATAbits.LATA2 = 0;
-            LATBbits.LATB4 = 0;
-            LATCbits.LATC2 = 0;
-
-            tm0Error = 3;
-            break;
-        }
-
-
-
-
-
-        if(PORTEbits.RE0 || !keepMovingX){
-
-            keepMovingX = 0;
-        }else{
-
-            LATAbits.LATA2 = 1;
-        }
-
-
-        if(PORTEbits.RE1 || !keepMovingY){
-
-            keepMovingY = 0;
-        }else{
-
-            LATBbits.LATB4 = 1;
-        }
-
-
-        if(PORTEbits.RE2 || !keepMovingZ){
-
-            keepMovingZ = 0;
-        }else{
-
-            LATCbits.LATC2 = 1;
-        }
-
-
-        while(!stepMade());
-
-
-        LATAbits.LATA2 = 0;
-        LATBbits.LATB4 = 0;
-        LATCbits.LATC2 = 0;
-
-
-        while(!stepMade());
-    }
-
-
+void tim0Init(void){
     T0CONbits.TMR0ON = 0;
+    T0CONbits.T08BIT = 0;
+    T0CONbits.T0CS = 0;
+    T0CONbits.PSA = 1;
+    T0CONbits.T0PS = 0x07;
+}
+
+
+
+
+
+void tim1Init(){
+    T1CONbits.T1CKPS = 0x03;
+    T1CONbits.TMR1CS = 0;
+
+    T1CONbits.TMR1ON = 1;
+
+}
+
+
+
+
+
+
+void tim2Init(unsigned int _pwmPeriod){
     T2CONbits.TMR2ON = 0;
-
-    TMR0 = 0;
-    TMR2 = 0;
+    T2CONbits.T2CKPS = 0x01;
 
 
-    resetStep();
-
-
-    return(tm0Error);
+    pwmPeriod = _pwmPeriod;
 }
 
 
@@ -4214,369 +3863,47 @@ char resetPosition(){
 
 
 
+unsigned int stepMade(void){
+    unsigned char temp = stepToggle;
 
-char moveToPoint(int x1, int y1, int x2, int y2){
+    stepToggle = 0;
 
-    unsigned char MOT1Direction, MOT2Direction;
-
-
-    if(x2 > maxX || y2 > maxY){
-        return(5);
-    }
-
-
-    if((x2 - x1) > 0){
-        setDirection(1, 0);
-        MOT1Direction = 1;
-    }else{
-        setDirection(0, 0);
-        MOT1Direction = 0;
-    }
-
-    if((y2 - y1) > 0){
-        setDirection(1, 1);
-        MOT2Direction = 1;
-    }else{
-        setDirection(0, 1);
-        MOT2Direction = 0;
-    }
-
-    unsigned char keepMovingX = 1;
-    unsigned char keepMovingY = 1;
-
-
-    T2CONbits.TMR2ON = 1;
-
-    tm0Error = 0;
-    tm0Limit = 250;
-    T0CONbits.TMR0ON = 1;
-
-    while(keepMovingX || keepMovingY){
-
-
-        if(tm0Error){
-
-            LATAbits.LATA2 = 0;
-            LATBbits.LATB4 = 0;
-            tm0Error = 4;
-            break;
-        }
+    return temp;
+}
 
 
 
 
+unsigned int stepCounter(void){
+    return pwmStep;
+}
 
 
-        if(MOT1Direction == 1){
-            if(x1 + stepCounter() >= x2){
-
-                keepMovingX = 0;
-            }else if(!keepMovingX){
-
-                LATAbits.LATA2 = 1;
-            }
-        }else if(MOT1Direction == 0){
-            if(x1 - stepCounter() <= x2){
-
-                keepMovingX = 0;
-            }else if(!keepMovingX){
-
-                LATAbits.LATA2 = 1;
-            }
-        }
-
-        if(MOT2Direction == 1){
-
-            if(y1 + stepCounter() >= y2){
-
-                keepMovingY = 0;
-            }else if(!keepMovingX){
-
-                LATBbits.LATB4 = 1;
-            }
-        }else if(MOT2Direction == 0){
-
-            if(y1 - stepCounter() <= y2){
-
-                keepMovingY = 0;
-            }else if(!keepMovingX){
-
-                LATBbits.LATB4 = 1;
-            }
-        }
 
 
-        while(!stepMade());
+void resetStep(void){
+    pwmStep = 0;
+}
 
 
-        LATAbits.LATA2 = 0;
-        LATBbits.LATB4 = 0;
 
 
-        while(!stepMade());
-    }
-
-
-    T0CONbits.TMR0ON = 0;
-    T2CONbits.TMR2ON = 0;
-
-    TMR0 = 0;
-    TMR2 = 0;
-
-
-    resetStep();
-
-    return(tm0Error);
+void increaseStep(void){
+    pwmStep++;
 }
 
 
 
 
 
-
-
-char touchObject(){
-
-
-    setDirection(1, 2);
-
-    T2CONbits.TMR2ON = 1;
-
-    tm0Error = 0;
-    tm0Limit = 250;
-    T0CONbits.TMR0ON = 1;
-
-
-    startADC();
-
-
-    while(!returnTouch() || PORTDbits.RD7){
-
-
-        if(tm0Error){
-
-            LATCbits.LATC2 = 0;
-            tm0Error = 6;
-            break;
-        }
-
-
-        LATCbits.LATC2 = 1;
-
-
-        while(!stepMade());
-
-
-        LATCbits.LATC2 = 0;
-
-
-        while(!stepMade());
-    }
-
-
-    stopADC();
-
-
-    resetTouch();
-
-
-    T0CONbits.TMR0ON = 0;
-    T2CONbits.TMR2ON = 0;
-
-    TMR0 = 0;
-    TMR2 = 0;
-
-
-    resetStep();
-
-
-    if(PORTDbits.RD7){
-        tm0Error = 2;
-    }
-
-    return(tm0Error);
-}
-# 455 "motors.c"
-char touchTherm(){
-
-
-    setDirection(1, 2);
-
-    T2CONbits.TMR2ON = 1;
-
-    tm0Error = 0;
-    tm0Limit = 250;
-    T0CONbits.TMR0ON = 1;
-
-
-    startADC();
-
-
-    while(!returnTherm() || PORTDbits.RD7){
-
-
-        if(tm0Error){
-
-            LATCbits.LATC2 = 0;
-            tm0Error = 6;
-            break;
-        }
-
-
-        LATCbits.LATC2 = 1;
-
-
-        while(!stepMade());
-
-
-        LATCbits.LATC2 = 0;
-
-
-        while(!stepMade());
-    }
-
-
-    stopADC();
-
-
-    resetTherm();
-
-
-    T0CONbits.TMR0ON = 0;
-    T2CONbits.TMR2ON = 0;
-
-    TMR0 = 0;
-    TMR2 = 0;
-
-
-    resetStep();
-
-
-    if(PORTDbits.RD7){
-        tm0Error = 2;
-    }
-
-    return(tm0Error);
+void toggleStep(void){
+    stepToggle = 1;
 }
 
 
 
 
 
-char liftArm(){
-
-
-    setDirection(0, 2);
-
-    T2CONbits.TMR2ON = 1;
-
-    tm0Error = 0;
-    tm0Limit = 250;
-    T0CONbits.TMR0ON = 1;
-
-
-
-    while(!PORTEbits.RE2){
-
-
-        if(tm0Error){
-
-            LATCbits.LATC2 = 0;
-            tm0Error = 6;
-            break;
-        }
-
-
-
-        LATCbits.LATC2 = 1;
-
-
-        while(!stepMade());
-
-
-        LATCbits.LATC2 = 0;
-
-
-        while(!stepMade());
-    }
-
-
-    T0CONbits.TMR0ON = 0;
-    T2CONbits.TMR2ON = 0;
-
-    TMR0 = 0;
-    TMR2 = 0;
-
-
-    resetStep();
-
-    return(tm0Error);
-}
-
-
-
-
-
-void rotateObj(unsigned char rotAngle){
-    static const float stepAngle = 0.08789;
-    static char rotSequence[] = {0b1001, 0b0011, 0b0110, 0b1100};
-    unsigned int i;
-    int totStep = rotAngle/stepAngle;
-
-
-    for(i = 0; i < totStep; i++){
-
-        LATD &= 0xC3;
-
-        LATD |= rotSequence[i%4] << 2;
-
-
-
-        T2CONbits.TMR2ON = 1;
-        while(!stepMade());
-        T2CONbits.TMR2ON = 1;
-        TMR2 = 0;
-    }
-}
-
-
-
-
-void pickObject(){
-    LATDbits.LATD1 = 1;
-
-
-
-    T2CONbits.TMR2ON = 1;
-    while(!stepMade());
-    T2CONbits.TMR2ON = 1;
-    TMR2 = 0;
-}
-
-
-
-
-void releaseObj(){
-    LATDbits.LATD1 = 0;
-
-
-
-    T2CONbits.TMR2ON = 1;
-    while(!stepMade());
-    T2CONbits.TMR2ON = 1;
-    TMR2 = 0;
-}
-
-
-
-
-
-void abortAll(){
-
-    enableMotor(1, 0);
-    enableMotor(1, 1);
-    enableMotor(1, 2);
-
-    printError(7);
-    while(1);
+unsigned int retPeriod(void){
+    return pwmPeriod;
 }

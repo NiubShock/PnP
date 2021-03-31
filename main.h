@@ -2,7 +2,8 @@
 #include "adc.h"
 #include "motors.h"
 #include "conf_bits.h"
-#include "pwm.h"
+#include "timer.h"
+#include "interrupt.h"
 #include "usart.h"
 
 #define _XTAL_FREQ 4000000

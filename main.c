@@ -1,7 +1,6 @@
 #include <xc.h>
 #include "main.h"
 
-void interruptInit(void);
 void serial_tx_char(unsigned char val);
 char executeData();
 
@@ -58,55 +57,26 @@ void main(void) {
             RCSTAbits.CREN = 1;
             
             //reset the variable for new pick and place sequence
-            resetNewSequence();
-//            
-//            errCode = executeData();        //call the function that will execute the data
-//            printError(errCode);            //print the possible error
-//            clearTM0();                     //eliminate the eventual error before proceed
-//                                            //with the next instruction
-//            
-//            //reduce by one the counter -> 1 data used
-//            reduceSeq();
-//            shiftData();
-            
+            resetNewSequence();            
         }
         if(readSeq()){
             //check if there are any data available
             
-            errCode = executeData();        //call the function that will execute the data
-            printError(errCode);            //print the possible error
-            clearTM0();                     //eliminate the eventual error before proceed
-                                            //with the next instruction
+            //call the function that will execute the data
+            errCode = executeData(); 
+            //print the possible error
+            printError(errCode);  
+            //eliminate the eventual error before proceed
+            //with the next instruction
+            clearTM0();                     
+                                            
             
             //reduce by one the counter -> 1 data used
             reduceSeq();
             shiftData();
         }
-        
     }
-    
     return;
-}
-
-
-/*
- * Description: This function is used to turn on all the interrupt required 
- *              for the application
- */
-void interruptInit(void){
-    //turn on the interrupt if not already on
-    if(!INTCONbits.GIE){
-        INTCONbits.GIE = 1;
-    }
-    if(!INTCONbits.PEIE){
-        INTCONbits.PEIE = 1;
-    }
-    
-    
-    RCONbits.IPEN = 1;              //turn on the priority for interrupt
-    INTCONbits.T0IE = 1;            //turn on the interrupt for the timer0
-    PIE1bits.TMR2IE = 1;            //turn on the interrput on timer 2
-    PIE1bits.RC1IE = 1;             //turn on the interrupt for the usart RX
 }
 
 /*
