@@ -684,151 +684,151 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i _tm0Limit
 -> -> 0 `i `uc
 ]
-"14
-[; ;motors.c: 14: static unsigned int maxX = 1000;
+"13
+[; ;motors.c: 13: static unsigned int maxX = 250;
 [v _maxX `ui ~T0 @X0 1 s ]
 [i _maxX
--> -> 1000 `i `ui
+-> -> 250 `i `ui
 ]
-"15
-[; ;motors.c: 15: static unsigned int maxY = 1000;
+"14
+[; ;motors.c: 14: static unsigned int maxY = 250;
 [v _maxY `ui ~T0 @X0 1 s ]
 [i _maxY
--> -> 1000 `i `ui
+-> -> 250 `i `ui
 ]
-"21
-[; ;motors.c: 21: void writeTM0(){
+"20
+[; ;motors.c: 20: void writeTM0(){
 [v _writeTM0 `(v ~T0 @X0 1 ef ]
 {
 [e :U _writeTM0 ]
 [f ]
-"22
-[; ;motors.c: 22:     tm0Error = 1;
+"21
+[; ;motors.c: 21:     tm0Error = 1;
 [e = _tm0Error -> -> 1 `i `ui ]
-"23
-[; ;motors.c: 23: }
+"22
+[; ;motors.c: 22: }
 [e :UE 240 ]
 }
-"28
-[; ;motors.c: 28: void clearTM0(){
+"27
+[; ;motors.c: 27: void clearTM0(){
 [v _clearTM0 `(v ~T0 @X0 1 ef ]
 {
 [e :U _clearTM0 ]
 [f ]
-"29
-[; ;motors.c: 29:     tm0Error = 0;
+"28
+[; ;motors.c: 28:     tm0Error = 0;
 [e = _tm0Error -> -> 0 `i `ui ]
-"30
-[; ;motors.c: 30: }
+"29
+[; ;motors.c: 29: }
 [e :UE 241 ]
 }
-"35
-[; ;motors.c: 35: unsigned char whatsTM0Limit(){
+"34
+[; ;motors.c: 34: unsigned char whatsTM0Limit(){
 [v _whatsTM0Limit `(uc ~T0 @X0 1 ef ]
 {
 [e :U _whatsTM0Limit ]
 [f ]
-"36
-[; ;motors.c: 36:     return(tm0Limit);
+"35
+[; ;motors.c: 35:     return(tm0Limit);
 [e ) _tm0Limit ]
 [e $UE 242  ]
-"37
-[; ;motors.c: 37: }
+"36
+[; ;motors.c: 36: }
 [e :UE 242 ]
 }
-"42
-[; ;motors.c: 42: void initPinMotors(void){
+"41
+[; ;motors.c: 41: void initPinMotors(void){
 [v _initPinMotors `(v ~T0 @X0 1 ef ]
 {
 [e :U _initPinMotors ]
 [f ]
-"44
-[; ;motors.c: 44:     ADCON1bits.PCFG = 0x06;
+"43
+[; ;motors.c: 43:     ADCON1bits.PCFG = 0x06;
 [e = . . _ADCON1bits 0 0 -> -> 6 `i `uc ]
-"45
-[; ;motors.c: 45:     TRISA &= 0b11010001;
+"44
+[; ;motors.c: 44:     TRISA &= 0b11010001;
 [e =& _TRISA -> -> 209 `i `Vuc ]
-"47
-[; ;motors.c: 47:     TRISB &= 0b00000010;
+"46
+[; ;motors.c: 46:     TRISB &= 0b00000010;
 [e =& _TRISB -> -> 2 `i `Vuc ]
-"48
-[; ;motors.c: 48:     TRISC &= 0b11000000;
+"47
+[; ;motors.c: 47:     TRISC &= 0b11000000;
 [e =& _TRISC -> -> 192 `i `Vuc ]
-"49
-[; ;motors.c: 49:     TRISD &= 0b11000000;
+"48
+[; ;motors.c: 48:     TRISD &= 0b11000000;
 [e =& _TRISD -> -> 192 `i `Vuc ]
-"52
-[; ;motors.c: 52:     TRISEbits.TRISE0 = 1;
+"51
+[; ;motors.c: 51:     TRISEbits.TRISE0 = 1;
 [e = . . _TRISEbits 0 0 -> -> 1 `i `uc ]
-"53
-[; ;motors.c: 53:     TRISEbits.TRISE1 = 1;
+"52
+[; ;motors.c: 52:     TRISEbits.TRISE1 = 1;
 [e = . . _TRISEbits 0 1 -> -> 1 `i `uc ]
-"54
-[; ;motors.c: 54:     TRISEbits.TRISE2 = 1;
+"53
+[; ;motors.c: 53:     TRISEbits.TRISE2 = 1;
 [e = . . _TRISEbits 0 2 -> -> 1 `i `uc ]
-"57
-[; ;motors.c: 57:     TRISDbits.TRISD7 = 1;
+"56
+[; ;motors.c: 56:     TRISDbits.TRISD7 = 1;
 [e = . . _TRISDbits 0 7 -> -> 1 `i `uc ]
-"59
-[; ;motors.c: 59: }
+"58
+[; ;motors.c: 58: }
 [e :UE 243 ]
 }
-"67
-[; ;motors.c: 67: void setStep(unsigned char step, unsigned char motor){
+"66
+[; ;motors.c: 66: void setStep(unsigned char step, unsigned char motor){
 [v _setStep `(v ~T0 @X0 1 ef2`uc`uc ]
 {
 [e :U _setStep ]
 [v _step `uc ~T0 @X0 1 r1 ]
 [v _motor `uc ~T0 @X0 1 r2 ]
 [f ]
-"68
-[; ;motors.c: 68:     switch(motor){
+"67
+[; ;motors.c: 67:     switch(motor){
 [e $U 246  ]
 {
-"69
-[; ;motors.c: 69:         case 0:
+"68
+[; ;motors.c: 68:         case 0:
 [e :U 247 ]
-"71
-[; ;motors.c: 71:             LATAbits.LATA5 = (step & 0x01);
+"70
+[; ;motors.c: 70:             LATAbits.LATA5 = (step & 0x01);
 [e = . . _LATAbits 0 5 -> & -> _step `i -> 1 `i `uc ]
-"73
-[; ;motors.c: 73:             LATBbits.LATB0 = (step & 0x02);
+"72
+[; ;motors.c: 72:             LATBbits.LATB0 = (step & 0x02);
 [e = . . _LATBbits 0 0 -> & -> _step `i -> 2 `i `uc ]
+"73
+[; ;motors.c: 73:             break;
+[e $U 245  ]
 "74
-[; ;motors.c: 74:             break;
-[e $U 245  ]
-"75
-[; ;motors.c: 75:         case 1:
+[; ;motors.c: 74:         case 1:
 [e :U 248 ]
-"76
-[; ;motors.c: 76:             LATBbits.LATB6 = (step & 0x01);
+"75
+[; ;motors.c: 75:             LATBbits.LATB6 = (step & 0x01);
 [e = . . _LATBbits 0 6 -> & -> _step `i -> 1 `i `uc ]
-"77
-[; ;motors.c: 77:             LATBbits.LATB7 = (step & 0x02);
+"76
+[; ;motors.c: 76:             LATBbits.LATB7 = (step & 0x02);
 [e = . . _LATBbits 0 7 -> & -> _step `i -> 2 `i `uc ]
+"77
+[; ;motors.c: 77:             break;
+[e $U 245  ]
 "78
-[; ;motors.c: 78:             break;
-[e $U 245  ]
-"79
-[; ;motors.c: 79:         case 2:
+[; ;motors.c: 78:         case 2:
 [e :U 249 ]
-"80
-[; ;motors.c: 80:             LATCbits.LATC4 = (step & 0x01);
+"79
+[; ;motors.c: 79:             LATCbits.LATC4 = (step & 0x01);
 [e = . . _LATCbits 0 4 -> & -> _step `i -> 1 `i `uc ]
-"81
-[; ;motors.c: 81:             LATCbits.LATC5 = (step & 0x02);
+"80
+[; ;motors.c: 80:             LATCbits.LATC5 = (step & 0x02);
 [e = . . _LATCbits 0 5 -> & -> _step `i -> 2 `i `uc ]
+"81
+[; ;motors.c: 81:             break;
+[e $U 245  ]
 "82
-[; ;motors.c: 82:             break;
-[e $U 245  ]
-"83
-[; ;motors.c: 83:         default:
+[; ;motors.c: 82:         default:
 [e :U 250 ]
-"84
-[; ;motors.c: 84:             break;
+"83
+[; ;motors.c: 83:             break;
 [e $U 245  ]
-"85
-[; ;motors.c: 85:     }
+"84
+[; ;motors.c: 84:     }
 }
 [e $U 245  ]
 [e :U 246 ]
@@ -837,57 +837,57 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 2 `i 249
  250 ]
 [e :U 245 ]
-"86
-[; ;motors.c: 86: }
+"85
+[; ;motors.c: 85: }
 [e :UE 244 ]
 }
-"94
-[; ;motors.c: 94: void enableMotor(unsigned char enable, unsigned char motor){
+"93
+[; ;motors.c: 93: void enableMotor(unsigned char enable, unsigned char motor){
 [v _enableMotor `(v ~T0 @X0 1 ef2`uc`uc ]
 {
 [e :U _enableMotor ]
 [v _enable `uc ~T0 @X0 1 r1 ]
 [v _motor `uc ~T0 @X0 1 r2 ]
 [f ]
-"95
-[; ;motors.c: 95:     switch(motor){
+"94
+[; ;motors.c: 94:     switch(motor){
 [e $U 253  ]
 {
-"96
-[; ;motors.c: 96:         case 0:
+"95
+[; ;motors.c: 95:         case 0:
 [e :U 254 ]
-"97
-[; ;motors.c: 97:             LATAbits.LATA3 = enable;
+"96
+[; ;motors.c: 96:             LATAbits.LATA3 = enable;
 [e = . . _LATAbits 0 3 _enable ]
+"97
+[; ;motors.c: 97:             break;
+[e $U 252  ]
 "98
-[; ;motors.c: 98:             break;
-[e $U 252  ]
-"99
-[; ;motors.c: 99:         case 1:
+[; ;motors.c: 98:         case 1:
 [e :U 255 ]
-"100
-[; ;motors.c: 100:             LATBbits.LATB5 = enable;
+"99
+[; ;motors.c: 99:             LATBbits.LATB5 = enable;
 [e = . . _LATBbits 0 5 _enable ]
+"100
+[; ;motors.c: 100:             break;
+[e $U 252  ]
 "101
-[; ;motors.c: 101:             break;
-[e $U 252  ]
-"102
-[; ;motors.c: 102:         case 2:
+[; ;motors.c: 101:         case 2:
 [e :U 256 ]
-"103
-[; ;motors.c: 103:             LATCbits.LATC3 = enable;
+"102
+[; ;motors.c: 102:             LATCbits.LATC3 = enable;
 [e = . . _LATCbits 0 3 _enable ]
+"103
+[; ;motors.c: 103:             break;
+[e $U 252  ]
 "104
-[; ;motors.c: 104:             break;
-[e $U 252  ]
-"105
-[; ;motors.c: 105:         default:
+[; ;motors.c: 104:         default:
 [e :U 257 ]
-"106
-[; ;motors.c: 106:             break;
+"105
+[; ;motors.c: 105:             break;
 [e $U 252  ]
-"107
-[; ;motors.c: 107:     }
+"106
+[; ;motors.c: 106:     }
 }
 [e $U 252  ]
 [e :U 253 ]
@@ -896,57 +896,57 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 2 `i 256
  257 ]
 [e :U 252 ]
-"108
-[; ;motors.c: 108: }
+"107
+[; ;motors.c: 107: }
 [e :UE 251 ]
 }
-"115
-[; ;motors.c: 115: void setDirection(unsigned char direction, unsigned char motor){
+"114
+[; ;motors.c: 114: void setDirection(unsigned char direction, unsigned char motor){
 [v _setDirection `(v ~T0 @X0 1 ef2`uc`uc ]
 {
 [e :U _setDirection ]
 [v _direction `uc ~T0 @X0 1 r1 ]
 [v _motor `uc ~T0 @X0 1 r2 ]
 [f ]
-"116
-[; ;motors.c: 116:     switch(motor){
+"115
+[; ;motors.c: 115:     switch(motor){
 [e $U 260  ]
 {
-"117
-[; ;motors.c: 117:         case 0:
+"116
+[; ;motors.c: 116:         case 0:
 [e :U 261 ]
-"118
-[; ;motors.c: 118:             LATAbits.LATA1 = direction;
+"117
+[; ;motors.c: 117:             LATAbits.LATA1 = direction;
 [e = . . _LATAbits 0 1 _direction ]
+"118
+[; ;motors.c: 118:             break;
+[e $U 259  ]
 "119
-[; ;motors.c: 119:             break;
-[e $U 259  ]
-"120
-[; ;motors.c: 120:         case 1:
+[; ;motors.c: 119:         case 1:
 [e :U 262 ]
-"121
-[; ;motors.c: 121:             LATBbits.LATB3 = direction;
+"120
+[; ;motors.c: 120:             LATBbits.LATB3 = direction;
 [e = . . _LATBbits 0 3 _direction ]
+"121
+[; ;motors.c: 121:             break;
+[e $U 259  ]
 "122
-[; ;motors.c: 122:             break;
-[e $U 259  ]
-"123
-[; ;motors.c: 123:         case 2:
+[; ;motors.c: 122:         case 2:
 [e :U 263 ]
-"124
-[; ;motors.c: 124:             LATCbits.LATC1 = direction;
+"123
+[; ;motors.c: 123:             LATCbits.LATC1 = direction;
 [e = . . _LATCbits 0 1 _direction ]
+"124
+[; ;motors.c: 124:             break;
+[e $U 259  ]
 "125
-[; ;motors.c: 125:             break;
-[e $U 259  ]
-"126
-[; ;motors.c: 126:         default:
+[; ;motors.c: 125:         default:
 [e :U 264 ]
-"127
-[; ;motors.c: 127:             break;
+"126
+[; ;motors.c: 126:             break;
 [e $U 259  ]
-"128
-[; ;motors.c: 128:     }
+"127
+[; ;motors.c: 127:     }
 }
 [e $U 259  ]
 [e :U 260 ]
@@ -955,57 +955,57 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 2 `i 263
  264 ]
 [e :U 259 ]
-"129
-[; ;motors.c: 129: }
+"128
+[; ;motors.c: 128: }
 [e :UE 258 ]
 }
-"136
-[; ;motors.c: 136: void setDecay(unsigned char decay, unsigned char motor){
+"135
+[; ;motors.c: 135: void setDecay(unsigned char decay, unsigned char motor){
 [v _setDecay `(v ~T0 @X0 1 ef2`uc`uc ]
 {
 [e :U _setDecay ]
 [v _decay `uc ~T0 @X0 1 r1 ]
 [v _motor `uc ~T0 @X0 1 r2 ]
 [f ]
-"137
-[; ;motors.c: 137:     switch(motor){
+"136
+[; ;motors.c: 136:     switch(motor){
 [e $U 267  ]
 {
-"138
-[; ;motors.c: 138:         case 0:
+"137
+[; ;motors.c: 137:         case 0:
 [e :U 268 ]
-"139
-[; ;motors.c: 139:             LATBbits.LATB2 = decay;
+"138
+[; ;motors.c: 138:             LATBbits.LATB2 = decay;
 [e = . . _LATBbits 0 2 _decay ]
+"139
+[; ;motors.c: 139:             break;
+[e $U 266  ]
 "140
-[; ;motors.c: 140:             break;
-[e $U 266  ]
-"141
-[; ;motors.c: 141:         case 1:
+[; ;motors.c: 140:         case 1:
 [e :U 269 ]
-"142
-[; ;motors.c: 142:             LATCbits.LATC0 = decay;
+"141
+[; ;motors.c: 141:             LATCbits.LATC0 = decay;
 [e = . . _LATCbits 0 0 _decay ]
+"142
+[; ;motors.c: 142:             break;
+[e $U 266  ]
 "143
-[; ;motors.c: 143:             break;
-[e $U 266  ]
-"144
-[; ;motors.c: 144:         case 2:
+[; ;motors.c: 143:         case 2:
 [e :U 270 ]
-"145
-[; ;motors.c: 145:             LATDbits.LATD0 = decay;
+"144
+[; ;motors.c: 144:             LATDbits.LATD0 = decay;
 [e = . . _LATDbits 0 0 _decay ]
+"145
+[; ;motors.c: 145:             break;
+[e $U 266  ]
 "146
-[; ;motors.c: 146:             break;
-[e $U 266  ]
-"147
-[; ;motors.c: 147:         default:
+[; ;motors.c: 146:         default:
 [e :U 271 ]
-"148
-[; ;motors.c: 148:             break;
+"147
+[; ;motors.c: 147:             break;
 [e $U 266  ]
-"149
-[; ;motors.c: 149:     }
+"148
+[; ;motors.c: 148:     }
 }
 [e $U 266  ]
 [e :U 267 ]
@@ -1014,220 +1014,220 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 2 `i 270
  271 ]
 [e :U 266 ]
-"150
-[; ;motors.c: 150: }
+"149
+[; ;motors.c: 149: }
 [e :UE 265 ]
 }
-"158
-[; ;motors.c: 158: char resetPosition(){
+"157
+[; ;motors.c: 157: char resetPosition(){
 [v _resetPosition `(uc ~T0 @X0 1 ef ]
 {
 [e :U _resetPosition ]
 [f ]
-"160
-[; ;motors.c: 160:     setStep(0, 0);
+"159
+[; ;motors.c: 159:     setStep(0, 0);
 [e ( _setStep (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
-"161
-[; ;motors.c: 161:     setStep(1, 0);
+"160
+[; ;motors.c: 160:     setStep(1, 0);
 [e ( _setStep (2 , -> -> 1 `i `uc -> -> 0 `i `uc ]
-"162
-[; ;motors.c: 162:     setStep(2, 0);
+"161
+[; ;motors.c: 161:     setStep(2, 0);
 [e ( _setStep (2 , -> -> 2 `i `uc -> -> 0 `i `uc ]
-"164
-[; ;motors.c: 164:     setDirection(0, 0);
+"163
+[; ;motors.c: 163:     setDirection(0, 0);
 [e ( _setDirection (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
-"165
-[; ;motors.c: 165:     setDirection(0, 1);
+"164
+[; ;motors.c: 164:     setDirection(0, 1);
 [e ( _setDirection (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
-"166
-[; ;motors.c: 166:     setDirection(0, 2);
+"165
+[; ;motors.c: 165:     setDirection(0, 2);
 [e ( _setDirection (2 , -> -> 0 `i `uc -> -> 2 `i `uc ]
-"168
-[; ;motors.c: 168:     setDecay(1, 0);
+"167
+[; ;motors.c: 167:     setDecay(1, 0);
 [e ( _setDecay (2 , -> -> 1 `i `uc -> -> 0 `i `uc ]
-"169
-[; ;motors.c: 169:     setDecay(1, 1);
+"168
+[; ;motors.c: 168:     setDecay(1, 1);
 [e ( _setDecay (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-"170
-[; ;motors.c: 170:     setDecay(1, 2);
+"169
+[; ;motors.c: 169:     setDecay(1, 2);
 [e ( _setDecay (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
-"172
-[; ;motors.c: 172:     enableMotor(0, 0);
+"171
+[; ;motors.c: 171:     enableMotor(0, 0);
 [e ( _enableMotor (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
-"173
-[; ;motors.c: 173:     enableMotor(0, 1);
+"172
+[; ;motors.c: 172:     enableMotor(0, 1);
 [e ( _enableMotor (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
-"174
-[; ;motors.c: 174:     enableMotor(0, 2);
+"173
+[; ;motors.c: 173:     enableMotor(0, 2);
 [e ( _enableMotor (2 , -> -> 0 `i `uc -> -> 2 `i `uc ]
-"178
-[; ;motors.c: 178:     unsigned char keepMovingX = 1;
+"177
+[; ;motors.c: 177:     unsigned char keepMovingX = 1;
 [v _keepMovingX `uc ~T0 @X0 1 a ]
 [e = _keepMovingX -> -> 1 `i `uc ]
-"179
-[; ;motors.c: 179:     unsigned char keepMovingY = 1;
+"178
+[; ;motors.c: 178:     unsigned char keepMovingY = 1;
 [v _keepMovingY `uc ~T0 @X0 1 a ]
 [e = _keepMovingY -> -> 1 `i `uc ]
-"180
-[; ;motors.c: 180:     unsigned char keepMovingZ = 1;
+"179
+[; ;motors.c: 179:     unsigned char keepMovingZ = 1;
 [v _keepMovingZ `uc ~T0 @X0 1 a ]
 [e = _keepMovingZ -> -> 1 `i `uc ]
-"183
-[; ;motors.c: 183:     T2CONbits.TMR2ON = 1;
+"182
+[; ;motors.c: 182:     T2CONbits.TMR2ON = 1;
 [e = . . _T2CONbits 0 1 -> -> 1 `i `uc ]
-"185
-[; ;motors.c: 185:     tm0Error = 0;
+"184
+[; ;motors.c: 184:     tm0Error = 0;
 [e = _tm0Error -> -> 0 `i `ui ]
-"186
-[; ;motors.c: 186:     tm0Limit = 250;
+"185
+[; ;motors.c: 185:     tm0Limit = 250;
 [e = _tm0Limit -> -> 250 `i `uc ]
-"187
-[; ;motors.c: 187:     T0CONbits.TMR0ON = 1;
+"186
+[; ;motors.c: 186:     T0CONbits.TMR0ON = 1;
 [e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
-"189
-[; ;motors.c: 189:     while(keepMovingX || keepMovingY || keepMovingZ){
+"188
+[; ;motors.c: 188:     while(keepMovingX || keepMovingY || keepMovingZ){
 [e $U 273  ]
 [e :U 274 ]
 {
-"192
-[; ;motors.c: 192:         if(tm0Error){
+"191
+[; ;motors.c: 191:         if(tm0Error){
 [e $ ! != _tm0Error -> -> 0 `i `ui 276  ]
 {
-"194
-[; ;motors.c: 194:             LATAbits.LATA2 = 0;
+"193
+[; ;motors.c: 193:             LATAbits.LATA2 = 0;
 [e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
-"195
-[; ;motors.c: 195:             LATBbits.LATB4 = 0;
+"194
+[; ;motors.c: 194:             LATBbits.LATB4 = 0;
 [e = . . _LATBbits 0 4 -> -> 0 `i `uc ]
-"196
-[; ;motors.c: 196:             LATCbits.LATC2 = 0;
+"195
+[; ;motors.c: 195:             LATCbits.LATC2 = 0;
 [e = . . _LATCbits 0 2 -> -> 0 `i `uc ]
-"198
-[; ;motors.c: 198:             tm0Error = 3;
+"197
+[; ;motors.c: 197:             tm0Error = 3;
 [e = _tm0Error -> -> 3 `i `ui ]
-"199
-[; ;motors.c: 199:             break;
+"198
+[; ;motors.c: 198:             break;
 [e $U 275  ]
-"200
-[; ;motors.c: 200:         }
+"199
+[; ;motors.c: 199:         }
 }
 [e :U 276 ]
-"206
-[; ;motors.c: 206:         if(PORTEbits.RE0 || !keepMovingX){
+"205
+[; ;motors.c: 205:         if(PORTEbits.RE0 || !keepMovingX){
 [e $ ! || != -> . . _PORTEbits 0 0 `i -> 0 `i ! != -> _keepMovingX `i -> 0 `i 277  ]
 {
-"208
-[; ;motors.c: 208:             keepMovingX = 0;
+"207
+[; ;motors.c: 207:             keepMovingX = 0;
 [e = _keepMovingX -> -> 0 `i `uc ]
-"209
-[; ;motors.c: 209:         }else{
+"208
+[; ;motors.c: 208:         }else{
 }
 [e $U 278  ]
 [e :U 277 ]
 {
-"211
-[; ;motors.c: 211:             LATAbits.LATA2 = 1;
+"210
+[; ;motors.c: 210:             LATAbits.LATA2 = 1;
 [e = . . _LATAbits 0 2 -> -> 1 `i `uc ]
-"212
-[; ;motors.c: 212:         }
+"211
+[; ;motors.c: 211:         }
 }
 [e :U 278 ]
-"215
-[; ;motors.c: 215:         if(PORTEbits.RE1 || !keepMovingY){
+"214
+[; ;motors.c: 214:         if(PORTEbits.RE1 || !keepMovingY){
 [e $ ! || != -> . . _PORTEbits 0 1 `i -> 0 `i ! != -> _keepMovingY `i -> 0 `i 279  ]
 {
-"217
-[; ;motors.c: 217:             keepMovingY = 0;
+"216
+[; ;motors.c: 216:             keepMovingY = 0;
 [e = _keepMovingY -> -> 0 `i `uc ]
-"218
-[; ;motors.c: 218:         }else{
+"217
+[; ;motors.c: 217:         }else{
 }
 [e $U 280  ]
 [e :U 279 ]
 {
-"220
-[; ;motors.c: 220:             LATBbits.LATB4 = 1;
+"219
+[; ;motors.c: 219:             LATBbits.LATB4 = 1;
 [e = . . _LATBbits 0 4 -> -> 1 `i `uc ]
-"221
-[; ;motors.c: 221:         }
+"220
+[; ;motors.c: 220:         }
 }
 [e :U 280 ]
-"224
-[; ;motors.c: 224:         if(PORTEbits.RE2 || !keepMovingZ){
+"223
+[; ;motors.c: 223:         if(PORTEbits.RE2 || !keepMovingZ){
 [e $ ! || != -> . . _PORTEbits 0 2 `i -> 0 `i ! != -> _keepMovingZ `i -> 0 `i 281  ]
 {
-"226
-[; ;motors.c: 226:             keepMovingZ = 0;
+"225
+[; ;motors.c: 225:             keepMovingZ = 0;
 [e = _keepMovingZ -> -> 0 `i `uc ]
-"227
-[; ;motors.c: 227:         }else{
+"226
+[; ;motors.c: 226:         }else{
 }
 [e $U 282  ]
 [e :U 281 ]
 {
-"229
-[; ;motors.c: 229:             LATCbits.LATC2 = 1;
+"228
+[; ;motors.c: 228:             LATCbits.LATC2 = 1;
 [e = . . _LATCbits 0 2 -> -> 1 `i `uc ]
-"230
-[; ;motors.c: 230:         }
+"229
+[; ;motors.c: 229:         }
 }
 [e :U 282 ]
-"233
-[; ;motors.c: 233:         while(!stepMade());
+"232
+[; ;motors.c: 232:         while(!stepMade());
 [e $U 283  ]
 [e :U 284 ]
 [e :U 283 ]
 [e $ ! != ( _stepMade ..  -> -> 0 `i `ui 284  ]
 [e :U 285 ]
-"236
-[; ;motors.c: 236:         LATAbits.LATA2 = 0;
+"235
+[; ;motors.c: 235:         LATAbits.LATA2 = 0;
 [e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
-"237
-[; ;motors.c: 237:         LATBbits.LATB4 = 0;
+"236
+[; ;motors.c: 236:         LATBbits.LATB4 = 0;
 [e = . . _LATBbits 0 4 -> -> 0 `i `uc ]
-"238
-[; ;motors.c: 238:         LATCbits.LATC2 = 0;
+"237
+[; ;motors.c: 237:         LATCbits.LATC2 = 0;
 [e = . . _LATCbits 0 2 -> -> 0 `i `uc ]
-"241
-[; ;motors.c: 241:         while(!stepMade());
+"240
+[; ;motors.c: 240:         while(!stepMade());
 [e $U 286  ]
 [e :U 287 ]
 [e :U 286 ]
 [e $ ! != ( _stepMade ..  -> -> 0 `i `ui 287  ]
 [e :U 288 ]
-"242
-[; ;motors.c: 242:     }
+"241
+[; ;motors.c: 241:     }
 }
 [e :U 273 ]
-"189
-[; ;motors.c: 189:     while(keepMovingX || keepMovingY || keepMovingZ){
+"188
+[; ;motors.c: 188:     while(keepMovingX || keepMovingY || keepMovingZ){
 [e $ || || != -> _keepMovingX `i -> 0 `i != -> _keepMovingY `i -> 0 `i != -> _keepMovingZ `i -> 0 `i 274  ]
 [e :U 275 ]
-"245
-[; ;motors.c: 245:     T0CONbits.TMR0ON = 0;
+"244
+[; ;motors.c: 244:     T0CONbits.TMR0ON = 0;
 [e = . . _T0CONbits 0 5 -> -> 0 `i `uc ]
-"246
-[; ;motors.c: 246:     T2CONbits.TMR2ON = 0;
+"245
+[; ;motors.c: 245:     T2CONbits.TMR2ON = 0;
 [e = . . _T2CONbits 0 1 -> -> 0 `i `uc ]
-"248
-[; ;motors.c: 248:     TMR0 = 0;
+"247
+[; ;motors.c: 247:     TMR0 = 0;
 [e = _TMR0 -> -> 0 `i `us ]
-"249
-[; ;motors.c: 249:     TMR2 = 0;
+"248
+[; ;motors.c: 248:     TMR2 = 0;
 [e = _TMR2 -> -> 0 `i `uc ]
-"252
-[; ;motors.c: 252:     resetStep();
+"251
+[; ;motors.c: 251:     resetStep();
 [e ( _resetStep ..  ]
-"255
-[; ;motors.c: 255:     return(tm0Error);
+"254
+[; ;motors.c: 254:     return(tm0Error);
 [e ) -> _tm0Error `uc ]
 [e $UE 272  ]
-"256
-[; ;motors.c: 256: }
+"255
+[; ;motors.c: 255: }
 [e :UE 272 ]
 }
-"264
-[; ;motors.c: 264: char moveToPoint(int x1, int y1, int x2, int y2){
+"263
+[; ;motors.c: 263: char moveToPoint(int x1, int y1, int x2, int y2){
 [v _moveToPoint `(uc ~T0 @X0 1 ef4`i`i`i`i ]
 {
 [e :U _moveToPoint ]
@@ -1236,627 +1236,627 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _x2 `i ~T0 @X0 1 r3 ]
 [v _y2 `i ~T0 @X0 1 r4 ]
 [f ]
-"266
-[; ;motors.c: 266:     unsigned char MOT1Direction, MOT2Direction;
+"265
+[; ;motors.c: 265:     unsigned char MOT1Direction, MOT2Direction;
 [v _MOT1Direction `uc ~T0 @X0 1 a ]
 [v _MOT2Direction `uc ~T0 @X0 1 a ]
-"269
-[; ;motors.c: 269:     if(x2 > maxX || y2 > maxY){
+"268
+[; ;motors.c: 268:     if(x2 > maxX || y2 > maxY){
 [e $ ! || > -> _x2 `ui _maxX > -> _y2 `ui _maxY 290  ]
 {
-"270
-[; ;motors.c: 270:         return(5);
+"269
+[; ;motors.c: 269:         return(5);
 [e ) -> -> 5 `i `uc ]
 [e $UE 289  ]
-"271
-[; ;motors.c: 271:     }
+"270
+[; ;motors.c: 270:     }
 }
 [e :U 290 ]
-"274
-[; ;motors.c: 274:     if((x2 - x1) > 0){
+"273
+[; ;motors.c: 273:     if((x2 - x1) > 0){
 [e $ ! > - _x2 _x1 -> 0 `i 291  ]
 {
-"275
-[; ;motors.c: 275:         setDirection(1, 0);
+"274
+[; ;motors.c: 274:         setDirection(1, 0);
 [e ( _setDirection (2 , -> -> 1 `i `uc -> -> 0 `i `uc ]
-"276
-[; ;motors.c: 276:         MOT1Direction = 1;
+"275
+[; ;motors.c: 275:         MOT1Direction = 1;
 [e = _MOT1Direction -> -> 1 `i `uc ]
-"277
-[; ;motors.c: 277:     }else{
+"276
+[; ;motors.c: 276:     }else{
 }
 [e $U 292  ]
 [e :U 291 ]
 {
-"278
-[; ;motors.c: 278:         setDirection(0, 0);
+"277
+[; ;motors.c: 277:         setDirection(0, 0);
 [e ( _setDirection (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
-"279
-[; ;motors.c: 279:         MOT1Direction = 0;
+"278
+[; ;motors.c: 278:         MOT1Direction = 0;
 [e = _MOT1Direction -> -> 0 `i `uc ]
-"280
-[; ;motors.c: 280:     }
+"279
+[; ;motors.c: 279:     }
 }
 [e :U 292 ]
-"282
-[; ;motors.c: 282:     if((y2 - y1) > 0){
+"281
+[; ;motors.c: 281:     if((y2 - y1) > 0){
 [e $ ! > - _y2 _y1 -> 0 `i 293  ]
 {
-"283
-[; ;motors.c: 283:         setDirection(1, 1);
+"282
+[; ;motors.c: 282:         setDirection(1, 1);
 [e ( _setDirection (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-"284
-[; ;motors.c: 284:         MOT2Direction = 1;
+"283
+[; ;motors.c: 283:         MOT2Direction = 1;
 [e = _MOT2Direction -> -> 1 `i `uc ]
-"285
-[; ;motors.c: 285:     }else{
+"284
+[; ;motors.c: 284:     }else{
 }
 [e $U 294  ]
 [e :U 293 ]
 {
-"286
-[; ;motors.c: 286:         setDirection(0, 1);
+"285
+[; ;motors.c: 285:         setDirection(0, 1);
 [e ( _setDirection (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
-"287
-[; ;motors.c: 287:         MOT2Direction = 0;
+"286
+[; ;motors.c: 286:         MOT2Direction = 0;
 [e = _MOT2Direction -> -> 0 `i `uc ]
-"288
-[; ;motors.c: 288:     }
+"287
+[; ;motors.c: 287:     }
 }
 [e :U 294 ]
-"290
-[; ;motors.c: 290:     unsigned char keepMovingX = 1;
+"289
+[; ;motors.c: 289:     unsigned char keepMovingX = 1;
 [v _keepMovingX `uc ~T0 @X0 1 a ]
 [e = _keepMovingX -> -> 1 `i `uc ]
-"291
-[; ;motors.c: 291:     unsigned char keepMovingY = 1;
+"290
+[; ;motors.c: 290:     unsigned char keepMovingY = 1;
 [v _keepMovingY `uc ~T0 @X0 1 a ]
 [e = _keepMovingY -> -> 1 `i `uc ]
-"294
-[; ;motors.c: 294:     T2CONbits.TMR2ON = 1;
+"293
+[; ;motors.c: 293:     T2CONbits.TMR2ON = 1;
 [e = . . _T2CONbits 0 1 -> -> 1 `i `uc ]
-"296
-[; ;motors.c: 296:     tm0Error = 0;
+"295
+[; ;motors.c: 295:     tm0Error = 0;
 [e = _tm0Error -> -> 0 `i `ui ]
-"297
-[; ;motors.c: 297:     tm0Limit = 250;
+"296
+[; ;motors.c: 296:     tm0Limit = 250;
 [e = _tm0Limit -> -> 250 `i `uc ]
-"298
-[; ;motors.c: 298:     T0CONbits.TMR0ON = 1;
+"297
+[; ;motors.c: 297:     T0CONbits.TMR0ON = 1;
 [e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
-"300
-[; ;motors.c: 300:     while(keepMovingX || keepMovingY){
+"299
+[; ;motors.c: 299:     while(keepMovingX || keepMovingY){
 [e $U 295  ]
 [e :U 296 ]
 {
-"303
-[; ;motors.c: 303:         if(tm0Error){
+"302
+[; ;motors.c: 302:         if(tm0Error){
 [e $ ! != _tm0Error -> -> 0 `i `ui 298  ]
 {
-"305
-[; ;motors.c: 305:             LATAbits.LATA2 = 0;
+"304
+[; ;motors.c: 304:             LATAbits.LATA2 = 0;
 [e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
-"306
-[; ;motors.c: 306:             LATBbits.LATB4 = 0;
+"305
+[; ;motors.c: 305:             LATBbits.LATB4 = 0;
 [e = . . _LATBbits 0 4 -> -> 0 `i `uc ]
-"307
-[; ;motors.c: 307:             tm0Error = 4;
+"306
+[; ;motors.c: 306:             tm0Error = 4;
 [e = _tm0Error -> -> 4 `i `ui ]
-"308
-[; ;motors.c: 308:             break;
+"307
+[; ;motors.c: 307:             break;
 [e $U 297  ]
-"309
-[; ;motors.c: 309:         }
+"308
+[; ;motors.c: 308:         }
 }
 [e :U 298 ]
-"316
-[; ;motors.c: 316:         if(MOT1Direction == 1){
+"315
+[; ;motors.c: 315:         if(MOT1Direction == 1){
 [e $ ! == -> _MOT1Direction `i -> 1 `i 299  ]
 {
-"317
-[; ;motors.c: 317:             if(x1 + stepCounter() >= x2){
+"316
+[; ;motors.c: 316:             if(x1 + stepCounter() >= x2){
 [e $ ! >= + -> _x1 `ui ( _stepCounter ..  -> _x2 `ui 300  ]
 {
-"319
-[; ;motors.c: 319:                 keepMovingX = 0;
+"318
+[; ;motors.c: 318:                 keepMovingX = 0;
 [e = _keepMovingX -> -> 0 `i `uc ]
-"320
-[; ;motors.c: 320:             }else if(!keepMovingX){
+"319
+[; ;motors.c: 319:             }else if(!keepMovingX){
 }
 [e $U 301  ]
 [e :U 300 ]
 [e $ ! ! != -> _keepMovingX `i -> 0 `i 302  ]
 {
-"322
-[; ;motors.c: 322:                 LATAbits.LATA2 = 1;
+"321
+[; ;motors.c: 321:                 LATAbits.LATA2 = 1;
 [e = . . _LATAbits 0 2 -> -> 1 `i `uc ]
-"323
-[; ;motors.c: 323:             }
+"322
+[; ;motors.c: 322:             }
 }
 [e :U 302 ]
 [e :U 301 ]
-"324
-[; ;motors.c: 324:         }else if(MOT1Direction == 0){
+"323
+[; ;motors.c: 323:         }else if(MOT1Direction == 0){
 }
 [e $U 303  ]
 [e :U 299 ]
 [e $ ! == -> _MOT1Direction `i -> 0 `i 304  ]
 {
-"325
-[; ;motors.c: 325:             if(x1 - stepCounter() <= x2){
+"324
+[; ;motors.c: 324:             if(x1 - stepCounter() <= x2){
 [e $ ! <= - -> _x1 `ui ( _stepCounter ..  -> _x2 `ui 305  ]
 {
-"327
-[; ;motors.c: 327:                 keepMovingX = 0;
+"326
+[; ;motors.c: 326:                 keepMovingX = 0;
 [e = _keepMovingX -> -> 0 `i `uc ]
-"328
-[; ;motors.c: 328:             }else if(!keepMovingX){
+"327
+[; ;motors.c: 327:             }else if(!keepMovingX){
 }
 [e $U 306  ]
 [e :U 305 ]
 [e $ ! ! != -> _keepMovingX `i -> 0 `i 307  ]
 {
-"330
-[; ;motors.c: 330:                 LATAbits.LATA2 = 1;
+"329
+[; ;motors.c: 329:                 LATAbits.LATA2 = 1;
 [e = . . _LATAbits 0 2 -> -> 1 `i `uc ]
-"331
-[; ;motors.c: 331:             }
+"330
+[; ;motors.c: 330:             }
 }
 [e :U 307 ]
 [e :U 306 ]
-"332
-[; ;motors.c: 332:         }
+"331
+[; ;motors.c: 331:         }
 }
 [e :U 304 ]
 [e :U 303 ]
-"334
-[; ;motors.c: 334:         if(MOT2Direction == 1){
+"333
+[; ;motors.c: 333:         if(MOT2Direction == 1){
 [e $ ! == -> _MOT2Direction `i -> 1 `i 308  ]
 {
-"336
-[; ;motors.c: 336:             if(y1 + stepCounter() >= y2){
+"335
+[; ;motors.c: 335:             if(y1 + stepCounter() >= y2){
 [e $ ! >= + -> _y1 `ui ( _stepCounter ..  -> _y2 `ui 309  ]
 {
-"338
-[; ;motors.c: 338:                 keepMovingY = 0;
+"337
+[; ;motors.c: 337:                 keepMovingY = 0;
 [e = _keepMovingY -> -> 0 `i `uc ]
-"339
-[; ;motors.c: 339:             }else if(!keepMovingX){
+"338
+[; ;motors.c: 338:             }else if(!keepMovingX){
 }
 [e $U 310  ]
 [e :U 309 ]
 [e $ ! ! != -> _keepMovingX `i -> 0 `i 311  ]
 {
-"341
-[; ;motors.c: 341:                 LATBbits.LATB4 = 1;
+"340
+[; ;motors.c: 340:                 LATBbits.LATB4 = 1;
 [e = . . _LATBbits 0 4 -> -> 1 `i `uc ]
-"342
-[; ;motors.c: 342:             }
+"341
+[; ;motors.c: 341:             }
 }
 [e :U 311 ]
 [e :U 310 ]
-"343
-[; ;motors.c: 343:         }else if(MOT2Direction == 0){
+"342
+[; ;motors.c: 342:         }else if(MOT2Direction == 0){
 }
 [e $U 312  ]
 [e :U 308 ]
 [e $ ! == -> _MOT2Direction `i -> 0 `i 313  ]
 {
-"345
-[; ;motors.c: 345:             if(y1 - stepCounter() <= y2){
+"344
+[; ;motors.c: 344:             if(y1 - stepCounter() <= y2){
 [e $ ! <= - -> _y1 `ui ( _stepCounter ..  -> _y2 `ui 314  ]
 {
-"347
-[; ;motors.c: 347:                 keepMovingY = 0;
+"346
+[; ;motors.c: 346:                 keepMovingY = 0;
 [e = _keepMovingY -> -> 0 `i `uc ]
-"348
-[; ;motors.c: 348:             }else if(!keepMovingX){
+"347
+[; ;motors.c: 347:             }else if(!keepMovingX){
 }
 [e $U 315  ]
 [e :U 314 ]
 [e $ ! ! != -> _keepMovingX `i -> 0 `i 316  ]
 {
-"350
-[; ;motors.c: 350:                 LATBbits.LATB4 = 1;
+"349
+[; ;motors.c: 349:                 LATBbits.LATB4 = 1;
 [e = . . _LATBbits 0 4 -> -> 1 `i `uc ]
-"351
-[; ;motors.c: 351:             }
+"350
+[; ;motors.c: 350:             }
 }
 [e :U 316 ]
 [e :U 315 ]
-"352
-[; ;motors.c: 352:         }
+"351
+[; ;motors.c: 351:         }
 }
 [e :U 313 ]
 [e :U 312 ]
-"355
-[; ;motors.c: 355:         while(!stepMade());
+"354
+[; ;motors.c: 354:         while(!stepMade());
 [e $U 317  ]
 [e :U 318 ]
 [e :U 317 ]
 [e $ ! != ( _stepMade ..  -> -> 0 `i `ui 318  ]
 [e :U 319 ]
-"358
-[; ;motors.c: 358:         LATAbits.LATA2 = 0;
+"357
+[; ;motors.c: 357:         LATAbits.LATA2 = 0;
 [e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
-"359
-[; ;motors.c: 359:         LATBbits.LATB4 = 0;
+"358
+[; ;motors.c: 358:         LATBbits.LATB4 = 0;
 [e = . . _LATBbits 0 4 -> -> 0 `i `uc ]
-"362
-[; ;motors.c: 362:         while(!stepMade());
+"361
+[; ;motors.c: 361:         while(!stepMade());
 [e $U 320  ]
 [e :U 321 ]
 [e :U 320 ]
 [e $ ! != ( _stepMade ..  -> -> 0 `i `ui 321  ]
 [e :U 322 ]
-"363
-[; ;motors.c: 363:     }
+"362
+[; ;motors.c: 362:     }
 }
 [e :U 295 ]
-"300
-[; ;motors.c: 300:     while(keepMovingX || keepMovingY){
+"299
+[; ;motors.c: 299:     while(keepMovingX || keepMovingY){
 [e $ || != -> _keepMovingX `i -> 0 `i != -> _keepMovingY `i -> 0 `i 296  ]
 [e :U 297 ]
-"366
-[; ;motors.c: 366:     T0CONbits.TMR0ON = 0;
+"365
+[; ;motors.c: 365:     T0CONbits.TMR0ON = 0;
 [e = . . _T0CONbits 0 5 -> -> 0 `i `uc ]
-"367
-[; ;motors.c: 367:     T2CONbits.TMR2ON = 0;
+"366
+[; ;motors.c: 366:     T2CONbits.TMR2ON = 0;
 [e = . . _T2CONbits 0 1 -> -> 0 `i `uc ]
-"369
-[; ;motors.c: 369:     TMR0 = 0;
+"368
+[; ;motors.c: 368:     TMR0 = 0;
 [e = _TMR0 -> -> 0 `i `us ]
-"370
-[; ;motors.c: 370:     TMR2 = 0;
+"369
+[; ;motors.c: 369:     TMR2 = 0;
 [e = _TMR2 -> -> 0 `i `uc ]
-"373
-[; ;motors.c: 373:     resetStep();
+"372
+[; ;motors.c: 372:     resetStep();
 [e ( _resetStep ..  ]
-"375
-[; ;motors.c: 375:     return(tm0Error);
+"374
+[; ;motors.c: 374:     return(tm0Error);
 [e ) -> _tm0Error `uc ]
 [e $UE 289  ]
-"376
-[; ;motors.c: 376: }
+"375
+[; ;motors.c: 375: }
 [e :UE 289 ]
 }
-"384
-[; ;motors.c: 384: char touchObject(){
+"383
+[; ;motors.c: 383: char touchObject(){
 [v _touchObject `(uc ~T0 @X0 1 ef ]
 {
 [e :U _touchObject ]
 [f ]
-"387
-[; ;motors.c: 387:     setDirection(1, 2);
+"386
+[; ;motors.c: 386:     setDirection(1, 2);
 [e ( _setDirection (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
-"389
-[; ;motors.c: 389:     T2CONbits.TMR2ON = 1;
+"388
+[; ;motors.c: 388:     T2CONbits.TMR2ON = 1;
 [e = . . _T2CONbits 0 1 -> -> 1 `i `uc ]
-"391
-[; ;motors.c: 391:     tm0Error = 0;
+"390
+[; ;motors.c: 390:     tm0Error = 0;
 [e = _tm0Error -> -> 0 `i `ui ]
-"392
-[; ;motors.c: 392:     tm0Limit = 250;
+"391
+[; ;motors.c: 391:     tm0Limit = 250;
 [e = _tm0Limit -> -> 250 `i `uc ]
-"393
-[; ;motors.c: 393:     T0CONbits.TMR0ON = 1;
+"392
+[; ;motors.c: 392:     T0CONbits.TMR0ON = 1;
 [e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
-"396
-[; ;motors.c: 396:     startADC();
+"395
+[; ;motors.c: 395:     startADC();
 [e ( _startADC ..  ]
-"399
-[; ;motors.c: 399:     while(!returnTouch() || PORTDbits.RD7){
+"398
+[; ;motors.c: 398:     while(!returnTouch() || PORTDbits.RD7){
 [e $U 324  ]
 [e :U 325 ]
 {
-"402
-[; ;motors.c: 402:         if(tm0Error){
+"401
+[; ;motors.c: 401:         if(tm0Error){
 [e $ ! != _tm0Error -> -> 0 `i `ui 327  ]
 {
-"404
-[; ;motors.c: 404:             LATCbits.LATC2 = 0;
+"403
+[; ;motors.c: 403:             LATCbits.LATC2 = 0;
 [e = . . _LATCbits 0 2 -> -> 0 `i `uc ]
-"405
-[; ;motors.c: 405:             tm0Error = 6;
+"404
+[; ;motors.c: 404:             tm0Error = 6;
 [e = _tm0Error -> -> 6 `i `ui ]
-"406
-[; ;motors.c: 406:             break;
+"405
+[; ;motors.c: 405:             break;
 [e $U 326  ]
-"407
-[; ;motors.c: 407:         }
+"406
+[; ;motors.c: 406:         }
 }
 [e :U 327 ]
-"410
-[; ;motors.c: 410:         LATCbits.LATC2 = 1;
+"409
+[; ;motors.c: 409:         LATCbits.LATC2 = 1;
 [e = . . _LATCbits 0 2 -> -> 1 `i `uc ]
-"413
-[; ;motors.c: 413:         while(!stepMade());
+"412
+[; ;motors.c: 412:         while(!stepMade());
 [e $U 328  ]
 [e :U 329 ]
 [e :U 328 ]
 [e $ ! != ( _stepMade ..  -> -> 0 `i `ui 329  ]
 [e :U 330 ]
-"416
-[; ;motors.c: 416:         LATCbits.LATC2 = 0;
+"415
+[; ;motors.c: 415:         LATCbits.LATC2 = 0;
 [e = . . _LATCbits 0 2 -> -> 0 `i `uc ]
-"419
-[; ;motors.c: 419:         while(!stepMade());
+"418
+[; ;motors.c: 418:         while(!stepMade());
 [e $U 331  ]
 [e :U 332 ]
 [e :U 331 ]
 [e $ ! != ( _stepMade ..  -> -> 0 `i `ui 332  ]
 [e :U 333 ]
-"420
-[; ;motors.c: 420:     }
+"419
+[; ;motors.c: 419:     }
 }
 [e :U 324 ]
-"399
-[; ;motors.c: 399:     while(!returnTouch() || PORTDbits.RD7){
+"398
+[; ;motors.c: 398:     while(!returnTouch() || PORTDbits.RD7){
 [e $ || ! != ( _returnTouch ..  -> -> 0 `i `ui != -> . . _PORTDbits 0 7 `i -> 0 `i 325  ]
 [e :U 326 ]
-"423
-[; ;motors.c: 423:     stopADC();
+"422
+[; ;motors.c: 422:     stopADC();
 [e ( _stopADC ..  ]
-"426
-[; ;motors.c: 426:     resetTouch();
+"425
+[; ;motors.c: 425:     resetTouch();
 [e ( _resetTouch ..  ]
-"429
-[; ;motors.c: 429:     T0CONbits.TMR0ON = 0;
+"428
+[; ;motors.c: 428:     T0CONbits.TMR0ON = 0;
 [e = . . _T0CONbits 0 5 -> -> 0 `i `uc ]
-"430
-[; ;motors.c: 430:     T2CONbits.TMR2ON = 0;
+"429
+[; ;motors.c: 429:     T2CONbits.TMR2ON = 0;
 [e = . . _T2CONbits 0 1 -> -> 0 `i `uc ]
-"432
-[; ;motors.c: 432:     TMR0 = 0;
+"431
+[; ;motors.c: 431:     TMR0 = 0;
 [e = _TMR0 -> -> 0 `i `us ]
-"433
-[; ;motors.c: 433:     TMR2 = 0;
+"432
+[; ;motors.c: 432:     TMR2 = 0;
 [e = _TMR2 -> -> 0 `i `uc ]
-"436
-[; ;motors.c: 436:     resetStep();
+"435
+[; ;motors.c: 435:     resetStep();
 [e ( _resetStep ..  ]
-"439
-[; ;motors.c: 439:     if(PORTDbits.RD7){
+"438
+[; ;motors.c: 438:     if(PORTDbits.RD7){
 [e $ ! != -> . . _PORTDbits 0 7 `i -> 0 `i 334  ]
 {
-"440
-[; ;motors.c: 440:         tm0Error = 2;
+"439
+[; ;motors.c: 439:         tm0Error = 2;
 [e = _tm0Error -> -> 2 `i `ui ]
-"441
-[; ;motors.c: 441:     }
+"440
+[; ;motors.c: 440:     }
 }
 [e :U 334 ]
-"443
-[; ;motors.c: 443:     return(tm0Error);
+"442
+[; ;motors.c: 442:     return(tm0Error);
 [e ) -> _tm0Error `uc ]
 [e $UE 323  ]
-"444
-[; ;motors.c: 444: }
+"443
+[; ;motors.c: 443: }
 [e :UE 323 ]
 }
-"455
-[; ;motors.c: 455: char touchTherm(){
+"454
+[; ;motors.c: 454: char touchTherm(){
 [v _touchTherm `(uc ~T0 @X0 1 ef ]
 {
 [e :U _touchTherm ]
 [f ]
-"458
-[; ;motors.c: 458:     setDirection(1, 2);
+"457
+[; ;motors.c: 457:     setDirection(1, 2);
 [e ( _setDirection (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
-"460
-[; ;motors.c: 460:     T2CONbits.TMR2ON = 1;
+"459
+[; ;motors.c: 459:     T2CONbits.TMR2ON = 1;
 [e = . . _T2CONbits 0 1 -> -> 1 `i `uc ]
-"462
-[; ;motors.c: 462:     tm0Error = 0;
+"461
+[; ;motors.c: 461:     tm0Error = 0;
 [e = _tm0Error -> -> 0 `i `ui ]
-"463
-[; ;motors.c: 463:     tm0Limit = 250;
+"462
+[; ;motors.c: 462:     tm0Limit = 250;
 [e = _tm0Limit -> -> 250 `i `uc ]
-"464
-[; ;motors.c: 464:     T0CONbits.TMR0ON = 1;
+"463
+[; ;motors.c: 463:     T0CONbits.TMR0ON = 1;
 [e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
-"467
-[; ;motors.c: 467:     startADC();
+"466
+[; ;motors.c: 466:     startADC();
 [e ( _startADC ..  ]
-"470
-[; ;motors.c: 470:     while(!returnTherm() || PORTDbits.RD7){
+"469
+[; ;motors.c: 469:     while(!returnTherm() || PORTDbits.RD7){
 [e $U 336  ]
 [e :U 337 ]
 {
-"473
-[; ;motors.c: 473:         if(tm0Error){
+"472
+[; ;motors.c: 472:         if(tm0Error){
 [e $ ! != _tm0Error -> -> 0 `i `ui 339  ]
 {
-"475
-[; ;motors.c: 475:             LATCbits.LATC2 = 0;
+"474
+[; ;motors.c: 474:             LATCbits.LATC2 = 0;
 [e = . . _LATCbits 0 2 -> -> 0 `i `uc ]
-"476
-[; ;motors.c: 476:             tm0Error = 6;
+"475
+[; ;motors.c: 475:             tm0Error = 6;
 [e = _tm0Error -> -> 6 `i `ui ]
-"477
-[; ;motors.c: 477:             break;
+"476
+[; ;motors.c: 476:             break;
 [e $U 338  ]
-"478
-[; ;motors.c: 478:         }
+"477
+[; ;motors.c: 477:         }
 }
 [e :U 339 ]
-"481
-[; ;motors.c: 481:         LATCbits.LATC2 = 1;
+"480
+[; ;motors.c: 480:         LATCbits.LATC2 = 1;
 [e = . . _LATCbits 0 2 -> -> 1 `i `uc ]
-"484
-[; ;motors.c: 484:         while(!stepMade());
+"483
+[; ;motors.c: 483:         while(!stepMade());
 [e $U 340  ]
 [e :U 341 ]
 [e :U 340 ]
 [e $ ! != ( _stepMade ..  -> -> 0 `i `ui 341  ]
 [e :U 342 ]
-"487
-[; ;motors.c: 487:         LATCbits.LATC2 = 0;
+"486
+[; ;motors.c: 486:         LATCbits.LATC2 = 0;
 [e = . . _LATCbits 0 2 -> -> 0 `i `uc ]
-"490
-[; ;motors.c: 490:         while(!stepMade());
+"489
+[; ;motors.c: 489:         while(!stepMade());
 [e $U 343  ]
 [e :U 344 ]
 [e :U 343 ]
 [e $ ! != ( _stepMade ..  -> -> 0 `i `ui 344  ]
 [e :U 345 ]
-"491
-[; ;motors.c: 491:     }
+"490
+[; ;motors.c: 490:     }
 }
 [e :U 336 ]
-"470
-[; ;motors.c: 470:     while(!returnTherm() || PORTDbits.RD7){
+"469
+[; ;motors.c: 469:     while(!returnTherm() || PORTDbits.RD7){
 [e $ || ! != ( _returnTherm ..  -> -> 0 `i `ui != -> . . _PORTDbits 0 7 `i -> 0 `i 337  ]
 [e :U 338 ]
-"494
-[; ;motors.c: 494:     stopADC();
+"493
+[; ;motors.c: 493:     stopADC();
 [e ( _stopADC ..  ]
-"497
-[; ;motors.c: 497:     resetTherm();
+"496
+[; ;motors.c: 496:     resetTherm();
 [e ( _resetTherm ..  ]
-"500
-[; ;motors.c: 500:     T0CONbits.TMR0ON = 0;
+"499
+[; ;motors.c: 499:     T0CONbits.TMR0ON = 0;
 [e = . . _T0CONbits 0 5 -> -> 0 `i `uc ]
-"501
-[; ;motors.c: 501:     T2CONbits.TMR2ON = 0;
+"500
+[; ;motors.c: 500:     T2CONbits.TMR2ON = 0;
 [e = . . _T2CONbits 0 1 -> -> 0 `i `uc ]
-"503
-[; ;motors.c: 503:     TMR0 = 0;
+"502
+[; ;motors.c: 502:     TMR0 = 0;
 [e = _TMR0 -> -> 0 `i `us ]
-"504
-[; ;motors.c: 504:     TMR2 = 0;
+"503
+[; ;motors.c: 503:     TMR2 = 0;
 [e = _TMR2 -> -> 0 `i `uc ]
-"507
-[; ;motors.c: 507:     resetStep();
+"506
+[; ;motors.c: 506:     resetStep();
 [e ( _resetStep ..  ]
-"510
-[; ;motors.c: 510:     if(PORTDbits.RD7){
+"509
+[; ;motors.c: 509:     if(PORTDbits.RD7){
 [e $ ! != -> . . _PORTDbits 0 7 `i -> 0 `i 346  ]
 {
-"511
-[; ;motors.c: 511:         tm0Error = 2;
+"510
+[; ;motors.c: 510:         tm0Error = 2;
 [e = _tm0Error -> -> 2 `i `ui ]
-"512
-[; ;motors.c: 512:     }
+"511
+[; ;motors.c: 511:     }
 }
 [e :U 346 ]
-"514
-[; ;motors.c: 514:     return(tm0Error);
+"513
+[; ;motors.c: 513:     return(tm0Error);
 [e ) -> _tm0Error `uc ]
 [e $UE 335  ]
-"515
-[; ;motors.c: 515: }
+"514
+[; ;motors.c: 514: }
 [e :UE 335 ]
 }
-"521
-[; ;motors.c: 521: char liftArm(){
+"520
+[; ;motors.c: 520: char liftArm(){
 [v _liftArm `(uc ~T0 @X0 1 ef ]
 {
 [e :U _liftArm ]
 [f ]
-"524
-[; ;motors.c: 524:     setDirection(0, 2);
+"523
+[; ;motors.c: 523:     setDirection(0, 2);
 [e ( _setDirection (2 , -> -> 0 `i `uc -> -> 2 `i `uc ]
-"526
-[; ;motors.c: 526:     T2CONbits.TMR2ON = 1;
+"525
+[; ;motors.c: 525:     T2CONbits.TMR2ON = 1;
 [e = . . _T2CONbits 0 1 -> -> 1 `i `uc ]
-"528
-[; ;motors.c: 528:     tm0Error = 0;
+"527
+[; ;motors.c: 527:     tm0Error = 0;
 [e = _tm0Error -> -> 0 `i `ui ]
-"529
-[; ;motors.c: 529:     tm0Limit = 250;
+"528
+[; ;motors.c: 528:     tm0Limit = 250;
 [e = _tm0Limit -> -> 250 `i `uc ]
-"530
-[; ;motors.c: 530:     T0CONbits.TMR0ON = 1;
+"529
+[; ;motors.c: 529:     T0CONbits.TMR0ON = 1;
 [e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
-"534
-[; ;motors.c: 534:     while(!PORTEbits.RE2){
+"533
+[; ;motors.c: 533:     while(!PORTEbits.RE2){
 [e $U 348  ]
 [e :U 349 ]
 {
-"537
-[; ;motors.c: 537:         if(tm0Error){
+"536
+[; ;motors.c: 536:         if(tm0Error){
 [e $ ! != _tm0Error -> -> 0 `i `ui 351  ]
 {
-"539
-[; ;motors.c: 539:             LATCbits.LATC2 = 0;
+"538
+[; ;motors.c: 538:             LATCbits.LATC2 = 0;
 [e = . . _LATCbits 0 2 -> -> 0 `i `uc ]
-"540
-[; ;motors.c: 540:             tm0Error = 6;
+"539
+[; ;motors.c: 539:             tm0Error = 6;
 [e = _tm0Error -> -> 6 `i `ui ]
-"541
-[; ;motors.c: 541:             break;
+"540
+[; ;motors.c: 540:             break;
 [e $U 350  ]
-"542
-[; ;motors.c: 542:         }
+"541
+[; ;motors.c: 541:         }
 }
 [e :U 351 ]
-"546
-[; ;motors.c: 546:         LATCbits.LATC2 = 1;
+"545
+[; ;motors.c: 545:         LATCbits.LATC2 = 1;
 [e = . . _LATCbits 0 2 -> -> 1 `i `uc ]
-"549
-[; ;motors.c: 549:         while(!stepMade());
+"548
+[; ;motors.c: 548:         while(!stepMade());
 [e $U 352  ]
 [e :U 353 ]
 [e :U 352 ]
 [e $ ! != ( _stepMade ..  -> -> 0 `i `ui 353  ]
 [e :U 354 ]
-"552
-[; ;motors.c: 552:         LATCbits.LATC2 = 0;
+"551
+[; ;motors.c: 551:         LATCbits.LATC2 = 0;
 [e = . . _LATCbits 0 2 -> -> 0 `i `uc ]
-"555
-[; ;motors.c: 555:         while(!stepMade());
+"554
+[; ;motors.c: 554:         while(!stepMade());
 [e $U 355  ]
 [e :U 356 ]
 [e :U 355 ]
 [e $ ! != ( _stepMade ..  -> -> 0 `i `ui 356  ]
 [e :U 357 ]
-"556
-[; ;motors.c: 556:     }
+"555
+[; ;motors.c: 555:     }
 }
 [e :U 348 ]
-"534
-[; ;motors.c: 534:     while(!PORTEbits.RE2){
+"533
+[; ;motors.c: 533:     while(!PORTEbits.RE2){
 [e $ ! != -> . . _PORTEbits 0 2 `i -> 0 `i 349  ]
 [e :U 350 ]
-"559
-[; ;motors.c: 559:     T0CONbits.TMR0ON = 0;
+"558
+[; ;motors.c: 558:     T0CONbits.TMR0ON = 0;
 [e = . . _T0CONbits 0 5 -> -> 0 `i `uc ]
-"560
-[; ;motors.c: 560:     T2CONbits.TMR2ON = 0;
+"559
+[; ;motors.c: 559:     T2CONbits.TMR2ON = 0;
 [e = . . _T2CONbits 0 1 -> -> 0 `i `uc ]
-"562
-[; ;motors.c: 562:     TMR0 = 0;
+"561
+[; ;motors.c: 561:     TMR0 = 0;
 [e = _TMR0 -> -> 0 `i `us ]
-"563
-[; ;motors.c: 563:     TMR2 = 0;
+"562
+[; ;motors.c: 562:     TMR2 = 0;
 [e = _TMR2 -> -> 0 `i `uc ]
-"566
-[; ;motors.c: 566:     resetStep();
+"565
+[; ;motors.c: 565:     resetStep();
 [e ( _resetStep ..  ]
-"568
-[; ;motors.c: 568:     return(tm0Error);
+"567
+[; ;motors.c: 567:     return(tm0Error);
 [e ) -> _tm0Error `uc ]
 [e $UE 347  ]
-"569
-[; ;motors.c: 569: }
+"568
+[; ;motors.c: 568: }
 [e :UE 347 ]
 }
-"575
-[; ;motors.c: 575: void rotateObj(unsigned char rotAngle){
+"574
+[; ;motors.c: 574: void rotateObj(unsigned char rotAngle){
 [v _rotateObj `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _rotateObj ]
 [v _rotAngle `uc ~T0 @X0 1 r1 ]
 [f ]
-"576
-[; ;motors.c: 576:     static const float stepAngle = 0.08789;
+"575
+[; ;motors.c: 575:     static const float stepAngle = 0.08789;
 [v F2236 `Cf ~T0 @X0 1 s stepAngle ]
 [i F2236
 -> .0.08789 `f
 ]
-"577
-[; ;motors.c: 577:     static char rotSequence[] = {0b1001, 0b0011, 0b0110, 0b1100};
+"576
+[; ;motors.c: 576:     static char rotSequence[] = {0b1001, 0b0011, 0b0110, 0b1100};
 [v F2237 `uc ~T0 @X0 -> 4 `i s rotSequence ]
 [i F2237
 :U ..
@@ -1866,137 +1866,137 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 12 `i `uc
 ..
 ]
-"578
-[; ;motors.c: 578:     unsigned int i;
+"577
+[; ;motors.c: 577:     unsigned int i;
 [v _i `ui ~T0 @X0 1 a ]
-"579
-[; ;motors.c: 579:     int totStep = rotAngle/stepAngle;
+"578
+[; ;motors.c: 578:     int totStep = rotAngle/stepAngle;
 [v _totStep `i ~T0 @X0 1 a ]
 [e = _totStep -> / -> -> _rotAngle `i `f F2236 `i ]
-"582
-[; ;motors.c: 582:     for(i = 0; i < totStep; i++){
+"581
+[; ;motors.c: 581:     for(i = 0; i < totStep; i++){
 {
 [e = _i -> -> 0 `i `ui ]
 [e $U 362  ]
 [e :U 359 ]
 {
-"584
-[; ;motors.c: 584:         LATD &= 0xC3;
+"583
+[; ;motors.c: 583:         LATD &= 0xC3;
 [e =& _LATD -> -> 195 `i `Vuc ]
-"586
-[; ;motors.c: 586:         LATD |= rotSequence[i%4] << 2;
+"585
+[; ;motors.c: 585:         LATD |= rotSequence[i%4] << 2;
 [e =| _LATD -> << -> *U + &U F2237 * -> % _i -> -> 4 `i `ui `ux -> -> # *U &U F2237 `ui `ux `i -> 2 `i `Vuc ]
-"590
-[; ;motors.c: 590:         T2CONbits.TMR2ON = 1;
+"588
+[; ;motors.c: 588:         T2CONbits.TMR2ON = 1;
 [e = . . _T2CONbits 0 1 -> -> 1 `i `uc ]
-"591
-[; ;motors.c: 591:         while(!stepMade());
+"589
+[; ;motors.c: 589:         while(!stepMade());
 [e $U 363  ]
 [e :U 364 ]
 [e :U 363 ]
 [e $ ! != ( _stepMade ..  -> -> 0 `i `ui 364  ]
 [e :U 365 ]
-"592
-[; ;motors.c: 592:         T2CONbits.TMR2ON = 1;
+"590
+[; ;motors.c: 590:         T2CONbits.TMR2ON = 1;
 [e = . . _T2CONbits 0 1 -> -> 1 `i `uc ]
-"593
-[; ;motors.c: 593:         TMR2 = 0;
+"591
+[; ;motors.c: 591:         TMR2 = 0;
 [e = _TMR2 -> -> 0 `i `uc ]
-"594
-[; ;motors.c: 594:     }
+"592
+[; ;motors.c: 592:     }
 }
 [e ++ _i -> -> 1 `i `ui ]
 [e :U 362 ]
 [e $ < _i -> _totStep `ui 359  ]
 [e :U 360 ]
 }
-"595
-[; ;motors.c: 595: }
+"593
+[; ;motors.c: 593: }
 [e :UE 358 ]
 }
-"600
-[; ;motors.c: 600: void pickObject(){
+"598
+[; ;motors.c: 598: void pickObject(){
 [v _pickObject `(v ~T0 @X0 1 ef ]
 {
 [e :U _pickObject ]
 [f ]
-"601
-[; ;motors.c: 601:     LATDbits.LATD1 = 1;
+"599
+[; ;motors.c: 599:     LATDbits.LATD1 = 1;
 [e = . . _LATDbits 0 1 -> -> 1 `i `uc ]
-"605
-[; ;motors.c: 605:     T2CONbits.TMR2ON = 1;
+"602
+[; ;motors.c: 602:     T2CONbits.TMR2ON = 1;
 [e = . . _T2CONbits 0 1 -> -> 1 `i `uc ]
-"606
-[; ;motors.c: 606:     while(!stepMade());
+"603
+[; ;motors.c: 603:     while(!stepMade());
 [e $U 367  ]
 [e :U 368 ]
 [e :U 367 ]
 [e $ ! != ( _stepMade ..  -> -> 0 `i `ui 368  ]
 [e :U 369 ]
-"607
-[; ;motors.c: 607:     T2CONbits.TMR2ON = 1;
+"604
+[; ;motors.c: 604:     T2CONbits.TMR2ON = 1;
 [e = . . _T2CONbits 0 1 -> -> 1 `i `uc ]
-"608
-[; ;motors.c: 608:     TMR2 = 0;
+"605
+[; ;motors.c: 605:     TMR2 = 0;
 [e = _TMR2 -> -> 0 `i `uc ]
-"609
-[; ;motors.c: 609: }
+"606
+[; ;motors.c: 606: }
 [e :UE 366 ]
 }
-"614
-[; ;motors.c: 614: void releaseObj(){
+"611
+[; ;motors.c: 611: void releaseObj(){
 [v _releaseObj `(v ~T0 @X0 1 ef ]
 {
 [e :U _releaseObj ]
 [f ]
-"615
-[; ;motors.c: 615:     LATDbits.LATD1 = 0;
+"612
+[; ;motors.c: 612:     LATDbits.LATD1 = 0;
 [e = . . _LATDbits 0 1 -> -> 0 `i `uc ]
-"619
-[; ;motors.c: 619:     T2CONbits.TMR2ON = 1;
+"615
+[; ;motors.c: 615:     T2CONbits.TMR2ON = 1;
 [e = . . _T2CONbits 0 1 -> -> 1 `i `uc ]
-"620
-[; ;motors.c: 620:     while(!stepMade());
+"616
+[; ;motors.c: 616:     while(!stepMade());
 [e $U 371  ]
 [e :U 372 ]
 [e :U 371 ]
 [e $ ! != ( _stepMade ..  -> -> 0 `i `ui 372  ]
 [e :U 373 ]
-"621
-[; ;motors.c: 621:     T2CONbits.TMR2ON = 1;
+"617
+[; ;motors.c: 617:     T2CONbits.TMR2ON = 1;
 [e = . . _T2CONbits 0 1 -> -> 1 `i `uc ]
-"622
-[; ;motors.c: 622:     TMR2 = 0;
+"618
+[; ;motors.c: 618:     TMR2 = 0;
 [e = _TMR2 -> -> 0 `i `uc ]
-"623
-[; ;motors.c: 623: }
+"619
+[; ;motors.c: 619: }
 [e :UE 370 ]
 }
-"629
-[; ;motors.c: 629: void abortAll(){
+"625
+[; ;motors.c: 625: void abortAll(){
 [v _abortAll `(v ~T0 @X0 1 ef ]
 {
 [e :U _abortAll ]
 [f ]
-"631
-[; ;motors.c: 631:     enableMotor(1, 0);
+"627
+[; ;motors.c: 627:     enableMotor(1, 0);
 [e ( _enableMotor (2 , -> -> 1 `i `uc -> -> 0 `i `uc ]
-"632
-[; ;motors.c: 632:     enableMotor(1, 1);
+"628
+[; ;motors.c: 628:     enableMotor(1, 1);
 [e ( _enableMotor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-"633
-[; ;motors.c: 633:     enableMotor(1, 2);
+"629
+[; ;motors.c: 629:     enableMotor(1, 2);
 [e ( _enableMotor (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
-"635
-[; ;motors.c: 635:     printError(7);
+"631
+[; ;motors.c: 631:     printError(7);
 [e ( _printError (1 -> -> 7 `i `uc ]
-"636
-[; ;motors.c: 636:     while(1);
+"632
+[; ;motors.c: 632:     while(1);
 [e :U 376 ]
 [e :U 375 ]
 [e $U 376  ]
 [e :U 377 ]
-"637
-[; ;motors.c: 637: }
+"633
+[; ;motors.c: 633: }
 [e :UE 374 ]
 }

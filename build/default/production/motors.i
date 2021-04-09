@@ -3968,9 +3968,8 @@ char executeData(void);
 static unsigned int tm0Error = 0;
 static unsigned char tm0Limit = 0;
 
-
-static unsigned int maxX = 1000;
-static unsigned int maxY = 1000;
+static unsigned int maxX = 250;
+static unsigned int maxY = 250;
 
 
 
@@ -4400,7 +4399,7 @@ char touchObject(){
 
     return(tm0Error);
 }
-# 455 "motors.c"
+# 454 "motors.c"
 char touchTherm(){
 
 
@@ -4535,7 +4534,6 @@ void rotateObj(unsigned char rotAngle){
         LATD |= rotSequence[i%4] << 2;
 
 
-
         T2CONbits.TMR2ON = 1;
         while(!stepMade());
         T2CONbits.TMR2ON = 1;
@@ -4550,7 +4548,6 @@ void pickObject(){
     LATDbits.LATD1 = 1;
 
 
-
     T2CONbits.TMR2ON = 1;
     while(!stepMade());
     T2CONbits.TMR2ON = 1;
@@ -4562,7 +4559,6 @@ void pickObject(){
 
 void releaseObj(){
     LATDbits.LATD1 = 0;
-
 
 
     T2CONbits.TMR2ON = 1;

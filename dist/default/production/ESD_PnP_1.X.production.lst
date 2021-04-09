@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.20 build 20200408173844 
-                                                                                               Wed Mar 31 10:44:51 2021
+                                                                                               Fri Apr 09 10:02:36 2021
 
 Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1 
      1                           	processor	18F452
@@ -133,10 +133,10 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
    119                           	callstack 0
    120                           
    121                           ;initializer for _maxY
-   122  002686  03E8               	dw	1000
+   122  002686  00FA               	dw	250
    123                           
    124                           ;initializer for _maxX
-   125  002688  03E8               	dw	1000
+   125  002688  00FA               	dw	250
    126                           
    127                           ;initializer for storeData@mexLength
    128  00268A  05                 	db	5
@@ -2224,7 +2224,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   2204                           
   2205 ;; *************** function _resetPosition *****************
   2206 ;; Defined at:
-  2207 ;;		line 158 in file "motors.c"
+  2207 ;;		line 157 in file "motors.c"
   2208 ;; Parameters:    Size  Location     Type
   2209 ;;		None
   2210 ;; Auto vars:     Size  Location     Type
@@ -2266,112 +2266,112 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   2246                           	callstack 0
   2247  0011EE  FFFF               	dw	65535	; assembler added errata NOP
   2248  0011F0                     
-  2249                           ;motors.c: 160:     setStep(0, 0);
+  2249                           ;motors.c: 159:     setStep(0, 0);
   2250  0011F0  0E00               	movlw	0
   2251  0011F2  6E12               	movwf	setStep@motor^0,c
   2252  0011F4  0E00               	movlw	0
   2253  0011F6  EC73  F00F         	call	_setStep
   2254                           
-  2255                           ;motors.c: 161:     setStep(1, 0);
+  2255                           ;motors.c: 160:     setStep(1, 0);
   2256  0011FA  0E00               	movlw	0
   2257  0011FC  6E12               	movwf	setStep@motor^0,c
   2258  0011FE  0E01               	movlw	1
   2259  001200  EC73  F00F         	call	_setStep
   2260                           
-  2261                           ;motors.c: 162:     setStep(2, 0);
+  2261                           ;motors.c: 161:     setStep(2, 0);
   2262  001204  0E00               	movlw	0
   2263  001206  6E12               	movwf	setStep@motor^0,c
   2264  001208  0E02               	movlw	2
   2265  00120A  EC73  F00F         	call	_setStep
   2266                           
-  2267                           ;motors.c: 164:     setDirection(0, 0);
+  2267                           ;motors.c: 163:     setDirection(0, 0);
   2268  00120E  0E00               	movlw	0
   2269  001210  6E12               	movwf	setDirection@motor^0,c
   2270  001212  0E00               	movlw	0
   2271  001214  ECED  F010         	call	_setDirection
   2272                           
-  2273                           ;motors.c: 165:     setDirection(0, 1);
+  2273                           ;motors.c: 164:     setDirection(0, 1);
   2274  001218  0E01               	movlw	1
   2275  00121A  6E12               	movwf	setDirection@motor^0,c
   2276  00121C  0E00               	movlw	0
   2277  00121E  ECED  F010         	call	_setDirection
   2278                           
-  2279                           ;motors.c: 166:     setDirection(0, 2);
+  2279                           ;motors.c: 165:     setDirection(0, 2);
   2280  001222  0E02               	movlw	2
   2281  001224  6E12               	movwf	setDirection@motor^0,c
   2282  001226  0E00               	movlw	0
   2283  001228  ECED  F010         	call	_setDirection
   2284                           
-  2285                           ;motors.c: 168:     setDecay(1, 0);
+  2285                           ;motors.c: 167:     setDecay(1, 0);
   2286  00122C  0E00               	movlw	0
   2287  00122E  6E12               	movwf	setDecay@motor^0,c
   2288  001230  0E01               	movlw	1
   2289  001232  EC79  F010         	call	_setDecay
   2290                           
-  2291                           ;motors.c: 169:     setDecay(1, 1);
+  2291                           ;motors.c: 168:     setDecay(1, 1);
   2292  001236  0E01               	movlw	1
   2293  001238  6E12               	movwf	setDecay@motor^0,c
   2294  00123A  0E01               	movlw	1
   2295  00123C  EC79  F010         	call	_setDecay
   2296                           
-  2297                           ;motors.c: 170:     setDecay(1, 2);
+  2297                           ;motors.c: 169:     setDecay(1, 2);
   2298  001240  0E02               	movlw	2
   2299  001242  6E12               	movwf	setDecay@motor^0,c
   2300  001244  0E01               	movlw	1
   2301  001246  EC79  F010         	call	_setDecay
   2302                           
-  2303                           ;motors.c: 172:     enableMotor(0, 0);
+  2303                           ;motors.c: 171:     enableMotor(0, 0);
   2304  00124A  0E00               	movlw	0
   2305  00124C  6E12               	movwf	enableMotor@motor^0,c
   2306  00124E  0E00               	movlw	0
   2307  001250  ECB3  F010         	call	_enableMotor
   2308                           
-  2309                           ;motors.c: 173:     enableMotor(0, 1);
+  2309                           ;motors.c: 172:     enableMotor(0, 1);
   2310  001254  0E01               	movlw	1
   2311  001256  6E12               	movwf	enableMotor@motor^0,c
   2312  001258  0E00               	movlw	0
   2313  00125A  ECB3  F010         	call	_enableMotor
   2314                           
-  2315                           ;motors.c: 174:     enableMotor(0, 2);
+  2315                           ;motors.c: 173:     enableMotor(0, 2);
   2316  00125E  0E02               	movlw	2
   2317  001260  6E12               	movwf	enableMotor@motor^0,c
   2318  001262  0E00               	movlw	0
   2319  001264  ECB3  F010         	call	_enableMotor
   2320  001268                     
-  2321                           ;motors.c: 178:     unsigned char keepMovingX = 1;
+  2321                           ;motors.c: 177:     unsigned char keepMovingX = 1;
   2322  001268  0E01               	movlw	1
   2323  00126A  6E16               	movwf	resetPosition@keepMovingX^0,c
   2324  00126C                     
-  2325                           ;motors.c: 179:     unsigned char keepMovingY = 1;
+  2325                           ;motors.c: 178:     unsigned char keepMovingY = 1;
   2326  00126C  0E01               	movlw	1
   2327  00126E  6E17               	movwf	resetPosition@keepMovingY^0,c
   2328  001270                     
-  2329                           ;motors.c: 180:     unsigned char keepMovingZ = 1;
+  2329                           ;motors.c: 179:     unsigned char keepMovingZ = 1;
   2330  001270  0E01               	movlw	1
   2331  001272  6E18               	movwf	resetPosition@keepMovingZ^0,c
   2332  001274                     
-  2333                           ;motors.c: 183:     T2CONbits.TMR2ON = 1;
+  2333                           ;motors.c: 182:     T2CONbits.TMR2ON = 1;
   2334  001274  84CA               	bsf	202,2,c	;volatile
   2335  001276                     
-  2336                           ;motors.c: 185:     tm0Error = 0;
+  2336                           ;motors.c: 184:     tm0Error = 0;
   2337  001276  0E00               	movlw	0
   2338  001278  6E5C               	movwf	(_tm0Error+1)^0,c
   2339  00127A  0E00               	movlw	0
   2340  00127C  6E5B               	movwf	_tm0Error^0,c
   2341  00127E                     
-  2342                           ;motors.c: 186:     tm0Limit = 250;
+  2342                           ;motors.c: 185:     tm0Limit = 250;
   2343  00127E  0EFA               	movlw	250
   2344  001280  6E68               	movwf	_tm0Limit^0,c
   2345  001282                     
-  2346                           ;motors.c: 187:     T0CONbits.TMR0ON = 1;
+  2346                           ;motors.c: 186:     T0CONbits.TMR0ON = 1;
   2347  001282  8ED5               	bsf	213,7,c	;volatile
   2348                           
-  2349                           ;motors.c: 189:     while(keepMovingX || keepMovingY || keepMovingZ){
+  2349                           ;motors.c: 188:     while(keepMovingX || keepMovingY || keepMovingZ){
   2350  001284  EFC5  F009         	goto	l4157
   2351  001288                     l4135:
   2352  001288  FFFF               	dw	65535	; assembler added errata NOP
   2353                           
-  2354                           ;motors.c: 192:         if(tm0Error){
+  2354                           ;motors.c: 191:         if(tm0Error){
   2355  00128A  505B               	movf	_tm0Error^0,w,c
   2356  00128C  105C               	iorwf	(_tm0Error+1)^0,w,c
   2357  00128E  B4D8               	btfsc	status,2,c
@@ -2383,27 +2383,27 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   2363  00129E                     u3550:
   2364  00129E  FFFF               	dw	65535	; assembler added errata NOP
   2365  0012A0                     
-  2366                           ;motors.c: 194:             LATAbits.LATA2 = 0;
+  2366                           ;motors.c: 193:             LATAbits.LATA2 = 0;
   2367  0012A0  9489               	bcf	137,2,c	;volatile
   2368                           
-  2369                           ;motors.c: 195:             LATBbits.LATB4 = 0;
+  2369                           ;motors.c: 194:             LATBbits.LATB4 = 0;
   2370  0012A2  988A               	bcf	138,4,c	;volatile
   2371                           
-  2372                           ;motors.c: 196:             LATCbits.LATC2 = 0;
+  2372                           ;motors.c: 195:             LATCbits.LATC2 = 0;
   2373  0012A4  948B               	bcf	139,2,c	;volatile
   2374  0012A6                     
-  2375                           ;motors.c: 198:             tm0Error = 3;
+  2375                           ;motors.c: 197:             tm0Error = 3;
   2376  0012A6  0E00               	movlw	0
   2377  0012A8  6E5C               	movwf	(_tm0Error+1)^0,c
   2378  0012AA  0E03               	movlw	3
   2379  0012AC  6E5B               	movwf	_tm0Error^0,c
   2380                           
-  2381                           ;motors.c: 199:             break;
+  2381                           ;motors.c: 198:             break;
   2382  0012AE  EFE3  F009         	goto	l118
   2383  0012B2                     l117:
   2384  0012B2  FFFF               	dw	65535	; assembler added errata NOP
   2385                           
-  2386                           ;motors.c: 206:         if(PORTEbits.RE0 || !keepMovingX){
+  2386                           ;motors.c: 205:         if(PORTEbits.RE0 || !keepMovingX){
   2387  0012B4  B084               	btfsc	132,0,c	;volatile
   2388  0012B6  EF5F  F009         	goto	u3561
   2389  0012BA  EF62  F009         	goto	u3560
@@ -2423,21 +2423,21 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   2403  0012D8                     l4143:
   2404  0012D8  FFFF               	dw	65535	; assembler added errata NOP
   2405                           
-  2406                           ;motors.c: 208:             keepMovingX = 0;
+  2406                           ;motors.c: 207:             keepMovingX = 0;
   2407  0012DA  0E00               	movlw	0
   2408  0012DC  6E16               	movwf	resetPosition@keepMovingX^0,c
   2409                           
-  2410                           ;motors.c: 209:         }else{
+  2410                           ;motors.c: 208:         }else{
   2411  0012DE  EF73  F009         	goto	l122
   2412  0012E2                     l119:
   2413  0012E2  FFFF               	dw	65535	; assembler added errata NOP
   2414                           
-  2415                           ;motors.c: 211:             LATAbits.LATA2 = 1;
+  2415                           ;motors.c: 210:             LATAbits.LATA2 = 1;
   2416  0012E4  8489               	bsf	137,2,c	;volatile
   2417  0012E6                     l122:
   2418  0012E6  FFFF               	dw	65535	; assembler added errata NOP
   2419                           
-  2420                           ;motors.c: 215:         if(PORTEbits.RE1 || !keepMovingY){
+  2420                           ;motors.c: 214:         if(PORTEbits.RE1 || !keepMovingY){
   2421  0012E8  B284               	btfsc	132,1,c	;volatile
   2422  0012EA  EF79  F009         	goto	u3581
   2423  0012EE  EF7C  F009         	goto	u3580
@@ -2457,21 +2457,21 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   2437  00130C                     l4147:
   2438  00130C  FFFF               	dw	65535	; assembler added errata NOP
   2439                           
-  2440                           ;motors.c: 217:             keepMovingY = 0;
+  2440                           ;motors.c: 216:             keepMovingY = 0;
   2441  00130E  0E00               	movlw	0
   2442  001310  6E17               	movwf	resetPosition@keepMovingY^0,c
   2443                           
-  2444                           ;motors.c: 218:         }else{
+  2444                           ;motors.c: 217:         }else{
   2445  001312  EF8D  F009         	goto	l126
   2446  001316                     l123:
   2447  001316  FFFF               	dw	65535	; assembler added errata NOP
   2448                           
-  2449                           ;motors.c: 220:             LATBbits.LATB4 = 1;
+  2449                           ;motors.c: 219:             LATBbits.LATB4 = 1;
   2450  001318  888A               	bsf	138,4,c	;volatile
   2451  00131A                     l126:
   2452  00131A  FFFF               	dw	65535	; assembler added errata NOP
   2453                           
-  2454                           ;motors.c: 224:         if(PORTEbits.RE2 || !keepMovingZ){
+  2454                           ;motors.c: 223:         if(PORTEbits.RE2 || !keepMovingZ){
   2455  00131C  B484               	btfsc	132,2,c	;volatile
   2456  00131E  EF93  F009         	goto	u3601
   2457  001322  EF96  F009         	goto	u3600
@@ -2491,16 +2491,16 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   2471  001340                     l4151:
   2472  001340  FFFF               	dw	65535	; assembler added errata NOP
   2473                           
-  2474                           ;motors.c: 226:             keepMovingZ = 0;
+  2474                           ;motors.c: 225:             keepMovingZ = 0;
   2475  001342  0E00               	movlw	0
   2476  001344  6E18               	movwf	resetPosition@keepMovingZ^0,c
   2477                           
-  2478                           ;motors.c: 227:         }else{
+  2478                           ;motors.c: 226:         }else{
   2479  001346  EFA7  F009         	goto	l4153
   2480  00134A                     l127:
   2481  00134A  FFFF               	dw	65535	; assembler added errata NOP
   2482                           
-  2483                           ;motors.c: 229:             LATCbits.LATC2 = 1;
+  2483                           ;motors.c: 228:             LATCbits.LATC2 = 1;
   2484  00134C  848B               	bsf	139,2,c	;volatile
   2485  00134E                     l4153:
   2486  00134E  FFFF               	dw	65535	; assembler added errata NOP
@@ -2516,13 +2516,13 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   2496  001368                     u3620:
   2497  001368  FFFF               	dw	65535	; assembler added errata NOP
   2498  00136A                     
-  2499                           ;motors.c: 236:         LATAbits.LATA2 = 0;
+  2499                           ;motors.c: 235:         LATAbits.LATA2 = 0;
   2500  00136A  9489               	bcf	137,2,c	;volatile
   2501                           
-  2502                           ;motors.c: 237:         LATBbits.LATB4 = 0;
+  2502                           ;motors.c: 236:         LATBbits.LATB4 = 0;
   2503  00136C  988A               	bcf	138,4,c	;volatile
   2504                           
-  2505                           ;motors.c: 238:         LATCbits.LATC2 = 0;
+  2505                           ;motors.c: 237:         LATCbits.LATC2 = 0;
   2506  00136E  948B               	bcf	139,2,c	;volatile
   2507  001370                     l4155:
   2508  001370  FFFF               	dw	65535	; assembler added errata NOP
@@ -2539,7 +2539,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   2519  00138A                     l4157:
   2520  00138A  FFFF               	dw	65535	; assembler added errata NOP
   2521                           
-  2522                           ;motors.c: 189:     while(keepMovingX || keepMovingY || keepMovingZ){
+  2522                           ;motors.c: 188:     while(keepMovingX || keepMovingY || keepMovingZ){
   2523  00138C  5016               	movf	resetPosition@keepMovingX^0,w,c
   2524  00138E  A4D8               	btfss	status,2,c
   2525  001390  EFCC  F009         	goto	u3641
@@ -2569,26 +2569,26 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   2549  0013C6                     l118:
   2550  0013C6  FFFF               	dw	65535	; assembler added errata NOP
   2551                           
-  2552                           ;motors.c: 245:     T0CONbits.TMR0ON = 0;
+  2552                           ;motors.c: 244:     T0CONbits.TMR0ON = 0;
   2553  0013C8  9ED5               	bcf	213,7,c	;volatile
   2554                           
-  2555                           ;motors.c: 246:     T2CONbits.TMR2ON = 0;
+  2555                           ;motors.c: 245:     T2CONbits.TMR2ON = 0;
   2556  0013CA  94CA               	bcf	202,2,c	;volatile
   2557  0013CC                     
-  2558                           ;motors.c: 248:     TMR0 = 0;
+  2558                           ;motors.c: 247:     TMR0 = 0;
   2559  0013CC  0E00               	movlw	0
   2560  0013CE  6ED7               	movwf	215,c	;volatile
   2561  0013D0  0E00               	movlw	0
   2562  0013D2  6ED6               	movwf	214,c	;volatile
   2563                           
-  2564                           ;motors.c: 249:     TMR2 = 0;
+  2564                           ;motors.c: 248:     TMR2 = 0;
   2565  0013D4  0E00               	movlw	0
   2566  0013D6  6ECC               	movwf	204,c	;volatile
   2567  0013D8                     
-  2568                           ;motors.c: 252:     resetStep();
+  2568                           ;motors.c: 251:     resetStep();
   2569  0013D8  EC13  F013         	call	_resetStep	;wreg free
   2570  0013DC                     
-  2571                           ;motors.c: 255:     return(tm0Error);
+  2571                           ;motors.c: 254:     return(tm0Error);
   2572  0013DC  505B               	movf	_tm0Error^0,w,c
   2573  0013DE  0012               	return		;funcret
   2574  0013E0  FFFF               	dw	65535	; errata NOP
@@ -2597,7 +2597,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   2577                           
   2578 ;; *************** function _setStep *****************
   2579 ;; Defined at:
-  2580 ;;		line 67 in file "motors.c"
+  2580 ;;		line 66 in file "motors.c"
   2581 ;; Parameters:    Size  Location     Type
   2582 ;;  step            1    wreg     unsigned char 
   2583 ;;  motor           1   17[COMRAM] unsigned char 
@@ -2637,12 +2637,12 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   2617                           ;setStep@step stored from wreg
   2618  001EE8  6E15               	movwf	setStep@step^0,c
   2619  001EEA                     
-  2620                           ;motors.c: 68:     switch(motor){
+  2620                           ;motors.c: 67:     switch(motor){
   2621  001EEA  EFC0  F00F         	goto	l3787
   2622  001EEE                     l3779:
   2623  001EEE  FFFF               	dw	65535	; assembler added errata NOP
   2624                           
-  2625                           ;motors.c: 71:             LATAbits.LATA5 = (step & 0x01);
+  2625                           ;motors.c: 70:             LATAbits.LATA5 = (step & 0x01);
   2626  001EF0  C015  F013         	movff	setStep@step,??_setStep
   2627  001EF4  0E01               	movlw	1
   2628  001EF6  1613               	andwf	??_setStep^0,f,c
@@ -2654,7 +2654,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   2634  001F02  1813               	xorwf	??_setStep^0,w,c
   2635  001F04  6E89               	movwf	137,c	;volatile
   2636                           
-  2637                           ;motors.c: 73:             LATBbits.LATB0 = (step & 0x02);
+  2637                           ;motors.c: 72:             LATBbits.LATB0 = (step & 0x02);
   2638  001F06  C015  F013         	movff	setStep@step,??_setStep
   2639  001F0A  0E02               	movlw	2
   2640  001F0C  1613               	andwf	??_setStep^0,f,c
@@ -2664,12 +2664,12 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   2644  001F14  1813               	xorwf	??_setStep^0,w,c
   2645  001F16  6E8A               	movwf	138,c	;volatile
   2646                           
-  2647                           ;motors.c: 74:             break;
+  2647                           ;motors.c: 73:             break;
   2648  001F18  EFDB  F00F         	goto	l85
   2649  001F1C                     l3781:
   2650  001F1C  FFFF               	dw	65535	; assembler added errata NOP
   2651                           
-  2652                           ;motors.c: 76:             LATBbits.LATB6 = (step & 0x01);
+  2652                           ;motors.c: 75:             LATBbits.LATB6 = (step & 0x01);
   2653  001F1E  C015  F013         	movff	setStep@step,??_setStep
   2654  001F22  0E01               	movlw	1
   2655  001F24  1613               	andwf	??_setStep^0,f,c
@@ -2682,7 +2682,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   2662  001F32  1813               	xorwf	??_setStep^0,w,c
   2663  001F34  6E8A               	movwf	138,c	;volatile
   2664                           
-  2665                           ;motors.c: 77:             LATBbits.LATB7 = (step & 0x02);
+  2665                           ;motors.c: 76:             LATBbits.LATB7 = (step & 0x02);
   2666  001F36  C015  F013         	movff	setStep@step,??_setStep
   2667  001F3A  0E02               	movlw	2
   2668  001F3C  1613               	andwf	??_setStep^0,f,c
@@ -2694,12 +2694,12 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   2674  001F48  1813               	xorwf	??_setStep^0,w,c
   2675  001F4A  6E8A               	movwf	138,c	;volatile
   2676                           
-  2677                           ;motors.c: 78:             break;
+  2677                           ;motors.c: 77:             break;
   2678  001F4C  EFDB  F00F         	goto	l85
   2679  001F50                     l3783:
   2680  001F50  FFFF               	dw	65535	; assembler added errata NOP
   2681                           
-  2682                           ;motors.c: 80:             LATCbits.LATC4 = (step & 0x01);
+  2682                           ;motors.c: 79:             LATCbits.LATC4 = (step & 0x01);
   2683  001F52  C015  F013         	movff	setStep@step,??_setStep
   2684  001F56  0E01               	movlw	1
   2685  001F58  1613               	andwf	??_setStep^0,f,c
@@ -2710,7 +2710,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   2690  001F62  1813               	xorwf	??_setStep^0,w,c
   2691  001F64  6E8B               	movwf	139,c	;volatile
   2692                           
-  2693                           ;motors.c: 81:             LATCbits.LATC5 = (step & 0x02);
+  2693                           ;motors.c: 80:             LATCbits.LATC5 = (step & 0x02);
   2694  001F66  C015  F013         	movff	setStep@step,??_setStep
   2695  001F6A  0E02               	movlw	2
   2696  001F6C  1613               	andwf	??_setStep^0,f,c
@@ -2722,7 +2722,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   2702  001F78  1813               	xorwf	??_setStep^0,w,c
   2703  001F7A  6E8B               	movwf	139,c	;volatile
   2704                           
-  2705                           ;motors.c: 82:             break;
+  2705                           ;motors.c: 81:             break;
   2706  001F7C  EFDB  F00F         	goto	l85
   2707  001F80                     l3787:
   2708  001F80  FFFF               	dw	65535	; assembler added errata NOP
@@ -2772,7 +2772,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   2751                           
   2752 ;; *************** function _setDecay *****************
   2753 ;; Defined at:
-  2754 ;;		line 136 in file "motors.c"
+  2754 ;;		line 135 in file "motors.c"
   2755 ;; Parameters:    Size  Location     Type
   2756 ;;  decay           1    wreg     unsigned char 
   2757 ;;  motor           1   17[COMRAM] unsigned char 
@@ -2812,12 +2812,12 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   2791                           ;setDecay@decay stored from wreg
   2792  0020F4  6E15               	movwf	setDecay@decay^0,c
   2793  0020F6                     
-  2794                           ;motors.c: 137:     switch(motor){
+  2794                           ;motors.c: 136:     switch(motor){
   2795  0020F6  EF95  F010         	goto	l3819
   2796  0020FA                     l3811:
   2797  0020FA  FFFF               	dw	65535	; assembler added errata NOP
   2798                           
-  2799                           ;motors.c: 139:             LATBbits.LATB2 = decay;
+  2799                           ;motors.c: 138:             LATBbits.LATB2 = decay;
   2800  0020FC  B015               	btfsc	setDecay@decay^0,0,c
   2801  0020FE  D002               	bra	u3115
   2802  002100  948A               	bcf	138,2,c	;volatile
@@ -2826,12 +2826,12 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   2805  002104  848A               	bsf	138,2,c	;volatile
   2806  002106                     u3116:
   2807                           
-  2808                           ;motors.c: 140:             break;
+  2808                           ;motors.c: 139:             break;
   2809  002106  EFB0  F010         	goto	l112
   2810  00210A                     l3813:
   2811  00210A  FFFF               	dw	65535	; assembler added errata NOP
   2812                           
-  2813                           ;motors.c: 142:             LATCbits.LATC0 = decay;
+  2813                           ;motors.c: 141:             LATCbits.LATC0 = decay;
   2814  00210C  B015               	btfsc	setDecay@decay^0,0,c
   2815  00210E  D002               	bra	u3125
   2816  002110  908B               	bcf	139,0,c	;volatile
@@ -2840,12 +2840,12 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   2819  002114  808B               	bsf	139,0,c	;volatile
   2820  002116                     u3126:
   2821                           
-  2822                           ;motors.c: 143:             break;
+  2822                           ;motors.c: 142:             break;
   2823  002116  EFB0  F010         	goto	l112
   2824  00211A                     l3815:
   2825  00211A  FFFF               	dw	65535	; assembler added errata NOP
   2826                           
-  2827                           ;motors.c: 145:             LATDbits.LATD0 = decay;
+  2827                           ;motors.c: 144:             LATDbits.LATD0 = decay;
   2828  00211C  B015               	btfsc	setDecay@decay^0,0,c
   2829  00211E  D002               	bra	u3135
   2830  002120  908C               	bcf	140,0,c	;volatile
@@ -2854,7 +2854,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   2833  002124  808C               	bsf	140,0,c	;volatile
   2834  002126                     u3136:
   2835                           
-  2836                           ;motors.c: 146:             break;
+  2836                           ;motors.c: 145:             break;
   2837  002126  EFB0  F010         	goto	l112
   2838  00212A                     l3819:
   2839  00212A  FFFF               	dw	65535	; assembler added errata NOP
@@ -2904,7 +2904,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   2882                           
   2883 ;; *************** function _enableMotor *****************
   2884 ;; Defined at:
-  2885 ;;		line 94 in file "motors.c"
+  2885 ;;		line 93 in file "motors.c"
   2886 ;; Parameters:    Size  Location     Type
   2887 ;;  enable          1    wreg     unsigned char 
   2888 ;;  motor           1   17[COMRAM] unsigned char 
@@ -2944,12 +2944,12 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   2922                           ;enableMotor@enable stored from wreg
   2923  002168  6E15               	movwf	enableMotor@enable^0,c
   2924  00216A                     
-  2925                           ;motors.c: 95:     switch(motor){
+  2925                           ;motors.c: 94:     switch(motor){
   2926  00216A  EFCF  F010         	goto	l3803
   2927  00216E                     l3795:
   2928  00216E  FFFF               	dw	65535	; assembler added errata NOP
   2929                           
-  2930                           ;motors.c: 97:             LATAbits.LATA3 = enable;
+  2930                           ;motors.c: 96:             LATAbits.LATA3 = enable;
   2931  002170  B015               	btfsc	enableMotor@enable^0,0,c
   2932  002172  D002               	bra	u3085
   2933  002174  9689               	bcf	137,3,c	;volatile
@@ -2958,12 +2958,12 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   2936  002178  8689               	bsf	137,3,c	;volatile
   2937  00217A                     u3086:
   2938                           
-  2939                           ;motors.c: 98:             break;
+  2939                           ;motors.c: 97:             break;
   2940  00217A  EFEA  F010         	goto	l94
   2941  00217E                     l3797:
   2942  00217E  FFFF               	dw	65535	; assembler added errata NOP
   2943                           
-  2944                           ;motors.c: 100:             LATBbits.LATB5 = enable;
+  2944                           ;motors.c: 99:             LATBbits.LATB5 = enable;
   2945  002180  B015               	btfsc	enableMotor@enable^0,0,c
   2946  002182  D002               	bra	u3095
   2947  002184  9A8A               	bcf	138,5,c	;volatile
@@ -2972,12 +2972,12 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   2950  002188  8A8A               	bsf	138,5,c	;volatile
   2951  00218A                     u3096:
   2952                           
-  2953                           ;motors.c: 101:             break;
+  2953                           ;motors.c: 100:             break;
   2954  00218A  EFEA  F010         	goto	l94
   2955  00218E                     l3799:
   2956  00218E  FFFF               	dw	65535	; assembler added errata NOP
   2957                           
-  2958                           ;motors.c: 103:             LATCbits.LATC3 = enable;
+  2958                           ;motors.c: 102:             LATCbits.LATC3 = enable;
   2959  002190  B015               	btfsc	enableMotor@enable^0,0,c
   2960  002192  D002               	bra	u3105
   2961  002194  968B               	bcf	139,3,c	;volatile
@@ -2986,7 +2986,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   2964  002198  868B               	bsf	139,3,c	;volatile
   2965  00219A                     u3106:
   2966                           
-  2967                           ;motors.c: 104:             break;
+  2967                           ;motors.c: 103:             break;
   2968  00219A  EFEA  F010         	goto	l94
   2969  00219E                     l3803:
   2970  00219E  FFFF               	dw	65535	; assembler added errata NOP
@@ -3299,7 +3299,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   3276                           
   3277 ;; *************** function _initPinMotors *****************
   3278 ;; Defined at:
-  3279 ;;		line 42 in file "motors.c"
+  3279 ;;		line 41 in file "motors.c"
   3280 ;; Parameters:    Size  Location     Type
   3281 ;;		None
   3282 ;; Auto vars:     Size  Location     Type
@@ -3334,38 +3334,38 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   3311                           	callstack 0
   3312  0024DE  FFFF               	dw	65535	; assembler added errata NOP
   3313  0024E0                     
-  3314                           ;motors.c: 44:     ADCON1bits.PCFG = 0x06;
+  3314                           ;motors.c: 43:     ADCON1bits.PCFG = 0x06;
   3315  0024E0  50C1               	movf	193,w,c	;volatile
   3316  0024E2  0BF0               	andlw	-16
   3317  0024E4  0906               	iorlw	6
   3318  0024E6  6EC1               	movwf	193,c	;volatile
   3319  0024E8                     
-  3320                           ;motors.c: 45:     TRISA &= 0b11010001;
+  3320                           ;motors.c: 44:     TRISA &= 0b11010001;
   3321  0024E8  0ED1               	movlw	209
   3322  0024EA  1692               	andwf	146,f,c	;volatile
   3323  0024EC                     
-  3324                           ;motors.c: 47:     TRISB &= 0b00000010;
+  3324                           ;motors.c: 46:     TRISB &= 0b00000010;
   3325  0024EC  0E02               	movlw	2
   3326  0024EE  1693               	andwf	147,f,c	;volatile
   3327  0024F0                     
-  3328                           ;motors.c: 48:     TRISC &= 0b11000000;
+  3328                           ;motors.c: 47:     TRISC &= 0b11000000;
   3329  0024F0  0EC0               	movlw	192
   3330  0024F2  1694               	andwf	148,f,c	;volatile
   3331  0024F4                     
-  3332                           ;motors.c: 49:     TRISD &= 0b11000000;
+  3332                           ;motors.c: 48:     TRISD &= 0b11000000;
   3333  0024F4  0EC0               	movlw	192
   3334  0024F6  1695               	andwf	149,f,c	;volatile
   3335  0024F8                     
-  3336                           ;motors.c: 52:     TRISEbits.TRISE0 = 1;
+  3336                           ;motors.c: 51:     TRISEbits.TRISE0 = 1;
   3337  0024F8  8096               	bsf	150,0,c	;volatile
   3338  0024FA                     
-  3339                           ;motors.c: 53:     TRISEbits.TRISE1 = 1;
+  3339                           ;motors.c: 52:     TRISEbits.TRISE1 = 1;
   3340  0024FA  8296               	bsf	150,1,c	;volatile
   3341  0024FC                     
-  3342                           ;motors.c: 54:     TRISEbits.TRISE2 = 1;
+  3342                           ;motors.c: 53:     TRISEbits.TRISE2 = 1;
   3343  0024FC  8496               	bsf	150,2,c	;volatile
   3344  0024FE                     
-  3345                           ;motors.c: 57:     TRISDbits.TRISD7 = 1;
+  3345                           ;motors.c: 56:     TRISDbits.TRISD7 = 1;
   3346  0024FE  8E95               	bsf	149,7,c	;volatile
   3347  002500  0012               	return		;funcret
   3348  002502  FFFF               	dw	65535	; errata NOP
@@ -3976,7 +3976,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   3948                           
   3949 ;; *************** function _touchTherm *****************
   3950 ;; Defined at:
-  3951 ;;		line 455 in file "motors.c"
+  3951 ;;		line 454 in file "motors.c"
   3952 ;; Parameters:    Size  Location     Type
   3953 ;;		None
   3954 ;; Auto vars:     Size  Location     Type
@@ -4017,37 +4017,37 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   3989                           	callstack 0
   3990  001B50  FFFF               	dw	65535	; assembler added errata NOP
   3991  001B52                     
-  3992                           ;motors.c: 458:     setDirection(1, 2);
+  3992                           ;motors.c: 457:     setDirection(1, 2);
   3993  001B52  0E02               	movlw	2
   3994  001B54  6E12               	movwf	setDirection@motor^0,c
   3995  001B56  0E01               	movlw	1
   3996  001B58  ECED  F010         	call	_setDirection
   3997  001B5C                     
-  3998                           ;motors.c: 460:     T2CONbits.TMR2ON = 1;
+  3998                           ;motors.c: 459:     T2CONbits.TMR2ON = 1;
   3999  001B5C  84CA               	bsf	202,2,c	;volatile
   4000  001B5E                     
-  4001                           ;motors.c: 462:     tm0Error = 0;
+  4001                           ;motors.c: 461:     tm0Error = 0;
   4002  001B5E  0E00               	movlw	0
   4003  001B60  6E5C               	movwf	(_tm0Error+1)^0,c
   4004  001B62  0E00               	movlw	0
   4005  001B64  6E5B               	movwf	_tm0Error^0,c
   4006  001B66                     
-  4007                           ;motors.c: 463:     tm0Limit = 250;
+  4007                           ;motors.c: 462:     tm0Limit = 250;
   4008  001B66  0EFA               	movlw	250
   4009  001B68  6E68               	movwf	_tm0Limit^0,c
   4010  001B6A                     
-  4011                           ;motors.c: 464:     T0CONbits.TMR0ON = 1;
+  4011                           ;motors.c: 463:     T0CONbits.TMR0ON = 1;
   4012  001B6A  8ED5               	bsf	213,7,c	;volatile
   4013  001B6C                     
-  4014                           ;motors.c: 467:     startADC();
+  4014                           ;motors.c: 466:     startADC();
   4015  001B6C  EC09  F013         	call	_startADC	;wreg free
   4016                           
-  4017                           ;motors.c: 470:     while(!returnTherm() || PORTDbits.RD7){
+  4017                           ;motors.c: 469:     while(!returnTherm() || PORTDbits.RD7){
   4018  001B70  EFEB  F00D         	goto	l3991
   4019  001B74                     l3981:
   4020  001B74  FFFF               	dw	65535	; assembler added errata NOP
   4021                           
-  4022                           ;motors.c: 473:         if(tm0Error){
+  4022                           ;motors.c: 472:         if(tm0Error){
   4023  001B76  505B               	movf	_tm0Error^0,w,c
   4024  001B78  105C               	iorwf	(_tm0Error+1)^0,w,c
   4025  001B7A  B4D8               	btfsc	status,2,c
@@ -4059,21 +4059,21 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   4031  001B8A                     u3410:
   4032  001B8A  FFFF               	dw	65535	; assembler added errata NOP
   4033  001B8C                     
-  4034                           ;motors.c: 475:             LATCbits.LATC2 = 0;
+  4034                           ;motors.c: 474:             LATCbits.LATC2 = 0;
   4035  001B8C  948B               	bcf	139,2,c	;volatile
   4036  001B8E                     
-  4037                           ;motors.c: 476:             tm0Error = 6;
+  4037                           ;motors.c: 475:             tm0Error = 6;
   4038  001B8E  0E00               	movlw	0
   4039  001B90  6E5C               	movwf	(_tm0Error+1)^0,c
   4040  001B92  0E06               	movlw	6
   4041  001B94  6E5B               	movwf	_tm0Error^0,c
   4042                           
-  4043                           ;motors.c: 477:             break;
+  4043                           ;motors.c: 476:             break;
   4044  001B96  EF01  F00E         	goto	l3995
   4045  001B9A                     l194:
   4046  001B9A  FFFF               	dw	65535	; assembler added errata NOP
   4047                           
-  4048                           ;motors.c: 481:         LATCbits.LATC2 = 1;
+  4048                           ;motors.c: 480:         LATCbits.LATC2 = 1;
   4049  001B9C  848B               	bsf	139,2,c	;volatile
   4050  001B9E                     l3987:
   4051  001B9E  FFFF               	dw	65535	; assembler added errata NOP
@@ -4089,7 +4089,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   4061  001BB8                     u3420:
   4062  001BB8  FFFF               	dw	65535	; assembler added errata NOP
   4063  001BBA                     
-  4064                           ;motors.c: 487:         LATCbits.LATC2 = 0;
+  4064                           ;motors.c: 486:         LATCbits.LATC2 = 0;
   4065  001BBA  948B               	bcf	139,2,c	;volatile
   4066  001BBC                     l3989:
   4067  001BBC  FFFF               	dw	65535	; assembler added errata NOP
@@ -4106,7 +4106,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   4078  001BD6                     l3991:
   4079  001BD6  FFFF               	dw	65535	; assembler added errata NOP
   4080                           
-  4081                           ;motors.c: 470:     while(!returnTherm() || PORTDbits.RD7){
+  4081                           ;motors.c: 469:     while(!returnTherm() || PORTDbits.RD7){
   4082  001BD8  ECED  F012         	call	_returnTherm	;wreg free
   4083  001BDC  5012               	movf	?_returnTherm^0,w,c
   4084  001BDE  1013               	iorwf	(?_returnTherm+1)^0,w,c
@@ -4128,32 +4128,32 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   4100  001C02                     l3995:
   4101  001C02  FFFF               	dw	65535	; assembler added errata NOP
   4102                           
-  4103                           ;motors.c: 494:     stopADC();
+  4103                           ;motors.c: 493:     stopADC();
   4104  001C04  EC33  F013         	call	_stopADC	;wreg free
   4105  001C08                     
-  4106                           ;motors.c: 497:     resetTherm();
+  4106                           ;motors.c: 496:     resetTherm();
   4107  001C08  EC04  F013         	call	_resetTherm	;wreg free
   4108  001C0C                     
-  4109                           ;motors.c: 500:     T0CONbits.TMR0ON = 0;
+  4109                           ;motors.c: 499:     T0CONbits.TMR0ON = 0;
   4110  001C0C  9ED5               	bcf	213,7,c	;volatile
   4111  001C0E                     
-  4112                           ;motors.c: 501:     T2CONbits.TMR2ON = 0;
+  4112                           ;motors.c: 500:     T2CONbits.TMR2ON = 0;
   4113  001C0E  94CA               	bcf	202,2,c	;volatile
   4114                           
-  4115                           ;motors.c: 503:     TMR0 = 0;
+  4115                           ;motors.c: 502:     TMR0 = 0;
   4116  001C10  0E00               	movlw	0
   4117  001C12  6ED7               	movwf	215,c	;volatile
   4118  001C14  0E00               	movlw	0
   4119  001C16  6ED6               	movwf	214,c	;volatile
   4120                           
-  4121                           ;motors.c: 504:     TMR2 = 0;
+  4121                           ;motors.c: 503:     TMR2 = 0;
   4122  001C18  0E00               	movlw	0
   4123  001C1A  6ECC               	movwf	204,c	;volatile
   4124  001C1C                     
-  4125                           ;motors.c: 507:     resetStep();
+  4125                           ;motors.c: 506:     resetStep();
   4126  001C1C  EC13  F013         	call	_resetStep	;wreg free
   4127  001C20                     
-  4128                           ;motors.c: 510:     if(PORTDbits.RD7){
+  4128                           ;motors.c: 509:     if(PORTDbits.RD7){
   4129  001C20  AE83               	btfss	131,7,c	;volatile
   4130  001C22  EF15  F00E         	goto	u3461
   4131  001C26  EF18  F00E         	goto	u3460
@@ -4163,7 +4163,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   4135  001C30                     u3460:
   4136  001C30  FFFF               	dw	65535	; assembler added errata NOP
   4137  001C32                     
-  4138                           ;motors.c: 511:         tm0Error = 2;
+  4138                           ;motors.c: 510:         tm0Error = 2;
   4139  001C32  0E00               	movlw	0
   4140  001C34  6E5C               	movwf	(_tm0Error+1)^0,c
   4141  001C36  0E02               	movlw	2
@@ -4171,7 +4171,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   4143  001C3A                     l202:
   4144  001C3A  FFFF               	dw	65535	; assembler added errata NOP
   4145                           
-  4146                           ;motors.c: 514:     return(tm0Error);
+  4146                           ;motors.c: 513:     return(tm0Error);
   4147  001C3C  505B               	movf	_tm0Error^0,w,c
   4148  001C3E  0012               	return		;funcret
   4149  001C40  FFFF               	dw	65535	; errata NOP
@@ -4270,7 +4270,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   4242                           
   4243 ;; *************** function _touchObject *****************
   4244 ;; Defined at:
-  4245 ;;		line 384 in file "motors.c"
+  4245 ;;		line 383 in file "motors.c"
   4246 ;; Parameters:    Size  Location     Type
   4247 ;;		None
   4248 ;; Auto vars:     Size  Location     Type
@@ -4311,37 +4311,37 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   4283                           	callstack 0
   4284  001C42  FFFF               	dw	65535	; assembler added errata NOP
   4285  001C44                     
-  4286                           ;motors.c: 387:     setDirection(1, 2);
+  4286                           ;motors.c: 386:     setDirection(1, 2);
   4287  001C44  0E02               	movlw	2
   4288  001C46  6E12               	movwf	setDirection@motor^0,c
   4289  001C48  0E01               	movlw	1
   4290  001C4A  ECED  F010         	call	_setDirection
   4291  001C4E                     
-  4292                           ;motors.c: 389:     T2CONbits.TMR2ON = 1;
+  4292                           ;motors.c: 388:     T2CONbits.TMR2ON = 1;
   4293  001C4E  84CA               	bsf	202,2,c	;volatile
   4294  001C50                     
-  4295                           ;motors.c: 391:     tm0Error = 0;
+  4295                           ;motors.c: 390:     tm0Error = 0;
   4296  001C50  0E00               	movlw	0
   4297  001C52  6E5C               	movwf	(_tm0Error+1)^0,c
   4298  001C54  0E00               	movlw	0
   4299  001C56  6E5B               	movwf	_tm0Error^0,c
   4300  001C58                     
-  4301                           ;motors.c: 392:     tm0Limit = 250;
+  4301                           ;motors.c: 391:     tm0Limit = 250;
   4302  001C58  0EFA               	movlw	250
   4303  001C5A  6E68               	movwf	_tm0Limit^0,c
   4304  001C5C                     
-  4305                           ;motors.c: 393:     T0CONbits.TMR0ON = 1;
+  4305                           ;motors.c: 392:     T0CONbits.TMR0ON = 1;
   4306  001C5C  8ED5               	bsf	213,7,c	;volatile
   4307  001C5E                     
-  4308                           ;motors.c: 396:     startADC();
+  4308                           ;motors.c: 395:     startADC();
   4309  001C5E  EC09  F013         	call	_startADC	;wreg free
   4310                           
-  4311                           ;motors.c: 399:     while(!returnTouch() || PORTDbits.RD7){
+  4311                           ;motors.c: 398:     while(!returnTouch() || PORTDbits.RD7){
   4312  001C62  EF64  F00E         	goto	l3949
   4313  001C66                     l3939:
   4314  001C66  FFFF               	dw	65535	; assembler added errata NOP
   4315                           
-  4316                           ;motors.c: 402:         if(tm0Error){
+  4316                           ;motors.c: 401:         if(tm0Error){
   4317  001C68  505B               	movf	_tm0Error^0,w,c
   4318  001C6A  105C               	iorwf	(_tm0Error+1)^0,w,c
   4319  001C6C  B4D8               	btfsc	status,2,c
@@ -4353,21 +4353,21 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   4325  001C7C                     u3350:
   4326  001C7C  FFFF               	dw	65535	; assembler added errata NOP
   4327  001C7E                     
-  4328                           ;motors.c: 404:             LATCbits.LATC2 = 0;
+  4328                           ;motors.c: 403:             LATCbits.LATC2 = 0;
   4329  001C7E  948B               	bcf	139,2,c	;volatile
   4330  001C80                     
-  4331                           ;motors.c: 405:             tm0Error = 6;
+  4331                           ;motors.c: 404:             tm0Error = 6;
   4332  001C80  0E00               	movlw	0
   4333  001C82  6E5C               	movwf	(_tm0Error+1)^0,c
   4334  001C84  0E06               	movlw	6
   4335  001C86  6E5B               	movwf	_tm0Error^0,c
   4336                           
-  4337                           ;motors.c: 406:             break;
+  4337                           ;motors.c: 405:             break;
   4338  001C88  EF7A  F00E         	goto	l3953
   4339  001C8C                     l180:
   4340  001C8C  FFFF               	dw	65535	; assembler added errata NOP
   4341                           
-  4342                           ;motors.c: 410:         LATCbits.LATC2 = 1;
+  4342                           ;motors.c: 409:         LATCbits.LATC2 = 1;
   4343  001C8E  848B               	bsf	139,2,c	;volatile
   4344  001C90                     l3945:
   4345  001C90  FFFF               	dw	65535	; assembler added errata NOP
@@ -4383,7 +4383,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   4355  001CAA                     u3360:
   4356  001CAA  FFFF               	dw	65535	; assembler added errata NOP
   4357  001CAC                     
-  4358                           ;motors.c: 416:         LATCbits.LATC2 = 0;
+  4358                           ;motors.c: 415:         LATCbits.LATC2 = 0;
   4359  001CAC  948B               	bcf	139,2,c	;volatile
   4360  001CAE                     l3947:
   4361  001CAE  FFFF               	dw	65535	; assembler added errata NOP
@@ -4400,7 +4400,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   4372  001CC8                     l3949:
   4373  001CC8  FFFF               	dw	65535	; assembler added errata NOP
   4374                           
-  4375                           ;motors.c: 399:     while(!returnTouch() || PORTDbits.RD7){
+  4375                           ;motors.c: 398:     while(!returnTouch() || PORTDbits.RD7){
   4376  001CCA  ECF3  F012         	call	_returnTouch	;wreg free
   4377  001CCE  5012               	movf	?_returnTouch^0,w,c
   4378  001CD0  1013               	iorwf	(?_returnTouch+1)^0,w,c
@@ -4422,32 +4422,32 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   4394  001CF4                     l3953:
   4395  001CF4  FFFF               	dw	65535	; assembler added errata NOP
   4396                           
-  4397                           ;motors.c: 423:     stopADC();
+  4397                           ;motors.c: 422:     stopADC();
   4398  001CF6  EC33  F013         	call	_stopADC	;wreg free
   4399  001CFA                     
-  4400                           ;motors.c: 426:     resetTouch();
+  4400                           ;motors.c: 425:     resetTouch();
   4401  001CFA  EC0E  F013         	call	_resetTouch	;wreg free
   4402  001CFE                     
-  4403                           ;motors.c: 429:     T0CONbits.TMR0ON = 0;
+  4403                           ;motors.c: 428:     T0CONbits.TMR0ON = 0;
   4404  001CFE  9ED5               	bcf	213,7,c	;volatile
   4405  001D00                     
-  4406                           ;motors.c: 430:     T2CONbits.TMR2ON = 0;
+  4406                           ;motors.c: 429:     T2CONbits.TMR2ON = 0;
   4407  001D00  94CA               	bcf	202,2,c	;volatile
   4408                           
-  4409                           ;motors.c: 432:     TMR0 = 0;
+  4409                           ;motors.c: 431:     TMR0 = 0;
   4410  001D02  0E00               	movlw	0
   4411  001D04  6ED7               	movwf	215,c	;volatile
   4412  001D06  0E00               	movlw	0
   4413  001D08  6ED6               	movwf	214,c	;volatile
   4414                           
-  4415                           ;motors.c: 433:     TMR2 = 0;
+  4415                           ;motors.c: 432:     TMR2 = 0;
   4416  001D0A  0E00               	movlw	0
   4417  001D0C  6ECC               	movwf	204,c	;volatile
   4418  001D0E                     
-  4419                           ;motors.c: 436:     resetStep();
+  4419                           ;motors.c: 435:     resetStep();
   4420  001D0E  EC13  F013         	call	_resetStep	;wreg free
   4421  001D12                     
-  4422                           ;motors.c: 439:     if(PORTDbits.RD7){
+  4422                           ;motors.c: 438:     if(PORTDbits.RD7){
   4423  001D12  AE83               	btfss	131,7,c	;volatile
   4424  001D14  EF8E  F00E         	goto	u3401
   4425  001D18  EF91  F00E         	goto	u3400
@@ -4457,7 +4457,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   4429  001D22                     u3400:
   4430  001D22  FFFF               	dw	65535	; assembler added errata NOP
   4431  001D24                     
-  4432                           ;motors.c: 440:         tm0Error = 2;
+  4432                           ;motors.c: 439:         tm0Error = 2;
   4433  001D24  0E00               	movlw	0
   4434  001D26  6E5C               	movwf	(_tm0Error+1)^0,c
   4435  001D28  0E02               	movlw	2
@@ -4465,7 +4465,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   4437  001D2C                     l188:
   4438  001D2C  FFFF               	dw	65535	; assembler added errata NOP
   4439                           
-  4440                           ;motors.c: 443:     return(tm0Error);
+  4440                           ;motors.c: 442:     return(tm0Error);
   4441  001D2E  505B               	movf	_tm0Error^0,w,c
   4442  001D30  0012               	return		;funcret
   4443  001D32  FFFF               	dw	65535	; errata NOP
@@ -4657,7 +4657,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   4629                           
   4630 ;; *************** function _rotateObj *****************
   4631 ;; Defined at:
-  4632 ;;		line 575 in file "motors.c"
+  4632 ;;		line 574 in file "motors.c"
   4633 ;; Parameters:    Size  Location     Type
   4634 ;;  rotAngle        1    wreg     unsigned char 
   4635 ;; Auto vars:     Size  Location     Type
@@ -4702,9 +4702,9 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   4674  001D36  0100               	movlb	0	; () banked
   4675  001D38  6FFA               	movwf	rotateObj@rotAngle& (0+255),b
   4676  001D3A                     
-  4677                           ;motors.c: 576:     static const float stepAngle = 0.08789;;motors.c: 577:     static ch
-      +                          ar rotSequence[] = {0b1001, 0b0011, 0b0110, 0b1100};;motors.c: 578:     unsigned int i;;
-      +                          motors.c: 579:     int totStep = rotAngle/stepAngle;
+  4677                           ;motors.c: 575:     static const float stepAngle = 0.08789;;motors.c: 576:     static ch
+      +                          ar rotSequence[] = {0b1001, 0b0011, 0b0110, 0b1100};;motors.c: 577:     unsigned int i;;
+      +                          motors.c: 578:     int totStep = rotAngle/stepAngle;
   4678  001D3A  0EAC               	movlw	172
   4679  001D3C  6E24               	movwf	___fldiv@a^0,c
   4680  001D3E  0EFF               	movlw	255
@@ -4734,7 +4734,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   4704  001D84  C039  F0FB         	movff	?___fltol,rotateObj@totStep
   4705  001D88  C03A  F0FC         	movff	?___fltol+1,rotateObj@totStep+1
   4706  001D8C                     
-  4707                           ;motors.c: 582:     for(i = 0; i < totStep; i++){
+  4707                           ;motors.c: 581:     for(i = 0; i < totStep; i++){
   4708  001D8C  0E00               	movlw	0
   4709  001D8E  0100               	movlb	0	; () banked
   4710  001D90  6FFE               	movwf	(rotateObj@i+1)& (0+255),b
@@ -4745,12 +4745,12 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   4715  001D9A  FFFF               	dw	65535	; assembler added errata NOP
   4716                           
   4717                           ; BSR set to: 0
-  4718                           ;motors.c: 584:         LATD &= 0xC3;
+  4718                           ;motors.c: 583:         LATD &= 0xC3;
   4719  001D9C  0EC3               	movlw	195
   4720  001D9E  168C               	andwf	140,f,c	;volatile
   4721  001DA0                     
   4722                           ; BSR set to: 0
-  4723                           ;motors.c: 586:         LATD |= rotSequence[i%4] << 2;
+  4723                           ;motors.c: 585:         LATD |= rotSequence[i%4] << 2;
   4724  001DA0  0E03               	movlw	3
   4725  001DA2  15FD               	andwf	rotateObj@i& (0+255),w,b
   4726  001DA4  6FF7               	movwf	??_rotateObj& (0+255),b
@@ -4772,7 +4772,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   4742  001DC4  128C               	iorwf	140,f,c	;volatile
   4743  001DC6                     
   4744                           ; BSR set to: 0
-  4745                           ;motors.c: 590:         T2CONbits.TMR2ON = 1;
+  4745                           ;motors.c: 588:         T2CONbits.TMR2ON = 1;
   4746  001DC6  84CA               	bsf	202,2,c	;volatile
   4747  001DC8                     l4049:
   4748  001DC8  FFFF               	dw	65535	; assembler added errata NOP
@@ -4788,14 +4788,14 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   4758  001DE2                     u3510:
   4759  001DE2  FFFF               	dw	65535	; assembler added errata NOP
   4760  001DE4                     
-  4761                           ;motors.c: 592:         T2CONbits.TMR2ON = 1;
+  4761                           ;motors.c: 590:         T2CONbits.TMR2ON = 1;
   4762  001DE4  84CA               	bsf	202,2,c	;volatile
   4763  001DE6                     
-  4764                           ;motors.c: 593:         TMR2 = 0;
+  4764                           ;motors.c: 591:         TMR2 = 0;
   4765  001DE6  0E00               	movlw	0
   4766  001DE8  6ECC               	movwf	204,c	;volatile
   4767  001DEA                     
-  4768                           ;motors.c: 594:     }
+  4768                           ;motors.c: 592:     }
   4769  001DEA  0100               	movlb	0	; () banked
   4770  001DEC  4BFD               	infsnz	rotateObj@i& (0+255),f,b
   4771  001DEE  2BFE               	incf	(rotateObj@i+1)& (0+255),f,b
@@ -5841,7 +5841,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   5811                           
   5812 ;; *************** function _releaseObj *****************
   5813 ;; Defined at:
-  5814 ;;		line 614 in file "motors.c"
+  5814 ;;		line 611 in file "motors.c"
   5815 ;; Parameters:    Size  Location     Type
   5816 ;;		None
   5817 ;; Auto vars:     Size  Location     Type
@@ -5876,10 +5876,10 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   5846                           	callstack 0
   5847  002486  FFFF               	dw	65535	; assembler added errata NOP
   5848  002488                     
-  5849                           ;motors.c: 615:     LATDbits.LATD1 = 0;
+  5849                           ;motors.c: 612:     LATDbits.LATD1 = 0;
   5850  002488  928C               	bcf	140,1,c	;volatile
   5851                           
-  5852                           ;motors.c: 619:     T2CONbits.TMR2ON = 1;
+  5852                           ;motors.c: 615:     T2CONbits.TMR2ON = 1;
   5853  00248A  84CA               	bsf	202,2,c	;volatile
   5854  00248C                     l4065:
   5855  00248C  FFFF               	dw	65535	; assembler added errata NOP
@@ -5895,10 +5895,10 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   5865  0024A6                     u3540:
   5866  0024A6  FFFF               	dw	65535	; assembler added errata NOP
   5867  0024A8                     
-  5868                           ;motors.c: 621:     T2CONbits.TMR2ON = 1;
+  5868                           ;motors.c: 617:     T2CONbits.TMR2ON = 1;
   5869  0024A8  84CA               	bsf	202,2,c	;volatile
   5870  0024AA                     
-  5871                           ;motors.c: 622:     TMR2 = 0;
+  5871                           ;motors.c: 618:     TMR2 = 0;
   5872  0024AA  0E00               	movlw	0
   5873  0024AC  6ECC               	movwf	204,c	;volatile
   5874  0024AE  0012               	return		;funcret
@@ -5908,7 +5908,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   5878                           
   5879 ;; *************** function _pickObject *****************
   5880 ;; Defined at:
-  5881 ;;		line 600 in file "motors.c"
+  5881 ;;		line 598 in file "motors.c"
   5882 ;; Parameters:    Size  Location     Type
   5883 ;;		None
   5884 ;; Auto vars:     Size  Location     Type
@@ -5943,10 +5943,10 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   5913                           	callstack 0
   5914  0024B2  FFFF               	dw	65535	; assembler added errata NOP
   5915  0024B4                     
-  5916                           ;motors.c: 601:     LATDbits.LATD1 = 1;
+  5916                           ;motors.c: 599:     LATDbits.LATD1 = 1;
   5917  0024B4  828C               	bsf	140,1,c	;volatile
   5918                           
-  5919                           ;motors.c: 605:     T2CONbits.TMR2ON = 1;
+  5919                           ;motors.c: 602:     T2CONbits.TMR2ON = 1;
   5920  0024B6  84CA               	bsf	202,2,c	;volatile
   5921  0024B8                     l4059:
   5922  0024B8  FFFF               	dw	65535	; assembler added errata NOP
@@ -5962,10 +5962,10 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   5932  0024D2                     u3530:
   5933  0024D2  FFFF               	dw	65535	; assembler added errata NOP
   5934  0024D4                     
-  5935                           ;motors.c: 607:     T2CONbits.TMR2ON = 1;
+  5935                           ;motors.c: 604:     T2CONbits.TMR2ON = 1;
   5936  0024D4  84CA               	bsf	202,2,c	;volatile
   5937  0024D6                     
-  5938                           ;motors.c: 608:     TMR2 = 0;
+  5938                           ;motors.c: 605:     TMR2 = 0;
   5939  0024D6  0E00               	movlw	0
   5940  0024D8  6ECC               	movwf	204,c	;volatile
   5941  0024DA  0012               	return		;funcret
@@ -5975,7 +5975,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   5945                           
   5946 ;; *************** function _moveToPoint *****************
   5947 ;; Defined at:
-  5948 ;;		line 264 in file "motors.c"
+  5948 ;;		line 263 in file "motors.c"
   5949 ;; Parameters:    Size  Location     Type
   5950 ;;  x1              2   21[COMRAM] int 
   5951 ;;  y1              2   23[COMRAM] int 
@@ -6019,12 +6019,12 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   5989                           	callstack 0
   5990  000A42  FFFF               	dw	65535	; assembler added errata NOP
   5991  000A44                     
-  5992                           ;motors.c: 266:     unsigned char MOT1Direction, MOT2Direction;;motors.c: 269:     if(x2
+  5992                           ;motors.c: 265:     unsigned char MOT1Direction, MOT2Direction;;motors.c: 268:     if(x2
       +                           > maxX || y2 > maxY){
-  5993  000A44  0EE9               	movlw	233
-  5994  000A46  5C1A               	subwf	moveToPoint@x2^0,w,c
-  5995  000A48  0E03               	movlw	3
-  5996  000A4A  581B               	subwfb	(moveToPoint@x2+1)^0,w,c
+  5993  000A44  501B               	movf	(moveToPoint@x2+1)^0,w,c
+  5994  000A46  E107               	bnz	u3141
+  5995  000A48  0EFB               	movlw	251
+  5996  000A4A  5C1A               	subwf	moveToPoint@x2^0,w,c
   5997  000A4C  B0D8               	btfsc	status,0,c
   5998  000A4E  EF2B  F005         	goto	u3141
   5999  000A52  EF2E  F005         	goto	u3140
@@ -6033,10 +6033,10 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   6002  000A58  EF3B  F005         	goto	l3829
   6003  000A5C                     u3140:
   6004  000A5C  FFFF               	dw	65535	; assembler added errata NOP
-  6005  000A5E  0EE9               	movlw	233
-  6006  000A60  5C1C               	subwf	moveToPoint@y2^0,w,c
-  6007  000A62  0E03               	movlw	3
-  6008  000A64  581D               	subwfb	(moveToPoint@y2+1)^0,w,c
+  6005  000A5E  501D               	movf	(moveToPoint@y2+1)^0,w,c
+  6006  000A60  E10A               	bnz	u3150
+  6007  000A62  0EFB               	movlw	251
+  6008  000A64  5C1C               	subwf	moveToPoint@y2^0,w,c
   6009  000A66  A0D8               	btfss	status,0,c
   6010  000A68  EF38  F005         	goto	u3151
   6011  000A6C  EF3B  F005         	goto	u3150
@@ -6047,13 +6047,13 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   6016  000A76                     l3829:
   6017  000A76  FFFF               	dw	65535	; assembler added errata NOP
   6018                           
-  6019                           ;motors.c: 270:         return(5);
+  6019                           ;motors.c: 269:         return(5);
   6020  000A78  0E05               	movlw	5
   6021  000A7A  EFB1  F006         	goto	l143
   6022  000A7E                     l3833:
   6023  000A7E  FFFF               	dw	65535	; assembler added errata NOP
   6024                           
-  6025                           ;motors.c: 274:     if((x2 - x1) > 0){
+  6025                           ;motors.c: 273:     if((x2 - x1) > 0){
   6026  000A80  5016               	movf	moveToPoint@x1^0,w,c
   6027  000A82  5C1A               	subwf	moveToPoint@x2^0,w,c
   6028  000A84  6E1E               	movwf	??_moveToPoint^0,c
@@ -6074,34 +6074,34 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   6043  000AA8                     u3160:
   6044  000AA8  FFFF               	dw	65535	; assembler added errata NOP
   6045  000AAA                     
-  6046                           ;motors.c: 275:         setDirection(1, 0);
+  6046                           ;motors.c: 274:         setDirection(1, 0);
   6047  000AAA  0E00               	movlw	0
   6048  000AAC  6E12               	movwf	setDirection@motor^0,c
   6049  000AAE  0E01               	movlw	1
   6050  000AB0  ECED  F010         	call	_setDirection
   6051  000AB4                     
-  6052                           ;motors.c: 276:         MOT1Direction = 1;
+  6052                           ;motors.c: 275:         MOT1Direction = 1;
   6053  000AB4  0E01               	movlw	1
   6054  000AB6  6E21               	movwf	moveToPoint@MOT1Direction^0,c
   6055                           
-  6056                           ;motors.c: 277:     }else{
+  6056                           ;motors.c: 276:     }else{
   6057  000AB8  EF66  F005         	goto	l3843
   6058  000ABC                     l3839:
   6059  000ABC  FFFF               	dw	65535	; assembler added errata NOP
   6060                           
-  6061                           ;motors.c: 278:         setDirection(0, 0);
+  6061                           ;motors.c: 277:         setDirection(0, 0);
   6062  000ABE  0E00               	movlw	0
   6063  000AC0  6E12               	movwf	setDirection@motor^0,c
   6064  000AC2  0E00               	movlw	0
   6065  000AC4  ECED  F010         	call	_setDirection
   6066  000AC8                     
-  6067                           ;motors.c: 279:         MOT1Direction = 0;
+  6067                           ;motors.c: 278:         MOT1Direction = 0;
   6068  000AC8  0E00               	movlw	0
   6069  000ACA  6E21               	movwf	moveToPoint@MOT1Direction^0,c
   6070  000ACC                     l3843:
   6071  000ACC  FFFF               	dw	65535	; assembler added errata NOP
   6072                           
-  6073                           ;motors.c: 282:     if((y2 - y1) > 0){
+  6073                           ;motors.c: 281:     if((y2 - y1) > 0){
   6074  000ACE  5018               	movf	moveToPoint@y1^0,w,c
   6075  000AD0  5C1C               	subwf	moveToPoint@y2^0,w,c
   6076  000AD2  6E1E               	movwf	??_moveToPoint^0,c
@@ -6122,63 +6122,63 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   6091  000AF6                     u3170:
   6092  000AF6  FFFF               	dw	65535	; assembler added errata NOP
   6093  000AF8                     
-  6094                           ;motors.c: 283:         setDirection(1, 1);
+  6094                           ;motors.c: 282:         setDirection(1, 1);
   6095  000AF8  0E01               	movlw	1
   6096  000AFA  6E12               	movwf	setDirection@motor^0,c
   6097  000AFC  0E01               	movlw	1
   6098  000AFE  ECED  F010         	call	_setDirection
   6099  000B02                     
-  6100                           ;motors.c: 284:         MOT2Direction = 1;
+  6100                           ;motors.c: 283:         MOT2Direction = 1;
   6101  000B02  0E01               	movlw	1
   6102  000B04  6E22               	movwf	moveToPoint@MOT2Direction^0,c
   6103                           
-  6104                           ;motors.c: 285:     }else{
+  6104                           ;motors.c: 284:     }else{
   6105  000B06  EF8D  F005         	goto	l3853
   6106  000B0A                     l3849:
   6107  000B0A  FFFF               	dw	65535	; assembler added errata NOP
   6108                           
-  6109                           ;motors.c: 286:         setDirection(0, 1);
+  6109                           ;motors.c: 285:         setDirection(0, 1);
   6110  000B0C  0E01               	movlw	1
   6111  000B0E  6E12               	movwf	setDirection@motor^0,c
   6112  000B10  0E00               	movlw	0
   6113  000B12  ECED  F010         	call	_setDirection
   6114  000B16                     
-  6115                           ;motors.c: 287:         MOT2Direction = 0;
+  6115                           ;motors.c: 286:         MOT2Direction = 0;
   6116  000B16  0E00               	movlw	0
   6117  000B18  6E22               	movwf	moveToPoint@MOT2Direction^0,c
   6118  000B1A                     l3853:
   6119  000B1A  FFFF               	dw	65535	; assembler added errata NOP
   6120                           
-  6121                           ;motors.c: 290:     unsigned char keepMovingX = 1;
+  6121                           ;motors.c: 289:     unsigned char keepMovingX = 1;
   6122  000B1C  0E01               	movlw	1
   6123  000B1E  6E23               	movwf	moveToPoint@keepMovingX^0,c
   6124  000B20                     
-  6125                           ;motors.c: 291:     unsigned char keepMovingY = 1;
+  6125                           ;motors.c: 290:     unsigned char keepMovingY = 1;
   6126  000B20  0E01               	movlw	1
   6127  000B22  6E20               	movwf	moveToPoint@keepMovingY^0,c
   6128  000B24                     
-  6129                           ;motors.c: 294:     T2CONbits.TMR2ON = 1;
+  6129                           ;motors.c: 293:     T2CONbits.TMR2ON = 1;
   6130  000B24  84CA               	bsf	202,2,c	;volatile
   6131  000B26                     
-  6132                           ;motors.c: 296:     tm0Error = 0;
+  6132                           ;motors.c: 295:     tm0Error = 0;
   6133  000B26  0E00               	movlw	0
   6134  000B28  6E5C               	movwf	(_tm0Error+1)^0,c
   6135  000B2A  0E00               	movlw	0
   6136  000B2C  6E5B               	movwf	_tm0Error^0,c
   6137  000B2E                     
-  6138                           ;motors.c: 297:     tm0Limit = 250;
+  6138                           ;motors.c: 296:     tm0Limit = 250;
   6139  000B2E  0EFA               	movlw	250
   6140  000B30  6E68               	movwf	_tm0Limit^0,c
   6141  000B32                     
-  6142                           ;motors.c: 298:     T0CONbits.TMR0ON = 1;
+  6142                           ;motors.c: 297:     T0CONbits.TMR0ON = 1;
   6143  000B32  8ED5               	bsf	213,7,c	;volatile
   6144                           
-  6145                           ;motors.c: 300:     while(keepMovingX || keepMovingY){
+  6145                           ;motors.c: 299:     while(keepMovingX || keepMovingY){
   6146  000B34  EF91  F006         	goto	l3915
   6147  000B38                     l3865:
   6148  000B38  FFFF               	dw	65535	; assembler added errata NOP
   6149                           
-  6150                           ;motors.c: 303:         if(tm0Error){
+  6150                           ;motors.c: 302:         if(tm0Error){
   6151  000B3A  505B               	movf	_tm0Error^0,w,c
   6152  000B3C  105C               	iorwf	(_tm0Error+1)^0,w,c
   6153  000B3E  B4D8               	btfsc	status,2,c
@@ -6190,24 +6190,24 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   6159  000B4E                     u3180:
   6160  000B4E  FFFF               	dw	65535	; assembler added errata NOP
   6161  000B50                     
-  6162                           ;motors.c: 305:             LATAbits.LATA2 = 0;
+  6162                           ;motors.c: 304:             LATAbits.LATA2 = 0;
   6163  000B50  9489               	bcf	137,2,c	;volatile
   6164                           
-  6165                           ;motors.c: 306:             LATBbits.LATB4 = 0;
+  6165                           ;motors.c: 305:             LATBbits.LATB4 = 0;
   6166  000B52  988A               	bcf	138,4,c	;volatile
   6167  000B54                     
-  6168                           ;motors.c: 307:             tm0Error = 4;
+  6168                           ;motors.c: 306:             tm0Error = 4;
   6169  000B54  0E00               	movlw	0
   6170  000B56  6E5C               	movwf	(_tm0Error+1)^0,c
   6171  000B58  0E04               	movlw	4
   6172  000B5A  6E5B               	movwf	_tm0Error^0,c
   6173                           
-  6174                           ;motors.c: 308:             break;
+  6174                           ;motors.c: 307:             break;
   6175  000B5C  EFA5  F006         	goto	l151
   6176  000B60                     l3871:
   6177  000B60  FFFF               	dw	65535	; assembler added errata NOP
   6178                           
-  6179                           ;motors.c: 316:         if(MOT1Direction == 1){
+  6179                           ;motors.c: 315:         if(MOT1Direction == 1){
   6180  000B62  0421               	decf	moveToPoint@MOT1Direction^0,w,c
   6181  000B64  A4D8               	btfss	status,2,c
   6182  000B66  EFB7  F005         	goto	u3191
@@ -6218,7 +6218,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   6187  000B74                     u3190:
   6188  000B74  FFFF               	dw	65535	; assembler added errata NOP
   6189  000B76                     
-  6190                           ;motors.c: 317:             if(x1 + stepCounter() >= x2){
+  6190                           ;motors.c: 316:             if(x1 + stepCounter() >= x2){
   6191  000B76  ECF9  F012         	call	_stepCounter	;wreg free
   6192  000B7A  5016               	movf	moveToPoint@x1^0,w,c
   6193  000B7C  2612               	addwf	?_stepCounter^0,f,c
@@ -6239,11 +6239,11 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   6208  000B9C                     l3875:
   6209  000B9C  FFFF               	dw	65535	; assembler added errata NOP
   6210                           
-  6211                           ;motors.c: 319:                 keepMovingX = 0;
+  6211                           ;motors.c: 318:                 keepMovingX = 0;
   6212  000B9E  0E00               	movlw	0
   6213  000BA0  6E23               	movwf	moveToPoint@keepMovingX^0,c
   6214                           
-  6215                           ;motors.c: 320:             }else if(!keepMovingX){
+  6215                           ;motors.c: 319:             }else if(!keepMovingX){
   6216  000BA2  EF11  F006         	goto	l3891
   6217  000BA6                     l3877:
   6218  000BA6  FFFF               	dw	65535	; assembler added errata NOP
@@ -6257,7 +6257,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   6226  000BBA                     u3210:
   6227  000BBA  FFFF               	dw	65535	; assembler added errata NOP
   6228  000BBC                     
-  6229                           ;motors.c: 322:                 LATAbits.LATA2 = 1;
+  6229                           ;motors.c: 321:                 LATAbits.LATA2 = 1;
   6230  000BBC  8489               	bsf	137,2,c	;volatile
   6231  000BBE  EF11  F006         	goto	l3891
   6232  000BC2                     l3881:
@@ -6272,7 +6272,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   6241  000BD6                     u3220:
   6242  000BD6  FFFF               	dw	65535	; assembler added errata NOP
   6243  000BD8                     
-  6244                           ;motors.c: 325:             if(x1 - stepCounter() <= x2){
+  6244                           ;motors.c: 324:             if(x1 - stepCounter() <= x2){
   6245  000BD8  ECF9  F012         	call	_stepCounter	;wreg free
   6246  000BDC  C016  F01E         	movff	moveToPoint@x1,??_moveToPoint
   6247  000BE0  C017  F01F         	movff	moveToPoint@x1+1,??_moveToPoint+1
@@ -6305,12 +6305,12 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   6274  000C1E                     u3240:
   6275  000C1E  FFFF               	dw	65535	; assembler added errata NOP
   6276  000C20                     
-  6277                           ;motors.c: 330:                 LATAbits.LATA2 = 1;
+  6277                           ;motors.c: 329:                 LATAbits.LATA2 = 1;
   6278  000C20  8489               	bsf	137,2,c	;volatile
   6279  000C22                     l3891:
   6280  000C22  FFFF               	dw	65535	; assembler added errata NOP
   6281                           
-  6282                           ;motors.c: 334:         if(MOT2Direction == 1){
+  6282                           ;motors.c: 333:         if(MOT2Direction == 1){
   6283  000C24  0422               	decf	moveToPoint@MOT2Direction^0,w,c
   6284  000C26  A4D8               	btfss	status,2,c
   6285  000C28  EF18  F006         	goto	u3251
@@ -6321,7 +6321,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   6290  000C36                     u3250:
   6291  000C36  FFFF               	dw	65535	; assembler added errata NOP
   6292  000C38                     
-  6293                           ;motors.c: 336:             if(y1 + stepCounter() >= y2){
+  6293                           ;motors.c: 335:             if(y1 + stepCounter() >= y2){
   6294  000C38  ECF9  F012         	call	_stepCounter	;wreg free
   6295  000C3C  5018               	movf	moveToPoint@y1^0,w,c
   6296  000C3E  2612               	addwf	?_stepCounter^0,f,c
@@ -6342,11 +6342,11 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   6311  000C5E                     l3895:
   6312  000C5E  FFFF               	dw	65535	; assembler added errata NOP
   6313                           
-  6314                           ;motors.c: 338:                 keepMovingY = 0;
+  6314                           ;motors.c: 337:                 keepMovingY = 0;
   6315  000C60  0E00               	movlw	0
   6316  000C62  6E20               	movwf	moveToPoint@keepMovingY^0,c
   6317                           
-  6318                           ;motors.c: 339:             }else if(!keepMovingX){
+  6318                           ;motors.c: 338:             }else if(!keepMovingX){
   6319  000C64  EF74  F006         	goto	l3911
   6320  000C68                     l3897:
   6321  000C68  FFFF               	dw	65535	; assembler added errata NOP
@@ -6360,7 +6360,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   6329  000C7C                     u3270:
   6330  000C7C  FFFF               	dw	65535	; assembler added errata NOP
   6331  000C7E                     
-  6332                           ;motors.c: 341:                 LATBbits.LATB4 = 1;
+  6332                           ;motors.c: 340:                 LATBbits.LATB4 = 1;
   6333  000C7E  888A               	bsf	138,4,c	;volatile
   6334  000C80  EF74  F006         	goto	l3911
   6335  000C84                     l3901:
@@ -6375,7 +6375,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   6344  000C98                     u3280:
   6345  000C98  FFFF               	dw	65535	; assembler added errata NOP
   6346  000C9A                     
-  6347                           ;motors.c: 345:             if(y1 - stepCounter() <= y2){
+  6347                           ;motors.c: 344:             if(y1 - stepCounter() <= y2){
   6348  000C9A  ECF9  F012         	call	_stepCounter	;wreg free
   6349  000C9E  C018  F01E         	movff	moveToPoint@y1,??_moveToPoint
   6350  000CA2  C019  F01F         	movff	moveToPoint@y1+1,??_moveToPoint+1
@@ -6408,7 +6408,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   6377  000CE0                     u3300:
   6378  000CE0  FFFF               	dw	65535	; assembler added errata NOP
   6379  000CE2                     
-  6380                           ;motors.c: 350:                 LATBbits.LATB4 = 1;
+  6380                           ;motors.c: 349:                 LATBbits.LATB4 = 1;
   6381  000CE2  888A               	bsf	138,4,c	;volatile
   6382  000CE4  EF74  F006         	goto	l3911
   6383  000CE8                     l165:
@@ -6426,10 +6426,10 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   6395  000D02                     u3310:
   6396  000D02  FFFF               	dw	65535	; assembler added errata NOP
   6397  000D04                     
-  6398                           ;motors.c: 358:         LATAbits.LATA2 = 0;
+  6398                           ;motors.c: 357:         LATAbits.LATA2 = 0;
   6399  000D04  9489               	bcf	137,2,c	;volatile
   6400                           
-  6401                           ;motors.c: 359:         LATBbits.LATB4 = 0;
+  6401                           ;motors.c: 358:         LATBbits.LATB4 = 0;
   6402  000D06  988A               	bcf	138,4,c	;volatile
   6403  000D08                     l3913:
   6404  000D08  FFFF               	dw	65535	; assembler added errata NOP
@@ -6446,7 +6446,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   6415  000D22                     l3915:
   6416  000D22  FFFF               	dw	65535	; assembler added errata NOP
   6417                           
-  6418                           ;motors.c: 300:     while(keepMovingX || keepMovingY){
+  6418                           ;motors.c: 299:     while(keepMovingX || keepMovingY){
   6419  000D24  5023               	movf	moveToPoint@keepMovingX^0,w,c
   6420  000D26  A4D8               	btfss	status,2,c
   6421  000D28  EF98  F006         	goto	u3331
@@ -6467,26 +6467,26 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   6436  000D4A                     l151:
   6437  000D4A  FFFF               	dw	65535	; assembler added errata NOP
   6438                           
-  6439                           ;motors.c: 366:     T0CONbits.TMR0ON = 0;
+  6439                           ;motors.c: 365:     T0CONbits.TMR0ON = 0;
   6440  000D4C  9ED5               	bcf	213,7,c	;volatile
   6441                           
-  6442                           ;motors.c: 367:     T2CONbits.TMR2ON = 0;
+  6442                           ;motors.c: 366:     T2CONbits.TMR2ON = 0;
   6443  000D4E  94CA               	bcf	202,2,c	;volatile
   6444  000D50                     
-  6445                           ;motors.c: 369:     TMR0 = 0;
+  6445                           ;motors.c: 368:     TMR0 = 0;
   6446  000D50  0E00               	movlw	0
   6447  000D52  6ED7               	movwf	215,c	;volatile
   6448  000D54  0E00               	movlw	0
   6449  000D56  6ED6               	movwf	214,c	;volatile
   6450                           
-  6451                           ;motors.c: 370:     TMR2 = 0;
+  6451                           ;motors.c: 369:     TMR2 = 0;
   6452  000D58  0E00               	movlw	0
   6453  000D5A  6ECC               	movwf	204,c	;volatile
   6454  000D5C                     
-  6455                           ;motors.c: 373:     resetStep();
+  6455                           ;motors.c: 372:     resetStep();
   6456  000D5C  EC13  F013         	call	_resetStep	;wreg free
   6457  000D60                     
-  6458                           ;motors.c: 375:     return(tm0Error);
+  6458                           ;motors.c: 374:     return(tm0Error);
   6459  000D60  505B               	movf	_tm0Error^0,w,c
   6460  000D62                     l143:
   6461  000D62  FFFF               	dw	65535	; assembler added errata NOP
@@ -6542,7 +6542,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   6511                           
   6512 ;; *************** function _liftArm *****************
   6513 ;; Defined at:
-  6514 ;;		line 521 in file "motors.c"
+  6514 ;;		line 520 in file "motors.c"
   6515 ;; Parameters:    Size  Location     Type
   6516 ;;		None
   6517 ;; Auto vars:     Size  Location     Type
@@ -6579,34 +6579,34 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   6548                           	callstack 0
   6549  001FBC  FFFF               	dw	65535	; assembler added errata NOP
   6550  001FBE                     
-  6551                           ;motors.c: 524:     setDirection(0, 2);
+  6551                           ;motors.c: 523:     setDirection(0, 2);
   6552  001FBE  0E02               	movlw	2
   6553  001FC0  6E12               	movwf	setDirection@motor^0,c
   6554  001FC2  0E00               	movlw	0
   6555  001FC4  ECED  F010         	call	_setDirection
   6556  001FC8                     
-  6557                           ;motors.c: 526:     T2CONbits.TMR2ON = 1;
+  6557                           ;motors.c: 525:     T2CONbits.TMR2ON = 1;
   6558  001FC8  84CA               	bsf	202,2,c	;volatile
   6559  001FCA                     
-  6560                           ;motors.c: 528:     tm0Error = 0;
+  6560                           ;motors.c: 527:     tm0Error = 0;
   6561  001FCA  0E00               	movlw	0
   6562  001FCC  6E5C               	movwf	(_tm0Error+1)^0,c
   6563  001FCE  0E00               	movlw	0
   6564  001FD0  6E5B               	movwf	_tm0Error^0,c
   6565  001FD2                     
-  6566                           ;motors.c: 529:     tm0Limit = 250;
+  6566                           ;motors.c: 528:     tm0Limit = 250;
   6567  001FD2  0EFA               	movlw	250
   6568  001FD4  6E68               	movwf	_tm0Limit^0,c
   6569  001FD6                     
-  6570                           ;motors.c: 530:     T0CONbits.TMR0ON = 1;
+  6570                           ;motors.c: 529:     T0CONbits.TMR0ON = 1;
   6571  001FD6  8ED5               	bsf	213,7,c	;volatile
   6572                           
-  6573                           ;motors.c: 534:     while(!PORTEbits.RE2){
+  6573                           ;motors.c: 533:     while(!PORTEbits.RE2){
   6574  001FD8  EF1F  F010         	goto	l206
   6575  001FDC                     l4021:
   6576  001FDC  FFFF               	dw	65535	; assembler added errata NOP
   6577                           
-  6578                           ;motors.c: 537:         if(tm0Error){
+  6578                           ;motors.c: 536:         if(tm0Error){
   6579  001FDE  505B               	movf	_tm0Error^0,w,c
   6580  001FE0  105C               	iorwf	(_tm0Error+1)^0,w,c
   6581  001FE2  B4D8               	btfsc	status,2,c
@@ -6618,21 +6618,21 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   6587  001FF2                     u3470:
   6588  001FF2  FFFF               	dw	65535	; assembler added errata NOP
   6589  001FF4                     
-  6590                           ;motors.c: 539:             LATCbits.LATC2 = 0;
+  6590                           ;motors.c: 538:             LATCbits.LATC2 = 0;
   6591  001FF4  948B               	bcf	139,2,c	;volatile
   6592  001FF6                     
-  6593                           ;motors.c: 540:             tm0Error = 6;
+  6593                           ;motors.c: 539:             tm0Error = 6;
   6594  001FF6  0E00               	movlw	0
   6595  001FF8  6E5C               	movwf	(_tm0Error+1)^0,c
   6596  001FFA  0E06               	movlw	6
   6597  001FFC  6E5B               	movwf	_tm0Error^0,c
   6598                           
-  6599                           ;motors.c: 541:             break;
+  6599                           ;motors.c: 540:             break;
   6600  001FFE  EF28  F010         	goto	l209
   6601  002002                     l208:
   6602  002002  FFFF               	dw	65535	; assembler added errata NOP
   6603                           
-  6604                           ;motors.c: 546:         LATCbits.LATC2 = 1;
+  6604                           ;motors.c: 545:         LATCbits.LATC2 = 1;
   6605  002004  848B               	bsf	139,2,c	;volatile
   6606  002006                     l4027:
   6607  002006  FFFF               	dw	65535	; assembler added errata NOP
@@ -6648,7 +6648,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   6617  002020                     u3480:
   6618  002020  FFFF               	dw	65535	; assembler added errata NOP
   6619  002022                     
-  6620                           ;motors.c: 552:         LATCbits.LATC2 = 0;
+  6620                           ;motors.c: 551:         LATCbits.LATC2 = 0;
   6621  002022  948B               	bcf	139,2,c	;volatile
   6622  002024                     l4029:
   6623  002024  FFFF               	dw	65535	; assembler added errata NOP
@@ -6665,7 +6665,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   6634  00203E                     l206:
   6635  00203E  FFFF               	dw	65535	; assembler added errata NOP
   6636                           
-  6637                           ;motors.c: 534:     while(!PORTEbits.RE2){
+  6637                           ;motors.c: 533:     while(!PORTEbits.RE2){
   6638  002040  A484               	btfss	132,2,c	;volatile
   6639  002042  EF25  F010         	goto	u3501
   6640  002046  EF28  F010         	goto	u3500
@@ -6676,26 +6676,26 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   6645  002050                     l209:
   6646  002050  FFFF               	dw	65535	; assembler added errata NOP
   6647                           
-  6648                           ;motors.c: 559:     T0CONbits.TMR0ON = 0;
+  6648                           ;motors.c: 558:     T0CONbits.TMR0ON = 0;
   6649  002052  9ED5               	bcf	213,7,c	;volatile
   6650                           
-  6651                           ;motors.c: 560:     T2CONbits.TMR2ON = 0;
+  6651                           ;motors.c: 559:     T2CONbits.TMR2ON = 0;
   6652  002054  94CA               	bcf	202,2,c	;volatile
   6653  002056                     
-  6654                           ;motors.c: 562:     TMR0 = 0;
+  6654                           ;motors.c: 561:     TMR0 = 0;
   6655  002056  0E00               	movlw	0
   6656  002058  6ED7               	movwf	215,c	;volatile
   6657  00205A  0E00               	movlw	0
   6658  00205C  6ED6               	movwf	214,c	;volatile
   6659                           
-  6660                           ;motors.c: 563:     TMR2 = 0;
+  6660                           ;motors.c: 562:     TMR2 = 0;
   6661  00205E  0E00               	movlw	0
   6662  002060  6ECC               	movwf	204,c	;volatile
   6663  002062                     
-  6664                           ;motors.c: 566:     resetStep();
+  6664                           ;motors.c: 565:     resetStep();
   6665  002062  EC13  F013         	call	_resetStep	;wreg free
   6666  002066                     
-  6667                           ;motors.c: 568:     return(tm0Error);
+  6667                           ;motors.c: 567:     return(tm0Error);
   6668  002066  505B               	movf	_tm0Error^0,w,c
   6669  002068  0012               	return		;funcret
   6670  00206A  FFFF               	dw	65535	; errata NOP
@@ -6763,7 +6763,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   6732                           
   6733 ;; *************** function _setDirection *****************
   6734 ;; Defined at:
-  6735 ;;		line 115 in file "motors.c"
+  6735 ;;		line 114 in file "motors.c"
   6736 ;; Parameters:    Size  Location     Type
   6737 ;;  direction       1    wreg     unsigned char 
   6738 ;;  motor           1   17[COMRAM] unsigned char 
@@ -6807,12 +6807,12 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   6776                           ;setDirection@direction stored from wreg
   6777  0021DC  6E15               	movwf	setDirection@direction^0,c
   6778  0021DE                     
-  6779                           ;motors.c: 116:     switch(motor){
+  6779                           ;motors.c: 115:     switch(motor){
   6780  0021DE  EF09  F011         	goto	l3511
   6781  0021E2                     l3503:
   6782  0021E2  FFFF               	dw	65535	; assembler added errata NOP
   6783                           
-  6784                           ;motors.c: 118:             LATAbits.LATA1 = direction;
+  6784                           ;motors.c: 117:             LATAbits.LATA1 = direction;
   6785  0021E4  B015               	btfsc	setDirection@direction^0,0,c
   6786  0021E6  D002               	bra	u2635
   6787  0021E8  9289               	bcf	137,1,c	;volatile
@@ -6821,12 +6821,12 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   6790  0021EC  8289               	bsf	137,1,c	;volatile
   6791  0021EE                     u2636:
   6792                           
-  6793                           ;motors.c: 119:             break;
+  6793                           ;motors.c: 118:             break;
   6794  0021EE  EF24  F011         	goto	l103
   6795  0021F2                     l3505:
   6796  0021F2  FFFF               	dw	65535	; assembler added errata NOP
   6797                           
-  6798                           ;motors.c: 121:             LATBbits.LATB3 = direction;
+  6798                           ;motors.c: 120:             LATBbits.LATB3 = direction;
   6799  0021F4  B015               	btfsc	setDirection@direction^0,0,c
   6800  0021F6  D002               	bra	u2645
   6801  0021F8  968A               	bcf	138,3,c	;volatile
@@ -6835,12 +6835,12 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   6804  0021FC  868A               	bsf	138,3,c	;volatile
   6805  0021FE                     u2646:
   6806                           
-  6807                           ;motors.c: 122:             break;
+  6807                           ;motors.c: 121:             break;
   6808  0021FE  EF24  F011         	goto	l103
   6809  002202                     l3507:
   6810  002202  FFFF               	dw	65535	; assembler added errata NOP
   6811                           
-  6812                           ;motors.c: 124:             LATCbits.LATC1 = direction;
+  6812                           ;motors.c: 123:             LATCbits.LATC1 = direction;
   6813  002204  B015               	btfsc	setDirection@direction^0,0,c
   6814  002206  D002               	bra	u2655
   6815  002208  928B               	bcf	139,1,c	;volatile
@@ -6849,7 +6849,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   6818  00220C  828B               	bsf	139,1,c	;volatile
   6819  00220E                     u2656:
   6820                           
-  6821                           ;motors.c: 125:             break;
+  6821                           ;motors.c: 124:             break;
   6822  00220E  EF24  F011         	goto	l103
   6823  002212                     l3511:
   6824  002212  FFFF               	dw	65535	; assembler added errata NOP
@@ -6995,7 +6995,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   6963                           
   6964 ;; *************** function _clearTM0 *****************
   6965 ;; Defined at:
-  6966 ;;		line 28 in file "motors.c"
+  6966 ;;		line 27 in file "motors.c"
   6967 ;; Parameters:    Size  Location     Type
   6968 ;;		None
   6969 ;; Auto vars:     Size  Location     Type
@@ -7030,7 +7030,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   6998                           	callstack 0
   6999  0025B0  FFFF               	dw	65535	; assembler added errata NOP
   7000  0025B2                     
-  7001                           ;motors.c: 29:     tm0Error = 0;
+  7001                           ;motors.c: 28:     tm0Error = 0;
   7002  0025B2  0E00               	movlw	0
   7003  0025B4  6E5C               	movwf	(_tm0Error+1)^0,c
   7004  0025B6  0E00               	movlw	0
@@ -7627,7 +7627,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   7589                           
   7590 ;; *************** function _writeTM0 *****************
   7591 ;; Defined at:
-  7592 ;;		line 21 in file "motors.c"
+  7592 ;;		line 20 in file "motors.c"
   7593 ;; Parameters:    Size  Location     Type
   7594 ;;		None
   7595 ;; Auto vars:     Size  Location     Type
@@ -7661,7 +7661,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   7623                           	callstack 0
   7624  0025BE  FFFF               	dw	65535	; assembler added errata NOP
   7625  0025C0                     
-  7626                           ;motors.c: 22:     tm0Error = 1;
+  7626                           ;motors.c: 21:     tm0Error = 1;
   7627  0025C0  0E00               	movlw	0
   7628  0025C2  6E5C               	movwf	(_tm0Error+1)^0,c
   7629  0025C4  0E01               	movlw	1
@@ -7673,7 +7673,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   7635                           
   7636 ;; *************** function _whatsTM0Limit *****************
   7637 ;; Defined at:
-  7638 ;;		line 35 in file "motors.c"
+  7638 ;;		line 34 in file "motors.c"
   7639 ;; Parameters:    Size  Location     Type
   7640 ;;		None
   7641 ;; Auto vars:     Size  Location     Type
@@ -7707,7 +7707,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   7669                           	callstack 0
   7670  00266E  FFFF               	dw	65535	; assembler added errata NOP
   7671  002670                     
-  7672                           ;motors.c: 36:     return(tm0Limit);
+  7672                           ;motors.c: 35:     return(tm0Limit);
   7673  002670  5068               	movf	_tm0Limit^0,w,c
   7674  002672  0012               	return		;funcret
   7675  002674  FFFF               	dw	65535	; errata NOP
@@ -7978,7 +7978,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   7940                           
   7941 ;; *************** function _abortAll *****************
   7942 ;; Defined at:
-  7943 ;;		line 629 in file "motors.c"
+  7943 ;;		line 625 in file "motors.c"
   7944 ;; Parameters:    Size  Location     Type
   7945 ;;		None
   7946 ;; Auto vars:     Size  Location     Type
@@ -8014,25 +8014,25 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   7976                           	callstack 0
   7977  002456  FFFF               	dw	65535	; assembler added errata NOP
   7978  002458                     
-  7979                           ;motors.c: 631:     enableMotor(1, 0);
+  7979                           ;motors.c: 627:     enableMotor(1, 0);
   7980  002458  0E00               	movlw	0
   7981  00245A  6E01               	movwf	i2enableMotor@motor^0,c
   7982  00245C  0E01               	movlw	1
   7983  00245E  EC27  F011         	call	i2_enableMotor
   7984                           
-  7985                           ;motors.c: 632:     enableMotor(1, 1);
+  7985                           ;motors.c: 628:     enableMotor(1, 1);
   7986  002462  0E01               	movlw	1
   7987  002464  6E01               	movwf	i2enableMotor@motor^0,c
   7988  002466  0E01               	movlw	1
   7989  002468  EC27  F011         	call	i2_enableMotor
   7990                           
-  7991                           ;motors.c: 633:     enableMotor(1, 2);
+  7991                           ;motors.c: 629:     enableMotor(1, 2);
   7992  00246C  0E02               	movlw	2
   7993  00246E  6E01               	movwf	i2enableMotor@motor^0,c
   7994  002470  0E01               	movlw	1
   7995  002472  EC27  F011         	call	i2_enableMotor
   7996  002476                     
-  7997                           ;motors.c: 635:     printError(7);
+  7997                           ;motors.c: 631:     printError(7);
   7998  002476  0E07               	movlw	7
   7999  002478  EC1A  F00D         	call	i2_printError
   8000  00247C                     i2l244:
@@ -8348,7 +8348,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   8308                           
   8309 ;; *************** function i2_enableMotor *****************
   8310 ;; Defined at:
-  8311 ;;		line 94 in file "motors.c"
+  8311 ;;		line 93 in file "motors.c"
   8312 ;; Parameters:    Size  Location     Type
   8313 ;;  enable          1    wreg     unsigned char 
   8314 ;;  motor           1    0[COMRAM] unsigned char 
@@ -8387,12 +8387,12 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   8347                           ;i2enableMotor@enable stored from wreg
   8348  002250  6E04               	movwf	i2enableMotor@enable^0,c
   8349  002252                     
-  8350                           ;motors.c: 95:     switch(motor){
+  8350                           ;motors.c: 94:     switch(motor){
   8351  002252  EF43  F011         	goto	i2l3015
   8352  002256                     i2l3007:
   8353  002256  FFFF               	dw	65535	; assembler added errata NOP
   8354                           
-  8355                           ;motors.c: 97:             LATAbits.LATA3 = enable;
+  8355                           ;motors.c: 96:             LATAbits.LATA3 = enable;
   8356  002258  B004               	btfsc	i2enableMotor@enable^0,0,c
   8357  00225A  D002               	bra	i2u226_45
   8358  00225C  9689               	bcf	137,3,c	;volatile
@@ -8401,12 +8401,12 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   8361  002260  8689               	bsf	137,3,c	;volatile
   8362  002262                     i2u226_46:
   8363                           
-  8364                           ;motors.c: 98:             break;
+  8364                           ;motors.c: 97:             break;
   8365  002262  EF5E  F011         	goto	i2l94
   8366  002266                     i2l3009:
   8367  002266  FFFF               	dw	65535	; assembler added errata NOP
   8368                           
-  8369                           ;motors.c: 100:             LATBbits.LATB5 = enable;
+  8369                           ;motors.c: 99:             LATBbits.LATB5 = enable;
   8370  002268  B004               	btfsc	i2enableMotor@enable^0,0,c
   8371  00226A  D002               	bra	i2u227_45
   8372  00226C  9A8A               	bcf	138,5,c	;volatile
@@ -8415,12 +8415,12 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   8375  002270  8A8A               	bsf	138,5,c	;volatile
   8376  002272                     i2u227_46:
   8377                           
-  8378                           ;motors.c: 101:             break;
+  8378                           ;motors.c: 100:             break;
   8379  002272  EF5E  F011         	goto	i2l94
   8380  002276                     i2l3011:
   8381  002276  FFFF               	dw	65535	; assembler added errata NOP
   8382                           
-  8383                           ;motors.c: 103:             LATCbits.LATC3 = enable;
+  8383                           ;motors.c: 102:             LATCbits.LATC3 = enable;
   8384  002278  B004               	btfsc	i2enableMotor@enable^0,0,c
   8385  00227A  D002               	bra	i2u228_45
   8386  00227C  968B               	bcf	139,3,c	;volatile
@@ -8429,7 +8429,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   8389  002280  868B               	bsf	139,3,c	;volatile
   8390  002282                     i2u228_46:
   8391                           
-  8392                           ;motors.c: 104:             break;
+  8392                           ;motors.c: 103:             break;
   8393  002282  EF5E  F011         	goto	i2l94
   8394  002286                     i2l3015:
   8395  002286  FFFF               	dw	65535	; assembler added errata NOP
@@ -9152,7 +9152,7 @@ CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V2.20 build 20200408173844 
-Symbol Table                                                                                   Wed Mar 31 10:44:51 2021
+Symbol Table                                                                                   Fri Apr 09 10:02:36 2021
 
                                                   ___fldiv@aexp 0038  
                                                   ___fldiv@bexp 0037  

@@ -10,9 +10,8 @@
 static unsigned int tm0Error = 0;
 static unsigned char tm0Limit = 0;
 
-//TODO: [ ] ADD eeprom read
-static unsigned int maxX = 1000;
-static unsigned int maxY = 1000;
+static unsigned int maxX = 250;
+static unsigned int maxY = 250;
 
 /*
  * Description: Function to write inside the tm0error. A value different from
@@ -585,7 +584,6 @@ void rotateObj(unsigned char rotAngle){
         //Set these pins (shift of 2 bit since start at RD2 not RD0)
         LATD |= rotSequence[i%4] << 2;
         
-        //TODO: [ ]change?
         //Delay so that the rotation can be done
         T2CONbits.TMR2ON = 1;           //turn on the timer used for the interrupt
         while(!stepMade());
@@ -600,7 +598,6 @@ void rotateObj(unsigned char rotAngle){
 void pickObject(){
     LATDbits.LATD1 = 1;
     
-    //TODO: [ ]change?
     //Delay so that the breezer can grab the object
     T2CONbits.TMR2ON = 1;           //turn on the timer used for the interrupt
     while(!stepMade());
@@ -614,7 +611,6 @@ void pickObject(){
 void releaseObj(){
     LATDbits.LATD1 = 0;
     
-    //TODO: [ ]change?
     //Delay so that the breezer can release the object
     T2CONbits.TMR2ON = 1;           //turn on the timer used for the interrupt
     while(!stepMade());

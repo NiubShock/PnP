@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=D:\Programs\MPLABx\xc8\v2.20\pic\dat\en_msgs.txt -cn \
   -h+dist/default/production\ESD_PnP_1.X.production.sym \
   --cmf=dist/default/production\ESD_PnP_1.X.production.cmf -z -Q18F452 \
-  -oC:\Users\alle9\AppData\Local\Temp\sajo.2 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\alle9\AppData\Local\Temp\s588.2 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/ESD_PnP_1.X.production.map -E1 \
   -ver=XC8 Compiler --acfsm=1493 -ASTACK=01DEh-05FFh -pstack=STACK \
   -ACODE=00h-03FFFhx2 -ACONST=00h-07FFFh -ASMALLCONST=0600h-06FFhx122 \
@@ -21,7 +21,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\alle9\AppData\Local\Temp\sajo.o \
+  C:\Users\alle9\AppData\Local\Temp\s588.o \
   dist/default/production\ESD_PnP_1.X.production.o 
 
 Object code version is 3.11
@@ -31,7 +31,7 @@ Machine type is 18F452
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\alle9\AppData\Local\Temp\sajo.o
+C:\Users\alle9\AppData\Local\Temp\s588.o
                 idloc                            200000   200000        8        0       5
                 config                           300000   300000        E        0       4
                 text                               268C     268C        2     1346       0
@@ -606,7 +606,7 @@ ___xxtofl@sign                                                  cstackCOMRAM 000
 ___xxtofl@val                                                   cstackCOMRAM 000012
 __accesstop                                                     (abs)        000080
 __activetblptr                                                  (abs)        000002
-__cntErrataNOP_C:\Users\alle9\AppData\Local\Temp\sajo.o         (abs)        000001
+__cntErrataNOP_C:\Users\alle9\AppData\Local\Temp\s588.o         (abs)        000001
 __cntErrataNOP_dist/default/production\ESD_PnP_1.X.production.o (abs)        0001E2
 __end_of___fldiv                                                text33       000A42
 __end_of___fltol                                                text32       001918
@@ -1249,7 +1249,7 @@ Total ram usage:        3 bytes
 
  *************** function _resetPosition *****************
  Defined at:
-		line 158 in file "motors.c"
+		line 157 in file "motors.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1286,7 +1286,7 @@ Total ram usage:        3 bytes
 
  *************** function _setStep *****************
  Defined at:
-		line 67 in file "motors.c"
+		line 66 in file "motors.c"
  Parameters:    Size  Location     Type
   step            1    wreg     unsigned char 
   motor           1   17[COMRAM] unsigned char 
@@ -1317,7 +1317,7 @@ Total ram usage:        4 bytes
 
  *************** function _setDecay *****************
  Defined at:
-		line 136 in file "motors.c"
+		line 135 in file "motors.c"
  Parameters:    Size  Location     Type
   decay           1    wreg     unsigned char 
   motor           1   17[COMRAM] unsigned char 
@@ -1348,7 +1348,7 @@ Total ram usage:        4 bytes
 
  *************** function _enableMotor *****************
  Defined at:
-		line 94 in file "motors.c"
+		line 93 in file "motors.c"
  Parameters:    Size  Location     Type
   enable          1    wreg     unsigned char 
   motor           1   17[COMRAM] unsigned char 
@@ -1529,7 +1529,7 @@ Total ram usage:        0 bytes
 
  *************** function _initPinMotors *****************
  Defined at:
-		line 42 in file "motors.c"
+		line 41 in file "motors.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1658,7 +1658,7 @@ Total ram usage:        5 bytes
 
  *************** function _touchTherm *****************
  Defined at:
-		line 455 in file "motors.c"
+		line 454 in file "motors.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1754,7 +1754,7 @@ Total ram usage:        0 bytes
 
  *************** function _touchObject *****************
  Defined at:
-		line 384 in file "motors.c"
+		line 383 in file "motors.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1912,7 +1912,7 @@ Total ram usage:        0 bytes
 
  *************** function _rotateObj *****************
  Defined at:
-		line 575 in file "motors.c"
+		line 574 in file "motors.c"
  Parameters:    Size  Location     Type
   rotAngle        1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -2047,7 +2047,7 @@ Total ram usage:       25 bytes
 
  *************** function _releaseObj *****************
  Defined at:
-		line 614 in file "motors.c"
+		line 611 in file "motors.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2077,7 +2077,7 @@ Total ram usage:        0 bytes
 
  *************** function _pickObject *****************
  Defined at:
-		line 600 in file "motors.c"
+		line 598 in file "motors.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2107,7 +2107,7 @@ Total ram usage:        0 bytes
 
  *************** function _moveToPoint *****************
  Defined at:
-		line 264 in file "motors.c"
+		line 263 in file "motors.c"
  Parameters:    Size  Location     Type
   x1              2   21[COMRAM] int 
   y1              2   23[COMRAM] int 
@@ -2176,7 +2176,7 @@ Total ram usage:        2 bytes
 
  *************** function _liftArm *****************
  Defined at:
-		line 521 in file "motors.c"
+		line 520 in file "motors.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2245,7 +2245,7 @@ Total ram usage:        3 bytes
 
  *************** function _setDirection *****************
  Defined at:
-		line 115 in file "motors.c"
+		line 114 in file "motors.c"
  Parameters:    Size  Location     Type
   direction       1    wreg     unsigned char 
   motor           1   17[COMRAM] unsigned char 
@@ -2344,7 +2344,7 @@ Total ram usage:        2 bytes
 
  *************** function _clearTM0 *****************
  Defined at:
-		line 28 in file "motors.c"
+		line 27 in file "motors.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2443,7 +2443,7 @@ Total ram usage:        3 bytes
 
  *************** function _writeTM0 *****************
  Defined at:
-		line 21 in file "motors.c"
+		line 20 in file "motors.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2472,7 +2472,7 @@ Total ram usage:        0 bytes
 
  *************** function _whatsTM0Limit *****************
  Defined at:
-		line 35 in file "motors.c"
+		line 34 in file "motors.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2675,7 +2675,7 @@ Total ram usage:        0 bytes
 
  *************** function _abortAll *****************
  Defined at:
-		line 629 in file "motors.c"
+		line 625 in file "motors.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2769,7 +2769,7 @@ Total ram usage:        4 bytes
 
  *************** function i2_enableMotor *****************
  Defined at:
-		line 94 in file "motors.c"
+		line 93 in file "motors.c"
  Parameters:    Size  Location     Type
   enable          1    wreg     unsigned char 
   motor           1    0[COMRAM] unsigned char 
