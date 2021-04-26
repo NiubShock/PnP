@@ -3965,9 +3965,12 @@ char executeData();
 static unsigned char posVector[3] = {0, 0, 0};
 static int rotAngle = 0;
 
-static const unsigned char feeder1Pos[2] = {5, 5};
-static const unsigned char feeder2Pos[2] = {15, 15};
-static const unsigned char feeder3Pos[2] = {25, 25};
+static const unsigned char feeder1Pos[2] = {15, 50};
+static const unsigned char feeder2Pos[2] = {15, 150};
+static const unsigned char feeder3Pos[2] = {15, 200};
+
+static const unsigned char maxFeedX = 25;
+static const unsigned char maxFeedY= 250;
 
 static unsigned char newFeeder[2] = {0, 0};
 
@@ -4005,11 +4008,22 @@ void main(void) {
             RCSTAbits.CREN = 0;
 
 
-            storeData(0);
-            storeData(0xFF);
-            storeData(newData ->end_posX);
-            storeData(newData ->end_posY);
-            storeData(newData ->end_rot - newData ->init_rot);
+            if(newData ->end_posX > maxFeedX || newData ->end_posY > maxFeedY){
+                errCode = 5;
+            }else{
+                storeData(newData ->end_posX);
+                storeData(newData ->end_posY);
+            }
+
+
+            if(errCode == 0){
+
+                storeData(0);
+                storeData(0xFF);
+                storeData(newData ->end_rot - newData ->init_rot);
+            }else{
+                printError(errCode);
+            }
 
 
             RCSTAbits.CREN = 1;
@@ -4036,7 +4050,7 @@ void main(void) {
     }
     return;
 }
-# 89 "main.c"
+# 103 "main.c"
 char executeData(){
     t_sequence *data = getData();
 

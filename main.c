@@ -7,9 +7,12 @@ char executeData();
 static unsigned char posVector[3] = {0, 0, 0};
 static int rotAngle = 0;
 
-static const unsigned char feeder1Pos[2] = {5, 5};
-static const unsigned char feeder2Pos[2] = {15, 15};
-static const unsigned char feeder3Pos[2] = {25, 25};
+static const unsigned char feeder1Pos[2] = {15, 50};
+static const unsigned char feeder2Pos[2] = {15, 150};
+static const unsigned char feeder3Pos[2] = {15, 200};
+
+static const unsigned char maxFeedX = 25;
+static const unsigned char maxFeedY= 250;
 
 static unsigned char newFeeder[2] = {0, 0};
 
@@ -46,12 +49,25 @@ void main(void) {
             //disable the reception here
             RCSTAbits.CREN = 0;
             
-            //start the storing of the data
-            storeData(PICK_AND_PLACE);
-            storeData(NEW_FEEDER);
-            storeData(newData ->end_posX);
-            storeData(newData ->end_posY);
-            storeData(newData ->end_rot - newData ->init_rot);
+            
+            //TODO:Verify that part
+            //verify the boundaries and store only if everything is ok
+            if(newData ->end_posX > maxFeedX || newData ->end_posY > maxFeedY){
+                errCode = BOUNDARY_ERROR;
+            }else{
+                storeData(newData ->end_posX);
+                storeData(newData ->end_posY);
+            }
+            
+            //store the remaining data if no errors occurred
+            if(errCode == ALL_OK){
+                //start the storing of the data
+                storeData(PICK_AND_PLACE);
+                storeData(NEW_FEEDER);
+                storeData(newData ->end_rot - newData ->init_rot);
+            }else{
+                printError(errCode); 
+            }
             
             //turn on the reception again
             RCSTAbits.CREN = 1;
