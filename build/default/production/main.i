@@ -3954,7 +3954,7 @@ unsigned char fatalError(void);
 void reduceSeq(void);
 void shiftData(void);
 # 7 "./main.h" 2
-# 34 "./main.h"
+# 36 "./main.h"
 char executeData(void);
 # 2 "main.c" 2
 
@@ -3965,12 +3965,12 @@ char executeData();
 static unsigned char posVector[3] = {0, 0, 0};
 static int rotAngle = 0;
 
-static const unsigned char feeder1Pos[2] = {15, 50};
-static const unsigned char feeder2Pos[2] = {15, 150};
-static const unsigned char feeder3Pos[2] = {15, 200};
+static const unsigned char feeder1Pos[2] = {3, 5};
+static const unsigned char feeder2Pos[2] = {3, 10};
+static const unsigned char feeder3Pos[2] = {3, 15};
 
-static const unsigned char maxFeedX = 25;
-static const unsigned char maxFeedY= 250;
+static const unsigned char maxFeedX = 6;
+static const unsigned char maxFeedY= 20;
 
 static unsigned char newFeeder[2] = {0, 0};
 
@@ -4006,6 +4006,8 @@ void main(void) {
 
 
             RCSTAbits.CREN = 0;
+
+
 
 
             if(newData ->end_posX > maxFeedX || newData ->end_posY > maxFeedY){
@@ -4050,7 +4052,7 @@ void main(void) {
     }
     return;
 }
-# 103 "main.c"
+# 105 "main.c"
 char executeData(){
     t_sequence *data = getData();
 

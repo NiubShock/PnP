@@ -10,8 +10,16 @@
 static unsigned int tm0Error = 0;
 static unsigned char tm0Limit = 0;
 
-static unsigned int maxX = 250;
-static unsigned int maxY = 250;
+static unsigned int maxX = 20;
+static unsigned int maxY = 20;
+
+#ifdef nSIMULATION
+static unsigned char stepMot1[] = {0b100010, 0b000110, 0b001100, 0b101000}; //RA1-2-3-5
+static unsigned char stepMot2[] = {0b10001, 0b00101, 0b01100, 0b11000}; //RB0-2-3-4
+static unsigned char stepMot3[] = {0b1001, 0b0011, 0b0110, 0b1100}; //RC0-1-2-3
+
+static int motCounter[3][2] = {{0,1},{0,1},{0,1}}; //contains the position,direction 
+#endif
 
 /*
  * Description: Function to write inside the tm0error. A value different from
@@ -155,6 +163,7 @@ void setDecay(unsigned char decay, unsigned char motor){
  *              time required is too much)
  */
 char resetPosition(){
+#ifndef nSIMULATION
     //set up the motors
     setStep(MOTOR1, FULLSTEP);
     setStep(MOTOR2, FULLSTEP);
@@ -171,6 +180,12 @@ char resetPosition(){
     enableMotor(TURNON, MOTOR1);
     enableMotor(TURNON, MOTOR2);
     enableMotor(TURNON, MOTOR3);
+#else
+    //set the direction of the motors
+    motCounter[0][1] = -1;
+    motCounter[1][1] = -1;
+    motCounter[2][1] = -1;
+#endif
     
     //these variables are used to keep moving even if one direction already 
     //reached to end-stroke
@@ -189,10 +204,12 @@ char resetPosition(){
         
         //verify if the limit time has been reached
         if(tm0Error){
+#ifndef nSIMULATION
             //stop the motors
             LATAbits.LATA2 = 0;
             LATBbits.LATB4 = 0;
             LATCbits.LATC2 = 0;
+#endif
             //save the error
             tm0Error = RESET_ERROR;
             break;
@@ -207,7 +224,17 @@ char resetPosition(){
             keepMovingX = 0;
         }else{
             //Keep moving (H part of the step)
+#ifndef nSIMULATION
             LATAbits.LATA2 = 1;
+#else
+            //calculate the right signal combination
+            motCounter[0][0] += motCounter[0][1];
+            if(motCounter[0][0] < 0){
+                motCounter[0][0] = 3;
+            }
+            //activate the 1st motor
+            LATA = stepMot1[motCounter[0][0]];
+#endif
         }
         
         //Verify the Y axis
@@ -216,7 +243,17 @@ char resetPosition(){
             keepMovingY = 0;
         }else{
             //Keep moving (H part of the step)
+            #ifndef nSIMULATION
             LATBbits.LATB4 = 1;
+#else
+            //calculate the right signal combination
+            motCounter[1][0] += motCounter[1][1];
+            if(motCounter[1][0] < 0){
+                motCounter[1][0] = 3;
+            }
+            //activate the 2nd motor
+            LATB = stepMot2[motCounter[1][0]];
+#endif
         }
         
         //Verify the Z axis
@@ -225,16 +262,28 @@ char resetPosition(){
             keepMovingZ = 0;
         }else{
             //Keep moving (H part of the step)
+#ifndef nSIMULATION
             LATCbits.LATC2 = 1;
+#else
+            //calculate the right signal combination
+            motCounter[2][0] += motCounter[2][1];
+            if(motCounter[2][0] < 0){
+                motCounter[2][0] = 3;
+            }
+            //activate the 3rd motor
+            LATC = stepMot3[motCounter[2][0]];
+#endif
         }
         
         //wait for the step to be made
         while(!stepMade());
         
+#ifndef nSIMULATION
         //send the L part of the step
         LATAbits.LATA2 = 0;
         LATBbits.LATB4 = 0;
         LATCbits.LATC2 = 0;
+#endif
         
         //wait for the step to be made
         while(!stepMade());
@@ -270,6 +319,7 @@ char moveToPoint(int x1, int y1, int x2, int y2){
     }
     
     //set the correct direction for the X axis
+#ifndef nSIMULATION
     if((x2 - x1) > 0){
         setDirection(FORWARD, MOTOR1);
         MOT1Direction = FORWARD;
@@ -285,6 +335,24 @@ char moveToPoint(int x1, int y1, int x2, int y2){
         setDirection(BACKWARD, MOTOR2);
         MOT2Direction = BACKWARD;
     }
+#else
+    if((x2 - x1) > 0){
+        motCounter[0][1] = 1;
+        MOT1Direction = FORWARD;
+    }else{
+        motCounter[0][1] = -1;
+        MOT1Direction = BACKWARD;
+    }
+    //set the correct direction for the X axis
+    if((y2 - y1) > 0){
+        motCounter[1][1] = 1;
+        MOT2Direction = FORWARD;
+    }else{
+        motCounter[2][1] = -1;
+        MOT2Direction = BACKWARD;
+    }
+#endif
+    
     
     unsigned char keepMovingX = 1;
     unsigned char keepMovingY = 1;
@@ -300,9 +368,11 @@ char moveToPoint(int x1, int y1, int x2, int y2){
         
         //verify if the time exceeded the expectation
         if(tm0Error){
+#ifndef nSIMULATION
             //stop the motors
             LATAbits.LATA2 = 0;
             LATBbits.LATB4 = 0;
+#endif
             tm0Error = POINT_ERROR;
             break;
         }
@@ -318,7 +388,17 @@ char moveToPoint(int x1, int y1, int x2, int y2){
                 keepMovingX = 0;
             }else if(!keepMovingX){
                 //Keep moving (H part of the step)
-                LATAbits.LATA2 = 1;
+#ifndef nSIMULATION
+            LATAbits.LATA2 = 1;
+#else
+            //calculate the right signal combination
+            motCounter[0][0] += motCounter[0][1];
+            if(motCounter[0][0] > 3){
+                motCounter[0][0] = 0;
+            }
+            //activate the 1st motor
+            LATA = stepMot1[motCounter[0][0]];
+#endif
             }
         }else if(MOT1Direction == BACKWARD){
             if(x1 - stepCounter() <= x2){
@@ -326,7 +406,17 @@ char moveToPoint(int x1, int y1, int x2, int y2){
                 keepMovingX = 0;
             }else if(!keepMovingX){
                 //Keep moving (H part of the step)
-                LATAbits.LATA2 = 1;
+#ifndef nSIMULATION
+            LATAbits.LATA2 = 1;
+#else
+            //calculate the right signal combination
+            motCounter[0][0] += motCounter[0][1];
+            if(motCounter[0][0] < 0){
+                motCounter[0][0] = 3;
+            }
+            //activate the 1st motor
+            LATA = stepMot1[motCounter[0][0]];
+#endif
             }
         }
         
@@ -336,8 +426,18 @@ char moveToPoint(int x1, int y1, int x2, int y2){
                 //change this variable to stop the movement
                 keepMovingY = 0;
             }else if(!keepMovingX){
-                //Keep moving (H part of the step)
-                LATBbits.LATB4 = 1;
+                //Keep moving (H part of the step)                
+#ifndef nSIMULATION
+            LATBbits.LATB4 = 1;
+#else
+            //calculate the right signal combination
+            motCounter[1][0] += motCounter[1][1];
+            if(motCounter[1][0] > 3){
+                motCounter[1][0] = 0;
+            }
+            //activate the 1st motor
+            LATB = stepMot2[motCounter[1][0]];
+#endif
             }
         }else if(MOT2Direction == BACKWARD){
             //Verify the Y axis
@@ -346,7 +446,17 @@ char moveToPoint(int x1, int y1, int x2, int y2){
                 keepMovingY = 0;
             }else if(!keepMovingX){
                 //Keep moving (H part of the step)
-                LATBbits.LATB4 = 1;
+#ifndef nSIMULATION
+            LATBbits.LATB4 = 1;
+#else
+            //calculate the right signal combination
+            motCounter[1][0] += motCounter[1][1];
+            if(motCounter[1][0] < 0){
+                motCounter[1][0] = 3;
+            }
+            //activate the 1st motor
+            LATB = stepMot2[motCounter[1][0]];
+#endif
             }
         }
         
@@ -354,8 +464,10 @@ char moveToPoint(int x1, int y1, int x2, int y2){
         while(!stepMade());
         
         //send the L part of the step
+#ifndef nSIMULATION
         LATAbits.LATA2 = 0;
         LATBbits.LATB4 = 0;
+#endif
         
         //wait for the step to be made
         while(!stepMade());
@@ -383,7 +495,11 @@ char moveToPoint(int x1, int y1, int x2, int y2){
 char touchObject(){
     
     //move down
+#ifndef nSIMULATION
     setDirection(FORWARD, MOTOR3);
+#else
+    motCounter[2][1] = 1;
+#endif
     
     T2CONbits.TMR2ON = 1;
     
@@ -400,19 +516,33 @@ char touchObject(){
         //verify if there are errors due to the time
         if(tm0Error){
             //stop the motors
+#ifndef nSIMULATION
             LATCbits.LATC2 = 0;
+#endif
             tm0Error = POINTZ_ERROR;
             break;
         }
         
         //step H
-        LATCbits.LATC2 = 1;
+#ifndef nSIMULATION
+            LATCbits.LATC2 = 1;
+#else
+            //calculate the right signal combination
+            motCounter[2][0] += motCounter[2][1];
+            if(motCounter[2][0] > 3){
+                motCounter[2][0] = 0;
+            }
+            //activate the 3rd motor
+            LATC = stepMot3[motCounter[2][0]];
+#endif
         
         //wait for the step to be made
         while(!stepMade());
         
+#ifndef nSIMULATION
         //send the L part of the step
         LATCbits.LATC2 = 0;
+#endif
         
         //wait for the step to be made
         while(!stepMade());
@@ -454,7 +584,11 @@ char touchObject(){
 char touchTherm(){
     
     //move down
+#ifndef nSIMULATION
     setDirection(FORWARD, MOTOR3);
+#else
+    motCounter[2][1] = 1;
+#endif
     
     T2CONbits.TMR2ON = 1;
     
@@ -471,19 +605,34 @@ char touchTherm(){
         //verify if there are problems with the time
         if(tm0Error){
             //stop the motors
+#ifndef nSIMULATION
             LATCbits.LATC2 = 0;
+#endif
             tm0Error = POINTZ_ERROR;
             break;
         }
         
         //step H
-        LATCbits.LATC2 = 1;
+#ifndef nSIMULATION
+            LATCbits.LATC2 = 1;
+#else
+            //calculate the right signal combination
+            motCounter[2][0] += motCounter[2][1];
+            if(motCounter[2][0] > 3){
+                motCounter[2][0] = 0;
+            }
+            //activate the 3rd motor
+            LATC = stepMot3[motCounter[2][0]];
+#endif
         
         //wait for the step to be made
         while(!stepMade());
         
         //send the L part of the step
+#ifndef nSIMULATION
+        //send the L part of the step
         LATCbits.LATC2 = 0;
+#endif
         
         //wait for the step to be made
         while(!stepMade());
@@ -520,7 +669,11 @@ char touchTherm(){
 char liftArm(){
     
     //move up
+#ifndef nSIMULATION
     setDirection(BACKWARD, MOTOR3);
+#else
+    motCounter[2][1] = -1;
+#endif
     
     T2CONbits.TMR2ON = 1;
     
@@ -535,20 +688,34 @@ char liftArm(){
         //verify if there are problems related to the time
         if(tm0Error){
             //stop the motors
+#ifndef nSIMULATION
             LATCbits.LATC2 = 0;
+#endif
             tm0Error = POINTZ_ERROR;
             break;
         }
         
         
         //Keep moving (H part of the step)
-        LATCbits.LATC2 = 1;
+#ifndef nSIMULATION
+            LATCbits.LATC2 = 1;
+#else
+            //calculate the right signal combination
+            motCounter[2][0] += motCounter[2][1];
+            if(motCounter[2][0] < 0){
+                motCounter[2][0] = 3;
+            }
+            //activate the 3rd motor
+            LATC = stepMot3[motCounter[2][0]];
+#endif
         
         //wait for the step to be made
         while(!stepMade());
         
+#ifndef nSIMULATION
         //send the L part of the step
         LATCbits.LATC2 = 0;
+#endif
         
         //wait for the step to be made
         while(!stepMade());
@@ -624,10 +791,12 @@ void releaseObj(){
  */
 void abortAll(){
     //fatal error. Turn off all the motors and wait for a reset
+#ifndef nSIMULATION
     enableMotor(TURNOFF, MOTOR1);
     enableMotor(TURNOFF, MOTOR2);
     enableMotor(TURNOFF, MOTOR3);
-
+#endif
+    
     printError(FATAL_ERROR);
     while(1);
 }

@@ -29,6 +29,8 @@
 #define TIME_REF_RESET          250
 #define TIME_REF_POINT          250
 
+#define nSIMULATION             1
+
 
 
 char executeData(void);

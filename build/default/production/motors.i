@@ -3960,7 +3960,7 @@ unsigned char fatalError(void);
 void reduceSeq(void);
 void shiftData(void);
 # 7 "./main.h" 2
-# 34 "./main.h"
+# 36 "./main.h"
 char executeData(void);
 # 8 "motors.c" 2
 
@@ -3968,8 +3968,16 @@ char executeData(void);
 static unsigned int tm0Error = 0;
 static unsigned char tm0Limit = 0;
 
-static unsigned int maxX = 250;
-static unsigned int maxY = 250;
+static unsigned int maxX = 20;
+static unsigned int maxY = 20;
+
+
+static unsigned char stepMot1[] = {0b100010, 0b000110, 0b001100, 0b101000};
+static unsigned char stepMot2[] = {0b10001, 0b00101, 0b01100, 0b11000};
+static unsigned char stepMot3[] = {0b1001, 0b0011, 0b0110, 0b1100};
+
+static int motCounter[3][2] = {{0,1},{0,1},{0,1}};
+
 
 
 
@@ -4113,22 +4121,11 @@ void setDecay(unsigned char decay, unsigned char motor){
 
 
 char resetPosition(){
+# 185 "motors.c"
+    motCounter[0][1] = -1;
+    motCounter[1][1] = -1;
+    motCounter[2][1] = -1;
 
-    setStep(0, 0);
-    setStep(1, 0);
-    setStep(2, 0);
-
-    setDirection(0, 0);
-    setDirection(0, 1);
-    setDirection(0, 2);
-
-    setDecay(1, 0);
-    setDecay(1, 1);
-    setDecay(1, 2);
-
-    enableMotor(0, 0);
-    enableMotor(0, 1);
-    enableMotor(0, 2);
 
 
 
@@ -4148,9 +4145,11 @@ char resetPosition(){
 
         if(tm0Error){
 
-            LATAbits.LATA2 = 0;
-            LATBbits.LATB4 = 0;
-            LATCbits.LATC2 = 0;
+
+
+
+
+
 
             tm0Error = 3;
             break;
@@ -4165,7 +4164,17 @@ char resetPosition(){
             keepMovingX = 0;
         }else{
 
-            LATAbits.LATA2 = 1;
+
+
+
+
+            motCounter[0][0] += motCounter[0][1];
+            if(motCounter[0][0] < 0){
+                motCounter[0][0] = 3;
+            }
+
+            LATA = stepMot1[motCounter[0][0]];
+
         }
 
 
@@ -4174,7 +4183,17 @@ char resetPosition(){
             keepMovingY = 0;
         }else{
 
-            LATBbits.LATB4 = 1;
+
+
+
+
+            motCounter[1][0] += motCounter[1][1];
+            if(motCounter[1][0] < 0){
+                motCounter[1][0] = 3;
+            }
+
+            LATB = stepMot2[motCounter[1][0]];
+
         }
 
 
@@ -4183,18 +4202,22 @@ char resetPosition(){
             keepMovingZ = 0;
         }else{
 
-            LATCbits.LATC2 = 1;
+
+
+
+
+            motCounter[2][0] += motCounter[2][1];
+            if(motCounter[2][0] < 0){
+                motCounter[2][0] = 3;
+            }
+
+            LATC = stepMot3[motCounter[2][0]];
+
         }
 
 
         while(!stepMade());
-
-
-        LATAbits.LATA2 = 0;
-        LATBbits.LATB4 = 0;
-        LATCbits.LATC2 = 0;
-
-
+# 289 "motors.c"
         while(!stepMade());
     }
 
@@ -4226,23 +4249,24 @@ char moveToPoint(int x1, int y1, int x2, int y2){
     if(x2 > maxX || y2 > maxY){
         return(5);
     }
-
-
+# 339 "motors.c"
     if((x2 - x1) > 0){
-        setDirection(1, 0);
+        motCounter[0][1] = 1;
         MOT1Direction = 1;
     }else{
-        setDirection(0, 0);
+        motCounter[0][1] = -1;
         MOT1Direction = 0;
     }
 
     if((y2 - y1) > 0){
-        setDirection(1, 1);
+        motCounter[1][1] = 1;
         MOT2Direction = 1;
     }else{
-        setDirection(0, 1);
+        motCounter[2][1] = -1;
         MOT2Direction = 0;
     }
+
+
 
     unsigned char keepMovingX = 1;
     unsigned char keepMovingY = 1;
@@ -4259,8 +4283,10 @@ char moveToPoint(int x1, int y1, int x2, int y2){
 
         if(tm0Error){
 
-            LATAbits.LATA2 = 0;
-            LATBbits.LATB4 = 0;
+
+
+
+
             tm0Error = 4;
             break;
         }
@@ -4276,7 +4302,17 @@ char moveToPoint(int x1, int y1, int x2, int y2){
                 keepMovingX = 0;
             }else if(!keepMovingX){
 
-                LATAbits.LATA2 = 1;
+
+
+
+
+            motCounter[0][0] += motCounter[0][1];
+            if(motCounter[0][0] > 3){
+                motCounter[0][0] = 0;
+            }
+
+            LATA = stepMot1[motCounter[0][0]];
+
             }
         }else if(MOT1Direction == 0){
             if(x1 - stepCounter() <= x2){
@@ -4284,7 +4320,17 @@ char moveToPoint(int x1, int y1, int x2, int y2){
                 keepMovingX = 0;
             }else if(!keepMovingX){
 
-                LATAbits.LATA2 = 1;
+
+
+
+
+            motCounter[0][0] += motCounter[0][1];
+            if(motCounter[0][0] < 0){
+                motCounter[0][0] = 3;
+            }
+
+            LATA = stepMot1[motCounter[0][0]];
+
             }
         }
 
@@ -4295,7 +4341,17 @@ char moveToPoint(int x1, int y1, int x2, int y2){
                 keepMovingY = 0;
             }else if(!keepMovingX){
 
-                LATBbits.LATB4 = 1;
+
+
+
+
+            motCounter[1][0] += motCounter[1][1];
+            if(motCounter[1][0] > 3){
+                motCounter[1][0] = 0;
+            }
+
+            LATB = stepMot2[motCounter[1][0]];
+
             }
         }else if(MOT2Direction == 0){
 
@@ -4304,18 +4360,23 @@ char moveToPoint(int x1, int y1, int x2, int y2){
                 keepMovingY = 0;
             }else if(!keepMovingX){
 
-                LATBbits.LATB4 = 1;
+
+
+
+
+            motCounter[1][0] += motCounter[1][1];
+            if(motCounter[1][0] < 0){
+                motCounter[1][0] = 3;
+            }
+
+            LATB = stepMot2[motCounter[1][0]];
+
             }
         }
 
 
         while(!stepMade());
-
-
-        LATAbits.LATA2 = 0;
-        LATBbits.LATB4 = 0;
-
-
+# 473 "motors.c"
         while(!stepMade());
     }
 
@@ -4341,7 +4402,11 @@ char moveToPoint(int x1, int y1, int x2, int y2){
 char touchObject(){
 
 
-    setDirection(1, 2);
+
+
+
+    motCounter[2][1] = 1;
+
 
     T2CONbits.TMR2ON = 1;
 
@@ -4358,19 +4423,33 @@ char touchObject(){
 
         if(tm0Error){
 
-            LATCbits.LATC2 = 0;
+
+
+
             tm0Error = 6;
             break;
         }
 
 
-        LATCbits.LATC2 = 1;
+
+
+
+
+            motCounter[2][0] += motCounter[2][1];
+            if(motCounter[2][0] > 3){
+                motCounter[2][0] = 0;
+            }
+
+            LATC = stepMot3[motCounter[2][0]];
+
 
 
         while(!stepMade());
 
 
-        LATCbits.LATC2 = 0;
+
+
+
 
 
         while(!stepMade());
@@ -4399,11 +4478,15 @@ char touchObject(){
 
     return(tm0Error);
 }
-# 454 "motors.c"
+# 584 "motors.c"
 char touchTherm(){
 
 
-    setDirection(1, 2);
+
+
+
+    motCounter[2][1] = 1;
+
 
     T2CONbits.TMR2ON = 1;
 
@@ -4420,21 +4503,29 @@ char touchTherm(){
 
         if(tm0Error){
 
-            LATCbits.LATC2 = 0;
+
+
+
             tm0Error = 6;
             break;
         }
 
 
-        LATCbits.LATC2 = 1;
+
+
+
+
+            motCounter[2][0] += motCounter[2][1];
+            if(motCounter[2][0] > 3){
+                motCounter[2][0] = 0;
+            }
+
+            LATC = stepMot3[motCounter[2][0]];
+
 
 
         while(!stepMade());
-
-
-        LATCbits.LATC2 = 0;
-
-
+# 638 "motors.c"
         while(!stepMade());
     }
 
@@ -4469,7 +4560,11 @@ char touchTherm(){
 char liftArm(){
 
 
-    setDirection(0, 2);
+
+
+
+    motCounter[2][1] = -1;
+
 
     T2CONbits.TMR2ON = 1;
 
@@ -4484,20 +4579,34 @@ char liftArm(){
 
         if(tm0Error){
 
-            LATCbits.LATC2 = 0;
+
+
+
             tm0Error = 6;
             break;
         }
 
 
 
-        LATCbits.LATC2 = 1;
+
+
+
+
+            motCounter[2][0] += motCounter[2][1];
+            if(motCounter[2][0] < 0){
+                motCounter[2][0] = 3;
+            }
+
+            LATC = stepMot3[motCounter[2][0]];
+
 
 
         while(!stepMade());
 
 
-        LATCbits.LATC2 = 0;
+
+
+
 
 
         while(!stepMade());
@@ -4573,9 +4682,11 @@ void releaseObj(){
 
 void abortAll(){
 
-    enableMotor(1, 0);
-    enableMotor(1, 1);
-    enableMotor(1, 2);
+
+
+
+
+
 
     printError(7);
     while(1);
