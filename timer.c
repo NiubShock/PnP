@@ -45,7 +45,7 @@ void tim1Init(){
  */
 void tim2Init(unsigned int _pwmPeriod){
     T2CONbits.TMR2ON = 0;       //TIM2 off
-    T2CONbits.T2CKPS = 0x01;    //x16 prescaler
+    T2CONbits.T2CKPS = 0x10;    //x16 prescaler
     
     //fix the period related to the pwm generation
     pwmPeriod = _pwmPeriod;

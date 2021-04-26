@@ -3852,7 +3852,7 @@ void tim1Init(){
 
 void tim2Init(unsigned int _pwmPeriod){
     T2CONbits.TMR2ON = 0;
-    T2CONbits.T2CKPS = 0x01;
+    T2CONbits.T2CKPS = 0x10;
 
 
     pwmPeriod = _pwmPeriod;

@@ -510,8 +510,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;timer.c: 47:     T2CONbits.TMR2ON = 0;
 [e = . . _T2CONbits 0 1 -> -> 0 `i `uc ]
 "48
-[; ;timer.c: 48:     T2CONbits.T2CKPS = 0x01;
-[e = . . _T2CONbits 0 0 -> -> 1 `i `uc ]
+[; ;timer.c: 48:     T2CONbits.T2CKPS = 0x10;
+[e = . . _T2CONbits 0 0 -> -> 16 `i `uc ]
 "51
 [; ;timer.c: 51:     pwmPeriod = _pwmPeriod;
 [e = _pwmPeriod __pwmPeriod ]

@@ -1332,11 +1332,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;usart.c: 200:                 dataSequence[dataCounter].feederLine = receivedMex[1];
 [e = . *U + &U _dataSequence * -> _dataCounter `ux -> -> # *U &U _dataSequence `ui `ux 0 *U + &U F2399 * -> -> -> 1 `i `ui `ux -> -> # *U &U F2399 `ui `ux ]
 "201
-[; ;usart.c: 201:                 dataSequence[dataCounter].posX = receivedMex[2];
-[e = . *U + &U _dataSequence * -> _dataCounter `ux -> -> # *U &U _dataSequence `ui `ux 1 *U + &U F2399 * -> -> -> 2 `i `ui `ux -> -> # *U &U F2399 `ui `ux ]
+[; ;usart.c: 201:                 dataSequence[dataCounter].posX = receivedMex[2] * 10;
+[e = . *U + &U _dataSequence * -> _dataCounter `ux -> -> # *U &U _dataSequence `ui `ux 1 -> * -> *U + &U F2399 * -> -> -> 2 `i `ui `ux -> -> # *U &U F2399 `ui `ux `i -> 10 `i `uc ]
 "202
-[; ;usart.c: 202:                 dataSequence[dataCounter].posY = receivedMex[3];
-[e = . *U + &U _dataSequence * -> _dataCounter `ux -> -> # *U &U _dataSequence `ui `ux 2 *U + &U F2399 * -> -> -> 3 `i `ui `ux -> -> # *U &U F2399 `ui `ux ]
+[; ;usart.c: 202:                 dataSequence[dataCounter].posY = receivedMex[3] * 10;
+[e = . *U + &U _dataSequence * -> _dataCounter `ux -> -> # *U &U _dataSequence `ui `ux 2 -> * -> *U + &U F2399 * -> -> -> 3 `i `ui `ux -> -> # *U &U F2399 `ui `ux `i -> 10 `i `uc ]
 "203
 [; ;usart.c: 203:                 dataSequence[dataCounter].rotation = receivedMex[4];
 [e = . *U + &U _dataSequence * -> _dataCounter `ux -> -> # *U &U _dataSequence `ui `ux 3 *U + &U F2399 * -> -> -> 4 `i `ui `ux -> -> # *U &U F2399 `ui `ux ]
@@ -1356,20 +1356,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;usart.c: 210:                 newSequenceData.W = receivedMex[2];
 [e = . _newSequenceData 1 *U + &U F2399 * -> -> -> 2 `i `ui `ux -> -> # *U &U F2399 `ui `ux ]
 "211
-[; ;usart.c: 211:                 newSequenceData.init_posX = receivedMex[3];
-[e = . _newSequenceData 2 *U + &U F2399 * -> -> -> 3 `i `ui `ux -> -> # *U &U F2399 `ui `ux ]
+[; ;usart.c: 211:                 newSequenceData.init_posX = receivedMex[3] * 10;
+[e = . _newSequenceData 2 -> * -> *U + &U F2399 * -> -> -> 3 `i `ui `ux -> -> # *U &U F2399 `ui `ux `i -> 10 `i `uc ]
 "212
-[; ;usart.c: 212:                 newSequenceData.init_posY = receivedMex[4];
-[e = . _newSequenceData 3 *U + &U F2399 * -> -> -> 4 `i `ui `ux -> -> # *U &U F2399 `ui `ux ]
+[; ;usart.c: 212:                 newSequenceData.init_posY = receivedMex[4] * 10;
+[e = . _newSequenceData 3 -> * -> *U + &U F2399 * -> -> -> 4 `i `ui `ux -> -> # *U &U F2399 `ui `ux `i -> 10 `i `uc ]
 "213
 [; ;usart.c: 213:                 newSequenceData.init_rot = receivedMex[5];
 [e = . _newSequenceData 4 *U + &U F2399 * -> -> -> 5 `i `ui `ux -> -> # *U &U F2399 `ui `ux ]
 "214
-[; ;usart.c: 214:                 newSequenceData.end_posX = receivedMex[6];
-[e = . _newSequenceData 5 *U + &U F2399 * -> -> -> 6 `i `ui `ux -> -> # *U &U F2399 `ui `ux ]
+[; ;usart.c: 214:                 newSequenceData.end_posX = receivedMex[6] * 10;
+[e = . _newSequenceData 5 -> * -> *U + &U F2399 * -> -> -> 6 `i `ui `ux -> -> # *U &U F2399 `ui `ux `i -> 10 `i `uc ]
 "215
-[; ;usart.c: 215:                 newSequenceData.end_posY = receivedMex[7];
-[e = . _newSequenceData 6 *U + &U F2399 * -> -> -> 7 `i `ui `ux -> -> # *U &U F2399 `ui `ux ]
+[; ;usart.c: 215:                 newSequenceData.end_posY = receivedMex[7] * 10;
+[e = . _newSequenceData 6 -> * -> *U + &U F2399 * -> -> -> 7 `i `ui `ux -> -> # *U &U F2399 `ui `ux `i -> 10 `i `uc ]
 "216
 [; ;usart.c: 216:                 newSequenceData.end_rot = receivedMex[8];
 [e = . _newSequenceData 7 *U + &U F2399 * -> -> -> 8 `i `ui `ux -> -> # *U &U F2399 `ui `ux ]

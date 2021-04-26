@@ -10,8 +10,8 @@
 static unsigned int tm0Error = 0;
 static unsigned char tm0Limit = 0;
 
-static unsigned int maxX = 20;
-static unsigned int maxY = 20;
+static unsigned int maxX = 201;
+static unsigned int maxY = 201;
 
 #ifdef nSIMULATION
 static unsigned char stepMot1[] = {0b100010, 0b000110, 0b001100, 0b101000}; //RA1-2-3-5
@@ -283,10 +283,11 @@ char resetPosition(){
         LATAbits.LATA2 = 0;
         LATBbits.LATB4 = 0;
         LATCbits.LATC2 = 0;
-#endif
-        
         //wait for the step to be made
         while(!stepMade());
+#endif
+        
+        
     }
     
     //turn off both the timers
@@ -386,7 +387,7 @@ char moveToPoint(int x1, int y1, int x2, int y2){
             if(x1 + stepCounter() >= x2){
                 //change this variable to stop the movement
                 keepMovingX = 0;
-            }else if(!keepMovingX){
+            }else if(keepMovingX){
                 //Keep moving (H part of the step)
 #ifndef nSIMULATION
             LATAbits.LATA2 = 1;
@@ -404,7 +405,7 @@ char moveToPoint(int x1, int y1, int x2, int y2){
             if(x1 - stepCounter() <= x2){
                 //change this variable to stop the movement
                 keepMovingX = 0;
-            }else if(!keepMovingX){
+            }else if(keepMovingX){
                 //Keep moving (H part of the step)
 #ifndef nSIMULATION
             LATAbits.LATA2 = 1;
@@ -425,7 +426,7 @@ char moveToPoint(int x1, int y1, int x2, int y2){
             if(y1 + stepCounter() >= y2){
                 //change this variable to stop the movement
                 keepMovingY = 0;
-            }else if(!keepMovingX){
+            }else if(keepMovingY){
                 //Keep moving (H part of the step)                
 #ifndef nSIMULATION
             LATBbits.LATB4 = 1;
@@ -444,7 +445,7 @@ char moveToPoint(int x1, int y1, int x2, int y2){
             if(y1 - stepCounter() <= y2){
                 //change this variable to stop the movement
                 keepMovingY = 0;
-            }else if(!keepMovingX){
+            }else if(keepMovingY){
                 //Keep moving (H part of the step)
 #ifndef nSIMULATION
             LATBbits.LATB4 = 1;
@@ -467,10 +468,11 @@ char moveToPoint(int x1, int y1, int x2, int y2){
 #ifndef nSIMULATION
         LATAbits.LATA2 = 0;
         LATBbits.LATB4 = 0;
-#endif
-        
         //wait for the step to be made
         while(!stepMade());
+#endif
+        
+        
     }
     
     //turn off both the timer
@@ -542,10 +544,11 @@ char touchObject(){
 #ifndef nSIMULATION
         //send the L part of the step
         LATCbits.LATC2 = 0;
-#endif
-        
         //wait for the step to be made
         while(!stepMade());
+#endif
+        
+        
     }
     
     //stop the adc
@@ -632,10 +635,11 @@ char touchTherm(){
 #ifndef nSIMULATION
         //send the L part of the step
         LATCbits.LATC2 = 0;
-#endif
-        
         //wait for the step to be made
         while(!stepMade());
+#endif
+        
+        
     }
     
     //stop the adc
@@ -715,10 +719,11 @@ char liftArm(){
 #ifndef nSIMULATION
         //send the L part of the step
         LATCbits.LATC2 = 0;
-#endif
-        
         //wait for the step to be made
         while(!stepMade());
+#endif
+        
+        
     }
     
     //turn off both the timers

@@ -3968,8 +3968,8 @@ char executeData(void);
 static unsigned int tm0Error = 0;
 static unsigned char tm0Limit = 0;
 
-static unsigned int maxX = 20;
-static unsigned int maxY = 20;
+static unsigned int maxX = 201;
+static unsigned int maxY = 201;
 
 
 static unsigned char stepMot1[] = {0b100010, 0b000110, 0b001100, 0b101000};
@@ -4217,8 +4217,7 @@ char resetPosition(){
 
 
         while(!stepMade());
-# 289 "motors.c"
-        while(!stepMade());
+# 291 "motors.c"
     }
 
 
@@ -4249,7 +4248,7 @@ char moveToPoint(int x1, int y1, int x2, int y2){
     if(x2 > maxX || y2 > maxY){
         return(5);
     }
-# 339 "motors.c"
+# 340 "motors.c"
     if((x2 - x1) > 0){
         motCounter[0][1] = 1;
         MOT1Direction = 1;
@@ -4300,7 +4299,7 @@ char moveToPoint(int x1, int y1, int x2, int y2){
             if(x1 + stepCounter() >= x2){
 
                 keepMovingX = 0;
-            }else if(!keepMovingX){
+            }else if(keepMovingX){
 
 
 
@@ -4318,7 +4317,7 @@ char moveToPoint(int x1, int y1, int x2, int y2){
             if(x1 - stepCounter() <= x2){
 
                 keepMovingX = 0;
-            }else if(!keepMovingX){
+            }else if(keepMovingX){
 
 
 
@@ -4339,7 +4338,7 @@ char moveToPoint(int x1, int y1, int x2, int y2){
             if(y1 + stepCounter() >= y2){
 
                 keepMovingY = 0;
-            }else if(!keepMovingX){
+            }else if(keepMovingY){
 
 
 
@@ -4358,7 +4357,7 @@ char moveToPoint(int x1, int y1, int x2, int y2){
             if(y1 - stepCounter() <= y2){
 
                 keepMovingY = 0;
-            }else if(!keepMovingX){
+            }else if(keepMovingY){
 
 
 
@@ -4376,8 +4375,7 @@ char moveToPoint(int x1, int y1, int x2, int y2){
 
 
         while(!stepMade());
-# 473 "motors.c"
-        while(!stepMade());
+# 476 "motors.c"
     }
 
 
@@ -4445,14 +4443,7 @@ char touchObject(){
 
 
         while(!stepMade());
-
-
-
-
-
-
-
-        while(!stepMade());
+# 552 "motors.c"
     }
 
 
@@ -4478,7 +4469,7 @@ char touchObject(){
 
     return(tm0Error);
 }
-# 584 "motors.c"
+# 587 "motors.c"
 char touchTherm(){
 
 
@@ -4525,8 +4516,7 @@ char touchTherm(){
 
 
         while(!stepMade());
-# 638 "motors.c"
-        while(!stepMade());
+# 643 "motors.c"
     }
 
 
@@ -4602,14 +4592,7 @@ char liftArm(){
 
 
         while(!stepMade());
-
-
-
-
-
-
-
-        while(!stepMade());
+# 727 "motors.c"
     }
 
 

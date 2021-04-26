@@ -602,43 +602,43 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> 0 `i
 ]
 "10
-[; ;main.c: 10: static const unsigned char feeder1Pos[2] = {3, 5};
+[; ;main.c: 10: static const unsigned char feeder1Pos[2] = {30, 50};
 [v _feeder1Pos `Cuc ~T0 @X0 -> 2 `i s ]
 [i _feeder1Pos
 :U ..
--> -> 3 `i `uc
--> -> 5 `i `uc
+-> -> 30 `i `uc
+-> -> 50 `i `uc
 ..
 ]
 "11
-[; ;main.c: 11: static const unsigned char feeder2Pos[2] = {3, 10};
+[; ;main.c: 11: static const unsigned char feeder2Pos[2] = {30, 100};
 [v _feeder2Pos `Cuc ~T0 @X0 -> 2 `i s ]
 [i _feeder2Pos
 :U ..
--> -> 3 `i `uc
--> -> 10 `i `uc
+-> -> 30 `i `uc
+-> -> 100 `i `uc
 ..
 ]
 "12
-[; ;main.c: 12: static const unsigned char feeder3Pos[2] = {3, 15};
+[; ;main.c: 12: static const unsigned char feeder3Pos[2] = {30, 150};
 [v _feeder3Pos `Cuc ~T0 @X0 -> 2 `i s ]
 [i _feeder3Pos
 :U ..
--> -> 3 `i `uc
--> -> 15 `i `uc
+-> -> 30 `i `uc
+-> -> 150 `i `uc
 ..
 ]
 "14
-[; ;main.c: 14: static const unsigned char maxFeedX = 6;
+[; ;main.c: 14: static const unsigned char maxFeedX = 60;
 [v _maxFeedX `Cuc ~T0 @X0 1 s ]
 [i _maxFeedX
--> -> 6 `i `uc
+-> -> 60 `i `uc
 ]
 "15
-[; ;main.c: 15: static const unsigned char maxFeedY= 20;
+[; ;main.c: 15: static const unsigned char maxFeedY= 200;
 [v _maxFeedY `Cuc ~T0 @X0 1 s ]
 [i _maxFeedY
--> -> 20 `i `uc
+-> -> 200 `i `uc
 ]
 "17
 [; ;main.c: 17: static unsigned char newFeeder[2] = {0, 0};
