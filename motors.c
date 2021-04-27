@@ -18,7 +18,7 @@ static unsigned char stepMot1[] = {0b100010, 0b000110, 0b001100, 0b101000}; //RA
 static unsigned char stepMot2[] = {0b10001, 0b00101, 0b01100, 0b11000}; //RB0-2-3-4
 static unsigned char stepMot3[] = {0b1001, 0b0011, 0b0110, 0b1100}; //RC0-1-2-3
 
-static int motCounter[3][2] = {{0,1},{0,1},{0,1}}; //contains the position,direction 
+static signed char motCounter[3][2] = {{0,1},{0,1},{0,1}}; //contains the position,direction 
 #endif
 
 /*

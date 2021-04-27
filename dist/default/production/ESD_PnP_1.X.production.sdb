@@ -89,17 +89,17 @@
 [v _tim1Init tim1Init `(v  1 e 1 0 ]
 "46
 [v _tim2Init tim2Init `(v  1 e 1 0 ]
-"60
+"59
 [v _stepMade stepMade `(ui  1 e 2 0 ]
-"71
+"70
 [v _stepCounter stepCounter `(ui  1 e 2 0 ]
-"78
+"77
 [v _resetStep resetStep `(v  1 e 1 0 ]
-"85
+"84
 [v _increaseStep increaseStep `(v  1 e 1 0 ]
-"93
+"92
 [v _toggleStep toggleStep `(v  1 e 1 0 ]
-"101
+"100
 [v _retPeriod retPeriod `(ui  1 e 2 0 ]
 "1 D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X/usart.h
 [s S788 . 4 `uc 1 feederLine 1 0 `uc 1 posX 1 1 `uc 1 posY 1 2 `uc 1 rotation 1 3 ]
@@ -703,7 +703,7 @@
 [v _tim2Init tim2Init `(v  1 e 1 0 ]
 {
 [v tim2Init@_pwmPeriod _pwmPeriod `ui  1 p 2 17 ]
-"53
+"52
 } 0
 "33
 [v _tim1Init tim1Init `(v  1 e 1 0 ]
@@ -946,27 +946,27 @@
 [v moveToPoint@y2 y2 `i  1 p 2 26 ]
 "491
 } 0
-"71 D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\timer.c
+"70 D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\timer.c
 [v _stepCounter stepCounter `(ui  1 e 2 0 ]
 {
-"73
+"72
 } 0
 "685 D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\motors.c
 [v _liftArm liftArm `(uc  1 e 1 0 ]
 {
 "754
 } 0
-"60 D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\timer.c
+"59 D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\timer.c
 [v _stepMade stepMade `(ui  1 e 2 0 ]
 {
-"61
+"60
 [v stepMade@temp temp `uc  1 a 1 19 ]
-"66
+"65
 } 0
-"78
+"77
 [v _resetStep resetStep `(v  1 e 1 0 ]
 {
-"80
+"79
 } 0
 "1 D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X/usart.h
 [s S788 . 4 `uc 1 feederLine 1 0 `uc 1 posX 1 1 `uc 1 posY 1 2 `uc 1 rotation 1 3 ]
@@ -1012,10 +1012,10 @@
 {
 "44
 } 0
-"93 D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\timer.c
+"92 D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\timer.c
 [v _toggleStep toggleStep `(v  1 e 1 0 ]
 {
-"95
+"94
 } 0
 "86 D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\adc.c
 [v _setTouchRel setTouchRel `(v  1 e 1 0 ]
@@ -1027,15 +1027,15 @@
 {
 "81
 } 0
-"101 D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\timer.c
+"100 D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\timer.c
 [v _retPeriod retPeriod `(ui  1 e 2 0 ]
 {
-"103
+"102
 } 0
-"85
+"84
 [v _increaseStep increaseStep `(v  1 e 1 0 ]
 {
-"87
+"86
 } 0
 "61 D:\OneDrive\University\2nd year 1st semester\Embedded System Design\Project\Code\ESD_PnP_1.X\usart.c
 [v _fatalError fatalError `(uc  1 e 1 0 ]

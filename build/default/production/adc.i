@@ -1,4 +1,4 @@
-# 1 "timer.c"
+# 1 "adc.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "timer.c" 2
+# 1 "adc.c" 2
 
 
 
@@ -3812,99 +3812,97 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 33 "D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 2 3
-# 9 "timer.c" 2
+# 9 "adc.c" 2
+
+# 1 "./adc.h" 1
+# 37 "./adc.h"
+void initADC(void);
+void startADC(void);
+void stopADC(void);
+unsigned int returnTouch(void);
+unsigned int returnTherm(void);
+void resetTouch(void);
+void resetTherm(void);
+
+void setThermRel(void);
+void setTouchRel(void);
+# 10 "adc.c" 2
 
 
-static volatile unsigned char pwmStep = 0;
-static volatile unsigned char stepToggle = 0;
-static unsigned int pwmPeriod = 0;
+static volatile unsigned char touch_rel = 0;
+static volatile unsigned char therm_rel = 0;
 
 
 
 
+void initADC(void){
+    ADCON0bits.ADCS = 0x01;
+    ADCON1bits.ADCS2 = 0x01;
 
+    ADCON0bits.CHS = 0x00;
+    ADCON0bits.GO_DONE = 0x00;
+    ADCON0bits.ADON = 0;
 
+    ADCON1bits.ADFM = 0x00;
+    ADCON1bits.PCFG = 0x0E;
 
-void tim0Init(void){
-    T0CONbits.TMR0ON = 0;
-    T0CONbits.T08BIT = 0;
-    T0CONbits.T0CS = 0;
-    T0CONbits.PSA = 1;
-    T0CONbits.T0PS = 0x07;
+    PIE1bits.ADIE = 1;
+    IPR1bits.ADIP = 1;
 }
 
 
 
 
-
-void tim1Init(){
-    T1CONbits.T1CKPS = 0x03;
-    T1CONbits.TMR1CS = 0;
-
-    T1CONbits.TMR1ON = 1;
-
+void startADC(void){
+    ADCON0bits.ADON = 1;
+    ADCON0bits.GODONE = 1;
 }
 
 
 
 
-
-
-void tim2Init(unsigned int _pwmPeriod){
-    T2CONbits.TMR2ON = 0;
-    T2CONbits.T2CKPS1 = 1;
-
-
-
-    pwmPeriod = _pwmPeriod;
+void stopADC(void){
+    ADCON0bits.ADON = 0;
 }
 
 
 
 
-
-
-unsigned int stepMade(void){
-    unsigned char temp = stepToggle;
-
-    stepToggle = 0;
-
-    return temp;
+unsigned int returnTouch(void){
+    return touch_rel;
 }
 
 
 
 
-unsigned int stepCounter(void){
-    return pwmStep;
+unsigned int returnTherm(void){
+    return therm_rel;
 }
 
 
 
 
-void resetStep(void){
-    pwmStep = 0;
+void resetTouch(void){
+    touch_rel = 0;
 }
 
 
 
 
-void increaseStep(void){
-    pwmStep++;
+void resetTherm(void){
+    therm_rel = 0;
 }
 
 
 
 
-
-void toggleStep(void){
-    stepToggle = 1;
+void setThermRel(void){
+    therm_rel = 1;
 }
 
 
 
 
-
-unsigned int retPeriod(void){
-    return pwmPeriod;
+void setTouchRel(void){
+    touch_rel = 1;
 }

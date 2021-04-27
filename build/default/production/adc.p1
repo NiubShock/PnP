@@ -1,61 +1,96 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"4795 D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h
-[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 4795:     struct {
-[s S214 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S214 . T0PS PSA T0SE T0CS T08BIT TMR0ON ]
-"4803
-[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 4803:     struct {
-[s S215 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S215 . T0PS0 T0PS1 T0PS2 ]
-"4794
-[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 4794: typedef union {
-[u S213 `S214 1 `S215 1 ]
-[n S213 . . . ]
-"4809
-[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 4809: extern volatile T0CONbits_t T0CONbits __attribute__((address(0xFD5)));
-[v _T0CONbits `VS213 ~T0 @X0 0 e@4053 ]
-"4418
-[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 4418:     struct {
-[s S191 :2 `uc 1 :1 `uc 1 ]
-[n S191 . . NOT_T1SYNC ]
-"4422
-[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 4422:     struct {
-[s S192 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S192 . TMR1ON TMR1CS nT1SYNC T1OSCEN T1CKPS . RD16 ]
-"4431
-[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 4431:     struct {
-[s S193 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S193 . . T1SYNC . T1CKPS0 T1CKPS1 ]
-"4438
-[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 4438:     struct {
-[s S194 :2 `uc 1 :1 `uc 1 ]
-[n S194 . . T1INSYNC ]
-"4442
-[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 4442:     struct {
-[s S195 :3 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 ]
-[n S195 . . SOSCEN . T1RD16 ]
-"4417
-[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 4417: typedef union {
-[u S190 `S191 1 `S192 1 `S193 1 `S194 1 `S195 1 ]
-[n S190 . . . . . . ]
-"4449
-[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 4449: extern volatile T1CONbits_t T1CONbits __attribute__((address(0xFCD)));
-[v _T1CONbits `VS190 ~T0 @X0 0 e@4045 ]
-"4230
-[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 4230:     struct {
-[s S176 :2 `uc 1 :1 `uc 1 :4 `uc 1 ]
-[n S176 . T2CKPS TMR2ON TOUTPS ]
-"4235
-[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 4235:     struct {
-[s S177 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S177 . T2CKPS0 T2CKPS1 . TOUTPS0 TOUTPS1 TOUTPS2 TOUTPS3 ]
-"4229
-[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 4229: typedef union {
-[u S175 `S176 1 `S177 1 ]
-[n S175 . . . ]
-"4245
-[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 4245: extern volatile T2CONbits_t T2CONbits __attribute__((address(0xFCA)));
-[v _T2CONbits `VS175 ~T0 @X0 0 e@4042 ]
+"3665 D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 3665:     struct {
+[s S146 :2 `uc 1 :1 `uc 1 ]
+[n S146 . . GO_NOT_DONE ]
+"3669
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 3669:     struct {
+[s S147 :1 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 :2 `uc 1 ]
+[n S147 . ADON . GO_nDONE CHS ADCS ]
+"3676
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 3676:     struct {
+[s S148 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S148 . . GO CHS0 CHS1 CHS2 ADCS0 ADCS1 ]
+"3685
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 3685:     struct {
+[s S149 :2 `uc 1 :1 `uc 1 ]
+[n S149 . . NOT_DONE ]
+"3689
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 3689:     struct {
+[s S150 :2 `uc 1 :1 `uc 1 ]
+[n S150 . . nDONE ]
+"3693
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 3693:     struct {
+[s S151 :2 `uc 1 :1 `uc 1 ]
+[n S151 . . DONE ]
+"3697
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 3697:     struct {
+[s S152 :2 `uc 1 :1 `uc 1 ]
+[n S152 . . GO_DONE ]
+"3701
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 3701:     struct {
+[s S153 :7 `uc 1 :1 `uc 1 ]
+[n S153 . . ADCAL ]
+"3705
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 3705:     struct {
+[s S154 :2 `uc 1 :1 `uc 1 ]
+[n S154 . . GODONE ]
+"3664
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 3664: typedef union {
+[u S145 `S146 1 `S147 1 `S148 1 `S149 1 `S150 1 `S151 1 `S152 1 `S153 1 `S154 1 ]
+[n S145 . . . . . . . . . . ]
+"3710
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 3710: extern volatile ADCON0bits_t ADCON0bits __attribute__((address(0xFC2)));
+[v _ADCON0bits `VS145 ~T0 @X0 0 e@4034 ]
+"3597
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 3597:     struct {
+[s S142 :4 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S142 . PCFG . ADCS2 ADFM ]
+"3603
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 3603:     struct {
+[s S143 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S143 . PCFG0 PCFG1 PCFG2 PCFG3 ]
+"3609
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 3609:     struct {
+[s S144 :3 `uc 1 :1 `uc 1 ]
+[n S144 . . CHSN3 ]
+"3596
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 3596: typedef union {
+[u S141 `S142 1 `S143 1 `S144 1 ]
+[n S141 . . . . ]
+"3614
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 3614: extern volatile ADCON1bits_t ADCON1bits __attribute__((address(0xFC1)));
+[v _ADCON1bits `VS141 ~T0 @X0 0 e@4033 ]
+"2268
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 2268:     struct {
+[s S82 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S82 . TMR1IE TMR2IE CCP1IE SSPIE TXIE RCIE ADIE PSPIE ]
+"2278
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 2278:     struct {
+[s S83 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S83 . . TX1IE RC1IE ]
+"2267
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 2267: typedef union {
+[u S81 `S82 1 `S83 1 ]
+[n S81 . . . ]
+"2284
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 2284: extern volatile PIE1bits_t PIE1bits __attribute__((address(0xF9D)));
+[v _PIE1bits `VS81 ~T0 @X0 0 e@3997 ]
+"2422
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 2422:     struct {
+[s S88 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S88 . TMR1IP TMR2IP CCP1IP SSPIP TXIP RCIP ADIP PSPIP ]
+"2432
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 2432:     struct {
+[s S89 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S89 . . TX1IP RC1IP ]
+"2421
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 2421: typedef union {
+[u S87 `S88 1 `S89 1 ]
+[n S87 . . . ]
+"2438
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 2438: extern volatile IPR1bits_t IPR1bits __attribute__((address(0xF9F)));
+[v _IPR1bits `VS87 ~T0 @X0 0 e@3999 ]
 "54 D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h
 [; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 54: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -437,173 +472,161 @@ Version 4.0 HI-TECH Software Intermediate Code
 "5763
 [; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 5763: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"11 timer.c
-[; ;timer.c: 11: static volatile unsigned char pwmStep = 0;
-[v _pwmStep `Vuc ~T0 @X0 1 s ]
-[i _pwmStep
--> -> 0 `i `uc
-]
-"12
-[; ;timer.c: 12: static volatile unsigned char stepToggle = 0;
-[v _stepToggle `Vuc ~T0 @X0 1 s ]
-[i _stepToggle
+"12 adc.c
+[; ;adc.c: 12: static volatile unsigned char touch_rel = 0;
+[v _touch_rel `Vuc ~T0 @X0 1 s ]
+[i _touch_rel
 -> -> 0 `i `uc
 ]
 "13
-[; ;timer.c: 13: static unsigned int pwmPeriod = 0;
-[v _pwmPeriod `ui ~T0 @X0 1 s ]
-[i _pwmPeriod
--> -> 0 `i `ui
+[; ;adc.c: 13: static volatile unsigned char therm_rel = 0;
+[v _therm_rel `Vuc ~T0 @X0 1 s ]
+[i _therm_rel
+-> -> 0 `i `uc
 ]
-"21
-[; ;timer.c: 21: void tim0Init(void){
-[v _tim0Init `(v ~T0 @X0 1 ef ]
+"18
+[; ;adc.c: 18: void initADC(void){
+[v _initADC `(v ~T0 @X0 1 ef ]
 {
-[e :U _tim0Init ]
+[e :U _initADC ]
 [f ]
+"19
+[; ;adc.c: 19:     ADCON0bits.ADCS = 0x01;
+[e = . . _ADCON0bits 1 4 -> -> 1 `i `uc ]
+"20
+[; ;adc.c: 20:     ADCON1bits.ADCS2 = 0x01;
+[e = . . _ADCON1bits 0 2 -> -> 1 `i `uc ]
 "22
-[; ;timer.c: 22:     T0CONbits.TMR0ON = 0;
-[e = . . _T0CONbits 0 5 -> -> 0 `i `uc ]
+[; ;adc.c: 22:     ADCON0bits.CHS = 0x00;
+[e = . . _ADCON0bits 1 3 -> -> 0 `i `uc ]
 "23
-[; ;timer.c: 23:     T0CONbits.T08BIT = 0;
-[e = . . _T0CONbits 0 4 -> -> 0 `i `uc ]
+[; ;adc.c: 23:     ADCON0bits.GO_DONE = 0x00;
+[e = . . _ADCON0bits 6 1 -> -> 0 `i `uc ]
 "24
-[; ;timer.c: 24:     T0CONbits.T0CS = 0;
-[e = . . _T0CONbits 0 3 -> -> 0 `i `uc ]
-"25
-[; ;timer.c: 25:     T0CONbits.PSA = 1;
-[e = . . _T0CONbits 0 1 -> -> 1 `i `uc ]
+[; ;adc.c: 24:     ADCON0bits.ADON = 0;
+[e = . . _ADCON0bits 1 0 -> -> 0 `i `uc ]
 "26
-[; ;timer.c: 26:     T0CONbits.T0PS = 0x07;
-[e = . . _T0CONbits 0 0 -> -> 7 `i `uc ]
+[; ;adc.c: 26:     ADCON1bits.ADFM = 0x00;
+[e = . . _ADCON1bits 0 3 -> -> 0 `i `uc ]
 "27
-[; ;timer.c: 27: }
+[; ;adc.c: 27:     ADCON1bits.PCFG = 0x0E;
+[e = . . _ADCON1bits 0 0 -> -> 14 `i `uc ]
+"29
+[; ;adc.c: 29:     PIE1bits.ADIE = 1;
+[e = . . _PIE1bits 0 6 -> -> 1 `i `uc ]
+"30
+[; ;adc.c: 30:     IPR1bits.ADIP = 1;
+[e = . . _IPR1bits 0 6 -> -> 1 `i `uc ]
+"31
+[; ;adc.c: 31: }
 [e :UE 238 ]
 }
-"33
-[; ;timer.c: 33: void tim1Init(){
-[v _tim1Init `(v ~T0 @X0 1 ef ]
+"36
+[; ;adc.c: 36: void startADC(void){
+[v _startADC `(v ~T0 @X0 1 ef ]
 {
-[e :U _tim1Init ]
+[e :U _startADC ]
 [f ]
-"34
-[; ;timer.c: 34:     T1CONbits.T1CKPS = 0x03;
-[e = . . _T1CONbits 1 4 -> -> 3 `i `uc ]
-"35
-[; ;timer.c: 35:     T1CONbits.TMR1CS = 0;
-[e = . . _T1CONbits 1 1 -> -> 0 `i `uc ]
 "37
-[; ;timer.c: 37:     T1CONbits.TMR1ON = 1;
-[e = . . _T1CONbits 1 0 -> -> 1 `i `uc ]
+[; ;adc.c: 37:     ADCON0bits.ADON = 1;
+[e = . . _ADCON0bits 1 0 -> -> 1 `i `uc ]
+"38
+[; ;adc.c: 38:     ADCON0bits.GODONE = 1;
+[e = . . _ADCON0bits 8 1 -> -> 1 `i `uc ]
 "39
-[; ;timer.c: 39: }
+[; ;adc.c: 39: }
 [e :UE 239 ]
 }
-"46
-[; ;timer.c: 46: void tim2Init(unsigned int _pwmPeriod){
-[v _tim2Init `(v ~T0 @X0 1 ef1`ui ]
+"44
+[; ;adc.c: 44: void stopADC(void){
+[v _stopADC `(v ~T0 @X0 1 ef ]
 {
-[e :U _tim2Init ]
-[v __pwmPeriod `ui ~T0 @X0 1 r1 ]
+[e :U _stopADC ]
 [f ]
-"47
-[; ;timer.c: 47:     T2CONbits.TMR2ON = 0;
-[e = . . _T2CONbits 0 1 -> -> 0 `i `uc ]
-"48
-[; ;timer.c: 48:     T2CONbits.T2CKPS1 = 1;
-[e = . . _T2CONbits 1 1 -> -> 1 `i `uc ]
-"52
-[; ;timer.c: 52:     pwmPeriod = _pwmPeriod;
-[e = _pwmPeriod __pwmPeriod ]
-"53
-[; ;timer.c: 53: }
+"45
+[; ;adc.c: 45:     ADCON0bits.ADON = 0;
+[e = . . _ADCON0bits 1 0 -> -> 0 `i `uc ]
+"46
+[; ;adc.c: 46: }
 [e :UE 240 ]
 }
-"60
-[; ;timer.c: 60: unsigned int stepMade(void){
-[v _stepMade `(ui ~T0 @X0 1 ef ]
+"51
+[; ;adc.c: 51: unsigned int returnTouch(void){
+[v _returnTouch `(ui ~T0 @X0 1 ef ]
 {
-[e :U _stepMade ]
+[e :U _returnTouch ]
 [f ]
-"61
-[; ;timer.c: 61:     unsigned char temp = stepToggle;
-[v _temp `uc ~T0 @X0 1 a ]
-[e = _temp _stepToggle ]
-"63
-[; ;timer.c: 63:     stepToggle = 0;
-[e = _stepToggle -> -> 0 `i `uc ]
-"65
-[; ;timer.c: 65:     return temp;
-[e ) -> _temp `ui ]
+"52
+[; ;adc.c: 52:     return touch_rel;
+[e ) -> _touch_rel `ui ]
 [e $UE 241  ]
-"66
-[; ;timer.c: 66: }
+"53
+[; ;adc.c: 53: }
 [e :UE 241 ]
 }
-"71
-[; ;timer.c: 71: unsigned int stepCounter(void){
-[v _stepCounter `(ui ~T0 @X0 1 ef ]
+"58
+[; ;adc.c: 58: unsigned int returnTherm(void){
+[v _returnTherm `(ui ~T0 @X0 1 ef ]
 {
-[e :U _stepCounter ]
+[e :U _returnTherm ]
 [f ]
-"72
-[; ;timer.c: 72:     return pwmStep;
-[e ) -> _pwmStep `ui ]
+"59
+[; ;adc.c: 59:     return therm_rel;
+[e ) -> _therm_rel `ui ]
 [e $UE 242  ]
-"73
-[; ;timer.c: 73: }
+"60
+[; ;adc.c: 60: }
 [e :UE 242 ]
 }
-"78
-[; ;timer.c: 78: void resetStep(void){
-[v _resetStep `(v ~T0 @X0 1 ef ]
+"65
+[; ;adc.c: 65: void resetTouch(void){
+[v _resetTouch `(v ~T0 @X0 1 ef ]
 {
-[e :U _resetStep ]
+[e :U _resetTouch ]
 [f ]
-"79
-[; ;timer.c: 79:     pwmStep = 0;
-[e = _pwmStep -> -> 0 `i `uc ]
-"80
-[; ;timer.c: 80: }
+"66
+[; ;adc.c: 66:     touch_rel = 0;
+[e = _touch_rel -> -> 0 `i `uc ]
+"67
+[; ;adc.c: 67: }
 [e :UE 243 ]
 }
-"85
-[; ;timer.c: 85: void increaseStep(void){
-[v _increaseStep `(v ~T0 @X0 1 ef ]
+"72
+[; ;adc.c: 72: void resetTherm(void){
+[v _resetTherm `(v ~T0 @X0 1 ef ]
 {
-[e :U _increaseStep ]
+[e :U _resetTherm ]
 [f ]
-"86
-[; ;timer.c: 86:     pwmStep++;
-[e ++ _pwmStep -> -> 1 `i `Vuc ]
-"87
-[; ;timer.c: 87: }
+"73
+[; ;adc.c: 73:     therm_rel = 0;
+[e = _therm_rel -> -> 0 `i `uc ]
+"74
+[; ;adc.c: 74: }
 [e :UE 244 ]
 }
-"93
-[; ;timer.c: 93: void toggleStep(void){
-[v _toggleStep `(v ~T0 @X0 1 ef ]
+"79
+[; ;adc.c: 79: void setThermRel(void){
+[v _setThermRel `(v ~T0 @X0 1 ef ]
 {
-[e :U _toggleStep ]
+[e :U _setThermRel ]
 [f ]
-"94
-[; ;timer.c: 94:     stepToggle = 1;
-[e = _stepToggle -> -> 1 `i `uc ]
-"95
-[; ;timer.c: 95: }
+"80
+[; ;adc.c: 80:     therm_rel = 1;
+[e = _therm_rel -> -> 1 `i `uc ]
+"81
+[; ;adc.c: 81: }
 [e :UE 245 ]
 }
-"101
-[; ;timer.c: 101: unsigned int retPeriod(void){
-[v _retPeriod `(ui ~T0 @X0 1 ef ]
+"86
+[; ;adc.c: 86: void setTouchRel(void){
+[v _setTouchRel `(v ~T0 @X0 1 ef ]
 {
-[e :U _retPeriod ]
+[e :U _setTouchRel ]
 [f ]
-"102
-[; ;timer.c: 102:     return pwmPeriod;
-[e ) _pwmPeriod ]
-[e $UE 246  ]
-"103
-[; ;timer.c: 103: }
+"87
+[; ;adc.c: 87:     touch_rel = 1;
+[e = _touch_rel -> -> 1 `i `uc ]
+"88
+[; ;adc.c: 88: }
 [e :UE 246 ]
 }

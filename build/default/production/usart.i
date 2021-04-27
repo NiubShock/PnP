@@ -1,4 +1,4 @@
-# 1 "timer.c"
+# 1 "usart.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "timer.c" 2
+# 1 "usart.c" 2
 
 
 
@@ -3812,99 +3812,434 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 33 "D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 2 3
-# 9 "timer.c" 2
+# 9 "usart.c" 2
+
+# 1 "./main.h" 1
+
+# 1 "./adc.h" 1
+# 37 "./adc.h"
+void initADC(void);
+void startADC(void);
+void stopADC(void);
+unsigned int returnTouch(void);
+unsigned int returnTherm(void);
+void resetTouch(void);
+void resetTherm(void);
+
+void setThermRel(void);
+void setTouchRel(void);
+# 2 "./main.h" 2
+
+# 1 "./motors.h" 1
+# 30 "./motors.h"
+void writeTM0(void);
+unsigned char whatsTM0Limit(void);
+void clearTM0(void);
 
 
-static volatile unsigned char pwmStep = 0;
-static volatile unsigned char stepToggle = 0;
-static unsigned int pwmPeriod = 0;
+
+
+void setStep(unsigned char step, unsigned char motor);
+void enableMotor(unsigned char enable, unsigned char motor);
+void setDirection(unsigned char direction, unsigned char motor);
+void setDecay(unsigned char decay, unsigned char motor);
+# 49 "./motors.h"
+void initPinMotors(void);
+char resetPosition(void);
+char moveToPoint(int x1, int y1, int x2, int y2);
+
+char touchObject(void);
+char touchTherm(void);
+char liftArm(void);
+void rotateObj(unsigned char rotAngle);
+void pickObject(void);
+void releaseObj(void);
+
+void abortAll(void);
+# 3 "./main.h" 2
+
+# 1 "./conf_bits.h" 1
+# 40 "./conf_bits.h"
+#pragma config OSC = XT
+#pragma config OSCS = OFF
+
+
+#pragma config PWRT = OFF
+#pragma config BOR = OFF
+#pragma config BORV = 20
+
+
+#pragma config WDT = OFF
+#pragma config WDTPS = 128
+
+
+#pragma config CCP2MUX = OFF
+
+
+#pragma config STVR = OFF
+#pragma config LVP = OFF
+
+
+#pragma config CP0 = OFF
+#pragma config CP1 = OFF
+#pragma config CP2 = OFF
+#pragma config CP3 = OFF
+
+
+#pragma config CPB = OFF
+#pragma config CPD = OFF
+
+
+#pragma config WRT0 = OFF
+#pragma config WRT1 = OFF
+#pragma config WRT2 = OFF
+#pragma config WRT3 = OFF
+
+
+#pragma config WRTC = OFF
+#pragma config WRTB = OFF
+#pragma config WRTD = OFF
+
+
+#pragma config EBTR0 = OFF
+#pragma config EBTR1 = OFF
+#pragma config EBTR2 = OFF
+#pragma config EBTR3 = OFF
+
+
+#pragma config EBTRB = OFF
+# 4 "./main.h" 2
+
+# 1 "./timer.h" 1
+# 37 "./timer.h"
+void tim0Init(void);
+void tim1Init(void);
+void tim2Init(unsigned int _pwmPeriod);
+unsigned int stepMade(void);
+void resetStep(void);
+unsigned int stepCounter(void);
+
+
+void increaseStep(void);
+void toggleStep(void);
+unsigned int retPeriod(void);
+# 5 "./main.h" 2
+
+# 1 "./interrupt.h" 1
+void interruptInit(void);
+# 6 "./main.h" 2
+
+# 1 "./usart.h" 1
+typedef struct{
+    unsigned char feederLine;
+    unsigned char posX;
+    unsigned char posY;
+    unsigned char rotation;
+}t_sequence;
+
+typedef struct{
+    unsigned char L;
+    unsigned char W;
+    unsigned char init_posX;
+    unsigned char init_posY;
+    unsigned char init_rot;
+    unsigned char end_posX;
+    unsigned char end_posY;
+    unsigned char end_rot;
+}t_newSequence;
+
+void usartInit(void);
+void storeData(unsigned char data);
+t_sequence* getData(void);
+t_newSequence* getNewSequence(void);
+void uartTx(unsigned char *ptr, unsigned char length);
+void printError(unsigned char errCode);
+
+unsigned char newSequence(void);
+void resetNewSequence(void);
+unsigned char readSeq(void);
+unsigned char fatalError(void);
+void reduceSeq(void);
+void shiftData(void);
+# 7 "./main.h" 2
+# 36 "./main.h"
+char executeData(void);
+# 10 "usart.c" 2
+
+# 1 "D:\\Programs\\MPLABx\\xc8\\v2.20\\pic\\include\\c99\\string.h" 1 3
+# 25 "D:\\Programs\\MPLABx\\xc8\\v2.20\\pic\\include\\c99\\string.h" 3
+# 1 "D:\\Programs\\MPLABx\\xc8\\v2.20\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 411 "D:\\Programs\\MPLABx\\xc8\\v2.20\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef struct __locale_struct * locale_t;
+# 25 "D:\\Programs\\MPLABx\\xc8\\v2.20\\pic\\include\\c99\\string.h" 2 3
+
+
+void *memcpy (void *restrict, const void *restrict, size_t);
+void *memmove (void *, const void *, size_t);
+void *memset (void *, int, size_t);
+int memcmp (const void *, const void *, size_t);
+void *memchr (const void *, int, size_t);
+
+char *strcpy (char *restrict, const char *restrict);
+char *strncpy (char *restrict, const char *restrict, size_t);
+
+char *strcat (char *restrict, const char *restrict);
+char *strncat (char *restrict, const char *restrict, size_t);
+
+int strcmp (const char *, const char *);
+int strncmp (const char *, const char *, size_t);
+
+int strcoll (const char *, const char *);
+size_t strxfrm (char *restrict, const char *restrict, size_t);
+
+char *strchr (const char *, int);
+char *strrchr (const char *, int);
+
+size_t strcspn (const char *, const char *);
+size_t strspn (const char *, const char *);
+char *strpbrk (const char *, const char *);
+char *strstr (const char *, const char *);
+char *strtok (char *restrict, const char *restrict);
+
+size_t strlen (const char *);
+
+char *strerror (int);
+# 65 "D:\\Programs\\MPLABx\\xc8\\v2.20\\pic\\include\\c99\\string.h" 3
+char *strtok_r (char *restrict, const char *restrict, char **restrict);
+int strerror_r (int, char *, size_t);
+char *stpcpy(char *restrict, const char *restrict);
+char *stpncpy(char *restrict, const char *restrict, size_t);
+size_t strnlen (const char *, size_t);
+char *strdup (const char *);
+char *strndup (const char *, size_t);
+char *strsignal(int);
+char *strerror_l (int, locale_t);
+int strcoll_l (const char *, const char *, locale_t);
+size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
+
+
+
+
+void *memccpy (void *restrict, const void *restrict, int, size_t);
+# 11 "usart.c" 2
+
+
+static unsigned char errString_Feed[] = "Error, feed line not defined\n";
+static unsigned char errString_ZEND[] = "Error, no object relevated along Z Axis\n";
+static unsigned char errString_Reset[] = "Error, time exceeded to reset position\n";
+static unsigned char errString_Point[] = "Error, time exceeded to reach the point\n";
+static unsigned char errString_Bound[] = "Error, point outside boundaries\n";
+static unsigned char errString_PointZ[] = "Error, time exceeded to reach the end of the Z Axis\n";
+static unsigned char errString_Fatal[] = "Fatal Error, please reset the device!\n";
+static unsigned char errString_Command[] = "Command not recognized\n";
+static unsigned char dataCounter = 0;
+static unsigned char _fatalError = 0;
+static unsigned char _newSequence = 0;
+
+
+
+
+static t_sequence dataSequence[5];
+static t_newSequence newSequenceData;
 
 
 
 
 
-
-
-void tim0Init(void){
-    T0CONbits.TMR0ON = 0;
-    T0CONbits.T08BIT = 0;
-    T0CONbits.T0CS = 0;
-    T0CONbits.PSA = 1;
-    T0CONbits.T0PS = 0x07;
+t_sequence* getData(){
+    return(&dataSequence[0]);
 }
 
 
 
 
 
-void tim1Init(){
-    T1CONbits.T1CKPS = 0x03;
-    T1CONbits.TMR1CS = 0;
+t_newSequence* getNewSequence(){
+    return(&newSequenceData);
+}
 
-    T1CONbits.TMR1ON = 1;
 
+
+
+void reduceSeq(){
+    dataCounter--;
+}
+
+
+
+
+unsigned char readSeq(){
+    return dataCounter;
+}
+
+unsigned char fatalError(){
+    return _fatalError;
+}
+
+unsigned char newSequence(){
+    return _newSequence;
 }
 
 
 
 
 
-
-void tim2Init(unsigned int _pwmPeriod){
-    T2CONbits.TMR2ON = 0;
-    T2CONbits.T2CKPS1 = 1;
-
-
-
-    pwmPeriod = _pwmPeriod;
+void resetNewSequence(){
+    _newSequence = 0;
 }
 
 
 
 
 
+void shiftData(){
+    char i;
 
-unsigned int stepMade(void){
-    unsigned char temp = stepToggle;
-
-    stepToggle = 0;
-
-    return temp;
+    for(i = 0; i < 4; i++){
+        dataSequence[i] = dataSequence[i+1];
+    }
 }
 
 
 
 
-unsigned int stepCounter(void){
-    return pwmStep;
+void usartInit(void){
+
+    TRISCbits.TRISC6 = 0;
+    TRISCbits.TRISC7 = 1;
+
+    TXSTAbits.TX9 = 0;
+    TXSTAbits.TXEN = 1;
+    TXSTAbits.SYNC = 0;
+    TXSTAbits.BRGH = 0;
+
+    RCSTAbits.SPEN = 1;
+    RCSTAbits.RX9 = 0;
+    RCSTAbits.CREN = 0;
+    RCSTAbits.ADDEN = 0;
+
+
+    SPBRG = 25;
+}
+
+void printError(unsigned char errCode){
+
+    switch(errCode){
+        case 1:
+            uartTx(&errString_Feed[0], sizeof(errString_Feed));
+            break;
+        case 2:
+            uartTx(&errString_ZEND[0], sizeof(errString_ZEND));
+            break;
+        case 3:
+            uartTx(&errString_Reset[0], sizeof(errString_Reset));
+            break;
+        case 4:
+            uartTx(&errString_Point[0], sizeof(errString_Point));
+            break;
+        case 5:
+            uartTx(&errString_Bound[0], sizeof(errString_Bound));
+            break;
+        case 6:
+            uartTx(&errString_PointZ[0], sizeof(errString_PointZ));
+            break;
+        case 7:
+            uartTx(&errString_Fatal[0], sizeof(errString_Fatal));
+            break;
+        case 8:
+            uartTx(&errString_Command[0], sizeof(errString_Command));
+            break;
+
+        default:
+            break;
+    }
 }
 
 
 
 
-void resetStep(void){
-    pwmStep = 0;
+
+void uartTx(unsigned char *ptr, unsigned char length)
+{
+
+    for(char i = 1; i < length; i++){
+
+        TXREG = *ptr;
+
+        while(!TXSTAbits.TRMT);
+
+        ptr++;
+    }
 }
 
 
 
 
-void increaseStep(void){
-    pwmStep++;
-}
+void storeData(unsigned char data){
+
+    static unsigned char counter = 0;
+    static unsigned char mexLength = 5;
+    static unsigned char command;
+    static unsigned char receivedMex[9];
 
 
 
+    receivedMex[counter] = data;
+
+    counter++;
 
 
-void toggleStep(void){
-    stepToggle = 1;
-}
+    switch(receivedMex[0]){
+        case 0:
+            mexLength = 5;
+            break;
+        case 1:
+            mexLength = 9;
+            break;
+        case 2:
+            mexLength = 1;
+            break;
+        default:
+            break;
+
+    }
 
 
+    if(counter >= mexLength){
+        counter = 0;
 
 
+        switch(receivedMex[0]){
+            case 0:
+                dataSequence[dataCounter].feederLine = receivedMex[1];
+                dataSequence[dataCounter].posX = receivedMex[2] * 10;
+                dataSequence[dataCounter].posY = receivedMex[3] * 10;
+                dataSequence[dataCounter].rotation = receivedMex[4];
 
-unsigned int retPeriod(void){
-    return pwmPeriod;
+                dataCounter++;
+                break;
+            case 1:
+
+                newSequenceData.L = receivedMex[1];
+                newSequenceData.W = receivedMex[2];
+                newSequenceData.init_posX = receivedMex[3] * 10;
+                newSequenceData.init_posY = receivedMex[4] * 10;
+                newSequenceData.init_rot = receivedMex[5];
+                newSequenceData.end_posX = receivedMex[6] * 10;
+                newSequenceData.end_posY = receivedMex[7] * 10;
+                newSequenceData.end_rot = receivedMex[8];
+
+                _newSequence = 1;
+                break;
+            case 2:
+
+                _fatalError = 1;
+                break;
+            default:
+
+                printError(8);
+                break;
+
+        }
+    }
 }
