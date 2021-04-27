@@ -4027,6 +4027,7 @@ void __attribute__((picinterrupt(("")))) isr(){
 
 
         if(single_cycle > retPeriod()){
+            single_cycle = 0;
             completeStep++;
 
 

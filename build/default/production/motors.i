@@ -4463,6 +4463,7 @@ char touchObject(){
 
 
     resetStep();
+    resetTherm();
 
 
     if(PORTDbits.RD7){
@@ -4471,7 +4472,7 @@ char touchObject(){
 
     return(tm0Error);
 }
-# 589 "motors.c"
+# 590 "motors.c"
 char touchTherm(){
 
 
@@ -4518,7 +4519,7 @@ char touchTherm(){
 
 
         while(!stepMade());
-# 645 "motors.c"
+# 646 "motors.c"
         startADC();
 
 
@@ -4597,7 +4598,7 @@ char liftArm(){
 
 
         while(!stepMade());
-# 732 "motors.c"
+# 733 "motors.c"
     }
 
 

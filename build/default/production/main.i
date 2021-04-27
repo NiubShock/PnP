@@ -3984,7 +3984,7 @@ void main(void) {
     usartInit();
     tim0Init();
     tim1Init();
-    tim2Init(10000);
+    tim2Init(10);
 
 
     errCode = resetPosition();
@@ -4114,7 +4114,7 @@ char executeData(){
         if(rotAngle < 0){
             rotAngle += 360;
         }
-        rotateObj(rotAngle);
+
 
 
         errCode = touchTherm();

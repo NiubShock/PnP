@@ -139,9 +139,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "55
 [; ;./motors.h: 55: char liftArm(void);
 [v _liftArm `(uc ~T0 @X0 0 ef ]
-"56
-[; ;./motors.h: 56: void rotateObj(unsigned char rotAngle);
-[v _rotateObj `(v ~T0 @X0 0 ef1`uc ]
 "54
 [; ;./motors.h: 54: char touchTherm(void);
 [v _touchTherm `(uc ~T0 @X0 0 ef ]
@@ -679,8 +676,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 28:     tim1Init();
 [e ( _tim1Init ..  ]
 "29
-[; ;main.c: 29:     tim2Init(10000);
-[e ( _tim2Init (1 -> -> 10000 `i `ui ]
+[; ;main.c: 29:     tim2Init(10);
+[e ( _tim2Init (1 -> -> 10 `i `ui ]
 "32
 [; ;main.c: 32:     errCode = resetPosition();
 [e = _errCode -> ( _resetPosition ..  `uc ]
@@ -954,9 +951,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 165:         }
 }
 [e :U 263 ]
-"166
-[; ;main.c: 166:         rotateObj(rotAngle);
-[e ( _rotateObj (1 -> _rotAngle `uc ]
 "169
 [; ;main.c: 169:         errCode = touchTherm();
 [e = _errCode ( _touchTherm ..  ]

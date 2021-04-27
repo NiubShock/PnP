@@ -26,7 +26,7 @@ void main(void) {
     usartInit();
     tim0Init();
     tim1Init();
-    tim2Init(100);
+    tim2Init(10);
     
     //reset the initial position
     errCode = resetPosition();
@@ -163,7 +163,7 @@ char executeData(){
         if(rotAngle < 0){
             rotAngle += 360;
         }
-        rotateObj(rotAngle);
+        //rotateObj(rotAngle);
         
         //touch the thermal paste
         errCode = touchTherm();

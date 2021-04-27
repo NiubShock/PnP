@@ -568,6 +568,7 @@ char touchObject(){
     
     //reset the step
     resetStep();
+    resetTherm();
     
     //if the endstroke is touched than fix the correct error
     if(PORTDbits.RD7){
