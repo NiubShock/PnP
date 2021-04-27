@@ -163,7 +163,7 @@ char executeData(){
         if(rotAngle < 0){
             rotAngle += 360;
         }
-        //rotateObj(rotAngle);
+        rotateObj(rotAngle);
         
         //touch the thermal paste
         errCode = touchTherm();

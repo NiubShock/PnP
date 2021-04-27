@@ -1,74 +1,59 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[p mainexit ]
-"1 ./interrupt.h
-[; ;./interrupt.h: 1: void interruptInit(void);
-[v _interruptInit `(v ~T0 @X0 0 ef ]
-"49 ./motors.h
-[; ;./motors.h: 49: void initPinMotors(void);
-[v _initPinMotors `(v ~T0 @X0 0 ef ]
-"37 ./adc.h
-[; ;./adc.h: 37: void initADC(void);
-[v _initADC `(v ~T0 @X0 0 ef ]
-"19 ./usart.h
-[; ;./usart.h: 19: void usartInit(void);
-[v _usartInit `(v ~T0 @X0 0 ef ]
-"37 ./timer.h
-[; ;./timer.h: 37: void tim0Init(void);
-[v _tim0Init `(v ~T0 @X0 0 ef ]
-"38
-[; ;./timer.h: 38: void tim1Init(void);
-[v _tim1Init `(v ~T0 @X0 0 ef ]
-"39
-[; ;./timer.h: 39: void tim2Init(unsigned int _pwmPeriod);
-[v _tim2Init `(v ~T0 @X0 0 ef1`ui ]
-"50 ./motors.h
-[; ;./motors.h: 50: char resetPosition(void);
-[v _resetPosition `(uc ~T0 @X0 0 ef ]
-"24 ./usart.h
-[; ;./usart.h: 24: void printError(unsigned char errCode);
-[v _printError `(v ~T0 @X0 0 ef1`uc ]
-"2829 D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h
-[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 2829:     struct {
-[s S107 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S107 . RX9D OERR FERR ADDEN CREN SREN RX9 SPEN ]
-"2839
-[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 2839:     struct {
-[s S108 :1 `uc 1 :5 `uc 1 :1 `uc 1 ]
-[n S108 . RCD8 . RC8_9 ]
-"2844
-[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 2844:     struct {
-[s S109 :6 `uc 1 :1 `uc 1 ]
-[n S109 . . NOT_RC8 ]
-"2848
-[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 2848:     struct {
-[s S110 :6 `uc 1 :1 `uc 1 ]
-[n S110 . . nRC8 ]
-"2852
-[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 2852:     struct {
-[s S111 :6 `uc 1 :1 `uc 1 ]
-[n S111 . . RC9 ]
-"2856
-[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 2856:     struct {
-[s S112 :5 `uc 1 :1 `uc 1 ]
-[n S112 . . SRENA ]
-"2828
-[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 2828: typedef union {
-[u S106 `S107 1 `S108 1 `S109 1 `S110 1 `S111 1 `S112 1 ]
-[n S106 . . . . . . . ]
-"2861
-[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 2861: extern volatile RCSTA1bits_t RCSTA1bits __attribute__((address(0xFAB)));
-[v _RCSTA1bits `VS106 ~T0 @X0 0 e@4011 ]
-"26 ./usart.h
-[; ;./usart.h: 26: unsigned char newSequence(void);
-[v _newSequence `(uc ~T0 @X0 0 ef ]
+"1 ./usart.h
+[; ;./usart.h: 1: typedef struct{
+[s S238 `uc 1 `uc 1 `uc 1 `uc 1 ]
+[n S238 . feederLine posX posY rotation ]
 "8
 [; ;./usart.h: 8: typedef struct{
 [s S239 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 ]
 [n S239 . L W init_posX init_posY init_rot end_posX end_posY end_rot ]
-"22
-[; ;./usart.h: 22: t_newSequence* getNewSequence(void);
-[v _getNewSequence `(*S239 ~T0 @X0 0 ef ]
-"2723 D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h
+"1659 D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 1659:     struct {
+[s S62 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S62 . TRISC0 TRISC1 TRISC2 TRISC3 TRISC4 TRISC5 TRISC6 TRISC7 ]
+"1669
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 1669:     struct {
+[s S63 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S63 . RC0 RC1 RC2 RC3 RC4 RC5 RC6 RC7 ]
+"1679
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 1679:     struct {
+[s S64 :1 `uc 1 :1 `uc 1 ]
+[n S64 . . CCP2 ]
+"1658
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 1658: typedef union {
+[u S61 `S62 1 `S63 1 `S64 1 ]
+[n S61 . . . . ]
+"1684
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 1684: extern volatile TRISCbits_t TRISCbits __attribute__((address(0xF94)));
+[v _TRISCbits `VS61 ~T0 @X0 0 e@3988 ]
+"2947
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 2947:     struct {
+[s S114 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S114 . TX9D TRMT BRGH . SYNC TXEN TX9 CSRC ]
+"2957
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 2957:     struct {
+[s S115 :1 `uc 1 :5 `uc 1 :1 `uc 1 ]
+[n S115 . TXD8 . TX8_9 ]
+"2962
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 2962:     struct {
+[s S116 :6 `uc 1 :1 `uc 1 ]
+[n S116 . . NOT_TX8 ]
+"2966
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 2966:     struct {
+[s S117 :6 `uc 1 :1 `uc 1 ]
+[n S117 . . nTX8 ]
+"2970
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 2970:     struct {
+[s S118 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S118 . TX9D1 TRMT1 BRGH1 . SYNC1 TXEN1 TX91 CSRC1 ]
+"2946
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 2946: typedef union {
+[u S113 `S114 1 `S115 1 `S116 1 `S117 1 `S118 1 ]
+[n S113 . . . . . . ]
+"2981
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 2981: extern volatile TXSTAbits_t TXSTAbits __attribute__((address(0xFAC)));
+[v _TXSTAbits `VS113 ~T0 @X0 0 e@4012 ]
+"2723
 [; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 2723:     struct {
 [s S100 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S100 . RX9D OERR FERR ADDEN CREN SREN RX9 SPEN ]
@@ -99,55 +84,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 "2755
 [; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 2755: extern volatile RCSTAbits_t RCSTAbits __attribute__((address(0xFAB)));
 [v _RCSTAbits `VS99 ~T0 @X0 0 e@4011 ]
-"20 ./usart.h
-[; ;./usart.h: 20: void storeData(unsigned char data);
-[v _storeData `(v ~T0 @X0 0 ef1`uc ]
-"27
-[; ;./usart.h: 27: void resetNewSequence(void);
-[v _resetNewSequence `(v ~T0 @X0 0 ef ]
-"28
-[; ;./usart.h: 28: unsigned char readSeq(void);
-[v _readSeq `(uc ~T0 @X0 0 ef ]
-"5 main.c
-[; ;main.c: 5: char executeData();
-[v _executeData `(uc ~T0 @X0 0 ef ]
-"32 ./motors.h
-[; ;./motors.h: 32: void clearTM0(void);
-[v _clearTM0 `(v ~T0 @X0 0 ef ]
-"30 ./usart.h
-[; ;./usart.h: 30: void reduceSeq(void);
-[v _reduceSeq `(v ~T0 @X0 0 ef ]
-"31
-[; ;./usart.h: 31: void shiftData(void);
-[v _shiftData `(v ~T0 @X0 0 ef ]
-"1
-[; ;./usart.h: 1: typedef struct{
-[s S238 `uc 1 `uc 1 `uc 1 `uc 1 ]
-[n S238 . feederLine posX posY rotation ]
-"21
-[; ;./usart.h: 21: t_sequence* getData(void);
-[v _getData `(*S238 ~T0 @X0 0 ef ]
-"51 ./motors.h
-[; ;./motors.h: 51: char moveToPoint(int x1, int y1, int x2, int y2);
-[v _moveToPoint `(uc ~T0 @X0 0 ef4`i`i`i`i ]
-"53
-[; ;./motors.h: 53: char touchObject(void);
-[v _touchObject `(uc ~T0 @X0 0 ef ]
-"57
-[; ;./motors.h: 57: void pickObject(void);
-[v _pickObject `(v ~T0 @X0 0 ef ]
-"55
-[; ;./motors.h: 55: char liftArm(void);
-[v _liftArm `(uc ~T0 @X0 0 ef ]
-"56
-[; ;./motors.h: 56: void rotateObj(unsigned char rotAngle);
-[v _rotateObj `(v ~T0 @X0 0 ef1`uc ]
-"54
-[; ;./motors.h: 54: char touchTherm(void);
-[v _touchTherm `(uc ~T0 @X0 0 ef ]
-"58
-[; ;./motors.h: 58: void releaseObj(void);
-[v _releaseObj `(v ~T0 @X0 0 ef ]
+"3228
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 3228: extern volatile unsigned char SPBRG __attribute__((address(0xFAF)));
+[v _SPBRG `Vuc ~T0 @X0 0 e@4015 ]
+"23 ./usart.h
+[; ;./usart.h: 23: void uartTx(unsigned char *ptr, unsigned char length);
+[v _uartTx `(v ~T0 @X0 0 ef2`*uc`uc ]
+"3204 D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 3204: extern volatile unsigned char TXREG __attribute__((address(0xFAD)));
+[v _TXREG `Vuc ~T0 @X0 0 e@4013 ]
 "54 D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h
 [; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 54: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -585,396 +530,888 @@ Version 4.0 HI-TECH Software Intermediate Code
 [p x EBTR3 = OFF ]
 "87
 [p x EBTRB = OFF ]
-"7 main.c
-[; ;main.c: 7: static unsigned char posVector[3] = {0, 0, 0};
-[v _posVector `uc ~T0 @X0 -> 3 `i s ]
-[i _posVector
+"13 usart.c
+[; ;usart.c: 13: static unsigned char errString_Feed[] = "Error, feed line not defined\n";
+[v _errString_Feed `uc ~T0 @X0 -> 30 `i s ]
+[i _errString_Feed
 :U ..
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
-..
-]
-"8
-[; ;main.c: 8: static int rotAngle = 0;
-[v _rotAngle `i ~T0 @X0 1 s ]
-[i _rotAngle
--> 0 `i
-]
-"10
-[; ;main.c: 10: static const unsigned char feeder1Pos[2] = {30, 50};
-[v _feeder1Pos `Cuc ~T0 @X0 -> 2 `i s ]
-[i _feeder1Pos
-:U ..
--> -> 30 `i `uc
--> -> 50 `i `uc
-..
-]
-"11
-[; ;main.c: 11: static const unsigned char feeder2Pos[2] = {30, 100};
-[v _feeder2Pos `Cuc ~T0 @X0 -> 2 `i s ]
-[i _feeder2Pos
-:U ..
--> -> 30 `i `uc
--> -> 100 `i `uc
-..
-]
-"12
-[; ;main.c: 12: static const unsigned char feeder3Pos[2] = {30, 150};
-[v _feeder3Pos `Cuc ~T0 @X0 -> 2 `i s ]
-[i _feeder3Pos
-:U ..
--> -> 30 `i `uc
--> -> 150 `i `uc
+-> 69 `c
+-> 114 `c
+-> 114 `c
+-> 111 `c
+-> 114 `c
+-> 44 `c
+-> 32 `c
+-> 102 `c
+-> 101 `c
+-> 101 `c
+-> 100 `c
+-> 32 `c
+-> 108 `c
+-> 105 `c
+-> 110 `c
+-> 101 `c
+-> 32 `c
+-> 110 `c
+-> 111 `c
+-> 116 `c
+-> 32 `c
+-> 100 `c
+-> 101 `c
+-> 102 `c
+-> 105 `c
+-> 110 `c
+-> 101 `c
+-> 100 `c
+-> 10 `c
+-> 0 `c
 ..
 ]
 "14
-[; ;main.c: 14: static const unsigned char maxFeedX = 60;
-[v _maxFeedX `Cuc ~T0 @X0 1 s ]
-[i _maxFeedX
--> -> 60 `i `uc
-]
-"15
-[; ;main.c: 15: static const unsigned char maxFeedY= 200;
-[v _maxFeedY `Cuc ~T0 @X0 1 s ]
-[i _maxFeedY
--> -> 200 `i `uc
-]
-"17
-[; ;main.c: 17: static unsigned char newFeeder[2] = {0, 0};
-[v _newFeeder `uc ~T0 @X0 -> 2 `i s ]
-[i _newFeeder
+[; ;usart.c: 14: static unsigned char errString_ZEND[] = "Error, no object relevated along Z Axis\n";
+[v _errString_ZEND `uc ~T0 @X0 -> 41 `i s ]
+[i _errString_ZEND
 :U ..
--> -> 0 `i `uc
--> -> 0 `i `uc
+-> 69 `c
+-> 114 `c
+-> 114 `c
+-> 111 `c
+-> 114 `c
+-> 44 `c
+-> 32 `c
+-> 110 `c
+-> 111 `c
+-> 32 `c
+-> 111 `c
+-> 98 `c
+-> 106 `c
+-> 101 `c
+-> 99 `c
+-> 116 `c
+-> 32 `c
+-> 114 `c
+-> 101 `c
+-> 108 `c
+-> 101 `c
+-> 118 `c
+-> 97 `c
+-> 116 `c
+-> 101 `c
+-> 100 `c
+-> 32 `c
+-> 97 `c
+-> 108 `c
+-> 111 `c
+-> 110 `c
+-> 103 `c
+-> 32 `c
+-> 90 `c
+-> 32 `c
+-> 65 `c
+-> 120 `c
+-> 105 `c
+-> 115 `c
+-> 10 `c
+-> 0 `c
 ..
 ]
-[v $root$_main `(v ~T0 @X0 0 e ]
+"15
+[; ;usart.c: 15: static unsigned char errString_Reset[] = "Error, time exceeded to reset position\n";
+[v _errString_Reset `uc ~T0 @X0 -> 40 `i s ]
+[i _errString_Reset
+:U ..
+-> 69 `c
+-> 114 `c
+-> 114 `c
+-> 111 `c
+-> 114 `c
+-> 44 `c
+-> 32 `c
+-> 116 `c
+-> 105 `c
+-> 109 `c
+-> 101 `c
+-> 32 `c
+-> 101 `c
+-> 120 `c
+-> 99 `c
+-> 101 `c
+-> 101 `c
+-> 100 `c
+-> 101 `c
+-> 100 `c
+-> 32 `c
+-> 116 `c
+-> 111 `c
+-> 32 `c
+-> 114 `c
+-> 101 `c
+-> 115 `c
+-> 101 `c
+-> 116 `c
+-> 32 `c
+-> 112 `c
+-> 111 `c
+-> 115 `c
+-> 105 `c
+-> 116 `c
+-> 105 `c
+-> 111 `c
+-> 110 `c
+-> 10 `c
+-> 0 `c
+..
+]
+"16
+[; ;usart.c: 16: static unsigned char errString_Point[] = "Error, time exceeded to reach the point\n";
+[v _errString_Point `uc ~T0 @X0 -> 41 `i s ]
+[i _errString_Point
+:U ..
+-> 69 `c
+-> 114 `c
+-> 114 `c
+-> 111 `c
+-> 114 `c
+-> 44 `c
+-> 32 `c
+-> 116 `c
+-> 105 `c
+-> 109 `c
+-> 101 `c
+-> 32 `c
+-> 101 `c
+-> 120 `c
+-> 99 `c
+-> 101 `c
+-> 101 `c
+-> 100 `c
+-> 101 `c
+-> 100 `c
+-> 32 `c
+-> 116 `c
+-> 111 `c
+-> 32 `c
+-> 114 `c
+-> 101 `c
+-> 97 `c
+-> 99 `c
+-> 104 `c
+-> 32 `c
+-> 116 `c
+-> 104 `c
+-> 101 `c
+-> 32 `c
+-> 112 `c
+-> 111 `c
+-> 105 `c
+-> 110 `c
+-> 116 `c
+-> 10 `c
+-> 0 `c
+..
+]
+"17
+[; ;usart.c: 17: static unsigned char errString_Bound[] = "Error, point outside boundaries\n";
+[v _errString_Bound `uc ~T0 @X0 -> 33 `i s ]
+[i _errString_Bound
+:U ..
+-> 69 `c
+-> 114 `c
+-> 114 `c
+-> 111 `c
+-> 114 `c
+-> 44 `c
+-> 32 `c
+-> 112 `c
+-> 111 `c
+-> 105 `c
+-> 110 `c
+-> 116 `c
+-> 32 `c
+-> 111 `c
+-> 117 `c
+-> 116 `c
+-> 115 `c
+-> 105 `c
+-> 100 `c
+-> 101 `c
+-> 32 `c
+-> 98 `c
+-> 111 `c
+-> 117 `c
+-> 110 `c
+-> 100 `c
+-> 97 `c
+-> 114 `c
+-> 105 `c
+-> 101 `c
+-> 115 `c
+-> 10 `c
+-> 0 `c
+..
+]
+"18
+[; ;usart.c: 18: static unsigned char errString_PointZ[] = "Error, time exceeded to reach the end of the Z Axis\n";
+[v _errString_PointZ `uc ~T0 @X0 -> 53 `i s ]
+[i _errString_PointZ
+:U ..
+-> 69 `c
+-> 114 `c
+-> 114 `c
+-> 111 `c
+-> 114 `c
+-> 44 `c
+-> 32 `c
+-> 116 `c
+-> 105 `c
+-> 109 `c
+-> 101 `c
+-> 32 `c
+-> 101 `c
+-> 120 `c
+-> 99 `c
+-> 101 `c
+-> 101 `c
+-> 100 `c
+-> 101 `c
+-> 100 `c
+-> 32 `c
+-> 116 `c
+-> 111 `c
+-> 32 `c
+-> 114 `c
+-> 101 `c
+-> 97 `c
+-> 99 `c
+-> 104 `c
+-> 32 `c
+-> 116 `c
+-> 104 `c
+-> 101 `c
+-> 32 `c
+-> 101 `c
+-> 110 `c
+-> 100 `c
+-> 32 `c
+-> 111 `c
+-> 102 `c
+-> 32 `c
+-> 116 `c
+-> 104 `c
+-> 101 `c
+-> 32 `c
+-> 90 `c
+-> 32 `c
+-> 65 `c
+-> 120 `c
+-> 105 `c
+-> 115 `c
+-> 10 `c
+-> 0 `c
+..
+]
 "19
-[; ;main.c: 19: void main(void) {
-[v _main `(v ~T0 @X0 1 ef ]
-{
-[e :U _main ]
-[f ]
+[; ;usart.c: 19: static unsigned char errString_Fatal[] = "Fatal Error, please reset the device!\n";
+[v _errString_Fatal `uc ~T0 @X0 -> 39 `i s ]
+[i _errString_Fatal
+:U ..
+-> 70 `c
+-> 97 `c
+-> 116 `c
+-> 97 `c
+-> 108 `c
+-> 32 `c
+-> 69 `c
+-> 114 `c
+-> 114 `c
+-> 111 `c
+-> 114 `c
+-> 44 `c
+-> 32 `c
+-> 112 `c
+-> 108 `c
+-> 101 `c
+-> 97 `c
+-> 115 `c
+-> 101 `c
+-> 32 `c
+-> 114 `c
+-> 101 `c
+-> 115 `c
+-> 101 `c
+-> 116 `c
+-> 32 `c
+-> 116 `c
+-> 104 `c
+-> 101 `c
+-> 32 `c
+-> 100 `c
+-> 101 `c
+-> 118 `c
+-> 105 `c
+-> 99 `c
+-> 101 `c
+-> 33 `c
+-> 10 `c
+-> 0 `c
+..
+]
+"20
+[; ;usart.c: 20: static unsigned char errString_Command[] = "Command not recognized\n";
+[v _errString_Command `uc ~T0 @X0 -> 24 `i s ]
+[i _errString_Command
+:U ..
+-> 67 `c
+-> 111 `c
+-> 109 `c
+-> 109 `c
+-> 97 `c
+-> 110 `c
+-> 100 `c
+-> 32 `c
+-> 110 `c
+-> 111 `c
+-> 116 `c
+-> 32 `c
+-> 114 `c
+-> 101 `c
+-> 99 `c
+-> 111 `c
+-> 103 `c
+-> 110 `c
+-> 105 `c
+-> 122 `c
+-> 101 `c
+-> 100 `c
+-> 10 `c
+-> 0 `c
+..
+]
 "21
-[; ;main.c: 21:     unsigned char errCode = 0;
-[v _errCode `uc ~T0 @X0 1 a ]
-[e = _errCode -> -> 0 `i `uc ]
+[; ;usart.c: 21: static unsigned char dataCounter = 0;
+[v _dataCounter `uc ~T0 @X0 1 s ]
+[i _dataCounter
+-> -> 0 `i `uc
+]
+"22
+[; ;usart.c: 22: static unsigned char _fatalError = 0;
+[v __fatalError `uc ~T0 @X0 1 s ]
+[i __fatalError
+-> -> 0 `i `uc
+]
 "23
-[; ;main.c: 23:     interruptInit();
-[e ( _interruptInit ..  ]
-"24
-[; ;main.c: 24:     initPinMotors();
-[e ( _initPinMotors ..  ]
-"25
-[; ;main.c: 25:     initADC();
-[e ( _initADC ..  ]
-"26
-[; ;main.c: 26:     usartInit();
-[e ( _usartInit ..  ]
-"27
-[; ;main.c: 27:     tim0Init();
-[e ( _tim0Init ..  ]
+[; ;usart.c: 23: static unsigned char _newSequence = 0;
+[v __newSequence `uc ~T0 @X0 1 s ]
+[i __newSequence
+-> -> 0 `i `uc
+]
 "28
-[; ;main.c: 28:     tim1Init();
-[e ( _tim1Init ..  ]
+[; ;usart.c: 28: static t_sequence dataSequence[5];
+[v _dataSequence `S238 ~T0 @X0 -> 5 `i s ]
 "29
-[; ;main.c: 29:     tim2Init(10);
-[e ( _tim2Init (1 -> -> 10 `i `ui ]
-"32
-[; ;main.c: 32:     errCode = resetPosition();
-[e = _errCode -> ( _resetPosition ..  `uc ]
-"33
-[; ;main.c: 33:     if(errCode != 0){
-[e $ ! != -> _errCode `i -> 0 `i 241  ]
-{
-"34
-[; ;main.c: 34:         printError(errCode);
-[e ( _printError (1 _errCode ]
+[; ;usart.c: 29: static t_newSequence newSequenceData;
+[v _newSequenceData `S239 ~T0 @X0 1 s ]
 "35
-[; ;main.c: 35:         while(1);
-[e :U 243 ]
-[e :U 242 ]
-[e $U 243  ]
-[e :U 244 ]
+[; ;usart.c: 35: t_sequence* getData(){
+[v _getData `(*S238 ~T0 @X0 1 ef ]
+{
+[e :U _getData ]
+[f ]
 "36
-[; ;main.c: 36:     }
+[; ;usart.c: 36:     return(&dataSequence[0]);
+[e ) &U *U + &U _dataSequence * -> -> -> 0 `i `ui `ux -> -> # *U &U _dataSequence `ui `ux ]
+[e $UE 241  ]
+"37
+[; ;usart.c: 37: }
+[e :UE 241 ]
 }
-[e :U 241 ]
-"39
-[; ;main.c: 39:     RCSTA1bits.CREN = 1;
-[e = . . _RCSTA1bits 0 4 -> -> 1 `i `uc ]
-"41
-[; ;main.c: 41:     while(1){
-[e :U 246 ]
-{
-"42
-[; ;main.c: 42:         if(newSequence()){
-[e $ ! != -> ( _newSequence ..  `i -> 0 `i 248  ]
-{
 "43
-[; ;main.c: 43:             t_newSequence* newData = getNewSequence();
-[v _newData `*S239 ~T0 @X0 1 a ]
-[e = _newData ( _getNewSequence ..  ]
-"45
-[; ;main.c: 45:             newFeeder[0] = newData ->init_posX;
-[e = *U + &U _newFeeder * -> -> -> 0 `i `ui `ux -> -> # *U &U _newFeeder `ui `ux . *U _newData 2 ]
-"46
-[; ;main.c: 46:             newFeeder[1] = newData ->init_posY;
-[e = *U + &U _newFeeder * -> -> -> 1 `i `ui `ux -> -> # *U &U _newFeeder `ui `ux . *U _newData 3 ]
-"50
-[; ;main.c: 50:             RCSTAbits.CREN = 0;
-[e = . . _RCSTAbits 0 4 -> -> 0 `i `uc ]
-"55
-[; ;main.c: 55:             if(newData ->end_posX > maxFeedX || newData ->end_posY > maxFeedY){
-[e $ ! || > -> . *U _newData 5 `i -> _maxFeedX `i > -> . *U _newData 6 `i -> _maxFeedY `i 249  ]
+[; ;usart.c: 43: t_newSequence* getNewSequence(){
+[v _getNewSequence `(*S239 ~T0 @X0 1 ef ]
 {
-"56
-[; ;main.c: 56:                 errCode = 5;
-[e = _errCode -> -> 5 `i `uc ]
-"57
-[; ;main.c: 57:             }else{
+[e :U _getNewSequence ]
+[f ]
+"44
+[; ;usart.c: 44:     return(&newSequenceData);
+[e ) &U _newSequenceData ]
+[e $UE 242  ]
+"45
+[; ;usart.c: 45: }
+[e :UE 242 ]
 }
+"50
+[; ;usart.c: 50: void reduceSeq(){
+[v _reduceSeq `(v ~T0 @X0 1 ef ]
+{
+[e :U _reduceSeq ]
+[f ]
+"51
+[; ;usart.c: 51:     dataCounter--;
+[e -- _dataCounter -> -> 1 `i `uc ]
+"52
+[; ;usart.c: 52: }
+[e :UE 243 ]
+}
+"57
+[; ;usart.c: 57: unsigned char readSeq(){
+[v _readSeq `(uc ~T0 @X0 1 ef ]
+{
+[e :U _readSeq ]
+[f ]
+"58
+[; ;usart.c: 58:     return dataCounter;
+[e ) _dataCounter ]
+[e $UE 244  ]
+"59
+[; ;usart.c: 59: }
+[e :UE 244 ]
+}
+"61
+[; ;usart.c: 61: unsigned char fatalError(){
+[v _fatalError `(uc ~T0 @X0 1 ef ]
+{
+[e :U _fatalError ]
+[f ]
+"62
+[; ;usart.c: 62:     return _fatalError;
+[e ) __fatalError ]
+[e $UE 245  ]
+"63
+[; ;usart.c: 63: }
+[e :UE 245 ]
+}
+"65
+[; ;usart.c: 65: unsigned char newSequence(){
+[v _newSequence `(uc ~T0 @X0 1 ef ]
+{
+[e :U _newSequence ]
+[f ]
+"66
+[; ;usart.c: 66:     return _newSequence;
+[e ) __newSequence ]
+[e $UE 246  ]
+"67
+[; ;usart.c: 67: }
+[e :UE 246 ]
+}
+"73
+[; ;usart.c: 73: void resetNewSequence(){
+[v _resetNewSequence `(v ~T0 @X0 1 ef ]
+{
+[e :U _resetNewSequence ]
+[f ]
+"74
+[; ;usart.c: 74:     _newSequence = 0;
+[e = __newSequence -> -> 0 `i `uc ]
+"75
+[; ;usart.c: 75: }
+[e :UE 247 ]
+}
+"81
+[; ;usart.c: 81: void shiftData(){
+[v _shiftData `(v ~T0 @X0 1 ef ]
+{
+[e :U _shiftData ]
+[f ]
+"82
+[; ;usart.c: 82:     char i;
+[v _i `uc ~T0 @X0 1 a ]
+"84
+[; ;usart.c: 84:     for(i = 0; i < 4; i++){
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 4 `i 249  ]
 [e $U 250  ]
 [e :U 249 ]
 {
-"58
-[; ;main.c: 58:                 storeData(newData ->end_posX);
-[e ( _storeData (1 . *U _newData 5 ]
-"59
-[; ;main.c: 59:                 storeData(newData ->end_posY);
-[e ( _storeData (1 . *U _newData 6 ]
-"60
-[; ;main.c: 60:             }
+"85
+[; ;usart.c: 85:         dataSequence[i] = dataSequence[i+1];
+[e = *U + &U _dataSequence * -> _i `ux -> -> # *U &U _dataSequence `ui `ux *U + &U _dataSequence * -> -> + -> _i `i -> 1 `i `ui `ux -> -> # *U &U _dataSequence `ui `ux ]
+"86
+[; ;usart.c: 86:     }
 }
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 4 `i 249  ]
 [e :U 250 ]
-"63
-[; ;main.c: 63:             if(errCode == 0){
-[e $ ! == -> _errCode `i -> 0 `i 251  ]
-{
-"65
-[; ;main.c: 65:                 storeData(0);
-[e ( _storeData (1 -> -> 0 `i `uc ]
-"66
-[; ;main.c: 66:                 storeData(0xFF);
-[e ( _storeData (1 -> -> 255 `i `uc ]
-"67
-[; ;main.c: 67:                 storeData(newData ->end_rot - newData ->init_rot);
-[e ( _storeData (1 -> - -> . *U _newData 7 `i -> . *U _newData 4 `i `uc ]
-"68
-[; ;main.c: 68:             }else{
 }
-[e $U 252  ]
-[e :U 251 ]
-{
-"69
-[; ;main.c: 69:                 printError(errCode);
-[e ( _printError (1 _errCode ]
-"70
-[; ;main.c: 70:             }
-}
-[e :U 252 ]
-"73
-[; ;main.c: 73:             RCSTAbits.CREN = 1;
-[e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
-"76
-[; ;main.c: 76:             resetNewSequence();
-[e ( _resetNewSequence ..  ]
-"77
-[; ;main.c: 77:         }
-}
-[e :U 248 ]
-"78
-[; ;main.c: 78:         if(readSeq()){
-[e $ ! != -> ( _readSeq ..  `i -> 0 `i 253  ]
-{
-"82
-[; ;main.c: 82:             errCode = executeData();
-[e = _errCode -> ( _executeData ..  `uc ]
-"84
-[; ;main.c: 84:             printError(errCode);
-[e ( _printError (1 _errCode ]
 "87
-[; ;main.c: 87:             clearTM0();
-[e ( _clearTM0 ..  ]
-"91
-[; ;main.c: 91:             reduceSeq();
-[e ( _reduceSeq ..  ]
+[; ;usart.c: 87: }
+[e :UE 248 ]
+}
 "92
-[; ;main.c: 92:             shiftData();
-[e ( _shiftData ..  ]
-"93
-[; ;main.c: 93:         }
-}
-[e :U 253 ]
-"94
-[; ;main.c: 94:     }
-}
-[e :U 245 ]
-[e $U 246  ]
-[e :U 247 ]
-"95
-[; ;main.c: 95:     return;
-[e $UE 240  ]
-"96
-[; ;main.c: 96: }
-[e :UE 240 ]
-}
-"105
-[; ;main.c: 105: char executeData(){
-[v _executeData `(uc ~T0 @X0 1 ef ]
+[; ;usart.c: 92: void usartInit(void){
+[v _usartInit `(v ~T0 @X0 1 ef ]
 {
-[e :U _executeData ]
+[e :U _usartInit ]
 [f ]
-"106
-[; ;main.c: 106:     t_sequence *data = getData();
-[v _data `*S238 ~T0 @X0 1 a ]
-[e = _data ( _getData ..  ]
+"94
+[; ;usart.c: 94:     TRISCbits.TRISC6 = 0;
+[e = . . _TRISCbits 0 6 -> -> 0 `i `uc ]
+"95
+[; ;usart.c: 95:     TRISCbits.TRISC7 = 1;
+[e = . . _TRISCbits 0 7 -> -> 1 `i `uc ]
+"97
+[; ;usart.c: 97:     TXSTAbits.TX9 = 0;
+[e = . . _TXSTAbits 0 6 -> -> 0 `i `uc ]
+"98
+[; ;usart.c: 98:     TXSTAbits.TXEN = 1;
+[e = . . _TXSTAbits 0 5 -> -> 1 `i `uc ]
+"99
+[; ;usart.c: 99:     TXSTAbits.SYNC = 0;
+[e = . . _TXSTAbits 0 4 -> -> 0 `i `uc ]
+"100
+[; ;usart.c: 100:     TXSTAbits.BRGH = 0;
+[e = . . _TXSTAbits 0 2 -> -> 0 `i `uc ]
+"102
+[; ;usart.c: 102:     RCSTAbits.SPEN = 1;
+[e = . . _RCSTAbits 0 7 -> -> 1 `i `uc ]
+"103
+[; ;usart.c: 103:     RCSTAbits.RX9 = 0;
+[e = . . _RCSTAbits 0 6 -> -> 0 `i `uc ]
+"104
+[; ;usart.c: 104:     RCSTAbits.CREN = 0;
+[e = . . _RCSTAbits 0 4 -> -> 0 `i `uc ]
+"105
+[; ;usart.c: 105:     RCSTAbits.ADDEN = 0;
+[e = . . _RCSTAbits 0 3 -> -> 0 `i `uc ]
 "108
-[; ;main.c: 108:     char errCode = 0;
-[v _errCode `uc ~T0 @X0 1 a ]
-[e = _errCode -> -> 0 `i `uc ]
-"112
-[; ;main.c: 112:     switch(data->feederLine){
-[e $U 256  ]
+[; ;usart.c: 108:     SPBRG = 25;
+[e = _SPBRG -> -> 25 `i `uc ]
+"109
+[; ;usart.c: 109: }
+[e :UE 252 ]
+}
+"111
+[; ;usart.c: 111: void printError(unsigned char errCode){
+[v _printError `(v ~T0 @X0 1 ef1`uc ]
 {
+[e :U _printError ]
+[v _errCode `uc ~T0 @X0 1 r1 ]
+[f ]
 "113
-[; ;main.c: 113:         case 0:
-[e :U 257 ]
-"115
-[; ;main.c: 115:             errCode = moveToPoint(posVector[0], posVector[1], feeder1Pos[0], feeder1Pos[1]);
-[e = _errCode ( _moveToPoint (4 , , , -> *U + &U _posVector * -> -> -> 0 `i `ui `ux -> -> # *U &U _posVector `ui `ux `i -> *U + &U _posVector * -> -> -> 1 `i `ui `ux -> -> # *U &U _posVector `ui `ux `i -> *U + &U _feeder1Pos * -> -> -> 0 `i `ui `ux -> -> # *U &U _feeder1Pos `ui `ux `i -> *U + &U _feeder1Pos * -> -> -> 1 `i `ui `ux -> -> # *U &U _feeder1Pos `ui `ux `i ]
-"117
-[; ;main.c: 117:             posVector[0] = feeder1Pos[0];
-[e = *U + &U _posVector * -> -> -> 0 `i `ui `ux -> -> # *U &U _posVector `ui `ux *U + &U _feeder1Pos * -> -> -> 0 `i `ui `ux -> -> # *U &U _feeder1Pos `ui `ux ]
-"118
-[; ;main.c: 118:             posVector[1] = feeder1Pos[1];
-[e = *U + &U _posVector * -> -> -> 1 `i `ui `ux -> -> # *U &U _posVector `ui `ux *U + &U _feeder1Pos * -> -> -> 1 `i `ui `ux -> -> # *U &U _feeder1Pos `ui `ux ]
-"119
-[; ;main.c: 119:             break;
+[; ;usart.c: 113:     switch(errCode){
 [e $U 255  ]
+{
+"114
+[; ;usart.c: 114:         case 1:
+[e :U 256 ]
+"115
+[; ;usart.c: 115:             uartTx(&errString_Feed[0], sizeof(errString_Feed));
+[e ( _uartTx (2 , &U *U + &U _errString_Feed * -> -> -> 0 `i `ui `ux -> -> # *U &U _errString_Feed `ui `ux -> -> # _errString_Feed `ui `uc ]
+"116
+[; ;usart.c: 116:             break;
+[e $U 254  ]
+"117
+[; ;usart.c: 117:         case 2:
+[e :U 257 ]
+"118
+[; ;usart.c: 118:             uartTx(&errString_ZEND[0], sizeof(errString_ZEND));
+[e ( _uartTx (2 , &U *U + &U _errString_ZEND * -> -> -> 0 `i `ui `ux -> -> # *U &U _errString_ZEND `ui `ux -> -> # _errString_ZEND `ui `uc ]
+"119
+[; ;usart.c: 119:             break;
+[e $U 254  ]
 "120
-[; ;main.c: 120:         case 1:
+[; ;usart.c: 120:         case 3:
 [e :U 258 ]
 "121
-[; ;main.c: 121:             errCode = moveToPoint(posVector[0], posVector[1], feeder2Pos[0], feeder2Pos[1]);
-[e = _errCode ( _moveToPoint (4 , , , -> *U + &U _posVector * -> -> -> 0 `i `ui `ux -> -> # *U &U _posVector `ui `ux `i -> *U + &U _posVector * -> -> -> 1 `i `ui `ux -> -> # *U &U _posVector `ui `ux `i -> *U + &U _feeder2Pos * -> -> -> 0 `i `ui `ux -> -> # *U &U _feeder2Pos `ui `ux `i -> *U + &U _feeder2Pos * -> -> -> 1 `i `ui `ux -> -> # *U &U _feeder2Pos `ui `ux `i ]
+[; ;usart.c: 121:             uartTx(&errString_Reset[0], sizeof(errString_Reset));
+[e ( _uartTx (2 , &U *U + &U _errString_Reset * -> -> -> 0 `i `ui `ux -> -> # *U &U _errString_Reset `ui `ux -> -> # _errString_Reset `ui `uc ]
 "122
-[; ;main.c: 122:             posVector[0] = feeder2Pos[0];
-[e = *U + &U _posVector * -> -> -> 0 `i `ui `ux -> -> # *U &U _posVector `ui `ux *U + &U _feeder2Pos * -> -> -> 0 `i `ui `ux -> -> # *U &U _feeder2Pos `ui `ux ]
+[; ;usart.c: 122:             break;
+[e $U 254  ]
 "123
-[; ;main.c: 123:             posVector[1] = feeder2Pos[1];
-[e = *U + &U _posVector * -> -> -> 1 `i `ui `ux -> -> # *U &U _posVector `ui `ux *U + &U _feeder2Pos * -> -> -> 1 `i `ui `ux -> -> # *U &U _feeder2Pos `ui `ux ]
-"124
-[; ;main.c: 124:             break;
-[e $U 255  ]
-"125
-[; ;main.c: 125:         case 2:
+[; ;usart.c: 123:         case 4:
 [e :U 259 ]
+"124
+[; ;usart.c: 124:             uartTx(&errString_Point[0], sizeof(errString_Point));
+[e ( _uartTx (2 , &U *U + &U _errString_Point * -> -> -> 0 `i `ui `ux -> -> # *U &U _errString_Point `ui `ux -> -> # _errString_Point `ui `uc ]
+"125
+[; ;usart.c: 125:             break;
+[e $U 254  ]
 "126
-[; ;main.c: 126:             errCode = moveToPoint(posVector[0], posVector[1], feeder3Pos[0], feeder3Pos[1]);
-[e = _errCode ( _moveToPoint (4 , , , -> *U + &U _posVector * -> -> -> 0 `i `ui `ux -> -> # *U &U _posVector `ui `ux `i -> *U + &U _posVector * -> -> -> 1 `i `ui `ux -> -> # *U &U _posVector `ui `ux `i -> *U + &U _feeder3Pos * -> -> -> 0 `i `ui `ux -> -> # *U &U _feeder3Pos `ui `ux `i -> *U + &U _feeder3Pos * -> -> -> 1 `i `ui `ux -> -> # *U &U _feeder3Pos `ui `ux `i ]
-"127
-[; ;main.c: 127:             posVector[0] = feeder3Pos[0];
-[e = *U + &U _posVector * -> -> -> 0 `i `ui `ux -> -> # *U &U _posVector `ui `ux *U + &U _feeder3Pos * -> -> -> 0 `i `ui `ux -> -> # *U &U _feeder3Pos `ui `ux ]
-"128
-[; ;main.c: 128:             posVector[1] = feeder3Pos[1];
-[e = *U + &U _posVector * -> -> -> 1 `i `ui `ux -> -> # *U &U _posVector `ui `ux *U + &U _feeder3Pos * -> -> -> 1 `i `ui `ux -> -> # *U &U _feeder3Pos `ui `ux ]
-"129
-[; ;main.c: 129:             break;
-[e $U 255  ]
-"132
-[; ;main.c: 132:         case 0xFF:
+[; ;usart.c: 126:         case 5:
 [e :U 260 ]
-"133
-[; ;main.c: 133:             errCode = moveToPoint(posVector[0], posVector[1], newFeeder[0], newFeeder[1]);
-[e = _errCode ( _moveToPoint (4 , , , -> *U + &U _posVector * -> -> -> 0 `i `ui `ux -> -> # *U &U _posVector `ui `ux `i -> *U + &U _posVector * -> -> -> 1 `i `ui `ux -> -> # *U &U _posVector `ui `ux `i -> *U + &U _newFeeder * -> -> -> 0 `i `ui `ux -> -> # *U &U _newFeeder `ui `ux `i -> *U + &U _newFeeder * -> -> -> 1 `i `ui `ux -> -> # *U &U _newFeeder `ui `ux `i ]
-"134
-[; ;main.c: 134:             posVector[0] = newFeeder[0];
-[e = *U + &U _posVector * -> -> -> 0 `i `ui `ux -> -> # *U &U _posVector `ui `ux *U + &U _newFeeder * -> -> -> 0 `i `ui `ux -> -> # *U &U _newFeeder `ui `ux ]
-"135
-[; ;main.c: 135:             posVector[1] = newFeeder[1];
-[e = *U + &U _posVector * -> -> -> 1 `i `ui `ux -> -> # *U &U _posVector `ui `ux *U + &U _newFeeder * -> -> -> 1 `i `ui `ux -> -> # *U &U _newFeeder `ui `ux ]
-"136
-[; ;main.c: 136:             break;
-[e $U 255  ]
-"137
-[; ;main.c: 137:         default:
+"127
+[; ;usart.c: 127:             uartTx(&errString_Bound[0], sizeof(errString_Bound));
+[e ( _uartTx (2 , &U *U + &U _errString_Bound * -> -> -> 0 `i `ui `ux -> -> # *U &U _errString_Bound `ui `ux -> -> # _errString_Bound `ui `uc ]
+"128
+[; ;usart.c: 128:             break;
+[e $U 254  ]
+"129
+[; ;usart.c: 129:         case 6:
 [e :U 261 ]
-"140
-[; ;main.c: 140:             errCode = 1;
-[e = _errCode -> -> 1 `i `uc ]
-"141
-[; ;main.c: 141:             break;
-[e $U 255  ]
-"142
-[; ;main.c: 142:     }
-}
-[e $U 255  ]
-[e :U 256 ]
-[e [\ -> . *U _data 0 `i , $ -> 0 `i 257
- , $ -> 1 `i 258
- , $ -> 2 `i 259
- , $ -> 255 `i 260
- 261 ]
-[e :U 255 ]
-"145
-[; ;main.c: 145:     if(!errCode){
-[e $ ! ! != -> _errCode `i -> 0 `i 262  ]
-{
-"148
-[; ;main.c: 148:         errCode = touchObject();
-[e = _errCode ( _touchObject ..  ]
-"150
-[; ;main.c: 150:         pickObject();
-[e ( _pickObject ..  ]
-"153
-[; ;main.c: 153:         errCode = liftArm();
-[e = _errCode ( _liftArm ..  ]
-"156
-[; ;main.c: 156:         errCode = moveToPoint(posVector[0], posVector[1], data->posX, data->posY);
-[e = _errCode ( _moveToPoint (4 , , , -> *U + &U _posVector * -> -> -> 0 `i `ui `ux -> -> # *U &U _posVector `ui `ux `i -> *U + &U _posVector * -> -> -> 1 `i `ui `ux -> -> # *U &U _posVector `ui `ux `i -> . *U _data 1 `i -> . *U _data 2 `i ]
-"157
-[; ;main.c: 157:         posVector[0] = data->posX;
-[e = *U + &U _posVector * -> -> -> 0 `i `ui `ux -> -> # *U &U _posVector `ui `ux . *U _data 1 ]
-"158
-[; ;main.c: 158:         posVector[1] = data->posY;
-[e = *U + &U _posVector * -> -> -> 1 `i `ui `ux -> -> # *U &U _posVector `ui `ux . *U _data 2 ]
-"161
-[; ;main.c: 161:         rotAngle = data->rotation - rotAngle;
-[e = _rotAngle - -> . *U _data 3 `i _rotAngle ]
-"163
-[; ;main.c: 163:         if(rotAngle < 0){
-[e $ ! < _rotAngle -> 0 `i 263  ]
-{
-"164
-[; ;main.c: 164:             rotAngle += 360;
-[e =+ _rotAngle -> 360 `i ]
-"165
-[; ;main.c: 165:         }
-}
-[e :U 263 ]
-"166
-[; ;main.c: 166:         rotateObj(rotAngle);
-[e ( _rotateObj (1 -> _rotAngle `uc ]
-"169
-[; ;main.c: 169:         errCode = touchTherm();
-[e = _errCode ( _touchTherm ..  ]
-"171
-[; ;main.c: 171:         releaseObj();
-[e ( _releaseObj ..  ]
-"174
-[; ;main.c: 174:         errCode = liftArm();
-[e = _errCode ( _liftArm ..  ]
-"175
-[; ;main.c: 175:     }
-}
+"130
+[; ;usart.c: 130:             uartTx(&errString_PointZ[0], sizeof(errString_PointZ));
+[e ( _uartTx (2 , &U *U + &U _errString_PointZ * -> -> -> 0 `i `ui `ux -> -> # *U &U _errString_PointZ `ui `ux -> -> # _errString_PointZ `ui `uc ]
+"131
+[; ;usart.c: 131:             break;
+[e $U 254  ]
+"132
+[; ;usart.c: 132:         case 7:
 [e :U 262 ]
-"177
-[; ;main.c: 177:     return(errCode);
-[e ) _errCode ]
-[e $UE 254  ]
+"133
+[; ;usart.c: 133:             uartTx(&errString_Fatal[0], sizeof(errString_Fatal));
+[e ( _uartTx (2 , &U *U + &U _errString_Fatal * -> -> -> 0 `i `ui `ux -> -> # *U &U _errString_Fatal `ui `ux -> -> # _errString_Fatal `ui `uc ]
+"134
+[; ;usart.c: 134:             break;
+[e $U 254  ]
+"135
+[; ;usart.c: 135:         case 8:
+[e :U 263 ]
+"136
+[; ;usart.c: 136:             uartTx(&errString_Command[0], sizeof(errString_Command));
+[e ( _uartTx (2 , &U *U + &U _errString_Command * -> -> -> 0 `i `ui `ux -> -> # *U &U _errString_Command `ui `ux -> -> # _errString_Command `ui `uc ]
+"137
+[; ;usart.c: 137:             break;
+[e $U 254  ]
+"139
+[; ;usart.c: 139:         default:
+[e :U 264 ]
+"140
+[; ;usart.c: 140:             break;
+[e $U 254  ]
+"141
+[; ;usart.c: 141:     }
+}
+[e $U 254  ]
+[e :U 255 ]
+[e [\ -> _errCode `i , $ -> 1 `i 256
+ , $ -> 2 `i 257
+ , $ -> 3 `i 258
+ , $ -> 4 `i 259
+ , $ -> 5 `i 260
+ , $ -> 6 `i 261
+ , $ -> 7 `i 262
+ , $ -> 8 `i 263
+ 264 ]
+[e :U 254 ]
+"142
+[; ;usart.c: 142: }
+[e :UE 253 ]
+}
+"148
+[; ;usart.c: 148: void uartTx(unsigned char *ptr, unsigned char length)
+[v _uartTx `(v ~T0 @X0 1 ef2`*uc`uc ]
+"149
+[; ;usart.c: 149: {
+{
+[e :U _uartTx ]
+"148
+[; ;usart.c: 148: void uartTx(unsigned char *ptr, unsigned char length)
+[v _ptr `*uc ~T0 @X0 1 r1 ]
+[v _length `uc ~T0 @X0 1 r2 ]
+"149
+[; ;usart.c: 149: {
+[f ]
+"151
+[; ;usart.c: 151:     for(char i = 1; i < length; i++){
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 1 `i `uc ]
+[e $U 269  ]
+[e :U 266 ]
+{
+"153
+[; ;usart.c: 153:         TXREG = *ptr;
+[e = _TXREG *U _ptr ]
+"155
+[; ;usart.c: 155:         while(!TXSTAbits.TRMT);
+[e $U 270  ]
+[e :U 271 ]
+[e :U 270 ]
+[e $ ! != -> . . _TXSTAbits 0 1 `i -> 0 `i 271  ]
+[e :U 272 ]
+"157
+[; ;usart.c: 157:         ptr++;
+[e ++ _ptr * -> -> 1 `i `x -> -> # *U _ptr `i `x ]
+"158
+[; ;usart.c: 158:     }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e :U 269 ]
+[e $ < -> _i `i -> _length `i 266  ]
+[e :U 267 ]
+}
+"159
+[; ;usart.c: 159: }
+[e :UE 265 ]
+}
+"164
+[; ;usart.c: 164: void storeData(unsigned char data){
+[v _storeData `(v ~T0 @X0 1 ef1`uc ]
+{
+[e :U _storeData ]
+[v _data `uc ~T0 @X0 1 r1 ]
+[f ]
+"166
+[; ;usart.c: 166:     static unsigned char counter = 0;
+[v F2396 `uc ~T0 @X0 1 s counter ]
+[i F2396
+-> -> 0 `i `uc
+]
+"167
+[; ;usart.c: 167:     static unsigned char mexLength = 5;
+[v F2397 `uc ~T0 @X0 1 s mexLength ]
+[i F2397
+-> -> 5 `i `uc
+]
+"168
+[; ;usart.c: 168:     static unsigned char command;
+[v F2398 `uc ~T0 @X0 1 s command ]
+"169
+[; ;usart.c: 169:     static unsigned char receivedMex[9];
+[v F2399 `uc ~T0 @X0 -> 9 `i s receivedMex ]
+"173
+[; ;usart.c: 173:     receivedMex[counter] = data;
+[e = *U + &U F2399 * -> F2396 `ux -> -> # *U &U F2399 `ui `ux _data ]
+"175
+[; ;usart.c: 175:     counter++;
+[e ++ F2396 -> -> 1 `i `uc ]
 "178
-[; ;main.c: 178: }
-[e :UE 254 ]
+[; ;usart.c: 178:     switch(receivedMex[0]){
+[e $U 275  ]
+{
+"179
+[; ;usart.c: 179:         case 0:
+[e :U 276 ]
+"180
+[; ;usart.c: 180:             mexLength = 5;
+[e = F2397 -> -> 5 `i `uc ]
+"181
+[; ;usart.c: 181:             break;
+[e $U 274  ]
+"182
+[; ;usart.c: 182:         case 1:
+[e :U 277 ]
+"183
+[; ;usart.c: 183:             mexLength = 9;
+[e = F2397 -> -> 9 `i `uc ]
+"184
+[; ;usart.c: 184:             break;
+[e $U 274  ]
+"185
+[; ;usart.c: 185:         case 2:
+[e :U 278 ]
+"186
+[; ;usart.c: 186:             mexLength = 1;
+[e = F2397 -> -> 1 `i `uc ]
+"187
+[; ;usart.c: 187:             break;
+[e $U 274  ]
+"188
+[; ;usart.c: 188:         default:
+[e :U 279 ]
+"189
+[; ;usart.c: 189:             break;
+[e $U 274  ]
+"191
+[; ;usart.c: 191:     }
+}
+[e $U 274  ]
+[e :U 275 ]
+[e [\ -> *U + &U F2399 * -> -> -> 0 `i `ui `ux -> -> # *U &U F2399 `ui `ux `i , $ -> 0 `i 276
+ , $ -> 1 `i 277
+ , $ -> 2 `i 278
+ 279 ]
+[e :U 274 ]
+"194
+[; ;usart.c: 194:     if(counter >= mexLength){
+[e $ ! >= -> F2396 `i -> F2397 `i 280  ]
+{
+"195
+[; ;usart.c: 195:         counter = 0;
+[e = F2396 -> -> 0 `i `uc ]
+"198
+[; ;usart.c: 198:         switch(receivedMex[0]){
+[e $U 282  ]
+{
+"199
+[; ;usart.c: 199:             case 0:
+[e :U 283 ]
+"200
+[; ;usart.c: 200:                 dataSequence[dataCounter].feederLine = receivedMex[1];
+[e = . *U + &U _dataSequence * -> _dataCounter `ux -> -> # *U &U _dataSequence `ui `ux 0 *U + &U F2399 * -> -> -> 1 `i `ui `ux -> -> # *U &U F2399 `ui `ux ]
+"201
+[; ;usart.c: 201:                 dataSequence[dataCounter].posX = receivedMex[2] * 10;
+[e = . *U + &U _dataSequence * -> _dataCounter `ux -> -> # *U &U _dataSequence `ui `ux 1 -> * -> *U + &U F2399 * -> -> -> 2 `i `ui `ux -> -> # *U &U F2399 `ui `ux `i -> 10 `i `uc ]
+"202
+[; ;usart.c: 202:                 dataSequence[dataCounter].posY = receivedMex[3] * 10;
+[e = . *U + &U _dataSequence * -> _dataCounter `ux -> -> # *U &U _dataSequence `ui `ux 2 -> * -> *U + &U F2399 * -> -> -> 3 `i `ui `ux -> -> # *U &U F2399 `ui `ux `i -> 10 `i `uc ]
+"203
+[; ;usart.c: 203:                 dataSequence[dataCounter].rotation = receivedMex[4];
+[e = . *U + &U _dataSequence * -> _dataCounter `ux -> -> # *U &U _dataSequence `ui `ux 3 *U + &U F2399 * -> -> -> 4 `i `ui `ux -> -> # *U &U F2399 `ui `ux ]
+"205
+[; ;usart.c: 205:                 dataCounter++;
+[e ++ _dataCounter -> -> 1 `i `uc ]
+"206
+[; ;usart.c: 206:                 break;
+[e $U 281  ]
+"207
+[; ;usart.c: 207:             case 1:
+[e :U 284 ]
+"209
+[; ;usart.c: 209:                 newSequenceData.L = receivedMex[1];
+[e = . _newSequenceData 0 *U + &U F2399 * -> -> -> 1 `i `ui `ux -> -> # *U &U F2399 `ui `ux ]
+"210
+[; ;usart.c: 210:                 newSequenceData.W = receivedMex[2];
+[e = . _newSequenceData 1 *U + &U F2399 * -> -> -> 2 `i `ui `ux -> -> # *U &U F2399 `ui `ux ]
+"211
+[; ;usart.c: 211:                 newSequenceData.init_posX = receivedMex[3] * 10;
+[e = . _newSequenceData 2 -> * -> *U + &U F2399 * -> -> -> 3 `i `ui `ux -> -> # *U &U F2399 `ui `ux `i -> 10 `i `uc ]
+"212
+[; ;usart.c: 212:                 newSequenceData.init_posY = receivedMex[4] * 10;
+[e = . _newSequenceData 3 -> * -> *U + &U F2399 * -> -> -> 4 `i `ui `ux -> -> # *U &U F2399 `ui `ux `i -> 10 `i `uc ]
+"213
+[; ;usart.c: 213:                 newSequenceData.init_rot = receivedMex[5];
+[e = . _newSequenceData 4 *U + &U F2399 * -> -> -> 5 `i `ui `ux -> -> # *U &U F2399 `ui `ux ]
+"214
+[; ;usart.c: 214:                 newSequenceData.end_posX = receivedMex[6] * 10;
+[e = . _newSequenceData 5 -> * -> *U + &U F2399 * -> -> -> 6 `i `ui `ux -> -> # *U &U F2399 `ui `ux `i -> 10 `i `uc ]
+"215
+[; ;usart.c: 215:                 newSequenceData.end_posY = receivedMex[7] * 10;
+[e = . _newSequenceData 6 -> * -> *U + &U F2399 * -> -> -> 7 `i `ui `ux -> -> # *U &U F2399 `ui `ux `i -> 10 `i `uc ]
+"216
+[; ;usart.c: 216:                 newSequenceData.end_rot = receivedMex[8];
+[e = . _newSequenceData 7 *U + &U F2399 * -> -> -> 8 `i `ui `ux -> -> # *U &U F2399 `ui `ux ]
+"218
+[; ;usart.c: 218:                 _newSequence = 1;
+[e = __newSequence -> -> 1 `i `uc ]
+"219
+[; ;usart.c: 219:                 break;
+[e $U 281  ]
+"220
+[; ;usart.c: 220:             case 2:
+[e :U 285 ]
+"222
+[; ;usart.c: 222:                 _fatalError = 1;
+[e = __fatalError -> -> 1 `i `uc ]
+"223
+[; ;usart.c: 223:                 break;
+[e $U 281  ]
+"224
+[; ;usart.c: 224:             default:
+[e :U 286 ]
+"226
+[; ;usart.c: 226:                 printError(8);
+[e ( _printError (1 -> -> 8 `i `uc ]
+"227
+[; ;usart.c: 227:                 break;
+[e $U 281  ]
+"229
+[; ;usart.c: 229:         }
+}
+[e $U 281  ]
+[e :U 282 ]
+[e [\ -> *U + &U F2399 * -> -> -> 0 `i `ui `ux -> -> # *U &U F2399 `ui `ux `i , $ -> 0 `i 283
+ , $ -> 1 `i 284
+ , $ -> 2 `i 285
+ 286 ]
+[e :U 281 ]
+"230
+[; ;usart.c: 230:     }
+}
+[e :U 280 ]
+"231
+[; ;usart.c: 231: }
+[e :UE 273 ]
 }

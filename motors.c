@@ -751,7 +751,7 @@ char liftArm(){
  */
 void rotateObj(unsigned char rotAngle){
     static const float stepAngle = 0.08789;                         //dimension of a single step in the motor
-    static char rotSequence[] = {0b1001, 0b0011, 0b0110, 0b1100};   //sequence to use in order to rotate as desired
+    static char rotSequence[] = {0b100100, 0b001100, 0b011000, 0b110000};   //sequence to use in order to rotate as desired
     unsigned int i;
     int totStep = rotAngle/stepAngle;                               //total step required
     
@@ -760,14 +760,20 @@ void rotateObj(unsigned char rotAngle){
         //Reset the pins that control the rot motor
         LATD &= 0xC3;
         //Set these pins (shift of 2 bit since start at RD2 not RD0)
-        LATD |= rotSequence[i%4] << 2;
+        LATD |= rotSequence[i%4];
         
         //Delay so that the rotation can be done
         T2CONbits.TMR2ON = 1;           //turn on the timer used for the interrupt
         while(!stepMade());
-        T2CONbits.TMR2ON = 1;           //turn off the timer used for the interrupt
+        T2CONbits.TMR2ON = 0;           //turn off the timer used for the interrupt
         TMR2 = 0;
     }
+    
+    //reset the counter register
+    TMR2 = 0;
+    
+    //reset the step
+    resetStep();
 }
 
 /*
@@ -779,7 +785,7 @@ void pickObject(){
     //Delay so that the breezer can grab the object
     T2CONbits.TMR2ON = 1;           //turn on the timer used for the interrupt
     while(!stepMade());
-    T2CONbits.TMR2ON = 1;           //turn off the timer used for the interrupt
+    T2CONbits.TMR2ON = 0;           //turn off the timer used for the interrupt
     TMR2 = 0;
 }
 
@@ -792,7 +798,7 @@ void releaseObj(){
     //Delay so that the breezer can release the object
     T2CONbits.TMR2ON = 1;           //turn on the timer used for the interrupt
     while(!stepMade());
-    T2CONbits.TMR2ON = 1;           //turn off the timer used for the interrupt
+    T2CONbits.TMR2ON = 0;           //turn off the timer used for the interrupt
     TMR2 = 0;
 }
 

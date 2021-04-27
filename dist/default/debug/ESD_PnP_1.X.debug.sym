@@ -154,6 +154,7 @@ _retPeriod 24D4 0 CODE 0
 _pwmPeriod 46 0 COMRAM 1
 resetPosition@keepMovingZ 17 0 COMRAM 1
 __end_of___fltol 1A64 0 CODE 0
+__cntErrataNOP_dist/default/debug\ESD_PnP_1.X.debug.o 1E7 0 ABS 0
 __size_of_getNewSequence 0 0 ABS 0
 __size_of_initADC 0 0 ABS 0
 __size_of___fldiv 0 0 ABS 0
@@ -323,7 +324,6 @@ __end_of_releaseObj 239C 0 CODE 0
 _getData 24AA 0 CODE 0
 moveToPoint@y2 1B 0 COMRAM 1
 __size_of_getData 0 0 ABS 0
-__cntErrataNOP_dist/default/production\ESD_PnP_1.X.production.o 1E7 0 ABS 0
 __Hidata 0 0 CODE 0
 __Lidata 0 0 CODE 0
 __end_of_increaseStep 2586 0 CODE 0
@@ -606,11 +606,11 @@ __pdataCOMRAM 5E 0 COMRAM 1
 start_initialization 216A 0 CODE 0
 __size_of_newSequence 0 0 ABS 0
 __end_of_shiftData 2250 0 CODE 0
-__cntErrataNOP_C:\Users\alle9\AppData\Local\Temp\so3s.o 1 0 ABS 0
 __size_of_tim2Init 0 0 ABS 0
 __end_of___xxtofl 148C 0 CODE 0
 __size_of_resetTouch 0 0 ABS 0
 __size_of_resetTherm 0 0 ABS 0
+__cntErrataNOP_C:\Users\alle9\AppData\Local\Temp\sqso.o 1 0 ABS 0
 __size_ofi2_storeData 0 0 ABS 0
 _errString_ZEND 15E 0 BANK1 1
 ___fldiv@aexp 38 0 COMRAM 1
@@ -643,9 +643,9 @@ text30 612 1FCE CODE 612 0
 text27 1FD0 248C CODE 1FD0 0
 text3 248E 258F CODE 248E 0
 %locals
-dist/default/production\ESD_PnP_1.X.production.o
+dist/default/debug\ESD_PnP_1.X.debug.o
 D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h
-C:\Users\alle9\AppData\Local\Temp\so3s.s
+C:\Users\alle9\AppData\Local\Temp\sqso.s
 2307 216A 0 CODE 0
 2309 216A 0 CODE 0
 2312 216A 0 CODE 0
@@ -1366,7 +1366,7 @@ motors.c
 35 24B8 0 CODE 0
 36 24BA 0 CODE 0
 37 24C2 0 CODE 0
-C:\Users\alle9\AppData\Local\Temp\so3s.s
+C:\Users\alle9\AppData\Local\Temp\sqso.s
 10090 8 0 CODE 0
 interrupt.c
 38 8 0 CODE 0
