@@ -679,8 +679,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 28:     tim1Init();
 [e ( _tim1Init ..  ]
 "29
-[; ;main.c: 29:     tim2Init(10000);
-[e ( _tim2Init (1 -> -> 10000 `i `ui ]
+[; ;main.c: 29:     tim2Init(100);
+[e ( _tim2Init (1 -> -> 100 `i `ui ]
 "32
 [; ;main.c: 32:     errCode = resetPosition();
 [e = _errCode -> ( _resetPosition ..  `uc ]

@@ -69,6 +69,7 @@ void __interrupt() isr(){
         
         //verify if we surpass the number of cycle required for 1 step (high or low)
         if(single_cycle > retPeriod()){
+            single_cycle = 0;
             completeStep++;
             
             //A complete step is verified when the cunter is not 0 but is a multiple of 2

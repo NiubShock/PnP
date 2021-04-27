@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "usart.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,15 @@
 # 1 "<built-in>" 2
 # 1 "D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
+# 1 "usart.c" 2
+
+
+
+
+
+
+
+
 # 1 "D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 1 3
 # 18 "D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -3804,7 +3812,7 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 33 "D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 2 3
-# 1 "main.c" 2
+# 9 "usart.c" 2
 
 # 1 "./main.h" 1
 
@@ -3956,174 +3964,282 @@ void shiftData(void);
 # 7 "./main.h" 2
 # 36 "./main.h"
 char executeData(void);
-# 2 "main.c" 2
+# 10 "usart.c" 2
+
+# 1 "D:\\Programs\\MPLABx\\xc8\\v2.20\\pic\\include\\c99\\string.h" 1 3
+# 25 "D:\\Programs\\MPLABx\\xc8\\v2.20\\pic\\include\\c99\\string.h" 3
+# 1 "D:\\Programs\\MPLABx\\xc8\\v2.20\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 411 "D:\\Programs\\MPLABx\\xc8\\v2.20\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef struct __locale_struct * locale_t;
+# 25 "D:\\Programs\\MPLABx\\xc8\\v2.20\\pic\\include\\c99\\string.h" 2 3
 
 
-void serial_tx_char(unsigned char val);
-char executeData();
+void *memcpy (void *restrict, const void *restrict, size_t);
+void *memmove (void *, const void *, size_t);
+void *memset (void *, int, size_t);
+int memcmp (const void *, const void *, size_t);
+void *memchr (const void *, int, size_t);
 
-static unsigned char posVector[3] = {0, 0, 0};
-static int rotAngle = 0;
+char *strcpy (char *restrict, const char *restrict);
+char *strncpy (char *restrict, const char *restrict, size_t);
 
-static const unsigned char feeder1Pos[2] = {30, 50};
-static const unsigned char feeder2Pos[2] = {30, 100};
-static const unsigned char feeder3Pos[2] = {30, 150};
+char *strcat (char *restrict, const char *restrict);
+char *strncat (char *restrict, const char *restrict, size_t);
 
-static const unsigned char maxFeedX = 60;
-static const unsigned char maxFeedY= 200;
+int strcmp (const char *, const char *);
+int strncmp (const char *, const char *, size_t);
 
-static unsigned char newFeeder[2] = {0, 0};
+int strcoll (const char *, const char *);
+size_t strxfrm (char *restrict, const char *restrict, size_t);
 
-void main(void) {
+char *strchr (const char *, int);
+char *strrchr (const char *, int);
 
-    unsigned char errCode = 0;
+size_t strcspn (const char *, const char *);
+size_t strspn (const char *, const char *);
+char *strpbrk (const char *, const char *);
+char *strstr (const char *, const char *);
+char *strtok (char *restrict, const char *restrict);
 
-    interruptInit();
-    initPinMotors();
-    initADC();
-    usartInit();
-    tim0Init();
-    tim1Init();
-    tim2Init(10000);
+size_t strlen (const char *);
 
-
-    errCode = resetPosition();
-    if(errCode != 0){
-        printError(errCode);
-        while(1);
-    }
-
-
-    RCSTA1bits.CREN = 1;
-
-    while(1){
-        if(newSequence()){
-            t_newSequence* newData = getNewSequence();
-
-            newFeeder[0] = newData ->init_posX;
-            newFeeder[1] = newData ->init_posY;
-
-
-
-            RCSTAbits.CREN = 0;
-
-
-
-
-            if(newData ->end_posX > maxFeedX || newData ->end_posY > maxFeedY){
-                errCode = 5;
-            }else{
-                storeData(newData ->end_posX);
-                storeData(newData ->end_posY);
-            }
-
-
-            if(errCode == 0){
-
-                storeData(0);
-                storeData(0xFF);
-                storeData(newData ->end_rot - newData ->init_rot);
-            }else{
-                printError(errCode);
-            }
-
-
-            RCSTAbits.CREN = 1;
-
-
-            resetNewSequence();
-        }
-        if(readSeq()){
+char *strerror (int);
+# 65 "D:\\Programs\\MPLABx\\xc8\\v2.20\\pic\\include\\c99\\string.h" 3
+char *strtok_r (char *restrict, const char *restrict, char **restrict);
+int strerror_r (int, char *, size_t);
+char *stpcpy(char *restrict, const char *restrict);
+char *stpncpy(char *restrict, const char *restrict, size_t);
+size_t strnlen (const char *, size_t);
+char *strdup (const char *);
+char *strndup (const char *, size_t);
+char *strsignal(int);
+char *strerror_l (int, locale_t);
+int strcoll_l (const char *, const char *, locale_t);
+size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 
-            errCode = executeData();
 
-            printError(errCode);
-
-
-            clearTM0();
+void *memccpy (void *restrict, const void *restrict, int, size_t);
+# 11 "usart.c" 2
 
 
+static unsigned char errString_Feed[] = "Error, feed line not defined\n";
+static unsigned char errString_ZEND[] = "Error, no object relevated along Z Axis\n";
+static unsigned char errString_Reset[] = "Error, time exceeded to reset position\n";
+static unsigned char errString_Point[] = "Error, time exceeded to reach the point\n";
+static unsigned char errString_Bound[] = "Error, point outside boundaries\n";
+static unsigned char errString_PointZ[] = "Error, time exceeded to reach the end of the Z Axis\n";
+static unsigned char errString_Fatal[] = "Fatal Error, please reset the device!\n";
+static unsigned char errString_Command[] = "Command not recognized\n";
+static unsigned char dataCounter = 0;
+static unsigned char _fatalError = 0;
+static unsigned char _newSequence = 0;
 
-            reduceSeq();
-            shiftData();
-        }
-    }
-    return;
+
+
+
+static t_sequence dataSequence[5];
+static t_newSequence newSequenceData;
+
+
+
+
+
+t_sequence* getData(){
+    return(&dataSequence[0]);
 }
-# 105 "main.c"
-char executeData(){
-    t_sequence *data = getData();
-
-    char errCode = 0;
 
 
 
-    switch(data->feederLine){
-        case 0:
 
-            errCode = moveToPoint(posVector[0], posVector[1], feeder1Pos[0], feeder1Pos[1]);
 
-            posVector[0] = feeder1Pos[0];
-            posVector[1] = feeder1Pos[1];
-            break;
+t_newSequence* getNewSequence(){
+    return(&newSequenceData);
+}
+
+
+
+
+void reduceSeq(){
+    dataCounter--;
+}
+
+
+
+
+unsigned char readSeq(){
+    return dataCounter;
+}
+
+unsigned char fatalError(){
+    return _fatalError;
+}
+
+unsigned char newSequence(){
+    return _newSequence;
+}
+
+
+
+
+
+void resetNewSequence(){
+    _newSequence = 0;
+}
+
+
+
+
+
+void shiftData(){
+    char i;
+
+    for(i = 0; i < 4; i++){
+        dataSequence[i] = dataSequence[i+1];
+    }
+}
+
+
+
+
+void usartInit(void){
+
+    TRISCbits.TRISC6 = 0;
+    TRISCbits.TRISC7 = 1;
+
+    TXSTAbits.TX9 = 0;
+    TXSTAbits.TXEN = 1;
+    TXSTAbits.SYNC = 0;
+    TXSTAbits.BRGH = 0;
+
+    RCSTAbits.SPEN = 1;
+    RCSTAbits.RX9 = 0;
+    RCSTAbits.CREN = 0;
+    RCSTAbits.ADDEN = 0;
+
+
+    SPBRG = 25;
+}
+
+void printError(unsigned char errCode){
+
+    switch(errCode){
         case 1:
-            errCode = moveToPoint(posVector[0], posVector[1], feeder2Pos[0], feeder2Pos[1]);
-            posVector[0] = feeder2Pos[0];
-            posVector[1] = feeder2Pos[1];
+            uartTx(&errString_Feed[0], sizeof(errString_Feed));
             break;
         case 2:
-            errCode = moveToPoint(posVector[0], posVector[1], feeder3Pos[0], feeder3Pos[1]);
-            posVector[0] = feeder3Pos[0];
-            posVector[1] = feeder3Pos[1];
+            uartTx(&errString_ZEND[0], sizeof(errString_ZEND));
+            break;
+        case 3:
+            uartTx(&errString_Reset[0], sizeof(errString_Reset));
+            break;
+        case 4:
+            uartTx(&errString_Point[0], sizeof(errString_Point));
+            break;
+        case 5:
+            uartTx(&errString_Bound[0], sizeof(errString_Bound));
+            break;
+        case 6:
+            uartTx(&errString_PointZ[0], sizeof(errString_PointZ));
+            break;
+        case 7:
+            uartTx(&errString_Fatal[0], sizeof(errString_Fatal));
+            break;
+        case 8:
+            uartTx(&errString_Command[0], sizeof(errString_Command));
             break;
 
+        default:
+            break;
+    }
+}
 
-        case 0xFF:
-            errCode = moveToPoint(posVector[0], posVector[1], newFeeder[0], newFeeder[1]);
-            posVector[0] = newFeeder[0];
-            posVector[1] = newFeeder[1];
+
+
+
+
+void uartTx(unsigned char *ptr, unsigned char length)
+{
+
+    for(char i = 1; i < length; i++){
+
+        TXREG = *ptr;
+
+        while(!TXSTAbits.TRMT);
+
+        ptr++;
+    }
+}
+
+
+
+
+void storeData(unsigned char data){
+
+    static unsigned char counter = 0;
+    static unsigned char mexLength = 5;
+    static unsigned char command;
+    static unsigned char receivedMex[9];
+
+
+
+    receivedMex[counter] = data;
+
+    counter++;
+
+
+    switch(receivedMex[0]){
+        case 0:
+            mexLength = 5;
+            break;
+        case 1:
+            mexLength = 9;
+            break;
+        case 2:
+            mexLength = 1;
             break;
         default:
-
-
-            errCode = 1;
             break;
+
     }
 
 
-    if(!errCode){
+    if(counter >= mexLength){
+        counter = 0;
 
 
-        errCode = touchObject();
+        switch(receivedMex[0]){
+            case 0:
+                dataSequence[dataCounter].feederLine = receivedMex[1];
+                dataSequence[dataCounter].posX = receivedMex[2] * 10;
+                dataSequence[dataCounter].posY = receivedMex[3] * 10;
+                dataSequence[dataCounter].rotation = receivedMex[4];
 
-        pickObject();
+                dataCounter++;
+                break;
+            case 1:
 
+                newSequenceData.L = receivedMex[1];
+                newSequenceData.W = receivedMex[2];
+                newSequenceData.init_posX = receivedMex[3] * 10;
+                newSequenceData.init_posY = receivedMex[4] * 10;
+                newSequenceData.init_rot = receivedMex[5];
+                newSequenceData.end_posX = receivedMex[6] * 10;
+                newSequenceData.end_posY = receivedMex[7] * 10;
+                newSequenceData.end_rot = receivedMex[8];
 
-        errCode = liftArm();
+                _newSequence = 1;
+                break;
+            case 2:
 
+                _fatalError = 1;
+                break;
+            default:
 
-        errCode = moveToPoint(posVector[0], posVector[1], data->posX, data->posY);
-        posVector[0] = data->posX;
-        posVector[1] = data->posY;
+                printError(8);
+                break;
 
-
-        rotAngle = data->rotation - rotAngle;
-
-        if(rotAngle < 0){
-            rotAngle += 360;
         }
-        rotateObj(rotAngle);
-
-
-        errCode = touchTherm();
-
-        releaseObj();
-
-
-        errCode = liftArm();
     }
-
-    return(errCode);
 }

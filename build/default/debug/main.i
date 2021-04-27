@@ -3984,7 +3984,7 @@ void main(void) {
     usartInit();
     tim0Init();
     tim1Init();
-    tim2Init(10000);
+    tim2Init(100);
 
 
     errCode = resetPosition();

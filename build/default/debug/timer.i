@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "timer.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,15 @@
 # 1 "<built-in>" 2
 # 1 "D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
+# 1 "timer.c" 2
+
+
+
+
+
+
+
+
 # 1 "D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 1 3
 # 18 "D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -3804,326 +3812,98 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 33 "D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 2 3
-# 1 "main.c" 2
+# 9 "timer.c" 2
 
-# 1 "./main.h" 1
 
-# 1 "./adc.h" 1
-# 37 "./adc.h"
-void initADC(void);
-void startADC(void);
-void stopADC(void);
-unsigned int returnTouch(void);
-unsigned int returnTherm(void);
-void resetTouch(void);
-void resetTherm(void);
+static volatile unsigned char pwmStep = 0;
+static volatile unsigned char stepToggle = 0;
+static unsigned int pwmPeriod = 0;
 
-void setThermRel(void);
-void setTouchRel(void);
-# 2 "./main.h" 2
 
-# 1 "./motors.h" 1
-# 30 "./motors.h"
-void writeTM0(void);
-unsigned char whatsTM0Limit(void);
-void clearTM0(void);
 
 
 
 
-void setStep(unsigned char step, unsigned char motor);
-void enableMotor(unsigned char enable, unsigned char motor);
-void setDirection(unsigned char direction, unsigned char motor);
-void setDecay(unsigned char decay, unsigned char motor);
-# 49 "./motors.h"
-void initPinMotors(void);
-char resetPosition(void);
-char moveToPoint(int x1, int y1, int x2, int y2);
 
-char touchObject(void);
-char touchTherm(void);
-char liftArm(void);
-void rotateObj(unsigned char rotAngle);
-void pickObject(void);
-void releaseObj(void);
-
-void abortAll(void);
-# 3 "./main.h" 2
-
-# 1 "./conf_bits.h" 1
-# 40 "./conf_bits.h"
-#pragma config OSC = XT
-#pragma config OSCS = OFF
-
-
-#pragma config PWRT = OFF
-#pragma config BOR = OFF
-#pragma config BORV = 20
-
-
-#pragma config WDT = OFF
-#pragma config WDTPS = 128
-
-
-#pragma config CCP2MUX = OFF
-
-
-#pragma config STVR = OFF
-#pragma config LVP = OFF
-
-
-#pragma config CP0 = OFF
-#pragma config CP1 = OFF
-#pragma config CP2 = OFF
-#pragma config CP3 = OFF
-
-
-#pragma config CPB = OFF
-#pragma config CPD = OFF
-
-
-#pragma config WRT0 = OFF
-#pragma config WRT1 = OFF
-#pragma config WRT2 = OFF
-#pragma config WRT3 = OFF
-
-
-#pragma config WRTC = OFF
-#pragma config WRTB = OFF
-#pragma config WRTD = OFF
-
-
-#pragma config EBTR0 = OFF
-#pragma config EBTR1 = OFF
-#pragma config EBTR2 = OFF
-#pragma config EBTR3 = OFF
-
-
-#pragma config EBTRB = OFF
-# 4 "./main.h" 2
-
-# 1 "./timer.h" 1
-# 37 "./timer.h"
-void tim0Init(void);
-void tim1Init(void);
-void tim2Init(unsigned int _pwmPeriod);
-unsigned int stepMade(void);
-void resetStep(void);
-unsigned int stepCounter(void);
-
-
-void increaseStep(void);
-void toggleStep(void);
-unsigned int retPeriod(void);
-# 5 "./main.h" 2
-
-# 1 "./interrupt.h" 1
-void interruptInit(void);
-# 6 "./main.h" 2
-
-# 1 "./usart.h" 1
-typedef struct{
-    unsigned char feederLine;
-    unsigned char posX;
-    unsigned char posY;
-    unsigned char rotation;
-}t_sequence;
-
-typedef struct{
-    unsigned char L;
-    unsigned char W;
-    unsigned char init_posX;
-    unsigned char init_posY;
-    unsigned char init_rot;
-    unsigned char end_posX;
-    unsigned char end_posY;
-    unsigned char end_rot;
-}t_newSequence;
-
-void usartInit(void);
-void storeData(unsigned char data);
-t_sequence* getData(void);
-t_newSequence* getNewSequence(void);
-void uartTx(unsigned char *ptr, unsigned char length);
-void printError(unsigned char errCode);
-
-unsigned char newSequence(void);
-void resetNewSequence(void);
-unsigned char readSeq(void);
-unsigned char fatalError(void);
-void reduceSeq(void);
-void shiftData(void);
-# 7 "./main.h" 2
-# 36 "./main.h"
-char executeData(void);
-# 2 "main.c" 2
-
-
-void serial_tx_char(unsigned char val);
-char executeData();
-
-static unsigned char posVector[3] = {0, 0, 0};
-static int rotAngle = 0;
-
-static const unsigned char feeder1Pos[2] = {30, 50};
-static const unsigned char feeder2Pos[2] = {30, 100};
-static const unsigned char feeder3Pos[2] = {30, 150};
-
-static const unsigned char maxFeedX = 60;
-static const unsigned char maxFeedY= 200;
-
-static unsigned char newFeeder[2] = {0, 0};
-
-void main(void) {
-
-    unsigned char errCode = 0;
-
-    interruptInit();
-    initPinMotors();
-    initADC();
-    usartInit();
-    tim0Init();
-    tim1Init();
-    tim2Init(10000);
-
-
-    errCode = resetPosition();
-    if(errCode != 0){
-        printError(errCode);
-        while(1);
-    }
-
-
-    RCSTA1bits.CREN = 1;
-
-    while(1){
-        if(newSequence()){
-            t_newSequence* newData = getNewSequence();
-
-            newFeeder[0] = newData ->init_posX;
-            newFeeder[1] = newData ->init_posY;
-
-
-
-            RCSTAbits.CREN = 0;
-
-
-
-
-            if(newData ->end_posX > maxFeedX || newData ->end_posY > maxFeedY){
-                errCode = 5;
-            }else{
-                storeData(newData ->end_posX);
-                storeData(newData ->end_posY);
-            }
-
-
-            if(errCode == 0){
-
-                storeData(0);
-                storeData(0xFF);
-                storeData(newData ->end_rot - newData ->init_rot);
-            }else{
-                printError(errCode);
-            }
-
-
-            RCSTAbits.CREN = 1;
-
-
-            resetNewSequence();
-        }
-        if(readSeq()){
-
-
-
-            errCode = executeData();
-
-            printError(errCode);
-
-
-            clearTM0();
-
-
-
-            reduceSeq();
-            shiftData();
-        }
-    }
-    return;
+void tim0Init(void){
+    T0CONbits.TMR0ON = 0;
+    T0CONbits.T08BIT = 0;
+    T0CONbits.T0CS = 0;
+    T0CONbits.PSA = 1;
+    T0CONbits.T0PS = 0x07;
 }
-# 105 "main.c"
-char executeData(){
-    t_sequence *data = getData();
-
-    char errCode = 0;
 
 
 
-    switch(data->feederLine){
-        case 0:
-
-            errCode = moveToPoint(posVector[0], posVector[1], feeder1Pos[0], feeder1Pos[1]);
-
-            posVector[0] = feeder1Pos[0];
-            posVector[1] = feeder1Pos[1];
-            break;
-        case 1:
-            errCode = moveToPoint(posVector[0], posVector[1], feeder2Pos[0], feeder2Pos[1]);
-            posVector[0] = feeder2Pos[0];
-            posVector[1] = feeder2Pos[1];
-            break;
-        case 2:
-            errCode = moveToPoint(posVector[0], posVector[1], feeder3Pos[0], feeder3Pos[1]);
-            posVector[0] = feeder3Pos[0];
-            posVector[1] = feeder3Pos[1];
-            break;
 
 
-        case 0xFF:
-            errCode = moveToPoint(posVector[0], posVector[1], newFeeder[0], newFeeder[1]);
-            posVector[0] = newFeeder[0];
-            posVector[1] = newFeeder[1];
-            break;
-        default:
+void tim1Init(){
+    T1CONbits.T1CKPS = 0x03;
+    T1CONbits.TMR1CS = 0;
+
+    T1CONbits.TMR1ON = 1;
+
+}
 
 
-            errCode = 1;
-            break;
-    }
 
 
-    if(!errCode){
 
 
-        errCode = touchObject();
-
-        pickObject();
-
-
-        errCode = liftArm();
+void tim2Init(unsigned int _pwmPeriod){
+    T2CONbits.TMR2ON = 0;
+    T2CONbits.T2CKPS = 0x10;
 
 
-        errCode = moveToPoint(posVector[0], posVector[1], data->posX, data->posY);
-        posVector[0] = data->posX;
-        posVector[1] = data->posY;
+    pwmPeriod = _pwmPeriod;
+}
 
 
-        rotAngle = data->rotation - rotAngle;
-
-        if(rotAngle < 0){
-            rotAngle += 360;
-        }
-        rotateObj(rotAngle);
 
 
-        errCode = touchTherm();
-
-        releaseObj();
 
 
-        errCode = liftArm();
-    }
+unsigned int stepMade(void){
+    unsigned char temp = stepToggle;
 
-    return(errCode);
+    stepToggle = 0;
+
+    return temp;
+}
+
+
+
+
+unsigned int stepCounter(void){
+    return pwmStep;
+}
+
+
+
+
+void resetStep(void){
+    pwmStep = 0;
+}
+
+
+
+
+void increaseStep(void){
+    pwmStep++;
+}
+
+
+
+
+
+void toggleStep(void){
+    stepToggle = 1;
+}
+
+
+
+
+
+unsigned int retPeriod(void){
+    return pwmPeriod;
 }

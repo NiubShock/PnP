@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "interrupt.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,15 @@
 # 1 "<built-in>" 2
 # 1 "D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
+# 1 "interrupt.c" 2
+
+
+
+
+
+
+
+
 # 1 "D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 1 3
 # 18 "D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -3804,7 +3812,7 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 33 "D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 2 3
-# 1 "main.c" 2
+# 9 "interrupt.c" 2
 
 # 1 "./main.h" 1
 
@@ -3956,174 +3964,113 @@ void shiftData(void);
 # 7 "./main.h" 2
 # 36 "./main.h"
 char executeData(void);
-# 2 "main.c" 2
+# 10 "interrupt.c" 2
 
 
-void serial_tx_char(unsigned char val);
-char executeData();
 
-static unsigned char posVector[3] = {0, 0, 0};
-static int rotAngle = 0;
-
-static const unsigned char feeder1Pos[2] = {30, 50};
-static const unsigned char feeder2Pos[2] = {30, 100};
-static const unsigned char feeder3Pos[2] = {30, 150};
-
-static const unsigned char maxFeedX = 60;
-static const unsigned char maxFeedY= 200;
-
-static unsigned char newFeeder[2] = {0, 0};
-
-void main(void) {
-
-    unsigned char errCode = 0;
-
-    interruptInit();
-    initPinMotors();
-    initADC();
-    usartInit();
-    tim0Init();
-    tim1Init();
-    tim2Init(10000);
+static unsigned int ADC_res = 0;
+static const unsigned int touch_pressure = 0x200;
+static const unsigned int therm_pressure = 0x400;
 
 
-    errCode = resetPosition();
-    if(errCode != 0){
-        printError(errCode);
-        while(1);
+
+
+
+void interruptInit(void){
+
+    if(!INTCONbits.GIE){
+        INTCONbits.GIE = 1;
+    }
+    if(!INTCONbits.PEIE){
+        INTCONbits.PEIE = 1;
     }
 
 
-    RCSTA1bits.CREN = 1;
-
-    while(1){
-        if(newSequence()){
-            t_newSequence* newData = getNewSequence();
-
-            newFeeder[0] = newData ->init_posX;
-            newFeeder[1] = newData ->init_posY;
-
-
-
-            RCSTAbits.CREN = 0;
-
-
-
-
-            if(newData ->end_posX > maxFeedX || newData ->end_posY > maxFeedY){
-                errCode = 5;
-            }else{
-                storeData(newData ->end_posX);
-                storeData(newData ->end_posY);
-            }
-
-
-            if(errCode == 0){
-
-                storeData(0);
-                storeData(0xFF);
-                storeData(newData ->end_rot - newData ->init_rot);
-            }else{
-                printError(errCode);
-            }
-
-
-            RCSTAbits.CREN = 1;
-
-
-            resetNewSequence();
-        }
-        if(readSeq()){
-
-
-
-            errCode = executeData();
-
-            printError(errCode);
-
-
-            clearTM0();
-
-
-
-            reduceSeq();
-            shiftData();
-        }
-    }
-    return;
+    RCONbits.IPEN = 1;
+    INTCONbits.T0IE = 1;
+    PIE1bits.TMR1IE = 1;
+    PIE1bits.TMR2IE = 1;
+    PIE1bits.RC1IE = 1;
 }
-# 105 "main.c"
-char executeData(){
-    t_sequence *data = getData();
 
-    char errCode = 0;
-
-
-
-    switch(data->feederLine){
-        case 0:
-
-            errCode = moveToPoint(posVector[0], posVector[1], feeder1Pos[0], feeder1Pos[1]);
-
-            posVector[0] = feeder1Pos[0];
-            posVector[1] = feeder1Pos[1];
-            break;
-        case 1:
-            errCode = moveToPoint(posVector[0], posVector[1], feeder2Pos[0], feeder2Pos[1]);
-            posVector[0] = feeder2Pos[0];
-            posVector[1] = feeder2Pos[1];
-            break;
-        case 2:
-            errCode = moveToPoint(posVector[0], posVector[1], feeder3Pos[0], feeder3Pos[1]);
-            posVector[0] = feeder3Pos[0];
-            posVector[1] = feeder3Pos[1];
-            break;
+void __attribute__((picinterrupt(("")))) isr(){
+    static unsigned int single_cycle = 0;
+    static unsigned char tm0Count = 0;
+    static unsigned char completeStep = 0;
 
 
-        case 0xFF:
-            errCode = moveToPoint(posVector[0], posVector[1], newFeeder[0], newFeeder[1]);
-            posVector[0] = newFeeder[0];
-            posVector[1] = newFeeder[1];
-            break;
-        default:
+    if(INTCONbits.T0IF){
+        INTCONbits.T0IF = 0;
 
 
-            errCode = 1;
-            break;
-    }
+        tm0Count++;
 
-
-    if(!errCode){
-
-
-        errCode = touchObject();
-
-        pickObject();
-
-
-        errCode = liftArm();
-
-
-        errCode = moveToPoint(posVector[0], posVector[1], data->posX, data->posY);
-        posVector[0] = data->posX;
-        posVector[1] = data->posY;
-
-
-        rotAngle = data->rotation - rotAngle;
-
-        if(rotAngle < 0){
-            rotAngle += 360;
+        if(tm0Count >= whatsTM0Limit()){
+            T0CONbits.TMR0ON = 0;
+            tm0Count = 0;
+            writeTM0();
         }
-        rotateObj(rotAngle);
-
-
-        errCode = touchTherm();
-
-        releaseObj();
-
-
-        errCode = liftArm();
     }
 
-    return(errCode);
+
+    if(PIR1bits.TMR1IF){
+        PIR1bits.TMR1IF = 0;
+        if(fatalError()){
+            abortAll();
+        }
+    }
+
+
+    if(PIR1bits.TMR2IF){
+        PIR1bits.TMR2IF = 0;
+        single_cycle++;
+
+
+        if(single_cycle > retPeriod()){
+            single_cycle = 0;
+            completeStep++;
+
+
+            if(completeStep != 0 && !(completeStep % 2)){
+
+                completeStep = 0;
+
+
+                increaseStep();
+            }
+
+
+
+            toggleStep();
+        }
+    }
+
+
+    if(PIR1bits.ADIF){
+        PIR1bits.ADIF = 0;
+
+
+        ADC_res = ADRESL;
+        ADC_res |= (ADRESH << 8);
+
+
+        if(ADC_res > therm_pressure){
+
+            setTouchRel();
+            setThermRel();
+        }else if(ADC_res > touch_pressure){
+
+            setTouchRel();
+        }
+    }
+
+
+    if(PIR1bits.RC1IF){
+        PIR1bits.RC1IF = 0;
+
+
+        unsigned char temp = RCREG1;
+
+        storeData(temp);
+    }
 }

@@ -548,6 +548,8 @@ char touchObject(){
         while(!stepMade());
 #endif
         
+        //start the ADC to relevate the pressure
+        startADC();
         
     }
     
@@ -638,6 +640,9 @@ char touchTherm(){
         //wait for the step to be made
         while(!stepMade());
 #endif
+        
+        //start the ADC to relevate the pressure
+        startADC();
         
         
     }

@@ -30,7 +30,7 @@ _stepMade 2444 0 CODE 0
 _main 148C 0 CODE 0
 ___sp 0 0 STACK 2
 btemp 6D 0 COMRAM 1
-start 19C 0 CODE 0
+start 1A4 0 CODE 0
 __end_of_resetPosition 1294 0 CODE 0
 ___fltol@f1 39 0 COMRAM 1
 ?_getData 12 0 COMRAM 1
@@ -130,7 +130,7 @@ __Hmediumconst 0 0 MEDIUMCONST 0
 __Lmediumconst 0 0 MEDIUMCONST 0
 __Hfarbss 0 0 FARRAM 0
 __Lfarbss 0 0 FARRAM 0
-__Hintcode 19C 0 CODE 0
+__Hintcode 1A4 0 CODE 0
 __Lintcode 8 0 CODE 0
 __Hfardata 0 0 FARRAM 0
 _ADRESH FC4 0 ABS 0
@@ -154,6 +154,7 @@ _retPeriod 24D2 0 CODE 0
 _pwmPeriod 46 0 COMRAM 1
 resetPosition@keepMovingZ 17 0 COMRAM 1
 __end_of___fltol 1A64 0 CODE 0
+__cntErrataNOP_dist/default/debug\ESD_PnP_1.X.debug.o 1E7 0 ABS 0
 __size_of_getNewSequence 0 0 ABS 0
 __size_of_initADC 0 0 ABS 0
 __size_of___fldiv 0 0 ABS 0
@@ -180,10 +181,10 @@ __Hrbit 0 0 COMRAM 1
 _uartTx 224E 0 CODE 0
 __Lrbit 0 0 COMRAM 1
 __size_of_storeData 0 0 ABS 0
-__Hinit 1A0 0 CODE 0
-__Linit 19C 0 CODE 0
-__Hintcodelo 19C 0 CODE 0
-__Lintcodelo 19C 0 CODE 0
+__Hinit 1A8 0 CODE 0
+__Linit 1A4 0 CODE 0
+__Hintcodelo 1A4 0 CODE 0
+__Lintcodelo 1A4 0 CODE 0
 __Hrbss 0 0 COMRAM 1
 __end_of_main 1636 0 CODE 0
 __Lrbss 0 0 COMRAM 1
@@ -249,8 +250,8 @@ __Lbank4 0 0 ABS 0
 __Hbank5 0 0 ABS 0
 __Lbank5 0 0 ABS 0
 __end_of_toggleStep 2540 0 CODE 0
-__Hpowerup 19C 0 CODE 0
-__Lpowerup 19C 0 CODE 0
+__Hpowerup 1A4 0 CODE 0
+__Lpowerup 1A4 0 CODE 0
 __size_of_rotateObj 0 0 ABS 0
 __size_of_resetPosition 0 0 ABS 0
 __Htext0 0 0 ABS 0
@@ -323,7 +324,6 @@ __end_of_releaseObj 239A 0 CODE 0
 _getData 24A8 0 CODE 0
 moveToPoint@y2 1B 0 COMRAM 1
 __size_of_getData 0 0 ABS 0
-__cntErrataNOP_dist/default/production\ESD_PnP_1.X.production.o 1E7 0 ABS 0
 __Hidata 0 0 CODE 0
 __Lidata 0 0 CODE 0
 __end_of_increaseStep 2584 0 CODE 0
@@ -342,7 +342,7 @@ __Hspace_0 258E 0 ABS 0
 __HcstackCOMRAM 0 0 ABS 0
 __Lspace_0 0 0 ABS 0
 __LcstackCOMRAM 0 0 ABS 0
-__end_of_isr 19C 0 CODE 0
+__end_of_isr 1A4 0 CODE 0
 _moveToPoint A44 0 CODE 0
 __pcstackCOMRAM 1 0 COMRAM 1
 __size_of_tim0Init 0 0 ABS 0
@@ -602,9 +602,9 @@ __end_of_storeData 17B2 0 CODE 0
 __HdataCOMRAM 0 0 ABS 0
 __LdataCOMRAM 0 0 ABS 0
 __size_of___fltol 0 0 ABS 0
-__cntErrataNOP_C:\Users\alle9\AppData\Local\Temp\s340.o 1 0 ABS 0
 __pdataCOMRAM 5E 0 COMRAM 1
 start_initialization 2168 0 CODE 0
+__cntErrataNOP_C:\Users\alle9\AppData\Local\Temp\s86g.o 1 0 ABS 0
 __size_of_newSequence 0 0 ABS 0
 __end_of_shiftData 224E 0 CODE 0
 __size_of_tim2Init 0 0 ABS 0
@@ -634,7 +634,7 @@ __size_of_returnTherm 0 0 ABS 0
 executeData@data F8 0 BANK0 1
 %segments
 reset_vec 0 5 CODE 0 0
-intcode 8 19F CODE 8 0
+intcode 8 1A7 CODE 8 0
 smallconst 600 611 SMALLCONST 600 0
 cstackCOMRAM 1 6D COMRAM 1 1
 dataBANK0 80 FE BANK0 80 1
@@ -643,9 +643,9 @@ text30 612 1FCA CODE 612 0
 text27 1FCC 248A CODE 1FCC 0
 text3 248C 258D CODE 248C 0
 %locals
-dist/default/production\ESD_PnP_1.X.production.o
+dist/default/debug\ESD_PnP_1.X.debug.o
 D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h
-C:\Users\alle9\AppData\Local\Temp\s340.s
+C:\Users\alle9\AppData\Local\Temp\s86g.s
 2305 2168 0 CODE 0
 2307 2168 0 CODE 0
 2310 2168 0 CODE 0
@@ -1363,7 +1363,7 @@ motors.c
 35 24B6 0 CODE 0
 36 24B8 0 CODE 0
 37 24C0 0 CODE 0
-C:\Users\alle9\AppData\Local\Temp\s340.s
+C:\Users\alle9\AppData\Local\Temp\s86g.s
 10069 8 0 CODE 0
 interrupt.c
 38 8 0 CODE 0
@@ -1383,24 +1383,25 @@ interrupt.c
 68 A0 0 CODE 0
 71 A4 0 CODE 0
 72 C2 0 CODE 0
-75 C4 0 CODE 0
-77 EA 0 CODE 0
-80 EE 0 CODE 0
-85 F2 0 CODE 0
-90 F8 0 CODE 0
-91 10C 0 CODE 0
-94 10E 0 CODE 0
-95 114 0 CODE 0
-98 122 0 CODE 0
-100 13A 0 CODE 0
-101 13E 0 CODE 0
-102 142 0 CODE 0
-104 160 0 CODE 0
-109 164 0 CODE 0
-110 178 0 CODE 0
-113 17A 0 CODE 0
-115 17E 0 CODE 0
-117 184 0 CODE 0
+73 CA 0 CODE 0
+76 CC 0 CODE 0
+78 F2 0 CODE 0
+81 F6 0 CODE 0
+86 FA 0 CODE 0
+91 100 0 CODE 0
+92 114 0 CODE 0
+95 116 0 CODE 0
+96 11C 0 CODE 0
+99 12A 0 CODE 0
+101 142 0 CODE 0
+102 146 0 CODE 0
+103 14A 0 CODE 0
+105 168 0 CODE 0
+110 16C 0 CODE 0
+111 180 0 CODE 0
+114 182 0 CODE 0
+116 186 0 CODE 0
+118 18C 0 CODE 0
 usart.c
 164 17B2 0 CODE 0
 173 17B6 0 CODE 0

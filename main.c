@@ -26,7 +26,7 @@ void main(void) {
     usartInit();
     tim0Init();
     tim1Init();
-    tim2Init(10);
+    tim2Init(100);
     
     //reset the initial position
     errCode = resetPosition();
