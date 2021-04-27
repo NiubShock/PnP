@@ -202,6 +202,8 @@ char resetPosition(){
     
     while(keepMovingX || keepMovingY || keepMovingZ){
         
+        resetStep();
+                
         //verify if the limit time has been reached
         if(tm0Error){
 #ifndef nSIMULATION
@@ -515,6 +517,8 @@ char touchObject(){
     //Stop if touch the object or if reached endstroke (Error)
     while(!returnTouch() || PORTDbits.RD7){
         
+        resetStep();
+        
         //verify if there are errors due to the time
         if(tm0Error){
             //stop the motors
@@ -608,6 +612,8 @@ char touchTherm(){
     //stop if we get in touch with the paste or endstroke
     while(!returnTherm() || PORTDbits.RD7){
         
+        resetStep();
+        
         //verify if there are problems with the time
         if(tm0Error){
             //stop the motors
@@ -694,6 +700,8 @@ char liftArm(){
     
     //Wait to reach the starting postion
     while(!PORTEbits.RE2){
+        
+        resetStep();
         
         //verify if there are problems related to the time
         if(tm0Error){

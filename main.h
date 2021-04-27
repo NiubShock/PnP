@@ -25,9 +25,9 @@
 #define NEW_FEEDER              0xFF
 
 
-#define TIME_REF_LIFT           250
-#define TIME_REF_RESET          250
-#define TIME_REF_POINT          250
+#define TIME_REF_LIFT           50
+#define TIME_REF_RESET          100
+#define TIME_REF_POINT          100
 
 #define nSIMULATION             1
 

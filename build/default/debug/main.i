@@ -4097,14 +4097,23 @@ char executeData(){
 
 
         errCode = touchObject();
+        if(errCode != 0){
+            return(errCode);
+        }
 
         pickObject();
 
 
         errCode = liftArm();
+        if(errCode != 0){
+            return(errCode);
+        }
 
 
         errCode = moveToPoint(posVector[0], posVector[1], data->posX, data->posY);
+        if(errCode != 0){
+            return(errCode);
+        }
         posVector[0] = data->posX;
         posVector[1] = data->posY;
 
@@ -4118,11 +4127,17 @@ char executeData(){
 
 
         errCode = touchTherm();
+        if(errCode != 0){
+            return(errCode);
+        }
 
         releaseObj();
 
 
         errCode = liftArm();
+        if(errCode != 0){
+            return(errCode);
+        }
     }
 
     return(errCode);

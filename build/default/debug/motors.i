@@ -4137,10 +4137,12 @@ char resetPosition(){
     T2CONbits.TMR2ON = 1;
 
     tm0Error = 0;
-    tm0Limit = 250;
+    tm0Limit = 100;
     T0CONbits.TMR0ON = 1;
 
     while(keepMovingX || keepMovingY || keepMovingZ){
+
+        resetStep();
 
 
         if(tm0Error){
@@ -4217,7 +4219,7 @@ char resetPosition(){
 
 
         while(!stepMade());
-# 291 "motors.c"
+# 293 "motors.c"
     }
 
 
@@ -4248,7 +4250,7 @@ char moveToPoint(int x1, int y1, int x2, int y2){
     if(x2 > maxX || y2 > maxY){
         return(5);
     }
-# 340 "motors.c"
+# 342 "motors.c"
     if((x2 - x1) > 0){
         motCounter[0][1] = 1;
         MOT1Direction = 1;
@@ -4274,7 +4276,7 @@ char moveToPoint(int x1, int y1, int x2, int y2){
     T2CONbits.TMR2ON = 1;
 
     tm0Error = 0;
-    tm0Limit = 250;
+    tm0Limit = 100;
     T0CONbits.TMR0ON = 1;
 
     while(keepMovingX || keepMovingY){
@@ -4375,7 +4377,7 @@ char moveToPoint(int x1, int y1, int x2, int y2){
 
 
         while(!stepMade());
-# 476 "motors.c"
+# 478 "motors.c"
     }
 
 
@@ -4409,7 +4411,7 @@ char touchObject(){
     T2CONbits.TMR2ON = 1;
 
     tm0Error = 0;
-    tm0Limit = 250;
+    tm0Limit = 50;
     T0CONbits.TMR0ON = 1;
 
 
@@ -4417,6 +4419,8 @@ char touchObject(){
 
 
     while(!returnTouch() || PORTDbits.RD7){
+
+        resetStep();
 
 
         if(tm0Error){
@@ -4443,7 +4447,7 @@ char touchObject(){
 
 
         while(!stepMade());
-# 552 "motors.c"
+# 556 "motors.c"
         startADC();
 
     }
@@ -4472,7 +4476,7 @@ char touchObject(){
 
     return(tm0Error);
 }
-# 590 "motors.c"
+# 594 "motors.c"
 char touchTherm(){
 
 
@@ -4485,7 +4489,7 @@ char touchTherm(){
     T2CONbits.TMR2ON = 1;
 
     tm0Error = 0;
-    tm0Limit = 250;
+    tm0Limit = 50;
     T0CONbits.TMR0ON = 1;
 
 
@@ -4493,6 +4497,8 @@ char touchTherm(){
 
 
     while(!returnTherm() || PORTDbits.RD7){
+
+        resetStep();
 
 
         if(tm0Error){
@@ -4519,7 +4525,7 @@ char touchTherm(){
 
 
         while(!stepMade());
-# 646 "motors.c"
+# 652 "motors.c"
         startADC();
 
 
@@ -4565,12 +4571,14 @@ char liftArm(){
     T2CONbits.TMR2ON = 1;
 
     tm0Error = 0;
-    tm0Limit = 250;
+    tm0Limit = 50;
     T0CONbits.TMR0ON = 1;
 
 
 
     while(!PORTEbits.RE2){
+
+        resetStep();
 
 
         if(tm0Error){
@@ -4598,7 +4606,7 @@ char liftArm(){
 
 
         while(!stepMade());
-# 733 "motors.c"
+# 741 "motors.c"
     }
 
 

@@ -925,56 +925,116 @@ Version 4.0 HI-TECH Software Intermediate Code
 "148
 [; ;main.c: 148:         errCode = touchObject();
 [e = _errCode ( _touchObject ..  ]
+"149
+[; ;main.c: 149:         if(errCode != 0){
+[e $ ! != -> _errCode `i -> 0 `i 263  ]
+{
 "150
-[; ;main.c: 150:         pickObject();
-[e ( _pickObject ..  ]
+[; ;main.c: 150:             return(errCode);
+[e ) _errCode ]
+[e $UE 254  ]
+"151
+[; ;main.c: 151:         }
+}
+[e :U 263 ]
 "153
-[; ;main.c: 153:         errCode = liftArm();
-[e = _errCode ( _liftArm ..  ]
+[; ;main.c: 153:         pickObject();
+[e ( _pickObject ..  ]
 "156
-[; ;main.c: 156:         errCode = moveToPoint(posVector[0], posVector[1], data->posX, data->posY);
-[e = _errCode ( _moveToPoint (4 , , , -> *U + &U _posVector * -> -> -> 0 `i `ui `ux -> -> # *U &U _posVector `ui `ux `i -> *U + &U _posVector * -> -> -> 1 `i `ui `ux -> -> # *U &U _posVector `ui `ux `i -> . *U _data 1 `i -> . *U _data 2 `i ]
+[; ;main.c: 156:         errCode = liftArm();
+[e = _errCode ( _liftArm ..  ]
 "157
-[; ;main.c: 157:         posVector[0] = data->posX;
-[e = *U + &U _posVector * -> -> -> 0 `i `ui `ux -> -> # *U &U _posVector `ui `ux . *U _data 1 ]
+[; ;main.c: 157:         if(errCode != 0){
+[e $ ! != -> _errCode `i -> 0 `i 264  ]
+{
 "158
-[; ;main.c: 158:         posVector[1] = data->posY;
-[e = *U + &U _posVector * -> -> -> 1 `i `ui `ux -> -> # *U &U _posVector `ui `ux . *U _data 2 ]
-"161
-[; ;main.c: 161:         rotAngle = data->rotation - rotAngle;
-[e = _rotAngle - -> . *U _data 3 `i _rotAngle ]
+[; ;main.c: 158:             return(errCode);
+[e ) _errCode ]
+[e $UE 254  ]
+"159
+[; ;main.c: 159:         }
+}
+[e :U 264 ]
+"162
+[; ;main.c: 162:         errCode = moveToPoint(posVector[0], posVector[1], data->posX, data->posY);
+[e = _errCode ( _moveToPoint (4 , , , -> *U + &U _posVector * -> -> -> 0 `i `ui `ux -> -> # *U &U _posVector `ui `ux `i -> *U + &U _posVector * -> -> -> 1 `i `ui `ux -> -> # *U &U _posVector `ui `ux `i -> . *U _data 1 `i -> . *U _data 2 `i ]
 "163
-[; ;main.c: 163:         if(rotAngle < 0){
-[e $ ! < _rotAngle -> 0 `i 263  ]
+[; ;main.c: 163:         if(errCode != 0){
+[e $ ! != -> _errCode `i -> 0 `i 265  ]
 {
 "164
-[; ;main.c: 164:             rotAngle += 360;
-[e =+ _rotAngle -> 360 `i ]
+[; ;main.c: 164:             return(errCode);
+[e ) _errCode ]
+[e $UE 254  ]
 "165
 [; ;main.c: 165:         }
 }
-[e :U 263 ]
+[e :U 265 ]
 "166
-[; ;main.c: 166:         rotateObj(rotAngle);
-[e ( _rotateObj (1 -> _rotAngle `uc ]
-"169
-[; ;main.c: 169:         errCode = touchTherm();
-[e = _errCode ( _touchTherm ..  ]
-"171
-[; ;main.c: 171:         releaseObj();
-[e ( _releaseObj ..  ]
+[; ;main.c: 166:         posVector[0] = data->posX;
+[e = *U + &U _posVector * -> -> -> 0 `i `ui `ux -> -> # *U &U _posVector `ui `ux . *U _data 1 ]
+"167
+[; ;main.c: 167:         posVector[1] = data->posY;
+[e = *U + &U _posVector * -> -> -> 1 `i `ui `ux -> -> # *U &U _posVector `ui `ux . *U _data 2 ]
+"170
+[; ;main.c: 170:         rotAngle = data->rotation - rotAngle;
+[e = _rotAngle - -> . *U _data 3 `i _rotAngle ]
+"172
+[; ;main.c: 172:         if(rotAngle < 0){
+[e $ ! < _rotAngle -> 0 `i 266  ]
+{
+"173
+[; ;main.c: 173:             rotAngle += 360;
+[e =+ _rotAngle -> 360 `i ]
 "174
-[; ;main.c: 174:         errCode = liftArm();
-[e = _errCode ( _liftArm ..  ]
-"175
-[; ;main.c: 175:     }
+[; ;main.c: 174:         }
 }
-[e :U 262 ]
-"177
-[; ;main.c: 177:     return(errCode);
+[e :U 266 ]
+"175
+[; ;main.c: 175:         rotateObj(rotAngle);
+[e ( _rotateObj (1 -> _rotAngle `uc ]
+"178
+[; ;main.c: 178:         errCode = touchTherm();
+[e = _errCode ( _touchTherm ..  ]
+"179
+[; ;main.c: 179:         if(errCode != 0){
+[e $ ! != -> _errCode `i -> 0 `i 267  ]
+{
+"180
+[; ;main.c: 180:             return(errCode);
 [e ) _errCode ]
 [e $UE 254  ]
-"178
-[; ;main.c: 178: }
+"181
+[; ;main.c: 181:         }
+}
+[e :U 267 ]
+"183
+[; ;main.c: 183:         releaseObj();
+[e ( _releaseObj ..  ]
+"186
+[; ;main.c: 186:         errCode = liftArm();
+[e = _errCode ( _liftArm ..  ]
+"187
+[; ;main.c: 187:         if(errCode != 0){
+[e $ ! != -> _errCode `i -> 0 `i 268  ]
+{
+"188
+[; ;main.c: 188:             return(errCode);
+[e ) _errCode ]
+[e $UE 254  ]
+"189
+[; ;main.c: 189:         }
+}
+[e :U 268 ]
+"190
+[; ;main.c: 190:     }
+}
+[e :U 262 ]
+"192
+[; ;main.c: 192:     return(errCode);
+[e ) _errCode ]
+[e $UE 254  ]
+"193
+[; ;main.c: 193: }
 [e :UE 254 ]
 }

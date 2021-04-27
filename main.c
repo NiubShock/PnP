@@ -146,14 +146,23 @@ char executeData(){
         
         //get in touch with the object
         errCode = touchObject();
+        if(errCode != ALL_OK){
+            return(errCode);
+        }
         //pick the object
         pickObject();
 
         //lift the arm
         errCode = liftArm();
+        if(errCode != ALL_OK){
+            return(errCode);
+        }
 
         //move to the desired position -> byte number 2-3
         errCode = moveToPoint(posVector[0], posVector[1], data->posX, data->posY);
+        if(errCode != ALL_OK){
+            return(errCode);
+        }
         posVector[0] = data->posX;
         posVector[1] = data->posY;
 
@@ -167,11 +176,17 @@ char executeData(){
         
         //touch the thermal paste
         errCode = touchTherm();
+        if(errCode != ALL_OK){
+            return(errCode);
+        }
         //release the object
         releaseObj();
         
         //lift the arm once again -> restore the initial condition
         errCode = liftArm();
+        if(errCode != ALL_OK){
+            return(errCode);
+        }
     }
     
     return(errCode);
