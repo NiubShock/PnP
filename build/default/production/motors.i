@@ -3970,9 +3970,6 @@ char executeData(void);
 static unsigned int tm0Error = 0;
 static unsigned char tm0Limit = 0;
 
-static unsigned int maxX = 101;
-static unsigned int maxY = 101;
-
 
 static unsigned char stepMot1[] = {0b100010, 0b000110, 0b001100, 0b101000};
 static unsigned char stepMot2[] = {0b10001, 0b00101, 0b01100, 0b11000};
@@ -4123,7 +4120,7 @@ void setDecay(unsigned char decay, unsigned char motor){
 
 
 char resetPosition(){
-# 185 "motors.c"
+# 182 "motors.c"
     motCounter[0][1] = -1;
     motCounter[1][1] = -1;
     motCounter[2][1] = -1;
@@ -4221,7 +4218,7 @@ char resetPosition(){
 
 
         while(!stepMade());
-# 293 "motors.c"
+# 290 "motors.c"
     }
 
 
@@ -4250,12 +4247,7 @@ char resetPosition(){
 char moveToPoint(int x1, int y1, int x2, int y2){
 
     unsigned char MOT1Direction, MOT2Direction;
-
-
-    if(x2 > maxX || y2 > maxY){
-        return(5);
-    }
-# 345 "motors.c"
+# 337 "motors.c"
     if((x2 - x1) > 0){
         motCounter[0][1] = 1;
         MOT1Direction = 1;
@@ -4382,7 +4374,7 @@ char moveToPoint(int x1, int y1, int x2, int y2){
 
 
         while(!stepMade());
-# 481 "motors.c"
+# 473 "motors.c"
     }
 
 
@@ -4426,6 +4418,10 @@ char touchObject(){
     startADC();
 
 
+    resetTouch();
+    resetTherm();
+
+
     while(!returnTouch() || PORTDbits.RD7){
 
         resetStep();
@@ -4455,16 +4451,13 @@ char touchObject(){
 
 
         while(!stepMade());
-# 562 "motors.c"
+# 558 "motors.c"
         startADC();
 
     }
 
 
     stopADC();
-
-
-    resetTouch();
 
 
     T0CONbits.TMR0ON = 0;
@@ -4478,7 +4471,6 @@ char touchObject(){
 
 
     resetStep();
-    resetTherm();
 
 
     if(PORTDbits.RD7){
@@ -4487,7 +4479,7 @@ char touchObject(){
 
     return(tm0Error);
 }
-# 603 "motors.c"
+# 595 "motors.c"
 char touchTherm(){
 
 
@@ -4505,6 +4497,10 @@ char touchTherm(){
 
 
     startADC();
+
+
+    resetTouch();
+    resetTherm();
 
 
     while(!returnTherm() || PORTDbits.RD7){
@@ -4536,7 +4532,7 @@ char touchTherm(){
 
 
         while(!stepMade());
-# 661 "motors.c"
+# 657 "motors.c"
         startADC();
 
 
@@ -4544,9 +4540,6 @@ char touchTherm(){
 
 
     stopADC();
-
-
-    resetTherm();
 
 
     T0CONbits.TMR0ON = 0;
@@ -4620,7 +4613,7 @@ char liftArm(){
 
 
         while(!stepMade());
-# 753 "motors.c"
+# 746 "motors.c"
     }
 
 
@@ -4644,7 +4637,8 @@ char liftArm(){
 
 
 void rotateObj(unsigned char rotAngle){
-    static const float stepAngle = 0.08789;
+
+    static const float stepAngle = 10;
     static char rotSequence[] = {0b100100, 0b001100, 0b011000, 0b110000};
     unsigned int i;
     int totStep = rotAngle/stepAngle;

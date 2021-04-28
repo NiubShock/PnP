@@ -10,9 +10,6 @@
 static unsigned int tm0Error = 0;
 static unsigned char tm0Limit = 0;
 
-static unsigned int maxX = 101;
-static unsigned int maxY = 101;
-
 #ifdef nSIMULATION
 static unsigned char stepMot1[] = {0b100010, 0b000110, 0b001100, 0b101000}; //RA1-2-3-5
 static unsigned char stepMot2[] = {0b10001, 0b00101, 0b01100, 0b11000}; //RB0-2-3-4
@@ -318,11 +315,6 @@ char resetPosition(){
 char moveToPoint(int x1, int y1, int x2, int y2){
     
     unsigned char MOT1Direction, MOT2Direction;
-    
-    //verify if the endpoint is within the limit
-    if(x2 > maxX || y2 > maxY){
-        return(BOUNDARY_ERROR);
-    }
     
     //set the correct direction for the X axis
 #ifndef nSIMULATION

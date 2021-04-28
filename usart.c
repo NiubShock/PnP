@@ -22,6 +22,9 @@ static unsigned char dataCounter = 0;       //cunter of complete sequence of dat
 static unsigned char _fatalError = 0;
 static unsigned char _newSequence = 0;
 
+static unsigned int maxX = 101;
+static unsigned int maxY = 101;
+
 //1st byte is the feeder line
 //2nd and 3rd byte is the final position
 //4th byte is the rotation
@@ -201,8 +204,14 @@ void storeData(unsigned char data){
                 dataSequence[dataCounter].posX = receivedMex[2] * 5;
                 dataSequence[dataCounter].posY = receivedMex[3] * 5;
                 dataSequence[dataCounter].rotation = receivedMex[4];
-
-                dataCounter++;
+                
+                //verify if the endpoint is within the limit
+                if(dataSequence[dataCounter].posX > maxX || 
+                        dataSequence[dataCounter].posY > maxY){
+                    printError(BOUNDARY_ERROR);
+                }else{
+                    dataCounter++;
+                }
                 break;
             case NEW_PICK:                
                 //save the data
@@ -215,7 +224,15 @@ void storeData(unsigned char data){
                 newSequenceData.end_posY = receivedMex[7] * 5;
                 newSequenceData.end_rot = receivedMex[8];
                 
-                _newSequence = 1;
+                //verify if the endpoint is within the limit
+                if(newSequenceData.init_posX > maxX ||
+                        newSequenceData.end_posX > maxX ||
+                        newSequenceData.init_posY > maxY ||
+                        newSequenceData.end_posY > maxY){
+                    printError(BOUNDARY_ERROR);
+                }else{
+                    _newSequence = 1;
+                }                
                 break;
             case FATAL_CMD:
                 //variable used to notify the issues

@@ -4038,6 +4038,9 @@ static unsigned char dataCounter = 0;
 static unsigned char _fatalError = 0;
 static unsigned char _newSequence = 0;
 
+static unsigned int maxX = 101;
+static unsigned int maxY = 101;
+
 
 
 
@@ -4218,7 +4221,13 @@ void storeData(unsigned char data){
                 dataSequence[dataCounter].posY = receivedMex[3] * 5;
                 dataSequence[dataCounter].rotation = receivedMex[4];
 
-                dataCounter++;
+
+                if(dataSequence[dataCounter].posX > maxX ||
+                        dataSequence[dataCounter].posY > maxY){
+                    printError(5);
+                }else{
+                    dataCounter++;
+                }
                 break;
             case 1:
 
@@ -4231,7 +4240,15 @@ void storeData(unsigned char data){
                 newSequenceData.end_posY = receivedMex[7] * 5;
                 newSequenceData.end_rot = receivedMex[8];
 
-                _newSequence = 1;
+
+                if(newSequenceData.init_posX > maxX ||
+                        newSequenceData.end_posX > maxX ||
+                        newSequenceData.init_posY > maxY ||
+                        newSequenceData.end_posY > maxY){
+                    printError(5);
+                }else{
+                    _newSequence = 1;
+                }
                 break;
             case 2:
 
