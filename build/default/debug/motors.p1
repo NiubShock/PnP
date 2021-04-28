@@ -210,6 +210,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "38 ./adc.h
 [; ;./adc.h: 38: void startADC(void);
 [v _startADC `(v ~T0 @X0 0 ef ]
+"42
+[; ;./adc.h: 42: void resetTouch(void);
+[v _resetTouch `(v ~T0 @X0 0 ef ]
+"43
+[; ;./adc.h: 43: void resetTherm(void);
+[v _resetTherm `(v ~T0 @X0 0 ef ]
 "40
 [; ;./adc.h: 40: unsigned int returnTouch(void);
 [v _returnTouch `(ui ~T0 @X0 0 ef ]
@@ -235,12 +241,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "39 ./adc.h
 [; ;./adc.h: 39: void stopADC(void);
 [v _stopADC `(v ~T0 @X0 0 ef ]
-"42
-[; ;./adc.h: 42: void resetTouch(void);
-[v _resetTouch `(v ~T0 @X0 0 ef ]
-"43
-[; ;./adc.h: 43: void resetTherm(void);
-[v _resetTherm `(v ~T0 @X0 0 ef ]
 "41
 [; ;./adc.h: 41: unsigned int returnTherm(void);
 [v _returnTherm `(ui ~T0 @X0 0 ef ]
@@ -1655,92 +1655,92 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;motors.c: 521:     startADC();
 [e ( _startADC ..  ]
 "524
-[; ;motors.c: 524:     while(!returnTouch() || PORTDbits.RD7){
+[; ;motors.c: 524:     resetTouch();
+[e ( _resetTouch ..  ]
+"525
+[; ;motors.c: 525:     resetTherm();
+[e ( _resetTherm ..  ]
+"528
+[; ;motors.c: 528:     while(!returnTouch() || PORTDbits.RD7){
 [e $U 325  ]
 [e :U 326 ]
 {
-"526
-[; ;motors.c: 526:         resetStep();
+"530
+[; ;motors.c: 530:         resetStep();
 [e ( _resetStep ..  ]
-"529
-[; ;motors.c: 529:         if(tm0Error){
+"533
+[; ;motors.c: 533:         if(tm0Error){
 [e $ ! != _tm0Error -> -> 0 `i `ui 328  ]
 {
-"534
-[; ;motors.c: 534:             tm0Error = 6;
+"538
+[; ;motors.c: 538:             tm0Error = 6;
 [e = _tm0Error -> -> 6 `i `ui ]
-"535
-[; ;motors.c: 535:             break;
+"539
+[; ;motors.c: 539:             break;
 [e $U 327  ]
-"536
-[; ;motors.c: 536:         }
+"540
+[; ;motors.c: 540:         }
 }
 [e :U 328 ]
-"543
-[; ;motors.c: 543:             motCounter[2][0] += motCounter[2][1];
+"547
+[; ;motors.c: 547:             motCounter[2][0] += motCounter[2][1];
 [e =+ *U + &U *U + &U _motCounter * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _motCounter `ui -> -> 2 `i `ui `ux * -> -> -> 0 `i `ui `ux -> -> # *U &U *U + &U _motCounter * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _motCounter `ui -> -> 2 `i `ui `ux `ui `ux -> *U + &U *U + &U _motCounter * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _motCounter `ui -> -> 2 `i `ui `ux * -> -> -> 1 `i `ui `ux -> -> # *U &U *U + &U _motCounter * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _motCounter `ui -> -> 2 `i `ui `ux `ui `ux `c ]
-"544
-[; ;motors.c: 544:             if(motCounter[2][0] > 3){
+"548
+[; ;motors.c: 548:             if(motCounter[2][0] > 3){
 [e $ ! > -> *U + &U *U + &U _motCounter * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _motCounter `ui -> -> 2 `i `ui `ux * -> -> -> 0 `i `ui `ux -> -> # *U &U *U + &U _motCounter * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _motCounter `ui -> -> 2 `i `ui `ux `ui `ux `i -> 3 `i 329  ]
 {
-"545
-[; ;motors.c: 545:                 motCounter[2][0] = 0;
+"549
+[; ;motors.c: 549:                 motCounter[2][0] = 0;
 [e = *U + &U *U + &U _motCounter * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _motCounter `ui -> -> 2 `i `ui `ux * -> -> -> 0 `i `ui `ux -> -> # *U &U *U + &U _motCounter * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _motCounter `ui -> -> 2 `i `ui `ux `ui `ux -> -> 0 `i `c ]
-"546
-[; ;motors.c: 546:             }
+"550
+[; ;motors.c: 550:             }
 }
 [e :U 329 ]
-"548
-[; ;motors.c: 548:             LATC = stepMot3[motCounter[2][0]];
-[e = _LATC *U + &U _stepMot3 * -> -> *U + &U *U + &U _motCounter * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _motCounter `ui -> -> 2 `i `ui `ux * -> -> -> 0 `i `ui `ux -> -> # *U &U *U + &U _motCounter * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _motCounter `ui -> -> 2 `i `ui `ux `ui `ux `uc `ux -> -> # *U &U _stepMot3 `ui `ux ]
 "552
-[; ;motors.c: 552:         while(!stepMade());
+[; ;motors.c: 552:             LATC = stepMot3[motCounter[2][0]];
+[e = _LATC *U + &U _stepMot3 * -> -> *U + &U *U + &U _motCounter * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _motCounter `ui -> -> 2 `i `ui `ux * -> -> -> 0 `i `ui `ux -> -> # *U &U *U + &U _motCounter * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _motCounter `ui -> -> 2 `i `ui `ux `ui `ux `uc `ux -> -> # *U &U _stepMot3 `ui `ux ]
+"556
+[; ;motors.c: 556:         while(!stepMade());
 [e $U 330  ]
 [e :U 331 ]
 [e :U 330 ]
 [e $ ! != ( _stepMade ..  -> -> 0 `i `ui 331  ]
 [e :U 332 ]
-"562
-[; ;motors.c: 562:         startADC();
+"566
+[; ;motors.c: 566:         startADC();
 [e ( _startADC ..  ]
-"564
-[; ;motors.c: 564:     }
+"568
+[; ;motors.c: 568:     }
 }
 [e :U 325 ]
-"524
-[; ;motors.c: 524:     while(!returnTouch() || PORTDbits.RD7){
+"528
+[; ;motors.c: 528:     while(!returnTouch() || PORTDbits.RD7){
 [e $ || ! != ( _returnTouch ..  -> -> 0 `i `ui != -> . . _PORTDbits 0 7 `i -> 0 `i 326  ]
 [e :U 327 ]
-"567
-[; ;motors.c: 567:     stopADC();
+"571
+[; ;motors.c: 571:     stopADC();
 [e ( _stopADC ..  ]
-"570
-[; ;motors.c: 570:     resetTouch();
-[e ( _resetTouch ..  ]
-"573
-[; ;motors.c: 573:     T0CONbits.TMR0ON = 0;
-[e = . . _T0CONbits 0 5 -> -> 0 `i `uc ]
 "574
-[; ;motors.c: 574:     T2CONbits.TMR2ON = 0;
+[; ;motors.c: 574:     T0CONbits.TMR0ON = 0;
+[e = . . _T0CONbits 0 5 -> -> 0 `i `uc ]
+"575
+[; ;motors.c: 575:     T2CONbits.TMR2ON = 0;
 [e = . . _T2CONbits 0 1 -> -> 0 `i `uc ]
-"576
-[; ;motors.c: 576:     resetTM0_Temp();
-[e ( _resetTM0_Temp ..  ]
 "577
-[; ;motors.c: 577:     resetTM2_Temp();
+[; ;motors.c: 577:     resetTM0_Temp();
+[e ( _resetTM0_Temp ..  ]
+"578
+[; ;motors.c: 578:     resetTM2_Temp();
 [e ( _resetTM2_Temp ..  ]
-"579
-[; ;motors.c: 579:     TMR0 = 0;
-[e = _TMR0 -> -> 0 `i `us ]
 "580
-[; ;motors.c: 580:     TMR2 = 0;
+[; ;motors.c: 580:     TMR0 = 0;
+[e = _TMR0 -> -> 0 `i `us ]
+"581
+[; ;motors.c: 581:     TMR2 = 0;
 [e = _TMR2 -> -> 0 `i `uc ]
-"583
-[; ;motors.c: 583:     resetStep();
-[e ( _resetStep ..  ]
 "584
-[; ;motors.c: 584:     resetTherm();
-[e ( _resetTherm ..  ]
+[; ;motors.c: 584:     resetStep();
+[e ( _resetStep ..  ]
 "587
 [; ;motors.c: 587:     if(PORTDbits.RD7){
 [e $ ! != -> . . _PORTDbits 0 7 `i -> 0 `i 333  ]
@@ -1785,227 +1785,230 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;motors.c: 619:     startADC();
 [e ( _startADC ..  ]
 "622
-[; ;motors.c: 622:     while(!returnTherm() || PORTDbits.RD7){
+[; ;motors.c: 622:     resetTouch();
+[e ( _resetTouch ..  ]
+"623
+[; ;motors.c: 623:     resetTherm();
+[e ( _resetTherm ..  ]
+"626
+[; ;motors.c: 626:     while(!returnTherm() || PORTDbits.RD7){
 [e $U 335  ]
 [e :U 336 ]
 {
-"624
-[; ;motors.c: 624:         resetStep();
+"628
+[; ;motors.c: 628:         resetStep();
 [e ( _resetStep ..  ]
-"627
-[; ;motors.c: 627:         if(tm0Error){
+"631
+[; ;motors.c: 631:         if(tm0Error){
 [e $ ! != _tm0Error -> -> 0 `i `ui 338  ]
 {
-"632
-[; ;motors.c: 632:             tm0Error = 6;
+"636
+[; ;motors.c: 636:             tm0Error = 6;
 [e = _tm0Error -> -> 6 `i `ui ]
-"633
-[; ;motors.c: 633:             break;
+"637
+[; ;motors.c: 637:             break;
 [e $U 337  ]
-"634
-[; ;motors.c: 634:         }
+"638
+[; ;motors.c: 638:         }
 }
 [e :U 338 ]
-"641
-[; ;motors.c: 641:             motCounter[2][0] += motCounter[2][1];
+"645
+[; ;motors.c: 645:             motCounter[2][0] += motCounter[2][1];
 [e =+ *U + &U *U + &U _motCounter * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _motCounter `ui -> -> 2 `i `ui `ux * -> -> -> 0 `i `ui `ux -> -> # *U &U *U + &U _motCounter * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _motCounter `ui -> -> 2 `i `ui `ux `ui `ux -> *U + &U *U + &U _motCounter * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _motCounter `ui -> -> 2 `i `ui `ux * -> -> -> 1 `i `ui `ux -> -> # *U &U *U + &U _motCounter * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _motCounter `ui -> -> 2 `i `ui `ux `ui `ux `c ]
-"642
-[; ;motors.c: 642:             if(motCounter[2][0] > 3){
+"646
+[; ;motors.c: 646:             if(motCounter[2][0] > 3){
 [e $ ! > -> *U + &U *U + &U _motCounter * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _motCounter `ui -> -> 2 `i `ui `ux * -> -> -> 0 `i `ui `ux -> -> # *U &U *U + &U _motCounter * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _motCounter `ui -> -> 2 `i `ui `ux `ui `ux `i -> 3 `i 339  ]
 {
-"643
-[; ;motors.c: 643:                 motCounter[2][0] = 0;
+"647
+[; ;motors.c: 647:                 motCounter[2][0] = 0;
 [e = *U + &U *U + &U _motCounter * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _motCounter `ui -> -> 2 `i `ui `ux * -> -> -> 0 `i `ui `ux -> -> # *U &U *U + &U _motCounter * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _motCounter `ui -> -> 2 `i `ui `ux `ui `ux -> -> 0 `i `c ]
-"644
-[; ;motors.c: 644:             }
+"648
+[; ;motors.c: 648:             }
 }
 [e :U 339 ]
-"646
-[; ;motors.c: 646:             LATC = stepMot3[motCounter[2][0]];
-[e = _LATC *U + &U _stepMot3 * -> -> *U + &U *U + &U _motCounter * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _motCounter `ui -> -> 2 `i `ui `ux * -> -> -> 0 `i `ui `ux -> -> # *U &U *U + &U _motCounter * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _motCounter `ui -> -> 2 `i `ui `ux `ui `ux `uc `ux -> -> # *U &U _stepMot3 `ui `ux ]
 "650
-[; ;motors.c: 650:         while(!stepMade());
+[; ;motors.c: 650:             LATC = stepMot3[motCounter[2][0]];
+[e = _LATC *U + &U _stepMot3 * -> -> *U + &U *U + &U _motCounter * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _motCounter `ui -> -> 2 `i `ui `ux * -> -> -> 0 `i `ui `ux -> -> # *U &U *U + &U _motCounter * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _motCounter `ui -> -> 2 `i `ui `ux `ui `ux `uc `ux -> -> # *U &U _stepMot3 `ui `ux ]
+"654
+[; ;motors.c: 654:         while(!stepMade());
 [e $U 340  ]
 [e :U 341 ]
 [e :U 340 ]
 [e $ ! != ( _stepMade ..  -> -> 0 `i `ui 341  ]
 [e :U 342 ]
-"661
-[; ;motors.c: 661:         startADC();
+"665
+[; ;motors.c: 665:         startADC();
 [e ( _startADC ..  ]
-"664
-[; ;motors.c: 664:     }
+"668
+[; ;motors.c: 668:     }
 }
 [e :U 335 ]
-"622
-[; ;motors.c: 622:     while(!returnTherm() || PORTDbits.RD7){
+"626
+[; ;motors.c: 626:     while(!returnTherm() || PORTDbits.RD7){
 [e $ || ! != ( _returnTherm ..  -> -> 0 `i `ui != -> . . _PORTDbits 0 7 `i -> 0 `i 336  ]
 [e :U 337 ]
-"667
-[; ;motors.c: 667:     stopADC();
+"671
+[; ;motors.c: 671:     stopADC();
 [e ( _stopADC ..  ]
-"670
-[; ;motors.c: 670:     resetTherm();
-[e ( _resetTherm ..  ]
-"673
-[; ;motors.c: 673:     T0CONbits.TMR0ON = 0;
-[e = . . _T0CONbits 0 5 -> -> 0 `i `uc ]
 "674
-[; ;motors.c: 674:     T2CONbits.TMR2ON = 0;
+[; ;motors.c: 674:     T0CONbits.TMR0ON = 0;
+[e = . . _T0CONbits 0 5 -> -> 0 `i `uc ]
+"675
+[; ;motors.c: 675:     T2CONbits.TMR2ON = 0;
 [e = . . _T2CONbits 0 1 -> -> 0 `i `uc ]
-"676
-[; ;motors.c: 676:     resetTM0_Temp();
-[e ( _resetTM0_Temp ..  ]
 "677
-[; ;motors.c: 677:     resetTM2_Temp();
+[; ;motors.c: 677:     resetTM0_Temp();
+[e ( _resetTM0_Temp ..  ]
+"678
+[; ;motors.c: 678:     resetTM2_Temp();
 [e ( _resetTM2_Temp ..  ]
-"679
-[; ;motors.c: 679:     TMR0 = 0;
-[e = _TMR0 -> -> 0 `i `us ]
 "680
-[; ;motors.c: 680:     TMR2 = 0;
+[; ;motors.c: 680:     TMR0 = 0;
+[e = _TMR0 -> -> 0 `i `us ]
+"681
+[; ;motors.c: 681:     TMR2 = 0;
 [e = _TMR2 -> -> 0 `i `uc ]
-"683
-[; ;motors.c: 683:     resetStep();
+"684
+[; ;motors.c: 684:     resetStep();
 [e ( _resetStep ..  ]
-"686
-[; ;motors.c: 686:     if(PORTDbits.RD7){
+"687
+[; ;motors.c: 687:     if(PORTDbits.RD7){
 [e $ ! != -> . . _PORTDbits 0 7 `i -> 0 `i 343  ]
 {
-"687
-[; ;motors.c: 687:         tm0Error = 2;
-[e = _tm0Error -> -> 2 `i `ui ]
 "688
-[; ;motors.c: 688:     }
+[; ;motors.c: 688:         tm0Error = 2;
+[e = _tm0Error -> -> 2 `i `ui ]
+"689
+[; ;motors.c: 689:     }
 }
 [e :U 343 ]
-"690
-[; ;motors.c: 690:     return(tm0Error);
+"691
+[; ;motors.c: 691:     return(tm0Error);
 [e ) -> _tm0Error `uc ]
 [e $UE 334  ]
-"691
-[; ;motors.c: 691: }
+"692
+[; ;motors.c: 692: }
 [e :UE 334 ]
 }
-"697
-[; ;motors.c: 697: char liftArm(){
+"698
+[; ;motors.c: 698: char liftArm(){
 [v _liftArm `(uc ~T0 @X0 1 ef ]
 {
 [e :U _liftArm ]
 [f ]
-"703
-[; ;motors.c: 703:     motCounter[2][1] = -1;
+"704
+[; ;motors.c: 704:     motCounter[2][1] = -1;
 [e = *U + &U *U + &U _motCounter * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _motCounter `ui -> -> 2 `i `ui `ux * -> -> -> 1 `i `ui `ux -> -> # *U &U *U + &U _motCounter * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _motCounter `ui -> -> 2 `i `ui `ux `ui `ux -> -U -> 1 `i `c ]
-"706
-[; ;motors.c: 706:     T2CONbits.TMR2ON = 1;
+"707
+[; ;motors.c: 707:     T2CONbits.TMR2ON = 1;
 [e = . . _T2CONbits 0 1 -> -> 1 `i `uc ]
-"708
-[; ;motors.c: 708:     tm0Error = 0;
-[e = _tm0Error -> -> 0 `i `ui ]
 "709
-[; ;motors.c: 709:     tm0Limit = 200;
-[e = _tm0Limit -> -> 200 `i `uc ]
+[; ;motors.c: 709:     tm0Error = 0;
+[e = _tm0Error -> -> 0 `i `ui ]
 "710
-[; ;motors.c: 710:     T0CONbits.TMR0ON = 1;
+[; ;motors.c: 710:     tm0Limit = 200;
+[e = _tm0Limit -> -> 200 `i `uc ]
+"711
+[; ;motors.c: 711:     T0CONbits.TMR0ON = 1;
 [e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
-"714
-[; ;motors.c: 714:     while(!PORTEbits.RE2){
+"715
+[; ;motors.c: 715:     while(!PORTEbits.RE2){
 [e $U 345  ]
 [e :U 346 ]
 {
-"716
-[; ;motors.c: 716:         resetStep();
+"717
+[; ;motors.c: 717:         resetStep();
 [e ( _resetStep ..  ]
-"719
-[; ;motors.c: 719:         if(tm0Error){
+"720
+[; ;motors.c: 720:         if(tm0Error){
 [e $ ! != _tm0Error -> -> 0 `i `ui 348  ]
 {
-"724
-[; ;motors.c: 724:             tm0Error = 6;
-[e = _tm0Error -> -> 6 `i `ui ]
 "725
-[; ;motors.c: 725:             break;
-[e $U 347  ]
+[; ;motors.c: 725:             tm0Error = 6;
+[e = _tm0Error -> -> 6 `i `ui ]
 "726
-[; ;motors.c: 726:         }
+[; ;motors.c: 726:             break;
+[e $U 347  ]
+"727
+[; ;motors.c: 727:         }
 }
 [e :U 348 ]
-"734
-[; ;motors.c: 734:             motCounter[2][0] += motCounter[2][1];
-[e =+ *U + &U *U + &U _motCounter * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _motCounter `ui -> -> 2 `i `ui `ux * -> -> -> 0 `i `ui `ux -> -> # *U &U *U + &U _motCounter * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _motCounter `ui -> -> 2 `i `ui `ux `ui `ux -> *U + &U *U + &U _motCounter * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _motCounter `ui -> -> 2 `i `ui `ux * -> -> -> 1 `i `ui `ux -> -> # *U &U *U + &U _motCounter * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _motCounter `ui -> -> 2 `i `ui `ux `ui `ux `c ]
 "735
-[; ;motors.c: 735:             if(motCounter[2][0] < 0){
+[; ;motors.c: 735:             motCounter[2][0] += motCounter[2][1];
+[e =+ *U + &U *U + &U _motCounter * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _motCounter `ui -> -> 2 `i `ui `ux * -> -> -> 0 `i `ui `ux -> -> # *U &U *U + &U _motCounter * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _motCounter `ui -> -> 2 `i `ui `ux `ui `ux -> *U + &U *U + &U _motCounter * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _motCounter `ui -> -> 2 `i `ui `ux * -> -> -> 1 `i `ui `ux -> -> # *U &U *U + &U _motCounter * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _motCounter `ui -> -> 2 `i `ui `ux `ui `ux `c ]
+"736
+[; ;motors.c: 736:             if(motCounter[2][0] < 0){
 [e $ ! < -> *U + &U *U + &U _motCounter * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _motCounter `ui -> -> 2 `i `ui `ux * -> -> -> 0 `i `ui `ux -> -> # *U &U *U + &U _motCounter * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _motCounter `ui -> -> 2 `i `ui `ux `ui `ux `i -> 0 `i 349  ]
 {
-"736
-[; ;motors.c: 736:                 motCounter[2][0] = 3;
-[e = *U + &U *U + &U _motCounter * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _motCounter `ui -> -> 2 `i `ui `ux * -> -> -> 0 `i `ui `ux -> -> # *U &U *U + &U _motCounter * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _motCounter `ui -> -> 2 `i `ui `ux `ui `ux -> -> 3 `i `c ]
 "737
-[; ;motors.c: 737:             }
+[; ;motors.c: 737:                 motCounter[2][0] = 3;
+[e = *U + &U *U + &U _motCounter * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _motCounter `ui -> -> 2 `i `ui `ux * -> -> -> 0 `i `ui `ux -> -> # *U &U *U + &U _motCounter * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _motCounter `ui -> -> 2 `i `ui `ux `ui `ux -> -> 3 `i `c ]
+"738
+[; ;motors.c: 738:             }
 }
 [e :U 349 ]
-"739
-[; ;motors.c: 739:             LATC = stepMot3[motCounter[2][0]];
+"740
+[; ;motors.c: 740:             LATC = stepMot3[motCounter[2][0]];
 [e = _LATC *U + &U _stepMot3 * -> -> *U + &U *U + &U _motCounter * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _motCounter `ui -> -> 2 `i `ui `ux * -> -> -> 0 `i `ui `ux -> -> # *U &U *U + &U _motCounter * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _motCounter `ui -> -> 2 `i `ui `ux `ui `ux `uc `ux -> -> # *U &U _stepMot3 `ui `ux ]
-"743
-[; ;motors.c: 743:         while(!stepMade());
+"744
+[; ;motors.c: 744:         while(!stepMade());
 [e $U 350  ]
 [e :U 351 ]
 [e :U 350 ]
 [e $ ! != ( _stepMade ..  -> -> 0 `i `ui 351  ]
 [e :U 352 ]
-"753
-[; ;motors.c: 753:     }
+"754
+[; ;motors.c: 754:     }
 }
 [e :U 345 ]
-"714
-[; ;motors.c: 714:     while(!PORTEbits.RE2){
+"715
+[; ;motors.c: 715:     while(!PORTEbits.RE2){
 [e $ ! != -> . . _PORTEbits 0 2 `i -> 0 `i 346  ]
 [e :U 347 ]
-"756
-[; ;motors.c: 756:     T0CONbits.TMR0ON = 0;
-[e = . . _T0CONbits 0 5 -> -> 0 `i `uc ]
 "757
-[; ;motors.c: 757:     T2CONbits.TMR2ON = 0;
+[; ;motors.c: 757:     T0CONbits.TMR0ON = 0;
+[e = . . _T0CONbits 0 5 -> -> 0 `i `uc ]
+"758
+[; ;motors.c: 758:     T2CONbits.TMR2ON = 0;
 [e = . . _T2CONbits 0 1 -> -> 0 `i `uc ]
-"759
-[; ;motors.c: 759:     resetTM0_Temp();
-[e ( _resetTM0_Temp ..  ]
 "760
-[; ;motors.c: 760:     resetTM2_Temp();
+[; ;motors.c: 760:     resetTM0_Temp();
+[e ( _resetTM0_Temp ..  ]
+"761
+[; ;motors.c: 761:     resetTM2_Temp();
 [e ( _resetTM2_Temp ..  ]
-"762
-[; ;motors.c: 762:     TMR0 = 0;
-[e = _TMR0 -> -> 0 `i `us ]
 "763
-[; ;motors.c: 763:     TMR2 = 0;
+[; ;motors.c: 763:     TMR0 = 0;
+[e = _TMR0 -> -> 0 `i `us ]
+"764
+[; ;motors.c: 764:     TMR2 = 0;
 [e = _TMR2 -> -> 0 `i `uc ]
-"766
-[; ;motors.c: 766:     resetStep();
+"767
+[; ;motors.c: 767:     resetStep();
 [e ( _resetStep ..  ]
-"768
-[; ;motors.c: 768:     return(tm0Error);
+"769
+[; ;motors.c: 769:     return(tm0Error);
 [e ) -> _tm0Error `uc ]
 [e $UE 344  ]
-"769
-[; ;motors.c: 769: }
+"770
+[; ;motors.c: 770: }
 [e :UE 344 ]
 }
-"775
-[; ;motors.c: 775: void rotateObj(unsigned char rotAngle){
+"776
+[; ;motors.c: 776: void rotateObj(unsigned char rotAngle){
 [v _rotateObj `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _rotateObj ]
 [v _rotAngle `uc ~T0 @X0 1 r1 ]
 [f ]
-"776
-[; ;motors.c: 776:     static const float stepAngle = 0.08789;
+"778
+[; ;motors.c: 778:     static const float stepAngle = 10;
 [v F2313 `Cf ~T0 @X0 1 s stepAngle ]
 [i F2313
--> .0.08789 `f
+-> -> 10 `i `f
 ]
-"777
-[; ;motors.c: 777:     static char rotSequence[] = {0b100100, 0b001100, 0b011000, 0b110000};
+"779
+[; ;motors.c: 779:     static char rotSequence[] = {0b100100, 0b001100, 0b011000, 0b110000};
 [v F2314 `uc ~T0 @X0 -> 4 `i s rotSequence ]
 [i F2314
 :U ..
@@ -2015,140 +2018,140 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 48 `i `uc
 ..
 ]
-"778
-[; ;motors.c: 778:     unsigned int i;
+"780
+[; ;motors.c: 780:     unsigned int i;
 [v _i `ui ~T0 @X0 1 a ]
-"779
-[; ;motors.c: 779:     int totStep = rotAngle/stepAngle;
+"781
+[; ;motors.c: 781:     int totStep = rotAngle/stepAngle;
 [v _totStep `i ~T0 @X0 1 a ]
 [e = _totStep -> / -> -> _rotAngle `i `f F2313 `i ]
-"782
-[; ;motors.c: 782:     for(i = 0; i < totStep; i++){
+"784
+[; ;motors.c: 784:     for(i = 0; i < totStep; i++){
 {
 [e = _i -> -> 0 `i `ui ]
 [e $U 357  ]
 [e :U 354 ]
 {
-"784
-[; ;motors.c: 784:         LATD &= 0xC3;
-[e =& _LATD -> -> 195 `i `Vuc ]
 "786
-[; ;motors.c: 786:         LATD |= rotSequence[i%4];
+[; ;motors.c: 786:         LATD &= 0xC3;
+[e =& _LATD -> -> 195 `i `Vuc ]
+"788
+[; ;motors.c: 788:         LATD |= rotSequence[i%4];
 [e =| _LATD -> *U + &U F2314 * -> % _i -> -> 4 `i `ui `ux -> -> # *U &U F2314 `ui `ux `Vuc ]
-"789
-[; ;motors.c: 789:         T2CONbits.TMR2ON = 1;
+"791
+[; ;motors.c: 791:         T2CONbits.TMR2ON = 1;
 [e = . . _T2CONbits 0 1 -> -> 1 `i `uc ]
-"790
-[; ;motors.c: 790:         while(!stepMade());
+"792
+[; ;motors.c: 792:         while(!stepMade());
 [e $U 358  ]
 [e :U 359 ]
 [e :U 358 ]
 [e $ ! != ( _stepMade ..  -> -> 0 `i `ui 359  ]
 [e :U 360 ]
-"791
-[; ;motors.c: 791:         T2CONbits.TMR2ON = 0;
-[e = . . _T2CONbits 0 1 -> -> 0 `i `uc ]
-"792
-[; ;motors.c: 792:         TMR2 = 0;
-[e = _TMR2 -> -> 0 `i `uc ]
 "793
-[; ;motors.c: 793:     }
+[; ;motors.c: 793:         T2CONbits.TMR2ON = 0;
+[e = . . _T2CONbits 0 1 -> -> 0 `i `uc ]
+"794
+[; ;motors.c: 794:         TMR2 = 0;
+[e = _TMR2 -> -> 0 `i `uc ]
+"795
+[; ;motors.c: 795:     }
 }
 [e ++ _i -> -> 1 `i `ui ]
 [e :U 357 ]
 [e $ < _i -> _totStep `ui 354  ]
 [e :U 355 ]
 }
-"796
-[; ;motors.c: 796:     resetTM2_Temp();
+"798
+[; ;motors.c: 798:     resetTM2_Temp();
 [e ( _resetTM2_Temp ..  ]
-"799
-[; ;motors.c: 799:     resetStep();
+"801
+[; ;motors.c: 801:     resetStep();
 [e ( _resetStep ..  ]
-"800
-[; ;motors.c: 800: }
+"802
+[; ;motors.c: 802: }
 [e :UE 353 ]
 }
-"805
-[; ;motors.c: 805: void pickObject(){
+"807
+[; ;motors.c: 807: void pickObject(){
 [v _pickObject `(v ~T0 @X0 1 ef ]
 {
 [e :U _pickObject ]
 [f ]
-"806
-[; ;motors.c: 806:     LATDbits.LATD1 = 1;
+"808
+[; ;motors.c: 808:     LATDbits.LATD1 = 1;
 [e = . . _LATDbits 0 1 -> -> 1 `i `uc ]
-"809
-[; ;motors.c: 809:     T2CONbits.TMR2ON = 1;
+"811
+[; ;motors.c: 811:     T2CONbits.TMR2ON = 1;
 [e = . . _T2CONbits 0 1 -> -> 1 `i `uc ]
-"810
-[; ;motors.c: 810:     while(!stepMade());
+"812
+[; ;motors.c: 812:     while(!stepMade());
 [e $U 362  ]
 [e :U 363 ]
 [e :U 362 ]
 [e $ ! != ( _stepMade ..  -> -> 0 `i `ui 363  ]
 [e :U 364 ]
-"811
-[; ;motors.c: 811:     T2CONbits.TMR2ON = 0;
+"813
+[; ;motors.c: 813:     T2CONbits.TMR2ON = 0;
 [e = . . _T2CONbits 0 1 -> -> 0 `i `uc ]
-"812
-[; ;motors.c: 812:     TMR2 = 0;
+"814
+[; ;motors.c: 814:     TMR2 = 0;
 [e = _TMR2 -> -> 0 `i `uc ]
-"815
-[; ;motors.c: 815:     resetTM2_Temp();
-[e ( _resetTM2_Temp ..  ]
 "817
-[; ;motors.c: 817: }
+[; ;motors.c: 817:     resetTM2_Temp();
+[e ( _resetTM2_Temp ..  ]
+"819
+[; ;motors.c: 819: }
 [e :UE 361 ]
 }
-"822
-[; ;motors.c: 822: void releaseObj(){
+"824
+[; ;motors.c: 824: void releaseObj(){
 [v _releaseObj `(v ~T0 @X0 1 ef ]
 {
 [e :U _releaseObj ]
 [f ]
-"823
-[; ;motors.c: 823:     LATDbits.LATD1 = 0;
+"825
+[; ;motors.c: 825:     LATDbits.LATD1 = 0;
 [e = . . _LATDbits 0 1 -> -> 0 `i `uc ]
-"826
-[; ;motors.c: 826:     T2CONbits.TMR2ON = 1;
+"828
+[; ;motors.c: 828:     T2CONbits.TMR2ON = 1;
 [e = . . _T2CONbits 0 1 -> -> 1 `i `uc ]
-"827
-[; ;motors.c: 827:     while(!stepMade());
+"829
+[; ;motors.c: 829:     while(!stepMade());
 [e $U 366  ]
 [e :U 367 ]
 [e :U 366 ]
 [e $ ! != ( _stepMade ..  -> -> 0 `i `ui 367  ]
 [e :U 368 ]
-"828
-[; ;motors.c: 828:     T2CONbits.TMR2ON = 0;
+"830
+[; ;motors.c: 830:     T2CONbits.TMR2ON = 0;
 [e = . . _T2CONbits 0 1 -> -> 0 `i `uc ]
-"829
-[; ;motors.c: 829:     TMR2 = 0;
+"831
+[; ;motors.c: 831:     TMR2 = 0;
 [e = _TMR2 -> -> 0 `i `uc ]
-"832
-[; ;motors.c: 832:     resetTM2_Temp();
+"834
+[; ;motors.c: 834:     resetTM2_Temp();
 [e ( _resetTM2_Temp ..  ]
-"833
-[; ;motors.c: 833: }
+"835
+[; ;motors.c: 835: }
 [e :UE 365 ]
 }
-"839
-[; ;motors.c: 839: void abortAll(){
+"841
+[; ;motors.c: 841: void abortAll(){
 [v _abortAll `(v ~T0 @X0 1 ef ]
 {
 [e :U _abortAll ]
 [f ]
-"847
-[; ;motors.c: 847:     printError(7);
+"849
+[; ;motors.c: 849:     printError(7);
 [e ( _printError (1 -> -> 7 `i `uc ]
-"848
-[; ;motors.c: 848:     while(1);
+"850
+[; ;motors.c: 850:     while(1);
 [e :U 371 ]
 [e :U 370 ]
 [e $U 371  ]
 [e :U 372 ]
-"849
-[; ;motors.c: 849: }
+"851
+[; ;motors.c: 851: }
 [e :UE 369 ]
 }

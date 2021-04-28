@@ -198,8 +198,8 @@ void storeData(unsigned char data){
         switch(receivedMex[0]){
             case PICK_AND_PLACE:
                 dataSequence[dataCounter].feederLine = receivedMex[1];
-                dataSequence[dataCounter].posX = receivedMex[2] * 10;
-                dataSequence[dataCounter].posY = receivedMex[3] * 10;
+                dataSequence[dataCounter].posX = receivedMex[2] * 5;
+                dataSequence[dataCounter].posY = receivedMex[3] * 5;
                 dataSequence[dataCounter].rotation = receivedMex[4];
 
                 dataCounter++;
@@ -208,11 +208,11 @@ void storeData(unsigned char data){
                 //save the data
                 newSequenceData.L = receivedMex[1];
                 newSequenceData.W = receivedMex[2];
-                newSequenceData.init_posX = receivedMex[3] * 10;
-                newSequenceData.init_posY = receivedMex[4] * 10;
+                newSequenceData.init_posX = receivedMex[3] * 5;
+                newSequenceData.init_posY = receivedMex[4] * 5;
                 newSequenceData.init_rot = receivedMex[5];
-                newSequenceData.end_posX = receivedMex[6] * 10;
-                newSequenceData.end_posY = receivedMex[7] * 10;
+                newSequenceData.end_posX = receivedMex[6] * 5;
+                newSequenceData.end_posY = receivedMex[7] * 5;
                 newSequenceData.end_rot = receivedMex[8];
                 
                 _newSequence = 1;

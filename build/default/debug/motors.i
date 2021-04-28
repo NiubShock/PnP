@@ -4426,6 +4426,10 @@ char touchObject(){
     startADC();
 
 
+    resetTouch();
+    resetTherm();
+
+
     while(!returnTouch() || PORTDbits.RD7){
 
         resetStep();
@@ -4455,16 +4459,13 @@ char touchObject(){
 
 
         while(!stepMade());
-# 562 "motors.c"
+# 566 "motors.c"
         startADC();
 
     }
 
 
     stopADC();
-
-
-    resetTouch();
 
 
     T0CONbits.TMR0ON = 0;
@@ -4478,7 +4479,6 @@ char touchObject(){
 
 
     resetStep();
-    resetTherm();
 
 
     if(PORTDbits.RD7){
@@ -4505,6 +4505,10 @@ char touchTherm(){
 
 
     startADC();
+
+
+    resetTouch();
+    resetTherm();
 
 
     while(!returnTherm() || PORTDbits.RD7){
@@ -4536,7 +4540,7 @@ char touchTherm(){
 
 
         while(!stepMade());
-# 661 "motors.c"
+# 665 "motors.c"
         startADC();
 
 
@@ -4544,9 +4548,6 @@ char touchTherm(){
 
 
     stopADC();
-
-
-    resetTherm();
 
 
     T0CONbits.TMR0ON = 0;
@@ -4620,7 +4621,7 @@ char liftArm(){
 
 
         while(!stepMade());
-# 753 "motors.c"
+# 754 "motors.c"
     }
 
 
@@ -4644,7 +4645,8 @@ char liftArm(){
 
 
 void rotateObj(unsigned char rotAngle){
-    static const float stepAngle = 0.08789;
+
+    static const float stepAngle = 10;
     static char rotSequence[] = {0b100100, 0b001100, 0b011000, 0b110000};
     unsigned int i;
     int totStep = rotAngle/stepAngle;

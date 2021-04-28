@@ -10,8 +10,8 @@
 static unsigned int tm0Error = 0;
 static unsigned char tm0Limit = 0;
 
-static unsigned int maxX = 201;
-static unsigned int maxY = 201;
+static unsigned int maxX = 101;
+static unsigned int maxY = 101;
 
 #ifdef nSIMULATION
 static unsigned char stepMot1[] = {0b100010, 0b000110, 0b001100, 0b101000}; //RA1-2-3-5
@@ -354,7 +354,7 @@ char moveToPoint(int x1, int y1, int x2, int y2){
         motCounter[1][1] = 1;
         MOT2Direction = FORWARD;
     }else{
-        motCounter[2][1] = -1;
+        motCounter[1][1] = -1;
         MOT2Direction = BACKWARD;
     }
 #endif
@@ -441,7 +441,7 @@ char moveToPoint(int x1, int y1, int x2, int y2){
             if(motCounter[1][0] > 3){
                 motCounter[1][0] = 0;
             }
-            //activate the 1st motor
+            //activate the 2nd motor
             LATB = stepMot2[motCounter[1][0]];
 #endif
             }
@@ -460,7 +460,7 @@ char moveToPoint(int x1, int y1, int x2, int y2){
             if(motCounter[1][0] < 0){
                 motCounter[1][0] = 3;
             }
-            //activate the 1st motor
+            //activate the 2nd motor
             LATB = stepMot2[motCounter[1][0]];
 #endif
             }
@@ -520,6 +520,10 @@ char touchObject(){
     //start the ADC to relevate the pressure
     startADC();
     
+    //reset the variable that indicate if the object has been touched
+    resetTouch();
+    resetTherm();
+    
     //Stop if touch the object or if reached endstroke (Error)
     while(!returnTouch() || PORTDbits.RD7){
         
@@ -566,9 +570,6 @@ char touchObject(){
     //stop the adc
     stopADC();
     
-    //reset the variable that indicate if the object has been touched
-    resetTouch();
-    
     //turn off both the timer
     T0CONbits.TMR0ON = 0;
     T2CONbits.TMR2ON = 0;
@@ -581,7 +582,6 @@ char touchObject(){
     
     //reset the step
     resetStep();
-    resetTherm();
     
     //if the endstroke is touched than fix the correct error
     if(PORTDbits.RD7){
@@ -617,6 +617,10 @@ char touchTherm(){
     
     //start the adc
     startADC();
+    
+    //reset the variable that determine the touch of the thermal paste
+    resetTouch();
+    resetTherm();
     
     //stop if we get in touch with the paste or endstroke
     while(!returnTherm() || PORTDbits.RD7){
@@ -665,9 +669,6 @@ char touchTherm(){
     
     //stop the adc
     stopADC();
-    
-    //reset the variable that determine the touch of the thermal paste
-    resetTherm();
     
     //stop both the timer
     T0CONbits.TMR0ON = 0;
@@ -773,7 +774,8 @@ char liftArm(){
  * Input: Angle of the rotation, expressed in degrees
  */
 void rotateObj(unsigned char rotAngle){
-    static const float stepAngle = 0.08789;                         //dimension of a single step in the motor
+    //static const float stepAngle = 0.08789;                         //dimension of a single step in the motor
+    static const float stepAngle = 10;                         //dimension of a single step in the motor
     static char rotSequence[] = {0b100100, 0b001100, 0b011000, 0b110000};   //sequence to use in order to rotate as desired
     unsigned int i;
     int totStep = rotAngle/stepAngle;                               //total step required

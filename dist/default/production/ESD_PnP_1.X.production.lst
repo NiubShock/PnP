@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.20 build 20200408173844 
-                                                                                               Wed Apr 28 14:37:04 2021
+                                                                                               Wed Apr 28 14:56:43 2021
 
 Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1 
      1                           	processor	18F452
@@ -168,10 +168,10 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
    154  0022E9  28                 	db	40
    155                           
    156                           ;initializer for _maxY
-   157  0022EA  00C9               	dw	201
+   157  0022EA  0065               	dw	101
    158                           
    159                           ;initializer for _maxX
-   160  0022EC  00C9               	dw	201
+   160  0022EC  0065               	dw	101
    161                           
    162                           ;initializer for _errString_Feed
    163  0022EE  45                 	db	69
@@ -510,26 +510,26 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
    496                           	callstack 0
    497  000609                     _feeder3Pos:
    498                           	callstack 0
-   499  000609  1E                 	db	30
-   500  00060A  96                 	db	150
+   499  000609  0F                 	db	15
+   500  00060A  50                 	db	80
    501  00060B                     __end_of_feeder3Pos:
    502                           	callstack 0
    503  00060B                     _feeder2Pos:
    504                           	callstack 0
-   505  00060B  1E                 	db	30
-   506  00060C  64                 	db	100
+   505  00060B  0F                 	db	15
+   506  00060C  32                 	db	50
    507  00060D                     __end_of_feeder2Pos:
    508                           	callstack 0
    509  00060D                     _feeder1Pos:
    510                           	callstack 0
-   511  00060D  1E                 	db	30
-   512  00060E  32                 	db	50
+   511  00060D  0F                 	db	15
+   512  00060E  14                 	db	20
    513  00060F                     __end_of_feeder1Pos:
    514                           	callstack 0
-   515  00060F  C8                 	db	200
+   515  00060F  64                 	db	100
    516  000610                     __end_of_maxFeedY:
    517                           	callstack 0
-   518  000610  3C                 	db	60
+   518  000610  1E                 	db	30
    519  000611                     __end_of_maxFeedX:
    520                           	callstack 0
    521  0000                     _TMR0	set	4054
@@ -1224,7 +1224,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   1209  00153A  26D9               	addwf	fsr2l,f,c
   1210  00153C  51F6               	movf	(main@newData+1)& (0+255),w,b
   1211  00153E  22DA               	addwfc	fsr2h,f,c
-  1212  001540  0E3D               	movlw	61
+  1212  001540  0E1F               	movlw	31
   1213  001542  60DF               	cpfslt	indf2,c
   1214  001544  EFA6  F00A         	goto	u3841
   1215  001548  EFA9  F00A         	goto	u3840
@@ -1240,7 +1240,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   1225  00155A  26D9               	addwf	fsr2l,f,c
   1226  00155C  51F6               	movf	(main@newData+1)& (0+255),w,b
   1227  00155E  22DA               	addwfc	fsr2h,f,c
-  1228  001560  0EC8               	movlw	200
+  1228  001560  0E64               	movlw	100
   1229  001562  64DF               	cpfsgt	indf2,c
   1230  001564  EFB6  F00A         	goto	u3851
   1231  001568  EFB9  F00A         	goto	u3850
@@ -1771,7 +1771,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   1753  0016E0  6EDA               	movwf	fsr2h,c
   1754  0016E2  C044  FFDF         	movff	storeData@receivedMex+1,indf2
   1755                           
-  1756                           ;usart.c: 201:                 dataSequence[dataCounter].posX = receivedMex[2] * 10;
+  1756                           ;usart.c: 201:                 dataSequence[dataCounter].posX = receivedMex[2] * 5;
   1757  0016E6  5061               	movf	_dataCounter^0,w,c
   1758  0016E8  0D04               	mullw	4
   1759  0016EA  0ECB               	movlw	low (_dataSequence+1)
@@ -1781,10 +1781,10 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   1763  0016F2  20F4               	addwfc	prodh,w,c
   1764  0016F4  6EDA               	movwf	fsr2h,c
   1765  0016F6  5045               	movf	(storeData@receivedMex+2)^0,w,c
-  1766  0016F8  0D0A               	mullw	10
+  1766  0016F8  0D05               	mullw	5
   1767  0016FA  CFF3 FFDF          	movff	prodl,indf2
   1768                           
-  1769                           ;usart.c: 202:                 dataSequence[dataCounter].posY = receivedMex[3] * 10;
+  1769                           ;usart.c: 202:                 dataSequence[dataCounter].posY = receivedMex[3] * 5;
   1770  0016FE  5061               	movf	_dataCounter^0,w,c
   1771  001700  0D04               	mullw	4
   1772  001702  0ECC               	movlw	low (_dataSequence+2)
@@ -1794,7 +1794,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   1776  00170A  20F4               	addwfc	prodh,w,c
   1777  00170C  6EDA               	movwf	fsr2h,c
   1778  00170E  5046               	movf	(storeData@receivedMex+3)^0,w,c
-  1779  001710  0D0A               	mullw	10
+  1779  001710  0D05               	mullw	5
   1780  001712  CFF3 FFDF          	movff	prodl,indf2
   1781                           
   1782                           ;usart.c: 203:                 dataSequence[dataCounter].rotation = receivedMex[4];
@@ -1822,27 +1822,27 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   1804                           ;usart.c: 210:                 newSequenceData.W = receivedMex[2];
   1805  001736  C045  F0DF         	movff	storeData@receivedMex+2,_newSequenceData+1
   1806  00173A                     
-  1807                           ;usart.c: 211:                 newSequenceData.init_posX = receivedMex[3] * 10;
+  1807                           ;usart.c: 211:                 newSequenceData.init_posX = receivedMex[3] * 5;
   1808  00173A  5046               	movf	(storeData@receivedMex+3)^0,w,c
-  1809  00173C  0D0A               	mullw	10
+  1809  00173C  0D05               	mullw	5
   1810  00173E  CFF3 F0E0          	movff	prodl,_newSequenceData+2
   1811                           
-  1812                           ;usart.c: 212:                 newSequenceData.init_posY = receivedMex[4] * 10;
+  1812                           ;usart.c: 212:                 newSequenceData.init_posY = receivedMex[4] * 5;
   1813  001742  5047               	movf	(storeData@receivedMex+4)^0,w,c
-  1814  001744  0D0A               	mullw	10
+  1814  001744  0D05               	mullw	5
   1815  001746  CFF3 F0E1          	movff	prodl,_newSequenceData+3
   1816  00174A                     
   1817                           ;usart.c: 213:                 newSequenceData.init_rot = receivedMex[5];
   1818  00174A  C048  F0E2         	movff	storeData@receivedMex+5,_newSequenceData+4
   1819                           
-  1820                           ;usart.c: 214:                 newSequenceData.end_posX = receivedMex[6] * 10;
+  1820                           ;usart.c: 214:                 newSequenceData.end_posX = receivedMex[6] * 5;
   1821  00174E  5049               	movf	(storeData@receivedMex+6)^0,w,c
-  1822  001750  0D0A               	mullw	10
+  1822  001750  0D05               	mullw	5
   1823  001752  CFF3 F0E3          	movff	prodl,_newSequenceData+5
   1824                           
-  1825                           ;usart.c: 215:                 newSequenceData.end_posY = receivedMex[7] * 10;
+  1825                           ;usart.c: 215:                 newSequenceData.end_posY = receivedMex[7] * 5;
   1826  001756  504A               	movf	(storeData@receivedMex+7)^0,w,c
-  1827  001758  0D0A               	mullw	10
+  1827  001758  0D05               	mullw	5
   1828  00175A  CFF3 F0E4          	movff	prodl,_newSequenceData+6
   1829  00175E                     
   1830                           ;usart.c: 216:                 newSequenceData.end_rot = receivedMex[8];
@@ -5799,7 +5799,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
       +                           > maxX || y2 > maxY){
   5770  000A46  501A               	movf	(moveToPoint@x2+1)^0,w,c
   5771  000A48  E107               	bnz	u3141
-  5772  000A4A  0ECA               	movlw	202
+  5772  000A4A  0E66               	movlw	102
   5773  000A4C  5C19               	subwf	moveToPoint@x2^0,w,c
   5774  000A4E  B0D8               	btfsc	status,0,c
   5775  000A50  EF2C  F005         	goto	u3141
@@ -5811,7 +5811,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   5781  000A5E  FFFF               	dw	65535	; assembler added errata NOP
   5782  000A60  501C               	movf	(moveToPoint@y2+1)^0,w,c
   5783  000A62  E10A               	bnz	u3150
-  5784  000A64  0ECA               	movlw	202
+  5784  000A64  0E66               	movlw	102
   5785  000A66  5C1B               	subwf	moveToPoint@y2^0,w,c
   5786  000A68  A0D8               	btfss	status,0,c
   5787  000A6A  EF39  F005         	goto	u3151
@@ -5906,8 +5906,8 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   5876  000AF8                     l164:
   5877  000AF8  FFFF               	dw	65535	; assembler added errata NOP
   5878                           
-  5879                           ;motors.c: 357:         motCounter[2][1] = -1;
-  5880  000AFA  686C               	setf	(_motCounter+5)^0,c
+  5879                           ;motors.c: 357:         motCounter[1][1] = -1;
+  5880  000AFA  686A               	setf	(_motCounter+3)^0,c
   5881  000AFC                     
   5882                           ;motors.c: 358:         MOT2Direction = 0;
   5883  000AFC  0E00               	movlw	0
@@ -7319,7 +7319,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   7286  00185A  6EDA               	movwf	fsr2h,c
   7287  00185C  C044  FFDF         	movff	storeData@receivedMex+1,indf2
   7288                           
-  7289                           ;usart.c: 201:                 dataSequence[dataCounter].posX = receivedMex[2] * 10;
+  7289                           ;usart.c: 201:                 dataSequence[dataCounter].posX = receivedMex[2] * 5;
   7290  001860  5061               	movf	_dataCounter^0,w,c
   7291  001862  0D04               	mullw	4
   7292  001864  0ECB               	movlw	low (_dataSequence+1)
@@ -7329,10 +7329,10 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   7296  00186C  20F4               	addwfc	prodh,w,c
   7297  00186E  6EDA               	movwf	fsr2h,c
   7298  001870  5045               	movf	(storeData@receivedMex+2)^0,w,c
-  7299  001872  0D0A               	mullw	10
+  7299  001872  0D05               	mullw	5
   7300  001874  CFF3 FFDF          	movff	prodl,indf2
   7301                           
-  7302                           ;usart.c: 202:                 dataSequence[dataCounter].posY = receivedMex[3] * 10;
+  7302                           ;usart.c: 202:                 dataSequence[dataCounter].posY = receivedMex[3] * 5;
   7303  001878  5061               	movf	_dataCounter^0,w,c
   7304  00187A  0D04               	mullw	4
   7305  00187C  0ECC               	movlw	low (_dataSequence+2)
@@ -7342,7 +7342,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   7309  001884  20F4               	addwfc	prodh,w,c
   7310  001886  6EDA               	movwf	fsr2h,c
   7311  001888  5046               	movf	(storeData@receivedMex+3)^0,w,c
-  7312  00188A  0D0A               	mullw	10
+  7312  00188A  0D05               	mullw	5
   7313  00188C  CFF3 FFDF          	movff	prodl,indf2
   7314                           
   7315                           ;usart.c: 203:                 dataSequence[dataCounter].rotation = receivedMex[4];
@@ -7370,27 +7370,27 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   7337                           ;usart.c: 210:                 newSequenceData.W = receivedMex[2];
   7338  0018B0  C045  F0DF         	movff	storeData@receivedMex+2,_newSequenceData+1
   7339  0018B4                     
-  7340                           ;usart.c: 211:                 newSequenceData.init_posX = receivedMex[3] * 10;
+  7340                           ;usart.c: 211:                 newSequenceData.init_posX = receivedMex[3] * 5;
   7341  0018B4  5046               	movf	(storeData@receivedMex+3)^0,w,c
-  7342  0018B6  0D0A               	mullw	10
+  7342  0018B6  0D05               	mullw	5
   7343  0018B8  CFF3 F0E0          	movff	prodl,_newSequenceData+2
   7344                           
-  7345                           ;usart.c: 212:                 newSequenceData.init_posY = receivedMex[4] * 10;
+  7345                           ;usart.c: 212:                 newSequenceData.init_posY = receivedMex[4] * 5;
   7346  0018BC  5047               	movf	(storeData@receivedMex+4)^0,w,c
-  7347  0018BE  0D0A               	mullw	10
+  7347  0018BE  0D05               	mullw	5
   7348  0018C0  CFF3 F0E1          	movff	prodl,_newSequenceData+3
   7349  0018C4                     
   7350                           ;usart.c: 213:                 newSequenceData.init_rot = receivedMex[5];
   7351  0018C4  C048  F0E2         	movff	storeData@receivedMex+5,_newSequenceData+4
   7352                           
-  7353                           ;usart.c: 214:                 newSequenceData.end_posX = receivedMex[6] * 10;
+  7353                           ;usart.c: 214:                 newSequenceData.end_posX = receivedMex[6] * 5;
   7354  0018C8  5049               	movf	(storeData@receivedMex+6)^0,w,c
-  7355  0018CA  0D0A               	mullw	10
+  7355  0018CA  0D05               	mullw	5
   7356  0018CC  CFF3 F0E3          	movff	prodl,_newSequenceData+5
   7357                           
-  7358                           ;usart.c: 215:                 newSequenceData.end_posY = receivedMex[7] * 10;
+  7358                           ;usart.c: 215:                 newSequenceData.end_posY = receivedMex[7] * 5;
   7359  0018D0  504A               	movf	(storeData@receivedMex+7)^0,w,c
-  7360  0018D2  0D0A               	mullw	10
+  7360  0018D2  0D05               	mullw	5
   7361  0018D4  CFF3 F0E4          	movff	prodl,_newSequenceData+6
   7362  0018D8                     
   7363                           ;usart.c: 216:                 newSequenceData.end_rot = receivedMex[8];
@@ -8840,7 +8840,7 @@ CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V2.20 build 20200408173844 
-Symbol Table                                                                                   Wed Apr 28 14:37:04 2021
+Symbol Table                                                                                   Wed Apr 28 14:56:43 2021
 
                                                   ___fldiv@aexp 0038  
                                                   ___fldiv@bexp 0037  

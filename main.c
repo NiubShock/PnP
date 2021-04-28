@@ -7,12 +7,12 @@ char executeData();
 static unsigned char posVector[3] = {0, 0, 0};
 static int rotAngle = 0;
 
-static const unsigned char feeder1Pos[2] = {30, 50};
-static const unsigned char feeder2Pos[2] = {30, 100};
-static const unsigned char feeder3Pos[2] = {30, 150};
+static const unsigned char feeder1Pos[2] = {15, 20};
+static const unsigned char feeder2Pos[2] = {15, 50};
+static const unsigned char feeder3Pos[2] = {15, 80};
 
-static const unsigned char maxFeedX = 60;
-static const unsigned char maxFeedY= 200;
+static const unsigned char maxFeedX = 30;
+static const unsigned char maxFeedY= 100;
 
 static unsigned char newFeeder[2] = {0, 0};
 
