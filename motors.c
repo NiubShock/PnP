@@ -295,6 +295,9 @@ char resetPosition(){
     //turn off both the timers
     T0CONbits.TMR0ON = 0;
     T2CONbits.TMR2ON = 0;
+    //reset the temporal variables
+    resetTM0_Temp();
+    resetTM2_Temp();
     //reset the value saved in the register -> keep the ideal starting condition
     TMR0 = 0;
     TMR2 = 0;
@@ -480,6 +483,9 @@ char moveToPoint(int x1, int y1, int x2, int y2){
     //turn off both the timer
     T0CONbits.TMR0ON = 0;
     T2CONbits.TMR2ON = 0;
+    //reset the temporal variables
+    resetTM0_Temp();
+    resetTM2_Temp();
     //reset the counter register
     TMR0 = 0;
     TMR2 = 0;
@@ -566,6 +572,9 @@ char touchObject(){
     //turn off both the timer
     T0CONbits.TMR0ON = 0;
     T2CONbits.TMR2ON = 0;
+    //reset the temporal variables
+    resetTM0_Temp();
+    resetTM2_Temp();
     //reset the counter registers
     TMR0 = 0;
     TMR2 = 0;
@@ -663,6 +672,9 @@ char touchTherm(){
     //stop both the timer
     T0CONbits.TMR0ON = 0;
     T2CONbits.TMR2ON = 0;
+    //reset the temporal variables
+    resetTM0_Temp();
+    resetTM2_Temp();
     //reset the counter registers
     TMR0 = 0;
     TMR2 = 0;
@@ -743,6 +755,9 @@ char liftArm(){
     //turn off both the timers
     T0CONbits.TMR0ON = 0;
     T2CONbits.TMR2ON = 0;
+    //reset the temporal variables
+    resetTM0_Temp();
+    resetTM2_Temp();
     //reset both the counter registers
     TMR0 = 0;
     TMR2 = 0;
@@ -777,8 +792,8 @@ void rotateObj(unsigned char rotAngle){
         TMR2 = 0;
     }
     
-    //reset the counter register
-    TMR2 = 0;
+    //reset the temporal variables
+    resetTM2_Temp();
     
     //reset the step
     resetStep();
@@ -795,6 +810,10 @@ void pickObject(){
     while(!stepMade());
     T2CONbits.TMR2ON = 0;           //turn off the timer used for the interrupt
     TMR2 = 0;
+    
+    //reset the temporal variables
+    resetTM2_Temp();
+    
 }
 
 /*
@@ -808,6 +827,9 @@ void releaseObj(){
     while(!stepMade());
     T2CONbits.TMR2ON = 0;           //turn off the timer used for the interrupt
     TMR2 = 0;
+    
+    //reset the temporal variables
+    resetTM2_Temp();
 }
 
 /*

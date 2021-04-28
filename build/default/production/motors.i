@@ -3925,6 +3925,8 @@ unsigned int retPeriod(void);
 
 # 1 "./interrupt.h" 1
 void interruptInit(void);
+void resetTM0_Temp(void);
+void resetTM2_Temp(void);
 # 6 "./main.h" 2
 
 # 1 "./usart.h" 1
@@ -4137,7 +4139,7 @@ char resetPosition(){
     T2CONbits.TMR2ON = 1;
 
     tm0Error = 0;
-    tm0Limit = 100;
+    tm0Limit = 200;
     T0CONbits.TMR0ON = 1;
 
     while(keepMovingX || keepMovingY || keepMovingZ){
@@ -4226,6 +4228,9 @@ char resetPosition(){
     T0CONbits.TMR0ON = 0;
     T2CONbits.TMR2ON = 0;
 
+    resetTM0_Temp();
+    resetTM2_Temp();
+
     TMR0 = 0;
     TMR2 = 0;
 
@@ -4250,7 +4255,7 @@ char moveToPoint(int x1, int y1, int x2, int y2){
     if(x2 > maxX || y2 > maxY){
         return(5);
     }
-# 342 "motors.c"
+# 345 "motors.c"
     if((x2 - x1) > 0){
         motCounter[0][1] = 1;
         MOT1Direction = 1;
@@ -4276,7 +4281,7 @@ char moveToPoint(int x1, int y1, int x2, int y2){
     T2CONbits.TMR2ON = 1;
 
     tm0Error = 0;
-    tm0Limit = 100;
+    tm0Limit = 200;
     T0CONbits.TMR0ON = 1;
 
     while(keepMovingX || keepMovingY){
@@ -4377,12 +4382,15 @@ char moveToPoint(int x1, int y1, int x2, int y2){
 
 
         while(!stepMade());
-# 478 "motors.c"
+# 481 "motors.c"
     }
 
 
     T0CONbits.TMR0ON = 0;
     T2CONbits.TMR2ON = 0;
+
+    resetTM0_Temp();
+    resetTM2_Temp();
 
     TMR0 = 0;
     TMR2 = 0;
@@ -4411,7 +4419,7 @@ char touchObject(){
     T2CONbits.TMR2ON = 1;
 
     tm0Error = 0;
-    tm0Limit = 50;
+    tm0Limit = 200;
     T0CONbits.TMR0ON = 1;
 
 
@@ -4447,7 +4455,7 @@ char touchObject(){
 
 
         while(!stepMade());
-# 556 "motors.c"
+# 562 "motors.c"
         startADC();
 
     }
@@ -4461,6 +4469,9 @@ char touchObject(){
 
     T0CONbits.TMR0ON = 0;
     T2CONbits.TMR2ON = 0;
+
+    resetTM0_Temp();
+    resetTM2_Temp();
 
     TMR0 = 0;
     TMR2 = 0;
@@ -4476,7 +4487,7 @@ char touchObject(){
 
     return(tm0Error);
 }
-# 594 "motors.c"
+# 603 "motors.c"
 char touchTherm(){
 
 
@@ -4489,7 +4500,7 @@ char touchTherm(){
     T2CONbits.TMR2ON = 1;
 
     tm0Error = 0;
-    tm0Limit = 50;
+    tm0Limit = 200;
     T0CONbits.TMR0ON = 1;
 
 
@@ -4525,7 +4536,7 @@ char touchTherm(){
 
 
         while(!stepMade());
-# 652 "motors.c"
+# 661 "motors.c"
         startADC();
 
 
@@ -4540,6 +4551,9 @@ char touchTherm(){
 
     T0CONbits.TMR0ON = 0;
     T2CONbits.TMR2ON = 0;
+
+    resetTM0_Temp();
+    resetTM2_Temp();
 
     TMR0 = 0;
     TMR2 = 0;
@@ -4571,7 +4585,7 @@ char liftArm(){
     T2CONbits.TMR2ON = 1;
 
     tm0Error = 0;
-    tm0Limit = 50;
+    tm0Limit = 200;
     T0CONbits.TMR0ON = 1;
 
 
@@ -4606,12 +4620,15 @@ char liftArm(){
 
 
         while(!stepMade());
-# 741 "motors.c"
+# 753 "motors.c"
     }
 
 
     T0CONbits.TMR0ON = 0;
     T2CONbits.TMR2ON = 0;
+
+    resetTM0_Temp();
+    resetTM2_Temp();
 
     TMR0 = 0;
     TMR2 = 0;
@@ -4647,7 +4664,7 @@ void rotateObj(unsigned char rotAngle){
     }
 
 
-    TMR2 = 0;
+    resetTM2_Temp();
 
 
     resetStep();
@@ -4664,6 +4681,10 @@ void pickObject(){
     while(!stepMade());
     T2CONbits.TMR2ON = 0;
     TMR2 = 0;
+
+
+    resetTM2_Temp();
+
 }
 
 
@@ -4677,6 +4698,9 @@ void releaseObj(){
     while(!stepMade());
     T2CONbits.TMR2ON = 0;
     TMR2 = 0;
+
+
+    resetTM2_Temp();
 }
 
 

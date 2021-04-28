@@ -977,8 +977,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 167:         posVector[1] = data->posY;
 [e = *U + &U _posVector * -> -> -> 1 `i `ui `ux -> -> # *U &U _posVector `ui `ux . *U _data 2 ]
 "170
-[; ;main.c: 170:         rotAngle = data->rotation - rotAngle;
-[e = _rotAngle - -> . *U _data 3 `i _rotAngle ]
+[; ;main.c: 170:         rotAngle = data->rotation;
+[e = _rotAngle -> . *U _data 3 `i ]
 "172
 [; ;main.c: 172:         if(rotAngle < 0){
 [e $ ! < _rotAngle -> 0 `i 266  ]

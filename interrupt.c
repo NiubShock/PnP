@@ -14,6 +14,20 @@ static unsigned int ADC_res = 0;
 static const unsigned int touch_pressure = 0x200;   //pressure required for touch relevation
 static const unsigned int therm_pressure = 0x400;   //pressure required for thermal paste
 
+static unsigned int single_cycle = 0;   //variable used to store the single cycle of the pwm
+static unsigned char tm0Count = 0;      //variable to count the overflow of the timer0
+static unsigned char completeStep = 0;  //variable used to help count only complete steps
+
+
+void resetTM0_Temp(){
+    tm0Count = 0;
+}
+
+void resetTM2_Temp(){
+    single_cycle = 0;
+    completeStep = 0;
+}
+
 /*
  * Description: This function is used to turn on all the interrupt required 
  *              for the application
@@ -36,9 +50,7 @@ void interruptInit(void){
 }
 
 void __interrupt() isr(){
-    static unsigned int single_cycle = 0;   //variable used to store the single cycle of the pwm
-    static unsigned char tm0Count = 0;      //variable to count the overflow of the timer0
-    static unsigned char completeStep = 0;  //variable used to help count only complete steps
+    
     
     //TIM0 interrupt routine
     if(INTCONbits.T0IF){

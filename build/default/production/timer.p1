@@ -510,100 +510,100 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;timer.c: 47:     T2CONbits.TMR2ON = 0;
 [e = . . _T2CONbits 0 1 -> -> 0 `i `uc ]
 "48
-[; ;timer.c: 48:     T2CONbits.T2CKPS = 0x10;
-[e = . . _T2CONbits 0 0 -> -> 16 `i `uc ]
-"51
-[; ;timer.c: 51:     pwmPeriod = _pwmPeriod;
-[e = _pwmPeriod __pwmPeriod ]
+[; ;timer.c: 48:     T2CONbits.T2CKPS1 = 1;
+[e = . . _T2CONbits 1 1 -> -> 1 `i `uc ]
 "52
-[; ;timer.c: 52: }
+[; ;timer.c: 52:     pwmPeriod = _pwmPeriod;
+[e = _pwmPeriod __pwmPeriod ]
+"53
+[; ;timer.c: 53: }
 [e :UE 240 ]
 }
-"59
-[; ;timer.c: 59: unsigned int stepMade(void){
+"60
+[; ;timer.c: 60: unsigned int stepMade(void){
 [v _stepMade `(ui ~T0 @X0 1 ef ]
 {
 [e :U _stepMade ]
 [f ]
-"60
-[; ;timer.c: 60:     unsigned char temp = stepToggle;
+"61
+[; ;timer.c: 61:     unsigned char temp = stepToggle;
 [v _temp `uc ~T0 @X0 1 a ]
 [e = _temp _stepToggle ]
-"62
-[; ;timer.c: 62:     stepToggle = 0;
+"63
+[; ;timer.c: 63:     stepToggle = 0;
 [e = _stepToggle -> -> 0 `i `uc ]
-"64
-[; ;timer.c: 64:     return temp;
+"65
+[; ;timer.c: 65:     return temp;
 [e ) -> _temp `ui ]
 [e $UE 241  ]
-"65
-[; ;timer.c: 65: }
+"66
+[; ;timer.c: 66: }
 [e :UE 241 ]
 }
-"70
-[; ;timer.c: 70: unsigned int stepCounter(void){
+"71
+[; ;timer.c: 71: unsigned int stepCounter(void){
 [v _stepCounter `(ui ~T0 @X0 1 ef ]
 {
 [e :U _stepCounter ]
 [f ]
-"71
-[; ;timer.c: 71:     return pwmStep;
+"72
+[; ;timer.c: 72:     return pwmStep;
 [e ) -> _pwmStep `ui ]
 [e $UE 242  ]
-"72
-[; ;timer.c: 72: }
+"73
+[; ;timer.c: 73: }
 [e :UE 242 ]
 }
-"77
-[; ;timer.c: 77: void resetStep(void){
+"78
+[; ;timer.c: 78: void resetStep(void){
 [v _resetStep `(v ~T0 @X0 1 ef ]
 {
 [e :U _resetStep ]
 [f ]
-"78
-[; ;timer.c: 78:     pwmStep = 0;
-[e = _pwmStep -> -> 0 `i `uc ]
 "79
-[; ;timer.c: 79: }
+[; ;timer.c: 79:     pwmStep = 0;
+[e = _pwmStep -> -> 0 `i `uc ]
+"80
+[; ;timer.c: 80: }
 [e :UE 243 ]
 }
-"84
-[; ;timer.c: 84: void increaseStep(void){
+"85
+[; ;timer.c: 85: void increaseStep(void){
 [v _increaseStep `(v ~T0 @X0 1 ef ]
 {
 [e :U _increaseStep ]
 [f ]
-"85
-[; ;timer.c: 85:     pwmStep++;
-[e ++ _pwmStep -> -> 1 `i `Vuc ]
 "86
-[; ;timer.c: 86: }
+[; ;timer.c: 86:     pwmStep++;
+[e ++ _pwmStep -> -> 1 `i `Vuc ]
+"87
+[; ;timer.c: 87: }
 [e :UE 244 ]
 }
-"92
-[; ;timer.c: 92: void toggleStep(void){
+"93
+[; ;timer.c: 93: void toggleStep(void){
 [v _toggleStep `(v ~T0 @X0 1 ef ]
 {
 [e :U _toggleStep ]
 [f ]
-"93
-[; ;timer.c: 93:     stepToggle = 1;
-[e = _stepToggle -> -> 1 `i `uc ]
 "94
-[; ;timer.c: 94: }
+[; ;timer.c: 94:     stepToggle = 1;
+[e = _stepToggle -> -> 1 `i `uc ]
+"95
+[; ;timer.c: 95: }
 [e :UE 245 ]
 }
-"100
-[; ;timer.c: 100: unsigned int retPeriod(void){
+"101
+[; ;timer.c: 101: unsigned int retPeriod(void){
 [v _retPeriod `(ui ~T0 @X0 1 ef ]
 {
 [e :U _retPeriod ]
 [f ]
-"101
-[; ;timer.c: 101:     return pwmPeriod;
+"102
+[; ;timer.c: 102:     return pwmPeriod;
 [e ) _pwmPeriod ]
 [e $UE 246  ]
-"102
-[; ;timer.c: 102: }
+"103
+[; ;timer.c: 103: }
 [e :UE 246 ]
 }

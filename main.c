@@ -167,7 +167,7 @@ char executeData(){
         posVector[1] = data->posY;
 
         //Rotate the object -> byte number 4
-        rotAngle = data->rotation - rotAngle;
+        rotAngle = data->rotation;
         //if the angle is smaller than 0 then rotate by 360 degrees
         if(rotAngle < 0){
             rotAngle += 360;

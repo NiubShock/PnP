@@ -3919,6 +3919,8 @@ unsigned int retPeriod(void);
 
 # 1 "./interrupt.h" 1
 void interruptInit(void);
+void resetTM0_Temp(void);
+void resetTM2_Temp(void);
 # 6 "./main.h" 2
 
 # 1 "./usart.h" 1
@@ -4118,7 +4120,7 @@ char executeData(){
         posVector[1] = data->posY;
 
 
-        rotAngle = data->rotation - rotAngle;
+        rotAngle = data->rotation;
 
         if(rotAngle < 0){
             rotAngle += 360;

@@ -3927,6 +3927,8 @@ unsigned int retPeriod(void);
 
 # 1 "./interrupt.h" 1
 void interruptInit(void);
+void resetTM0_Temp(void);
+void resetTM2_Temp(void);
 # 6 "./main.h" 2
 
 # 1 "./usart.h" 1
@@ -3972,6 +3974,20 @@ static unsigned int ADC_res = 0;
 static const unsigned int touch_pressure = 0x200;
 static const unsigned int therm_pressure = 0x400;
 
+static unsigned int single_cycle = 0;
+static unsigned char tm0Count = 0;
+static unsigned char completeStep = 0;
+
+
+void resetTM0_Temp(){
+    tm0Count = 0;
+}
+
+void resetTM2_Temp(){
+    single_cycle = 0;
+    completeStep = 0;
+}
+
 
 
 
@@ -3994,9 +4010,7 @@ void interruptInit(void){
 }
 
 void __attribute__((picinterrupt(("")))) isr(){
-    static unsigned int single_cycle = 0;
-    static unsigned char tm0Count = 0;
-    static unsigned char completeStep = 0;
+
 
 
     if(INTCONbits.T0IF){
