@@ -18,9 +18,9 @@
 #define FATAL_ERROR             7       //fatal error. All off and wait the reset
 #define NO_CMD                  8       //not recognized command
 
-#define PICK_AND_PLACE          0
-#define NEW_PICK                1
-#define FATAL_CMD               2
+#define PICK_AND_PLACE          1
+#define NEW_PICK                2
+#define FATAL_CMD               3
 
 #define NEW_FEEDER              0xFF
 

@@ -42,22 +42,14 @@ void main(void) {
             t_newSequence* newData = getNewSequence();
             
             newFeeder[0] = newData ->init_posX;
-            newFeeder[1] = newData ->init_posY;
-            
-            
-            //disable the reception here
-            RCSTAbits.CREN = 0;
-            
-            storeData(newData ->end_posX);
-            storeData(newData ->end_posY);
+            newFeeder[1] = newData ->init_posY;            
             
             //start the storing of the data
             storeData(PICK_AND_PLACE);
             storeData(NEW_FEEDER);
+            storeData(newData ->end_posX);
+            storeData(newData ->end_posY);
             storeData(newData ->end_rot - newData ->init_rot);
-            
-            //turn on the reception again
-            RCSTAbits.CREN = 1;
             
             //reset the variable for new pick and place sequence
             resetNewSequence();    

@@ -4006,19 +4006,11 @@ void main(void) {
             newFeeder[1] = newData ->init_posY;
 
 
-
-            RCSTAbits.CREN = 0;
-
+            storeData(1);
+            storeData(0xFF);
             storeData(newData ->end_posX);
             storeData(newData ->end_posY);
-
-
-            storeData(0);
-            storeData(0xFF);
             storeData(newData ->end_rot - newData ->init_rot);
-
-
-            RCSTAbits.CREN = 1;
 
 
             resetNewSequence();
@@ -4043,7 +4035,7 @@ void main(void) {
     }
     return;
 }
-# 93 "main.c"
+# 85 "main.c"
 char executeData(){
     t_sequence *data = getData();
 

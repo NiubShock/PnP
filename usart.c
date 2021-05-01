@@ -27,6 +27,13 @@ static const unsigned int maxY = 101;
 static const unsigned char maxFeedX = 30;
 static const unsigned char maxFeedY= 100;
 
+
+static unsigned char counter = 0;       //counter for each single sequence
+static unsigned char mexLength = 5;
+static unsigned char neverCheck = 0;
+static unsigned char receivedMex[9];
+
+
 //1st byte is the feeder line
 //2nd and 3rd byte is the final position
 //4th byte is the rotation
@@ -175,10 +182,7 @@ void uartTx(unsigned char *ptr, unsigned char length)
  */
 void storeData(unsigned char data){
     
-    static unsigned char counter = 0;       //counter for each single sequence
-    static unsigned char mexLength = 5;
-    static unsigned char command;
-    static unsigned char receivedMex[9];
+
     
     
     //save the data inside the array
@@ -190,20 +194,24 @@ void storeData(unsigned char data){
     switch(receivedMex[0]){
         case PICK_AND_PLACE:
             mexLength = 5;
+            neverCheck = 0;
             break;
         case NEW_PICK:
             mexLength = 9;
+            neverCheck = 0;
             break;
         case FATAL_CMD:
             mexLength = 1;
+            neverCheck = 0;
             break;
         default:
+            neverCheck = 1;
             break;
 
     }
     
     //all the message has been received
-    if(counter >= mexLength){
+    if(counter == mexLength && !neverCheck){
         counter = 0;                    //reset the counter
         
         //check what is the command and save the data
@@ -215,8 +223,8 @@ void storeData(unsigned char data){
                 dataSequence[dataCounter].rotation = receivedMex[4];
                 
                 //verify if the endpoint is within the limit
-                if(dataSequence[dataCounter].posX > maxX || 
-                        dataSequence[dataCounter].posY > maxY){
+                if((dataSequence[dataCounter].posX > maxX || dataSequence[dataCounter].posY > maxY) && 
+                        dataSequence[dataCounter].feederLine != NEW_FEEDER){
                     printError(BOUNDARY_ERROR);
                 }else{
                     dataCounter++;
@@ -254,5 +262,7 @@ void storeData(unsigned char data){
                 break;
                 
         }
+        
+        receivedMex[0] = 0;
     }
 }
