@@ -3962,6 +3962,7 @@ void resetNewSequence(void);
 unsigned char readSeq(void);
 unsigned char fatalError(void);
 void reduceSeq(void);
+void increaseSeq(void);
 void shiftData(void);
 # 7 "./main.h" 2
 # 36 "./main.h"
@@ -4038,8 +4039,10 @@ static unsigned char dataCounter = 0;
 static unsigned char _fatalError = 0;
 static unsigned char _newSequence = 0;
 
-static unsigned int maxX = 101;
-static unsigned int maxY = 101;
+static const unsigned int maxX = 101;
+static const unsigned int maxY = 101;
+static const unsigned char maxFeedX = 30;
+static const unsigned char maxFeedY= 100;
 
 
 
@@ -4068,6 +4071,13 @@ t_newSequence* getNewSequence(){
 
 void reduceSeq(){
     dataCounter--;
+}
+
+
+
+
+void increaseSeq(){
+    dataCounter++;
 }
 
 
@@ -4241,10 +4251,11 @@ void storeData(unsigned char data){
                 newSequenceData.end_rot = receivedMex[8];
 
 
-                if(newSequenceData.init_posX > maxX ||
+                if(newSequenceData.init_posX > maxFeedX ||
                         newSequenceData.end_posX > maxX ||
-                        newSequenceData.init_posY > maxY ||
+                        newSequenceData.init_posY > maxFeedY ||
                         newSequenceData.end_posY > maxY){
+                    _newSequence = 0;
                     printError(5);
                 }else{
                     _newSequence = 1;

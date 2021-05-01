@@ -11,8 +11,7 @@ static const unsigned char feeder1Pos[2] = {15, 20};
 static const unsigned char feeder2Pos[2] = {15, 50};
 static const unsigned char feeder3Pos[2] = {15, 80};
 
-static const unsigned char maxFeedX = 30;
-static const unsigned char maxFeedY= 100;
+
 
 static unsigned char newFeeder[2] = {0, 0};
 
@@ -49,31 +48,20 @@ void main(void) {
             //disable the reception here
             RCSTAbits.CREN = 0;
             
+            storeData(newData ->end_posX);
+            storeData(newData ->end_posY);
             
-            //TODO:Verify that part
-            //verify the boundaries and store only if everything is ok
-            if(newData ->end_posX > maxFeedX || newData ->end_posY > maxFeedY){
-                errCode = BOUNDARY_ERROR;
-            }else{
-                storeData(newData ->end_posX);
-                storeData(newData ->end_posY);
-            }
-            
-            //store the remaining data if no errors occurred
-            if(errCode == ALL_OK){
-                //start the storing of the data
-                storeData(PICK_AND_PLACE);
-                storeData(NEW_FEEDER);
-                storeData(newData ->end_rot - newData ->init_rot);
-            }else{
-                printError(errCode); 
-            }
+            //start the storing of the data
+            storeData(PICK_AND_PLACE);
+            storeData(NEW_FEEDER);
+            storeData(newData ->end_rot - newData ->init_rot);
             
             //turn on the reception again
             RCSTAbits.CREN = 1;
             
             //reset the variable for new pick and place sequence
-            resetNewSequence();            
+            resetNewSequence();    
+            increaseSeq();
         }
         if(readSeq()){
             //check if there are any data available

@@ -28,4 +28,5 @@ void resetNewSequence(void);
 unsigned char readSeq(void);
 unsigned char fatalError(void);
 void reduceSeq(void);
+void increaseSeq(void);
 void shiftData(void);

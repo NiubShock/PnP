@@ -3954,6 +3954,7 @@ void resetNewSequence(void);
 unsigned char readSeq(void);
 unsigned char fatalError(void);
 void reduceSeq(void);
+void increaseSeq(void);
 void shiftData(void);
 # 7 "./main.h" 2
 # 36 "./main.h"
@@ -3971,8 +3972,7 @@ static const unsigned char feeder1Pos[2] = {15, 20};
 static const unsigned char feeder2Pos[2] = {15, 50};
 static const unsigned char feeder3Pos[2] = {15, 80};
 
-static const unsigned char maxFeedX = 30;
-static const unsigned char maxFeedY= 100;
+
 
 static unsigned char newFeeder[2] = {0, 0};
 
@@ -4009,31 +4009,20 @@ void main(void) {
 
             RCSTAbits.CREN = 0;
 
+            storeData(newData ->end_posX);
+            storeData(newData ->end_posY);
 
 
-
-            if(newData ->end_posX > maxFeedX || newData ->end_posY > maxFeedY){
-                errCode = 5;
-            }else{
-                storeData(newData ->end_posX);
-                storeData(newData ->end_posY);
-            }
-
-
-            if(errCode == 0){
-
-                storeData(0);
-                storeData(0xFF);
-                storeData(newData ->end_rot - newData ->init_rot);
-            }else{
-                printError(errCode);
-            }
+            storeData(0);
+            storeData(0xFF);
+            storeData(newData ->end_rot - newData ->init_rot);
 
 
             RCSTAbits.CREN = 1;
 
 
             resetNewSequence();
+            increaseSeq();
         }
         if(readSeq()){
 
@@ -4054,7 +4043,7 @@ void main(void) {
     }
     return;
 }
-# 105 "main.c"
+# 93 "main.c"
 char executeData(){
     t_sequence *data = getData();
 

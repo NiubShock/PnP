@@ -732,10 +732,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 12 `i `uc
 ..
 ]
-[v F2206 `c ~T0 @X0 -> 2 `i t ]
+[v F2207 `c ~T0 @X0 -> 2 `i t ]
 "18
 [; ;motors.c: 18: static signed char motCounter[3][2] = {{0,1},{0,1},{0,1}};
-[v _motCounter `F2206 ~T0 @X0 -> 3 `i s ]
+[v _motCounter `F2207 ~T0 @X0 -> 3 `i s ]
 [i _motCounter
 :U ..
 :U ..
@@ -1979,14 +1979,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "770
 [; ;motors.c: 770:     static const float stepAngle = 2;
-[v F2311 `Cf ~T0 @X0 1 s stepAngle ]
-[i F2311
+[v F2312 `Cf ~T0 @X0 1 s stepAngle ]
+[i F2312
 -> -> 2 `i `f
 ]
 "771
 [; ;motors.c: 771:     static char rotSequence[] = {0b100100, 0b001100, 0b011000, 0b110000};
-[v F2312 `uc ~T0 @X0 -> 4 `i s rotSequence ]
-[i F2312
+[v F2313 `uc ~T0 @X0 -> 4 `i s rotSequence ]
+[i F2313
 :U ..
 -> -> 36 `i `uc
 -> -> 12 `i `uc
@@ -2002,7 +2002,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "773
 [; ;motors.c: 773:     int totStep = rotAngle/stepAngle;
 [v _totStep `i ~T0 @X0 1 a ]
-[e = _totStep -> / -> -> _rotAngle `i `f F2311 `i ]
+[e = _totStep -> / -> -> _rotAngle `i `f F2312 `i ]
 "776
 [; ;motors.c: 776:     for(i = 0; i < totStep; i++){
 {
@@ -2012,7 +2012,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "780
 [; ;motors.c: 780:         LATD = rotSequence[c];
-[e = _LATD -> *U + &U F2312 * -> _c `ux -> -> # *U &U F2312 `ui `ux `uc ]
+[e = _LATD -> *U + &U F2313 * -> _c `ux -> -> # *U &U F2313 `ui `ux `uc ]
 "782
 [; ;motors.c: 782:         c++;
 [e ++ _c -> -> 1 `i `ui ]

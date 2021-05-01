@@ -22,8 +22,10 @@ static unsigned char dataCounter = 0;       //cunter of complete sequence of dat
 static unsigned char _fatalError = 0;
 static unsigned char _newSequence = 0;
 
-static unsigned int maxX = 101;
-static unsigned int maxY = 101;
+static const unsigned int maxX = 101;
+static const unsigned int maxY = 101;
+static const unsigned char maxFeedX = 30;
+static const unsigned char maxFeedY= 100;
 
 //1st byte is the feeder line
 //2nd and 3rd byte is the final position
@@ -52,6 +54,13 @@ t_newSequence* getNewSequence(){
  */
 void reduceSeq(){
     dataCounter--;
+}
+
+/*
+ * Description: Function used to increase by 1 the number of data stored (the counter)
+ */
+void increaseSeq(){
+    dataCounter++;
 }
 
 /*
@@ -225,10 +234,11 @@ void storeData(unsigned char data){
                 newSequenceData.end_rot = receivedMex[8];
                 
                 //verify if the endpoint is within the limit
-                if(newSequenceData.init_posX > maxX ||
+                if(newSequenceData.init_posX > maxFeedX ||
                         newSequenceData.end_posX > maxX ||
-                        newSequenceData.init_posY > maxY ||
+                        newSequenceData.init_posY > maxFeedY ||
                         newSequenceData.end_posY > maxY){
+                    _newSequence = 0;
                     printError(BOUNDARY_ERROR);
                 }else{
                     _newSequence = 1;
