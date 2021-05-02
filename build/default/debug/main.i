@@ -4014,7 +4014,6 @@ void main(void) {
 
 
             resetNewSequence();
-            increaseSeq();
         }
         if(readSeq()){
 
@@ -4035,7 +4034,7 @@ void main(void) {
     }
     return;
 }
-# 85 "main.c"
+# 84 "main.c"
 char executeData(){
     t_sequence *data = getData();
 

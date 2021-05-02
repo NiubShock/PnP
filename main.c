@@ -52,8 +52,7 @@ void main(void) {
             storeData(newData ->end_rot - newData ->init_rot);
             
             //reset the variable for new pick and place sequence
-            resetNewSequence();    
-            increaseSeq();
+            resetNewSequence();
         }
         if(readSeq()){
             //check if there are any data available
