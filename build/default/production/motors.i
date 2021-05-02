@@ -3960,6 +3960,7 @@ void resetNewSequence(void);
 unsigned char readSeq(void);
 unsigned char fatalError(void);
 void reduceSeq(void);
+void increaseSeq(void);
 void shiftData(void);
 # 7 "./main.h" 2
 # 36 "./main.h"
@@ -4638,17 +4639,20 @@ char liftArm(){
 
 void rotateObj(unsigned char rotAngle){
 
-    static const float stepAngle = 10;
+    static const float stepAngle = 2;
     static char rotSequence[] = {0b100100, 0b001100, 0b011000, 0b110000};
-    unsigned int i;
+    unsigned int i, c = 0;
     int totStep = rotAngle/stepAngle;
 
 
     for(i = 0; i < totStep; i++){
 
-        LATD &= 0xC3;
 
-        LATD |= rotSequence[i%4];
+
+        LATD = rotSequence[c];
+
+        c++;
+        if (c >= 4) {c = 0;}
 
 
         T2CONbits.TMR2ON = 1;

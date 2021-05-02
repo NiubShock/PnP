@@ -3962,6 +3962,7 @@ void resetNewSequence(void);
 unsigned char readSeq(void);
 unsigned char fatalError(void);
 void reduceSeq(void);
+void increaseSeq(void);
 void shiftData(void);
 # 7 "./main.h" 2
 # 36 "./main.h"
@@ -4038,8 +4039,17 @@ static unsigned char dataCounter = 0;
 static unsigned char _fatalError = 0;
 static unsigned char _newSequence = 0;
 
-static unsigned int maxX = 101;
-static unsigned int maxY = 101;
+static const unsigned int maxX = 101;
+static const unsigned int maxY = 101;
+static const unsigned char maxFeedX = 30;
+static const unsigned char maxFeedY= 100;
+
+
+static unsigned char counter = 0;
+static unsigned char mexLength = 5;
+static unsigned char neverCheck = 0;
+static unsigned char receivedMex[9];
+
 
 
 
@@ -4068,6 +4078,13 @@ t_newSequence* getNewSequence(){
 
 void reduceSeq(){
     dataCounter--;
+}
+
+
+
+
+void increaseSeq(){
+    dataCounter++;
 }
 
 
@@ -4182,10 +4199,7 @@ void uartTx(unsigned char *ptr, unsigned char length)
 
 void storeData(unsigned char data){
 
-    static unsigned char counter = 0;
-    static unsigned char mexLength = 5;
-    static unsigned char command;
-    static unsigned char receivedMex[9];
+
 
 
 
@@ -4195,41 +4209,46 @@ void storeData(unsigned char data){
 
 
     switch(receivedMex[0]){
-        case 0:
-            mexLength = 5;
-            break;
         case 1:
-            mexLength = 9;
+            mexLength = 5;
+            neverCheck = 0;
             break;
         case 2:
+            mexLength = 9;
+            neverCheck = 0;
+            break;
+        case 3:
             mexLength = 1;
+            neverCheck = 0;
             break;
         default:
+            neverCheck = 1;
+            counter = 0;
             break;
 
     }
 
 
-    if(counter >= mexLength){
+    if(counter == mexLength && !neverCheck){
         counter = 0;
 
 
         switch(receivedMex[0]){
-            case 0:
+            case 1:
                 dataSequence[dataCounter].feederLine = receivedMex[1];
                 dataSequence[dataCounter].posX = receivedMex[2] * 5;
                 dataSequence[dataCounter].posY = receivedMex[3] * 5;
                 dataSequence[dataCounter].rotation = receivedMex[4];
 
 
-                if(dataSequence[dataCounter].posX > maxX ||
-                        dataSequence[dataCounter].posY > maxY){
+                if((dataSequence[dataCounter].posX > maxX || dataSequence[dataCounter].posY > maxY) &&
+                        dataSequence[dataCounter].feederLine != 0xFF){
                     printError(5);
                 }else{
                     dataCounter++;
                 }
                 break;
-            case 1:
+            case 2:
 
                 newSequenceData.L = receivedMex[1];
                 newSequenceData.W = receivedMex[2];
@@ -4241,16 +4260,17 @@ void storeData(unsigned char data){
                 newSequenceData.end_rot = receivedMex[8];
 
 
-                if(newSequenceData.init_posX > maxX ||
+                if(newSequenceData.init_posX > maxFeedX ||
                         newSequenceData.end_posX > maxX ||
-                        newSequenceData.init_posY > maxY ||
+                        newSequenceData.init_posY > maxFeedY ||
                         newSequenceData.end_posY > maxY){
+                    _newSequence = 0;
                     printError(5);
                 }else{
                     _newSequence = 1;
                 }
                 break;
-            case 2:
+            case 3:
 
                 _fatalError = 1;
                 break;
@@ -4260,5 +4280,7 @@ void storeData(unsigned char data){
                 break;
 
         }
+
+        receivedMex[0] = 0;
     }
 }

@@ -906,562 +906,611 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ]
 "25
-[; ;usart.c: 25: static unsigned int maxX = 101;
-[v _maxX `ui ~T0 @X0 1 s ]
+[; ;usart.c: 25: static const unsigned int maxX = 101;
+[v _maxX `Cui ~T0 @X0 1 s ]
 [i _maxX
 -> -> 101 `i `ui
 ]
 "26
-[; ;usart.c: 26: static unsigned int maxY = 101;
-[v _maxY `ui ~T0 @X0 1 s ]
+[; ;usart.c: 26: static const unsigned int maxY = 101;
+[v _maxY `Cui ~T0 @X0 1 s ]
 [i _maxY
 -> -> 101 `i `ui
 ]
+"27
+[; ;usart.c: 27: static const unsigned char maxFeedX = 30;
+[v _maxFeedX `Cuc ~T0 @X0 1 s ]
+[i _maxFeedX
+-> -> 30 `i `uc
+]
+"28
+[; ;usart.c: 28: static const unsigned char maxFeedY= 100;
+[v _maxFeedY `Cuc ~T0 @X0 1 s ]
+[i _maxFeedY
+-> -> 100 `i `uc
+]
 "31
-[; ;usart.c: 31: static t_sequence dataSequence[5];
-[v _dataSequence `S238 ~T0 @X0 -> 5 `i s ]
+[; ;usart.c: 31: static unsigned char counter = 0;
+[v _counter `uc ~T0 @X0 1 s ]
+[i _counter
+-> -> 0 `i `uc
+]
 "32
-[; ;usart.c: 32: static t_newSequence newSequenceData;
+[; ;usart.c: 32: static unsigned char mexLength = 5;
+[v _mexLength `uc ~T0 @X0 1 s ]
+[i _mexLength
+-> -> 5 `i `uc
+]
+"33
+[; ;usart.c: 33: static unsigned char neverCheck = 0;
+[v _neverCheck `uc ~T0 @X0 1 s ]
+[i _neverCheck
+-> -> 0 `i `uc
+]
+"34
+[; ;usart.c: 34: static unsigned char receivedMex[9];
+[v _receivedMex `uc ~T0 @X0 -> 9 `i s ]
+"40
+[; ;usart.c: 40: static t_sequence dataSequence[5];
+[v _dataSequence `S238 ~T0 @X0 -> 5 `i s ]
+"41
+[; ;usart.c: 41: static t_newSequence newSequenceData;
 [v _newSequenceData `S239 ~T0 @X0 1 s ]
-"38
-[; ;usart.c: 38: t_sequence* getData(){
+"47
+[; ;usart.c: 47: t_sequence* getData(){
 [v _getData `(*S238 ~T0 @X0 1 ef ]
 {
 [e :U _getData ]
 [f ]
-"39
-[; ;usart.c: 39:     return(&dataSequence[0]);
+"48
+[; ;usart.c: 48:     return(&dataSequence[0]);
 [e ) &U *U + &U _dataSequence * -> -> -> 0 `i `ui `ux -> -> # *U &U _dataSequence `ui `ux ]
 [e $UE 241  ]
-"40
-[; ;usart.c: 40: }
+"49
+[; ;usart.c: 49: }
 [e :UE 241 ]
 }
-"46
-[; ;usart.c: 46: t_newSequence* getNewSequence(){
+"55
+[; ;usart.c: 55: t_newSequence* getNewSequence(){
 [v _getNewSequence `(*S239 ~T0 @X0 1 ef ]
 {
 [e :U _getNewSequence ]
 [f ]
-"47
-[; ;usart.c: 47:     return(&newSequenceData);
+"56
+[; ;usart.c: 56:     return(&newSequenceData);
 [e ) &U _newSequenceData ]
 [e $UE 242  ]
-"48
-[; ;usart.c: 48: }
+"57
+[; ;usart.c: 57: }
 [e :UE 242 ]
 }
-"53
-[; ;usart.c: 53: void reduceSeq(){
+"62
+[; ;usart.c: 62: void reduceSeq(){
 [v _reduceSeq `(v ~T0 @X0 1 ef ]
 {
 [e :U _reduceSeq ]
 [f ]
-"54
-[; ;usart.c: 54:     dataCounter--;
+"63
+[; ;usart.c: 63:     dataCounter--;
 [e -- _dataCounter -> -> 1 `i `uc ]
-"55
-[; ;usart.c: 55: }
+"64
+[; ;usart.c: 64: }
 [e :UE 243 ]
 }
-"60
-[; ;usart.c: 60: unsigned char readSeq(){
+"69
+[; ;usart.c: 69: void increaseSeq(){
+[v _increaseSeq `(v ~T0 @X0 1 ef ]
+{
+[e :U _increaseSeq ]
+[f ]
+"70
+[; ;usart.c: 70:     dataCounter++;
+[e ++ _dataCounter -> -> 1 `i `uc ]
+"71
+[; ;usart.c: 71: }
+[e :UE 244 ]
+}
+"76
+[; ;usart.c: 76: unsigned char readSeq(){
 [v _readSeq `(uc ~T0 @X0 1 ef ]
 {
 [e :U _readSeq ]
 [f ]
-"61
-[; ;usart.c: 61:     return dataCounter;
+"77
+[; ;usart.c: 77:     return dataCounter;
 [e ) _dataCounter ]
-[e $UE 244  ]
-"62
-[; ;usart.c: 62: }
-[e :UE 244 ]
+[e $UE 245  ]
+"78
+[; ;usart.c: 78: }
+[e :UE 245 ]
 }
-"64
-[; ;usart.c: 64: unsigned char fatalError(){
+"80
+[; ;usart.c: 80: unsigned char fatalError(){
 [v _fatalError `(uc ~T0 @X0 1 ef ]
 {
 [e :U _fatalError ]
 [f ]
-"65
-[; ;usart.c: 65:     return _fatalError;
+"81
+[; ;usart.c: 81:     return _fatalError;
 [e ) __fatalError ]
-[e $UE 245  ]
-"66
-[; ;usart.c: 66: }
-[e :UE 245 ]
+[e $UE 246  ]
+"82
+[; ;usart.c: 82: }
+[e :UE 246 ]
 }
-"68
-[; ;usart.c: 68: unsigned char newSequence(){
+"84
+[; ;usart.c: 84: unsigned char newSequence(){
 [v _newSequence `(uc ~T0 @X0 1 ef ]
 {
 [e :U _newSequence ]
 [f ]
-"69
-[; ;usart.c: 69:     return _newSequence;
+"85
+[; ;usart.c: 85:     return _newSequence;
 [e ) __newSequence ]
-[e $UE 246  ]
-"70
-[; ;usart.c: 70: }
-[e :UE 246 ]
+[e $UE 247  ]
+"86
+[; ;usart.c: 86: }
+[e :UE 247 ]
 }
-"76
-[; ;usart.c: 76: void resetNewSequence(){
+"92
+[; ;usart.c: 92: void resetNewSequence(){
 [v _resetNewSequence `(v ~T0 @X0 1 ef ]
 {
 [e :U _resetNewSequence ]
 [f ]
-"77
-[; ;usart.c: 77:     _newSequence = 0;
+"93
+[; ;usart.c: 93:     _newSequence = 0;
 [e = __newSequence -> -> 0 `i `uc ]
-"78
-[; ;usart.c: 78: }
-[e :UE 247 ]
+"94
+[; ;usart.c: 94: }
+[e :UE 248 ]
 }
-"84
-[; ;usart.c: 84: void shiftData(){
+"100
+[; ;usart.c: 100: void shiftData(){
 [v _shiftData `(v ~T0 @X0 1 ef ]
 {
 [e :U _shiftData ]
 [f ]
-"85
-[; ;usart.c: 85:     char i;
+"101
+[; ;usart.c: 101:     char i;
 [v _i `uc ~T0 @X0 1 a ]
-"87
-[; ;usart.c: 87:     for(i = 0; i < 4; i++){
+"103
+[; ;usart.c: 103:     for(i = 0; i < 4; i++){
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 4 `i 249  ]
-[e $U 250  ]
-[e :U 249 ]
+[e $ < -> _i `i -> 4 `i 250  ]
+[e $U 251  ]
+[e :U 250 ]
 {
-"88
-[; ;usart.c: 88:         dataSequence[i] = dataSequence[i+1];
+"104
+[; ;usart.c: 104:         dataSequence[i] = dataSequence[i+1];
 [e = *U + &U _dataSequence * -> _i `ux -> -> # *U &U _dataSequence `ui `ux *U + &U _dataSequence * -> -> + -> _i `i -> 1 `i `ui `ux -> -> # *U &U _dataSequence `ui `ux ]
-"89
-[; ;usart.c: 89:     }
+"105
+[; ;usart.c: 105:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 4 `i 249  ]
-[e :U 250 ]
+[e $ < -> _i `i -> 4 `i 250  ]
+[e :U 251 ]
 }
-"90
-[; ;usart.c: 90: }
-[e :UE 248 ]
+"106
+[; ;usart.c: 106: }
+[e :UE 249 ]
 }
-"95
-[; ;usart.c: 95: void usartInit(void){
+"111
+[; ;usart.c: 111: void usartInit(void){
 [v _usartInit `(v ~T0 @X0 1 ef ]
 {
 [e :U _usartInit ]
 [f ]
-"97
-[; ;usart.c: 97:     TRISCbits.TRISC6 = 0;
+"113
+[; ;usart.c: 113:     TRISCbits.TRISC6 = 0;
 [e = . . _TRISCbits 0 6 -> -> 0 `i `uc ]
-"98
-[; ;usart.c: 98:     TRISCbits.TRISC7 = 1;
-[e = . . _TRISCbits 0 7 -> -> 1 `i `uc ]
-"100
-[; ;usart.c: 100:     TXSTAbits.TX9 = 0;
-[e = . . _TXSTAbits 0 6 -> -> 0 `i `uc ]
-"101
-[; ;usart.c: 101:     TXSTAbits.TXEN = 1;
-[e = . . _TXSTAbits 0 5 -> -> 1 `i `uc ]
-"102
-[; ;usart.c: 102:     TXSTAbits.SYNC = 0;
-[e = . . _TXSTAbits 0 4 -> -> 0 `i `uc ]
-"103
-[; ;usart.c: 103:     TXSTAbits.BRGH = 0;
-[e = . . _TXSTAbits 0 2 -> -> 0 `i `uc ]
-"105
-[; ;usart.c: 105:     RCSTAbits.SPEN = 1;
-[e = . . _RCSTAbits 0 7 -> -> 1 `i `uc ]
-"106
-[; ;usart.c: 106:     RCSTAbits.RX9 = 0;
-[e = . . _RCSTAbits 0 6 -> -> 0 `i `uc ]
-"107
-[; ;usart.c: 107:     RCSTAbits.CREN = 0;
-[e = . . _RCSTAbits 0 4 -> -> 0 `i `uc ]
-"108
-[; ;usart.c: 108:     RCSTAbits.ADDEN = 0;
-[e = . . _RCSTAbits 0 3 -> -> 0 `i `uc ]
-"111
-[; ;usart.c: 111:     SPBRG = 25;
-[e = _SPBRG -> -> 25 `i `uc ]
-"112
-[; ;usart.c: 112: }
-[e :UE 252 ]
-}
 "114
-[; ;usart.c: 114: void printError(unsigned char errCode){
+[; ;usart.c: 114:     TRISCbits.TRISC7 = 1;
+[e = . . _TRISCbits 0 7 -> -> 1 `i `uc ]
+"116
+[; ;usart.c: 116:     TXSTAbits.TX9 = 0;
+[e = . . _TXSTAbits 0 6 -> -> 0 `i `uc ]
+"117
+[; ;usart.c: 117:     TXSTAbits.TXEN = 1;
+[e = . . _TXSTAbits 0 5 -> -> 1 `i `uc ]
+"118
+[; ;usart.c: 118:     TXSTAbits.SYNC = 0;
+[e = . . _TXSTAbits 0 4 -> -> 0 `i `uc ]
+"119
+[; ;usart.c: 119:     TXSTAbits.BRGH = 0;
+[e = . . _TXSTAbits 0 2 -> -> 0 `i `uc ]
+"121
+[; ;usart.c: 121:     RCSTAbits.SPEN = 1;
+[e = . . _RCSTAbits 0 7 -> -> 1 `i `uc ]
+"122
+[; ;usart.c: 122:     RCSTAbits.RX9 = 0;
+[e = . . _RCSTAbits 0 6 -> -> 0 `i `uc ]
+"123
+[; ;usart.c: 123:     RCSTAbits.CREN = 0;
+[e = . . _RCSTAbits 0 4 -> -> 0 `i `uc ]
+"124
+[; ;usart.c: 124:     RCSTAbits.ADDEN = 0;
+[e = . . _RCSTAbits 0 3 -> -> 0 `i `uc ]
+"127
+[; ;usart.c: 127:     SPBRG = 25;
+[e = _SPBRG -> -> 25 `i `uc ]
+"128
+[; ;usart.c: 128: }
+[e :UE 253 ]
+}
+"130
+[; ;usart.c: 130: void printError(unsigned char errCode){
 [v _printError `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _printError ]
 [v _errCode `uc ~T0 @X0 1 r1 ]
 [f ]
-"116
-[; ;usart.c: 116:     switch(errCode){
-[e $U 255  ]
-{
-"117
-[; ;usart.c: 117:         case 1:
-[e :U 256 ]
-"118
-[; ;usart.c: 118:             uartTx(&errString_Feed[0], sizeof(errString_Feed));
-[e ( _uartTx (2 , &U *U + &U _errString_Feed * -> -> -> 0 `i `ui `ux -> -> # *U &U _errString_Feed `ui `ux -> -> # _errString_Feed `ui `uc ]
-"119
-[; ;usart.c: 119:             break;
-[e $U 254  ]
-"120
-[; ;usart.c: 120:         case 2:
-[e :U 257 ]
-"121
-[; ;usart.c: 121:             uartTx(&errString_ZEND[0], sizeof(errString_ZEND));
-[e ( _uartTx (2 , &U *U + &U _errString_ZEND * -> -> -> 0 `i `ui `ux -> -> # *U &U _errString_ZEND `ui `ux -> -> # _errString_ZEND `ui `uc ]
-"122
-[; ;usart.c: 122:             break;
-[e $U 254  ]
-"123
-[; ;usart.c: 123:         case 3:
-[e :U 258 ]
-"124
-[; ;usart.c: 124:             uartTx(&errString_Reset[0], sizeof(errString_Reset));
-[e ( _uartTx (2 , &U *U + &U _errString_Reset * -> -> -> 0 `i `ui `ux -> -> # *U &U _errString_Reset `ui `ux -> -> # _errString_Reset `ui `uc ]
-"125
-[; ;usart.c: 125:             break;
-[e $U 254  ]
-"126
-[; ;usart.c: 126:         case 4:
-[e :U 259 ]
-"127
-[; ;usart.c: 127:             uartTx(&errString_Point[0], sizeof(errString_Point));
-[e ( _uartTx (2 , &U *U + &U _errString_Point * -> -> -> 0 `i `ui `ux -> -> # *U &U _errString_Point `ui `ux -> -> # _errString_Point `ui `uc ]
-"128
-[; ;usart.c: 128:             break;
-[e $U 254  ]
-"129
-[; ;usart.c: 129:         case 5:
-[e :U 260 ]
-"130
-[; ;usart.c: 130:             uartTx(&errString_Bound[0], sizeof(errString_Bound));
-[e ( _uartTx (2 , &U *U + &U _errString_Bound * -> -> -> 0 `i `ui `ux -> -> # *U &U _errString_Bound `ui `ux -> -> # _errString_Bound `ui `uc ]
-"131
-[; ;usart.c: 131:             break;
-[e $U 254  ]
 "132
-[; ;usart.c: 132:         case 6:
-[e :U 261 ]
+[; ;usart.c: 132:     switch(errCode){
+[e $U 256  ]
+{
 "133
-[; ;usart.c: 133:             uartTx(&errString_PointZ[0], sizeof(errString_PointZ));
-[e ( _uartTx (2 , &U *U + &U _errString_PointZ * -> -> -> 0 `i `ui `ux -> -> # *U &U _errString_PointZ `ui `ux -> -> # _errString_PointZ `ui `uc ]
+[; ;usart.c: 133:         case 1:
+[e :U 257 ]
 "134
-[; ;usart.c: 134:             break;
-[e $U 254  ]
+[; ;usart.c: 134:             uartTx(&errString_Feed[0], sizeof(errString_Feed));
+[e ( _uartTx (2 , &U *U + &U _errString_Feed * -> -> -> 0 `i `ui `ux -> -> # *U &U _errString_Feed `ui `ux -> -> # _errString_Feed `ui `uc ]
 "135
-[; ;usart.c: 135:         case 7:
-[e :U 262 ]
+[; ;usart.c: 135:             break;
+[e $U 255  ]
 "136
-[; ;usart.c: 136:             uartTx(&errString_Fatal[0], sizeof(errString_Fatal));
-[e ( _uartTx (2 , &U *U + &U _errString_Fatal * -> -> -> 0 `i `ui `ux -> -> # *U &U _errString_Fatal `ui `ux -> -> # _errString_Fatal `ui `uc ]
+[; ;usart.c: 136:         case 2:
+[e :U 258 ]
 "137
-[; ;usart.c: 137:             break;
-[e $U 254  ]
+[; ;usart.c: 137:             uartTx(&errString_ZEND[0], sizeof(errString_ZEND));
+[e ( _uartTx (2 , &U *U + &U _errString_ZEND * -> -> -> 0 `i `ui `ux -> -> # *U &U _errString_ZEND `ui `ux -> -> # _errString_ZEND `ui `uc ]
 "138
-[; ;usart.c: 138:         case 8:
-[e :U 263 ]
+[; ;usart.c: 138:             break;
+[e $U 255  ]
 "139
-[; ;usart.c: 139:             uartTx(&errString_Command[0], sizeof(errString_Command));
-[e ( _uartTx (2 , &U *U + &U _errString_Command * -> -> -> 0 `i `ui `ux -> -> # *U &U _errString_Command `ui `ux -> -> # _errString_Command `ui `uc ]
+[; ;usart.c: 139:         case 3:
+[e :U 259 ]
 "140
-[; ;usart.c: 140:             break;
-[e $U 254  ]
+[; ;usart.c: 140:             uartTx(&errString_Reset[0], sizeof(errString_Reset));
+[e ( _uartTx (2 , &U *U + &U _errString_Reset * -> -> -> 0 `i `ui `ux -> -> # *U &U _errString_Reset `ui `ux -> -> # _errString_Reset `ui `uc ]
+"141
+[; ;usart.c: 141:             break;
+[e $U 255  ]
 "142
-[; ;usart.c: 142:         default:
-[e :U 264 ]
+[; ;usart.c: 142:         case 4:
+[e :U 260 ]
 "143
-[; ;usart.c: 143:             break;
-[e $U 254  ]
+[; ;usart.c: 143:             uartTx(&errString_Point[0], sizeof(errString_Point));
+[e ( _uartTx (2 , &U *U + &U _errString_Point * -> -> -> 0 `i `ui `ux -> -> # *U &U _errString_Point `ui `ux -> -> # _errString_Point `ui `uc ]
 "144
-[; ;usart.c: 144:     }
-}
-[e $U 254  ]
-[e :U 255 ]
-[e [\ -> _errCode `i , $ -> 1 `i 256
- , $ -> 2 `i 257
- , $ -> 3 `i 258
- , $ -> 4 `i 259
- , $ -> 5 `i 260
- , $ -> 6 `i 261
- , $ -> 7 `i 262
- , $ -> 8 `i 263
- 264 ]
-[e :U 254 ]
+[; ;usart.c: 144:             break;
+[e $U 255  ]
 "145
-[; ;usart.c: 145: }
-[e :UE 253 ]
-}
+[; ;usart.c: 145:         case 5:
+[e :U 261 ]
+"146
+[; ;usart.c: 146:             uartTx(&errString_Bound[0], sizeof(errString_Bound));
+[e ( _uartTx (2 , &U *U + &U _errString_Bound * -> -> -> 0 `i `ui `ux -> -> # *U &U _errString_Bound `ui `ux -> -> # _errString_Bound `ui `uc ]
+"147
+[; ;usart.c: 147:             break;
+[e $U 255  ]
+"148
+[; ;usart.c: 148:         case 6:
+[e :U 262 ]
+"149
+[; ;usart.c: 149:             uartTx(&errString_PointZ[0], sizeof(errString_PointZ));
+[e ( _uartTx (2 , &U *U + &U _errString_PointZ * -> -> -> 0 `i `ui `ux -> -> # *U &U _errString_PointZ `ui `ux -> -> # _errString_PointZ `ui `uc ]
+"150
+[; ;usart.c: 150:             break;
+[e $U 255  ]
 "151
-[; ;usart.c: 151: void uartTx(unsigned char *ptr, unsigned char length)
-[v _uartTx `(v ~T0 @X0 1 ef2`*uc`uc ]
+[; ;usart.c: 151:         case 7:
+[e :U 263 ]
 "152
-[; ;usart.c: 152: {
+[; ;usart.c: 152:             uartTx(&errString_Fatal[0], sizeof(errString_Fatal));
+[e ( _uartTx (2 , &U *U + &U _errString_Fatal * -> -> -> 0 `i `ui `ux -> -> # *U &U _errString_Fatal `ui `ux -> -> # _errString_Fatal `ui `uc ]
+"153
+[; ;usart.c: 153:             break;
+[e $U 255  ]
+"154
+[; ;usart.c: 154:         case 8:
+[e :U 264 ]
+"155
+[; ;usart.c: 155:             uartTx(&errString_Command[0], sizeof(errString_Command));
+[e ( _uartTx (2 , &U *U + &U _errString_Command * -> -> -> 0 `i `ui `ux -> -> # *U &U _errString_Command `ui `ux -> -> # _errString_Command `ui `uc ]
+"156
+[; ;usart.c: 156:             break;
+[e $U 255  ]
+"158
+[; ;usart.c: 158:         default:
+[e :U 265 ]
+"159
+[; ;usart.c: 159:             break;
+[e $U 255  ]
+"160
+[; ;usart.c: 160:     }
+}
+[e $U 255  ]
+[e :U 256 ]
+[e [\ -> _errCode `i , $ -> 1 `i 257
+ , $ -> 2 `i 258
+ , $ -> 3 `i 259
+ , $ -> 4 `i 260
+ , $ -> 5 `i 261
+ , $ -> 6 `i 262
+ , $ -> 7 `i 263
+ , $ -> 8 `i 264
+ 265 ]
+[e :U 255 ]
+"161
+[; ;usart.c: 161: }
+[e :UE 254 ]
+}
+"167
+[; ;usart.c: 167: void uartTx(unsigned char *ptr, unsigned char length)
+[v _uartTx `(v ~T0 @X0 1 ef2`*uc`uc ]
+"168
+[; ;usart.c: 168: {
 {
 [e :U _uartTx ]
-"151
-[; ;usart.c: 151: void uartTx(unsigned char *ptr, unsigned char length)
+"167
+[; ;usart.c: 167: void uartTx(unsigned char *ptr, unsigned char length)
 [v _ptr `*uc ~T0 @X0 1 r1 ]
 [v _length `uc ~T0 @X0 1 r2 ]
-"152
-[; ;usart.c: 152: {
+"168
+[; ;usart.c: 168: {
 [f ]
-"154
-[; ;usart.c: 154:     for(char i = 1; i < length; i++){
+"170
+[; ;usart.c: 170:     for(char i = 1; i < length; i++){
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 1 `i `uc ]
-[e $U 269  ]
-[e :U 266 ]
-{
-"156
-[; ;usart.c: 156:         TXREG = *ptr;
-[e = _TXREG *U _ptr ]
-"158
-[; ;usart.c: 158:         while(!TXSTAbits.TRMT);
 [e $U 270  ]
-[e :U 271 ]
-[e :U 270 ]
-[e $ ! != -> . . _TXSTAbits 0 1 `i -> 0 `i 271  ]
+[e :U 267 ]
+{
+"172
+[; ;usart.c: 172:         TXREG = *ptr;
+[e = _TXREG *U _ptr ]
+"174
+[; ;usart.c: 174:         while(!TXSTAbits.TRMT);
+[e $U 271  ]
 [e :U 272 ]
-"160
-[; ;usart.c: 160:         ptr++;
+[e :U 271 ]
+[e $ ! != -> . . _TXSTAbits 0 1 `i -> 0 `i 272  ]
+[e :U 273 ]
+"176
+[; ;usart.c: 176:         ptr++;
 [e ++ _ptr * -> -> 1 `i `x -> -> # *U _ptr `i `x ]
-"161
-[; ;usart.c: 161:     }
+"177
+[; ;usart.c: 177:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e :U 269 ]
-[e $ < -> _i `i -> _length `i 266  ]
-[e :U 267 ]
+[e :U 270 ]
+[e $ < -> _i `i -> _length `i 267  ]
+[e :U 268 ]
 }
-"162
-[; ;usart.c: 162: }
-[e :UE 265 ]
+"178
+[; ;usart.c: 178: }
+[e :UE 266 ]
 }
-"167
-[; ;usart.c: 167: void storeData(unsigned char data){
+"183
+[; ;usart.c: 183: void storeData(unsigned char data){
 [v _storeData `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _storeData ]
 [v _data `uc ~T0 @X0 1 r1 ]
 [f ]
-"169
-[; ;usart.c: 169:     static unsigned char counter = 0;
-[v F2400 `uc ~T0 @X0 1 s counter ]
-[i F2400
--> -> 0 `i `uc
-]
-"170
-[; ;usart.c: 170:     static unsigned char mexLength = 5;
-[v F2401 `uc ~T0 @X0 1 s mexLength ]
-[i F2401
--> -> 5 `i `uc
-]
-"171
-[; ;usart.c: 171:     static unsigned char command;
-[v F2402 `uc ~T0 @X0 1 s command ]
-"172
-[; ;usart.c: 172:     static unsigned char receivedMex[9];
-[v F2403 `uc ~T0 @X0 -> 9 `i s receivedMex ]
-"176
-[; ;usart.c: 176:     receivedMex[counter] = data;
-[e = *U + &U F2403 * -> F2400 `ux -> -> # *U &U F2403 `ui `ux _data ]
-"178
-[; ;usart.c: 178:     counter++;
-[e ++ F2400 -> -> 1 `i `uc ]
-"181
-[; ;usart.c: 181:     switch(receivedMex[0]){
-[e $U 275  ]
-{
-"182
-[; ;usart.c: 182:         case 0:
-[e :U 276 ]
-"183
-[; ;usart.c: 183:             mexLength = 5;
-[e = F2401 -> -> 5 `i `uc ]
-"184
-[; ;usart.c: 184:             break;
-[e $U 274  ]
-"185
-[; ;usart.c: 185:         case 1:
-[e :U 277 ]
-"186
-[; ;usart.c: 186:             mexLength = 9;
-[e = F2401 -> -> 9 `i `uc ]
-"187
-[; ;usart.c: 187:             break;
-[e $U 274  ]
-"188
-[; ;usart.c: 188:         case 2:
-[e :U 278 ]
 "189
-[; ;usart.c: 189:             mexLength = 1;
-[e = F2401 -> -> 1 `i `uc ]
-"190
-[; ;usart.c: 190:             break;
-[e $U 274  ]
+[; ;usart.c: 189:     receivedMex[counter] = data;
+[e = *U + &U _receivedMex * -> _counter `ux -> -> # *U &U _receivedMex `ui `ux _data ]
 "191
-[; ;usart.c: 191:         default:
-[e :U 279 ]
-"192
-[; ;usart.c: 192:             break;
-[e $U 274  ]
+[; ;usart.c: 191:     counter++;
+[e ++ _counter -> -> 1 `i `uc ]
 "194
-[; ;usart.c: 194:     }
-}
-[e $U 274  ]
-[e :U 275 ]
-[e [\ -> *U + &U F2403 * -> -> -> 0 `i `ui `ux -> -> # *U &U F2403 `ui `ux `i , $ -> 0 `i 276
- , $ -> 1 `i 277
- , $ -> 2 `i 278
- 279 ]
-[e :U 274 ]
+[; ;usart.c: 194:     switch(receivedMex[0]){
+[e $U 276  ]
+{
+"195
+[; ;usart.c: 195:         case 1:
+[e :U 277 ]
+"196
+[; ;usart.c: 196:             mexLength = 5;
+[e = _mexLength -> -> 5 `i `uc ]
 "197
-[; ;usart.c: 197:     if(counter >= mexLength){
-[e $ ! >= -> F2400 `i -> F2401 `i 280  ]
-{
+[; ;usart.c: 197:             neverCheck = 0;
+[e = _neverCheck -> -> 0 `i `uc ]
 "198
-[; ;usart.c: 198:         counter = 0;
-[e = F2400 -> -> 0 `i `uc ]
+[; ;usart.c: 198:             break;
+[e $U 275  ]
+"199
+[; ;usart.c: 199:         case 2:
+[e :U 278 ]
+"200
+[; ;usart.c: 200:             mexLength = 9;
+[e = _mexLength -> -> 9 `i `uc ]
 "201
-[; ;usart.c: 201:         switch(receivedMex[0]){
-[e $U 282  ]
-{
+[; ;usart.c: 201:             neverCheck = 0;
+[e = _neverCheck -> -> 0 `i `uc ]
 "202
-[; ;usart.c: 202:             case 0:
-[e :U 283 ]
+[; ;usart.c: 202:             break;
+[e $U 275  ]
 "203
-[; ;usart.c: 203:                 dataSequence[dataCounter].feederLine = receivedMex[1];
-[e = . *U + &U _dataSequence * -> _dataCounter `ux -> -> # *U &U _dataSequence `ui `ux 0 *U + &U F2403 * -> -> -> 1 `i `ui `ux -> -> # *U &U F2403 `ui `ux ]
+[; ;usart.c: 203:         case 3:
+[e :U 279 ]
 "204
-[; ;usart.c: 204:                 dataSequence[dataCounter].posX = receivedMex[2] * 5;
-[e = . *U + &U _dataSequence * -> _dataCounter `ux -> -> # *U &U _dataSequence `ui `ux 1 -> * -> *U + &U F2403 * -> -> -> 2 `i `ui `ux -> -> # *U &U F2403 `ui `ux `i -> 5 `i `uc ]
+[; ;usart.c: 204:             mexLength = 1;
+[e = _mexLength -> -> 1 `i `uc ]
 "205
-[; ;usart.c: 205:                 dataSequence[dataCounter].posY = receivedMex[3] * 5;
-[e = . *U + &U _dataSequence * -> _dataCounter `ux -> -> # *U &U _dataSequence `ui `ux 2 -> * -> *U + &U F2403 * -> -> -> 3 `i `ui `ux -> -> # *U &U F2403 `ui `ux `i -> 5 `i `uc ]
+[; ;usart.c: 205:             neverCheck = 0;
+[e = _neverCheck -> -> 0 `i `uc ]
 "206
-[; ;usart.c: 206:                 dataSequence[dataCounter].rotation = receivedMex[4];
-[e = . *U + &U _dataSequence * -> _dataCounter `ux -> -> # *U &U _dataSequence `ui `ux 3 *U + &U F2403 * -> -> -> 4 `i `ui `ux -> -> # *U &U F2403 `ui `ux ]
-"209
-[; ;usart.c: 209:                 if(dataSequence[dataCounter].posX > maxX ||
-[e $ ! || > -> . *U + &U _dataSequence * -> _dataCounter `ux -> -> # *U &U _dataSequence `ui `ux 1 `ui _maxX > -> . *U + &U _dataSequence * -> _dataCounter `ux -> -> # *U &U _dataSequence `ui `ux 2 `ui _maxY 284  ]
-"210
-[; ;usart.c: 210:                         dataSequence[dataCounter].posY > maxY){
-{
-"211
-[; ;usart.c: 211:                     printError(5);
-[e ( _printError (1 -> -> 5 `i `uc ]
-"212
-[; ;usart.c: 212:                 }else{
-}
-[e $U 285  ]
-[e :U 284 ]
-{
-"213
-[; ;usart.c: 213:                     dataCounter++;
-[e ++ _dataCounter -> -> 1 `i `uc ]
-"214
-[; ;usart.c: 214:                 }
-}
-[e :U 285 ]
-"215
-[; ;usart.c: 215:                 break;
-[e $U 281  ]
-"216
-[; ;usart.c: 216:             case 1:
-[e :U 286 ]
-"218
-[; ;usart.c: 218:                 newSequenceData.L = receivedMex[1];
-[e = . _newSequenceData 0 *U + &U F2403 * -> -> -> 1 `i `ui `ux -> -> # *U &U F2403 `ui `ux ]
-"219
-[; ;usart.c: 219:                 newSequenceData.W = receivedMex[2];
-[e = . _newSequenceData 1 *U + &U F2403 * -> -> -> 2 `i `ui `ux -> -> # *U &U F2403 `ui `ux ]
-"220
-[; ;usart.c: 220:                 newSequenceData.init_posX = receivedMex[3] * 5;
-[e = . _newSequenceData 2 -> * -> *U + &U F2403 * -> -> -> 3 `i `ui `ux -> -> # *U &U F2403 `ui `ux `i -> 5 `i `uc ]
-"221
-[; ;usart.c: 221:                 newSequenceData.init_posY = receivedMex[4] * 5;
-[e = . _newSequenceData 3 -> * -> *U + &U F2403 * -> -> -> 4 `i `ui `ux -> -> # *U &U F2403 `ui `ux `i -> 5 `i `uc ]
-"222
-[; ;usart.c: 222:                 newSequenceData.init_rot = receivedMex[5];
-[e = . _newSequenceData 4 *U + &U F2403 * -> -> -> 5 `i `ui `ux -> -> # *U &U F2403 `ui `ux ]
-"223
-[; ;usart.c: 223:                 newSequenceData.end_posX = receivedMex[6] * 5;
-[e = . _newSequenceData 5 -> * -> *U + &U F2403 * -> -> -> 6 `i `ui `ux -> -> # *U &U F2403 `ui `ux `i -> 5 `i `uc ]
-"224
-[; ;usart.c: 224:                 newSequenceData.end_posY = receivedMex[7] * 5;
-[e = . _newSequenceData 6 -> * -> *U + &U F2403 * -> -> -> 7 `i `ui `ux -> -> # *U &U F2403 `ui `ux `i -> 5 `i `uc ]
-"225
-[; ;usart.c: 225:                 newSequenceData.end_rot = receivedMex[8];
-[e = . _newSequenceData 7 *U + &U F2403 * -> -> -> 8 `i `ui `ux -> -> # *U &U F2403 `ui `ux ]
-"228
-[; ;usart.c: 228:                 if(newSequenceData.init_posX > maxX ||
-[e $ ! || || || > -> . _newSequenceData 2 `ui _maxX > -> . _newSequenceData 5 `ui _maxX > -> . _newSequenceData 3 `ui _maxY > -> . _newSequenceData 6 `ui _maxY 287  ]
-"231
-[; ;usart.c: 231:                         newSequenceData.end_posY > maxY){
-{
-"232
-[; ;usart.c: 232:                     printError(5);
-[e ( _printError (1 -> -> 5 `i `uc ]
-"233
-[; ;usart.c: 233:                 }else{
-}
-[e $U 288  ]
-[e :U 287 ]
-{
-"234
-[; ;usart.c: 234:                     _newSequence = 1;
-[e = __newSequence -> -> 1 `i `uc ]
-"235
-[; ;usart.c: 235:                 }
-}
-[e :U 288 ]
-"236
-[; ;usart.c: 236:                 break;
-[e $U 281  ]
-"237
-[; ;usart.c: 237:             case 2:
-[e :U 289 ]
-"239
-[; ;usart.c: 239:                 _fatalError = 1;
-[e = __fatalError -> -> 1 `i `uc ]
-"240
-[; ;usart.c: 240:                 break;
-[e $U 281  ]
-"241
-[; ;usart.c: 241:             default:
-[e :U 290 ]
-"243
-[; ;usart.c: 243:                 printError(8);
-[e ( _printError (1 -> -> 8 `i `uc ]
-"244
-[; ;usart.c: 244:                 break;
-[e $U 281  ]
-"246
-[; ;usart.c: 246:         }
-}
-[e $U 281  ]
-[e :U 282 ]
-[e [\ -> *U + &U F2403 * -> -> -> 0 `i `ui `ux -> -> # *U &U F2403 `ui `ux `i , $ -> 0 `i 283
- , $ -> 1 `i 286
- , $ -> 2 `i 289
- 290 ]
-[e :U 281 ]
-"247
-[; ;usart.c: 247:     }
-}
+[; ;usart.c: 206:             break;
+[e $U 275  ]
+"207
+[; ;usart.c: 207:         default:
 [e :U 280 ]
-"248
-[; ;usart.c: 248: }
-[e :UE 273 ]
+"208
+[; ;usart.c: 208:             neverCheck = 1;
+[e = _neverCheck -> -> 1 `i `uc ]
+"209
+[; ;usart.c: 209:             counter = 0;
+[e = _counter -> -> 0 `i `uc ]
+"210
+[; ;usart.c: 210:             break;
+[e $U 275  ]
+"212
+[; ;usart.c: 212:     }
+}
+[e $U 275  ]
+[e :U 276 ]
+[e [\ -> *U + &U _receivedMex * -> -> -> 0 `i `ui `ux -> -> # *U &U _receivedMex `ui `ux `i , $ -> 1 `i 277
+ , $ -> 2 `i 278
+ , $ -> 3 `i 279
+ 280 ]
+[e :U 275 ]
+"215
+[; ;usart.c: 215:     if(counter == mexLength && !neverCheck){
+[e $ ! && == -> _counter `i -> _mexLength `i ! != -> _neverCheck `i -> 0 `i 281  ]
+{
+"216
+[; ;usart.c: 216:         counter = 0;
+[e = _counter -> -> 0 `i `uc ]
+"219
+[; ;usart.c: 219:         switch(receivedMex[0]){
+[e $U 283  ]
+{
+"220
+[; ;usart.c: 220:             case 1:
+[e :U 284 ]
+"221
+[; ;usart.c: 221:                 dataSequence[dataCounter].feederLine = receivedMex[1];
+[e = . *U + &U _dataSequence * -> _dataCounter `ux -> -> # *U &U _dataSequence `ui `ux 0 *U + &U _receivedMex * -> -> -> 1 `i `ui `ux -> -> # *U &U _receivedMex `ui `ux ]
+"222
+[; ;usart.c: 222:                 dataSequence[dataCounter].posX = receivedMex[2] * 5;
+[e = . *U + &U _dataSequence * -> _dataCounter `ux -> -> # *U &U _dataSequence `ui `ux 1 -> * -> *U + &U _receivedMex * -> -> -> 2 `i `ui `ux -> -> # *U &U _receivedMex `ui `ux `i -> 5 `i `uc ]
+"223
+[; ;usart.c: 223:                 dataSequence[dataCounter].posY = receivedMex[3] * 5;
+[e = . *U + &U _dataSequence * -> _dataCounter `ux -> -> # *U &U _dataSequence `ui `ux 2 -> * -> *U + &U _receivedMex * -> -> -> 3 `i `ui `ux -> -> # *U &U _receivedMex `ui `ux `i -> 5 `i `uc ]
+"224
+[; ;usart.c: 224:                 dataSequence[dataCounter].rotation = receivedMex[4];
+[e = . *U + &U _dataSequence * -> _dataCounter `ux -> -> # *U &U _dataSequence `ui `ux 3 *U + &U _receivedMex * -> -> -> 4 `i `ui `ux -> -> # *U &U _receivedMex `ui `ux ]
+"227
+[; ;usart.c: 227:                 if((dataSequence[dataCounter].posX > maxX || dataSequence[dataCounter].posY > maxY) &&
+[e $ ! && || > -> . *U + &U _dataSequence * -> _dataCounter `ux -> -> # *U &U _dataSequence `ui `ux 1 `ui _maxX > -> . *U + &U _dataSequence * -> _dataCounter `ux -> -> # *U &U _dataSequence `ui `ux 2 `ui _maxY != -> . *U + &U _dataSequence * -> _dataCounter `ux -> -> # *U &U _dataSequence `ui `ux 0 `i -> 255 `i 285  ]
+"228
+[; ;usart.c: 228:                         dataSequence[dataCounter].feederLine != 0xFF){
+{
+"229
+[; ;usart.c: 229:                     printError(5);
+[e ( _printError (1 -> -> 5 `i `uc ]
+"230
+[; ;usart.c: 230:                 }else{
+}
+[e $U 286  ]
+[e :U 285 ]
+{
+"231
+[; ;usart.c: 231:                     dataCounter++;
+[e ++ _dataCounter -> -> 1 `i `uc ]
+"232
+[; ;usart.c: 232:                 }
+}
+[e :U 286 ]
+"233
+[; ;usart.c: 233:                 break;
+[e $U 282  ]
+"234
+[; ;usart.c: 234:             case 2:
+[e :U 287 ]
+"236
+[; ;usart.c: 236:                 newSequenceData.L = receivedMex[1];
+[e = . _newSequenceData 0 *U + &U _receivedMex * -> -> -> 1 `i `ui `ux -> -> # *U &U _receivedMex `ui `ux ]
+"237
+[; ;usart.c: 237:                 newSequenceData.W = receivedMex[2];
+[e = . _newSequenceData 1 *U + &U _receivedMex * -> -> -> 2 `i `ui `ux -> -> # *U &U _receivedMex `ui `ux ]
+"238
+[; ;usart.c: 238:                 newSequenceData.init_posX = receivedMex[3] * 5;
+[e = . _newSequenceData 2 -> * -> *U + &U _receivedMex * -> -> -> 3 `i `ui `ux -> -> # *U &U _receivedMex `ui `ux `i -> 5 `i `uc ]
+"239
+[; ;usart.c: 239:                 newSequenceData.init_posY = receivedMex[4] * 5;
+[e = . _newSequenceData 3 -> * -> *U + &U _receivedMex * -> -> -> 4 `i `ui `ux -> -> # *U &U _receivedMex `ui `ux `i -> 5 `i `uc ]
+"240
+[; ;usart.c: 240:                 newSequenceData.init_rot = receivedMex[5];
+[e = . _newSequenceData 4 *U + &U _receivedMex * -> -> -> 5 `i `ui `ux -> -> # *U &U _receivedMex `ui `ux ]
+"241
+[; ;usart.c: 241:                 newSequenceData.end_posX = receivedMex[6] * 5;
+[e = . _newSequenceData 5 -> * -> *U + &U _receivedMex * -> -> -> 6 `i `ui `ux -> -> # *U &U _receivedMex `ui `ux `i -> 5 `i `uc ]
+"242
+[; ;usart.c: 242:                 newSequenceData.end_posY = receivedMex[7] * 5;
+[e = . _newSequenceData 6 -> * -> *U + &U _receivedMex * -> -> -> 7 `i `ui `ux -> -> # *U &U _receivedMex `ui `ux `i -> 5 `i `uc ]
+"243
+[; ;usart.c: 243:                 newSequenceData.end_rot = receivedMex[8];
+[e = . _newSequenceData 7 *U + &U _receivedMex * -> -> -> 8 `i `ui `ux -> -> # *U &U _receivedMex `ui `ux ]
+"246
+[; ;usart.c: 246:                 if(newSequenceData.init_posX > maxFeedX ||
+[e $ ! || || || > -> . _newSequenceData 2 `i -> _maxFeedX `i > -> . _newSequenceData 5 `ui _maxX > -> . _newSequenceData 3 `i -> _maxFeedY `i > -> . _newSequenceData 6 `ui _maxY 288  ]
+"249
+[; ;usart.c: 249:                         newSequenceData.end_posY > maxY){
+{
+"250
+[; ;usart.c: 250:                     _newSequence = 0;
+[e = __newSequence -> -> 0 `i `uc ]
+"251
+[; ;usart.c: 251:                     printError(5);
+[e ( _printError (1 -> -> 5 `i `uc ]
+"252
+[; ;usart.c: 252:                 }else{
+}
+[e $U 289  ]
+[e :U 288 ]
+{
+"253
+[; ;usart.c: 253:                     _newSequence = 1;
+[e = __newSequence -> -> 1 `i `uc ]
+"254
+[; ;usart.c: 254:                 }
+}
+[e :U 289 ]
+"255
+[; ;usart.c: 255:                 break;
+[e $U 282  ]
+"256
+[; ;usart.c: 256:             case 3:
+[e :U 290 ]
+"258
+[; ;usart.c: 258:                 _fatalError = 1;
+[e = __fatalError -> -> 1 `i `uc ]
+"259
+[; ;usart.c: 259:                 break;
+[e $U 282  ]
+"260
+[; ;usart.c: 260:             default:
+[e :U 291 ]
+"262
+[; ;usart.c: 262:                 printError(8);
+[e ( _printError (1 -> -> 8 `i `uc ]
+"263
+[; ;usart.c: 263:                 break;
+[e $U 282  ]
+"265
+[; ;usart.c: 265:         }
+}
+[e $U 282  ]
+[e :U 283 ]
+[e [\ -> *U + &U _receivedMex * -> -> -> 0 `i `ui `ux -> -> # *U &U _receivedMex `ui `ux `i , $ -> 1 `i 284
+ , $ -> 2 `i 287
+ , $ -> 3 `i 290
+ 291 ]
+[e :U 282 ]
+"267
+[; ;usart.c: 267:         receivedMex[0] = 0;
+[e = *U + &U _receivedMex * -> -> -> 0 `i `ui `ux -> -> # *U &U _receivedMex `ui `ux -> -> 0 `i `uc ]
+"268
+[; ;usart.c: 268:     }
+}
+[e :U 281 ]
+"269
+[; ;usart.c: 269: }
+[e :UE 274 ]
 }

@@ -206,6 +206,7 @@ void storeData(unsigned char data){
             break;
         default:
             neverCheck = 1;
+            counter = 0;
             break;
 
     }
