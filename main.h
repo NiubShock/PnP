@@ -8,6 +8,18 @@
 
 #define _XTAL_FREQ 4000000
 
+#define START                   0       //start of the PNP sequence
+#define MOVEPICK                1       //move to the pick position
+#define PICKOBJ                 2       //pick the object
+#define OBJPICKD                3       //object picked
+#define LIFTARM                 4       //lifting the arm
+#define MOVEPLACE               5       //move to the place position
+#define ROTATE                  6       //rotating the object
+#define PLACEOBJ                7       //place the object on the PCB
+#define OBJRLSD                 8       //object relased
+#define INITRESET               9       //intial position reset
+#define READY                   10      //ready to work
+
 #define ALL_OK                  0       //no error related
 #define FEED_LINE_NOT_DEFINED   1       //not existing line selected
 #define END_Z_AXIS              2       //reached the end of the Z-axis without touching anything

@@ -68,6 +68,7 @@ __size_of_setTouchRel 0 0 ABS 0
 ?_stepMade 12 0 COMRAM 1
 __end_of_executeData 10CC 0 CODE 0
 __Hbigram 0 0 ABS 0
+__cntErrataNOP_C:\Users\alle9\AppData\Local\Temp\s1ct8.o 1 0 ABS 0
 __Lbigram 0 0 ABS 0
 __Hrparam 0 0 COMRAM 1
 __Lrparam 0 0 COMRAM 1
@@ -166,6 +167,7 @@ _retPeriod 2936 0 CODE 0
 _pwmPeriod 4F 0 COMRAM 1
 resetPosition@keepMovingZ 17 0 COMRAM 1
 __end_of___fltol 1DA8 0 CODE 0
+__cntErrataNOP_dist/default/debug\ESD_PnP_1.X.debug.o 215 0 ABS 0
 __size_of_getNewSequence 0 0 ABS 0
 __size_of_initADC 0 0 ABS 0
 __size_of___fldiv 0 0 ABS 0
@@ -347,7 +349,6 @@ _getData 290C 0 CODE 0
 moveToPoint@y2 1B 0 COMRAM 1
 __size_of_getData 0 0 ABS 0
 _resetTM2_Temp 28CC 0 CODE 0
-__cntErrataNOP_dist/default/production\ESD_PnP_1.X.production.o 215 0 ABS 0
 __Hidata 0 0 CODE 0
 __Lidata 0 0 CODE 0
 __end_of_increaseStep 29F2 0 CODE 0
@@ -650,7 +651,6 @@ rotateObj@c 1FB 0 BANK1 1
 start_initialization 2588 0 CODE 0
 __size_of_newSequence 0 0 ABS 0
 __end_of_shiftData 26F2 0 CODE 0
-__cntErrataNOP_C:\Users\alle9\AppData\Local\Temp\sogc.o 1 0 ABS 0
 __size_of_tim2Init 0 0 ABS 0
 __end_of___xxtofl 17D4 0 CODE 0
 __size_of_resetTouch 0 0 ABS 0
@@ -686,9 +686,9 @@ dataBANK2 200 2DD BANK2 200 1
 text29 616 2A00 CODE 616 0
 text 2A02 2A03 CODE 2A02 0
 %locals
-dist/default/production\ESD_PnP_1.X.production.o
+dist/default/debug\ESD_PnP_1.X.debug.o
 D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h
-C:\Users\alle9\AppData\Local\Temp\sogc.s
+C:\Users\alle9\AppData\Local\Temp\s1ct8.s
 2621 2588 0 CODE 0
 2623 2588 0 CODE 0
 2626 2588 0 CODE 0
@@ -1496,7 +1496,7 @@ motors.c
 32 291A 0 CODE 0
 33 291C 0 CODE 0
 34 2924 0 CODE 0
-C:\Users\alle9\AppData\Local\Temp\sogc.s
+C:\Users\alle9\AppData\Local\Temp\s1ct8.s
 11164 8 0 CODE 0
 interrupt.c
 52 8 0 CODE 0

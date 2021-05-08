@@ -1,125 +1,96 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[p mainexit ]
-"1 ./interrupt.h
-[; ;./interrupt.h: 1: void interruptInit(void);
-[v _interruptInit `(v ~T0 @X0 0 ef ]
-"49 ./motors.h
-[; ;./motors.h: 49: void initPinMotors(void);
-[v _initPinMotors `(v ~T0 @X0 0 ef ]
-"37 ./adc.h
-[; ;./adc.h: 37: void initADC(void);
-[v _initADC `(v ~T0 @X0 0 ef ]
-"19 ./usart.h
-[; ;./usart.h: 19: void usartInit(void);
-[v _usartInit `(v ~T0 @X0 0 ef ]
-"37 ./timer.h
-[; ;./timer.h: 37: void tim0Init(void);
-[v _tim0Init `(v ~T0 @X0 0 ef ]
-"38
-[; ;./timer.h: 38: void tim1Init(void);
-[v _tim1Init `(v ~T0 @X0 0 ef ]
-"39
-[; ;./timer.h: 39: void tim2Init(unsigned int _pwmPeriod);
-[v _tim2Init `(v ~T0 @X0 0 ef1`ui ]
-"25 ./usart.h
-[; ;./usart.h: 25: void printStatus(unsigned char status);
-[v _printStatus `(v ~T0 @X0 0 ef1`uc ]
-"50 ./motors.h
-[; ;./motors.h: 50: char resetPosition(void);
-[v _resetPosition `(uc ~T0 @X0 0 ef ]
-"24 ./usart.h
-[; ;./usart.h: 24: void printError(unsigned char errCode);
-[v _printError `(v ~T0 @X0 0 ef1`uc ]
-"2829 D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h
-[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 2829:     struct {
-[s S107 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S107 . RX9D OERR FERR ADDEN CREN SREN RX9 SPEN ]
-"2839
-[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 2839:     struct {
-[s S108 :1 `uc 1 :5 `uc 1 :1 `uc 1 ]
-[n S108 . RCD8 . RC8_9 ]
-"2844
-[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 2844:     struct {
-[s S109 :6 `uc 1 :1 `uc 1 ]
-[n S109 . . NOT_RC8 ]
-"2848
-[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 2848:     struct {
-[s S110 :6 `uc 1 :1 `uc 1 ]
-[n S110 . . nRC8 ]
-"2852
-[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 2852:     struct {
-[s S111 :6 `uc 1 :1 `uc 1 ]
-[n S111 . . RC9 ]
-"2856
-[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 2856:     struct {
-[s S112 :5 `uc 1 :1 `uc 1 ]
-[n S112 . . SRENA ]
-"2828
-[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 2828: typedef union {
-[u S106 `S107 1 `S108 1 `S109 1 `S110 1 `S111 1 `S112 1 ]
-[n S106 . . . . . . . ]
-"2861
-[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 2861: extern volatile RCSTA1bits_t RCSTA1bits __attribute__((address(0xFAB)));
-[v _RCSTA1bits `VS106 ~T0 @X0 0 e@4011 ]
-"27 ./usart.h
-[; ;./usart.h: 27: unsigned char newSequence(void);
-[v _newSequence `(uc ~T0 @X0 0 ef ]
-"8
-[; ;./usart.h: 8: typedef struct{
-[s S239 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 ]
-[n S239 . L W init_posX init_posY init_rot end_posX end_posY end_rot ]
-"22
-[; ;./usart.h: 22: t_newSequence* getNewSequence(void);
-[v _getNewSequence `(*S239 ~T0 @X0 0 ef ]
-"20
-[; ;./usart.h: 20: void storeData(unsigned char data);
-[v _storeData `(v ~T0 @X0 0 ef1`uc ]
-"28
-[; ;./usart.h: 28: void resetNewSequence(void);
-[v _resetNewSequence `(v ~T0 @X0 0 ef ]
-"29
-[; ;./usart.h: 29: unsigned char readSeq(void);
-[v _readSeq `(uc ~T0 @X0 0 ef ]
-"5 main.c
-[; ;main.c: 5: char executeData();
-[v _executeData `(uc ~T0 @X0 0 ef ]
-"32 ./motors.h
-[; ;./motors.h: 32: void clearTM0(void);
-[v _clearTM0 `(v ~T0 @X0 0 ef ]
-"31 ./usart.h
-[; ;./usart.h: 31: void reduceSeq(void);
-[v _reduceSeq `(v ~T0 @X0 0 ef ]
-"33
-[; ;./usart.h: 33: void shiftData(void);
-[v _shiftData `(v ~T0 @X0 0 ef ]
-"1
-[; ;./usart.h: 1: typedef struct{
-[s S238 `uc 1 `uc 1 `uc 1 `uc 1 ]
-[n S238 . feederLine posX posY rotation ]
-"21
-[; ;./usart.h: 21: t_sequence* getData(void);
-[v _getData `(*S238 ~T0 @X0 0 ef ]
-"51 ./motors.h
-[; ;./motors.h: 51: char moveToPoint(int x1, int y1, int x2, int y2);
-[v _moveToPoint `(uc ~T0 @X0 0 ef4`i`i`i`i ]
-"53
-[; ;./motors.h: 53: char touchObject(void);
-[v _touchObject `(uc ~T0 @X0 0 ef ]
-"57
-[; ;./motors.h: 57: void pickObject(void);
-[v _pickObject `(v ~T0 @X0 0 ef ]
-"55
-[; ;./motors.h: 55: char liftArm(void);
-[v _liftArm `(uc ~T0 @X0 0 ef ]
-"56
-[; ;./motors.h: 56: void rotateObj(unsigned char rotAngle);
-[v _rotateObj `(v ~T0 @X0 0 ef1`uc ]
-"54
-[; ;./motors.h: 54: char touchTherm(void);
-[v _touchTherm `(uc ~T0 @X0 0 ef ]
-"58
-[; ;./motors.h: 58: void releaseObj(void);
-[v _releaseObj `(v ~T0 @X0 0 ef ]
+"3665 D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 3665:     struct {
+[s S146 :2 `uc 1 :1 `uc 1 ]
+[n S146 . . GO_NOT_DONE ]
+"3669
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 3669:     struct {
+[s S147 :1 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 :2 `uc 1 ]
+[n S147 . ADON . GO_nDONE CHS ADCS ]
+"3676
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 3676:     struct {
+[s S148 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S148 . . GO CHS0 CHS1 CHS2 ADCS0 ADCS1 ]
+"3685
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 3685:     struct {
+[s S149 :2 `uc 1 :1 `uc 1 ]
+[n S149 . . NOT_DONE ]
+"3689
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 3689:     struct {
+[s S150 :2 `uc 1 :1 `uc 1 ]
+[n S150 . . nDONE ]
+"3693
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 3693:     struct {
+[s S151 :2 `uc 1 :1 `uc 1 ]
+[n S151 . . DONE ]
+"3697
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 3697:     struct {
+[s S152 :2 `uc 1 :1 `uc 1 ]
+[n S152 . . GO_DONE ]
+"3701
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 3701:     struct {
+[s S153 :7 `uc 1 :1 `uc 1 ]
+[n S153 . . ADCAL ]
+"3705
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 3705:     struct {
+[s S154 :2 `uc 1 :1 `uc 1 ]
+[n S154 . . GODONE ]
+"3664
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 3664: typedef union {
+[u S145 `S146 1 `S147 1 `S148 1 `S149 1 `S150 1 `S151 1 `S152 1 `S153 1 `S154 1 ]
+[n S145 . . . . . . . . . . ]
+"3710
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 3710: extern volatile ADCON0bits_t ADCON0bits __attribute__((address(0xFC2)));
+[v _ADCON0bits `VS145 ~T0 @X0 0 e@4034 ]
+"3597
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 3597:     struct {
+[s S142 :4 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S142 . PCFG . ADCS2 ADFM ]
+"3603
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 3603:     struct {
+[s S143 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S143 . PCFG0 PCFG1 PCFG2 PCFG3 ]
+"3609
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 3609:     struct {
+[s S144 :3 `uc 1 :1 `uc 1 ]
+[n S144 . . CHSN3 ]
+"3596
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 3596: typedef union {
+[u S141 `S142 1 `S143 1 `S144 1 ]
+[n S141 . . . . ]
+"3614
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 3614: extern volatile ADCON1bits_t ADCON1bits __attribute__((address(0xFC1)));
+[v _ADCON1bits `VS141 ~T0 @X0 0 e@4033 ]
+"2268
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 2268:     struct {
+[s S82 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S82 . TMR1IE TMR2IE CCP1IE SSPIE TXIE RCIE ADIE PSPIE ]
+"2278
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 2278:     struct {
+[s S83 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S83 . . TX1IE RC1IE ]
+"2267
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 2267: typedef union {
+[u S81 `S82 1 `S83 1 ]
+[n S81 . . . ]
+"2284
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 2284: extern volatile PIE1bits_t PIE1bits __attribute__((address(0xF9D)));
+[v _PIE1bits `VS81 ~T0 @X0 0 e@3997 ]
+"2422
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 2422:     struct {
+[s S88 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S88 . TMR1IP TMR2IP CCP1IP SSPIP TXIP RCIP ADIP PSPIP ]
+"2432
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 2432:     struct {
+[s S89 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S89 . . TX1IP RC1IP ]
+"2421
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 2421: typedef union {
+[u S87 `S88 1 `S89 1 ]
+[n S87 . . . ]
+"2438
+[; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 2438: extern volatile IPR1bits_t IPR1bits __attribute__((address(0xF9F)));
+[v _IPR1bits `VS87 ~T0 @X0 0 e@3999 ]
 "54 D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h
 [; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 54: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -501,496 +472,161 @@ Version 4.0 HI-TECH Software Intermediate Code
 "5763
 [; ;D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f452.h: 5763: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"40 ./conf_bits.h
-[p x OSC = XT ]
-"41
-[p x OSCS = OFF ]
-"44
-[p x PWRT = OFF ]
-"45
-[p x BOR = OFF ]
-"46
-[p x BORV = 20 ]
-"49
-[p x WDT = OFF ]
-"50
-[p x WDTPS = 128 ]
-"53
-[p x CCP2MUX = OFF ]
-"56
-[p x STVR = OFF ]
-"57
-[p x LVP = OFF ]
-"60
-[p x CP0 = OFF ]
-"61
-[p x CP1 = OFF ]
-"62
-[p x CP2 = OFF ]
-"63
-[p x CP3 = OFF ]
-"66
-[p x CPB = OFF ]
-"67
-[p x CPD = OFF ]
-"70
-[p x WRT0 = OFF ]
-"71
-[p x WRT1 = OFF ]
-"72
-[p x WRT2 = OFF ]
-"73
-[p x WRT3 = OFF ]
-"76
-[p x WRTC = OFF ]
-"77
-[p x WRTB = OFF ]
-"78
-[p x WRTD = OFF ]
-"81
-[p x EBTR0 = OFF ]
-"82
-[p x EBTR1 = OFF ]
-"83
-[p x EBTR2 = OFF ]
-"84
-[p x EBTR3 = OFF ]
-"87
-[p x EBTRB = OFF ]
-"7 main.c
-[; ;main.c: 7: static unsigned char posVector[3] = {0, 0, 0};
-[v _posVector `uc ~T0 @X0 -> 3 `i s ]
-[i _posVector
-:U ..
+"12 adc.c
+[; ;adc.c: 12: static volatile unsigned char touch_rel = 0;
+[v _touch_rel `Vuc ~T0 @X0 1 s ]
+[i _touch_rel
 -> -> 0 `i `uc
+]
+"13
+[; ;adc.c: 13: static volatile unsigned char therm_rel = 0;
+[v _therm_rel `Vuc ~T0 @X0 1 s ]
+[i _therm_rel
 -> -> 0 `i `uc
--> -> 0 `i `uc
-..
 ]
-"8
-[; ;main.c: 8: static int rotAngle = 0;
-[v _rotAngle `i ~T0 @X0 1 s ]
-[i _rotAngle
--> 0 `i
-]
-"10
-[; ;main.c: 10: static const unsigned char feeder1Pos[2] = {15, 20};
-[v _feeder1Pos `Cuc ~T0 @X0 -> 2 `i s ]
-[i _feeder1Pos
-:U ..
--> -> 15 `i `uc
--> -> 20 `i `uc
-..
-]
-"11
-[; ;main.c: 11: static const unsigned char feeder2Pos[2] = {15, 50};
-[v _feeder2Pos `Cuc ~T0 @X0 -> 2 `i s ]
-[i _feeder2Pos
-:U ..
--> -> 15 `i `uc
--> -> 50 `i `uc
-..
-]
-"12
-[; ;main.c: 12: static const unsigned char feeder3Pos[2] = {15, 80};
-[v _feeder3Pos `Cuc ~T0 @X0 -> 2 `i s ]
-[i _feeder3Pos
-:U ..
--> -> 15 `i `uc
--> -> 80 `i `uc
-..
-]
-"16
-[; ;main.c: 16: static unsigned char newFeeder[2] = {0, 0};
-[v _newFeeder `uc ~T0 @X0 -> 2 `i s ]
-[i _newFeeder
-:U ..
--> -> 0 `i `uc
--> -> 0 `i `uc
-..
-]
-[v $root$_main `(v ~T0 @X0 0 e ]
 "18
-[; ;main.c: 18: void main(void) {
-[v _main `(v ~T0 @X0 1 ef ]
+[; ;adc.c: 18: void initADC(void){
+[v _initADC `(v ~T0 @X0 1 ef ]
 {
-[e :U _main ]
+[e :U _initADC ]
 [f ]
+"19
+[; ;adc.c: 19:     ADCON0bits.ADCS = 0x01;
+[e = . . _ADCON0bits 1 4 -> -> 1 `i `uc ]
 "20
-[; ;main.c: 20:     unsigned char errCode = 0;
-[v _errCode `uc ~T0 @X0 1 a ]
-[e = _errCode -> -> 0 `i `uc ]
+[; ;adc.c: 20:     ADCON1bits.ADCS2 = 0x01;
+[e = . . _ADCON1bits 0 2 -> -> 1 `i `uc ]
 "22
-[; ;main.c: 22:     interruptInit();
-[e ( _interruptInit ..  ]
+[; ;adc.c: 22:     ADCON0bits.CHS = 0x00;
+[e = . . _ADCON0bits 1 3 -> -> 0 `i `uc ]
 "23
-[; ;main.c: 23:     initPinMotors();
-[e ( _initPinMotors ..  ]
+[; ;adc.c: 23:     ADCON0bits.GO_DONE = 0x00;
+[e = . . _ADCON0bits 6 1 -> -> 0 `i `uc ]
 "24
-[; ;main.c: 24:     initADC();
-[e ( _initADC ..  ]
-"25
-[; ;main.c: 25:     usartInit();
-[e ( _usartInit ..  ]
+[; ;adc.c: 24:     ADCON0bits.ADON = 0;
+[e = . . _ADCON0bits 1 0 -> -> 0 `i `uc ]
 "26
-[; ;main.c: 26:     tim0Init();
-[e ( _tim0Init ..  ]
+[; ;adc.c: 26:     ADCON1bits.ADFM = 0x00;
+[e = . . _ADCON1bits 0 3 -> -> 0 `i `uc ]
 "27
-[; ;main.c: 27:     tim1Init();
-[e ( _tim1Init ..  ]
-"28
-[; ;main.c: 28:     tim2Init(10);
-[e ( _tim2Init (1 -> -> 10 `i `ui ]
+[; ;adc.c: 27:     ADCON1bits.PCFG = 0x0E;
+[e = . . _ADCON1bits 0 0 -> -> 14 `i `uc ]
+"29
+[; ;adc.c: 29:     PIE1bits.ADIE = 1;
+[e = . . _PIE1bits 0 6 -> -> 1 `i `uc ]
 "30
-[; ;main.c: 30:     printStatus(9);
-[e ( _printStatus (1 -> -> 9 `i `uc ]
-"32
-[; ;main.c: 32:     errCode = resetPosition();
-[e = _errCode -> ( _resetPosition ..  `uc ]
-"33
-[; ;main.c: 33:     if(errCode != 0){
-[e $ ! != -> _errCode `i -> 0 `i 241  ]
-{
-"34
-[; ;main.c: 34:         printError(errCode);
-[e ( _printError (1 _errCode ]
-"35
-[; ;main.c: 35:         while(1);
-[e :U 243 ]
-[e :U 242 ]
-[e $U 243  ]
-[e :U 244 ]
+[; ;adc.c: 30:     IPR1bits.ADIP = 1;
+[e = . . _IPR1bits 0 6 -> -> 1 `i `uc ]
+"31
+[; ;adc.c: 31: }
+[e :UE 238 ]
+}
 "36
-[; ;main.c: 36:     }
-}
-[e :U 241 ]
+[; ;adc.c: 36: void startADC(void){
+[v _startADC `(v ~T0 @X0 1 ef ]
+{
+[e :U _startADC ]
+[f ]
 "37
-[; ;main.c: 37:     printStatus(10);
-[e ( _printStatus (1 -> -> 10 `i `uc ]
-"40
-[; ;main.c: 40:     RCSTA1bits.CREN = 1;
-[e = . . _RCSTA1bits 0 4 -> -> 1 `i `uc ]
-"42
-[; ;main.c: 42:     while(1){
-[e :U 246 ]
-{
-"43
-[; ;main.c: 43:         if(newSequence()){
-[e $ ! != -> ( _newSequence ..  `i -> 0 `i 248  ]
-{
+[; ;adc.c: 37:     ADCON0bits.ADON = 1;
+[e = . . _ADCON0bits 1 0 -> -> 1 `i `uc ]
+"38
+[; ;adc.c: 38:     ADCON0bits.GODONE = 1;
+[e = . . _ADCON0bits 8 1 -> -> 1 `i `uc ]
+"39
+[; ;adc.c: 39: }
+[e :UE 239 ]
+}
 "44
-[; ;main.c: 44:             t_newSequence* newData = getNewSequence();
-[v _newData `*S239 ~T0 @X0 1 a ]
-[e = _newData ( _getNewSequence ..  ]
-"46
-[; ;main.c: 46:             newFeeder[0] = newData ->init_posX;
-[e = *U + &U _newFeeder * -> -> -> 0 `i `ui `ux -> -> # *U &U _newFeeder `ui `ux . *U _newData 2 ]
-"47
-[; ;main.c: 47:             newFeeder[1] = newData ->init_posY;
-[e = *U + &U _newFeeder * -> -> -> 1 `i `ui `ux -> -> # *U &U _newFeeder `ui `ux . *U _newData 3 ]
-"50
-[; ;main.c: 50:             storeData(1);
-[e ( _storeData (1 -> -> 1 `i `uc ]
-"51
-[; ;main.c: 51:             storeData(0xFF);
-[e ( _storeData (1 -> -> 255 `i `uc ]
-"52
-[; ;main.c: 52:             storeData(newData ->end_posX);
-[e ( _storeData (1 . *U _newData 5 ]
-"53
-[; ;main.c: 53:             storeData(newData ->end_posY);
-[e ( _storeData (1 . *U _newData 6 ]
-"54
-[; ;main.c: 54:             storeData(newData ->end_rot - newData ->init_rot);
-[e ( _storeData (1 -> - -> . *U _newData 7 `i -> . *U _newData 4 `i `uc ]
-"57
-[; ;main.c: 57:             resetNewSequence();
-[e ( _resetNewSequence ..  ]
-"58
-[; ;main.c: 58:         }
-}
-[e :U 248 ]
-"59
-[; ;main.c: 59:         if(readSeq()){
-[e $ ! != -> ( _readSeq ..  `i -> 0 `i 249  ]
+[; ;adc.c: 44: void stopADC(void){
+[v _stopADC `(v ~T0 @X0 1 ef ]
 {
-"63
-[; ;main.c: 63:             errCode = executeData();
-[e = _errCode -> ( _executeData ..  `uc ]
-"65
-[; ;main.c: 65:             printError(errCode);
-[e ( _printError (1 _errCode ]
-"68
-[; ;main.c: 68:             clearTM0();
-[e ( _clearTM0 ..  ]
-"72
-[; ;main.c: 72:             reduceSeq();
-[e ( _reduceSeq ..  ]
-"73
-[; ;main.c: 73:             shiftData();
-[e ( _shiftData ..  ]
-"74
-[; ;main.c: 74:         }
-}
-[e :U 249 ]
-"75
-[; ;main.c: 75:     }
-}
-[e :U 245 ]
-[e $U 246  ]
-[e :U 247 ]
-"76
-[; ;main.c: 76:     return;
-[e $UE 240  ]
-"77
-[; ;main.c: 77: }
+[e :U _stopADC ]
+[f ]
+"45
+[; ;adc.c: 45:     ADCON0bits.ADON = 0;
+[e = . . _ADCON0bits 1 0 -> -> 0 `i `uc ]
+"46
+[; ;adc.c: 46: }
 [e :UE 240 ]
 }
-"86
-[; ;main.c: 86: char executeData(){
-[v _executeData `(uc ~T0 @X0 1 ef ]
+"51
+[; ;adc.c: 51: unsigned int returnTouch(void){
+[v _returnTouch `(ui ~T0 @X0 1 ef ]
 {
-[e :U _executeData ]
+[e :U _returnTouch ]
 [f ]
+"52
+[; ;adc.c: 52:     return touch_rel;
+[e ) -> _touch_rel `ui ]
+[e $UE 241  ]
+"53
+[; ;adc.c: 53: }
+[e :UE 241 ]
+}
+"58
+[; ;adc.c: 58: unsigned int returnTherm(void){
+[v _returnTherm `(ui ~T0 @X0 1 ef ]
+{
+[e :U _returnTherm ]
+[f ]
+"59
+[; ;adc.c: 59:     return therm_rel;
+[e ) -> _therm_rel `ui ]
+[e $UE 242  ]
+"60
+[; ;adc.c: 60: }
+[e :UE 242 ]
+}
+"65
+[; ;adc.c: 65: void resetTouch(void){
+[v _resetTouch `(v ~T0 @X0 1 ef ]
+{
+[e :U _resetTouch ]
+[f ]
+"66
+[; ;adc.c: 66:     touch_rel = 0;
+[e = _touch_rel -> -> 0 `i `uc ]
+"67
+[; ;adc.c: 67: }
+[e :UE 243 ]
+}
+"72
+[; ;adc.c: 72: void resetTherm(void){
+[v _resetTherm `(v ~T0 @X0 1 ef ]
+{
+[e :U _resetTherm ]
+[f ]
+"73
+[; ;adc.c: 73:     therm_rel = 0;
+[e = _therm_rel -> -> 0 `i `uc ]
+"74
+[; ;adc.c: 74: }
+[e :UE 244 ]
+}
+"79
+[; ;adc.c: 79: void setThermRel(void){
+[v _setThermRel `(v ~T0 @X0 1 ef ]
+{
+[e :U _setThermRel ]
+[f ]
+"80
+[; ;adc.c: 80:     therm_rel = 1;
+[e = _therm_rel -> -> 1 `i `uc ]
+"81
+[; ;adc.c: 81: }
+[e :UE 245 ]
+}
+"86
+[; ;adc.c: 86: void setTouchRel(void){
+[v _setTouchRel `(v ~T0 @X0 1 ef ]
+{
+[e :U _setTouchRel ]
+[f ]
+"87
+[; ;adc.c: 87:     touch_rel = 1;
+[e = _touch_rel -> -> 1 `i `uc ]
 "88
-[; ;main.c: 88:     t_sequence *data = getData();
-[v _data `*S238 ~T0 @X0 1 a ]
-[e = _data ( _getData ..  ]
-"90
-[; ;main.c: 90:     char errCode = 0;
-[v _errCode `uc ~T0 @X0 1 a ]
-[e = _errCode -> -> 0 `i `uc ]
-"92
-[; ;main.c: 92:     printStatus(0);
-[e ( _printStatus (1 -> -> 0 `i `uc ]
-"93
-[; ;main.c: 93:     printStatus(1);
-[e ( _printStatus (1 -> -> 1 `i `uc ]
-"97
-[; ;main.c: 97:     switch(data->feederLine){
-[e $U 252  ]
-{
-"98
-[; ;main.c: 98:         case 0:
-[e :U 253 ]
-"100
-[; ;main.c: 100:             errCode = moveToPoint(posVector[0], posVector[1], feeder1Pos[0], feeder1Pos[1]);
-[e = _errCode ( _moveToPoint (4 , , , -> *U + &U _posVector * -> -> -> 0 `i `ui `ux -> -> # *U &U _posVector `ui `ux `i -> *U + &U _posVector * -> -> -> 1 `i `ui `ux -> -> # *U &U _posVector `ui `ux `i -> *U + &U _feeder1Pos * -> -> -> 0 `i `ui `ux -> -> # *U &U _feeder1Pos `ui `ux `i -> *U + &U _feeder1Pos * -> -> -> 1 `i `ui `ux -> -> # *U &U _feeder1Pos `ui `ux `i ]
-"102
-[; ;main.c: 102:             posVector[0] = feeder1Pos[0];
-[e = *U + &U _posVector * -> -> -> 0 `i `ui `ux -> -> # *U &U _posVector `ui `ux *U + &U _feeder1Pos * -> -> -> 0 `i `ui `ux -> -> # *U &U _feeder1Pos `ui `ux ]
-"103
-[; ;main.c: 103:             posVector[1] = feeder1Pos[1];
-[e = *U + &U _posVector * -> -> -> 1 `i `ui `ux -> -> # *U &U _posVector `ui `ux *U + &U _feeder1Pos * -> -> -> 1 `i `ui `ux -> -> # *U &U _feeder1Pos `ui `ux ]
-"104
-[; ;main.c: 104:             break;
-[e $U 251  ]
-"105
-[; ;main.c: 105:         case 1:
-[e :U 254 ]
-"106
-[; ;main.c: 106:             errCode = moveToPoint(posVector[0], posVector[1], feeder2Pos[0], feeder2Pos[1]);
-[e = _errCode ( _moveToPoint (4 , , , -> *U + &U _posVector * -> -> -> 0 `i `ui `ux -> -> # *U &U _posVector `ui `ux `i -> *U + &U _posVector * -> -> -> 1 `i `ui `ux -> -> # *U &U _posVector `ui `ux `i -> *U + &U _feeder2Pos * -> -> -> 0 `i `ui `ux -> -> # *U &U _feeder2Pos `ui `ux `i -> *U + &U _feeder2Pos * -> -> -> 1 `i `ui `ux -> -> # *U &U _feeder2Pos `ui `ux `i ]
-"107
-[; ;main.c: 107:             posVector[0] = feeder2Pos[0];
-[e = *U + &U _posVector * -> -> -> 0 `i `ui `ux -> -> # *U &U _posVector `ui `ux *U + &U _feeder2Pos * -> -> -> 0 `i `ui `ux -> -> # *U &U _feeder2Pos `ui `ux ]
-"108
-[; ;main.c: 108:             posVector[1] = feeder2Pos[1];
-[e = *U + &U _posVector * -> -> -> 1 `i `ui `ux -> -> # *U &U _posVector `ui `ux *U + &U _feeder2Pos * -> -> -> 1 `i `ui `ux -> -> # *U &U _feeder2Pos `ui `ux ]
-"109
-[; ;main.c: 109:             break;
-[e $U 251  ]
-"110
-[; ;main.c: 110:         case 2:
-[e :U 255 ]
-"111
-[; ;main.c: 111:             errCode = moveToPoint(posVector[0], posVector[1], feeder3Pos[0], feeder3Pos[1]);
-[e = _errCode ( _moveToPoint (4 , , , -> *U + &U _posVector * -> -> -> 0 `i `ui `ux -> -> # *U &U _posVector `ui `ux `i -> *U + &U _posVector * -> -> -> 1 `i `ui `ux -> -> # *U &U _posVector `ui `ux `i -> *U + &U _feeder3Pos * -> -> -> 0 `i `ui `ux -> -> # *U &U _feeder3Pos `ui `ux `i -> *U + &U _feeder3Pos * -> -> -> 1 `i `ui `ux -> -> # *U &U _feeder3Pos `ui `ux `i ]
-"112
-[; ;main.c: 112:             posVector[0] = feeder3Pos[0];
-[e = *U + &U _posVector * -> -> -> 0 `i `ui `ux -> -> # *U &U _posVector `ui `ux *U + &U _feeder3Pos * -> -> -> 0 `i `ui `ux -> -> # *U &U _feeder3Pos `ui `ux ]
-"113
-[; ;main.c: 113:             posVector[1] = feeder3Pos[1];
-[e = *U + &U _posVector * -> -> -> 1 `i `ui `ux -> -> # *U &U _posVector `ui `ux *U + &U _feeder3Pos * -> -> -> 1 `i `ui `ux -> -> # *U &U _feeder3Pos `ui `ux ]
-"114
-[; ;main.c: 114:             break;
-[e $U 251  ]
-"117
-[; ;main.c: 117:         case 0xFF:
-[e :U 256 ]
-"118
-[; ;main.c: 118:             errCode = moveToPoint(posVector[0], posVector[1], newFeeder[0], newFeeder[1]);
-[e = _errCode ( _moveToPoint (4 , , , -> *U + &U _posVector * -> -> -> 0 `i `ui `ux -> -> # *U &U _posVector `ui `ux `i -> *U + &U _posVector * -> -> -> 1 `i `ui `ux -> -> # *U &U _posVector `ui `ux `i -> *U + &U _newFeeder * -> -> -> 0 `i `ui `ux -> -> # *U &U _newFeeder `ui `ux `i -> *U + &U _newFeeder * -> -> -> 1 `i `ui `ux -> -> # *U &U _newFeeder `ui `ux `i ]
-"119
-[; ;main.c: 119:             posVector[0] = newFeeder[0];
-[e = *U + &U _posVector * -> -> -> 0 `i `ui `ux -> -> # *U &U _posVector `ui `ux *U + &U _newFeeder * -> -> -> 0 `i `ui `ux -> -> # *U &U _newFeeder `ui `ux ]
-"120
-[; ;main.c: 120:             posVector[1] = newFeeder[1];
-[e = *U + &U _posVector * -> -> -> 1 `i `ui `ux -> -> # *U &U _posVector `ui `ux *U + &U _newFeeder * -> -> -> 1 `i `ui `ux -> -> # *U &U _newFeeder `ui `ux ]
-"121
-[; ;main.c: 121:             break;
-[e $U 251  ]
-"122
-[; ;main.c: 122:         default:
-[e :U 257 ]
-"125
-[; ;main.c: 125:             errCode = 1;
-[e = _errCode -> -> 1 `i `uc ]
-"126
-[; ;main.c: 126:             break;
-[e $U 251  ]
-"127
-[; ;main.c: 127:     }
-}
-[e $U 251  ]
-[e :U 252 ]
-[e [\ -> . *U _data 0 `i , $ -> 0 `i 253
- , $ -> 1 `i 254
- , $ -> 2 `i 255
- , $ -> 255 `i 256
- 257 ]
-[e :U 251 ]
-"130
-[; ;main.c: 130:     if(!errCode){
-[e $ ! ! != -> _errCode `i -> 0 `i 258  ]
-{
-"132
-[; ;main.c: 132:         printStatus(2);
-[e ( _printStatus (1 -> -> 2 `i `uc ]
-"134
-[; ;main.c: 134:         errCode = touchObject();
-[e = _errCode ( _touchObject ..  ]
-"135
-[; ;main.c: 135:         if(errCode != 0){
-[e $ ! != -> _errCode `i -> 0 `i 259  ]
-{
-"136
-[; ;main.c: 136:             return(errCode);
-[e ) _errCode ]
-[e $UE 250  ]
-"137
-[; ;main.c: 137:         }
-}
-[e :U 259 ]
-"139
-[; ;main.c: 139:         printStatus(3);
-[e ( _printStatus (1 -> -> 3 `i `uc ]
-"141
-[; ;main.c: 141:         pickObject();
-[e ( _pickObject ..  ]
-"143
-[; ;main.c: 143:         printStatus(4);
-[e ( _printStatus (1 -> -> 4 `i `uc ]
-"145
-[; ;main.c: 145:         errCode = liftArm();
-[e = _errCode ( _liftArm ..  ]
-"146
-[; ;main.c: 146:         if(errCode != 0){
-[e $ ! != -> _errCode `i -> 0 `i 260  ]
-{
-"147
-[; ;main.c: 147:             return(errCode);
-[e ) _errCode ]
-[e $UE 250  ]
-"148
-[; ;main.c: 148:         }
-}
-[e :U 260 ]
-"150
-[; ;main.c: 150:         printStatus(5);
-[e ( _printStatus (1 -> -> 5 `i `uc ]
-"152
-[; ;main.c: 152:         errCode = moveToPoint(posVector[0], posVector[1], data->posX, data->posY);
-[e = _errCode ( _moveToPoint (4 , , , -> *U + &U _posVector * -> -> -> 0 `i `ui `ux -> -> # *U &U _posVector `ui `ux `i -> *U + &U _posVector * -> -> -> 1 `i `ui `ux -> -> # *U &U _posVector `ui `ux `i -> . *U _data 1 `i -> . *U _data 2 `i ]
-"153
-[; ;main.c: 153:         if(errCode != 0){
-[e $ ! != -> _errCode `i -> 0 `i 261  ]
-{
-"154
-[; ;main.c: 154:             return(errCode);
-[e ) _errCode ]
-[e $UE 250  ]
-"155
-[; ;main.c: 155:         }
-}
-[e :U 261 ]
-"156
-[; ;main.c: 156:         posVector[0] = data->posX;
-[e = *U + &U _posVector * -> -> -> 0 `i `ui `ux -> -> # *U &U _posVector `ui `ux . *U _data 1 ]
-"157
-[; ;main.c: 157:         posVector[1] = data->posY;
-[e = *U + &U _posVector * -> -> -> 1 `i `ui `ux -> -> # *U &U _posVector `ui `ux . *U _data 2 ]
-"159
-[; ;main.c: 159:         printStatus(6);
-[e ( _printStatus (1 -> -> 6 `i `uc ]
-"161
-[; ;main.c: 161:         rotAngle = data->rotation;
-[e = _rotAngle -> . *U _data 3 `i ]
-"163
-[; ;main.c: 163:         if(rotAngle < 0){
-[e $ ! < _rotAngle -> 0 `i 262  ]
-{
-"164
-[; ;main.c: 164:             rotAngle += 360;
-[e =+ _rotAngle -> 360 `i ]
-"165
-[; ;main.c: 165:         }
-}
-[e :U 262 ]
-"166
-[; ;main.c: 166:         rotateObj(rotAngle);
-[e ( _rotateObj (1 -> _rotAngle `uc ]
-"168
-[; ;main.c: 168:         printStatus(7);
-[e ( _printStatus (1 -> -> 7 `i `uc ]
-"170
-[; ;main.c: 170:         errCode = touchTherm();
-[e = _errCode ( _touchTherm ..  ]
-"171
-[; ;main.c: 171:         if(errCode != 0){
-[e $ ! != -> _errCode `i -> 0 `i 263  ]
-{
-"172
-[; ;main.c: 172:             return(errCode);
-[e ) _errCode ]
-[e $UE 250  ]
-"173
-[; ;main.c: 173:         }
-}
-[e :U 263 ]
-"175
-[; ;main.c: 175:         printStatus(8);
-[e ( _printStatus (1 -> -> 8 `i `uc ]
-"177
-[; ;main.c: 177:         releaseObj();
-[e ( _releaseObj ..  ]
-"179
-[; ;main.c: 179:         printStatus(4);
-[e ( _printStatus (1 -> -> 4 `i `uc ]
-"181
-[; ;main.c: 181:         errCode = liftArm();
-[e = _errCode ( _liftArm ..  ]
-"182
-[; ;main.c: 182:         if(errCode != 0){
-[e $ ! != -> _errCode `i -> 0 `i 264  ]
-{
-"183
-[; ;main.c: 183:             return(errCode);
-[e ) _errCode ]
-[e $UE 250  ]
-"184
-[; ;main.c: 184:         }
-}
-[e :U 264 ]
-"185
-[; ;main.c: 185:     }
-}
-[e :U 258 ]
-"187
-[; ;main.c: 187:     return(errCode);
-[e ) _errCode ]
-[e $UE 250  ]
-"188
-[; ;main.c: 188: }
-[e :UE 250 ]
+[; ;adc.c: 88: }
+[e :UE 246 ]
 }

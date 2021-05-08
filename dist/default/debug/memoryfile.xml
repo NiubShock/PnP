@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
-  <executable name="dist/default/production\ESD_PnP_1.X.production.hex">
+  <executable name="dist/default/debug\ESD_PnP_1.X.debug.hex">
     <memory name="program">
       <units>bytes</units>
       <length>32768</length>

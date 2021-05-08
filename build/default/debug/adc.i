@@ -1,4 +1,4 @@
-# 1 "interrupt.c"
+# 1 "adc.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "interrupt.c" 2
+# 1 "adc.c" 2
 
 
 
@@ -3812,9 +3812,7 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 33 "D:/Programs/MPLABx/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 2 3
-# 9 "interrupt.c" 2
-
-# 1 "./main.h" 1
+# 9 "adc.c" 2
 
 # 1 "./adc.h" 1
 # 37 "./adc.h"
@@ -3828,265 +3826,83 @@ void resetTherm(void);
 
 void setThermRel(void);
 void setTouchRel(void);
-# 2 "./main.h" 2
+# 10 "adc.c" 2
 
-# 1 "./motors.h" 1
-# 30 "./motors.h"
-void writeTM0(void);
-unsigned char whatsTM0Limit(void);
-void clearTM0(void);
+
+static volatile unsigned char touch_rel = 0;
+static volatile unsigned char therm_rel = 0;
 
 
 
 
-void setStep(unsigned char step, unsigned char motor);
-void enableMotor(unsigned char enable, unsigned char motor);
-void setDirection(unsigned char direction, unsigned char motor);
-void setDecay(unsigned char decay, unsigned char motor);
-# 49 "./motors.h"
-void initPinMotors(void);
-char resetPosition(void);
-char moveToPoint(int x1, int y1, int x2, int y2);
+void initADC(void){
+    ADCON0bits.ADCS = 0x01;
+    ADCON1bits.ADCS2 = 0x01;
 
-char touchObject(void);
-char touchTherm(void);
-char liftArm(void);
-void rotateObj(unsigned char rotAngle);
-void pickObject(void);
-void releaseObj(void);
+    ADCON0bits.CHS = 0x00;
+    ADCON0bits.GO_DONE = 0x00;
+    ADCON0bits.ADON = 0;
 
-void abortAll(void);
-# 3 "./main.h" 2
+    ADCON1bits.ADFM = 0x00;
+    ADCON1bits.PCFG = 0x0E;
 
-# 1 "./conf_bits.h" 1
-# 40 "./conf_bits.h"
-#pragma config OSC = XT
-#pragma config OSCS = OFF
-
-
-#pragma config PWRT = OFF
-#pragma config BOR = OFF
-#pragma config BORV = 20
-
-
-#pragma config WDT = OFF
-#pragma config WDTPS = 128
-
-
-#pragma config CCP2MUX = OFF
-
-
-#pragma config STVR = OFF
-#pragma config LVP = OFF
-
-
-#pragma config CP0 = OFF
-#pragma config CP1 = OFF
-#pragma config CP2 = OFF
-#pragma config CP3 = OFF
-
-
-#pragma config CPB = OFF
-#pragma config CPD = OFF
-
-
-#pragma config WRT0 = OFF
-#pragma config WRT1 = OFF
-#pragma config WRT2 = OFF
-#pragma config WRT3 = OFF
-
-
-#pragma config WRTC = OFF
-#pragma config WRTB = OFF
-#pragma config WRTD = OFF
-
-
-#pragma config EBTR0 = OFF
-#pragma config EBTR1 = OFF
-#pragma config EBTR2 = OFF
-#pragma config EBTR3 = OFF
-
-
-#pragma config EBTRB = OFF
-# 4 "./main.h" 2
-
-# 1 "./timer.h" 1
-# 37 "./timer.h"
-void tim0Init(void);
-void tim1Init(void);
-void tim2Init(unsigned int _pwmPeriod);
-unsigned int stepMade(void);
-void resetStep(void);
-unsigned int stepCounter(void);
-
-
-void increaseStep(void);
-void toggleStep(void);
-unsigned int retPeriod(void);
-# 5 "./main.h" 2
-
-# 1 "./interrupt.h" 1
-void interruptInit(void);
-void resetTM0_Temp(void);
-void resetTM2_Temp(void);
-# 6 "./main.h" 2
-
-# 1 "./usart.h" 1
-typedef struct{
-    unsigned char feederLine;
-    unsigned char posX;
-    unsigned char posY;
-    unsigned char rotation;
-}t_sequence;
-
-typedef struct{
-    unsigned char L;
-    unsigned char W;
-    unsigned char init_posX;
-    unsigned char init_posY;
-    unsigned char init_rot;
-    unsigned char end_posX;
-    unsigned char end_posY;
-    unsigned char end_rot;
-}t_newSequence;
-
-void usartInit(void);
-void storeData(unsigned char data);
-t_sequence* getData(void);
-t_newSequence* getNewSequence(void);
-void uartTx(unsigned char *ptr, unsigned char length);
-void printError(unsigned char errCode);
-void printStatus(unsigned char status);
-
-unsigned char newSequence(void);
-void resetNewSequence(void);
-unsigned char readSeq(void);
-unsigned char fatalError(void);
-void reduceSeq(void);
-void increaseSeq(void);
-void shiftData(void);
-# 7 "./main.h" 2
-# 48 "./main.h"
-char executeData(void);
-# 10 "interrupt.c" 2
-
-
-
-static unsigned int ADC_res = 0;
-static const unsigned int touch_pressure = 0x200;
-static const unsigned int therm_pressure = 0x400;
-
-static unsigned int single_cycle = 0;
-static unsigned char tm0Count = 0;
-static unsigned char completeStep = 0;
-
-
-void resetTM0_Temp(){
-    tm0Count = 0;
-}
-
-void resetTM2_Temp(){
-    single_cycle = 0;
-    completeStep = 0;
+    PIE1bits.ADIE = 1;
+    IPR1bits.ADIP = 1;
 }
 
 
 
 
-
-void interruptInit(void){
-
-    if(!INTCONbits.GIE){
-        INTCONbits.GIE = 1;
-    }
-    if(!INTCONbits.PEIE){
-        INTCONbits.PEIE = 1;
-    }
-
-
-    RCONbits.IPEN = 1;
-    INTCONbits.T0IE = 1;
-    PIE1bits.TMR1IE = 1;
-    PIE1bits.TMR2IE = 1;
-    PIE1bits.RC1IE = 1;
+void startADC(void){
+    ADCON0bits.ADON = 1;
+    ADCON0bits.GODONE = 1;
 }
 
-void __attribute__((picinterrupt(("")))) isr(){
 
 
 
-    if(INTCONbits.T0IF){
-        INTCONbits.T0IF = 0;
-
-
-        tm0Count++;
-
-        if(tm0Count >= whatsTM0Limit()){
-            T0CONbits.TMR0ON = 0;
-            tm0Count = 0;
-            writeTM0();
-        }
-    }
-
-
-    if(PIR1bits.TMR1IF){
-        PIR1bits.TMR1IF = 0;
-        if(fatalError()){
-            abortAll();
-        }
-    }
-
-
-    if(PIR1bits.TMR2IF){
-        PIR1bits.TMR2IF = 0;
-        single_cycle++;
-
-
-        if(single_cycle > retPeriod()){
-            single_cycle = 0;
-            completeStep++;
-
-
-            if(completeStep != 0 && !(completeStep % 2)){
-
-                completeStep = 0;
-
-
-                increaseStep();
-            }
+void stopADC(void){
+    ADCON0bits.ADON = 0;
+}
 
 
 
-            toggleStep();
-        }
-    }
+
+unsigned int returnTouch(void){
+    return touch_rel;
+}
 
 
-    if(PIR1bits.ADIF){
-        PIR1bits.ADIF = 0;
 
 
-        ADC_res = ADRESL;
-        ADC_res |= (ADRESH << 8);
+unsigned int returnTherm(void){
+    return therm_rel;
+}
 
 
-        if(ADC_res > therm_pressure){
-
-            setTouchRel();
-            setThermRel();
-        }else if(ADC_res > touch_pressure){
-
-            setTouchRel();
-        }
-    }
 
 
-    if(PIR1bits.RC1IF){
-        PIR1bits.RC1IF = 0;
+void resetTouch(void){
+    touch_rel = 0;
+}
 
 
-        unsigned char temp = RCREG1;
 
-        storeData(temp);
-    }
+
+void resetTherm(void){
+    therm_rel = 0;
+}
+
+
+
+
+void setThermRel(void){
+    therm_rel = 1;
+}
+
+
+
+
+void setTouchRel(void){
+    touch_rel = 1;
 }

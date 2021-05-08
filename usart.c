@@ -10,6 +10,19 @@
 #include "main.h"
 #include "string.h"
 
+static unsigned char start[] = "Starting the PnP sequence\n";
+static unsigned char movingToPick[] = "Moving to the pick position\n";
+static unsigned char pickingTheOBJ[] = "Picking the object\n";
+static unsigned char OBJPicked[] = "Object picked\n";
+static unsigned char liftingTheArm[] = "Lifting the arm\n";
+static unsigned char movingToPlace[] = "Moving to the place position\n";
+static unsigned char rotateOBJ[] = "Rotating the object\n";
+static unsigned char placeTheOBJ[] = "Placing the object\n";
+static unsigned char OBJRelease[] = "Object released\n";
+
+static unsigned char resetPos[] = "Resetting the initial position\n";
+static unsigned char ready[] = "Ready to work\n";
+
 static unsigned char errString_Feed[] = "Error, feed line not defined\n";
 static unsigned char errString_ZEND[] = "Error, no object relevated along Z Axis\n";
 static unsigned char errString_Reset[] = "Error, time exceeded to reset position\n";
@@ -157,6 +170,46 @@ void printError(unsigned char errCode){
                  
         default:
             break;
+    }
+}
+
+void printStatus(unsigned char status){
+    switch(status){
+        case START:
+            uartTx(&start[0], sizeof(start));
+            break;
+        case MOVEPICK:
+            uartTx(&movingToPick[0], sizeof(movingToPick));
+            break;
+        case PICKOBJ:
+            uartTx(&pickingTheOBJ[0], sizeof(pickingTheOBJ));
+            break;
+        case OBJPICKD:
+            uartTx(&OBJPicked[0], sizeof(OBJPicked));
+            break;
+        case LIFTARM:
+            uartTx(&liftingTheArm[0], sizeof(liftingTheArm));
+            break;
+        case MOVEPLACE:
+            uartTx(&movingToPlace[0], sizeof(movingToPlace));
+            break;
+        case ROTATE:
+            uartTx(&rotateOBJ[0], sizeof(rotateOBJ));
+            break;
+        case PLACEOBJ:
+            uartTx(&placeTheOBJ[0], sizeof(placeTheOBJ));
+            break;
+        case OBJRLSD:
+            uartTx(&OBJRelease[0], sizeof(OBJRelease));
+            break;
+        case INITRESET:
+            uartTx(&resetPos[0], sizeof(resetPos));
+            break;
+        case READY:
+            uartTx(&ready[0], sizeof(ready));
+        default:
+            break;
+            
     }
 }
 

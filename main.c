@@ -27,12 +27,14 @@ void main(void) {
     tim1Init();
     tim2Init(10);
     
+    printStatus(INITRESET);
     //reset the initial position
     errCode = resetPosition();
     if(errCode != ALL_OK){
         printError(errCode);
         while(1);
     }
+    printStatus(READY);
      
     //enable the serial communication
     RCSTA1bits.CREN = 1;    //enable rx
@@ -81,10 +83,14 @@ void main(void) {
  * Return: Return one char that is used to describe any kind of error that may
  *         be encountered during the operation
  */
-char executeData(){
+char executeData(){    
+    
     t_sequence *data = getData();    //pointer used to store the data
     
     char errCode = ALL_OK;              //start considering everything ok
+    
+    printStatus(START);
+    printStatus(MOVEPICK);
     
     //the arm can be considered as already lifted here
     //the 1st byte received is the feeder line
@@ -123,20 +129,25 @@ char executeData(){
     //proceed only if no error is present
     if(!errCode){
         
+        printStatus(PICKOBJ);
         //get in touch with the object
         errCode = touchObject();
         if(errCode != ALL_OK){
             return(errCode);
         }
+        
+        printStatus(OBJPICKD);
         //pick the object
         pickObject();
 
+        printStatus(LIFTARM);
         //lift the arm
         errCode = liftArm();
         if(errCode != ALL_OK){
             return(errCode);
         }
 
+        printStatus(MOVEPLACE);
         //move to the desired position -> byte number 2-3
         errCode = moveToPoint(posVector[0], posVector[1], data->posX, data->posY);
         if(errCode != ALL_OK){
@@ -145,6 +156,7 @@ char executeData(){
         posVector[0] = data->posX;
         posVector[1] = data->posY;
 
+        printStatus(ROTATE);
         //Rotate the object -> byte number 4
         rotAngle = data->rotation;
         //if the angle is smaller than 0 then rotate by 360 degrees
@@ -153,14 +165,18 @@ char executeData(){
         }
         rotateObj(rotAngle);
         
+        printStatus(PLACEOBJ);
         //touch the thermal paste
         errCode = touchTherm();
         if(errCode != ALL_OK){
             return(errCode);
         }
+        
+        printStatus(OBJRLSD);
         //release the object
         releaseObj();
         
+        printStatus(LIFTARM);
         //lift the arm once again -> restore the initial condition
         errCode = liftArm();
         if(errCode != ALL_OK){
