@@ -699,165 +699,165 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _isr ]
 [f ]
-"56
-[; ;interrupt.c: 56:     if(INTCONbits.T0IF){
+"55
+[; ;interrupt.c: 55:     if(INTCONbits.T0IF){
 [e $ ! != -> . . _INTCONbits 1 2 `i -> 0 `i 246  ]
 {
-"57
-[; ;interrupt.c: 57:         INTCONbits.T0IF = 0;
+"56
+[; ;interrupt.c: 56:         INTCONbits.T0IF = 0;
 [e = . . _INTCONbits 1 2 -> -> 0 `i `uc ]
-"60
-[; ;interrupt.c: 60:         tm0Count++;
+"59
+[; ;interrupt.c: 59:         tm0Count++;
 [e ++ _tm0Count -> -> 1 `i `uc ]
-"62
-[; ;interrupt.c: 62:         if(tm0Count >= whatsTM0Limit()){
+"61
+[; ;interrupt.c: 61:         if(tm0Count >= whatsTM0Limit()){
 [e $ ! >= -> _tm0Count `i -> ( _whatsTM0Limit ..  `i 247  ]
 {
-"63
-[; ;interrupt.c: 63:             T0CONbits.TMR0ON = 0;
+"62
+[; ;interrupt.c: 62:             T0CONbits.TMR0ON = 0;
 [e = . . _T0CONbits 0 5 -> -> 0 `i `uc ]
-"64
-[; ;interrupt.c: 64:             tm0Count = 0;
+"63
+[; ;interrupt.c: 63:             tm0Count = 0;
 [e = _tm0Count -> -> 0 `i `uc ]
-"65
-[; ;interrupt.c: 65:             writeTM0();
+"64
+[; ;interrupt.c: 64:             writeTM0();
 [e ( _writeTM0 ..  ]
-"66
-[; ;interrupt.c: 66:         }
+"65
+[; ;interrupt.c: 65:         }
 }
 [e :U 247 ]
-"67
-[; ;interrupt.c: 67:     }
+"66
+[; ;interrupt.c: 66:     }
 }
 [e :U 246 ]
-"70
-[; ;interrupt.c: 70:     if(PIR1bits.TMR1IF){
+"69
+[; ;interrupt.c: 69:     if(PIR1bits.TMR1IF){
 [e $ ! != -> . . _PIR1bits 0 0 `i -> 0 `i 248  ]
 {
-"71
-[; ;interrupt.c: 71:         PIR1bits.TMR1IF = 0;
+"70
+[; ;interrupt.c: 70:         PIR1bits.TMR1IF = 0;
 [e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
-"72
-[; ;interrupt.c: 72:         if(fatalError()){
+"71
+[; ;interrupt.c: 71:         if(fatalError()){
 [e $ ! != -> ( _fatalError ..  `i -> 0 `i 249  ]
 {
-"73
-[; ;interrupt.c: 73:             abortAll();
+"72
+[; ;interrupt.c: 72:             abortAll();
 [e ( _abortAll ..  ]
-"74
-[; ;interrupt.c: 74:         }
+"73
+[; ;interrupt.c: 73:         }
 }
 [e :U 249 ]
-"75
-[; ;interrupt.c: 75:     }
+"74
+[; ;interrupt.c: 74:     }
 }
 [e :U 248 ]
-"78
-[; ;interrupt.c: 78:     if(PIR1bits.TMR2IF){
+"77
+[; ;interrupt.c: 77:     if(PIR1bits.TMR2IF){
 [e $ ! != -> . . _PIR1bits 0 1 `i -> 0 `i 250  ]
 {
-"79
-[; ;interrupt.c: 79:         PIR1bits.TMR2IF = 0;
+"78
+[; ;interrupt.c: 78:         PIR1bits.TMR2IF = 0;
 [e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
-"80
-[; ;interrupt.c: 80:         single_cycle++;
+"79
+[; ;interrupt.c: 79:         single_cycle++;
 [e ++ _single_cycle -> -> 1 `i `ui ]
-"83
-[; ;interrupt.c: 83:         if(single_cycle > retPeriod()){
+"82
+[; ;interrupt.c: 82:         if(single_cycle > retPeriod()){
 [e $ ! > _single_cycle ( _retPeriod ..  251  ]
 {
-"84
-[; ;interrupt.c: 84:             single_cycle = 0;
+"83
+[; ;interrupt.c: 83:             single_cycle = 0;
 [e = _single_cycle -> -> 0 `i `ui ]
-"85
-[; ;interrupt.c: 85:             completeStep++;
+"84
+[; ;interrupt.c: 84:             completeStep++;
 [e ++ _completeStep -> -> 1 `i `uc ]
-"88
-[; ;interrupt.c: 88:             if(completeStep != 0 && !(completeStep % 2)){
+"87
+[; ;interrupt.c: 87:             if(completeStep != 0 && !(completeStep % 2)){
 [e $ ! && != -> _completeStep `i -> 0 `i ! != % -> _completeStep `i -> 2 `i -> 0 `i 252  ]
 {
-"90
-[; ;interrupt.c: 90:                 completeStep = 0;
+"89
+[; ;interrupt.c: 89:                 completeStep = 0;
 [e = _completeStep -> -> 0 `i `uc ]
-"93
-[; ;interrupt.c: 93:                 increaseStep();
+"92
+[; ;interrupt.c: 92:                 increaseStep();
 [e ( _increaseStep ..  ]
-"94
-[; ;interrupt.c: 94:             }
+"93
+[; ;interrupt.c: 93:             }
 }
 [e :U 252 ]
-"98
-[; ;interrupt.c: 98:             toggleStep();
+"97
+[; ;interrupt.c: 97:             toggleStep();
 [e ( _toggleStep ..  ]
-"99
-[; ;interrupt.c: 99:         }
+"98
+[; ;interrupt.c: 98:         }
 }
 [e :U 251 ]
-"100
-[; ;interrupt.c: 100:     }
+"99
+[; ;interrupt.c: 99:     }
 }
 [e :U 250 ]
-"103
-[; ;interrupt.c: 103:     if(PIR1bits.ADIF){
+"102
+[; ;interrupt.c: 102:     if(PIR1bits.ADIF){
 [e $ ! != -> . . _PIR1bits 0 6 `i -> 0 `i 253  ]
 {
-"104
-[; ;interrupt.c: 104:         PIR1bits.ADIF = 0;
+"103
+[; ;interrupt.c: 103:         PIR1bits.ADIF = 0;
 [e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
-"107
-[; ;interrupt.c: 107:         ADC_res = ADRESL;
+"106
+[; ;interrupt.c: 106:         ADC_res = ADRESL;
 [e = _ADC_res -> _ADRESL `ui ]
-"108
-[; ;interrupt.c: 108:         ADC_res |= (ADRESH << 8);
+"107
+[; ;interrupt.c: 107:         ADC_res |= (ADRESH << 8);
 [e =| _ADC_res -> << -> _ADRESH `i -> 8 `i `ui ]
-"111
-[; ;interrupt.c: 111:         if(ADC_res > therm_pressure){
+"110
+[; ;interrupt.c: 110:         if(ADC_res > therm_pressure){
 [e $ ! > _ADC_res _therm_pressure 254  ]
 {
-"113
-[; ;interrupt.c: 113:             setTouchRel();
+"112
+[; ;interrupt.c: 112:             setTouchRel();
 [e ( _setTouchRel ..  ]
-"114
-[; ;interrupt.c: 114:             setThermRel();
+"113
+[; ;interrupt.c: 113:             setThermRel();
 [e ( _setThermRel ..  ]
-"115
-[; ;interrupt.c: 115:         }else if(ADC_res > touch_pressure){
+"114
+[; ;interrupt.c: 114:         }else if(ADC_res > touch_pressure){
 }
 [e $U 255  ]
 [e :U 254 ]
 [e $ ! > _ADC_res _touch_pressure 256  ]
 {
-"117
-[; ;interrupt.c: 117:             setTouchRel();
+"116
+[; ;interrupt.c: 116:             setTouchRel();
 [e ( _setTouchRel ..  ]
-"118
-[; ;interrupt.c: 118:         }
+"117
+[; ;interrupt.c: 117:         }
 }
 [e :U 256 ]
 [e :U 255 ]
-"119
-[; ;interrupt.c: 119:     }
+"118
+[; ;interrupt.c: 118:     }
 }
 [e :U 253 ]
-"122
-[; ;interrupt.c: 122:     if(PIR1bits.RC1IF){
+"121
+[; ;interrupt.c: 121:     if(PIR1bits.RC1IF){
 [e $ ! != -> . . _PIR1bits 1 2 `i -> 0 `i 257  ]
 {
-"123
-[; ;interrupt.c: 123:         PIR1bits.RC1IF = 0;
+"122
+[; ;interrupt.c: 122:         PIR1bits.RC1IF = 0;
 [e = . . _PIR1bits 1 2 -> -> 0 `i `uc ]
-"126
-[; ;interrupt.c: 126:         unsigned char temp = RCREG1;
+"125
+[; ;interrupt.c: 125:         unsigned char temp = RCREG1;
 [v _temp `uc ~T0 @X0 1 a ]
 [e = _temp _RCREG1 ]
-"128
-[; ;interrupt.c: 128:         storeData(temp);
+"127
+[; ;interrupt.c: 127:         storeData(temp);
 [e ( _storeData (1 _temp ]
-"129
-[; ;interrupt.c: 129:     }
+"128
+[; ;interrupt.c: 128:     }
 }
 [e :U 257 ]
-"130
-[; ;interrupt.c: 130: }
+"129
+[; ;interrupt.c: 129: }
 [e :UE 245 ]
 }

@@ -1977,14 +1977,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _rotateObj ]
 [v _rotAngle `uc ~T0 @X0 1 r1 ]
 [f ]
-"770
-[; ;motors.c: 770:     static const float stepAngle = 2;
+"772
+[; ;motors.c: 772:     static const float stepAngle = 2;
 [v F2314 `Cf ~T0 @X0 1 s stepAngle ]
 [i F2314
 -> -> 2 `i `f
 ]
-"771
-[; ;motors.c: 771:     static char rotSequence[] = {0b100100, 0b001100, 0b011000, 0b110000};
+"773
+[; ;motors.c: 773:     static char rotSequence[] = {0b100100, 0b001100, 0b011000, 0b110000};
 [v F2315 `uc ~T0 @X0 -> 4 `i s rotSequence ]
 [i F2315
 :U ..
@@ -1994,149 +1994,149 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 48 `i `uc
 ..
 ]
-"772
-[; ;motors.c: 772:     unsigned int i, c = 0;
+"774
+[; ;motors.c: 774:     unsigned int i, c = 0;
 [v _i `ui ~T0 @X0 1 a ]
 [v _c `ui ~T0 @X0 1 a ]
 [e = _c -> -> 0 `i `ui ]
-"773
-[; ;motors.c: 773:     int totStep = rotAngle/stepAngle;
+"775
+[; ;motors.c: 775:     int totStep = rotAngle/stepAngle;
 [v _totStep `i ~T0 @X0 1 a ]
 [e = _totStep -> / -> -> _rotAngle `i `f F2314 `i ]
-"776
-[; ;motors.c: 776:     for(i = 0; i < totStep; i++){
+"778
+[; ;motors.c: 778:     for(i = 0; i < totStep; i++){
 {
 [e = _i -> -> 0 `i `ui ]
 [e $U 356  ]
 [e :U 353 ]
 {
-"780
-[; ;motors.c: 780:         LATD = rotSequence[c];
-[e = _LATD -> *U + &U F2315 * -> _c `ux -> -> # *U &U F2315 `ui `ux `uc ]
 "782
-[; ;motors.c: 782:         c++;
+[; ;motors.c: 782:         LATD = rotSequence[c];
+[e = _LATD -> *U + &U F2315 * -> _c `ux -> -> # *U &U F2315 `ui `ux `uc ]
+"784
+[; ;motors.c: 784:         c++;
 [e ++ _c -> -> 1 `i `ui ]
-"783
-[; ;motors.c: 783:         if (c >= 4) {c = 0;}
+"785
+[; ;motors.c: 785:         if (c >= 4) {c = 0;}
 [e $ ! >= _c -> -> 4 `i `ui 357  ]
 {
 [e = _c -> -> 0 `i `ui ]
 }
 [e :U 357 ]
-"786
-[; ;motors.c: 786:         T2CONbits.TMR2ON = 1;
+"788
+[; ;motors.c: 788:         T2CONbits.TMR2ON = 1;
 [e = . . _T2CONbits 0 1 -> -> 1 `i `uc ]
-"787
-[; ;motors.c: 787:         while(!stepMade());
+"789
+[; ;motors.c: 789:         while(!stepMade());
 [e $U 358  ]
 [e :U 359 ]
 [e :U 358 ]
 [e $ ! != ( _stepMade ..  -> -> 0 `i `ui 359  ]
 [e :U 360 ]
-"788
-[; ;motors.c: 788:         T2CONbits.TMR2ON = 0;
-[e = . . _T2CONbits 0 1 -> -> 0 `i `uc ]
-"789
-[; ;motors.c: 789:         TMR2 = 0;
-[e = _TMR2 -> -> 0 `i `uc ]
 "790
-[; ;motors.c: 790:     }
+[; ;motors.c: 790:         T2CONbits.TMR2ON = 0;
+[e = . . _T2CONbits 0 1 -> -> 0 `i `uc ]
+"791
+[; ;motors.c: 791:         TMR2 = 0;
+[e = _TMR2 -> -> 0 `i `uc ]
+"792
+[; ;motors.c: 792:     }
 }
 [e ++ _i -> -> 1 `i `ui ]
 [e :U 356 ]
 [e $ < _i -> _totStep `ui 353  ]
 [e :U 354 ]
 }
-"793
-[; ;motors.c: 793:     resetTM2_Temp();
+"795
+[; ;motors.c: 795:     resetTM2_Temp();
 [e ( _resetTM2_Temp ..  ]
-"796
-[; ;motors.c: 796:     resetStep();
+"798
+[; ;motors.c: 798:     resetStep();
 [e ( _resetStep ..  ]
-"797
-[; ;motors.c: 797: }
+"799
+[; ;motors.c: 799: }
 [e :UE 352 ]
 }
-"802
-[; ;motors.c: 802: void pickObject(){
+"804
+[; ;motors.c: 804: void pickObject(){
 [v _pickObject `(v ~T0 @X0 1 ef ]
 {
 [e :U _pickObject ]
 [f ]
-"803
-[; ;motors.c: 803:     LATDbits.LATD1 = 1;
+"805
+[; ;motors.c: 805:     LATDbits.LATD1 = 1;
 [e = . . _LATDbits 0 1 -> -> 1 `i `uc ]
-"806
-[; ;motors.c: 806:     T2CONbits.TMR2ON = 1;
+"808
+[; ;motors.c: 808:     T2CONbits.TMR2ON = 1;
 [e = . . _T2CONbits 0 1 -> -> 1 `i `uc ]
-"807
-[; ;motors.c: 807:     while(!stepMade());
+"809
+[; ;motors.c: 809:     while(!stepMade());
 [e $U 362  ]
 [e :U 363 ]
 [e :U 362 ]
 [e $ ! != ( _stepMade ..  -> -> 0 `i `ui 363  ]
 [e :U 364 ]
-"808
-[; ;motors.c: 808:     T2CONbits.TMR2ON = 0;
+"810
+[; ;motors.c: 810:     T2CONbits.TMR2ON = 0;
 [e = . . _T2CONbits 0 1 -> -> 0 `i `uc ]
-"809
-[; ;motors.c: 809:     TMR2 = 0;
+"811
+[; ;motors.c: 811:     TMR2 = 0;
 [e = _TMR2 -> -> 0 `i `uc ]
-"812
-[; ;motors.c: 812:     resetTM2_Temp();
-[e ( _resetTM2_Temp ..  ]
 "814
-[; ;motors.c: 814: }
+[; ;motors.c: 814:     resetTM2_Temp();
+[e ( _resetTM2_Temp ..  ]
+"816
+[; ;motors.c: 816: }
 [e :UE 361 ]
 }
-"819
-[; ;motors.c: 819: void releaseObj(){
+"821
+[; ;motors.c: 821: void releaseObj(){
 [v _releaseObj `(v ~T0 @X0 1 ef ]
 {
 [e :U _releaseObj ]
 [f ]
-"820
-[; ;motors.c: 820:     LATDbits.LATD1 = 0;
+"822
+[; ;motors.c: 822:     LATDbits.LATD1 = 0;
 [e = . . _LATDbits 0 1 -> -> 0 `i `uc ]
-"823
-[; ;motors.c: 823:     T2CONbits.TMR2ON = 1;
+"825
+[; ;motors.c: 825:     T2CONbits.TMR2ON = 1;
 [e = . . _T2CONbits 0 1 -> -> 1 `i `uc ]
-"824
-[; ;motors.c: 824:     while(!stepMade());
+"826
+[; ;motors.c: 826:     while(!stepMade());
 [e $U 366  ]
 [e :U 367 ]
 [e :U 366 ]
 [e $ ! != ( _stepMade ..  -> -> 0 `i `ui 367  ]
 [e :U 368 ]
-"825
-[; ;motors.c: 825:     T2CONbits.TMR2ON = 0;
+"827
+[; ;motors.c: 827:     T2CONbits.TMR2ON = 0;
 [e = . . _T2CONbits 0 1 -> -> 0 `i `uc ]
-"826
-[; ;motors.c: 826:     TMR2 = 0;
+"828
+[; ;motors.c: 828:     TMR2 = 0;
 [e = _TMR2 -> -> 0 `i `uc ]
-"829
-[; ;motors.c: 829:     resetTM2_Temp();
+"831
+[; ;motors.c: 831:     resetTM2_Temp();
 [e ( _resetTM2_Temp ..  ]
-"830
-[; ;motors.c: 830: }
+"832
+[; ;motors.c: 832: }
 [e :UE 365 ]
 }
-"836
-[; ;motors.c: 836: void abortAll(){
+"838
+[; ;motors.c: 838: void abortAll(){
 [v _abortAll `(v ~T0 @X0 1 ef ]
 {
 [e :U _abortAll ]
 [f ]
-"844
-[; ;motors.c: 844:     printError(7);
+"846
+[; ;motors.c: 846:     printError(7);
 [e ( _printError (1 -> -> 7 `i `uc ]
-"845
-[; ;motors.c: 845:     while(1);
+"847
+[; ;motors.c: 847:     while(1);
 [e :U 371 ]
 [e :U 370 ]
 [e $U 371  ]
 [e :U 372 ]
-"846
-[; ;motors.c: 846: }
+"848
+[; ;motors.c: 848: }
 [e :UE 369 ]
 }

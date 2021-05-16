@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.20 build 20200408173844 
-                                                                                               Sat May 08 10:26:13 2021
+                                                                                               Sun May 09 09:29:39 2021
 
 Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1 
      1                           	processor	18F452
@@ -1648,7 +1648,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   1634                           
   1635 ;; *************** function _usartInit *****************
   1636 ;; Defined at:
-  1637 ;;		line 124 in file "usart.c"
+  1637 ;;		line 120 in file "usart.c"
   1638 ;; Parameters:    Size  Location     Type
   1639 ;;		None
   1640 ;; Auto vars:     Size  Location     Type
@@ -1683,37 +1683,37 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   1669                           	callstack 0
   1670  002876  FFFF               	dw	65535	; assembler added errata NOP
   1671  002878                     
-  1672                           ;usart.c: 126:     TRISCbits.TRISC6 = 0;
+  1672                           ;usart.c: 122:     TRISCbits.TRISC6 = 0;
   1673  002878  9C94               	bcf	148,6,c	;volatile
   1674                           
-  1675                           ;usart.c: 127:     TRISCbits.TRISC7 = 1;
+  1675                           ;usart.c: 123:     TRISCbits.TRISC7 = 1;
   1676  00287A  8E94               	bsf	148,7,c	;volatile
   1677                           
-  1678                           ;usart.c: 129:     TXSTAbits.TX9 = 0;
+  1678                           ;usart.c: 125:     TXSTAbits.TX9 = 0;
   1679  00287C  9CAC               	bcf	172,6,c	;volatile
   1680                           
-  1681                           ;usart.c: 130:     TXSTAbits.TXEN = 1;
+  1681                           ;usart.c: 126:     TXSTAbits.TXEN = 1;
   1682  00287E  8AAC               	bsf	172,5,c	;volatile
   1683                           
-  1684                           ;usart.c: 131:     TXSTAbits.SYNC = 0;
+  1684                           ;usart.c: 127:     TXSTAbits.SYNC = 0;
   1685  002880  98AC               	bcf	172,4,c	;volatile
   1686                           
-  1687                           ;usart.c: 132:     TXSTAbits.BRGH = 0;
+  1687                           ;usart.c: 128:     TXSTAbits.BRGH = 0;
   1688  002882  94AC               	bcf	172,2,c	;volatile
   1689                           
-  1690                           ;usart.c: 134:     RCSTAbits.SPEN = 1;
+  1690                           ;usart.c: 130:     RCSTAbits.SPEN = 1;
   1691  002884  8EAB               	bsf	171,7,c	;volatile
   1692                           
-  1693                           ;usart.c: 135:     RCSTAbits.RX9 = 0;
+  1693                           ;usart.c: 131:     RCSTAbits.RX9 = 0;
   1694  002886  9CAB               	bcf	171,6,c	;volatile
   1695                           
-  1696                           ;usart.c: 136:     RCSTAbits.CREN = 0;
+  1696                           ;usart.c: 132:     RCSTAbits.CREN = 0;
   1697  002888  98AB               	bcf	171,4,c	;volatile
   1698                           
-  1699                           ;usart.c: 137:     RCSTAbits.ADDEN = 0;
+  1699                           ;usart.c: 133:     RCSTAbits.ADDEN = 0;
   1700  00288A  96AB               	bcf	171,3,c	;volatile
   1701  00288C                     
-  1702                           ;usart.c: 140:     SPBRG = 25;
+  1702                           ;usart.c: 136:     SPBRG = 25;
   1703  00288C  0E19               	movlw	25
   1704  00288E  6EAF               	movwf	175,c	;volatile
   1705  002890  0012               	return		;funcret
@@ -1882,7 +1882,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   1868                           
   1869 ;; *************** function _storeData *****************
   1870 ;; Defined at:
-  1871 ;;		line 236 in file "usart.c"
+  1871 ;;		line 232 in file "usart.c"
   1872 ;; Parameters:    Size  Location     Type
   1873 ;;  data            1    wreg     unsigned char 
   1874 ;; Auto vars:     Size  Location     Type
@@ -1921,7 +1921,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   1907                           ;storeData@data stored from wreg
   1908  0010CE  6E1B               	movwf	storeData@data^0,c
   1909  0010D0                     
-  1910                           ;usart.c: 242:     receivedMex[counter] = data;
+  1910                           ;usart.c: 238:     receivedMex[counter] = data;
   1911  0010D0  0E43               	movlw	low _receivedMex
   1912  0010D2  245E               	addwf	_counter^0,w,c
   1913  0010D4  6ED9               	movwf	fsr2l,c
@@ -1930,62 +1930,62 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   1916  0010DA  22DA               	addwfc	fsr2h,f,c
   1917  0010DC  C01B  FFDF         	movff	storeData@data,indf2
   1918  0010E0                     
-  1919                           ;usart.c: 244:     counter++;
+  1919                           ;usart.c: 240:     counter++;
   1920  0010E0  2A5E               	incf	_counter^0,f,c
   1921                           
-  1922                           ;usart.c: 247:     switch(receivedMex[0]){
+  1922                           ;usart.c: 243:     switch(receivedMex[0]){
   1923  0010E2  EF8F  F008         	goto	l4673
   1924  0010E6                     l4663:
   1925  0010E6  FFFF               	dw	65535	; assembler added errata NOP
   1926                           
-  1927                           ;usart.c: 249:             mexLength = 5;
+  1927                           ;usart.c: 245:             mexLength = 5;
   1928  0010E8  0E05               	movlw	5
   1929  0010EA  6E6D               	movwf	_mexLength^0,c
   1930                           
-  1931                           ;usart.c: 250:             neverCheck = 0;
+  1931                           ;usart.c: 246:             neverCheck = 0;
   1932  0010EC  0E00               	movlw	0
   1933  0010EE  6E5D               	movwf	_neverCheck^0,c
   1934                           
-  1935                           ;usart.c: 251:             break;
+  1935                           ;usart.c: 247:             break;
   1936  0010F0  EFAA  F008         	goto	l4675
   1937  0010F4                     l4665:
   1938  0010F4  FFFF               	dw	65535	; assembler added errata NOP
   1939                           
-  1940                           ;usart.c: 253:             mexLength = 9;
+  1940                           ;usart.c: 249:             mexLength = 9;
   1941  0010F6  0E09               	movlw	9
   1942  0010F8  6E6D               	movwf	_mexLength^0,c
   1943                           
-  1944                           ;usart.c: 254:             neverCheck = 0;
+  1944                           ;usart.c: 250:             neverCheck = 0;
   1945  0010FA  0E00               	movlw	0
   1946  0010FC  6E5D               	movwf	_neverCheck^0,c
   1947                           
-  1948                           ;usart.c: 255:             break;
+  1948                           ;usart.c: 251:             break;
   1949  0010FE  EFAA  F008         	goto	l4675
   1950  001102                     l4667:
   1951  001102  FFFF               	dw	65535	; assembler added errata NOP
   1952                           
-  1953                           ;usart.c: 257:             mexLength = 1;
+  1953                           ;usart.c: 253:             mexLength = 1;
   1954  001104  0E01               	movlw	1
   1955  001106  6E6D               	movwf	_mexLength^0,c
   1956                           
-  1957                           ;usart.c: 258:             neverCheck = 0;
+  1957                           ;usart.c: 254:             neverCheck = 0;
   1958  001108  0E00               	movlw	0
   1959  00110A  6E5D               	movwf	_neverCheck^0,c
   1960                           
-  1961                           ;usart.c: 259:             break;
+  1961                           ;usart.c: 255:             break;
   1962  00110C  EFAA  F008         	goto	l4675
   1963  001110                     l4669:
   1964  001110  FFFF               	dw	65535	; assembler added errata NOP
   1965                           
-  1966                           ;usart.c: 261:             neverCheck = 1;
+  1966                           ;usart.c: 257:             neverCheck = 1;
   1967  001112  0E01               	movlw	1
   1968  001114  6E5D               	movwf	_neverCheck^0,c
   1969                           
-  1970                           ;usart.c: 262:             counter = 0;
+  1970                           ;usart.c: 258:             counter = 0;
   1971  001116  0E00               	movlw	0
   1972  001118  6E5E               	movwf	_counter^0,c
   1973                           
-  1974                           ;usart.c: 263:             break;
+  1974                           ;usart.c: 259:             break;
   1975  00111A  EFAA  F008         	goto	l4675
   1976  00111E                     l4673:
   1977  00111E  FFFF               	dw	65535	; assembler added errata NOP
@@ -2029,7 +2029,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   2014  001154                     l4675:
   2015  001154  FFFF               	dw	65535	; assembler added errata NOP
   2016                           
-  2017                           ;usart.c: 268:     if(counter == mexLength && !neverCheck){
+  2017                           ;usart.c: 264:     if(counter == mexLength && !neverCheck){
   2018  001156  506D               	movf	_mexLength^0,w,c
   2019  001158  185E               	xorwf	_counter^0,w,c
   2020  00115A  A4D8               	btfss	status,2,c
@@ -2050,16 +2050,16 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   2035  00117E                     u3980:
   2036  00117E  FFFF               	dw	65535	; assembler added errata NOP
   2037  001180                     
-  2038                           ;usart.c: 269:         counter = 0;
+  2038                           ;usart.c: 265:         counter = 0;
   2039  001180  0E00               	movlw	0
   2040  001182  6E5E               	movwf	_counter^0,c
   2041                           
-  2042                           ;usart.c: 272:         switch(receivedMex[0]){
+  2042                           ;usart.c: 268:         switch(receivedMex[0]){
   2043  001184  EF89  F009         	goto	l4717
   2044  001188                     l4681:
   2045  001188  FFFF               	dw	65535	; assembler added errata NOP
   2046                           
-  2047                           ;usart.c: 274:                 dataSequence[dataCounter].feederLine = receivedMex[1];
+  2047                           ;usart.c: 270:                 dataSequence[dataCounter].feederLine = receivedMex[1];
   2048  00118A  5061               	movf	_dataCounter^0,w,c
   2049  00118C  0D04               	mullw	4
   2050  00118E  0EE4               	movlw	low _dataSequence
@@ -2070,7 +2070,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   2055  001198  6EDA               	movwf	fsr2h,c
   2056  00119A  C044  FFDF         	movff	_receivedMex+1,indf2
   2057                           
-  2058                           ;usart.c: 275:                 dataSequence[dataCounter].posX = receivedMex[2] * 5;
+  2058                           ;usart.c: 271:                 dataSequence[dataCounter].posX = receivedMex[2] * 5;
   2059  00119E  5061               	movf	_dataCounter^0,w,c
   2060  0011A0  0D04               	mullw	4
   2061  0011A2  0EE5               	movlw	low (_dataSequence+1)
@@ -2083,7 +2083,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   2068  0011B0  0D05               	mullw	5
   2069  0011B2  CFF3 FFDF          	movff	prodl,indf2
   2070                           
-  2071                           ;usart.c: 276:                 dataSequence[dataCounter].posY = receivedMex[3] * 5;
+  2071                           ;usart.c: 272:                 dataSequence[dataCounter].posY = receivedMex[3] * 5;
   2072  0011B6  5061               	movf	_dataCounter^0,w,c
   2073  0011B8  0D04               	mullw	4
   2074  0011BA  0EE6               	movlw	low (_dataSequence+2)
@@ -2096,7 +2096,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   2081  0011C8  0D05               	mullw	5
   2082  0011CA  CFF3 FFDF          	movff	prodl,indf2
   2083                           
-  2084                           ;usart.c: 277:                 dataSequence[dataCounter].rotation = receivedMex[4];
+  2084                           ;usart.c: 273:                 dataSequence[dataCounter].rotation = receivedMex[4];
   2085  0011CE  5061               	movf	_dataCounter^0,w,c
   2086  0011D0  0D04               	mullw	4
   2087  0011D2  0EE7               	movlw	low (_dataSequence+3)
@@ -2107,7 +2107,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   2092  0011DC  6EDA               	movwf	fsr2h,c
   2093  0011DE  C047  FFDF         	movff	_receivedMex+4,indf2
   2094                           
-  2095                           ;usart.c: 280:                 if((dataSequence[dataCounter].posX > maxX || dataSequence
+  2095                           ;usart.c: 276:                 if((dataSequence[dataCounter].posX > maxX || dataSequence
       +                          [dataCounter].posY > maxY) &&
   2096  0011E2  5061               	movf	_dataCounter^0,w,c
   2097  0011E4  0D04               	mullw	4
@@ -2162,55 +2162,55 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   2146  00124C                     u4010:
   2147  00124C  FFFF               	dw	65535	; assembler added errata NOP
   2148  00124E                     
-  2149                           ;usart.c: 281:                         dataSequence[dataCounter].feederLine != 0xFF){;us
-      +                          art.c: 282:                     printError(5);
+  2149                           ;usart.c: 277:                         dataSequence[dataCounter].feederLine != 0xFF){;us
+      +                          art.c: 278:                     printError(5);
   2150  00124E  0E05               	movlw	5
   2151  001250  ECD4  F00E         	call	_printError
   2152                           
-  2153                           ;usart.c: 283:                 }else{
+  2153                           ;usart.c: 279:                 }else{
   2154  001254  EFA4  F009         	goto	l4719
   2155  001258                     l4689:
   2156  001258  FFFF               	dw	65535	; assembler added errata NOP
   2157                           
-  2158                           ;usart.c: 284:                     dataCounter++;
+  2158                           ;usart.c: 280:                     dataCounter++;
   2159  00125A  2A61               	incf	_dataCounter^0,f,c
   2160  00125C  EFA4  F009         	goto	l4719
   2161  001260                     l633:
   2162  001260  FFFF               	dw	65535	; assembler added errata NOP
   2163                           
-  2164                           ;usart.c: 289:                 newSequenceData.L = receivedMex[1];
+  2164                           ;usart.c: 285:                 newSequenceData.L = receivedMex[1];
   2165  001262  C044  F0F8         	movff	_receivedMex+1,_newSequenceData
   2166                           
-  2167                           ;usart.c: 290:                 newSequenceData.W = receivedMex[2];
+  2167                           ;usart.c: 286:                 newSequenceData.W = receivedMex[2];
   2168  001266  C045  F0F9         	movff	_receivedMex+2,_newSequenceData+1
   2169  00126A                     
-  2170                           ;usart.c: 291:                 newSequenceData.init_posX = receivedMex[3] * 5;
+  2170                           ;usart.c: 287:                 newSequenceData.init_posX = receivedMex[3] * 5;
   2171  00126A  5046               	movf	(_receivedMex+3)^0,w,c
   2172  00126C  0D05               	mullw	5
   2173  00126E  CFF3 F0FA          	movff	prodl,_newSequenceData+2
   2174                           
-  2175                           ;usart.c: 292:                 newSequenceData.init_posY = receivedMex[4] * 5;
+  2175                           ;usart.c: 288:                 newSequenceData.init_posY = receivedMex[4] * 5;
   2176  001272  5047               	movf	(_receivedMex+4)^0,w,c
   2177  001274  0D05               	mullw	5
   2178  001276  CFF3 F0FB          	movff	prodl,_newSequenceData+3
   2179  00127A                     
-  2180                           ;usart.c: 293:                 newSequenceData.init_rot = receivedMex[5];
+  2180                           ;usart.c: 289:                 newSequenceData.init_rot = receivedMex[5];
   2181  00127A  C048  F0FC         	movff	_receivedMex+5,_newSequenceData+4
   2182                           
-  2183                           ;usart.c: 294:                 newSequenceData.end_posX = receivedMex[6] * 5;
+  2183                           ;usart.c: 290:                 newSequenceData.end_posX = receivedMex[6] * 5;
   2184  00127E  5049               	movf	(_receivedMex+6)^0,w,c
   2185  001280  0D05               	mullw	5
   2186  001282  CFF3 F0FD          	movff	prodl,_newSequenceData+5
   2187                           
-  2188                           ;usart.c: 295:                 newSequenceData.end_posY = receivedMex[7] * 5;
+  2188                           ;usart.c: 291:                 newSequenceData.end_posY = receivedMex[7] * 5;
   2189  001286  504A               	movf	(_receivedMex+7)^0,w,c
   2190  001288  0D05               	mullw	5
   2191  00128A  CFF3 F0FE          	movff	prodl,_newSequenceData+6
   2192  00128E                     
-  2193                           ;usart.c: 296:                 newSequenceData.end_rot = receivedMex[8];
+  2193                           ;usart.c: 292:                 newSequenceData.end_rot = receivedMex[8];
   2194  00128E  C04B  F0FF         	movff	_receivedMex+8,_newSequenceData+7
   2195  001292                     
-  2196                           ;usart.c: 299:                 if(newSequenceData.init_posX > maxFeedX ||
+  2196                           ;usart.c: 295:                 if(newSequenceData.init_posX > maxFeedX ||
   2197  001292  0E1F               	movlw	31
   2198  001294  0100               	movlb	0	; () banked
   2199  001296  61FA               	cpfslt	(_newSequenceData+2)& (0+255),b
@@ -2257,43 +2257,43 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   2240  0012E2  FFFF               	dw	65535	; assembler added errata NOP
   2241                           
   2242                           ; BSR set to: 0
-  2243                           ;usart.c: 302:                         newSequenceData.end_posY > maxY){;usart.c: 303:  
+  2243                           ;usart.c: 298:                         newSequenceData.end_posY > maxY){;usart.c: 299:  
       +                                             _newSequence = 0;
   2244  0012E4  0E00               	movlw	0
   2245  0012E6  6E5F               	movwf	__newSequence^0,c
   2246  0012E8                     
   2247                           ; BSR set to: 0
-  2248                           ;usart.c: 304:                     printError(5);
+  2248                           ;usart.c: 300:                     printError(5);
   2249  0012E8  0E05               	movlw	5
   2250  0012EA  ECD4  F00E         	call	_printError
   2251                           
-  2252                           ;usart.c: 305:                 }else{
+  2252                           ;usart.c: 301:                 }else{
   2253  0012EE  EFA4  F009         	goto	l4719
   2254  0012F2                     l4709:
   2255  0012F2  FFFF               	dw	65535	; assembler added errata NOP
   2256                           
   2257                           ; BSR set to: 0
-  2258                           ;usart.c: 306:                     _newSequence = 1;
+  2258                           ;usart.c: 302:                     _newSequence = 1;
   2259  0012F4  0E01               	movlw	1
   2260  0012F6  6E5F               	movwf	__newSequence^0,c
   2261  0012F8  EFA4  F009         	goto	l4719
   2262  0012FC                     l4711:
   2263  0012FC  FFFF               	dw	65535	; assembler added errata NOP
   2264                           
-  2265                           ;usart.c: 311:                 _fatalError = 1;
+  2265                           ;usart.c: 307:                 _fatalError = 1;
   2266  0012FE  0E01               	movlw	1
   2267  001300  6E60               	movwf	__fatalError^0,c
   2268                           
-  2269                           ;usart.c: 312:                 break;
+  2269                           ;usart.c: 308:                 break;
   2270  001302  EFA4  F009         	goto	l4719
   2271  001306                     l4713:
   2272  001306  FFFF               	dw	65535	; assembler added errata NOP
   2273                           
-  2274                           ;usart.c: 315:                 printError(8);
+  2274                           ;usart.c: 311:                 printError(8);
   2275  001308  0E08               	movlw	8
   2276  00130A  ECD4  F00E         	call	_printError
   2277                           
-  2278                           ;usart.c: 316:                 break;
+  2278                           ;usart.c: 312:                 break;
   2279  00130E  EFA4  F009         	goto	l4719
   2280  001312                     l4717:
   2281  001312  FFFF               	dw	65535	; assembler added errata NOP
@@ -2337,7 +2337,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   2318  001348                     l4719:
   2319  001348  FFFF               	dw	65535	; assembler added errata NOP
   2320                           
-  2321                           ;usart.c: 320:         receivedMex[0] = 0;
+  2321                           ;usart.c: 316:         receivedMex[0] = 0;
   2322  00134A  0E00               	movlw	0
   2323  00134C  6E43               	movwf	_receivedMex^0,c
   2324  00134E                     l640:
@@ -2349,7 +2349,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   2330                           
   2331 ;; *************** function _printError *****************
   2332 ;; Defined at:
-  2333 ;;		line 143 in file "usart.c"
+  2333 ;;		line 139 in file "usart.c"
   2334 ;; Parameters:    Size  Location     Type
   2335 ;;  errCode         1    wreg     unsigned char 
   2336 ;; Auto vars:     Size  Location     Type
@@ -2389,12 +2389,12 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   2370                           ;printError@errCode stored from wreg
   2371  001DAA  6E18               	movwf	printError@errCode^0,c
   2372  001DAC                     
-  2373                           ;usart.c: 145:     switch(errCode){
+  2373                           ;usart.c: 141:     switch(errCode){
   2374  001DAC  EF30  F00F         	goto	l4487
   2375  001DB0                     l4469:
   2376  001DB0  FFFF               	dw	65535	; assembler added errata NOP
   2377                           
-  2378                           ;usart.c: 147:             uartTx(&errString_Feed[0], sizeof(errString_Feed));
+  2378                           ;usart.c: 143:             uartTx(&errString_Feed[0], sizeof(errString_Feed));
   2379  001DB2  0E41               	movlw	low _errString_Feed
   2380  001DB4  6E12               	movwf	uartTx@ptr^0,c
   2381  001DB6  0E01               	movlw	high _errString_Feed
@@ -2403,12 +2403,12 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   2384  001DBC  6E14               	movwf	uartTx@length^0,c
   2385  001DBE  EC79  F013         	call	_uartTx	;wreg free
   2386                           
-  2387                           ;usart.c: 148:             break;
+  2387                           ;usart.c: 144:             break;
   2388  001DC2  EF5F  F00F         	goto	l590
   2389  001DC6                     l4471:
   2390  001DC6  FFFF               	dw	65535	; assembler added errata NOP
   2391                           
-  2392                           ;usart.c: 150:             uartTx(&errString_ZEND[0], sizeof(errString_ZEND));
+  2392                           ;usart.c: 146:             uartTx(&errString_ZEND[0], sizeof(errString_ZEND));
   2393  001DC8  0E5E               	movlw	low _errString_ZEND
   2394  001DCA  6E12               	movwf	uartTx@ptr^0,c
   2395  001DCC  0E02               	movlw	high _errString_ZEND
@@ -2417,12 +2417,12 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   2398  001DD2  6E14               	movwf	uartTx@length^0,c
   2399  001DD4  EC79  F013         	call	_uartTx	;wreg free
   2400                           
-  2401                           ;usart.c: 151:             break;
+  2401                           ;usart.c: 147:             break;
   2402  001DD8  EF5F  F00F         	goto	l590
   2403  001DDC                     l4473:
   2404  001DDC  FFFF               	dw	65535	; assembler added errata NOP
   2405                           
-  2406                           ;usart.c: 153:             uartTx(&errString_Reset[0], sizeof(errString_Reset));
+  2406                           ;usart.c: 149:             uartTx(&errString_Reset[0], sizeof(errString_Reset));
   2407  001DDE  0E87               	movlw	low _errString_Reset
   2408  001DE0  6E12               	movwf	uartTx@ptr^0,c
   2409  001DE2  0E02               	movlw	high _errString_Reset
@@ -2431,12 +2431,12 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   2412  001DE8  6E14               	movwf	uartTx@length^0,c
   2413  001DEA  EC79  F013         	call	_uartTx	;wreg free
   2414                           
-  2415                           ;usart.c: 154:             break;
+  2415                           ;usart.c: 150:             break;
   2416  001DEE  EF5F  F00F         	goto	l590
   2417  001DF2                     l4475:
   2418  001DF2  FFFF               	dw	65535	; assembler added errata NOP
   2419                           
-  2420                           ;usart.c: 156:             uartTx(&errString_Point[0], sizeof(errString_Point));
+  2420                           ;usart.c: 152:             uartTx(&errString_Point[0], sizeof(errString_Point));
   2421  001DF4  0E35               	movlw	low _errString_Point
   2422  001DF6  6E12               	movwf	uartTx@ptr^0,c
   2423  001DF8  0E02               	movlw	high _errString_Point
@@ -2445,12 +2445,12 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   2426  001DFE  6E14               	movwf	uartTx@length^0,c
   2427  001E00  EC79  F013         	call	_uartTx	;wreg free
   2428                           
-  2429                           ;usart.c: 157:             break;
+  2429                           ;usart.c: 153:             break;
   2430  001E04  EF5F  F00F         	goto	l590
   2431  001E08                     l4477:
   2432  001E08  FFFF               	dw	65535	; assembler added errata NOP
   2433                           
-  2434                           ;usart.c: 159:             uartTx(&errString_Bound[0], sizeof(errString_Bound));
+  2434                           ;usart.c: 155:             uartTx(&errString_Bound[0], sizeof(errString_Bound));
   2435  001E0A  0E00               	movlw	low _errString_Bound
   2436  001E0C  6E12               	movwf	uartTx@ptr^0,c
   2437  001E0E  0E01               	movlw	high _errString_Bound
@@ -2459,12 +2459,12 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   2440  001E14  6E14               	movwf	uartTx@length^0,c
   2441  001E16  EC79  F013         	call	_uartTx	;wreg free
   2442                           
-  2443                           ;usart.c: 160:             break;
+  2443                           ;usart.c: 156:             break;
   2444  001E1A  EF5F  F00F         	goto	l590
   2445  001E1E                     l4479:
   2446  001E1E  FFFF               	dw	65535	; assembler added errata NOP
   2447                           
-  2448                           ;usart.c: 162:             uartTx(&errString_PointZ[0], sizeof(errString_PointZ));
+  2448                           ;usart.c: 158:             uartTx(&errString_PointZ[0], sizeof(errString_PointZ));
   2449  001E20  0E00               	movlw	low _errString_PointZ
   2450  001E22  6E12               	movwf	uartTx@ptr^0,c
   2451  001E24  0E02               	movlw	high _errString_PointZ
@@ -2473,12 +2473,12 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   2454  001E2A  6E14               	movwf	uartTx@length^0,c
   2455  001E2C  EC79  F013         	call	_uartTx	;wreg free
   2456                           
-  2457                           ;usart.c: 163:             break;
+  2457                           ;usart.c: 159:             break;
   2458  001E30  EF5F  F00F         	goto	l590
   2459  001E34                     l4481:
   2460  001E34  FFFF               	dw	65535	; assembler added errata NOP
   2461                           
-  2462                           ;usart.c: 165:             uartTx(&errString_Fatal[0], sizeof(errString_Fatal));
+  2462                           ;usart.c: 161:             uartTx(&errString_Fatal[0], sizeof(errString_Fatal));
   2463  001E36  0EAF               	movlw	low _errString_Fatal
   2464  001E38  6E12               	movwf	uartTx@ptr^0,c
   2465  001E3A  0E02               	movlw	high _errString_Fatal
@@ -2487,12 +2487,12 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   2468  001E40  6E14               	movwf	uartTx@length^0,c
   2469  001E42  EC79  F013         	call	_uartTx	;wreg free
   2470                           
-  2471                           ;usart.c: 166:             break;
+  2471                           ;usart.c: 162:             break;
   2472  001E46  EF5F  F00F         	goto	l590
   2473  001E4A                     l4483:
   2474  001E4A  FFFF               	dw	65535	; assembler added errata NOP
   2475                           
-  2476                           ;usart.c: 168:             uartTx(&errString_Command[0], sizeof(errString_Command));
+  2476                           ;usart.c: 164:             uartTx(&errString_Command[0], sizeof(errString_Command));
   2477  001E4C  0EB5               	movlw	low _errString_Command
   2478  001E4E  6E12               	movwf	uartTx@ptr^0,c
   2479  001E50  0E01               	movlw	high _errString_Command
@@ -2501,7 +2501,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   2482  001E56  6E14               	movwf	uartTx@length^0,c
   2483  001E58  EC79  F013         	call	_uartTx	;wreg free
   2484                           
-  2485                           ;usart.c: 169:             break;
+  2485                           ;usart.c: 165:             break;
   2486  001E5C  EF5F  F00F         	goto	l590
   2487  001E60                     l4487:
   2488  001E60  FFFF               	dw	65535	; assembler added errata NOP
@@ -2566,7 +2566,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   2546                           
   2547 ;; *************** function _shiftData *****************
   2548 ;; Defined at:
-  2549 ;;		line 113 in file "usart.c"
+  2549 ;;		line 109 in file "usart.c"
   2550 ;; Parameters:    Size  Location     Type
   2551 ;;		None
   2552 ;; Auto vars:     Size  Location     Type
@@ -2601,13 +2601,13 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   2581                           	callstack 0
   2582  002692  FFFF               	dw	65535	; assembler added errata NOP
   2583  002694                     
-  2584                           ;usart.c: 114:     char i;;usart.c: 116:     for(i = 0; i < 4; i++){
+  2584                           ;usart.c: 110:     char i;;usart.c: 112:     for(i = 0; i < 4; i++){
   2585  002694  0E00               	movlw	0
   2586  002696  6E14               	movwf	shiftData@i^0,c
   2587  002698                     l4857:
   2588  002698  FFFF               	dw	65535	; assembler added errata NOP
   2589                           
-  2590                           ;usart.c: 117:         dataSequence[i] = dataSequence[i+1];
+  2590                           ;usart.c: 113:         dataSequence[i] = dataSequence[i+1];
   2591  00269A  5014               	movf	shiftData@i^0,w,c
   2592  00269C  6E12               	movwf	??_shiftData^0,c
   2593  00269E  6A13               	clrf	(??_shiftData+1)^0,c
@@ -2636,7 +2636,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   2616  0026D0  CFDE FFE6          	movff	postinc2,postinc1
   2617  0026D4  CFDE FFE6          	movff	postinc2,postinc1
   2618  0026D8                     
-  2619                           ;usart.c: 118:     }
+  2619                           ;usart.c: 114:     }
   2620  0026D8  2A14               	incf	shiftData@i^0,f,c
   2621  0026DA  0E03               	movlw	3
   2622  0026DC  6414               	cpfsgt	shiftData@i^0,c
@@ -3021,7 +3021,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   3001                           
   3002 ;; *************** function _resetNewSequence *****************
   3003 ;; Defined at:
-  3004 ;;		line 105 in file "usart.c"
+  3004 ;;		line 101 in file "usart.c"
   3005 ;; Parameters:    Size  Location     Type
   3006 ;;		None
   3007 ;; Auto vars:     Size  Location     Type
@@ -3056,7 +3056,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   3036                           	callstack 0
   3037  002968  FFFF               	dw	65535	; assembler added errata NOP
   3038  00296A                     
-  3039                           ;usart.c: 106:     _newSequence = 0;
+  3039                           ;usart.c: 102:     _newSequence = 0;
   3040  00296A  0E00               	movlw	0
   3041  00296C  6E5F               	movwf	__newSequence^0,c
   3042  00296E  0012               	return		;funcret
@@ -3066,7 +3066,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   3046                           
   3047 ;; *************** function _reduceSeq *****************
   3048 ;; Defined at:
-  3049 ;;		line 75 in file "usart.c"
+  3049 ;;		line 71 in file "usart.c"
   3050 ;; Parameters:    Size  Location     Type
   3051 ;;		None
   3052 ;; Auto vars:     Size  Location     Type
@@ -3101,7 +3101,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   3081                           	callstack 0
   3082  0029C2  FFFF               	dw	65535	; assembler added errata NOP
   3083  0029C4                     
-  3084                           ;usart.c: 76:     dataCounter--;
+  3084                           ;usart.c: 72:     dataCounter--;
   3085  0029C4  0661               	decf	_dataCounter^0,f,c
   3086  0029C6  0012               	return		;funcret
   3087  0029C8  FFFF               	dw	65535	; errata NOP
@@ -3110,7 +3110,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   3090                           
   3091 ;; *************** function _readSeq *****************
   3092 ;; Defined at:
-  3093 ;;		line 89 in file "usart.c"
+  3093 ;;		line 85 in file "usart.c"
   3094 ;; Parameters:    Size  Location     Type
   3095 ;;		None
   3096 ;; Auto vars:     Size  Location     Type
@@ -3145,7 +3145,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   3125                           	callstack 0
   3126  0029CA  FFFF               	dw	65535	; assembler added errata NOP
   3127  0029CC                     
-  3128                           ;usart.c: 90:     return dataCounter;
+  3128                           ;usart.c: 86:     return dataCounter;
   3129  0029CC  5061               	movf	_dataCounter^0,w,c
   3130  0029CE  0012               	return		;funcret
   3131  0029D0  FFFF               	dw	65535	; errata NOP
@@ -3154,7 +3154,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   3134                           
   3135 ;; *************** function _newSequence *****************
   3136 ;; Defined at:
-  3137 ;;		line 97 in file "usart.c"
+  3137 ;;		line 93 in file "usart.c"
   3138 ;; Parameters:    Size  Location     Type
   3139 ;;		None
   3140 ;; Auto vars:     Size  Location     Type
@@ -3189,7 +3189,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   3169                           	callstack 0
   3170  0029D2  FFFF               	dw	65535	; assembler added errata NOP
   3171  0029D4                     
-  3172                           ;usart.c: 98:     return _newSequence;
+  3172                           ;usart.c: 94:     return _newSequence;
   3173  0029D4  505F               	movf	__newSequence^0,w,c
   3174  0029D6  0012               	return		;funcret
   3175  0029D8  FFFF               	dw	65535	; errata NOP
@@ -3434,7 +3434,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   3414                           
   3415 ;; *************** function _getNewSequence *****************
   3416 ;; Defined at:
-  3417 ;;		line 68 in file "usart.c"
+  3417 ;;		line 64 in file "usart.c"
   3418 ;; Parameters:    Size  Location     Type
   3419 ;;		None
   3420 ;; Auto vars:     Size  Location     Type
@@ -3469,7 +3469,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   3449                           	callstack 0
   3450  0028FE  FFFF               	dw	65535	; assembler added errata NOP
   3451  002900                     
-  3452                           ;usart.c: 69:     return(&newSequenceData);
+  3452                           ;usart.c: 65:     return(&newSequenceData);
   3453  002900  0EF8               	movlw	low _newSequenceData
   3454  002902  6E12               	movwf	?_getNewSequence^0,c
   3455  002904  0E00               	movlw	high _newSequenceData
@@ -4867,8 +4867,8 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   4841  002206  0101               	movlb	1	; () banked
   4842  002208  6FF6               	movwf	rotateObj@rotAngle& (0+255),b
   4843  00220A                     
-  4844                           ;motors.c: 770:     static const float stepAngle = 2;;motors.c: 771:     static char rot
-      +                          Sequence[] = {0b100100, 0b001100, 0b011000, 0b110000};;motors.c: 772:     unsigned int i
+  4844                           ;motors.c: 772:     static const float stepAngle = 2;;motors.c: 773:     static char rot
+      +                          Sequence[] = {0b100100, 0b001100, 0b011000, 0b110000};;motors.c: 774:     unsigned int i
       +                          , c = 0;
   4845  00220A  0E00               	movlw	0
   4846  00220C  0101               	movlb	1	; () banked
@@ -4877,7 +4877,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   4849  002212  6FFB               	movwf	rotateObj@c& (0+255),b
   4850  002214                     
   4851                           ; BSR set to: 1
-  4852                           ;motors.c: 773:     int totStep = rotAngle/stepAngle;
+  4852                           ;motors.c: 775:     int totStep = rotAngle/stepAngle;
   4853  002214  0E00               	movlw	0
   4854  002216  6E24               	movwf	___fldiv@a^0,c
   4855  002218  0E00               	movlw	0
@@ -4906,7 +4906,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   4878  00225C  C039  F1F7         	movff	?___fltol,rotateObj@totStep
   4879  002260  C03A  F1F8         	movff	?___fltol+1,rotateObj@totStep+1
   4880  002264                     
-  4881                           ;motors.c: 776:     for(i = 0; i < totStep; i++){
+  4881                           ;motors.c: 778:     for(i = 0; i < totStep; i++){
   4882  002264  0E00               	movlw	0
   4883  002266  0101               	movlb	1	; () banked
   4884  002268  6FFA               	movwf	(rotateObj@i+1)& (0+255),b
@@ -4917,7 +4917,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   4889  002272  FFFF               	dw	65535	; assembler added errata NOP
   4890                           
   4891                           ; BSR set to: 1
-  4892                           ;motors.c: 780:         LATD = rotSequence[c];
+  4892                           ;motors.c: 782:         LATD = rotSequence[c];
   4893  002274  0E80               	movlw	low rotateObj@rotSequence
   4894  002276  25FB               	addwf	rotateObj@c& (0+255),w,b
   4895  002278  6ED9               	movwf	fsr2l,c
@@ -4928,12 +4928,12 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   4900  002282  6E8C               	movwf	140,c	;volatile
   4901  002284                     
   4902                           ; BSR set to: 1
-  4903                           ;motors.c: 782:         c++;
+  4903                           ;motors.c: 784:         c++;
   4904  002284  4BFB               	infsnz	rotateObj@c& (0+255),f,b
   4905  002286  2BFC               	incf	(rotateObj@c+1)& (0+255),f,b
   4906  002288                     
   4907                           ; BSR set to: 1
-  4908                           ;motors.c: 783:         if (c >= 4) {c = 0;}
+  4908                           ;motors.c: 785:         if (c >= 4) {c = 0;}
   4909  002288  51FC               	movf	(rotateObj@c+1)& (0+255),w,b
   4910  00228A  E10A               	bnz	u3760
   4911  00228C  0E04               	movlw	4
@@ -4956,7 +4956,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   4928  0022AA  FFFF               	dw	65535	; assembler added errata NOP
   4929                           
   4930                           ; BSR set to: 1
-  4931                           ;motors.c: 786:         T2CONbits.TMR2ON = 1;
+  4931                           ;motors.c: 788:         T2CONbits.TMR2ON = 1;
   4932  0022AC  84CA               	bsf	202,2,c	;volatile
   4933  0022AE                     l4441:
   4934  0022AE  FFFF               	dw	65535	; assembler added errata NOP
@@ -4972,14 +4972,14 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   4944  0022C8                     u3770:
   4945  0022C8  FFFF               	dw	65535	; assembler added errata NOP
   4946  0022CA                     
-  4947                           ;motors.c: 788:         T2CONbits.TMR2ON = 0;
+  4947                           ;motors.c: 790:         T2CONbits.TMR2ON = 0;
   4948  0022CA  94CA               	bcf	202,2,c	;volatile
   4949  0022CC                     
-  4950                           ;motors.c: 789:         TMR2 = 0;
+  4950                           ;motors.c: 791:         TMR2 = 0;
   4951  0022CC  0E00               	movlw	0
   4952  0022CE  6ECC               	movwf	204,c	;volatile
   4953  0022D0                     
-  4954                           ;motors.c: 790:     }
+  4954                           ;motors.c: 792:     }
   4955  0022D0  0101               	movlb	1	; () banked
   4956  0022D2  4BF9               	infsnz	rotateObj@i& (0+255),f,b
   4957  0022D4  2BFA               	incf	(rotateObj@i+1)& (0+255),f,b
@@ -5001,10 +5001,10 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   4973  0022F0  FFFF               	dw	65535	; assembler added errata NOP
   4974  0022F2                     
   4975                           ; BSR set to: 1
-  4976                           ;motors.c: 793:     resetTM2_Temp();
+  4976                           ;motors.c: 795:     resetTM2_Temp();
   4977  0022F2  EC66  F014         	call	_resetTM2_Temp	;wreg free
   4978                           
-  4979                           ;motors.c: 796:     resetStep();
+  4979                           ;motors.c: 798:     resetStep();
   4980  0022F6  ECCD  F014         	call	_resetStep	;wreg free
   4981  0022FA  0012               	return		;funcret
   4982  0022FC  FFFF               	dw	65535	; errata NOP
@@ -6029,7 +6029,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   6001                           
   6002 ;; *************** function _releaseObj *****************
   6003 ;; Defined at:
-  6004 ;;		line 819 in file "motors.c"
+  6004 ;;		line 821 in file "motors.c"
   6005 ;; Parameters:    Size  Location     Type
   6006 ;;		None
   6007 ;; Auto vars:     Size  Location     Type
@@ -6065,10 +6065,10 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   6037                           	callstack 0
   6038  0027CA  FFFF               	dw	65535	; assembler added errata NOP
   6039  0027CC                     
-  6040                           ;motors.c: 820:     LATDbits.LATD1 = 0;
+  6040                           ;motors.c: 822:     LATDbits.LATD1 = 0;
   6041  0027CC  928C               	bcf	140,1,c	;volatile
   6042                           
-  6043                           ;motors.c: 823:     T2CONbits.TMR2ON = 1;
+  6043                           ;motors.c: 825:     T2CONbits.TMR2ON = 1;
   6044  0027CE  84CA               	bsf	202,2,c	;volatile
   6045  0027D0                     l4461:
   6046  0027D0  FFFF               	dw	65535	; assembler added errata NOP
@@ -6084,14 +6084,14 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   6056  0027EA                     u3800:
   6057  0027EA  FFFF               	dw	65535	; assembler added errata NOP
   6058  0027EC                     
-  6059                           ;motors.c: 825:     T2CONbits.TMR2ON = 0;
+  6059                           ;motors.c: 827:     T2CONbits.TMR2ON = 0;
   6060  0027EC  94CA               	bcf	202,2,c	;volatile
   6061  0027EE                     
-  6062                           ;motors.c: 826:     TMR2 = 0;
+  6062                           ;motors.c: 828:     TMR2 = 0;
   6063  0027EE  0E00               	movlw	0
   6064  0027F0  6ECC               	movwf	204,c	;volatile
   6065  0027F2                     
-  6066                           ;motors.c: 829:     resetTM2_Temp();
+  6066                           ;motors.c: 831:     resetTM2_Temp();
   6067  0027F2  EC66  F014         	call	_resetTM2_Temp	;wreg free
   6068  0027F6  0012               	return		;funcret
   6069  0027F8  FFFF               	dw	65535	; errata NOP
@@ -6100,7 +6100,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   6072                           
   6073 ;; *************** function _printStatus *****************
   6074 ;; Defined at:
-  6075 ;;		line 176 in file "usart.c"
+  6075 ;;		line 172 in file "usart.c"
   6076 ;; Parameters:    Size  Location     Type
   6077 ;;  status          1    wreg     unsigned char 
   6078 ;; Auto vars:     Size  Location     Type
@@ -6140,12 +6140,12 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   6112                           ;printStatus@status stored from wreg
   6113  0019BA  6E18               	movwf	printStatus@status^0,c
   6114  0019BC                     
-  6115                           ;usart.c: 177:     switch(status){
+  6115                           ;usart.c: 173:     switch(status){
   6116  0019BC  EF59  F00D         	goto	l4519
   6117  0019C0                     l4495:
   6118  0019C0  FFFF               	dw	65535	; assembler added errata NOP
   6119                           
-  6120                           ;usart.c: 179:             uartTx(&start[0], sizeof(start));
+  6120                           ;usart.c: 175:             uartTx(&start[0], sizeof(start));
   6121  0019C2  0E9A               	movlw	low _start
   6122  0019C4  6E12               	movwf	uartTx@ptr^0,c
   6123  0019C6  0E01               	movlw	high _start
@@ -6154,12 +6154,12 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   6126  0019CC  6E14               	movwf	uartTx@length^0,c
   6127  0019CE  EC79  F013         	call	_uartTx	;wreg free
   6128                           
-  6129                           ;usart.c: 180:             break;
+  6129                           ;usart.c: 176:             break;
   6130  0019D2  EF94  F00D         	goto	l607
   6131  0019D6                     l4497:
   6132  0019D6  FFFF               	dw	65535	; assembler added errata NOP
   6133                           
-  6134                           ;usart.c: 182:             uartTx(&movingToPick[0], sizeof(movingToPick));
+  6134                           ;usart.c: 178:             uartTx(&movingToPick[0], sizeof(movingToPick));
   6135  0019D8  0E7D               	movlw	low _movingToPick
   6136  0019DA  6E12               	movwf	uartTx@ptr^0,c
   6137  0019DC  0E01               	movlw	high _movingToPick
@@ -6168,12 +6168,12 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   6140  0019E2  6E14               	movwf	uartTx@length^0,c
   6141  0019E4  EC79  F013         	call	_uartTx	;wreg free
   6142                           
-  6143                           ;usart.c: 183:             break;
+  6143                           ;usart.c: 179:             break;
   6144  0019E8  EF94  F00D         	goto	l607
   6145  0019EC                     l4499:
   6146  0019EC  FFFF               	dw	65535	; assembler added errata NOP
   6147                           
-  6148                           ;usart.c: 185:             uartTx(&pickingTheOBJ[0], sizeof(pickingTheOBJ));
+  6148                           ;usart.c: 181:             uartTx(&pickingTheOBJ[0], sizeof(pickingTheOBJ));
   6149  0019EE  0E90               	movlw	low _pickingTheOBJ
   6150  0019F0  6E12               	movwf	uartTx@ptr^0,c
   6151  0019F2  0E00               	movlw	high _pickingTheOBJ
@@ -6182,12 +6182,12 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   6154  0019F8  6E14               	movwf	uartTx@length^0,c
   6155  0019FA  EC79  F013         	call	_uartTx	;wreg free
   6156                           
-  6157                           ;usart.c: 186:             break;
+  6157                           ;usart.c: 182:             break;
   6158  0019FE  EF94  F00D         	goto	l607
   6159  001A02                     l4501:
   6160  001A02  FFFF               	dw	65535	; assembler added errata NOP
   6161                           
-  6162                           ;usart.c: 188:             uartTx(&OBJPicked[0], sizeof(OBJPicked));
+  6162                           ;usart.c: 184:             uartTx(&OBJPicked[0], sizeof(OBJPicked));
   6163  001A04  0ED5               	movlw	low _OBJPicked
   6164  001A06  6E12               	movwf	uartTx@ptr^0,c
   6165  001A08  0E00               	movlw	high _OBJPicked
@@ -6196,12 +6196,12 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   6168  001A0E  6E14               	movwf	uartTx@length^0,c
   6169  001A10  EC79  F013         	call	_uartTx	;wreg free
   6170                           
-  6171                           ;usart.c: 189:             break;
+  6171                           ;usart.c: 185:             break;
   6172  001A14  EF94  F00D         	goto	l607
   6173  001A18                     l4503:
   6174  001A18  FFFF               	dw	65535	; assembler added errata NOP
   6175                           
-  6176                           ;usart.c: 191:             uartTx(&liftingTheArm[0], sizeof(liftingTheArm));
+  6176                           ;usart.c: 187:             uartTx(&liftingTheArm[0], sizeof(liftingTheArm));
   6177  001A1A  0EB5               	movlw	low _liftingTheArm
   6178  001A1C  6E12               	movwf	uartTx@ptr^0,c
   6179  001A1E  0E00               	movlw	high _liftingTheArm
@@ -6210,12 +6210,12 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   6182  001A24  6E14               	movwf	uartTx@length^0,c
   6183  001A26  EC79  F013         	call	_uartTx	;wreg free
   6184                           
-  6185                           ;usart.c: 192:             break;
+  6185                           ;usart.c: 188:             break;
   6186  001A2A  EF94  F00D         	goto	l607
   6187  001A2E                     l4505:
   6188  001A2E  FFFF               	dw	65535	; assembler added errata NOP
   6189                           
-  6190                           ;usart.c: 194:             uartTx(&movingToPlace[0], sizeof(movingToPlace));
+  6190                           ;usart.c: 190:             uartTx(&movingToPlace[0], sizeof(movingToPlace));
   6191  001A30  0E5F               	movlw	low _movingToPlace
   6192  001A32  6E12               	movwf	uartTx@ptr^0,c
   6193  001A34  0E01               	movlw	high _movingToPlace
@@ -6224,12 +6224,12 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   6196  001A3A  6E14               	movwf	uartTx@length^0,c
   6197  001A3C  EC79  F013         	call	_uartTx	;wreg free
   6198                           
-  6199                           ;usart.c: 195:             break;
+  6199                           ;usart.c: 191:             break;
   6200  001A40  EF94  F00D         	goto	l607
   6201  001A44                     l4507:
   6202  001A44  FFFF               	dw	65535	; assembler added errata NOP
   6203                           
-  6204                           ;usart.c: 197:             uartTx(&rotateOBJ[0], sizeof(rotateOBJ));
+  6204                           ;usart.c: 193:             uartTx(&rotateOBJ[0], sizeof(rotateOBJ));
   6205  001A46  0ECD               	movlw	low _rotateOBJ
   6206  001A48  6E12               	movwf	uartTx@ptr^0,c
   6207  001A4A  0E01               	movlw	high _rotateOBJ
@@ -6238,12 +6238,12 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   6210  001A50  6E14               	movwf	uartTx@length^0,c
   6211  001A52  EC79  F013         	call	_uartTx	;wreg free
   6212                           
-  6213                           ;usart.c: 198:             break;
+  6213                           ;usart.c: 194:             break;
   6214  001A56  EF94  F00D         	goto	l607
   6215  001A5A                     l4509:
   6216  001A5A  FFFF               	dw	65535	; assembler added errata NOP
   6217                           
-  6218                           ;usart.c: 200:             uartTx(&placeTheOBJ[0], sizeof(placeTheOBJ));
+  6218                           ;usart.c: 196:             uartTx(&placeTheOBJ[0], sizeof(placeTheOBJ));
   6219  001A5C  0EE2               	movlw	low _placeTheOBJ
   6220  001A5E  6E12               	movwf	uartTx@ptr^0,c
   6221  001A60  0E01               	movlw	high _placeTheOBJ
@@ -6252,12 +6252,12 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   6224  001A66  6E14               	movwf	uartTx@length^0,c
   6225  001A68  EC79  F013         	call	_uartTx	;wreg free
   6226                           
-  6227                           ;usart.c: 201:             break;
+  6227                           ;usart.c: 197:             break;
   6228  001A6C  EF94  F00D         	goto	l607
   6229  001A70                     l4511:
   6230  001A70  FFFF               	dw	65535	; assembler added errata NOP
   6231                           
-  6232                           ;usart.c: 203:             uartTx(&OBJRelease[0], sizeof(OBJRelease));
+  6232                           ;usart.c: 199:             uartTx(&OBJRelease[0], sizeof(OBJRelease));
   6233  001A72  0EA4               	movlw	low _OBJRelease
   6234  001A74  6E12               	movwf	uartTx@ptr^0,c
   6235  001A76  0E00               	movlw	high _OBJRelease
@@ -6266,12 +6266,12 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   6238  001A7C  6E14               	movwf	uartTx@length^0,c
   6239  001A7E  EC79  F013         	call	_uartTx	;wreg free
   6240                           
-  6241                           ;usart.c: 204:             break;
+  6241                           ;usart.c: 200:             break;
   6242  001A82  EF94  F00D         	goto	l607
   6243  001A86                     l4513:
   6244  001A86  FFFF               	dw	65535	; assembler added errata NOP
   6245                           
-  6246                           ;usart.c: 206:             uartTx(&resetPos[0], sizeof(resetPos));
+  6246                           ;usart.c: 202:             uartTx(&resetPos[0], sizeof(resetPos));
   6247  001A88  0E21               	movlw	low _resetPos
   6248  001A8A  6E12               	movwf	uartTx@ptr^0,c
   6249  001A8C  0E01               	movlw	high _resetPos
@@ -6280,12 +6280,12 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   6252  001A92  6E14               	movwf	uartTx@length^0,c
   6253  001A94  EC79  F013         	call	_uartTx	;wreg free
   6254                           
-  6255                           ;usart.c: 207:             break;
+  6255                           ;usart.c: 203:             break;
   6256  001A98  EF94  F00D         	goto	l607
   6257  001A9C                     l4515:
   6258  001A9C  FFFF               	dw	65535	; assembler added errata NOP
   6259                           
-  6260                           ;usart.c: 209:             uartTx(&ready[0], sizeof(ready));
+  6260                           ;usart.c: 205:             uartTx(&ready[0], sizeof(ready));
   6261  001A9E  0EC6               	movlw	low _ready
   6262  001AA0  6E12               	movwf	uartTx@ptr^0,c
   6263  001AA2  0E00               	movlw	high _ready
@@ -6366,7 +6366,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   6337                           
   6338 ;; *************** function _uartTx *****************
   6339 ;; Defined at:
-  6340 ;;		line 220 in file "usart.c"
+  6340 ;;		line 216 in file "usart.c"
   6341 ;; Parameters:    Size  Location     Type
   6342 ;;  ptr             2   17[COMRAM] PTR unsigned char 
   6343 ;;		 -> ready(15), resetPos(32), OBJRelease(17), placeTheOBJ(20), 
@@ -6408,15 +6408,15 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   6379                           	callstack 0
   6380  0026F2  FFFF               	dw	65535	; assembler added errata NOP
   6381  0026F4                     
-  6382                           ;usart.c: 220: void uartTx(unsigned char *ptr, unsigned char length);usart.c: 221: {;usa
-      +                          rt.c: 223:     for(char i = 1; i < length; i++){
+  6382                           ;usart.c: 216: void uartTx(unsigned char *ptr, unsigned char length);usart.c: 217: {;usa
+      +                          rt.c: 219:     for(char i = 1; i < length; i++){
   6383  0026F4  0E01               	movlw	1
   6384  0026F6  6E15               	movwf	uartTx@i^0,c
   6385  0026F8  EF92  F013         	goto	l3973
   6386  0026FC                     l3969:
   6387  0026FC  FFFF               	dw	65535	; assembler added errata NOP
   6388                           
-  6389                           ;usart.c: 225:         TXREG = *ptr;
+  6389                           ;usart.c: 221:         TXREG = *ptr;
   6390  0026FE  C012  FFD9         	movff	uartTx@ptr,fsr2l
   6391  002702  C013  FFDA         	movff	uartTx@ptr+1,fsr2h
   6392  002706  50DF               	movf	indf2,w,c
@@ -6432,11 +6432,11 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   6402  00271C                     u2960:
   6403  00271C  FFFF               	dw	65535	; assembler added errata NOP
   6404  00271E                     
-  6405                           ;usart.c: 229:         ptr++;
+  6405                           ;usart.c: 225:         ptr++;
   6406  00271E  4A12               	infsnz	uartTx@ptr^0,f,c
   6407  002720  2A13               	incf	(uartTx@ptr+1)^0,f,c
   6408                           
-  6409                           ;usart.c: 230:     }
+  6409                           ;usart.c: 226:     }
   6410  002722  2A15               	incf	uartTx@i^0,f,c
   6411  002724                     l3973:
   6412  002724  FFFF               	dw	65535	; assembler added errata NOP
@@ -6457,7 +6457,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   6427                           
   6428 ;; *************** function _pickObject *****************
   6429 ;; Defined at:
-  6430 ;;		line 802 in file "motors.c"
+  6430 ;;		line 804 in file "motors.c"
   6431 ;; Parameters:    Size  Location     Type
   6432 ;;		None
   6433 ;; Auto vars:     Size  Location     Type
@@ -6493,10 +6493,10 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   6463                           	callstack 0
   6464  0027FA  FFFF               	dw	65535	; assembler added errata NOP
   6465  0027FC                     
-  6466                           ;motors.c: 803:     LATDbits.LATD1 = 1;
+  6466                           ;motors.c: 805:     LATDbits.LATD1 = 1;
   6467  0027FC  828C               	bsf	140,1,c	;volatile
   6468                           
-  6469                           ;motors.c: 806:     T2CONbits.TMR2ON = 1;
+  6469                           ;motors.c: 808:     T2CONbits.TMR2ON = 1;
   6470  0027FE  84CA               	bsf	202,2,c	;volatile
   6471  002800                     l4453:
   6472  002800  FFFF               	dw	65535	; assembler added errata NOP
@@ -6512,14 +6512,14 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   6482  00281A                     u3790:
   6483  00281A  FFFF               	dw	65535	; assembler added errata NOP
   6484  00281C                     
-  6485                           ;motors.c: 808:     T2CONbits.TMR2ON = 0;
+  6485                           ;motors.c: 810:     T2CONbits.TMR2ON = 0;
   6486  00281C  94CA               	bcf	202,2,c	;volatile
   6487  00281E                     
-  6488                           ;motors.c: 809:     TMR2 = 0;
+  6488                           ;motors.c: 811:     TMR2 = 0;
   6489  00281E  0E00               	movlw	0
   6490  002820  6ECC               	movwf	204,c	;volatile
   6491  002822                     
-  6492                           ;motors.c: 812:     resetTM2_Temp();
+  6492                           ;motors.c: 814:     resetTM2_Temp();
   6493  002822  EC66  F014         	call	_resetTM2_Temp	;wreg free
   6494  002826  0012               	return		;funcret
   6495  002828  FFFF               	dw	65535	; errata NOP
@@ -7516,7 +7516,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   7485                           
   7486 ;; *************** function _getData *****************
   7487 ;; Defined at:
-  7488 ;;		line 60 in file "usart.c"
+  7488 ;;		line 56 in file "usart.c"
   7489 ;; Parameters:    Size  Location     Type
   7490 ;;		None
   7491 ;; Auto vars:     Size  Location     Type
@@ -7551,7 +7551,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   7520                           	callstack 0
   7521  00290C  FFFF               	dw	65535	; assembler added errata NOP
   7522  00290E                     
-  7523                           ;usart.c: 61:     return(&dataSequence[0]);
+  7523                           ;usart.c: 57:     return(&dataSequence[0]);
   7524  00290E  0EE4               	movlw	low _dataSequence
   7525  002910  6E12               	movwf	?_getData^0,c
   7526  002912  0E00               	movlw	high _dataSequence
@@ -7661,7 +7661,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   7630  000014  CFF3 F00F          	movff	prodl,??_isr+4
   7631  000018  CFF4 F010          	movff	prodh,??_isr+5
   7632  00001C                     
-  7633                           ;interrupt.c: 56:     if(INTCONbits.T0IF){
+  7633                           ;interrupt.c: 55:     if(INTCONbits.T0IF){
   7634  00001C  A4F2               	btfss	242,2,c	;volatile
   7635  00001E  EF13  F000         	goto	i2u284_41
   7636  000022  EF16  F000         	goto	i2u284_40
@@ -7671,13 +7671,13 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   7640  00002C                     i2u284_40:
   7641  00002C  FFFF               	dw	65535	; assembler added errata NOP
   7642  00002E                     
-  7643                           ;interrupt.c: 57:         INTCONbits.T0IF = 0;
+  7643                           ;interrupt.c: 56:         INTCONbits.T0IF = 0;
   7644  00002E  94F2               	bcf	242,2,c	;volatile
   7645  000030                     
-  7646                           ;interrupt.c: 60:         tm0Count++;
+  7646                           ;interrupt.c: 59:         tm0Count++;
   7647  000030  2A63               	incf	_tm0Count^0,f,c
   7648  000032                     
-  7649                           ;interrupt.c: 62:         if(tm0Count >= whatsTM0Limit()){
+  7649                           ;interrupt.c: 61:         if(tm0Count >= whatsTM0Limit()){
   7650  000032  ECF1  F014         	call	_whatsTM0Limit	;wreg free
   7651  000036  6E0B               	movwf	??_isr^0,c
   7652  000038  500B               	movf	??_isr^0,w,c
@@ -7691,19 +7691,19 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   7660  00004C                     i2u285_40:
   7661  00004C  FFFF               	dw	65535	; assembler added errata NOP
   7662  00004E                     
-  7663                           ;interrupt.c: 63:             T0CONbits.TMR0ON = 0;
+  7663                           ;interrupt.c: 62:             T0CONbits.TMR0ON = 0;
   7664  00004E  9ED5               	bcf	213,7,c	;volatile
   7665  000050                     
-  7666                           ;interrupt.c: 64:             tm0Count = 0;
+  7666                           ;interrupt.c: 63:             tm0Count = 0;
   7667  000050  0E00               	movlw	0
   7668  000052  6E63               	movwf	_tm0Count^0,c
   7669  000054                     
-  7670                           ;interrupt.c: 65:             writeTM0();
+  7670                           ;interrupt.c: 64:             writeTM0();
   7671  000054  EC94  F014         	call	_writeTM0	;wreg free
   7672  000058                     i2l3731:
   7673  000058  FFFF               	dw	65535	; assembler added errata NOP
   7674                           
-  7675                           ;interrupt.c: 70:     if(PIR1bits.TMR1IF){
+  7675                           ;interrupt.c: 69:     if(PIR1bits.TMR1IF){
   7676  00005A  A09E               	btfss	158,0,c	;volatile
   7677  00005C  EF32  F000         	goto	i2u286_41
   7678  000060  EF35  F000         	goto	i2u286_40
@@ -7713,10 +7713,10 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   7682  00006A                     i2u286_40:
   7683  00006A  FFFF               	dw	65535	; assembler added errata NOP
   7684  00006C                     
-  7685                           ;interrupt.c: 71:         PIR1bits.TMR1IF = 0;
+  7685                           ;interrupt.c: 70:         PIR1bits.TMR1IF = 0;
   7686  00006C  909E               	bcf	158,0,c	;volatile
   7687  00006E                     
-  7688                           ;interrupt.c: 72:         if(fatalError()){
+  7688                           ;interrupt.c: 71:         if(fatalError()){
   7689  00006E  ECF9  F014         	call	_fatalError	;wreg free
   7690  000072  0900               	iorlw	0
   7691  000074  B4D8               	btfsc	status,2,c
@@ -7728,12 +7728,12 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   7697  000084                     i2u287_40:
   7698  000084  FFFF               	dw	65535	; assembler added errata NOP
   7699  000086                     
-  7700                           ;interrupt.c: 73:             abortAll();
+  7700                           ;interrupt.c: 72:             abortAll();
   7701  000086  EC6F  F014         	call	_abortAll	;wreg free
   7702  00008A                     i2l3739:
   7703  00008A  FFFF               	dw	65535	; assembler added errata NOP
   7704                           
-  7705                           ;interrupt.c: 78:     if(PIR1bits.TMR2IF){
+  7705                           ;interrupt.c: 77:     if(PIR1bits.TMR2IF){
   7706  00008C  A29E               	btfss	158,1,c	;volatile
   7707  00008E  EF4B  F000         	goto	i2u288_41
   7708  000092  EF4E  F000         	goto	i2u288_40
@@ -7743,14 +7743,14 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   7712  00009C                     i2u288_40:
   7713  00009C  FFFF               	dw	65535	; assembler added errata NOP
   7714  00009E                     
-  7715                           ;interrupt.c: 79:         PIR1bits.TMR2IF = 0;
+  7715                           ;interrupt.c: 78:         PIR1bits.TMR2IF = 0;
   7716  00009E  929E               	bcf	158,1,c	;volatile
   7717  0000A0                     
-  7718                           ;interrupt.c: 80:         single_cycle++;
+  7718                           ;interrupt.c: 79:         single_cycle++;
   7719  0000A0  4A51               	infsnz	_single_cycle^0,f,c
   7720  0000A2  2A52               	incf	(_single_cycle+1)^0,f,c
   7721  0000A4                     
-  7722                           ;interrupt.c: 83:         if(single_cycle > retPeriod()){
+  7722                           ;interrupt.c: 82:         if(single_cycle > retPeriod()){
   7723  0000A4  EC9B  F014         	call	_retPeriod	;wreg free
   7724  0000A8  5051               	movf	_single_cycle^0,w,c
   7725  0000AA  5C01               	subwf	?_retPeriod^0,w,c
@@ -7765,16 +7765,16 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   7734  0000C0                     i2u289_40:
   7735  0000C0  FFFF               	dw	65535	; assembler added errata NOP
   7736  0000C2                     
-  7737                           ;interrupt.c: 84:             single_cycle = 0;
+  7737                           ;interrupt.c: 83:             single_cycle = 0;
   7738  0000C2  0E00               	movlw	0
   7739  0000C4  6E52               	movwf	(_single_cycle+1)^0,c
   7740  0000C6  0E00               	movlw	0
   7741  0000C8  6E51               	movwf	_single_cycle^0,c
   7742  0000CA                     
-  7743                           ;interrupt.c: 85:             completeStep++;
+  7743                           ;interrupt.c: 84:             completeStep++;
   7744  0000CA  2A62               	incf	_completeStep^0,f,c
   7745  0000CC                     
-  7746                           ;interrupt.c: 88:             if(completeStep != 0 && !(completeStep % 2)){
+  7746                           ;interrupt.c: 87:             if(completeStep != 0 && !(completeStep % 2)){
   7747  0000CC  5062               	movf	_completeStep^0,w,c
   7748  0000CE  B4D8               	btfsc	status,2,c
   7749  0000D0  EF6C  F000         	goto	i2u290_41
@@ -7793,21 +7793,21 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   7762  0000F0                     i2u291_40:
   7763  0000F0  FFFF               	dw	65535	; assembler added errata NOP
   7764  0000F2                     
-  7765                           ;interrupt.c: 90:                 completeStep = 0;
+  7765                           ;interrupt.c: 89:                 completeStep = 0;
   7766  0000F2  0E00               	movlw	0
   7767  0000F4  6E62               	movwf	_completeStep^0,c
   7768  0000F6                     
-  7769                           ;interrupt.c: 93:                 increaseStep();
+  7769                           ;interrupt.c: 92:                 increaseStep();
   7770  0000F6  ECF5  F014         	call	_increaseStep	;wreg free
   7771  0000FA                     i2l3759:
   7772  0000FA  FFFF               	dw	65535	; assembler added errata NOP
   7773                           
-  7774                           ;interrupt.c: 98:             toggleStep();
+  7774                           ;interrupt.c: 97:             toggleStep();
   7775  0000FC  ECD2  F014         	call	_toggleStep	;wreg free
   7776  000100                     i2l3761:
   7777  000100  FFFF               	dw	65535	; assembler added errata NOP
   7778                           
-  7779                           ;interrupt.c: 103:     if(PIR1bits.ADIF){
+  7779                           ;interrupt.c: 102:     if(PIR1bits.ADIF){
   7780  000102  AC9E               	btfss	158,6,c	;volatile
   7781  000104  EF86  F000         	goto	i2u292_41
   7782  000108  EF89  F000         	goto	i2u292_40
@@ -7817,14 +7817,14 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   7786  000112                     i2u292_40:
   7787  000112  FFFF               	dw	65535	; assembler added errata NOP
   7788  000114                     
-  7789                           ;interrupt.c: 104:         PIR1bits.ADIF = 0;
+  7789                           ;interrupt.c: 103:         PIR1bits.ADIF = 0;
   7790  000114  9C9E               	bcf	158,6,c	;volatile
   7791                           
-  7792                           ;interrupt.c: 107:         ADC_res = ADRESL;
+  7792                           ;interrupt.c: 106:         ADC_res = ADRESL;
   7793  000116  CFC3 F053          	movff	4035,_ADC_res	;volatile
   7794  00011A  6A54               	clrf	(_ADC_res+1)^0,c
   7795  00011C                     
-  7796                           ;interrupt.c: 108:         ADC_res |= (ADRESH << 8);
+  7796                           ;interrupt.c: 107:         ADC_res |= (ADRESH << 8);
   7797  00011C  50C4               	movf	196,w,c	;volatile
   7798  00011E  6E0C               	movwf	(??_isr+1)^0,c
   7799  000120  6A0B               	clrf	??_isr^0,c
@@ -7833,7 +7833,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   7802  000126  500C               	movf	(??_isr+1)^0,w,c
   7803  000128  1254               	iorwf	(_ADC_res+1)^0,f,c
   7804                           
-  7805                           ;interrupt.c: 111:         if(ADC_res > therm_pressure){
+  7805                           ;interrupt.c: 110:         if(ADC_res > therm_pressure){
   7806  00012A  0453               	decf	_ADC_res^0,w,c
   7807  00012C  0E04               	movlw	4
   7808  00012E  5854               	subwfb	(_ADC_res+1)^0,w,c
@@ -7846,13 +7846,13 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   7815  000140                     i2u293_40:
   7816  000140  FFFF               	dw	65535	; assembler added errata NOP
   7817  000142                     
-  7818                           ;interrupt.c: 113:             setTouchRel();
+  7818                           ;interrupt.c: 112:             setTouchRel();
   7819  000142  ECD7  F014         	call	_setTouchRel	;wreg free
   7820                           
-  7821                           ;interrupt.c: 114:             setThermRel();
+  7821                           ;interrupt.c: 113:             setThermRel();
   7822  000146  ECDC  F014         	call	_setThermRel	;wreg free
   7823                           
-  7824                           ;interrupt.c: 115:         }else if(ADC_res > touch_pressure){
+  7824                           ;interrupt.c: 114:         }else if(ADC_res > touch_pressure){
   7825  00014A  EFB6  F000         	goto	i2l3773
   7826  00014E                     i2l3769:
   7827  00014E  FFFF               	dw	65535	; assembler added errata NOP
@@ -7868,12 +7868,12 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   7837  000166                     i2u294_40:
   7838  000166  FFFF               	dw	65535	; assembler added errata NOP
   7839  000168                     
-  7840                           ;interrupt.c: 117:             setTouchRel();
+  7840                           ;interrupt.c: 116:             setTouchRel();
   7841  000168  ECD7  F014         	call	_setTouchRel	;wreg free
   7842  00016C                     i2l3773:
   7843  00016C  FFFF               	dw	65535	; assembler added errata NOP
   7844                           
-  7845                           ;interrupt.c: 122:     if(PIR1bits.RC1IF){
+  7845                           ;interrupt.c: 121:     if(PIR1bits.RC1IF){
   7846  00016E  AA9E               	btfss	158,5,c	;volatile
   7847  000170  EFBC  F000         	goto	i2u295_41
   7848  000174  EFBF  F000         	goto	i2u295_40
@@ -7883,13 +7883,13 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   7852  00017E                     i2u295_40:
   7853  00017E  FFFF               	dw	65535	; assembler added errata NOP
   7854  000180                     
-  7855                           ;interrupt.c: 123:         PIR1bits.RC1IF = 0;
+  7855                           ;interrupt.c: 122:         PIR1bits.RC1IF = 0;
   7856  000180  9A9E               	bcf	158,5,c	;volatile
   7857                           
-  7858                           ;interrupt.c: 126:         unsigned char temp = RCREG1;
+  7858                           ;interrupt.c: 125:         unsigned char temp = RCREG1;
   7859  000182  CFAE F011          	movff	4014,isr@temp	;volatile
   7860  000186                     
-  7861                           ;interrupt.c: 128:         storeData(temp);
+  7861                           ;interrupt.c: 127:         storeData(temp);
   7862  000186  5011               	movf	isr@temp^0,w,c
   7863  000188  ECAA  F009         	call	i2_storeData
   7864  00018C                     i2l468:
@@ -7906,7 +7906,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   7875                           
   7876 ;; *************** function i2_storeData *****************
   7877 ;; Defined at:
-  7878 ;;		line 236 in file "usart.c"
+  7878 ;;		line 232 in file "usart.c"
   7879 ;; Parameters:    Size  Location     Type
   7880 ;;  data            1    wreg     unsigned char 
   7881 ;; Auto vars:     Size  Location     Type
@@ -7945,7 +7945,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   7914                           ;i2storeData@data stored from wreg
   7915  001356  6E0A               	movwf	i2storeData@data^0,c
   7916  001358                     
-  7917                           ;usart.c: 242:     receivedMex[counter] = data;
+  7917                           ;usart.c: 238:     receivedMex[counter] = data;
   7918  001358  0E43               	movlw	low _receivedMex
   7919  00135A  245E               	addwf	_counter^0,w,c
   7920  00135C  6ED9               	movwf	fsr2l,c
@@ -7954,62 +7954,62 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   7923  001362  22DA               	addwfc	fsr2h,f,c
   7924  001364  C00A  FFDF         	movff	i2storeData@data,indf2
   7925  001368                     
-  7926                           ;usart.c: 244:     counter++;
+  7926                           ;usart.c: 240:     counter++;
   7927  001368  2A5E               	incf	_counter^0,f,c
   7928                           
-  7929                           ;usart.c: 247:     switch(receivedMex[0]){
+  7929                           ;usart.c: 243:     switch(receivedMex[0]){
   7930  00136A  EFD3  F009         	goto	i2l3601
   7931  00136E                     i2l3591:
   7932  00136E  FFFF               	dw	65535	; assembler added errata NOP
   7933                           
-  7934                           ;usart.c: 249:             mexLength = 5;
+  7934                           ;usart.c: 245:             mexLength = 5;
   7935  001370  0E05               	movlw	5
   7936  001372  6E6D               	movwf	_mexLength^0,c
   7937                           
-  7938                           ;usart.c: 250:             neverCheck = 0;
+  7938                           ;usart.c: 246:             neverCheck = 0;
   7939  001374  0E00               	movlw	0
   7940  001376  6E5D               	movwf	_neverCheck^0,c
   7941                           
-  7942                           ;usart.c: 251:             break;
+  7942                           ;usart.c: 247:             break;
   7943  001378  EFEE  F009         	goto	i2l3603
   7944  00137C                     i2l3593:
   7945  00137C  FFFF               	dw	65535	; assembler added errata NOP
   7946                           
-  7947                           ;usart.c: 253:             mexLength = 9;
+  7947                           ;usart.c: 249:             mexLength = 9;
   7948  00137E  0E09               	movlw	9
   7949  001380  6E6D               	movwf	_mexLength^0,c
   7950                           
-  7951                           ;usart.c: 254:             neverCheck = 0;
+  7951                           ;usart.c: 250:             neverCheck = 0;
   7952  001382  0E00               	movlw	0
   7953  001384  6E5D               	movwf	_neverCheck^0,c
   7954                           
-  7955                           ;usart.c: 255:             break;
+  7955                           ;usart.c: 251:             break;
   7956  001386  EFEE  F009         	goto	i2l3603
   7957  00138A                     i2l3595:
   7958  00138A  FFFF               	dw	65535	; assembler added errata NOP
   7959                           
-  7960                           ;usart.c: 257:             mexLength = 1;
+  7960                           ;usart.c: 253:             mexLength = 1;
   7961  00138C  0E01               	movlw	1
   7962  00138E  6E6D               	movwf	_mexLength^0,c
   7963                           
-  7964                           ;usart.c: 258:             neverCheck = 0;
+  7964                           ;usart.c: 254:             neverCheck = 0;
   7965  001390  0E00               	movlw	0
   7966  001392  6E5D               	movwf	_neverCheck^0,c
   7967                           
-  7968                           ;usart.c: 259:             break;
+  7968                           ;usart.c: 255:             break;
   7969  001394  EFEE  F009         	goto	i2l3603
   7970  001398                     i2l3597:
   7971  001398  FFFF               	dw	65535	; assembler added errata NOP
   7972                           
-  7973                           ;usart.c: 261:             neverCheck = 1;
+  7973                           ;usart.c: 257:             neverCheck = 1;
   7974  00139A  0E01               	movlw	1
   7975  00139C  6E5D               	movwf	_neverCheck^0,c
   7976                           
-  7977                           ;usart.c: 262:             counter = 0;
+  7977                           ;usart.c: 258:             counter = 0;
   7978  00139E  0E00               	movlw	0
   7979  0013A0  6E5E               	movwf	_counter^0,c
   7980                           
-  7981                           ;usart.c: 263:             break;
+  7981                           ;usart.c: 259:             break;
   7982  0013A2  EFEE  F009         	goto	i2l3603
   7983  0013A6                     i2l3601:
   7984  0013A6  FFFF               	dw	65535	; assembler added errata NOP
@@ -8053,7 +8053,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   8021  0013DC                     i2l3603:
   8022  0013DC  FFFF               	dw	65535	; assembler added errata NOP
   8023                           
-  8024                           ;usart.c: 268:     if(counter == mexLength && !neverCheck){
+  8024                           ;usart.c: 264:     if(counter == mexLength && !neverCheck){
   8025  0013DE  506D               	movf	_mexLength^0,w,c
   8026  0013E0  185E               	xorwf	_counter^0,w,c
   8027  0013E2  A4D8               	btfss	status,2,c
@@ -8074,16 +8074,16 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   8042  001406                     i2u273_40:
   8043  001406  FFFF               	dw	65535	; assembler added errata NOP
   8044  001408                     
-  8045                           ;usart.c: 269:         counter = 0;
+  8045                           ;usart.c: 265:         counter = 0;
   8046  001408  0E00               	movlw	0
   8047  00140A  6E5E               	movwf	_counter^0,c
   8048                           
-  8049                           ;usart.c: 272:         switch(receivedMex[0]){
+  8049                           ;usart.c: 268:         switch(receivedMex[0]){
   8050  00140C  EFCD  F00A         	goto	i2l3645
   8051  001410                     i2l3609:
   8052  001410  FFFF               	dw	65535	; assembler added errata NOP
   8053                           
-  8054                           ;usart.c: 274:                 dataSequence[dataCounter].feederLine = receivedMex[1];
+  8054                           ;usart.c: 270:                 dataSequence[dataCounter].feederLine = receivedMex[1];
   8055  001412  5061               	movf	_dataCounter^0,w,c
   8056  001414  0D04               	mullw	4
   8057  001416  0EE4               	movlw	low _dataSequence
@@ -8094,7 +8094,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   8062  001420  6EDA               	movwf	fsr2h,c
   8063  001422  C044  FFDF         	movff	_receivedMex+1,indf2
   8064                           
-  8065                           ;usart.c: 275:                 dataSequence[dataCounter].posX = receivedMex[2] * 5;
+  8065                           ;usart.c: 271:                 dataSequence[dataCounter].posX = receivedMex[2] * 5;
   8066  001426  5061               	movf	_dataCounter^0,w,c
   8067  001428  0D04               	mullw	4
   8068  00142A  0EE5               	movlw	low (_dataSequence+1)
@@ -8107,7 +8107,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   8075  001438  0D05               	mullw	5
   8076  00143A  CFF3 FFDF          	movff	prodl,indf2
   8077                           
-  8078                           ;usart.c: 276:                 dataSequence[dataCounter].posY = receivedMex[3] * 5;
+  8078                           ;usart.c: 272:                 dataSequence[dataCounter].posY = receivedMex[3] * 5;
   8079  00143E  5061               	movf	_dataCounter^0,w,c
   8080  001440  0D04               	mullw	4
   8081  001442  0EE6               	movlw	low (_dataSequence+2)
@@ -8120,7 +8120,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   8088  001450  0D05               	mullw	5
   8089  001452  CFF3 FFDF          	movff	prodl,indf2
   8090                           
-  8091                           ;usart.c: 277:                 dataSequence[dataCounter].rotation = receivedMex[4];
+  8091                           ;usart.c: 273:                 dataSequence[dataCounter].rotation = receivedMex[4];
   8092  001456  5061               	movf	_dataCounter^0,w,c
   8093  001458  0D04               	mullw	4
   8094  00145A  0EE7               	movlw	low (_dataSequence+3)
@@ -8131,7 +8131,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   8099  001464  6EDA               	movwf	fsr2h,c
   8100  001466  C047  FFDF         	movff	_receivedMex+4,indf2
   8101                           
-  8102                           ;usart.c: 280:                 if((dataSequence[dataCounter].posX > maxX || dataSequence
+  8102                           ;usart.c: 276:                 if((dataSequence[dataCounter].posX > maxX || dataSequence
       +                          [dataCounter].posY > maxY) &&
   8103  00146A  5061               	movf	_dataCounter^0,w,c
   8104  00146C  0D04               	mullw	4
@@ -8186,55 +8186,55 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   8153  0014D4                     i2u276_40:
   8154  0014D4  FFFF               	dw	65535	; assembler added errata NOP
   8155  0014D6                     
-  8156                           ;usart.c: 281:                         dataSequence[dataCounter].feederLine != 0xFF){;us
-      +                          art.c: 282:                     printError(5);
+  8156                           ;usart.c: 277:                         dataSequence[dataCounter].feederLine != 0xFF){;us
+      +                          art.c: 278:                     printError(5);
   8157  0014D6  0E05               	movlw	5
   8158  0014D8  EC62  F00F         	call	i2_printError
   8159                           
-  8160                           ;usart.c: 283:                 }else{
+  8160                           ;usart.c: 279:                 }else{
   8161  0014DC  EFE8  F00A         	goto	i2l3647
   8162  0014E0                     i2l3617:
   8163  0014E0  FFFF               	dw	65535	; assembler added errata NOP
   8164                           
-  8165                           ;usart.c: 284:                     dataCounter++;
+  8165                           ;usart.c: 280:                     dataCounter++;
   8166  0014E2  2A61               	incf	_dataCounter^0,f,c
   8167  0014E4  EFE8  F00A         	goto	i2l3647
   8168  0014E8                     i2l633:
   8169  0014E8  FFFF               	dw	65535	; assembler added errata NOP
   8170                           
-  8171                           ;usart.c: 289:                 newSequenceData.L = receivedMex[1];
+  8171                           ;usart.c: 285:                 newSequenceData.L = receivedMex[1];
   8172  0014EA  C044  F0F8         	movff	_receivedMex+1,_newSequenceData
   8173                           
-  8174                           ;usart.c: 290:                 newSequenceData.W = receivedMex[2];
+  8174                           ;usart.c: 286:                 newSequenceData.W = receivedMex[2];
   8175  0014EE  C045  F0F9         	movff	_receivedMex+2,_newSequenceData+1
   8176  0014F2                     
-  8177                           ;usart.c: 291:                 newSequenceData.init_posX = receivedMex[3] * 5;
+  8177                           ;usart.c: 287:                 newSequenceData.init_posX = receivedMex[3] * 5;
   8178  0014F2  5046               	movf	(_receivedMex+3)^0,w,c
   8179  0014F4  0D05               	mullw	5
   8180  0014F6  CFF3 F0FA          	movff	prodl,_newSequenceData+2
   8181                           
-  8182                           ;usart.c: 292:                 newSequenceData.init_posY = receivedMex[4] * 5;
+  8182                           ;usart.c: 288:                 newSequenceData.init_posY = receivedMex[4] * 5;
   8183  0014FA  5047               	movf	(_receivedMex+4)^0,w,c
   8184  0014FC  0D05               	mullw	5
   8185  0014FE  CFF3 F0FB          	movff	prodl,_newSequenceData+3
   8186  001502                     
-  8187                           ;usart.c: 293:                 newSequenceData.init_rot = receivedMex[5];
+  8187                           ;usart.c: 289:                 newSequenceData.init_rot = receivedMex[5];
   8188  001502  C048  F0FC         	movff	_receivedMex+5,_newSequenceData+4
   8189                           
-  8190                           ;usart.c: 294:                 newSequenceData.end_posX = receivedMex[6] * 5;
+  8190                           ;usart.c: 290:                 newSequenceData.end_posX = receivedMex[6] * 5;
   8191  001506  5049               	movf	(_receivedMex+6)^0,w,c
   8192  001508  0D05               	mullw	5
   8193  00150A  CFF3 F0FD          	movff	prodl,_newSequenceData+5
   8194                           
-  8195                           ;usart.c: 295:                 newSequenceData.end_posY = receivedMex[7] * 5;
+  8195                           ;usart.c: 291:                 newSequenceData.end_posY = receivedMex[7] * 5;
   8196  00150E  504A               	movf	(_receivedMex+7)^0,w,c
   8197  001510  0D05               	mullw	5
   8198  001512  CFF3 F0FE          	movff	prodl,_newSequenceData+6
   8199  001516                     
-  8200                           ;usart.c: 296:                 newSequenceData.end_rot = receivedMex[8];
+  8200                           ;usart.c: 292:                 newSequenceData.end_rot = receivedMex[8];
   8201  001516  C04B  F0FF         	movff	_receivedMex+8,_newSequenceData+7
   8202  00151A                     
-  8203                           ;usart.c: 299:                 if(newSequenceData.init_posX > maxFeedX ||
+  8203                           ;usart.c: 295:                 if(newSequenceData.init_posX > maxFeedX ||
   8204  00151A  0E1F               	movlw	31
   8205  00151C  0100               	movlb	0	; () banked
   8206  00151E  61FA               	cpfslt	(_newSequenceData+2)& (0+255),b
@@ -8281,43 +8281,43 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   8247  00156A  FFFF               	dw	65535	; assembler added errata NOP
   8248                           
   8249                           ; BSR set to: 0
-  8250                           ;usart.c: 302:                         newSequenceData.end_posY > maxY){;usart.c: 303:  
+  8250                           ;usart.c: 298:                         newSequenceData.end_posY > maxY){;usart.c: 299:  
       +                                             _newSequence = 0;
   8251  00156C  0E00               	movlw	0
   8252  00156E  6E5F               	movwf	__newSequence^0,c
   8253  001570                     
   8254                           ; BSR set to: 0
-  8255                           ;usart.c: 304:                     printError(5);
+  8255                           ;usart.c: 300:                     printError(5);
   8256  001570  0E05               	movlw	5
   8257  001572  EC62  F00F         	call	i2_printError
   8258                           
-  8259                           ;usart.c: 305:                 }else{
+  8259                           ;usart.c: 301:                 }else{
   8260  001576  EFE8  F00A         	goto	i2l3647
   8261  00157A                     i2l3637:
   8262  00157A  FFFF               	dw	65535	; assembler added errata NOP
   8263                           
   8264                           ; BSR set to: 0
-  8265                           ;usart.c: 306:                     _newSequence = 1;
+  8265                           ;usart.c: 302:                     _newSequence = 1;
   8266  00157C  0E01               	movlw	1
   8267  00157E  6E5F               	movwf	__newSequence^0,c
   8268  001580  EFE8  F00A         	goto	i2l3647
   8269  001584                     i2l3639:
   8270  001584  FFFF               	dw	65535	; assembler added errata NOP
   8271                           
-  8272                           ;usart.c: 311:                 _fatalError = 1;
+  8272                           ;usart.c: 307:                 _fatalError = 1;
   8273  001586  0E01               	movlw	1
   8274  001588  6E60               	movwf	__fatalError^0,c
   8275                           
-  8276                           ;usart.c: 312:                 break;
+  8276                           ;usart.c: 308:                 break;
   8277  00158A  EFE8  F00A         	goto	i2l3647
   8278  00158E                     i2l3641:
   8279  00158E  FFFF               	dw	65535	; assembler added errata NOP
   8280                           
-  8281                           ;usart.c: 315:                 printError(8);
+  8281                           ;usart.c: 311:                 printError(8);
   8282  001590  0E08               	movlw	8
   8283  001592  EC62  F00F         	call	i2_printError
   8284                           
-  8285                           ;usart.c: 316:                 break;
+  8285                           ;usart.c: 312:                 break;
   8286  001596  EFE8  F00A         	goto	i2l3647
   8287  00159A                     i2l3645:
   8288  00159A  FFFF               	dw	65535	; assembler added errata NOP
@@ -8361,7 +8361,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   8325  0015D0                     i2l3647:
   8326  0015D0  FFFF               	dw	65535	; assembler added errata NOP
   8327                           
-  8328                           ;usart.c: 320:         receivedMex[0] = 0;
+  8328                           ;usart.c: 316:         receivedMex[0] = 0;
   8329  0015D2  0E00               	movlw	0
   8330  0015D4  6E43               	movwf	_receivedMex^0,c
   8331  0015D6                     i2l640:
@@ -8681,7 +8681,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   8645                           
   8646 ;; *************** function _fatalError *****************
   8647 ;; Defined at:
-  8648 ;;		line 93 in file "usart.c"
+  8648 ;;		line 89 in file "usart.c"
   8649 ;; Parameters:    Size  Location     Type
   8650 ;;		None
   8651 ;; Auto vars:     Size  Location     Type
@@ -8715,7 +8715,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   8679                           	callstack 0
   8680  0029F2  FFFF               	dw	65535	; assembler added errata NOP
   8681  0029F4                     
-  8682                           ;usart.c: 94:     return _fatalError;
+  8682                           ;usart.c: 90:     return _fatalError;
   8683  0029F4  5060               	movf	__fatalError^0,w,c
   8684  0029F6  0012               	return		;funcret
   8685  0029F8  FFFF               	dw	65535	; errata NOP
@@ -8724,7 +8724,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   8688                           
   8689 ;; *************** function _abortAll *****************
   8690 ;; Defined at:
-  8691 ;;		line 836 in file "motors.c"
+  8691 ;;		line 838 in file "motors.c"
   8692 ;; Parameters:    Size  Location     Type
   8693 ;;		None
   8694 ;; Auto vars:     Size  Location     Type
@@ -8759,7 +8759,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   8723                           	callstack 0
   8724  0028DE  FFFF               	dw	65535	; assembler added errata NOP
   8725  0028E0                     
-  8726                           ;motors.c: 844:     printError(7);
+  8726                           ;motors.c: 846:     printError(7);
   8727  0028E0  0E07               	movlw	7
   8728  0028E2  EC62  F00F         	call	i2_printError
   8729  0028E6                     i2l251:
@@ -8772,7 +8772,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   8736                           
   8737 ;; *************** function i2_printError *****************
   8738 ;; Defined at:
-  8739 ;;		line 143 in file "usart.c"
+  8739 ;;		line 139 in file "usart.c"
   8740 ;; Parameters:    Size  Location     Type
   8741 ;;  errCode         1    wreg     unsigned char 
   8742 ;; Auto vars:     Size  Location     Type
@@ -8812,12 +8812,12 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   8776                           ;i2printError@errCode stored from wreg
   8777  001EC6  6E07               	movwf	i2printError@errCode^0,c
   8778  001EC8                     
-  8779                           ;usart.c: 145:     switch(errCode){
+  8779                           ;usart.c: 141:     switch(errCode){
   8780  001EC8  EFBE  F00F         	goto	i2l3243
   8781  001ECC                     i2l3225:
   8782  001ECC  FFFF               	dw	65535	; assembler added errata NOP
   8783                           
-  8784                           ;usart.c: 147:             uartTx(&errString_Feed[0], sizeof(errString_Feed));
+  8784                           ;usart.c: 143:             uartTx(&errString_Feed[0], sizeof(errString_Feed));
   8785  001ECE  0E41               	movlw	low _errString_Feed
   8786  001ED0  6E01               	movwf	i2uartTx@ptr^0,c
   8787  001ED2  0E01               	movlw	high _errString_Feed
@@ -8826,12 +8826,12 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   8790  001ED8  6E03               	movwf	i2uartTx@length^0,c
   8791  001EDA  ECA0  F013         	call	i2_uartTx	;wreg free
   8792                           
-  8793                           ;usart.c: 148:             break;
+  8793                           ;usart.c: 144:             break;
   8794  001EDE  EFED  F00F         	goto	i2l590
   8795  001EE2                     i2l3227:
   8796  001EE2  FFFF               	dw	65535	; assembler added errata NOP
   8797                           
-  8798                           ;usart.c: 150:             uartTx(&errString_ZEND[0], sizeof(errString_ZEND));
+  8798                           ;usart.c: 146:             uartTx(&errString_ZEND[0], sizeof(errString_ZEND));
   8799  001EE4  0E5E               	movlw	low _errString_ZEND
   8800  001EE6  6E01               	movwf	i2uartTx@ptr^0,c
   8801  001EE8  0E02               	movlw	high _errString_ZEND
@@ -8840,12 +8840,12 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   8804  001EEE  6E03               	movwf	i2uartTx@length^0,c
   8805  001EF0  ECA0  F013         	call	i2_uartTx	;wreg free
   8806                           
-  8807                           ;usart.c: 151:             break;
+  8807                           ;usart.c: 147:             break;
   8808  001EF4  EFED  F00F         	goto	i2l590
   8809  001EF8                     i2l3229:
   8810  001EF8  FFFF               	dw	65535	; assembler added errata NOP
   8811                           
-  8812                           ;usart.c: 153:             uartTx(&errString_Reset[0], sizeof(errString_Reset));
+  8812                           ;usart.c: 149:             uartTx(&errString_Reset[0], sizeof(errString_Reset));
   8813  001EFA  0E87               	movlw	low _errString_Reset
   8814  001EFC  6E01               	movwf	i2uartTx@ptr^0,c
   8815  001EFE  0E02               	movlw	high _errString_Reset
@@ -8854,12 +8854,12 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   8818  001F04  6E03               	movwf	i2uartTx@length^0,c
   8819  001F06  ECA0  F013         	call	i2_uartTx	;wreg free
   8820                           
-  8821                           ;usart.c: 154:             break;
+  8821                           ;usart.c: 150:             break;
   8822  001F0A  EFED  F00F         	goto	i2l590
   8823  001F0E                     i2l3231:
   8824  001F0E  FFFF               	dw	65535	; assembler added errata NOP
   8825                           
-  8826                           ;usart.c: 156:             uartTx(&errString_Point[0], sizeof(errString_Point));
+  8826                           ;usart.c: 152:             uartTx(&errString_Point[0], sizeof(errString_Point));
   8827  001F10  0E35               	movlw	low _errString_Point
   8828  001F12  6E01               	movwf	i2uartTx@ptr^0,c
   8829  001F14  0E02               	movlw	high _errString_Point
@@ -8868,12 +8868,12 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   8832  001F1A  6E03               	movwf	i2uartTx@length^0,c
   8833  001F1C  ECA0  F013         	call	i2_uartTx	;wreg free
   8834                           
-  8835                           ;usart.c: 157:             break;
+  8835                           ;usart.c: 153:             break;
   8836  001F20  EFED  F00F         	goto	i2l590
   8837  001F24                     i2l3233:
   8838  001F24  FFFF               	dw	65535	; assembler added errata NOP
   8839                           
-  8840                           ;usart.c: 159:             uartTx(&errString_Bound[0], sizeof(errString_Bound));
+  8840                           ;usart.c: 155:             uartTx(&errString_Bound[0], sizeof(errString_Bound));
   8841  001F26  0E00               	movlw	low _errString_Bound
   8842  001F28  6E01               	movwf	i2uartTx@ptr^0,c
   8843  001F2A  0E01               	movlw	high _errString_Bound
@@ -8882,12 +8882,12 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   8846  001F30  6E03               	movwf	i2uartTx@length^0,c
   8847  001F32  ECA0  F013         	call	i2_uartTx	;wreg free
   8848                           
-  8849                           ;usart.c: 160:             break;
+  8849                           ;usart.c: 156:             break;
   8850  001F36  EFED  F00F         	goto	i2l590
   8851  001F3A                     i2l3235:
   8852  001F3A  FFFF               	dw	65535	; assembler added errata NOP
   8853                           
-  8854                           ;usart.c: 162:             uartTx(&errString_PointZ[0], sizeof(errString_PointZ));
+  8854                           ;usart.c: 158:             uartTx(&errString_PointZ[0], sizeof(errString_PointZ));
   8855  001F3C  0E00               	movlw	low _errString_PointZ
   8856  001F3E  6E01               	movwf	i2uartTx@ptr^0,c
   8857  001F40  0E02               	movlw	high _errString_PointZ
@@ -8896,12 +8896,12 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   8860  001F46  6E03               	movwf	i2uartTx@length^0,c
   8861  001F48  ECA0  F013         	call	i2_uartTx	;wreg free
   8862                           
-  8863                           ;usart.c: 163:             break;
+  8863                           ;usart.c: 159:             break;
   8864  001F4C  EFED  F00F         	goto	i2l590
   8865  001F50                     i2l3237:
   8866  001F50  FFFF               	dw	65535	; assembler added errata NOP
   8867                           
-  8868                           ;usart.c: 165:             uartTx(&errString_Fatal[0], sizeof(errString_Fatal));
+  8868                           ;usart.c: 161:             uartTx(&errString_Fatal[0], sizeof(errString_Fatal));
   8869  001F52  0EAF               	movlw	low _errString_Fatal
   8870  001F54  6E01               	movwf	i2uartTx@ptr^0,c
   8871  001F56  0E02               	movlw	high _errString_Fatal
@@ -8910,12 +8910,12 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   8874  001F5C  6E03               	movwf	i2uartTx@length^0,c
   8875  001F5E  ECA0  F013         	call	i2_uartTx	;wreg free
   8876                           
-  8877                           ;usart.c: 166:             break;
+  8877                           ;usart.c: 162:             break;
   8878  001F62  EFED  F00F         	goto	i2l590
   8879  001F66                     i2l3239:
   8880  001F66  FFFF               	dw	65535	; assembler added errata NOP
   8881                           
-  8882                           ;usart.c: 168:             uartTx(&errString_Command[0], sizeof(errString_Command));
+  8882                           ;usart.c: 164:             uartTx(&errString_Command[0], sizeof(errString_Command));
   8883  001F68  0EB5               	movlw	low _errString_Command
   8884  001F6A  6E01               	movwf	i2uartTx@ptr^0,c
   8885  001F6C  0E01               	movlw	high _errString_Command
@@ -8924,7 +8924,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   8888  001F72  6E03               	movwf	i2uartTx@length^0,c
   8889  001F74  ECA0  F013         	call	i2_uartTx	;wreg free
   8890                           
-  8891                           ;usart.c: 169:             break;
+  8891                           ;usart.c: 165:             break;
   8892  001F78  EFED  F00F         	goto	i2l590
   8893  001F7C                     i2l3243:
   8894  001F7C  FFFF               	dw	65535	; assembler added errata NOP
@@ -8989,7 +8989,7 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   8952                           
   8953 ;; *************** function i2_uartTx *****************
   8954 ;; Defined at:
-  8955 ;;		line 220 in file "usart.c"
+  8955 ;;		line 216 in file "usart.c"
   8956 ;; Parameters:    Size  Location     Type
   8957 ;;  ptr             2    0[COMRAM] PTR unsigned char 
   8958 ;;		 -> ready(15), resetPos(32), OBJRelease(17), placeTheOBJ(20), 
@@ -9029,15 +9029,15 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   8992                           	callstack 0
   8993  002740  FFFF               	dw	65535	; assembler added errata NOP
   8994  002742                     
-  8995                           ;usart.c: 220: void uartTx(unsigned char *ptr, unsigned char length);usart.c: 221: {;usa
-      +                          rt.c: 223:     for(char i = 1; i < length; i++){
+  8995                           ;usart.c: 216: void uartTx(unsigned char *ptr, unsigned char length);usart.c: 217: {;usa
+      +                          rt.c: 219:     for(char i = 1; i < length; i++){
   8996  002742  0E01               	movlw	1
   8997  002744  6E04               	movwf	i2uartTx@i^0,c
   8998  002746  EFB9  F013         	goto	i2l2895
   8999  00274A                     i2l2891:
   9000  00274A  FFFF               	dw	65535	; assembler added errata NOP
   9001                           
-  9002                           ;usart.c: 225:         TXREG = *ptr;
+  9002                           ;usart.c: 221:         TXREG = *ptr;
   9003  00274C  C001  FFD9         	movff	i2uartTx@ptr,fsr2l
   9004  002750  C002  FFDA         	movff	i2uartTx@ptr+1,fsr2h
   9005  002754  50DF               	movf	indf2,w,c
@@ -9053,11 +9053,11 @@ Microchip MPLAB XC8 C Compiler v2.20 (Free license) build 20200408173844 Og1
   9015  00276A                     i2u195_40:
   9016  00276A  FFFF               	dw	65535	; assembler added errata NOP
   9017  00276C                     
-  9018                           ;usart.c: 229:         ptr++;
+  9018                           ;usart.c: 225:         ptr++;
   9019  00276C  4A01               	infsnz	i2uartTx@ptr^0,f,c
   9020  00276E  2A02               	incf	(i2uartTx@ptr+1)^0,f,c
   9021                           
-  9022                           ;usart.c: 230:     }
+  9022                           ;usart.c: 226:     }
   9023  002770  2A04               	incf	i2uartTx@i^0,f,c
   9024  002772                     i2l2895:
   9025  002772  FFFF               	dw	65535	; assembler added errata NOP
@@ -9765,7 +9765,7 @@ CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V2.20 build 20200408173844 
-Symbol Table                                                                                   Sat May 08 10:26:13 2021
+Symbol Table                                                                                   Sun May 09 09:29:39 2021
 
                                                   ___fldiv@aexp 0038  
                                                   ___fldiv@bexp 0037  

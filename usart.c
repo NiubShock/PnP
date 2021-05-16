@@ -46,10 +46,6 @@ static unsigned char mexLength = 5;
 static unsigned char neverCheck = 0;
 static unsigned char receivedMex[9];
 
-
-//1st byte is the feeder line
-//2nd and 3rd byte is the final position
-//4th byte is the rotation
 static t_sequence dataSequence[5];
 static t_newSequence newSequenceData;
 

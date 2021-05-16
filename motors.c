@@ -689,7 +689,7 @@ char touchTherm(){
  */
 char liftArm(){
     
-    //move up
+//move up
 #ifndef nSIMULATION
     setDirection(BACKWARD, MOTOR3);
 #else
@@ -766,8 +766,10 @@ char liftArm(){
  * Input: Angle of the rotation, expressed in degrees
  */
 void rotateObj(unsigned char rotAngle){
-    //static const float stepAngle = 0.08789;                               //dimension of a single step in the motor
-    static const float stepAngle = 2;                                      //dimension of a single step in the motor
+#ifndef nSIMULATION
+        static const float stepAngle = 0.08789;                             //dimension of a single step in the motor
+#endif
+    static const float stepAngle = 2;                                       //dimension of a single step in the motor
     static char rotSequence[] = {0b100100, 0b001100, 0b011000, 0b110000};   //sequence to use in order to rotate as desired
     unsigned int i, c = 0;
     int totStep = rotAngle/stepAngle;                                       //total step required

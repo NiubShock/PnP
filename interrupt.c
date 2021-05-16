@@ -49,8 +49,7 @@ void interruptInit(void){
     PIE1bits.RC1IE = 1;             //turn on the interrupt for the usart RX
 }
 
-void __interrupt() isr(){
-    
+void __interrupt() isr(){ 
     
     //TIM0 interrupt routine
     if(INTCONbits.T0IF){

@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=D:\Programs\MPLABx\xc8\v2.20\pic\dat\en_msgs.txt -cn \
   -h+dist/default/production\ESD_PnP_1.X.production.sym \
   --cmf=dist/default/production\ESD_PnP_1.X.production.cmf -z -Q18F452 \
-  -oC:\Users\alle9\AppData\Local\Temp\sogc.2 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\alle9\AppData\Local\Temp\so9k.2 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/ESD_PnP_1.X.production.map -E1 \
   -ver=XC8 Compiler --acfsm=1493 -ASTACK=02DEh-05FFh -pstack=STACK \
   -ACODE=00h-03FFFhx2 -ACONST=00h-07FFFh -ASMALLCONST=0600h-06FFhx122 \
@@ -21,7 +21,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\alle9\AppData\Local\Temp\sogc.o \
+  C:\Users\alle9\AppData\Local\Temp\so9k.o \
   dist/default/production\ESD_PnP_1.X.production.o 
 
 Object code version is 3.11
@@ -31,7 +31,7 @@ Machine type is 18F452
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\alle9\AppData\Local\Temp\sogc.o
+C:\Users\alle9\AppData\Local\Temp\so9k.o
                 idloc                            200000   200000        8        0       5
                 config                           300000   300000        E        0       4
                 text                               2A02     2A02        2     1501       0
@@ -606,7 +606,7 @@ ___xxtofl@sign                                                  cstackCOMRAM 000
 ___xxtofl@val                                                   cstackCOMRAM 000012
 __accesstop                                                     (abs)        000080
 __activetblptr                                                  (abs)        000002
-__cntErrataNOP_C:\Users\alle9\AppData\Local\Temp\sogc.o         (abs)        000001
+__cntErrataNOP_C:\Users\alle9\AppData\Local\Temp\so9k.o         (abs)        000001
 __cntErrataNOP_dist/default/production\ESD_PnP_1.X.production.o (abs)        000215
 __end_of___fldiv                                                text29       000A48
 __end_of___fltol                                                text28       001DA8
@@ -1010,7 +1010,7 @@ Total ram usage:        5 bytes
 
  *************** function _usartInit *****************
  Defined at:
-		line 124 in file "usart.c"
+		line 120 in file "usart.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1130,7 +1130,7 @@ Total ram usage:        0 bytes
 
  *************** function _storeData *****************
  Defined at:
-		line 236 in file "usart.c"
+		line 232 in file "usart.c"
  Parameters:    Size  Location     Type
   data            1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -1160,7 +1160,7 @@ Total ram usage:        3 bytes
 
  *************** function _printError *****************
  Defined at:
-		line 143 in file "usart.c"
+		line 139 in file "usart.c"
  Parameters:    Size  Location     Type
   errCode         1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -1191,7 +1191,7 @@ Total ram usage:        3 bytes
 
  *************** function _shiftData *****************
  Defined at:
-		line 113 in file "usart.c"
+		line 109 in file "usart.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1256,7 +1256,7 @@ Total ram usage:        3 bytes
 
  *************** function _resetNewSequence *****************
  Defined at:
-		line 105 in file "usart.c"
+		line 101 in file "usart.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1286,7 +1286,7 @@ Total ram usage:        0 bytes
 
  *************** function _reduceSeq *****************
  Defined at:
-		line 75 in file "usart.c"
+		line 71 in file "usart.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1316,7 +1316,7 @@ Total ram usage:        0 bytes
 
  *************** function _readSeq *****************
  Defined at:
-		line 89 in file "usart.c"
+		line 85 in file "usart.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1346,7 +1346,7 @@ Total ram usage:        0 bytes
 
  *************** function _newSequence *****************
  Defined at:
-		line 97 in file "usart.c"
+		line 93 in file "usart.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1466,7 +1466,7 @@ Total ram usage:        0 bytes
 
  *************** function _getNewSequence *****************
  Defined at:
-		line 68 in file "usart.c"
+		line 64 in file "usart.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1934,7 +1934,7 @@ Total ram usage:       25 bytes
 
  *************** function _releaseObj *****************
  Defined at:
-		line 819 in file "motors.c"
+		line 821 in file "motors.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1965,7 +1965,7 @@ Total ram usage:        0 bytes
 
  *************** function _printStatus *****************
  Defined at:
-		line 176 in file "usart.c"
+		line 172 in file "usart.c"
  Parameters:    Size  Location     Type
   status          1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -1996,7 +1996,7 @@ Total ram usage:        3 bytes
 
  *************** function _uartTx *****************
  Defined at:
-		line 220 in file "usart.c"
+		line 216 in file "usart.c"
  Parameters:    Size  Location     Type
   ptr             2   17[COMRAM] PTR unsigned char 
 		 -> ready(15), resetPos(32), OBJRelease(17), placeTheOBJ(20), 
@@ -2033,7 +2033,7 @@ Total ram usage:        4 bytes
 
  *************** function _pickObject *****************
  Defined at:
-		line 802 in file "motors.c"
+		line 804 in file "motors.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2310,7 +2310,7 @@ Total ram usage:        0 bytes
 
  *************** function _getData *****************
  Defined at:
-		line 60 in file "usart.c"
+		line 56 in file "usart.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2409,7 +2409,7 @@ Total ram usage:        7 bytes
 
  *************** function i2_storeData *****************
  Defined at:
-		line 236 in file "usart.c"
+		line 232 in file "usart.c"
  Parameters:    Size  Location     Type
   data            1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -2642,7 +2642,7 @@ Total ram usage:        0 bytes
 
  *************** function _fatalError *****************
  Defined at:
-		line 93 in file "usart.c"
+		line 89 in file "usart.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2671,7 +2671,7 @@ Total ram usage:        0 bytes
 
  *************** function _abortAll *****************
  Defined at:
-		line 836 in file "motors.c"
+		line 838 in file "motors.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2701,7 +2701,7 @@ Total ram usage:        0 bytes
 
  *************** function i2_printError *****************
  Defined at:
-		line 143 in file "usart.c"
+		line 139 in file "usart.c"
  Parameters:    Size  Location     Type
   errCode         1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -2732,7 +2732,7 @@ Total ram usage:        3 bytes
 
  *************** function i2_uartTx *****************
  Defined at:
-		line 220 in file "usart.c"
+		line 216 in file "usart.c"
  Parameters:    Size  Location     Type
   ptr             2    0[COMRAM] PTR unsigned char 
 		 -> ready(15), resetPos(32), OBJRelease(17), placeTheOBJ(20), 

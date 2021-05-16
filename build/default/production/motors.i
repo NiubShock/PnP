@@ -4640,6 +4640,8 @@ char liftArm(){
 
 void rotateObj(unsigned char rotAngle){
 
+
+
     static const float stepAngle = 2;
     static char rotSequence[] = {0b100100, 0b001100, 0b011000, 0b110000};
     unsigned int i, c = 0;
